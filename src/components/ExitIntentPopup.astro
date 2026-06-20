@@ -1,0 +1,299 @@
+---
+interface Props {
+  disableDownload?: boolean;
+  telegramMode?: boolean;
+}
+
+const { disableDownload = false, telegramMode = false } = Astro.props;
+---
+
+<div id="exit-intent-popup" class="exit-popup hidden" data-disable-download={disableDownload}>
+  <div class="exit-popup-overlay"></div>
+  <div class="exit-popup-content glass">
+    <button id="close-exit-popup" class="close-btn">&times;</button>
+    
+    <div class="exit-popup-body">
+      <div class="exit-badge">{telegramMode ? 'TALK TO US' : "WAIT! DON'T GO YET"}</div>
+      <h2>{telegramMode ? 'Have questions?' : 'Download the 50-Job Report'}</h2>
+      <p>{telegramMode ? 'Connect with us on Telegram for real-time support and exclusive job alerts.' : 'Get instant access to our curated list of 50 high-paying remote roles ($17-$75/hr) for US & Global talent.'}</p>
+      
+      {telegramMode ? (
+        <div class="telegram-cta">
+          <a href="https://t.me/galaxyleads" target="_blank" class="cta-btn-popup telegram-btn">
+            Message on Telegram →
+          </a>
+          <p class="trust-note">Real humans, zero bots.</p>
+        </div>
+      ) : (
+        <>
+          <form id="exit-form" class="exit-form">
+            <div class="input-group">
+              <input type="email" name="email" id="exit-email" placeholder="Enter your email" required />
+              <button type="submit" id="exit-submit-btn" class="cta-btn-popup">Download Now</button>
+            </div>
+            <p class="trust-note">No spam. Unsubscribe anytime.</p>
+          </form>
+
+          <div id="exit-success" class="exit-success hidden">
+            <div class="success-icon">✔</div>
+            <h3>Starting Download...</h3>
+            <p>If your download didn't start, <a href="/downloads/50-job-report.pdf" id="manual-download" target="_blank">click here</a>.</p>
+          </div>
+        </>
+      )}
+    </div>
+  </div>
+</div>
+
+
+<style>
+  .exit-popup {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+  }
+
+  .exit-popup.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .exit-popup-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
+  }
+
+  .exit-popup-content {
+    position: relative;
+    background: #fff;
+    width: 100%;
+    max-width: 500px;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+    text-align: center;
+    transform: translateY(20px);
+    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+
+  .exit-popup.active .exit-popup-content {
+    transform: translateY(0);
+  }
+
+  .close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #999;
+    line-height: 1;
+  }
+
+  .exit-badge {
+    display: inline-block;
+    background: #b8943f;
+    color: #fff;
+    padding: 4px 12px;
+    border-radius: 4px;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+  }
+
+  h2 {
+    font-family: 'Instrument Serif', serif;
+    font-size: 32px;
+    line-height: 1.1;
+    margin-bottom: 12px;
+    color: #0f0f0f;
+  }
+
+  p {
+    font-size: 15px;
+    color: #666;
+    line-height: 1.5;
+    margin-bottom: 24px;
+  }
+
+  .exit-form .input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  input {
+    width: 100%;
+    padding: 14px 18px;
+    border: 1.5px solid #e0d8cc;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 15px;
+    outline: none;
+  }
+
+  input:focus {
+    border-color: #b8943f;
+  }
+
+  .cta-btn-popup {
+    background: #0f0f0f;
+    color: #fff;
+    border: none;
+    padding: 15px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 15px;
+    transition: all 0.2s;
+  }
+
+  .cta-btn-popup:hover {
+    background: #222;
+    transform: translateY(-1px);
+  }
+
+  .trust-note {
+    margin-top: 12px;
+    font-size: 11px;
+    color: #999;
+  }
+
+  .exit-success {
+    padding: 20px 0;
+  }
+
+  .success-icon {
+    width: 50px;
+    height: 50px;
+    background: #1a5c38;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    margin: 0 auto 16px;
+  }
+
+  .hidden { display: none; }
+
+  .telegram-btn {
+    text-decoration: none;
+    display: block;
+    background: #0088cc;
+  }
+  .telegram-btn:hover {
+    background: #0077b3;
+  }
+
+  @media (max-width: 480px) {
+    .exit-popup-content { padding: 30px 20px; }
+    h2 { font-size: 26px; }
+  }
+</style>
+
+<script is:inline>
+  (function() {
+    let popupShown = false;
+    const popup = document.getElementById('exit-intent-popup');
+    const disableDownload = popup.dataset.disableDownload === 'true';
+    const closeBtn = document.getElementById('close-exit-popup');
+    const form = document.getElementById('exit-form');
+    const success = document.getElementById('exit-success');
+    const error = document.getElementById('exit-error');
+    const submitBtn = document.getElementById('exit-submit-btn');
+
+    const showPopup = () => {
+      if (popupShown) return;
+      if (localStorage.getItem('exit_popup_dismissed')) return;
+      
+      popup.classList.add('active');
+      popupShown = true;
+    };
+
+    const hidePopup = () => {
+      popup.classList.remove('active');
+      localStorage.setItem('exit_popup_dismissed', 'true');
+    };
+
+    // Detect exit intent
+    document.addEventListener('mouseleave', (e) => {
+      if (e.clientY < 0) {
+        showPopup();
+      }
+    });
+
+    closeBtn.addEventListener('click', hidePopup);
+    document.querySelector('.exit-popup-overlay').addEventListener('click', hidePopup);
+
+    // Handle form submission
+    if (form) {
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const email = document.getElementById('exit-email').value;
+        
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Verifying...';
+        error.classList.add('hidden');
+
+        try {
+            const response = await fetch('/api/subscribe', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    email,
+                    tags: ['exit_intent', 'founder'],
+                    utm_medium: 'exit_popup'
+                })
+            });
+
+            const result = await response.json();
+
+            if (response.ok && result.ok) {
+                form.classList.add('hidden');
+                success.classList.remove('hidden');
+                
+                // Trigger download if not disabled
+                if (!disableDownload) {
+                  const downloadLink = document.createElement('a');
+                  downloadLink.href = '/downloads/50-job-report.pdf'; // Placeholder
+                  downloadLink.download = '50-Job-Report-ExpatBuildr.pdf';
+                  downloadLink.click();
+                }
+
+                // Hide popup after a delay
+                setTimeout(hidePopup, 4000);
+            } else {
+                throw new Error('Signup failed');
+            }
+        } catch (err) {
+            console.error('Exit signup error:', err);
+            error.classList.remove('hidden');
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Download Now';
+        }
+      });
+    }
+
+    // Direct Telegram link also dismisses
+    const tgBtn = document.querySelector('.telegram-btn');
+    if (tgBtn) {
+      tgBtn.addEventListener('click', () => {
+        setTimeout(hidePopup, 1000);
+      });
+    }
+  })();
+</script>

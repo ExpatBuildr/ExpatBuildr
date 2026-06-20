@@ -1,0 +1,646 @@
+---
+// /leaks-thankyou — Audit Submission Confirmed
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Audit Request Received — ExpatBuildr</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Syne:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --gold: #f5a623;
+      --orange: #ff6b35;
+      --cyan: #00d4ff;
+      --emerald: #00e87a;
+      --red-leak: #ff2d55;
+      --bg-deep: #080b0f;
+      --bg-glass: rgba(255,255,255,0.03);
+      --bg-glass-hover: rgba(255,255,255,0.06);
+      --border-glass: rgba(255,255,255,0.08);
+      --border-emerald: rgba(0,232,122,0.25);
+      --text-primary: #f0ece4;
+      --text-muted: rgba(240,236,228,0.55);
+      --text-dim: rgba(240,236,228,0.3);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background-color: var(--bg-deep);
+      color: var(--text-primary);
+      font-family: 'Syne', sans-serif;
+      min-height: 100vh;
+      overflow-x: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ── BACKGROUND ── */
+    .bg-layer {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .bg-grid {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(0,232,122,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,232,122,0.03) 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
+
+    .bg-radial {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 70% 50% at 50% 0%, rgba(0,232,122,0.07) 0%, transparent 60%),
+        radial-gradient(ellipse 50% 40% at 20% 80%, rgba(245,166,35,0.05) 0%, transparent 50%),
+        radial-gradient(ellipse 40% 50% at 80% 30%, rgba(0,212,255,0.04) 0%, transparent 50%);
+    }
+
+    .bg-noise {
+      position: absolute;
+      inset: 0;
+      opacity: 0.025;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      background-size: 200px;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: relative;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 28px 24px;
+      max-width: 780px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    .nav-logo {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.4rem;
+      letter-spacing: 0.12em;
+      color: var(--gold);
+      text-decoration: none;
+    }
+
+    .nav-tag {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.65rem;
+      color: var(--emerald);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      border: 1px solid rgba(0,232,122,0.2);
+      padding: 5px 10px;
+      border-radius: 2px;
+    }
+
+    /* ── MAIN ── */
+    main {
+      position: relative;
+      z-index: 1;
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 24px 80px;
+    }
+
+    .container {
+      max-width: 620px;
+      width: 100%;
+      text-align: center;
+    }
+
+    /* ── CONFIRM ICON ── */
+    .confirm-ring {
+      width: 80px;
+      height: 80px;
+      margin: 0 auto 32px;
+      position: relative;
+      animation: fadeUp 0.5s ease both;
+    }
+
+    .confirm-ring svg {
+      width: 80px;
+      height: 80px;
+    }
+
+    .ring-circle {
+      stroke-dasharray: 220;
+      stroke-dashoffset: 220;
+      animation: drawCircle 0.6s 0.2s ease forwards;
+    }
+
+    .ring-check {
+      stroke-dasharray: 50;
+      stroke-dashoffset: 50;
+      animation: drawCheck 0.4s 0.7s ease forwards;
+    }
+
+    @keyframes drawCircle {
+      to { stroke-dashoffset: 0; }
+    }
+
+    @keyframes drawCheck {
+      to { stroke-dashoffset: 0; }
+    }
+
+    /* ── HEADLINE ── */
+    .confirm-eyebrow {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.68rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--emerald);
+      margin-bottom: 16px;
+      animation: fadeUp 0.5s 0.1s ease both;
+    }
+
+    .confirm-headline {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(2.8rem, 8vw, 4.2rem);
+      letter-spacing: 0.03em;
+      line-height: 0.95;
+      margin-bottom: 20px;
+      animation: fadeUp 0.5s 0.15s ease both;
+    }
+
+    .confirm-headline .line-1 { display: block; color: var(--text-primary); }
+    .confirm-headline .line-2 { display: block; color: var(--emerald); }
+
+    .confirm-sub {
+      font-size: 1rem;
+      line-height: 1.65;
+      color: var(--text-muted);
+      max-width: 480px;
+      margin: 0 auto 40px;
+      animation: fadeUp 0.5s 0.2s ease both;
+    }
+
+    .confirm-sub strong {
+      color: var(--text-primary);
+      font-weight: 600;
+    }
+
+    /* ── TIMELINE ── */
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      margin: 0 auto 48px;
+      max-width: 440px;
+      text-align: left;
+      animation: fadeUp 0.5s 0.25s ease both;
+    }
+
+    .timeline-item {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      position: relative;
+    }
+
+    .timeline-item:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      left: 15px;
+      top: 32px;
+      width: 1px;
+      height: calc(100% - 8px);
+      background: var(--border-glass);
+    }
+
+    .timeline-dot {
+      width: 32px;
+      height: 32px;
+      flex-shrink: 0;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
+      font-weight: 500;
+      position: relative;
+      z-index: 1;
+    }
+
+    .timeline-dot.active {
+      background: rgba(0,232,122,0.15);
+      border: 1px solid rgba(0,232,122,0.4);
+      color: var(--emerald);
+    }
+
+    .timeline-dot.pending {
+      background: var(--bg-glass);
+      border: 1px solid var(--border-glass);
+      color: var(--text-dim);
+    }
+
+    .timeline-content {
+      padding: 4px 0 24px;
+    }
+
+    .timeline-title {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 3px;
+      letter-spacing: 0.02em;
+    }
+
+    .timeline-title.active { color: var(--emerald); }
+
+    .timeline-desc {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* ── DIVIDER ── */
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin: 0 auto 36px;
+      max-width: 440px;
+      animation: fadeUp 0.5s 0.3s ease both;
+    }
+
+    .divider-line {
+      flex: 1;
+      height: 1px;
+      background: var(--border-glass);
+    }
+
+    .divider-text {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      white-space: nowrap;
+    }
+
+    /* ── FOLLOW CARDS ── */
+    .follow-prompt {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.68rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      margin-bottom: 16px;
+      animation: fadeUp 0.5s 0.3s ease both;
+    }
+
+    .follow-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      max-width: 500px;
+      margin: 0 auto 48px;
+      animation: fadeUp 0.5s 0.35s ease both;
+    }
+
+    .follow-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      padding: 24px 20px;
+      background: var(--bg-glass);
+      border: 1px solid var(--border-glass);
+      text-decoration: none;
+      position: relative;
+      overflow: hidden;
+      transition: background 0.2s ease, border-color 0.2s ease, transform 0.15s ease;
+      cursor: pointer;
+    }
+
+    .follow-card:hover {
+      background: var(--bg-glass-hover);
+      transform: translateY(-2px);
+    }
+
+    .follow-card.youtube:hover { border-color: rgba(255,0,0,0.3); }
+    .follow-card.youtube::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 2px;
+      background: #ff0000;
+      transform: scaleX(0);
+      transition: transform 0.2s ease;
+    }
+    .follow-card.youtube:hover::after { transform: scaleX(1); }
+
+    .follow-card.twitter:hover { border-color: rgba(0,212,255,0.3); }
+    .follow-card.twitter::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 2px;
+      background: var(--cyan);
+      transform: scaleX(0);
+      transition: transform 0.2s ease;
+    }
+    .follow-card.twitter:hover::after { transform: scaleX(1); }
+
+    .follow-platform-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .follow-platform-icon.yt {
+      background: rgba(255,0,0,0.1);
+      border: 1px solid rgba(255,0,0,0.2);
+    }
+
+    .follow-platform-icon.x {
+      background: rgba(0,212,255,0.08);
+      border: 1px solid rgba(0,212,255,0.15);
+    }
+
+    .follow-platform-icon svg {
+      width: 22px;
+      height: 22px;
+    }
+
+    .follow-card-body {
+      text-align: center;
+    }
+
+    .follow-handle {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      margin-bottom: 4px;
+    }
+
+    .follow-handle.yt { color: #ff4444; }
+    .follow-handle.x { color: var(--cyan); }
+
+    .follow-desc {
+      font-size: 0.75rem;
+      color: var(--text-dim);
+      line-height: 1.4;
+    }
+
+    .follow-cta {
+      display: inline-block;
+      margin-top: 10px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 5px 12px;
+      border-radius: 2px;
+    }
+
+    .follow-cta.yt {
+      background: rgba(255,0,0,0.1);
+      color: #ff4444;
+      border: 1px solid rgba(255,0,0,0.2);
+    }
+
+    .follow-cta.x {
+      background: rgba(0,212,255,0.08);
+      color: var(--cyan);
+      border: 1px solid rgba(0,212,255,0.15);
+    }
+
+    /* ── BACK LINK ── */
+    .back-link {
+      animation: fadeUp 0.5s 0.4s ease both;
+    }
+
+    .back-link a {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .back-link a:hover { color: var(--gold); }
+
+    /* ── FOOTER ── */
+    footer {
+      position: relative;
+      z-index: 1;
+      border-top: 1px solid var(--border-glass);
+      padding: 24px;
+      max-width: 780px;
+      margin: 0 auto;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .footer-brand {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1rem;
+      letter-spacing: 0.12em;
+      color: var(--text-dim);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .footer-link {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .footer-link:hover { color: var(--gold); }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ── MOBILE ── */
+    @media (max-width: 500px) {
+      .follow-cards { grid-template-columns: 1fr; max-width: 320px; }
+      .confirm-headline { font-size: 2.6rem; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="bg-layer">
+    <div class="bg-grid"></div>
+    <div class="bg-radial"></div>
+    <div class="bg-noise"></div>
+  </div>
+
+  <nav>
+    <a href="/" class="nav-logo">ExpatBuildr</a>
+    <span class="nav-tag">✓ Request Received</span>
+  </nav>
+
+  <main>
+    <div class="container">
+
+      <!-- Animated check -->
+      <div class="confirm-ring">
+        <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle
+            class="ring-circle"
+            cx="40" cy="40" r="35"
+            stroke="#00e87a"
+            stroke-width="2"
+            stroke-linecap="round"
+            transform="rotate(-90 40 40)"
+          />
+          <polyline
+            class="ring-check"
+            points="24,41 35,52 56,30"
+            stroke="#00e87a"
+            stroke-width="2.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            fill="none"
+          />
+        </svg>
+      </div>
+
+      <div class="confirm-eyebrow">Audit request confirmed</div>
+
+      <h1 class="confirm-headline">
+        <span class="line-1">We got your site.</span>
+        <span class="line-2">Audit incoming.</span>
+      </h1>
+
+      <p class="confirm-sub">
+        We'll review your website manually and send a <strong>specific breakdown</strong> of what's leaking leads straight to your inbox. No fluff. No generic checklist. Real fixes.
+      </p>
+
+      <!-- Timeline -->
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-dot active">✓</div>
+          <div class="timeline-content">
+            <div class="timeline-title active">Request received</div>
+            <div class="timeline-desc">Your site is in the queue. Check your inbox for a confirmation email.</div>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot pending">2</div>
+          <div class="timeline-content">
+            <div class="timeline-title">Audit in progress</div>
+            <div class="timeline-desc">We review speed, mobile, SEO, and conversion path. Usually done within 48 hours.</div>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot pending">3</div>
+          <div class="timeline-content">
+            <div class="timeline-title">Report delivered</div>
+            <div class="timeline-desc">You get a clear breakdown with exact fixes ranked by impact. No obligation to work with us.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Divider -->
+      <div class="divider">
+        <div class="divider-line"></div>
+        <span class="divider-text">While you wait</span>
+        <div class="divider-line"></div>
+      </div>
+
+      <!-- Follow prompt -->
+      <p class="follow-prompt">Follow along for more loopholes</p>
+
+      <!-- Follow cards -->
+      <div class="follow-cards">
+
+        <a
+          href="https://youtube.com/@GalaxyArb"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="follow-card youtube"
+        >
+          <div class="follow-platform-icon yt">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z" fill="#ff0000"/>
+              <polygon points="9.75,15.02 15.5,12 9.75,8.98 9.75,15.02" fill="white"/>
+            </svg>
+          </div>
+          <div class="follow-card-body">
+            <div class="follow-handle yt">@GalaxyArb</div>
+            <div class="follow-desc">Geo-arbitrage tactics and newsletter growth in public</div>
+            <span class="follow-cta yt">Subscribe</span>
+          </div>
+        </a>
+
+        <a
+          href="https://x.com/expatbuildr"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="follow-card twitter"
+        >
+          <div class="follow-platform-icon x">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.253 5.622 5.912-5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z" fill="#00d4ff"/>
+            </svg>
+          </div>
+          <div class="follow-card-body">
+            <div class="follow-handle x">@expatbuildr</div>
+            <div class="follow-desc">Building in public. Systems, loopholes, and daily ops</div>
+            <span class="follow-cta x">Follow</span>
+          </div>
+        </a>
+
+      </div>
+
+      <div class="back-link">
+        <a href="/">← Back to ExpatBuildr</a>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    <span class="footer-brand">ExpatBuildr</span>
+    <nav class="footer-links">
+      <a href="/newsletter" class="footer-link">Newsletter</a>
+      <a href="/leaks" class="footer-link">Free Audit</a>
+      <a href="https://x.com/expatbuildr" class="footer-link" target="_blank" rel="noopener">X</a>
+    </nav>
+  </footer>
+
+</body>
+</html>

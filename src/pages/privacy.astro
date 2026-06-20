@@ -1,0 +1,98 @@
+---
+import Layout from '../layouts/Layout.astro';
+import '../styles/global.css';
+
+export const prerender = true;
+
+const title = "Privacy Policy | ExpatBuildr";
+const description = "Transparency on how we handle your data, pixels, and payments.";
+---
+
+<Layout 
+    title={title}
+    description={description}
+>
+    <!-- Main Content -->
+    <div class="max-w-4xl mx-auto py-12 px-6">
+        <header class="mb-16 reveal-on-scroll">
+            <p class="text-[10px] font-mono uppercase tracking-[0.4em] text-accent-blue mb-4">
+                Institutional / Documentation / Legal
+            </p>
+            <h1 class="text-5xl md:text-8xl font-black font-display tracking-tighter leading-none mb-6 text-slate-900 dark:text-white uppercase">
+                PRIVACY<br/>
+                <span class="text-slate-900/20 dark:text-white/20">POLICY.</span>
+            </h1>
+            <p class="text-slate-500 font-mono text-[10px] uppercase tracking-widest">Initial Release Protocol: April 10, 2026</p>
+        </header>
+
+        <div class="prose">
+            
+            <section class="space-y-4">
+                <h2 class="text-2xl font-black uppercase tracking-tight pb-2 border-b-2 border-slate-900/10 dark:border-white/10">01 · Overview</h2>
+                <p>
+                    At ExpatBuildr, we believe in transparency. This policy outlines how we collect, use, and protect your information when you interact with our "Remote Work Sniper" landing page and ecosystem.
+                </p>
+            </section>
+
+            <section class="space-y-4">
+                <h2 class="text-2xl font-black uppercase tracking-tight pb-2 border-b-2 border-slate-900/10 dark:border-white/10">02 · Information We Collect</h2>
+                <div class="space-y-6">
+                    <div>
+                        <h3 class="font-bold text-lg">A. Email Subscriptions (Beehiiv)</h3>
+                        <p>
+                            When you sign up for our free sample list, your email address is processed and stored via **Beehiiv**. We use this to send you job updates and promotional content. You can opt-out at any time via the unsubscribe link in the footer of our emails.
+                        </p>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-lg">B. Payment Data (Stripe)</h3>
+                        <p>
+                            When you purchase access to the full list, payments are processed securely via **Stripe**. ExpatBuildr does not store your credit card information on our servers. Stripe's privacy policy applies to these transactions.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="space-y-4">
+                <h2 class="text-2xl font-black uppercase tracking-tight pb-2 border-b-2 border-slate-900/10 dark:border-white/10">03 · Tracking & Pixels</h2>
+                <p>
+                    We use industry-standard tracking technologies to optimize our advertising and understand how users interact with our site. This includes:
+                </p>
+                <ul class="list-disc pl-5 space-y-2 text-gray-600">
+                    <li><strong>Meta Pixel & CAPI:</strong> For retargeting on Facebook and Instagram.</li>
+                    <li><strong>TikTok Pixel:</strong> For measuring ad performance on TikTok.</li>
+                    <li><strong>Google Analytics (GA4):</strong> To understand traffic patterns.</li>
+                    <li><strong>Reddit & LinkedIn Pixels:</strong> For B2B and niche audience retargeting.</li>
+                </ul>
+            </section>
+
+            <section class="space-y-4">
+                <h2 class="text-2xl font-black uppercase tracking-tight pb-2 border-b-2 border-slate-900/10 dark:border-white/10">04 · Data Usage</h2>
+                <p>
+                    We use your data strictly to:
+                </p>
+                <ul class="list-disc pl-5 space-y-2 text-gray-600 font-medium">
+                    <li>Deliver the "Remote Work Sniper" jobs list.</li>
+                    <li>Verify your access to the private Notion board.</li>
+                    <li>Improve our job discovery engine (Galaxy Leads).</li>
+                    <li>Communicate important updates regarding your lifetime access.</li>
+                </ul>
+            </section>
+
+            <section class="space-y-4">
+                <h2 class="text-2xl font-black uppercase tracking-tight pb-2 border-b-2 border-slate-900/10 dark:border-white/10">05 · Contact</h2>
+                <p>
+                    If you have questions about your data or wish to request a deletion of your record, please contact us at:
+                </p>
+                <a href="mailto:privacy@expatbuildr.com" class="inline-block font-black border-b-2 border-accent-blue pb-1 hover:text-accent-cyan transition-colors no-underline">
+                    privacy@expatbuildr.com
+                </a>
+            </section>
+
+        </div>
+
+        <div class="mt-24 pt-8 border-t border-slate-900/10 dark:border-white/10 flex justify-between items-center text-[10px] font-mono text-slate-500 uppercase tracking-widest">
+            <span>© {new Date().getFullYear()} ExpatBuildr</span>
+            <a href="/terms" class="hover:text-accent-blue transition-colors">Go to Terms of Service →</a>
+        </div>
+    </div>
+</Layout>

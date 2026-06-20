@@ -1,0 +1,140 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const title = "ExpatBuildr — Tony Long";
+const description = "American founder building from Cebu, Philippines. Publishing the arbitrage playbook weekly.";
+---
+
+<Layout title={title} description={description} ogImage="/expatog.jpg">
+  <!-- HERO -->
+  <section class="hero">
+    <div class="eyebrow">American · Cebu, Philippines · Building in public</div>
+    <h1>
+      Lost everything.<br>
+      <span class="strike">stayed broke.</span><br>
+      Did the math.<br>
+      <span class="signal">Left.</span>
+    </h1>
+    <p class="hero-sub">
+      I'm Tony Long. I lost $300K in crypto, moved to Cebu, and started earning in USD while spending in pesos. Now I build online businesses from Southeast Asia and document everything in public.
+    </p>
+    <div class="form-wrap">
+      <label class="form-label">Get the weekly arbitrage playbook — free</label>
+      <div class="form-row" style="display:block;">
+        <script async src="https://subscribe-forms.beehiiv.com/v3/loader.js" data-beehiiv-form="1a4c06ec-5008-4fcc-8297-e412cd1ef5bd"></script>
+      </div>
+      <div class="form-trust">
+        <span>Free forever</span>
+        <span>4 resources instantly</span>
+        <span>No spam. Ever.</span>
+      </div>
+    </div>
+  </section>
+
+  <hr class="section-divider" />
+
+  <!-- STORY -->
+  <section class="story-section" id="story">
+    <div class="section-label">The story</div>
+    <h2>I didn't leave because things went well.</h2>
+    <p>
+      I lost $300K in crypto. Not in one trade — in a series of increasingly confident bets on things I couldn't control. I had skill. My position was wrong. <strong>Skill in a bad position still loses.</strong>
+    </p>
+    <p>
+      That loss forced me to look at everything differently. Not just how I earn money — but where I earn it, where I spend it, and what systems I build in between.
+    </p>
+    <p>
+      I moved to Cebu, Philippines. Started earning in USD. Spending in pesos. The gap between those two currencies became my weapon. <strong>That's arbitrage.</strong> It works in 15 countries. I'm running it from one of them — and building it all in public.
+    </p>
+  </section>
+
+  <!-- STATS -->
+  <div class="stats-bar">
+    <div class="stats-inner">
+      <div class="stat-block">
+        <div class="stat-number"><span class="signal">$300K</span></div>
+        <div class="stat-label">Lost in crypto.<br>The lesson that changed everything.</div>
+      </div>
+      <div class="stat-block">
+        <div class="stat-number">15</div>
+        <div class="stat-label">Arbitrage Diamond<br>countries in the playbook.</div>
+      </div>
+      <div class="stat-block">
+        <div class="stat-number" id="sub-count">566</div>
+        <div class="stat-label">Freedom Seekers<br>reading every Tuesday.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PROPERTIES -->
+  <section class="properties-section" id="work">
+    <div class="properties-inner">
+      <div class="section-label">What I'm building</div>
+      <h2>Four properties.<br>One mission.</h2>
+      <div class="props-grid">
+        <a href="https://galaxyarbitrage.com" target="_blank" rel="noopener" class="prop-card">
+          <div>
+            <span class="prop-tag">Newsletter</span>
+            <div class="prop-name">Galaxy Arbitrage Weekly</div>
+            <p class="prop-desc">The weekly playbook for Americans living abroad. Geographic arbitrage, currency gaps, labor plays, AI leverage, and health arbitrage. Every Tuesday. Free forever.</p>
+          </div>
+          <div class="prop-arrow">→</div>
+        </a>
+        <a href="https://galaxybuilt.dev" target="_blank" rel="noopener" class="prop-card">
+          <div>
+            <span class="prop-tag">Studio</span>
+            <div class="prop-name">GalaxyBuilt</div>
+            <p class="prop-desc">Done-for-you landing pages and conversion funnels for expat founders and remote business owners. If your website is leaking customers — I fix that.</p>
+          </div>
+          <div class="prop-arrow">→</div>
+        </a>
+        <a href="https://youtube.com/@GalaxyArb" target="_blank" rel="noopener" class="prop-card">
+          <div>
+            <span class="prop-tag">YouTube</span>
+            <div class="prop-name">@GalaxyArb</div>
+            <p class="prop-desc">Deeper dives on the arbitrage plays covered in the newsletter. Real numbers, real locations, real math — filmed from Cebu.</p>
+          </div>
+          <div class="prop-arrow">→</div>
+        </a>
+        <a href="https://youtube.com/@expatbuildr" target="_blank" rel="noopener" class="prop-card">
+          <div>
+            <span class="prop-tag">YouTube</span>
+            <div class="prop-name">@ExpatBuildr</div>
+            <p class="prop-desc">The unfiltered, behind-the-scenes look into my life as an expat.</p>
+          </div>
+          <div class="prop-arrow">→</div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER -->
+  <section class="newsletter-section" id="newsletter">
+    <div class="section-label">Every Tuesday · Free forever</div>
+    <h2>The arbitrage playbook.<br>Weekly.</h2>
+    <p>
+      Real strategies for Americans living abroad. Geographic arbitrage, currency gaps, remote income plays, health savings, and AI leverage — written by someone running the model in real time from Cebu.
+    </p>
+    <div class="form-wrap">
+      <label class="form-label">Join 566 Freedom Seekers</label>
+      <div class="form-row" style="display:block;">
+        <script async src="https://subscribe-forms.beehiiv.com/v3/loader.js" data-beehiiv-form="1a4c06ec-5008-4fcc-8297-e412cd1ef5bd"></script>
+      </div>
+      <div class="form-trust">
+        <span>Free forever</span>
+        <span>4 resources delivered instantly</span>
+        <span>Unsubscribe anytime</span>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    fetch('/get-counter')
+      .then(r => r.json())
+      .then(d => {
+        const el = document.getElementById('sub-count');
+        if (el) el.textContent = d.count.toLocaleString();
+      })
+      .catch(() => {});
+  </script>
+</Layout>

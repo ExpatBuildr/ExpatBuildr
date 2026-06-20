@@ -1,0 +1,946 @@
+---
+// /leaks — Audit Hook Page
+const META_PIXEL_ID = import.meta.env.META_PIXEL_ID || '1480646753745240';
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Website Is Leaking Revenue — ExpatBuildr Free Audit</title>
+  <meta name="description" content="Most small business websites silently bleed leads every day. Get a free audit and find out exactly where yours is losing money." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Syne:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <!-- Meta Pixel -->
+  <script is:inline define:vars={{ META_PIXEL_ID }}>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window,document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', META_PIXEL_ID);
+    fbq('track', 'PageView');
+    fbq('track', 'ViewContent', {
+      content_name: 'Leaks Audit Page',
+      content_category: 'Lead Capture',
+    });
+  </script>
+  <noscript>
+    <img height="1" width="1" style="display:none"
+      src={`https://www.facebook.com/tr?id=${META_PIXEL_ID}&ev=PageView&noscript=1`} />
+  </noscript>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --gold: #f5a623;
+      --orange: #ff6b35;
+      --cyan: #00d4ff;
+      --emerald: #00e87a;
+      --red-leak: #ff2d55;
+      --bg-deep: #080b0f;
+      --bg-glass: rgba(255,255,255,0.03);
+      --bg-glass-hover: rgba(255,255,255,0.06);
+      --border-glass: rgba(255,255,255,0.08);
+      --border-glow: rgba(245,166,35,0.3);
+      --text-primary: #f0ece4;
+      --text-muted: rgba(240,236,228,0.5);
+      --text-dim: rgba(240,236,228,0.3);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background-color: var(--bg-deep);
+      color: var(--text-primary);
+      font-family: 'Syne', sans-serif;
+      min-height: 100vh;
+      overflow-x: hidden;
+      cursor: default;
+    }
+
+    /* ── BACKGROUND ── */
+    .bg-layer {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .bg-grid {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(245,166,35,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(245,166,35,0.04) 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
+
+    .bg-radial {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 50% at 20% 20%, rgba(255,45,85,0.07) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 40% at 80% 80%, rgba(245,166,35,0.06) 0%, transparent 50%),
+        radial-gradient(ellipse 50% 60% at 50% 50%, rgba(0,212,255,0.03) 0%, transparent 60%);
+    }
+
+    .bg-noise {
+      position: absolute;
+      inset: 0;
+      opacity: 0.025;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      background-size: 200px;
+    }
+
+    /* ── LAYOUT ── */
+    .page {
+      position: relative;
+      z-index: 1;
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: relative;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 28px 24px;
+      max-width: 780px;
+      margin: 0 auto;
+    }
+
+    .nav-logo {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.4rem;
+      letter-spacing: 0.12em;
+      color: var(--gold);
+      text-decoration: none;
+    }
+
+    .nav-tag {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.65rem;
+      color: var(--text-dim);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      border: 1px solid var(--border-glass);
+      padding: 5px 10px;
+      border-radius: 2px;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      padding: 64px 0 48px;
+      animation: fadeUp 0.7s ease both;
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--red-leak);
+      margin-bottom: 24px;
+    }
+
+    .hero-eyebrow::before {
+      content: '';
+      display: block;
+      width: 6px;
+      height: 6px;
+      background: var(--red-leak);
+      border-radius: 50%;
+      animation: pulse-red 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse-red {
+      0%, 100% { opacity: 1; transform: scale(1); box-shadow: 0 0 0 0 rgba(255,45,85,0.4); }
+      50% { opacity: 0.7; transform: scale(1.2); box-shadow: 0 0 0 6px rgba(255,45,85,0); }
+    }
+
+    .hero-headline {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(3.2rem, 9vw, 5.5rem);
+      line-height: 0.95;
+      letter-spacing: 0.02em;
+      margin-bottom: 28px;
+    }
+
+    .hero-headline .line-leak {
+      display: block;
+      color: var(--red-leak);
+      position: relative;
+    }
+
+    .hero-headline .line-leak::after {
+      content: '';
+      position: absolute;
+      bottom: 2px;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(90deg, var(--red-leak), transparent);
+      opacity: 0.4;
+    }
+
+    .hero-headline .line-white {
+      display: block;
+      color: var(--text-primary);
+    }
+
+    .hero-headline .line-gold {
+      display: block;
+      color: var(--gold);
+    }
+
+    .hero-sub {
+      font-size: 1.1rem;
+      line-height: 1.65;
+      color: var(--text-muted);
+      max-width: 560px;
+      margin-bottom: 0;
+      font-weight: 400;
+    }
+
+    .hero-sub strong {
+      color: var(--text-primary);
+      font-weight: 600;
+    }
+
+    /* ── LEAK STATS ── */
+    .leak-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin: 48px 0;
+      animation: fadeUp 0.7s 0.15s ease both;
+    }
+
+    .stat-card {
+      background: var(--bg-glass);
+      border: 1px solid var(--border-glass);
+      border-top: 2px solid var(--red-leak);
+      padding: 20px 16px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .stat-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 60px;
+      background: linear-gradient(180deg, rgba(255,45,85,0.06), transparent);
+    }
+
+    .stat-number {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2.4rem;
+      letter-spacing: 0.04em;
+      color: var(--red-leak);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+
+    .stat-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.62rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      line-height: 1.4;
+    }
+
+    /* ── PAIN SECTION ── */
+    .pain-section {
+      margin: 0 0 56px;
+      animation: fadeUp 0.7s 0.2s ease both;
+    }
+
+    .section-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .section-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, var(--border-glass), transparent);
+    }
+
+    .pain-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .pain-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 16px 18px;
+      background: var(--bg-glass);
+      border: 1px solid var(--border-glass);
+      border-left: 2px solid var(--red-leak);
+      transition: background 0.2s ease, border-color 0.2s ease;
+    }
+
+    .pain-item:hover {
+      background: var(--bg-glass-hover);
+      border-left-color: var(--orange);
+    }
+
+    .pain-icon {
+      font-size: 1rem;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .pain-text {
+      font-size: 0.92rem;
+      line-height: 1.55;
+      color: var(--text-muted);
+    }
+
+    .pain-text strong {
+      color: var(--text-primary);
+      font-weight: 600;
+    }
+
+    /* ── WHAT YOU GET ── */
+    .audit-section {
+      margin: 0 0 56px;
+      animation: fadeUp 0.7s 0.25s ease both;
+    }
+
+    .audit-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .audit-card {
+      background: var(--bg-glass);
+      border: 1px solid var(--border-glass);
+      padding: 20px;
+      position: relative;
+      overflow: hidden;
+      transition: background 0.2s ease;
+    }
+
+    .audit-card:hover {
+      background: var(--bg-glass-hover);
+    }
+
+    .audit-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, var(--cyan), transparent);
+      opacity: 0;
+      transition: opacity 0.2s ease;
+    }
+
+    .audit-card:hover::after { opacity: 0.5; }
+
+    .audit-icon {
+      font-size: 1.3rem;
+      margin-bottom: 10px;
+    }
+
+    .audit-title {
+      font-family: 'Syne', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--cyan);
+      letter-spacing: 0.04em;
+      margin-bottom: 6px;
+      text-transform: uppercase;
+    }
+
+    .audit-desc {
+      font-size: 0.82rem;
+      line-height: 1.5;
+      color: var(--text-muted);
+    }
+
+    /* ── FORM ── */
+    .form-section {
+      margin: 0 0 80px;
+      animation: fadeUp 0.7s 0.3s ease both;
+    }
+
+    .form-card {
+      background: rgba(255,255,255,0.025);
+      border: 1px solid var(--border-glow);
+      padding: 40px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .form-card::before {
+      content: '';
+      position: absolute;
+      top: -1px; left: 20%; right: 20%;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    }
+
+    .form-card::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 120px;
+      background: radial-gradient(ellipse at 50% 0%, rgba(245,166,35,0.05), transparent 70%);
+      pointer-events: none;
+    }
+
+    .form-headline {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2rem;
+      letter-spacing: 0.05em;
+      color: var(--text-primary);
+      margin-bottom: 8px;
+    }
+
+    .form-sub {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      margin-bottom: 32px;
+      line-height: 1.5;
+    }
+
+    .form-sub span {
+      color: var(--emerald);
+      font-weight: 600;
+    }
+
+    .form-group {
+      margin-bottom: 16px;
+    }
+
+    .form-label {
+      display: block;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.62rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      margin-bottom: 8px;
+    }
+
+    .form-input {
+      width: 100%;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border-glass);
+      color: var(--text-primary);
+      font-family: 'Syne', sans-serif;
+      font-size: 0.95rem;
+      padding: 13px 16px;
+      outline: none;
+      transition: border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+      border-radius: 0;
+      -webkit-appearance: none;
+    }
+
+    .form-input::placeholder {
+      color: var(--text-dim);
+      font-size: 0.88rem;
+    }
+
+    .form-input:focus {
+      border-color: var(--gold);
+      background: rgba(245,166,35,0.04);
+      box-shadow: 0 0 0 3px rgba(245,166,35,0.08);
+    }
+
+    .form-promise {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 20px;
+      padding: 12px 14px;
+      background: rgba(0,232,122,0.04);
+      border: 1px solid rgba(0,232,122,0.12);
+    }
+
+    .form-promise-icon {
+      color: var(--emerald);
+      font-size: 0.9rem;
+      flex-shrink: 0;
+    }
+
+    .form-promise-text {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.08em;
+      color: var(--emerald);
+      line-height: 1.4;
+    }
+
+    .form-submit {
+      width: 100%;
+      padding: 16px 24px;
+      background: linear-gradient(135deg, var(--gold), var(--orange));
+      border: none;
+      color: #0a0a0a;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.2rem;
+      letter-spacing: 0.12em;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .form-submit::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(255,255,255,0.15), transparent);
+      opacity: 0;
+      transition: opacity 0.2s ease;
+    }
+
+    .form-submit:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 8px 32px rgba(245,166,35,0.3);
+    }
+
+    .form-submit:hover::before { opacity: 1; }
+    .form-submit:active { transform: translateY(0); }
+    .form-submit:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+
+    .form-fine {
+      margin-top: 12px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.1em;
+      color: var(--text-dim);
+      text-align: center;
+    }
+
+    /* ── SUCCESS STATE ── */
+    .success-state {
+      display: none;
+      text-align: center;
+      padding: 20px 0;
+    }
+
+    .success-icon {
+      font-size: 3rem;
+      margin-bottom: 16px;
+    }
+
+    .success-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2rem;
+      letter-spacing: 0.05em;
+      color: var(--emerald);
+      margin-bottom: 10px;
+    }
+
+    .success-text {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* ── SOCIAL PROOF ── */
+    .proof-section {
+      margin: 0 0 64px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      animation: fadeUp 0.7s 0.35s ease both;
+    }
+
+    .proof-divider {
+      flex: 1;
+      height: 1px;
+      background: var(--border-glass);
+    }
+
+    .proof-text {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.62rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      white-space: nowrap;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      position: relative;
+      z-index: 1;
+      border-top: 1px solid var(--border-glass);
+      padding: 28px 24px;
+      max-width: 780px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .footer-brand {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1rem;
+      letter-spacing: 0.12em;
+      color: var(--text-dim);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .footer-link {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .footer-link:hover { color: var(--gold); }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ── MOBILE ── */
+    @media (max-width: 600px) {
+      .leak-stats { grid-template-columns: repeat(3, 1fr); gap: 8px; }
+      .stat-number { font-size: 1.8rem; }
+      .audit-grid { grid-template-columns: 1fr; }
+      .form-card { padding: 28px 20px; }
+      nav { padding: 20px 24px; }
+      .hero { padding: 40px 0 36px; }
+    }
+
+    /* ── ERROR STATE ── */
+    .form-error {
+      display: none;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.08em;
+      color: var(--red-leak);
+      margin-top: 8px;
+    }
+
+    .input-error { border-color: var(--red-leak) !important; }
+  </style>
+</head>
+
+<body>
+
+  <!-- Background -->
+  <div class="bg-layer">
+    <div class="bg-grid"></div>
+    <div class="bg-radial"></div>
+    <div class="bg-noise"></div>
+  </div>
+
+  <!-- Nav -->
+  <nav>
+    <a href="/" class="nav-logo">ExpatBuildr</a>
+    <span class="nav-tag">Free Audit</span>
+  </nav>
+
+  <!-- Page -->
+  <main class="page">
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero-eyebrow">Revenue leak detected</div>
+      <h1 class="hero-headline">
+        <span class="line-leak">Your website</span>
+        <span class="line-white">is losing leads</span>
+        <span class="line-gold">right now.</span>
+      </h1>
+      <p class="hero-sub">
+        Most small business websites have <strong>3 to 7 fixable issues</strong> quietly turning away potential clients every single day. Speed problems. Broken forms. No clear CTA. Mobile layouts that fall apart. You built the site and moved on. The leaks kept flowing.
+      </p>
+    </section>
+
+    <!-- Stats -->
+    <div class="leak-stats">
+      <div class="stat-card">
+        <div class="stat-number">53%</div>
+        <div class="stat-label">of mobile visitors leave if page loads past 3 seconds</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">70%</div>
+        <div class="stat-label">of small business sites have no clear conversion path</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">$0</div>
+        <div class="stat-label">cost to find out exactly where yours is broken</div>
+      </div>
+    </div>
+
+    <!-- Pain -->
+    <section class="pain-section">
+      <div class="section-label">Sound familiar</div>
+      <ul class="pain-list">
+        <li class="pain-item">
+          <span class="pain-icon">📉</span>
+          <span class="pain-text"><strong>You're getting traffic but no calls.</strong> People land on your site and leave. You have no idea why or what they saw before they bounced.</span>
+        </li>
+        <li class="pain-item">
+          <span class="pain-icon">📱</span>
+          <span class="pain-text"><strong>Your site looks fine on desktop.</strong> But 70% of your visitors are on phones and see a broken layout, tiny text, or a form that doesn't submit.</span>
+        </li>
+        <li class="pain-item">
+          <span class="pain-icon">🐌</span>
+          <span class="pain-text"><strong>It loads slow and you know it.</strong> But fixing speed feels like a full rebuild so you've left it. Every second of delay is costing you real customers.</span>
+        </li>
+        <li class="pain-item">
+          <span class="pain-icon">🔍</span>
+          <span class="pain-text"><strong>Google can't find you.</strong> No meta descriptions, duplicate titles, unindexed pages. Your competitors are showing up where you should be.</span>
+        </li>
+        <li class="pain-item">
+          <span class="pain-icon">💬</span>
+          <span class="pain-text"><strong>No one knows what to do next.</strong> Your homepage doesn't have a clear call to action. Visitors read a bit and leave because you never asked them to stay.</span>
+        </li>
+      </ul>
+    </section>
+
+    <!-- What you get -->
+    <section class="audit-section">
+      <div class="section-label">What the audit covers</div>
+      <div class="audit-grid">
+        <div class="audit-card">
+          <div class="audit-icon">⚡</div>
+          <div class="audit-title">Speed & Core Web Vitals</div>
+          <div class="audit-desc">Load time, LCP, CLS, FID scored against your actual competitors not a generic benchmark.</div>
+        </div>
+        <div class="audit-card">
+          <div class="audit-icon">📱</div>
+          <div class="audit-title">Mobile Experience</div>
+          <div class="audit-desc">How your site renders on the phones your customers actually use. Tap targets, layout breaks, font sizing.</div>
+        </div>
+        <div class="audit-card">
+          <div class="audit-icon">🎯</div>
+          <div class="audit-title">Conversion Path</div>
+          <div class="audit-desc">Is there a clear action for visitors to take? CTA placement, form friction, trust signals above the fold.</div>
+        </div>
+        <div class="audit-card">
+          <div class="audit-icon">🔍</div>
+          <div class="audit-title">SEO Fundamentals</div>
+          <div class="audit-desc">Indexing, title tags, meta descriptions, broken links. The basics that determine whether Google bothers with you.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Form -->
+    <section class="form-section" id="audit">
+      <div class="form-card">
+
+        <div class="form-state-default" id="formDefault">
+          <h2 class="form-headline">Get your free audit</h2>
+          <p class="form-sub">
+            Drop your website below. We'll review it manually and send you a
+            <span>specific breakdown</span> of what's leaking leads and exactly how to fix it.
+            No pitch decks. No vague recommendations.
+          </p>
+
+          <div class="form-promise">
+            <span class="form-promise-icon">✓</span>
+            <span class="form-promise-text">Free. No obligation. Audit delivered within 48 hours via email.</span>
+          </div>
+
+          <form id="auditForm" novalidate>
+            <div class="form-group">
+              <label class="form-label" for="name">Your name</label>
+              <input
+                class="form-input"
+                type="text"
+                id="name"
+                name="name"
+                placeholder="First name is fine"
+                autocomplete="given-name"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="email">Email address</label>
+              <input
+                class="form-input"
+                type="email"
+                id="email"
+                name="email"
+                placeholder="you@yourbusiness.com"
+                autocomplete="email"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="website">Your website URL</label>
+              <input
+                class="form-input"
+                type="url"
+                id="website"
+                name="website"
+                placeholder="https://yourbusiness.com"
+                autocomplete="url"
+                required
+              />
+              <div class="form-error" id="websiteError">Please enter a valid URL starting with https://</div>
+            </div>
+
+            <button class="form-submit" type="submit" id="submitBtn">
+              Find My Revenue Leaks →
+            </button>
+
+            <p class="form-fine">No spam. No sales calls unless you ask for one. Unsubscribe anytime.</p>
+          </form>
+        </div>
+
+        <!-- Success -->
+        <div class="success-state" id="formSuccess">
+          <div class="success-icon">✓</div>
+          <div class="success-title">Audit Request Received</div>
+          <p class="success-text">
+            We'll review your site and send your audit to your inbox within 48 hours.<br /><br />
+            Check your email for a confirmation. If you don't see it, check spam.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Social proof divider -->
+    <div class="proof-section">
+      <div class="proof-divider"></div>
+      <span class="proof-text">Built by ExpatBuildr · expatbuildr.com</span>
+      <div class="proof-divider"></div>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <span class="footer-brand">ExpatBuildr</span>
+    <nav class="footer-links">
+      <a href="/newsletter" class="footer-link">Newsletter</a>
+      <a href="/expats" class="footer-link">Free Guide</a>
+      <a href="https://x.com/expatbuildr" class="footer-link" target="_blank" rel="noopener">X</a>
+    </nav>
+  </footer>
+
+  <script is:inline>
+    const form = document.getElementById('auditForm');
+    const submitBtn = document.getElementById('submitBtn');
+    const formDefault = document.getElementById('formDefault');
+    const formSuccess = document.getElementById('formSuccess');
+    const websiteInput = document.getElementById('website');
+    const websiteError = document.getElementById('websiteError');
+
+    function isValidUrl(val) {
+      try {
+        const u = new URL(val);
+        return u.protocol === 'https:' || u.protocol === 'http:';
+      } catch {
+        return false;
+      }
+    }
+
+    websiteInput.addEventListener('blur', () => {
+      if (websiteInput.value && !isValidUrl(websiteInput.value)) {
+        websiteInput.classList.add('input-error');
+        websiteError.style.display = 'block';
+      } else {
+        websiteInput.classList.remove('input-error');
+        websiteError.style.display = 'none';
+      }
+    });
+
+    // Fire Lead event when form submit button is clicked (intent signal)
+    submitBtn.addEventListener('click', () => {
+      if (window.fbq) fbq('track', 'Lead', { content_name: 'Leaks Audit Request' });
+    });
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const website = websiteInput.value.trim();
+
+      if (!name || !email || !website) return;
+      if (!isValidUrl(website)) {
+        websiteInput.classList.add('input-error');
+        websiteError.style.display = 'block';
+        return;
+      }
+
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Sending...';
+
+      try {
+        const res = await fetch('/audit-leads', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            name,
+            email,
+            website,
+            source: 'leaks-page',
+            submitted_at: new Date().toISOString()
+          })
+        });
+
+        if (res.ok) {
+          // Fire CompleteRegistration on confirmed submission
+          if (window.fbq) fbq('track', 'CompleteRegistration', {
+            content_name: 'Leaks Audit Request',
+            status: true,
+          });
+          formDefault.style.display = 'none';
+          formSuccess.style.display = 'block';
+        } else {
+          throw new Error('Request failed');
+        }
+      } catch (err) {
+        console.error('Submission error:', err);
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Try Again';
+      }
+    });
+  </script>
+
+</body>
+</html>

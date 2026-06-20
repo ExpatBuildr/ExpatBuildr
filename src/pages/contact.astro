@@ -1,0 +1,69 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+	title="Contact | ExpatBuildr"
+	description="Get in touch with Tony Long at ExpatBuildr."
+>
+	<section class="story-section" style="text-align:center;">
+		<div class="section-label" style="margin: 0 auto 24px;">Contact</div>
+		<h2>Let's talk.</h2>
+		<p style="margin: 0 auto 24px;">
+			Questions about the newsletter, the playbook, or working together — reach out below.
+		</p>
+	</section>
+
+	<div class="story-section" style="padding-top:0;">
+		<form class="form-wrap" id="contact-form">
+			<label class="form-label" for="name">Full name</label>
+			<input type="text" id="name" placeholder="John Doe" required style="margin-bottom:16px; width:100%; border-right:2px solid var(--black);" />
+
+			<label class="form-label" for="email">Email address</label>
+			<input type="email" id="email" placeholder="john@example.com" required style="margin-bottom:16px; width:100%; border-right:2px solid var(--black);" />
+
+			<label class="form-label" for="message">Your message</label>
+			<textarea id="message" rows="6" placeholder="What's on your mind?" required style="width:100%; padding:18px 22px; font-size:17px; font-family:'Epilogue',sans-serif; border:2px solid var(--black); outline:none; margin-bottom:16px;"></textarea>
+
+			<button type="submit" id="contact-submit" class="btn-primary" style="width:100%; justify-content:center;">Send message</button>
+			<p id="contact-msg" class="hidden form-trust" style="margin-top:16px;"></p>
+		</form>
+	</div>
+
+	<script is:inline>
+		document.getElementById('contact-form')?.addEventListener('submit', async (e) => {
+			e.preventDefault();
+			const btn = document.getElementById('contact-submit');
+			const msg = document.getElementById('contact-msg');
+
+			const name = document.getElementById('name').value.trim();
+			const email = document.getElementById('email').value.trim();
+			const message = document.getElementById('message').value.trim();
+
+			btn.disabled = true;
+			btn.textContent = 'Sending...';
+
+			try {
+				const res = await fetch('https://formspree.io/f/xyzgpnqw', {
+					method: 'POST',
+					headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+					body: JSON.stringify({ name, email, message })
+				});
+
+				if (res.ok) {
+					btn.textContent = '✓ Message sent';
+					msg.textContent = "We'll be in touch soon.";
+					msg.classList.remove('hidden');
+					e.target.reset();
+				} else {
+					throw new Error('Failed');
+				}
+			} catch {
+				btn.disabled = false;
+				btn.textContent = 'Send message';
+				msg.textContent = 'Something went wrong. Email us directly: contact@expatbuildr.com';
+				msg.classList.remove('hidden');
+			}
+		});
+	</script>
+</Layout>

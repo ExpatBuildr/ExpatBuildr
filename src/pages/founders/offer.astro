@@ -1,0 +1,368 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import '../../styles/funnel.css';
+---
+
+<Layout minimal={true} noAnimations={true} title="Launch Your Business Right" description="Landing page, email sequence, and lead magnet. Everything a founder needs to launch and convert.">
+  <script is:inline>
+    (() => {
+      document.documentElement.classList.add('dark');
+      document.documentElement.classList.remove('light');
+    })();
+  </script>
+
+  <nav>
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">
+        <img src="/images/logo.jpg" alt="ExpatBuildr Logo" class="nav-logo-img" />
+        <div class="logo-text">GALAXY<span class="built">BUILT</span><span class="slug">/offer</span></div>
+      </a>
+      <a href="#services" class="nav-cta">See Pricing →</a>
+    </div>
+  </nav>
+
+  <section id="hero">
+    <div class="wrap">
+      <div class="kicker fade-1">For Founders Launching Something · Done For You</div>
+      <h1 class="fade-2">You built the product.<br /><em>Let me build</em><br />the launch.</h1>
+      <p class="hero-sub fade-3">Most founders go live with a broken funnel, no email capture, and pixels that don't fire. I fix all of that — fast, clean, handed back ready to convert.</p>
+      <div class="hero-warning fade-3">⚡ Built in 3–7 days · You own everything · No monthly fees</div>
+      <div class="hero-actions fade-4">
+        <a href="#services" class="btn-primary">See the Offers →</a>
+        <a href="#process" class="btn-outline">How It Works</a>
+      </div>
+      <div class="proof-bar fade-5">
+        <div class="proof-item"><div class="num">40<span>+</span></div><div class="desc">Systems delivered</div></div>
+        <div class="proof-item"><div class="num">3<span>–7</span></div><div class="desc">Day build timeline</div></div>
+        <div class="proof-item"><div class="num">100<span>%</span></div><div class="desc">Done for you</div></div>
+        <div class="proof-item"><div class="num">$0</div><div class="desc">Monthly fees</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="problem">
+    <div class="wrap">
+      <div class="section-tag">01 · The Problem</div>
+      <h2>You're launching<br /><em>without a net.</em></h2>
+      <div class="problem-grid">
+        <div class="prob-item" data-n="01"><h3>No Email Capture</h3><p>You send traffic and it disappears. No follow-up, no nurture, no second chance to convert. Every visitor lost is money left on the table.</p></div>
+        <div class="prob-item" data-n="02"><h3>Dead Pixels</h3><p>Your Meta and Google pixels aren't firing. You're running blind — no retargeting audiences, no conversion data, no optimization possible.</p></div>
+        <div class="prob-item" data-n="03"><h3>Copy That Converts Nobody</h3><p>Generic headlines, vague value props. Visitors land, scan for two seconds, and bounce. Your product is good — your page isn't selling it.</p></div>
+        <div class="prob-item" data-n="04"><h3>No Paid Offer Path</h3><p>Even if someone's interested, there's nowhere to send them. No clear CTA, no Stripe link, no upsell. Interest dies before it becomes revenue.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="wrap">
+      <div class="section-tag">02 · The Fix</div>
+      <h2>Three offers.<br /><em>One founder.</em><br />Everything you need.</h2>
+      <div class="pricing-grid">
+
+        <div class="plan">
+          <div class="plan-tag">Starter</div>
+          <h3>Landing Page<br />Build</h3>
+          <p class="plan-tagline">One high-converting landing page with copy written, pixel installed, and email capture live.</p>
+          <div class="plan-price"><sup>$</sup>500</div>
+          <div class="plan-delivery">3-day delivery</div>
+          <ul class="plan-features">
+            <li>Landing page built and deployed</li>
+            <li>Conversion copy written for you</li>
+            <li>Email capture form connected</li>
+            <li>Meta / Google pixel installed</li>
+            <li>Mobile responsive</li>
+            <li>You own the code</li>
+          </ul>
+          <a href="https://buy.stripe.com/5kQ5kC7WL07g7po5CU2oE03" class="plan-btn" target="_blank" rel="noopener">Buy Landing Page →</a>
+        </div>
+
+        <div class="plan featured">
+          <div class="plan-tag">Growth</div>
+          <h3>Landing Page +<br />Email Sequence</h3>
+          <p class="plan-tagline">Everything in Starter, plus a lead magnet PDF and 3-part welcome email sequence that nurtures leads to your paid offer.</p>
+          <div class="plan-price"><sup>$</sup>950</div>
+          <div class="plan-delivery">5-day delivery</div>
+          <ul class="plan-features">
+            <li>Everything in Starter, PLUS:</li>
+            <li>Thank-you page + download page</li>
+            <li>Lead magnet PDF created & delivered</li>
+            <li>Beehiiv newsletter connected</li>
+            <li>3-part welcome email sequence written</li>
+          </ul>
+          <a href="https://buy.stripe.com/eVqaEWdh54nw7po1mE2oE04" class="plan-btn" target="_blank" rel="noopener">Buy Growth Package →</a>
+        </div>
+
+        <div class="plan">
+          <div class="plan-tag">Authority</div>
+          <h3>Full Funnel<br />Architecture</h3>
+          <p class="plan-tagline">Everything in Growth, plus a full click funnel friction page, multi-pixel stack, and full QA.</p>
+          <div class="plan-price"><sup>$</sup>1,500</div>
+          <div class="plan-delivery">7-day delivery</div>
+          <ul class="plan-features">
+            <li>Everything in Growth, PLUS:</li>
+            <li>Full click funnel friction page</li>
+            <li>Multi-pixel stack (Meta + Google + TikTok)</li>
+            <li>Beehiiv newsletter setup included</li>
+            <li>Full funnel QA & optimization</li>
+          </ul>
+          <a href="https://buy.stripe.com/aFa00i3Gv7zIbFE4yQ2oE05" class="plan-btn" target="_blank" rel="noopener">Buy Authority Tier →</a>
+        </div>
+
+      </div>
+
+      <div class="bundle-box">
+        <div class="bundle-info">
+          <h3>The <em>Full Launch Kit</em></h3>
+          <p>Landing page + email sequence + lead magnet PDF. Best value entry point. Starter + Growth bundled into one package, one price.</p>
+        </div>
+        <div class="bundle-price-wrap">
+          <div class="bundle-original">$1,450 separately</div>
+          <div class="bundle-price"><sup>$</sup>1,200</div>
+          <div class="bundle-save">// Save $250 · 7-day delivery</div>
+          <a href="https://buy.stripe.com/7sY9ASb8X3jscJI5CU2oE06" class="plan-btn" target="_blank" rel="noopener" style="margin-top:.5rem;display:inline-flex;">Buy Full Launch Kit →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="process">
+    <div class="wrap">
+      <div class="section-tag">03 · Process</div>
+      <h2>Simple.<br /><em>Fast.</em> Yours.</h2>
+      <div class="steps">
+        <div class="proc-step"><div class="step-n">STEP 01</div><h3>You <em>pay &amp; brief</em></h3><p>Buy your package. You get a short intake form — tell me your product, audience, and goal. That's all I need to start.</p></div>
+        <div class="proc-step"><div class="step-n">STEP 02</div><h3>I <em>build it</em></h3><p>I write the copy, build the page, wire the pixels, and sequence the emails. You don't touch a line of code.</p></div>
+        <div class="proc-step"><div class="step-n">STEP 03</div><h3>You <em>launch it</em></h3><p>Delivered with a handover doc. Everything live, tested, and ready to send traffic to. You own every file.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="guarantee">
+    <div class="wrap">
+      <div class="section-tag">04 · Guarantee</div>
+      <h2>If it's not right,<br /><em>I fix it.</em></h2>
+      <div class="guarantee-box">
+        <div class="guarantee-icon">🛡</div>
+        <div class="guarantee-text">
+          <h3>2-Round Revision Guarantee</h3>
+          <p>Every project includes two rounds of revisions at no extra cost. If the copy doesn't feel right, the layout needs adjusting, or the pixel isn't firing — I fix it. No argument, no extra invoice. You get what you paid for, working exactly as it should.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="final-cta">
+    <div class="wrap">
+      <div class="section-tag" style="justify-content:center;">05 · Get Started</div>
+      <h2>Your launch<br /><em>is one decision</em><br />away.</h2>
+      <p>Pick your package. Brief me in 5 minutes. Get your launch infrastructure built while you focus on everything else.</p>
+      <div class="cta-buttons">
+        <a href="https://buy.stripe.com/7sY9ASb8X3jscJI5CU2oE06" class="btn-primary" target="_blank" rel="noopener">Get the Full Launch Kit — $1,200 →</a>
+        <a href="#services" class="btn-outline">See All Packages</a>
+      </div>
+      <p class="cta-note">Secure payment via Stripe · Response within 24hrs · 2-round revision guarantee</p>
+      <div class="cta-note" style="margin-top: 1rem; color: var(--text-muted);">
+        <p><strong>Note:</strong> Newsletter launch special first 100 subscribers only: <strong>50% off</strong> for early subscribers.</p>
+        <p>Beehiiv setup is included in the Authority tier only. Prices reflect US market positioning.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="stay-informed">
+    <div class="wrap" style="text-align: center;">
+      <div class="section-tag" style="justify-content: center;">Newsletter</div>
+      <h2>Stay in the loop.</h2>
+      <p style="color:var(--text-muted); margin-bottom: 2rem;">Get my weekly strategic briefings on building autonomous wealth engines.</p>
+      
+      <div class="email-capture" style="max-width: 400px; margin: 0 auto; display: flex; flex-direction: column; gap: 0.75rem;">
+        <input type="email" id="offer-email" placeholder="Enter your email" style="padding: 1rem; background: var(--bg-3); border: 1px solid var(--border-hi); color: var(--text); outline: none;" />
+        <button id="offer-subscribe-btn" class="btn-primary" style="justify-content: center; width: 100%;">Get the Briefing →</button>
+        <p id="offer-error" style="display:none; color: #f87171; font-family: var(--mono); font-size: 0.7rem; margin-top: 0.5rem;">Please enter a valid email.</p>
+        <p id="offer-success" style="display:none; color: var(--accent-1); font-family: var(--mono); font-size: 0.7rem; margin-top: 0.5rem;">✓ You're in!</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">Galaxy<span>Built</span> · Founder Launch Services · Built in the Philippines 🇵🇭</div>
+      <ul class="footer-links">
+        <li><a href="/privacy">Privacy</a></li>
+        <li><a href="/terms">Terms</a></li>
+        <li><a href="https://x.com/expatbuildr" target="_blank" rel="noopener">X / Twitter</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script is:inline>
+    const obs = new IntersectionObserver(e => e.forEach(x => { if(x.isIntersecting){x.target.style.opacity='1';x.target.style.transform='translateY(0)'} }), {threshold:.08});
+    document.querySelectorAll('.plan,.proc-step,.prob-item,.bundle-box,.guarantee-box').forEach(el => {
+      el.style.opacity='0'; el.style.transform='translateY(14px)'; el.style.transition='opacity .5s ease,transform .5s ease'; obs.observe(el);
+    });
+  </script>
+  <script is:inline src="/beehiiv-v2.js"></script>
+  <script is:inline>
+    const subscribeBtn = document.getElementById('offer-subscribe-btn');
+    if (subscribeBtn) {
+      subscribeBtn.addEventListener('click', async () => {
+        const emailInput = document.getElementById('offer-email');
+        const errorEl = document.getElementById('offer-error');
+        const successEl = document.getElementById('offer-success');
+        const email = emailInput.value.trim();
+
+        if (!isValidEmail(email)) {
+          errorEl.style.display = 'block';
+          successEl.style.display = 'none';
+          emailInput.focus();
+          return;
+        }
+
+        errorEl.style.display = 'none';
+        subscribeBtn.textContent = 'Joining...';
+        subscribeBtn.disabled = true;
+
+        const success = await subscribeToBeehiiv({
+          email,
+          tags: ["founder", "offer_page_visitor", "warm_lead"],
+          utm_medium: "offer_page",
+          utm_campaign: "launch_kit_offer"
+        });
+
+        if (success) {
+          successEl.style.display = 'block';
+          emailInput.value = '';
+          subscribeBtn.textContent = 'Success ✓';
+        } else {
+          // Advance anyway or show silent failure
+          successEl.textContent = 'Something went wrong, but we saved your interest.';
+          successEl.style.display = 'block';
+        }
+      });
+    }
+  </script>
+</Layout>
+
+<style>
+  :root {
+    --amber-dim:rgba(232,160,32,0.2); --amber-glow:rgba(232,160,32,0.06);
+  }
+  nav { position:sticky; top:0; z-index:100; border-bottom:1px solid var(--border); background:rgba(5,5,5,.92); backdrop-filter:blur(12px); }
+  .nav-inner { max-width:1100px; margin:0 auto; padding:1rem clamp(1.25rem,5vw,2.5rem); display:flex; align-items:center; justify-content:space-between; }
+  .nav-logo { display:flex; align-items:center; gap:0.75rem; text-decoration:none; }
+  .nav-logo-img { width: 32px; height: 32px; border-radius: 8px; object-fit: cover; }
+  .logo-text { font-family:var(--sans); font-weight:900; font-size:1.4rem; letter-spacing:-.04em; color:var(--text); text-transform:uppercase; }
+  .logo-text .built { color:var(--accent-1); font-weight:400; }
+  .logo-text .slug { font-family:var(--mono); font-size:.8rem; color:var(--text-dim); margin-left:.3rem; font-weight:400; letter-spacing:.05em; }
+  .nav-cta { display:inline-flex; align-items:center; font-family:var(--mono); font-size:.72rem; font-weight:600; letter-spacing:.08em; text-transform:uppercase; text-decoration:none; padding:.6em 1.2em; background:linear-gradient(135deg,var(--accent-1),var(--accent-2)); color:#000; transition:all .15s; }
+  .nav-cta:hover { filter:brightness(1.1); }
+
+  .wrap { max-width:1100px; margin:0 auto; padding:0 clamp(1.25rem,5vw,2.5rem); position:relative; z-index:5; }
+
+  #hero { padding:clamp(4rem,10vw,7rem) 0 clamp(3rem,7vw,5rem); }
+  .kicker { font-family:var(--mono); font-size:.68rem; letter-spacing:.15em; text-transform:uppercase; color:var(--accent-1); display:flex; align-items:center; gap:.6rem; margin-bottom:1.5rem; }
+  .kicker::before { content:''; display:inline-block; width:6px; height:6px; border-radius:50%; background:var(--accent-1); animation:pulse 2s ease infinite; }
+  @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.4;transform:scale(.7)} }
+  h1 { font-family:var(--serif); font-size:clamp(2.75rem,7vw,5rem); line-height:1.05; letter-spacing:-.02em; margin-bottom:1.25rem; max-width:18ch; }
+  h1 em { font-style:italic; color:var(--accent-1); }
+  .hero-sub { font-size:1.05rem; color:var(--text-muted); line-height:1.75; max-width:50ch; margin-bottom:1rem; font-weight:300; }
+  .hero-warning { display:inline-flex; align-items:center; gap:.5rem; font-family:var(--mono); font-size:.68rem; letter-spacing:.08em; color:var(--amber); border:1px solid var(--amber-dim); background:var(--amber-glow); padding:.45em .9em; margin-bottom:2.5rem; }
+  .hero-actions { display:flex; flex-wrap:wrap; gap:1rem; margin-bottom:3.5rem; }
+  .btn-primary { display:inline-flex; align-items:center; gap:.5rem; font-family:var(--mono); font-size:.8rem; font-weight:600; letter-spacing:.08em; text-transform:uppercase; text-decoration:none; border:none; cursor:pointer; padding:.9em 1.8em; background:linear-gradient(135deg,var(--accent-1),var(--accent-2)); color:#000; transition:all .15s; }
+  .btn-primary:hover { filter:brightness(1.1); transform:translateY(-1px); }
+  .btn-outline { display:inline-flex; align-items:center; gap:.5rem; font-family:var(--mono); font-size:.8rem; font-weight:600; letter-spacing:.08em; text-transform:uppercase; text-decoration:none; border:1px solid var(--border-hi); cursor:pointer; padding:.9em 1.8em; background:transparent; color:var(--text); transition:all .15s; }
+  .btn-outline:hover { border-color:var(--accent-1); color:var(--accent-1); }
+
+  .proof-bar { display:flex; flex-wrap:wrap; gap:2rem 3.5rem; padding-top:2.5rem; border-top:1px solid var(--border); }
+  .proof-item .num { font-family:var(--serif); font-size:1.75rem; color:var(--text); line-height:1; }
+  .proof-item .num span { color:var(--accent-1); }
+  .proof-item .desc { font-family:var(--mono); font-size:.6rem; letter-spacing:.1em; text-transform:uppercase; color:var(--text-dim); margin-top:.3rem; }
+
+  section { padding:clamp(3.5rem,8vw,6rem) 0; border-top:1px solid var(--border); }
+  .section-tag { font-family:var(--mono); font-size:.65rem; letter-spacing:.15em; text-transform:uppercase; color:var(--text-dim); margin-bottom:1rem; display:flex; align-items:center; gap:.75rem; }
+  .section-tag::after { content:''; display:block; height:1px; width:3rem; background:var(--border-hi); }
+  h2 { font-family:var(--serif); font-size:clamp(1.75rem,4vw,3rem); line-height:1.1; margin-bottom:.75rem; }
+  h2 em { font-style:italic; color:var(--accent-1); }
+
+  .problem-grid { display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--border); border:1px solid var(--border); margin-top:2.5rem; }
+  .prob-item { background:var(--bg-2); padding:1.75rem; position:relative; }
+  .prob-item::before { content:attr(data-n); position:absolute; top:1.25rem; right:1.25rem; font-family:var(--mono); font-size:.6rem; color:var(--text-dim); letter-spacing:.1em; }
+  .prob-item h3 { font-family:var(--mono); font-size:.82rem; font-weight:600; color:var(--text); margin-bottom:.5rem; }
+  .prob-item p { font-size:.875rem; color:var(--text-muted); line-height:1.65; }
+
+  .pricing-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--border); border:1px solid var(--border); margin-top:2.5rem; }
+  .plan { background:var(--bg-2); padding:2.25rem 1.75rem; display:flex; flex-direction:column; transition:background .2s; position:relative; }
+  .plan:hover { background:var(--bg-3); }
+  .plan.featured { background:var(--bg-3); border-left:2px solid var(--accent-1); border-right:2px solid var(--accent-1); }
+  .plan.featured::before { content:'MOST POPULAR'; position:absolute; top:0; left:50%; transform:translateX(-50%) translateY(-50%); font-family:var(--mono); font-size:.58rem; letter-spacing:.15em; background:linear-gradient(135deg,var(--accent-1),var(--accent-2)); color:#000; padding:.2em .8em; font-weight:600; white-space:nowrap; }
+  .plan-tag { font-family:var(--mono); font-size:.6rem; letter-spacing:.15em; text-transform:uppercase; color:var(--text-dim); margin-bottom:.6rem; }
+  .plan h3 { font-family:var(--serif); font-size:1.5rem; margin-bottom:.4rem; line-height:1.15; }
+  .plan-tagline { font-size:.82rem; color:var(--text-muted); margin-bottom:1.5rem; padding-bottom:1.5rem; border-bottom:1px solid var(--border); line-height:1.6; }
+  .plan-price { font-family:var(--serif); font-size:2.75rem; color:var(--text); line-height:1; margin-bottom:.2rem; }
+  .plan-price sup { font-size:1rem; vertical-align:super; color:var(--text-muted); }
+  .plan-delivery { font-family:var(--mono); font-size:.6rem; letter-spacing:.1em; text-transform:uppercase; color:var(--text-dim); margin-bottom:1.5rem; }
+  .plan-features { list-style:none; flex:1; margin-bottom:1.75rem; }
+  .plan-features li { font-size:.82rem; color:var(--text-muted); padding:.5rem 0; border-bottom:1px solid var(--border); display:flex; align-items:flex-start; gap:.6rem; line-height:1.5; }
+  .plan-features li::before { content:'✓'; color:var(--accent-1); font-family:var(--mono); font-size:.7rem; flex-shrink:0; margin-top:.15rem; }
+  .plan-btn { display:flex; align-items:center; justify-content:center; font-family:var(--mono); font-size:.75rem; font-weight:600; letter-spacing:.08em; text-transform:uppercase; text-decoration:none; padding:.9em 1.4em; background:linear-gradient(135deg,var(--accent-1),var(--accent-2)); color:#000; border:none; cursor:pointer; transition:all .15s; text-align:center; }
+  .plan-btn:hover { filter:brightness(1.1); transform:translateY(-1px); }
+
+  .bundle-box { margin-top:1.5rem; border:1px solid var(--accent-1); background:var(--accent-glow); padding:2rem; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:1.5rem; position:relative; overflow:hidden; }
+  .bundle-box::before { content:'BEST VALUE'; position:absolute; top:1rem; right:1rem; font-family:var(--mono); font-size:.58rem; letter-spacing:.15em; color:var(--accent-1); border:1px solid var(--accent-1); padding:.2em .6em; }
+  .bundle-info h3 { font-family:var(--serif); font-size:1.5rem; margin-bottom:.4rem; }
+  .bundle-info h3 em { font-style:italic; color:var(--accent-1); }
+  .bundle-info p { font-size:.875rem; color:var(--text-muted); max-width:42ch; line-height:1.6; }
+  .bundle-price-wrap { text-align:right; flex-shrink:0; }
+  .bundle-original { font-family:var(--mono); font-size:.75rem; color:var(--text-dim); text-decoration:line-through; letter-spacing:.05em; margin-bottom:.2rem; }
+  .bundle-price { font-family:var(--serif); font-size:3rem; color:var(--text); line-height:1; }
+  .bundle-price sup { font-size:1.1rem; vertical-align:super; color:var(--text-muted); }
+  .bundle-save { font-family:var(--mono); font-size:.6rem; color:var(--accent-1); letter-spacing:.1em; text-transform:uppercase; margin-bottom:1rem; }
+
+  .steps { display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--border); border:1px solid var(--border); margin-top:2.5rem; }
+  .proc-step { background:var(--bg-2); padding:2rem 1.75rem; }
+  .proc-step .step-n { font-family:var(--mono); font-size:.6rem; letter-spacing:.15em; color:var(--text-dim); margin-bottom:1.25rem; }
+  .proc-step h3 { font-family:var(--serif); font-size:1.35rem; margin-bottom:.6rem; }
+  .proc-step h3 em { font-style:italic; color:var(--amber); }
+  .proc-step p { font-size:.85rem; color:var(--text-muted); line-height:1.7; }
+
+  .guarantee-box { border:1px solid var(--border-hi); background:var(--bg-3); padding:2.5rem; display:flex; align-items:flex-start; gap:2rem; margin-top:2rem; flex-wrap:wrap; }
+  .guarantee-icon { font-size:2.5rem; flex-shrink:0; }
+  .guarantee-text h3 { font-family:var(--serif); font-size:1.5rem; margin-bottom:.6rem; }
+  .guarantee-text p { font-size:.9rem; color:var(--text-muted); line-height:1.7; max-width:55ch; }
+
+  #final-cta { text-align:center; padding:clamp(4rem,10vw,7rem) 0; position:relative; overflow:hidden; border-top:1px solid var(--border); }
+  #final-cta::before { content:''; position:absolute; bottom:-20%; left:50%; transform:translateX(-50%); width:80vw; height:40vw; max-width:800px; background:radial-gradient(ellipse,rgba(168,85,247,.06) 0%,transparent 65%); pointer-events:none; }
+  #final-cta h2 { font-size:clamp(2rem,5vw,3.75rem); margin-bottom:1rem; }
+  #final-cta h2 em { font-style:italic; color:var(--accent-1); }
+  #final-cta p { color:var(--text-muted); font-size:1rem; line-height:1.75; max-width:48ch; margin:0 auto 2.5rem; }
+  .cta-buttons { display:flex; flex-wrap:wrap; gap:1rem; justify-content:center; margin-bottom:1.25rem; }
+  .cta-note { font-family:var(--mono); font-size:.62rem; color:var(--text-dim); letter-spacing:.06em; }
+
+  footer { position:relative; z-index:5; border-top:1px solid var(--border); padding:1.75rem clamp(1.25rem,5vw,2.5rem); }
+  .footer-inner { max-width:1100px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:1rem; }
+  .footer-brand { font-family:var(--mono); font-size:.7rem; color:var(--text-dim); letter-spacing:.06em; }
+  .footer-brand span { color:var(--accent-1); }
+  .footer-links { display:flex; gap:2rem; list-style:none; }
+  .footer-links a { font-family:var(--mono); font-size:.62rem; letter-spacing:.1em; text-transform:uppercase; color:var(--text-dim); text-decoration:none; transition:color .15s; }
+  .footer-links a:hover { color:var(--accent-1); }
+
+  @media(max-width:768px){
+    .problem-grid,.pricing-grid,.steps{grid-template-columns:1fr}
+    .plan.featured{border-left:1px solid var(--border);border-right:1px solid var(--border);border-top:2px solid var(--accent-1)}
+    .bundle-price-wrap{text-align:left}
+  }
+
+  @media(max-width:640px){
+    .problem-grid,.pricing-grid,.steps{grid-template-columns:1fr}
+    .prob-item{padding:1.25rem 1rem}
+    .plan{padding:1.75rem 1rem}
+    .proc-step{padding:1.5rem 1rem}
+    .bundle-box{padding:1.5rem 1rem;flex-direction:column;align-items:flex-start}
+    .bundle-price-wrap{text-align:left;width:100%}
+    .guarantee-box{padding:1.5rem 1rem;flex-direction:column;gap:1rem}
+    .guarantee-icon{font-size:2rem}
+    h2{font-size:clamp(1.4rem,5vw,2.5rem)}
+    .plan h3,.bundle-info h3,.guarantee-text h3{font-size:1.25rem}
+    .plan-price{font-size:2rem}
+    .bundle-price{font-size:2.25rem}
+  }
+</style>

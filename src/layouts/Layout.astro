@@ -1,0 +1,131 @@
+---
+import Analytics from '../components/Analytics.astro';
+import '../styles/global.css';
+
+interface Props {
+	title: string;
+	description?: string;
+	ogImage?: string;
+	noindex?: boolean;
+	canonicalUrl?: string;
+	minimal?: boolean;
+	noAnimations?: boolean;
+}
+
+const {
+	title,
+	description = "American founder building from Cebu, Philippines. Publishing the arbitrage playbook weekly.",
+	ogImage = "/expatbuildr_og_banner.png",
+	noindex = false,
+	canonicalUrl,
+	minimal = false,
+} = Astro.props;
+
+const ogImageUrl = ogImage.startsWith('http')
+	? ogImage
+	: new URL(ogImage, Astro.site || 'https://expatbuildr.com').toString();
+
+const siteUrl = Astro.site?.toString().replace(/\/$/, '') ?? 'https://expatbuildr.com';
+
+const personSchema = {
+	'@context': 'https://schema.org',
+	'@type': 'Person',
+	name: 'Tony Long',
+	url: siteUrl,
+	jobTitle: 'Founder, ExpatBuildr',
+	description: 'American founder building from Cebu, Philippines. Geographic arbitrage, remote income, and AI leverage for expats.',
+	sameAs: [
+		'https://x.com/expatbuildr',
+		'https://www.youtube.com/@expatbuildr',
+		'https://www.instagram.com/expatbuildr',
+		'https://www.linkedin.com/in/expatbuildr',
+		'https://tiktok.com/@expatbuildr',
+	],
+};
+
+const titleTag = title.includes('ExpatBuildr') ? title : `${title} | ExpatBuildr`;
+---
+
+<!doctype html>
+<html lang="en" prefix="og: https://ogp.me/ns#">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+
+		<Analytics />
+
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+		<link rel="manifest" href="/site.webmanifest" />
+
+		<meta name="generator" content={Astro.generator} />
+		<title>{titleTag}</title>
+		<meta name="description" content={description} />
+		{noindex && <meta name="robots" content="noindex, nofollow, noarchive" />}
+		<link rel="canonical" href={(() => { const u = canonicalUrl || new URL(Astro.url.pathname, Astro.site).toString(); return u.endsWith('/') && u !== (Astro.site?.toString() ?? '') ? u.slice(0, -1) : u; })()} />
+
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;500;700;900&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+		<meta property="og:site_name" content="ExpatBuildr" />
+		<meta property="og:title" content={titleTag} />
+		<meta property="og:description" content={description} />
+		<meta property="og:image" content={ogImageUrl} />
+		<meta property="og:url" content={new URL(Astro.url.pathname, Astro.site)} />
+		<meta property="og:type" content="website" />
+		<meta property="og:locale" content="en_US" />
+
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:site" content="@expatbuildr" />
+		<meta name="twitter:creator" content="@expatbuildr" />
+		<meta name="twitter:title" content={titleTag} />
+		<meta name="twitter:description" content={description} />
+		<meta name="twitter:image" content={ogImageUrl} />
+
+		<script type="application/ld+json" set:html={JSON.stringify(personSchema)} />
+		<slot name="head" />
+	</head>
+	<body>
+		{!minimal && (
+			<div class="topbar">
+				<span>⚡</span> Building from Cebu · Earning in USD · Sharing the math
+			</div>
+		)}
+
+		{!minimal && (
+			<nav>
+				<a href="/" class="nav-logo">ExpatBuildr</a>
+				<ul class="nav-links">
+					<li><a href="/about">Story</a></li>
+					<li><a href="/#work">Work</a></li>
+					<li><a href="/newsletter">Newsletter</a></li>
+				</ul>
+			</nav>
+		)}
+
+		<main>
+			<slot />
+		</main>
+
+		{!minimal && (
+			<div class="socials-section">
+				<span class="socials-label">Find me @ExpatBuildr</span>
+				<div class="socials-links">
+					<a href="https://instagram.com/expatbuildr" target="_blank" rel="noopener">Instagram</a>
+					<a href="https://twitter.com/expatbuildr" target="_blank" rel="noopener">X / Twitter</a>
+					<a href="https://tiktok.com/@expatbuildr" target="_blank" rel="noopener">TikTok</a>
+					<a href="https://linkedin.com/in/expatbuildr" target="_blank" rel="noopener">LinkedIn</a>
+					<a href="https://youtube.com/@expatbuildr" target="_blank" rel="noopener">YouTube</a>
+				</div>
+			</div>
+		)}
+
+		{!minimal && (
+			<footer>
+				<div>© 2026 Tony Long · ExpatBuildr · Cebu, Philippines · <a href="https://galaxyarbitrage.com">galaxyarbitrage.com</a></div>
+			</footer>
+		)}
+	</body>
+</html>

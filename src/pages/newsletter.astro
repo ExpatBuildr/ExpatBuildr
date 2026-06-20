@@ -1,0 +1,883 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Pixels from '../components/Pixels.astro';
+
+const title = "Galaxy Arbitrage — The Weekly Arbitrage Playbook for Remote Income & Financial Freedom";
+const description = "Free weekly newsletter breaking down geographic, crypto, remote work, and AI arbitrage every week. Built for Remote Hustlers, Lead Builders, and Freedom Seekers.";
+---
+
+<Layout
+  title={title}
+  description={description}
+  minimal={true}
+  noAnimations={true}
+>
+  <Fragment slot="head">
+    <Pixels page="newsletter-landing" />
+    <meta property="og:title" content="Galaxy Arbitrage by ExpatBuildr" />
+    <meta property="og:description" content="Every week I break down a different arbitrage — geographic, crypto, remote work, AI, time, attention. Free. 4 resources on signup." />
+  </Fragment>
+
+  <div class="newsletter-root">
+
+    <!-- Top Nav Bar -->
+    <nav class="top-nav">
+      <div class="container top-nav-inner">
+        <a href="/" class="back-to-site">
+          <img src="/images/logo.jpg" alt="Galaxy" class="nav-logo" width="28" height="28" />
+          <span class="nav-site-name">GALAXY<span class="nav-built">BUILT</span></span>
+        </a>
+        <a href="/" class="back-link">← Back to Main Site</a>
+      </div>
+    </nav>
+
+    <!-- Member Counter Bar -->
+    <div class="launch-bar">
+      <span class="launch-dot"></span>
+      <span><span class="sub-count">80</span> members and growing — next stop: <strong>300</strong></span>
+    </div>
+
+    <main class="container">
+      <!-- Hero Section -->
+      <section class="hero section">
+        <div class="hero-content">
+          <h1 class="hero-title flex flex-col items-center">
+            <div class="flex items-center gap-4 md:gap-6">
+              <img src="/images/logo.jpg" alt="Galaxy" width="80" height="80" class="hero-logo" />
+              <span class="text-galaxy-gradient">GALAXY</span>
+            </div>
+            <span><span class="text-arbi">ARBI</span><span class="text-trage">TRAGE</span></span>
+          </h1>
+
+          <!-- EMAIL FORM — immediately below title -->
+          <div class="hero-cta-group">
+            <p class="hero-subtitle-line">Geographic. Crypto. Remote Work. AI. Time. Attention.<br/>Every week I break down a different arbitrage — and exactly how to exploit it.</p>
+            <p class="form-eyebrow">↓ Enter your email to get instant access — it's free</p>
+            <div class="subscribe-box subscribe-box--hero">
+              <div class="progress-header">
+                <span class="progress-label">Beta Capacity</span>
+                <strong class="progress-count" id="beta-capacity-text"><span class="sub-count">80</span>/300 Next Milestone</strong>
+              </div>
+              <div class="progress-bar-bg">
+                <div class="progress-bar-fill sub-progress" style="width: 80%"></div>
+              </div>
+
+              <form id="subscribe-form" class="sub-form">
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="Enter your best email"
+                  required
+                  class="fake-input fake-input--hero"
+                />
+                <button type="submit" id="submit-btn" class="btn-primary">
+                  Join Free →
+                </button>
+              </form>
+              <p id="form-message" class="form-msg hidden"></p>
+              <p class="form-note">✓ Weekly Arbitrage Intel &nbsp;·&nbsp; ✓ 4 Free Resources &nbsp;·&nbsp; ✓ No Spam</p>
+            </div>
+          </div>
+
+          <!-- Member counter social proof -->
+          <div class="member-counter">
+            <div class="counter-avatars">
+              <span class="av1 text-white">G</span>
+              <span class="av2 text-white">B</span>
+              <span class="av3 text-white">A</span>
+              <span class="av4 text-white">+</span>
+            </div>
+            <div class="counter-text">
+              <strong>Join <span class="sub-count">80</span>+ Freedom Seekers</strong>
+              <span>Building a life beyond borders</span>
+            </div>
+          </div>
+
+          <!-- Audience cards — below the ask -->
+          <div class="hero-audience-list">
+            <div class="audience-line" style="border-left: 3px solid var(--accent-gold);">
+              <span class="icon">🌏</span>
+              <p><strong>Freedom Seeker</strong> — Geographic and lifestyle arbitrage. Real cost-of-living math and the life most people only dream about.</p>
+            </div>
+            <div class="audience-line" style="border-left: 3px solid var(--accent-cyan);">
+              <span class="icon">💼</span>
+              <p><strong>Remote Hustler</strong> — Remote work and AI arbitrage. The systems to earn more while working from anywhere.</p>
+            </div>
+            <div class="audience-line" style="border-left: 3px solid var(--accent-emerald);">
+              <span class="icon">⚙️</span>
+              <p><strong>Lead Builder</strong> — Lead gen and attention arbitrage. Income systems and automation that run while you sleep.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- What You Get Section -->
+      <section class="section pt-0">
+        <div class="rewards-header text-center">
+          <div class="section-label justify-center">Instant Access</div>
+          <h2 class="section-title">JOIN FREE.<br/><span>GET ALL 4.</span></h2>
+          <p class="section-desc mx-auto">Every subscriber gets the full pack delivered immediately — no upsell, no paywall.</p>
+        </div>
+        <div class="rewards-grid">
+          <div class="reward-card" style="--rc: var(--accent-gold)">
+            <div class="rc-icon">💼</div>
+            <div class="rc-body">
+              <div class="rc-tag">Resource 01</div>
+              <h3 class="rc-title">Remote Jobs Pack</h3>
+              <p class="rc-desc">50 remote-first companies actively hiring globally, filtered for USD pay and async culture.</p>
+              <div class="rc-stats">
+                <span>50 Companies</span>
+                <span>12 Niches</span>
+                <span>80% Async</span>
+              </div>
+            </div>
+          </div>
+          <div class="reward-card" style="--rc: var(--accent-cyan)">
+            <div class="rc-icon">📊</div>
+            <div class="rc-body">
+              <div class="rc-tag">Resource 02</div>
+              <h3 class="rc-title">Arbitrage Calculator</h3>
+              <p class="rc-desc">The Austin vs Manila breakdown. Full cost-of-living math, salary tiers, and your FIRE number.</p>
+              <div class="rc-stats">
+                <span>4.75x Cheaper</span>
+                <span>$36k Saved/yr</span>
+                <span>3 Cities</span>
+              </div>
+            </div>
+          </div>
+          <div class="reward-card" style="--rc: var(--accent-emerald)">
+            <div class="rc-icon">🤖</div>
+            <div class="rc-body">
+              <div class="rc-tag">Resource 03</div>
+              <h3 class="rc-title">Prompt Vault</h3>
+              <p class="rc-desc">50 battle-tested AI prompts for client acquisition, content, freelance ops, and automation workflows.</p>
+              <div class="rc-stats">
+                <span>50 Prompts</span>
+                <span>6 Categories</span>
+                <span>0 Fluff</span>
+              </div>
+            </div>
+          </div>
+          <div class="reward-card" style="--rc: var(--accent-orange)">
+            <div class="rc-icon">🌏</div>
+            <div class="rc-body">
+              <div class="rc-tag">Resource 04</div>
+              <h3 class="rc-title">Geo Arbitrage Starter Kit</h3>
+              <p class="rc-desc">The exact checklist for moving your income to Southeast Asia — banking setup, VoIP numbers, payment processors, visa options, and the pitfalls that kill most expat businesses.</p>
+              <div class="rc-stats">
+                <span>12 Countries</span>
+                <span>48 Pitfalls</span>
+                <span>2026 Updated</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- What's Inside Section — rotating arbitrage theme -->
+      <section class="section">
+        <div class="section-label justify-center" style="margin: 0 auto;">Inside every issue</div>
+        <h2 class="section-title text-center">ONE ARBITRAGE.<br/><span>FULLY BROKEN DOWN.</span></h2>
+        <p class="section-desc text-center mx-auto" style="max-width:560px;">Every issue covers one type of arbitrage completely — the math, the systems, the how-to. Different type every week. Always actionable.</p>
+
+        <div class="arbitrage-types">
+          <div class="arb-type" style="--arb: var(--accent-gold)">
+            <span class="arb-icon">🌏</span>
+            <span class="arb-label">Geographic Arbitrage</span>
+            <span class="arb-desc">Cost of living math across countries</span>
+          </div>
+          <div class="arb-type" style="--arb: var(--accent-orange)">
+            <span class="arb-icon">₿</span>
+            <span class="arb-label">Crypto Arbitrage</span>
+            <span class="arb-desc">Market inefficiencies and spreads</span>
+          </div>
+          <div class="arb-type" style="--arb: var(--accent-cyan)">
+            <span class="arb-icon">💼</span>
+            <span class="arb-label">Remote Work Arbitrage</span>
+            <span class="arb-desc">Jobs, systems, negotiation tactics</span>
+          </div>
+          <div class="arb-type" style="--arb: var(--accent-emerald)">
+            <span class="arb-icon">🤖</span>
+            <span class="arb-label">AI Arbitrage</span>
+            <span class="arb-desc">Doing $200K work with $500 in tools</span>
+          </div>
+          <div class="arb-type" style="--arb: var(--accent-blue)">
+            <span class="arb-icon">⏱</span>
+            <span class="arb-label">Time Arbitrage</span>
+            <span class="arb-desc">Async work across time zones</span>
+          </div>
+          <div class="arb-type" style="--arb: #f43f5e">
+            <span class="arb-icon">📡</span>
+            <span class="arb-label">Attention Arbitrage</span>
+            <span class="arb-desc">Building audience on underpriced platforms</span>
+          </div>
+          <div class="arb-type" style="--arb: #a855f7">
+            <span class="arb-icon">📈</span>
+            <span class="arb-label">Options Arbitrage</span>
+            <span class="arb-desc">Market plays and financial inefficiencies</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- The Math Section -->
+      <section class="section">
+        <div class="math-section">
+          <div class="text-center">
+            <div class="section-label justify-center">The Economic Hack</div>
+            <h2 class="section-title">THE MATH OF<br/><span>FREEDOM.</span></h2>
+            <p class="section-desc mx-auto">Same income. Different outcome. This is why we arbitrage.</p>
+          </div>
+
+          <div class="math-grid">
+            <div class="math-card bad">
+              <div class="math-location">📍 Austin, Texas, USA</div>
+              <div class="math-row"><span class="label">Monthly Income</span><span class="value">$8,500</span></div>
+              <div class="math-row"><span class="label">Rent & Utils</span><span class="value">-$3,200</span></div>
+              <div class="math-row"><span class="label">Taxes (Est.)</span><span class="value">-$1,800</span></div>
+              <div class="math-row"><span class="label">Living Exp.</span><span class="value">-$1,500</span></div>
+              <div class="math-total">
+                <span class="label">Net Savings</span>
+                <span class="value">$2,000</span>
+              </div>
+            </div>
+
+            <div class="math-vs">VS</div>
+
+            <div class="math-card good">
+              <div class="math-location">📍 Manila, Philippines</div>
+              <div class="math-row"><span class="label">Monthly Income</span><span class="value">$8,500</span></div>
+              <div class="math-row"><span class="label">Luxury Condo</span><span class="value">-$1,200</span></div>
+              <div class="math-row"><span class="label">Tax Efficiency</span><span class="value">-$400</span></div>
+              <div class="math-row"><span class="label">Living Exp.</span><span class="value">-$900</span></div>
+              <div class="math-total">
+                <span class="label">Net Savings</span>
+                <span class="value">$6,000</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Digital Products Teaser -->
+      <section class="section pt-0 pb-10">
+        <div class="teaser-banner">
+          <div class="teaser-text">
+            <span class="teaser-label">SUBSCRIBER EARLY ACCESS</span>
+            <p class="teaser-desc">Galaxy Arbitrage subscribers get first access to new tools, prompt packs, and digital products before they go public.</p>
+          </div>
+          <a href="/shop" class="btn-ghost">Browse the Ecosystem →</a>
+        </div>
+      </section>
+
+      <!-- Audience Cards -->
+      <section class="section pt-0">
+        <div class="text-center">
+          <h2 class="section-title">BUILT FOR THREE<br/><span>TYPES OF PEOPLE.</span></h2>
+        </div>
+        <div class="audience-grid-new">
+          <div class="audience-card-new glass-card" style="--accent: var(--accent-cyan);">
+            <div class="ac-icon">💼</div>
+            <h3 class="ac-title">Remote Hustler</h3>
+            <p class="ac-desc">You want remote work but the job search feels broken</p>
+            <p class="ac-body">The remote work arbitrage breakdowns, AI prompt toolkit, and automation case studies are built for you. Every issue saves you hours of manual searching and shows you how to position yourself for location-independent income.</p>
+            <a href="/newsletter/archive" class="ac-link">→ See this week's issue</a>
+          </div>
+          <div class="audience-card-new glass-card" style="--accent: var(--accent-emerald);">
+            <div class="ac-icon">⚙️</div>
+            <h3 class="ac-title">Lead Builder</h3>
+            <p class="ac-desc">You want systems that generate income without trading hours for dollars</p>
+            <p class="ac-body">The attention arbitrage section, automation case studies, and GalaxyLeads breakdowns show you exactly how operators are building income machines — what they cost and how they scale without a team.</p>
+            <a href="/blog" class="ac-link">→ See a case study</a>
+          </div>
+          <div class="audience-card-new glass-card" style="--accent: var(--accent-gold);">
+            <div class="ac-icon">🌏</div>
+            <h3 class="ac-title">Freedom Seeker</h3>
+            <p class="ac-desc">You suspect you're overpaying for your own life</p>
+            <p class="ac-body">The geographic arbitrage math, crypto and market opportunities, and cost-of-living breakdowns give you the honest numbers behind what's actually possible with the same income somewhere else.</p>
+            <a href="/downloads/arbitrage-calculator?ref=newsletter" class="ac-link">→ Run the arbitrage calculator</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Bottom CTA -->
+      <section class="section pt-0">
+        <div class="bottom-cta">
+          <div class="section-label justify-center">Still here?</div>
+          <h2 class="section-title text-center">YOU'VE SEEN THE MATH.<br/><span>NOW ACT ON IT.</span></h2>
+          <p class="section-desc text-center mx-auto" style="max-width:480px;">Free. Weekly. The only newsletter built around arbitrage as a complete life and business strategy.</p>
+          <div class="bottom-form-wrap">
+            <div class="subscribe-box" style="max-width:480px; margin: 0 auto;">
+              <form id="subscribe-form-bottom" class="sub-form">
+                <input
+                  type="email"
+                  id="email-bottom"
+                  name="email"
+                  placeholder="Enter your best email"
+                  required
+                  class="fake-input"
+                />
+                <button type="submit" id="submit-btn-bottom" class="btn-primary">
+                  Join Free
+                </button>
+              </form>
+              <p id="form-message-bottom" class="form-msg hidden"></p>
+              <p class="form-note">✓ Weekly Arbitrage Intel &nbsp;·&nbsp; ✓ 4 Free Resources &nbsp;·&nbsp; ✓ No Spam</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container flex justify-between items-center py-10 border-t border-glass-border">
+        <div class="font-display text-xl">GALAXY<span class="text-accent-gold">BUILT</span></div>
+        <div class="font-mono text-[10px] text-slate-500 uppercase tracking-widest">© 2026 Galaxy Arbitrage</div>
+      </div>
+    </footer>
+  </div>
+</Layout>
+
+<script is:inline>
+  fetch('/get-counter')
+    .then(r => r.json())
+    .then(d => {
+      const elements = document.querySelectorAll('.sub-count');
+      elements.forEach(el => el.textContent = d.count.toLocaleString());
+      
+      const bars = document.querySelectorAll('.sub-progress');
+      bars.forEach(bar => {
+        const percent = Math.min(100, Math.max(0, (d.count / 300) * 100));
+        bar.style.width = percent + '%';
+      });
+    })
+    .catch(err => console.error('Failed to load subscriber count', err));
+</script>
+
+<style>
+  :root {
+    --bg-primary: #060810;
+    --accent-gold: #f5c842;
+    --accent-orange: #ff6b35;
+    --accent-cyan: #00e5ff;
+    --accent-emerald: #00e9a3;
+    --accent-blue: #3b6fff;
+    --text-primary: #f0f4ff;
+    --text-secondary: #8892b0;
+    --glass-bg: rgba(255,255,255,0.03);
+    --glass-border: rgba(255,255,255,0.07);
+    --font-display: 'Bebas Neue', sans-serif;
+    --font-body: 'Syne', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+  }
+
+  .newsletter-root {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: var(--font-body);
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+  }
+
+  .top-nav {
+    position: relative;
+    z-index: 10;
+    border-bottom: 1px solid var(--glass-border);
+    background: #060810;
+  }
+  .top-nav-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 14px;
+    padding-bottom: 14px;
+  }
+  .back-to-site {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: var(--text-primary);
+  }
+  .nav-logo {
+    width: 28px;
+    height: 28px;
+    border-radius: 6px;
+    object-fit: cover;
+    border: 1px solid rgba(255,255,255,0.15);
+  }
+  .nav-site-name {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    letter-spacing: 0.08em;
+  }
+  .nav-built { color: var(--accent-gold); }
+  .back-link {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    text-decoration: none;
+    letter-spacing: 0.05em;
+  }
+
+  .launch-bar {
+    position: relative;
+    z-index: 9;
+    background: rgba(245,200,66,0.08);
+    border-bottom: 1px solid rgba(245,200,66,0.2);
+    padding: 10px 24px;
+    text-align: center;
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    color: var(--accent-gold);
+    letter-spacing: 0.08em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+  .launch-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--accent-gold);
+    display: inline-block;
+    box-shadow: 0 0 6px var(--accent-gold);
+  }
+
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 1; }
+  .section { padding: 40px 0; }
+  .hero.section { padding-top: 32px; }
+  .hero-content { display: flex; flex-direction: column; align-items: center; text-align: center; }
+  .hero-cta-group { width: 100%; max-width: 600px; text-align: center; }
+
+  .hero-logo {
+    width: 0.85em;
+    height: 0.85em;
+    object-fit: cover;
+    border-radius: 16px;
+    border: 2px solid rgba(255,255,255,0.1);
+  }
+
+  .hero-title {
+    font-family: var(--font-display);
+    font-size: clamp(4rem, 12vw, 10rem);
+    line-height: 0.9;
+    letter-spacing: 0.02em;
+    margin-bottom: 28px;
+  }
+
+  .text-galaxy-gradient {
+    background: linear-gradient(90deg, #ff6b35 0%, #ff9a5c 40%, #4db8ff 70%, #1a6fff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .text-arbi { color: #ffffff; }
+  .text-trage {
+    background: linear-gradient(90deg, #5ef0e8 0%, #00d4e8 40%, #0099cc 70%, #0066aa 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .form-eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--accent-gold);
+    letter-spacing: 0.08em;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+  }
+
+  .subscribe-box {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid var(--glass-border);
+    border-radius: 24px;
+    padding: 24px;
+    width: 100%;
+    max-width: 500px;
+    margin-bottom: 20px;
+  }
+
+  .subscribe-box--hero {
+    background: rgba(245, 200, 66, 0.06);
+    border: 2px solid var(--accent-gold);
+    box-shadow: 0 0 40px rgba(245, 200, 66, 0.15), inset 0 0 40px rgba(245, 200, 66, 0.03);
+  }
+
+  .fake-input--hero {
+    border-color: rgba(245, 200, 66, 0.3);
+    background: rgba(255,255,255,0.06);
+    font-size: 1rem;
+  }
+  .fake-input--hero::placeholder { color: rgba(255,255,255,0.4); }
+
+  .progress-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+  }
+  .progress-label {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.12em;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+  }
+  .progress-count {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--accent-gold);
+  }
+  .progress-bar-bg {
+    height: 6px;
+    background: rgba(255,255,255,0.06);
+    border-radius: 100px;
+    overflow: hidden;
+    margin-bottom: 20px;
+  }
+  .progress-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--accent-gold), var(--accent-orange));
+    border-radius: 100px;
+  }
+
+  .sub-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  @media (min-width: 480px) {
+    .sub-form { flex-direction: row; }
+  }
+
+  .btn-primary {
+    padding: 16px 28px;
+    background: linear-gradient(135deg, var(--accent-gold), var(--accent-orange));
+    color: #000;
+    font-family: var(--font-body);
+    font-weight: 800;
+    font-size: 0.9rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 100px;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+
+  .fake-input {
+    padding: 16px 20px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid var(--glass-border);
+    border-radius: 100px;
+    color: var(--text-primary);
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    outline: none;
+    flex: 1;
+  }
+  .fake-input:focus { border-color: var(--accent-gold); }
+
+  .form-msg { margin-top: 12px; font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-secondary); text-align: center; }
+  .form-msg.hidden { display: none; }
+  .form-note { font-family: var(--font-mono); font-size: 0.65rem; color: var(--text-secondary); text-align: center; margin-top: 12px; }
+
+  .member-counter {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 14px 20px;
+    border-radius: 14px;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    width: fit-content;
+    margin: 0 auto 40px;
+  }
+  .counter-avatars { display: flex; }
+  .counter-avatars span {
+    width: 32px; height: 32px; border-radius: 50%;
+    border: 2px solid var(--bg-primary);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.7rem; font-weight: 700; margin-left: -8px;
+  }
+  .counter-avatars span:first-child { margin-left: 0; }
+  .av1 { background: #3b6fff; } .av2 { background: #f5c842; } .av3 { background: #00e9a3; } .av4 { background: #ff6b35; }
+  .counter-text strong { display: block; font-size: 0.95rem; color: var(--text-primary); }
+  .counter-text span { font-family: var(--font-mono); font-size: 0.8rem; color: var(--text-secondary); }
+
+  .hero-subtitle-line {
+    font-family: var(--font-display);
+    font-size: clamp(1rem, 2.5vw, 1.6rem);
+    line-height: 1.3;
+    letter-spacing: 0.04em;
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin: 0 auto 16px;
+  }
+
+  .hero-audience-list { display: flex; flex-direction: column; gap: 12px; margin-bottom: 40px; max-width: 600px; }
+  .audience-line {
+    display: flex; align-items: flex-start; gap: 12px;
+    padding: 16px 20px; border-radius: 12px;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+  }
+  @media (min-width: 768px) { .hero-audience-list { flex-direction: row; max-width: none; } .audience-line { flex: 1; } }
+  .audience-line .icon { font-size: 1.4rem; margin-top: 2px; }
+  .audience-line p { font-size: 1rem; color: var(--text-secondary); line-height: 1.6; margin: 0; }
+  .audience-line p strong { color: var(--text-primary); }
+
+  .section-label {
+    display: inline-flex; align-items: center; gap: 10px;
+    font-family: var(--font-mono); font-size: 0.85rem;
+    letter-spacing: 0.2em; color: var(--accent-cyan);
+    text-transform: uppercase; margin-bottom: 16px;
+  }
+  .section-label::before { content: ''; width: 24px; height: 1px; background: var(--accent-cyan); }
+
+  .section-title {
+    font-family: var(--font-display);
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    line-height: 1; letter-spacing: 0.02em; margin-bottom: 24px;
+  }
+  .section-title span { color: var(--text-secondary); }
+  .section-desc { font-size: 1.05rem; color: var(--text-secondary); line-height: 1.7; max-width: 560px; margin-top: 12px; }
+
+  .rewards-header { margin-bottom: 20px; }
+  .rewards-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  @media (max-width: 700px) { .rewards-grid { grid-template-columns: 1fr; } }
+
+  .reward-card {
+    display: flex; gap: 20px; padding: 28px;
+    border-radius: 24px;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-left: 3px solid var(--rc);
+  }
+  .rc-icon {
+    font-size: 2rem; flex-shrink: 0;
+    width: 52px; height: 52px;
+    display: flex; align-items: center; justify-content: center;
+    border-radius: 14px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.06);
+  }
+  .rc-body { flex: 1; min-width: 0; }
+  .rc-tag {
+    font-family: var(--font-mono); font-size: 0.68rem;
+    letter-spacing: 0.12em; color: var(--rc);
+    text-transform: uppercase; margin-bottom: 6px;
+  }
+  .rc-title { font-weight: 800; font-size: 1.15rem; margin-bottom: 8px; color: var(--text-primary); }
+  .rc-desc { font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 14px; }
+  .rc-stats { display: flex; flex-wrap: wrap; gap: 8px; }
+  .rc-stats span {
+    font-family: var(--font-mono); font-size: 0.7rem;
+    padding: 3px 10px; border-radius: 100px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    color: var(--text-secondary); letter-spacing: 0.04em;
+  }
+
+  /* Arbitrage types grid */
+  .arbitrage-types {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 16px;
+    margin-top: 32px;
+  }
+  .arb-type {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 20px 24px;
+    border-radius: 16px;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-left: 3px solid var(--arb);
+    transition: background 0.2s;
+  }
+  .arb-type:hover { background: rgba(255,255,255,0.05); }
+  .arb-icon {
+    font-size: 1.6rem;
+    flex-shrink: 0;
+    width: 44px; height: 44px;
+    display: flex; align-items: center; justify-content: center;
+    border-radius: 10px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.06);
+  }
+  .arb-label {
+    display: block;
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: var(--text-primary);
+    margin-bottom: 4px;
+  }
+  .arb-desc {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    color: var(--text-secondary);
+    letter-spacing: 0.04em;
+  }
+
+  .math-section {
+    padding: 60px 48px; border-radius: 40px;
+    background: rgba(245, 200, 66, 0.03);
+    border: 1px solid rgba(245, 200, 66, 0.1);
+  }
+  @media (max-width: 640px) { .math-section { padding: 36px 20px; } }
+
+  .math-grid {
+    display: grid;
+    grid-template-columns: 1fr 64px 1fr;
+    gap: 24px; align-items: stretch; margin-top: 24px;
+  }
+  @media (max-width: 860px) {
+    .math-grid { grid-template-columns: 1fr; gap: 16px; }
+    .math-vs { justify-self: center; }
+  }
+  .math-card {
+    padding: 36px 40px; border-radius: 28px;
+    border: 1px solid var(--glass-border);
+    background: var(--glass-bg);
+    display: flex; flex-direction: column; min-width: 0;
+  }
+  @media (max-width: 640px) { .math-card { padding: 28px 20px; } }
+  .math-card.bad { border-color: rgba(255,107,53,0.25); background: rgba(255,107,53,0.04); }
+  .math-card.good { border-color: rgba(0,233,163,0.25); background: rgba(0,233,163,0.04); }
+  .math-location {
+    font-family: var(--font-mono); font-size: 0.82rem;
+    letter-spacing: 0.08em; color: var(--text-secondary);
+    margin-bottom: 24px; padding-bottom: 18px;
+    border-bottom: 1px solid var(--glass-border);
+  }
+  .math-card.bad .math-location { color: rgba(255,107,53,0.8); }
+  .math-card.good .math-location { color: rgba(0,233,163,0.8); }
+  .math-row {
+    display: flex; justify-content: space-between; align-items: center;
+    gap: 24px; padding: 14px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.05); font-size: 1rem;
+  }
+  .math-row .label { color: var(--text-secondary); white-space: nowrap; flex-shrink: 0; }
+  .math-row .value { font-family: var(--font-mono); font-size: 0.95rem; letter-spacing: 0.04em; text-align: right; }
+  .math-total {
+    margin-top: 24px; padding-top: 24px;
+    border-top: 2px solid var(--glass-border);
+    display: flex; justify-content: space-between; align-items: center; gap: 16px;
+  }
+  .math-total .label { font-weight: 700; font-size: 0.95rem; color: var(--text-primary); letter-spacing: 0.04em; }
+  .math-total .value { font-family: var(--font-display); font-size: 3rem; line-height: 1; letter-spacing: 0.02em; }
+  .math-card.good .math-total .value { color: var(--accent-emerald); }
+  .math-card.bad .math-total .value { color: var(--accent-orange); }
+  .math-vs {
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--font-display); font-size: 1.6rem;
+    letter-spacing: 0.12em; color: var(--text-secondary);
+  }
+
+  .teaser-banner {
+    display: flex; flex-direction: column; gap: 24px;
+    background: rgba(245,200,66,0.04);
+    border: 1px solid rgba(245,200,66,0.1);
+    border-radius: 20px; padding: 24px 32px;
+    align-items: center; text-align: center;
+  }
+  @media (min-width: 768px) {
+    .teaser-banner { flex-direction: row; justify-content: space-between; text-align: left; }
+  }
+  .teaser-label { font-family: var(--font-mono); font-size: 0.85rem; color: var(--accent-gold); letter-spacing: 0.1em; display: block; margin-bottom: 8px; }
+  .teaser-desc { color: #fff; font-weight: 800; font-size: 1.2rem; line-height: 1.5; max-width: 600px; }
+  .btn-ghost {
+    padding: 14px 28px; background: transparent;
+    color: var(--text-primary);
+    border: 1px solid var(--glass-border); border-radius: 100px;
+    font-family: var(--font-body); font-weight: 800; font-size: 0.85rem;
+    text-transform: uppercase; text-decoration: none; white-space: nowrap;
+  }
+
+  .audience-grid-new { display: grid; grid-template-columns: 1fr; gap: 20px; }
+  @media (min-width: 768px) { .audience-grid-new { grid-template-columns: repeat(3, 1fr); } }
+  .audience-card-new {
+    padding: 40px 32px; border-radius: 24px;
+    display: flex; flex-direction: column;
+    border-top: 3px solid var(--accent);
+  }
+  .glass-card {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+  }
+  .ac-icon { font-size: 2rem; margin-bottom: 16px; }
+  .ac-title { font-family: var(--font-display); font-size: 2rem; letter-spacing: 0.05em; margin-bottom: 8px; color: var(--accent); }
+  .ac-desc { font-weight: 700; font-size: 0.95rem; line-height: 1.4; margin-bottom: 16px; color: var(--text-primary); }
+  .ac-body { font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 32px; flex-grow: 1; }
+  .ac-link { font-family: var(--font-mono); font-size: 0.7rem; color: var(--accent); text-decoration: none; text-transform: uppercase; }
+
+  .bottom-cta { text-align: center; }
+  .bottom-form-wrap { margin-top: 32px; }
+</style>
+
+<script is:inline>
+  const form = document.getElementById('subscribe-form');
+  const btn = document.getElementById('submit-btn');
+  const msg = document.getElementById('form-message');
+
+  async function handleSubmit(emailVal, btnEl, msgEl) {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(emailVal)) {
+      msgEl.innerText = '❌ Please enter a valid email address.';
+      msgEl.classList.remove('hidden');
+      return;
+    }
+    btnEl.disabled = true;
+    btnEl.innerText = 'Joining...';
+    msgEl.innerText = '';
+    msgEl.classList.add('hidden');
+    try {
+      const response = await fetch('/api/subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: emailVal, source: 'web', magnet: 'geo-arbitrage-starter-kit', tags: ['founder'] })
+      });
+      const data = await response.json();
+      if (data.success) {
+        if (window.fireLeadEvent) window.fireLeadEvent();
+        btnEl.innerText = 'Redirecting...';
+        window.location.href = data.redirect_url;
+      } else {
+        btnEl.disabled = false;
+        btnEl.innerText = 'Join Free';
+        msgEl.innerText = '❌ ' + (data.error || 'Error, try again.');
+        msgEl.classList.remove('hidden');
+      }
+    } catch (err) {
+      btnEl.disabled = false;
+      btnEl.innerText = 'Join Free';
+      msgEl.innerText = '❌ Network error.';
+      msgEl.classList.remove('hidden');
+    }
+  }
+
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    await handleSubmit(document.getElementById('email').value.trim(), btn, msg);
+  });
+
+  document.getElementById('subscribe-form-bottom')?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    await handleSubmit(
+      document.getElementById('email-bottom').value.trim(),
+      document.getElementById('submit-btn-bottom'),
+      document.getElementById('form-message-bottom')
+    );
+  });
+</script>

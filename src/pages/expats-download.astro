@@ -1,0 +1,269 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Pixels from '../components/Pixels.astro';
+
+const title = "Your Downloads — Galaxy Arbitrage";
+const description = "Download your 4 free resources from Galaxy Arbitrage.";
+---
+
+<Layout title={title} description={description} minimal={true} noindex={true}>
+  <Fragment slot="head">
+    <Pixels page="download-page" />
+    <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;500;700;900&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  </Fragment>
+
+  <div class="downloads-root">
+    <div class="wrap">
+
+      <div class="page-header">
+        <div class="eyebrow">Your resources are ready</div>
+        <h1>Get all 4.<br>Don't leave one behind.</h1>
+        <p class="page-sub">Download each resource below. Check it off as received. Once you have all 4 you're done.</p>
+      </div>
+
+      <div class="step-indicator">
+        <div class="step-dot done"></div>
+        <div class="step-dot done"></div>
+        <div class="step-dot active"></div>
+        <span class="step-label">Step 3 of 3 — Downloads</span>
+      </div>
+
+      <div class="progress-bar-wrap">
+        <div class="progress-bar-fill" id="progress-fill"></div>
+      </div>
+      <div class="progress-label"><span id="progress-text">0 of 4</span> resources collected</div>
+
+      <div class="download-list" id="download-list">
+
+        <div class="download-card" id="card-1">
+          <div class="download-card-icon">💼</div>
+          <div class="download-card-body">
+            <div class="download-card-name">Remote Jobs Pack</div>
+            <div class="download-card-desc">50 remote-first companies hiring globally. USD pay. Async culture. No US timezone required.</div>
+            <div class="download-card-tags">
+              <span class="download-tag">50 Companies</span>
+              <span class="download-tag">12 Niches</span>
+              <span class="download-tag">80% Async</span>
+            </div>
+          </div>
+          <div class="download-card-action" id="action-1">
+            <a href="/downloads/remote-jobs-pack?ref=expats" class="btn-download" id="dl-1">DOWNLOAD →</a>
+          </div>
+        </div>
+
+        <div class="download-card" id="card-2">
+          <div class="download-card-icon">📊</div>
+          <div class="download-card-body">
+            <div class="download-card-name">Arbitrage Calculator</div>
+            <div class="download-card-desc">Austin vs Manila full cost breakdown. Your real FIRE number. Three city comparisons.</div>
+            <div class="download-card-tags">
+              <span class="download-tag">4.75x Cheaper</span>
+              <span class="download-tag">$36k Saved/yr</span>
+              <span class="download-tag">3 Cities</span>
+            </div>
+          </div>
+          <div class="download-card-action" id="action-2">
+            <a href="/downloads/arbitrage-calculator?ref=expats" class="btn-download" id="dl-2">DOWNLOAD →</a>
+          </div>
+        </div>
+
+        <div class="download-card" id="card-3">
+          <div class="download-card-icon">🤖</div>
+          <div class="download-card-body">
+            <div class="download-card-name">Prompt Vault</div>
+            <div class="download-card-desc">50 battle-tested AI prompts. Client acquisition, content, freelance ops, automation. Zero fluff.</div>
+            <div class="download-card-tags">
+              <span class="download-tag">50 Prompts</span>
+              <span class="download-tag">6 Categories</span>
+              <span class="download-tag">0 Fluff</span>
+            </div>
+          </div>
+          <div class="download-card-action" id="action-3">
+            <a href="/downloads/prompt-vault?ref=expats" class="btn-download" id="dl-3">DOWNLOAD →</a>
+          </div>
+        </div>
+
+        <div class="download-card" id="card-4">
+          <div class="download-card-icon">🌏</div>
+          <div class="download-card-body">
+            <div class="download-card-name">Geo Arbitrage Starter Kit</div>
+            <div class="download-card-desc">The exact checklist for moving your income to SEA. Banking, visas, payment processors, 48 pitfalls.</div>
+            <div class="download-card-tags">
+              <span class="download-tag">12 Countries</span>
+              <span class="download-tag">48 Pitfalls</span>
+              <span class="download-tag">2026 Updated</span>
+            </div>
+          </div>
+          <div class="download-card-action" id="action-4">
+            <a href="/downloads/geo-arbitrage-starter-kit?ref=expats" class="btn-download" id="dl-4">DOWNLOAD →</a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- COMPLETION -->
+      <div class="completion-block" id="completion">
+        <div class="completion-emoji">🚀</div>
+        <div class="completion-title">You have everything.</div>
+        <p class="completion-sub">All 4 resources collected. Check your inbox — your first issue of Galaxy Arbitrage will arrive this week. The real breakdowns start there.</p>
+        <div class="redirect-bar">Redirecting to the blog in <span id="countdown">5</span>s — or <a href="/blog" style="color: #ff4d00; text-decoration: none;">go now →</a></div>
+      </div>
+
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .downloads-root {
+    --white: #ffffff;
+    --off: #f7f7f5;
+    --black: #0a0a0a;
+    --gray: #6b6b6b;
+    --border: #e2e2de;
+    --signal: #ff4d00;
+    --green: #22c55e;
+    --green-bg: #f0fff4;
+    background: var(--off);
+    color: var(--black);
+    font-family: 'Epilogue', sans-serif;
+    min-height: 100vh;
+    padding: 40px 24px 80px;
+  }
+
+  .wrap { max-width: 560px; margin: 0 auto; }
+
+  .page-header { text-align: center; margin-bottom: 48px; }
+
+  .eyebrow {
+    font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.15em;
+    text-transform: uppercase; color: var(--signal); margin-bottom: 12px;
+  }
+
+  h1 { font-size: clamp(26px, 5vw, 40px); font-weight: 900; letter-spacing: -0.03em; line-height: 1.1; margin-bottom: 12px; }
+
+  .page-sub { font-size: 15px; color: var(--gray); line-height: 1.6; }
+
+  .step-indicator {
+    display: flex; align-items: center; justify-content: center; gap: 8px; margin-bottom: 40px;
+  }
+  .step-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--border); }
+  .step-dot.done { background: var(--green); }
+  .step-dot.active { background: var(--signal); }
+  .step-label {
+    font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: var(--gray);
+    letter-spacing: 0.1em; text-transform: uppercase; margin-left: 4px;
+  }
+
+  .progress-bar-wrap { background: var(--border); height: 4px; margin-bottom: 8px; overflow: hidden; }
+  .progress-bar-fill { height: 100%; background: var(--green); transition: width 0.5s ease; width: 0%; }
+  .progress-label {
+    font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--gray);
+    letter-spacing: 0.05em; margin-bottom: 32px; text-align: right;
+  }
+  .progress-label span { color: var(--green); font-weight: 500; }
+
+  .download-list { display: flex; flex-direction: column; gap: 3px; margin-bottom: 48px; }
+
+  .download-card {
+    background: var(--white); border: 1px solid var(--border); border-left: 4px solid var(--border);
+    padding: 24px; display: flex; align-items: center; gap: 20px; transition: all 0.3s ease;
+  }
+  .download-card.received { border-left-color: var(--green); background: var(--green-bg); }
+
+  .download-card-icon { font-size: 32px; flex-shrink: 0; width: 48px; text-align: center; }
+
+  .download-card-body { flex: 1; min-width: 0; }
+  .download-card-name { font-size: 15px; font-weight: 700; color: var(--black); margin-bottom: 4px; }
+  .download-card-desc { font-size: 12px; color: var(--gray); line-height: 1.4; margin-bottom: 10px; }
+  .download-card-tags { display: flex; gap: 6px; flex-wrap: wrap; }
+  .download-tag {
+    font-family: 'IBM Plex Mono', monospace; font-size: 10px; padding: 2px 7px;
+    background: var(--off); border: 1px solid var(--border); color: var(--gray); letter-spacing: 0.04em;
+  }
+  .download-card.received .download-tag { background: var(--white); }
+
+  .download-card-action { flex-shrink: 0; }
+
+  .btn-download {
+    padding: 10px 20px; background: var(--black); color: var(--white);
+    font-family: 'Epilogue', sans-serif; font-size: 13px; font-weight: 700;
+    border: none; cursor: pointer; white-space: nowrap; transition: background 0.2s;
+    text-decoration: none; display: inline-block;
+  }
+  .btn-download:hover { background: #333; }
+
+  .btn-received {
+    padding: 10px 20px; background: var(--green); color: var(--white);
+    font-family: 'IBM Plex Mono', monospace; font-size: 12px; font-weight: 500;
+    border: none; white-space: nowrap; letter-spacing: 0.05em;
+    display: inline-flex; align-items: center; gap: 6px;
+  }
+
+  .completion-block {
+    display: none; background: var(--black); color: var(--white);
+    padding: 40px 32px; text-align: center;
+    animation: fadeUp 0.5s ease forwards;
+  }
+  .completion-block.show { display: block; }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .completion-emoji { font-size: 48px; margin-bottom: 20px; }
+  .completion-title { font-size: 24px; font-weight: 900; letter-spacing: -0.02em; margin-bottom: 12px; }
+  .completion-sub { font-size: 14px; color: #888; margin-bottom: 28px; line-height: 1.6; }
+
+  .redirect-bar {
+    background: #1a1a1a; padding: 16px;
+    font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #666; letter-spacing: 0.05em;
+  }
+  .redirect-bar span { color: var(--signal); }
+
+  #countdown { font-weight: 700; color: var(--signal); }
+</style>
+
+<script is:inline>
+  const received = new Set();
+
+  function markReceived(num) {
+    setTimeout(() => {
+      received.add(num);
+      document.getElementById('card-' + num).classList.add('received');
+      document.getElementById('action-' + num).innerHTML = '<div class="btn-received">✓ RECEIVED</div>';
+      updateProgress();
+      if (received.size === 4) setTimeout(showCompletion, 600);
+    }, 300);
+  }
+
+  function updateProgress() {
+    const count = received.size;
+    document.getElementById('progress-fill').style.width = (count / 4 * 100) + '%';
+    document.getElementById('progress-text').textContent = count + ' of 4';
+  }
+
+  function showCompletion() {
+    const el = document.getElementById('completion');
+    el.classList.add('show');
+    el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    startCountdown();
+  }
+
+  function startCountdown() {
+    let count = 5;
+    const el = document.getElementById('countdown');
+    const interval = setInterval(() => {
+      count--;
+      el.textContent = count;
+      if (count <= 0) {
+        clearInterval(interval);
+        window.location.href = '/blog';
+      }
+    }, 1000);
+  }
+
+  ['dl-1', 'dl-2', 'dl-3', 'dl-4'].forEach((id, i) => {
+    document.getElementById(id).addEventListener('click', () => markReceived(i + 1));
+  });
+</script>

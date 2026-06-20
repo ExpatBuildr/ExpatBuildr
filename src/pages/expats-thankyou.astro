@@ -1,0 +1,167 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Pixels from '../components/Pixels.astro';
+
+const title = "You're In — Galaxy Arbitrage";
+const description = "Your 4 free resources are on the way.";
+---
+
+<Layout title={title} description={description} minimal={true} noindex={true}>
+  <Fragment slot="head">
+    <Pixels page="thank-you-friction" />
+    <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;500;700;900&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  </Fragment>
+
+  <div class="thankyou-root">
+    <div class="wrap">
+      <div class="check">✓</div>
+
+      <div class="eyebrow">You're confirmed</div>
+      <h1>Welcome to the inside.</h1>
+      <p class="subtitle">Check your inbox — your 4 free resources are on the way. While you wait, one quick thing from Galaxy:</p>
+
+      <div class="step-indicator">
+        <div class="step-dot done"></div>
+        <div class="step-dot active"></div>
+        <div class="step-dot"></div>
+        <span class="step-label">Step 2 of 3</span>
+      </div>
+
+      <div class="social-block">
+        <div class="social-label">Optional — takes 10 seconds</div>
+        <div class="social-headline">Follow along for the live breakdowns</div>
+        <p class="social-sub">The newsletter goes deep. The social feeds are where I share quick arbitrage plays, real-time market observations, and behind-the-scenes of building this from the Philippines.</p>
+
+        <div class="social-buttons">
+          <a href="https://youtube.com/@GalaxyArb" target="_blank" rel="noopener noreferrer" class="btn-social" id="yt-btn">
+            <div class="btn-social-left">
+              <span class="btn-social-icon">▶️</span>
+              <span>Subscribe on YouTube — @GalaxyArb</span>
+            </div>
+            <span class="btn-social-arrow" id="yt-done">→</span>
+          </a>
+          <a href="https://x.com/expatbuildr" target="_blank" rel="noopener noreferrer" class="btn-social" id="x-btn">
+            <div class="btn-social-left">
+              <span class="btn-social-icon">𝕏</span>
+              <span>Follow on X — @expatbuildr</span>
+            </div>
+            <span class="btn-social-arrow" id="x-done">→</span>
+          </a>
+        </div>
+      </div>
+
+      <a href="/expats-download" class="skip-link">No thanks, just give me my downloads →</a>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .thankyou-root {
+    --white: #ffffff;
+    --off: #f7f7f5;
+    --black: #0a0a0a;
+    --gray: #6b6b6b;
+    --border: #e2e2de;
+    --signal: #ff4d00;
+    --green: #22c55e;
+    background: var(--white);
+    color: var(--black);
+    font-family: 'Epilogue', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 24px;
+  }
+
+  .wrap { max-width: 520px; width: 100%; text-align: center; }
+
+  .check {
+    width: 64px; height: 64px; background: var(--green); border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 32px; font-size: 28px; color: white; font-weight: 700;
+    animation: popIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+  }
+  @keyframes popIn {
+    from { transform: scale(0); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+  }
+
+  .eyebrow {
+    font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.15em;
+    text-transform: uppercase; color: var(--green); margin-bottom: 16px;
+  }
+
+  h1 { font-size: clamp(28px, 6vw, 48px); font-weight: 900; letter-spacing: -0.03em; line-height: 1.1; margin-bottom: 16px; }
+
+  .subtitle { font-size: 16px; color: var(--gray); line-height: 1.6; margin-bottom: 48px; }
+
+  .step-indicator {
+    display: flex; align-items: center; justify-content: center;
+    gap: 8px; margin-bottom: 48px;
+  }
+  .step-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--border); }
+  .step-dot.active { background: var(--signal); }
+  .step-dot.done { background: var(--green); }
+  .step-label {
+    font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: var(--gray);
+    letter-spacing: 0.1em; text-transform: uppercase; margin-left: 4px;
+  }
+
+  .social-block {
+    background: var(--off); border: 1px solid var(--border);
+    padding: 32px; margin-bottom: 16px; text-align: left;
+  }
+  .social-label {
+    font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.15em;
+    text-transform: uppercase; color: var(--gray); margin-bottom: 8px;
+  }
+  .social-headline { font-size: 18px; font-weight: 700; color: var(--black); margin-bottom: 8px; line-height: 1.3; }
+  .social-sub { font-size: 13px; color: var(--gray); margin-bottom: 24px; line-height: 1.5; }
+
+  .social-buttons { display: flex; flex-direction: column; gap: 10px; }
+
+  .btn-social {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 14px 20px; border: 2px solid var(--black); background: var(--white);
+    color: var(--black); font-family: 'Epilogue', sans-serif; font-size: 14px;
+    font-weight: 700; cursor: pointer; text-decoration: none; transition: all 0.2s;
+  }
+  .btn-social:hover { background: var(--black); color: var(--white); }
+  .btn-social.done { background: var(--green); border-color: var(--green); color: var(--white); pointer-events: none; }
+
+  .btn-social-left { display: flex; align-items: center; gap: 12px; }
+  .btn-social-icon { font-size: 18px; }
+  .btn-social-arrow { font-size: 16px; }
+
+  .skip-link {
+    display: block; text-align: center; margin-top: 16px;
+    font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #bbb;
+    cursor: pointer; letter-spacing: 0.05em; text-decoration: none; transition: color 0.2s;
+  }
+  .skip-link:hover { color: var(--gray); }
+</style>
+
+<script is:inline>
+  function markDone(btnId, arrowId) {
+    setTimeout(() => {
+      const btn = document.getElementById(btnId);
+      const arrow = document.getElementById(arrowId);
+      btn.classList.add('done');
+      arrow.textContent = '✓';
+      checkBothDone();
+    }, 800);
+  }
+
+  function checkBothDone() {
+    const ytDone = document.getElementById('yt-btn').classList.contains('done');
+    const xDone = document.getElementById('x-btn').classList.contains('done');
+    if (ytDone && xDone) {
+      setTimeout(() => { window.location.href = '/expats-download'; }, 1000);
+    }
+  }
+
+  document.getElementById('yt-btn').addEventListener('click', () => markDone('yt-btn', 'yt-done'));
+  document.getElementById('x-btn').addEventListener('click', () => markDone('x-btn', 'x-done'));
+</script>

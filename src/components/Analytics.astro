@@ -1,0 +1,121 @@
+---
+/**
+ * Unified Tracking Engine [GALAXY-V2]
+ * Consolidates GA4, Meta, TikTok, LinkedIn, Reddit, and X (Twitter) Pixels.
+ * Includes Advanced Matching helper for high-intent lead capture.
+ */
+---
+
+<!-- Google tag (gtag.js) -->
+<script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-SD1015FGKZ"></script>
+<!-- Unified Tracking Initialization -->
+<script is:inline>
+  // --- GA4 ---
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-SD1015FGKZ');
+
+  // --- Meta Pixel ---
+  !function(f,b,e,v,n,t,s){
+    if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):(n.queue=n.queue||[]).push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=n.queue||[];
+    t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)
+  }(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '1480646753745240');
+  fbq('track', 'PageView');
+
+  // --- TikTok Pixel ---
+  !function (w, d, t) {
+    w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];
+    ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"];
+    ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};
+    for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);
+    ttq.instance=function(t){for(var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e};
+    ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js",o=n&&n.partner;ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};var sc=document.createElement("script");sc.type="text/javascript",sc.async=!0,sc.src=r+"?sdkid="+e+"&lib="+t;var fs=document.getElementsByTagName("script")[0];fs.parentNode.insertBefore(sc,fs)};
+    ttq.load('D7EJNB3C77U1RGO04F1G');
+    ttq.page();
+  }(window, document, 'ttq');
+
+  // --- Reddit Pixel ---
+  !function(w,d){
+    if(!w.rdt){
+      var p=w.rdt=function(){p.sendEvent?p.sendEvent.apply(p,arguments):p.callQueue.push(arguments)};
+      p.callQueue=[];
+      var t=d.createElement("script");t.src="https://www.redditstatic.com/ads/pixel.js",t.async=!0;
+      var s=d.getElementsByTagName("script")[0];s.parentNode.insertBefore(t,s)
+    }
+  }(window,document);
+  rdt('init','a2_iwih8dctksoi');
+  rdt('track', 'PageVisit');
+
+  // --- LinkedIn Insight Tag ---
+  _linkedin_partner_id = "5238641";
+  window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
+  window._linkedin_data_partner_ids.push(_linkedin_partner_id);
+  (function(l) {
+    if (!l){
+      window.lintrk = function(a,b){window.lintrk.q.push([a,b])};
+      window.lintrk.q=[]
+    }
+    var s = document.getElementsByTagName("script")[0];
+    var b = document.createElement("script");
+    b.type = "text/javascript";b.async = true;
+    b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
+    s.parentNode.insertBefore(b, s);
+  })(window.lintrk);
+
+  // --- X (Twitter) Pixel ---
+  // uwt.js fires PageView automatically on twq('config', ...) — no manual call needed.
+  !function(e,t,n,s,u,a){e.twq||(s=e.twq=function(){s.exe?s.exe.apply(s,arguments):s.queue.push(arguments);
+  },s.version='1.1',s.queue=[],u=t.createElement(n),u.async=!0,u.src='https://static.ads-twitter.com/uwt.js',
+  a=t.getElementsByTagName(n)[0],a.parentNode.insertBefore(u,a))}(window,document,'script');
+  twq('config','r8l0u');
+</script>
+
+<!-- GALAXY EVENT ENGINE -->
+<script is:inline>
+    /**
+     * trackLead: Captures high-intent conversion events across all pixels.
+     */
+    window.trackLead = function(data = {}) {
+        console.log('🚀 ExpatBuildr: Tracking Lead Event', data);
+
+        if (window.gtag) {
+            gtag('event', 'generate_lead', {
+                "event_label": data.label || "Newsletter Signup",
+                "value": data.value || 0
+            });
+        }
+        if (window.fbq) {
+            fbq('track', 'Lead');
+        }
+        if (window.ttq) {
+            ttq.track('CompletePayment', { value: data.value || 50.00, currency: 'USD' });
+        }
+        if (window.rdt) {
+            rdt('track', 'Lead');
+        }
+        if (window.lintrk) {
+            window.lintrk('track', { conversion_id: 1234567 });
+        }
+        if (window.twq) {
+            twq('event', 'Lead', {});
+        }
+    };
+
+    /**
+     * initAdvancedMatching: Helper to initialize Advanced Matching
+     */
+    window.initAdvancedMatching = function(email) {
+        if (!email) return;
+        console.log('🔒 ExpatBuildr: Initializing Advanced Matching');
+        if (window.rdt) {
+            rdt('init', 'a2_iwih8dctksoi', { "email": email });
+        }
+        if (window.fbq) {
+            fbq('init', '1480646753745240', { em: email });
+        }
+    };
+</script>

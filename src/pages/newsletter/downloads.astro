@@ -1,0 +1,311 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Pixels from '../../components/Pixels.astro';
+
+const ref = Astro.url.searchParams.get('ref');
+
+// Gate: must arrive with ref=newsletter (set by /api/subscribe redirect)
+if (ref !== 'newsletter') {
+  return Astro.redirect('/newsletter');
+}
+
+const resources = [
+  {
+    num: '01',
+    icon: '💼',
+    color: '#f5c842',
+    title: 'Remote Jobs Pack',
+    desc: '50 remote-first companies actively hiring globally, filtered for USD pay and async culture.',
+    file: '/downloads/remote-jobs-pack.pdf',
+    type: 'PDF',
+    stats: ['50 Companies', '12 Niches', '80% Async'],
+  },
+  {
+    num: '02',
+    icon: '📊',
+    color: '#00e5ff',
+    title: 'Arbitrage Calculator',
+    desc: 'Full cost-of-living math, salary tiers, and your FIRE number across 5 countries.',
+    file: '/downloads/arbitrage-calculator.pdf',
+    type: 'PDF',
+    stats: ['4.75x Cheaper', '$36k Saved/yr', '3 Cities'],
+  },
+  {
+    num: '03',
+    icon: '🤖',
+    color: '#00e9a3',
+    title: 'Prompt Vault',
+    desc: '50 battle-tested AI prompts for client acquisition, content, freelance ops, and automation.',
+    file: '/downloads/prompt-vault.pdf',
+    type: 'PDF',
+    stats: ['50 Prompts', '6 Categories', '0 Fluff'],
+  },
+  {
+    num: '04',
+    icon: '🌏',
+    color: '#ff6b35',
+    title: 'Geo-Arbitrage Starter Kit',
+    desc: 'Everything you need to understand geographic arbitrage and start living on a fraction of your current cost.',
+    file: '/downloads/GeoArbitrage-StarterKit-GalaxyBuilt.pdf',
+    type: 'PDF',
+    stats: ['12 Countries', 'Cost Breakdowns', '2026 Updated'],
+  },
+];
+---
+
+<Layout
+  title="Your Free Resource Pack | Galaxy Arbitrage"
+  description="All 4 free resources for Galaxy Arbitrage subscribers."
+  minimal={true}
+  noindex={true}
+>
+  <Pixels slot="head" page="newsletter-downloads" />
+
+  <div class="dl-root">
+    <main class="dl-wrap">
+
+      <div class="dl-header">
+        <div class="brand">GALAXY<span>BUILT</span>.dev</div>
+        <div class="check-ring">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="20 6 9 17 4 12"></polyline>
+          </svg>
+        </div>
+        <h1 class="dl-title">YOU'RE IN.<br/><span>HERE'S EVERYTHING.</span></h1>
+        <p class="dl-sub">All 4 resources are unlocked. Download them all — they're yours to keep.</p>
+        <div class="subscriber-badge">
+          <span class="badge-dot"></span>
+          Galaxy Arbitrage Subscriber — Full Access Unlocked
+        </div>
+      </div>
+
+      <div class="resources-grid">
+        {resources.map((r) => (
+          <div class="resource-card" style={`--rc: ${r.color}`}>
+            <div class="rc-top">
+              <div class="rc-num">{r.num}</div>
+              <div class="rc-icon">{r.icon}</div>
+            </div>
+            <h2 class="rc-title">{r.title}</h2>
+            <p class="rc-desc">{r.desc}</p>
+            <div class="rc-stats">
+              {r.stats.map(s => <span>{s}</span>)}
+            </div>
+            <a href={r.file} download class="rc-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+              Download {r.type}
+            </a>
+          </div>
+        ))}
+      </div>
+
+      <div class="footer-note">
+        <p>Check your inbox — your first issue of Galaxy Arbitrage is on its way.</p>
+        <a href="/newsletter" class="footer-link">← Back to Newsletter</a>
+      </div>
+
+    </main>
+  </div>
+</Layout>
+
+<style>
+  :root {
+    --bg: #060810;
+    --gold: #f5c842;
+    --orange: #ff6b35;
+    --text: #f0f4ff;
+    --muted: #8892b0;
+    --border: rgba(255,255,255,0.07);
+    --card-bg: rgba(255,255,255,0.03);
+    --font-display: 'Bebas Neue', sans-serif;
+    --font-body: 'Syne', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+  }
+
+  .dl-root {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-body);
+    min-height: 100vh;
+    padding: 40px 20px 60px;
+  }
+
+  .dl-wrap {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .dl-header {
+    text-align: center;
+    margin-bottom: 48px;
+  }
+
+  .brand {
+    font-family: var(--font-display);
+    font-size: 0.9rem;
+    letter-spacing: 0.15em;
+    color: var(--muted);
+    margin-bottom: 24px;
+  }
+  .brand span { color: var(--gold); }
+
+  .check-ring {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: rgba(0, 233, 163, 0.1);
+    border: 2px solid rgba(0, 233, 163, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    color: #00e9a3;
+  }
+
+  .dl-title {
+    font-family: var(--font-display);
+    font-size: clamp(2.5rem, 8vw, 5rem);
+    line-height: 1;
+    letter-spacing: 0.02em;
+    margin-bottom: 16px;
+  }
+  .dl-title span { color: var(--gold); }
+
+  .dl-sub {
+    color: var(--muted);
+    font-size: 1rem;
+    margin-bottom: 20px;
+    max-width: 460px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .subscriber-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 18px;
+    border-radius: 100px;
+    background: rgba(0, 233, 163, 0.06);
+    border: 1px solid rgba(0, 233, 163, 0.2);
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #00e9a3;
+  }
+  .badge-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #00e9a3;
+    box-shadow: 0 0 6px #00e9a3;
+  }
+
+  .resources-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-bottom: 40px;
+  }
+  @media (max-width: 640px) {
+    .resources-grid { grid-template-columns: 1fr; }
+  }
+
+  .resource-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-top: 3px solid var(--rc);
+    border-radius: 24px;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .rc-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .rc-num {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    color: var(--rc);
+    text-transform: uppercase;
+  }
+  .rc-icon { font-size: 1.8rem; }
+
+  .rc-title {
+    font-family: var(--font-display);
+    font-size: 1.6rem;
+    letter-spacing: 0.03em;
+    line-height: 1;
+    color: var(--text);
+  }
+
+  .rc-desc {
+    font-size: 0.88rem;
+    color: var(--muted);
+    line-height: 1.6;
+    flex: 1;
+  }
+
+  .rc-stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .rc-stats span {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    padding: 3px 10px;
+    border-radius: 100px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    color: var(--muted);
+    letter-spacing: 0.04em;
+  }
+
+  .rc-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 14px 20px;
+    border-radius: 100px;
+    background: var(--rc);
+    color: #000;
+    font-family: var(--font-body);
+    font-weight: 800;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    text-decoration: none;
+    margin-top: 4px;
+  }
+
+  .footer-note {
+    text-align: center;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+  }
+  .footer-note p {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--muted);
+    margin-bottom: 12px;
+  }
+  .footer-link {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    color: var(--gold);
+    text-decoration: none;
+    letter-spacing: 0.05em;
+  }
+</style>

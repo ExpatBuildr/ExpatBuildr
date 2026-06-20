@@ -1,0 +1,1164 @@
+---
+// /fixleaks — Service Close Page
+// Context: Arrives here after receiving their audit report via email
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fix the Leaks — ExpatBuildr Done-For-You Services</title>
+  <meta name="description" content="You've seen the audit. Now let's fix it. Landing pages, email sequences, and full funnel architecture. Done for you in 3–7 days." />
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Syne:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --gold: #f5a623;
+      --orange: #ff6b35;
+      --cyan: #00d4ff;
+      --emerald: #00e87a;
+      --red: #ff2d55;
+      --bg-deep: #060809;
+      --bg-glass: rgba(255,255,255,0.028);
+      --bg-glass-hover: rgba(255,255,255,0.05);
+      --bg-featured: rgba(245,166,35,0.06);
+      --border-glass: rgba(255,255,255,0.07);
+      --border-gold: rgba(245,166,35,0.35);
+      --border-gold-dim: rgba(245,166,35,0.15);
+      --text-primary: #f0ece4;
+      --text-muted: rgba(240,236,228,0.52);
+      --text-dim: rgba(240,236,228,0.28);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg-deep);
+      color: var(--text-primary);
+      font-family: 'Syne', sans-serif;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* ── BACKGROUND ── */
+    .bg-layer {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .bg-grid {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(245,166,35,0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(245,166,35,0.035) 1px, transparent 1px);
+      background-size: 72px 72px;
+    }
+
+    .bg-orbs {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 60% 40% at 15% 15%, rgba(255,107,53,0.08) 0%, transparent 55%),
+        radial-gradient(ellipse 50% 35% at 85% 25%, rgba(245,166,35,0.07) 0%, transparent 50%),
+        radial-gradient(ellipse 70% 50% at 50% 90%, rgba(0,212,255,0.04) 0%, transparent 55%);
+    }
+
+    .bg-scanlines {
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 2px,
+        rgba(0,0,0,0.08) 2px,
+        rgba(0,0,0,0.08) 4px
+      );
+      opacity: 0.4;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(6,8,9,0.9);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border-glass);
+    }
+
+    .nav-inner {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 18px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.4rem;
+      letter-spacing: 0.12em;
+      color: var(--gold);
+      text-decoration: none;
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .nav-guarantee {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--emerald);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .nav-cta {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 8px 16px;
+      background: linear-gradient(135deg, var(--gold), var(--orange));
+      color: #060809;
+      transition: filter 0.15s ease, transform 0.15s ease;
+    }
+
+    .nav-cta:hover { filter: brightness(1.1); transform: translateY(-1px); }
+
+    /* ── PAGE ── */
+    .page {
+      position: relative;
+      z-index: 1;
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      padding: 80px 0 64px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+
+    .hero-left { animation: fadeUp 0.6s ease both; }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 24px;
+      padding: 6px 12px;
+      background: rgba(245,166,35,0.06);
+      border: 1px solid var(--border-gold-dim);
+    }
+
+    .hero-eyebrow::before {
+      content: '';
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--gold);
+      animation: blink 2s ease infinite;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.2; }
+    }
+
+    .hero-headline {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(3.5rem, 6vw, 5.5rem);
+      line-height: 0.93;
+      letter-spacing: 0.02em;
+      margin-bottom: 24px;
+    }
+
+    .hero-headline .hl-dim { display: block; color: var(--text-muted); }
+    .hero-headline .hl-white { display: block; color: var(--text-primary); }
+    .hero-headline .hl-gold { display: block; color: var(--gold); }
+
+    .hero-sub {
+      font-size: 1rem;
+      line-height: 1.7;
+      color: var(--text-muted);
+      margin-bottom: 32px;
+      max-width: 420px;
+    }
+
+    .hero-sub strong { color: var(--text-primary); }
+
+    .hero-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.1rem;
+      letter-spacing: 0.1em;
+      text-decoration: none;
+      padding: 16px 28px;
+      background: linear-gradient(135deg, var(--gold), var(--orange));
+      color: #060809;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .btn-primary::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(255,255,255,0.15), transparent);
+      opacity: 0;
+      transition: opacity 0.2s ease;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 40px rgba(245,166,35,0.3);
+    }
+
+    .btn-primary:hover::before { opacity: 1; }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 13px 24px;
+      background: transparent;
+      border: 1px solid var(--border-glass);
+      color: var(--text-muted);
+      transition: border-color 0.2s ease, color 0.2s ease;
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+    }
+
+    /* ── HERO RIGHT — AUDIT PREVIEW ── */
+    .hero-right {
+      animation: fadeUp 0.6s 0.15s ease both;
+    }
+
+    .audit-card {
+      background: var(--bg-glass);
+      border: 1px solid var(--border-glass);
+      border-top: 2px solid var(--red);
+      padding: 28px;
+      position: relative;
+    }
+
+    .audit-card-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .audit-card-label::before {
+      content: '';
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--red);
+      animation: blink 1.5s ease infinite;
+    }
+
+    .audit-leak-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .audit-leak-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 10px 14px;
+      background: rgba(255,45,85,0.04);
+      border: 1px solid rgba(255,45,85,0.1);
+    }
+
+    .leak-severity {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.55rem;
+      letter-spacing: 0.12em;
+      padding: 2px 6px;
+      flex-shrink: 0;
+    }
+
+    .leak-severity.high {
+      background: rgba(255,45,85,0.15);
+      border: 1px solid rgba(255,45,85,0.3);
+      color: var(--red);
+    }
+
+    .leak-severity.med {
+      background: rgba(255,166,35,0.1);
+      border: 1px solid rgba(255,166,35,0.25);
+      color: var(--gold);
+    }
+
+    .leak-text {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+
+    .audit-card-footer {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.1em;
+      color: var(--text-dim);
+      padding-top: 16px;
+      border-top: 1px solid var(--border-glass);
+    }
+
+    /* ── SECTION BASE ── */
+    section { padding: 72px 0; border-top: 1px solid var(--border-glass); }
+
+    .section-eyebrow {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.62rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .section-eyebrow::after {
+      content: '';
+      flex: 0 0 40px;
+      height: 1px;
+      background: var(--border-glass);
+    }
+
+    .section-headline {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(2.4rem, 4vw, 3.5rem);
+      line-height: 0.95;
+      letter-spacing: 0.02em;
+      margin-bottom: 48px;
+    }
+
+    .section-headline em {
+      font-style: normal;
+      color: var(--gold);
+    }
+
+    /* ── PRICING ── */
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--border-glass);
+      border: 1px solid var(--border-glass);
+      margin-bottom: 24px;
+    }
+
+    .plan {
+      background: var(--bg-deep);
+      padding: 32px 24px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      transition: background 0.2s ease;
+    }
+
+    .plan:hover { background: rgba(255,255,255,0.02); }
+
+    .plan.featured {
+      background: var(--bg-featured);
+      border-left: 1px solid var(--border-gold-dim);
+      border-right: 1px solid var(--border-gold-dim);
+    }
+
+    .plan.featured::before {
+      content: 'MOST POPULAR';
+      position: absolute;
+      top: -1px;
+      left: 50%;
+      transform: translateX(-50%) translateY(-50%);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.55rem;
+      letter-spacing: 0.18em;
+      background: linear-gradient(135deg, var(--gold), var(--orange));
+      color: #060809;
+      padding: 3px 12px;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    .plan-tier {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.58rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      margin-bottom: 10px;
+    }
+
+    .plan-name {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.6rem;
+      letter-spacing: 0.05em;
+      line-height: 1.1;
+      margin-bottom: 8px;
+      color: var(--text-primary);
+    }
+
+    .plan-tagline {
+      font-size: 0.8rem;
+      line-height: 1.55;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--border-glass);
+      flex: 0;
+    }
+
+    .plan-price-wrap {
+      margin-bottom: 8px;
+    }
+
+    .plan-price {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 3rem;
+      letter-spacing: 0.02em;
+      color: var(--text-primary);
+      line-height: 1;
+    }
+
+    .plan-price sup {
+      font-size: 1.2rem;
+      vertical-align: super;
+      color: var(--text-muted);
+    }
+
+    .plan-delivery {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.58rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      margin-bottom: 20px;
+    }
+
+    .plan-features {
+      list-style: none;
+      flex: 1;
+      margin-bottom: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .plan-features li {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      padding: 9px 0;
+      border-bottom: 1px solid var(--border-glass);
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      line-height: 1.5;
+    }
+
+    .plan-features li::before {
+      content: '✓';
+      color: var(--emerald);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.65rem;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .plan-features li.inherit {
+      color: var(--text-dim);
+      font-style: italic;
+    }
+
+    .plan-features li.inherit::before { color: var(--text-dim); }
+
+    .plan-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 13px 20px;
+      transition: all 0.15s ease;
+    }
+
+    .plan-btn.default {
+      background: transparent;
+      border: 1px solid var(--border-glass);
+      color: var(--text-muted);
+    }
+
+    .plan-btn.default:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+    }
+
+    .plan-btn.featured-btn {
+      background: linear-gradient(135deg, var(--gold), var(--orange));
+      color: #060809;
+    }
+
+    .plan-btn.featured-btn:hover {
+      filter: brightness(1.1);
+      transform: translateY(-1px);
+      box-shadow: 0 8px 28px rgba(245,166,35,0.25);
+    }
+
+    /* ── BUNDLE ── */
+    .bundle-box {
+      background: var(--bg-glass);
+      border: 1px solid var(--border-gold);
+      padding: 32px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 32px;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .bundle-box::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--gold), var(--orange), transparent);
+    }
+
+    .bundle-tag {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.58rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 10px;
+    }
+
+    .bundle-name {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2rem;
+      letter-spacing: 0.04em;
+      margin-bottom: 8px;
+      color: var(--text-primary);
+    }
+
+    .bundle-desc {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      max-width: 500px;
+    }
+
+    .bundle-pricing {
+      text-align: right;
+      flex-shrink: 0;
+    }
+
+    .bundle-original {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      color: var(--text-dim);
+      text-decoration: line-through;
+      margin-bottom: 4px;
+    }
+
+    .bundle-price {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 3rem;
+      letter-spacing: 0.02em;
+      color: var(--gold);
+      line-height: 1;
+      margin-bottom: 2px;
+    }
+
+    .bundle-price sup { font-size: 1.2rem; vertical-align: super; }
+
+    .bundle-save {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.58rem;
+      letter-spacing: 0.12em;
+      color: var(--emerald);
+      margin-bottom: 16px;
+    }
+
+    /* ── PROCESS ── */
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--border-glass);
+      border: 1px solid var(--border-glass);
+    }
+
+    .proc-step {
+      background: var(--bg-deep);
+      padding: 32px 24px;
+      position: relative;
+      overflow: hidden;
+      transition: background 0.2s ease;
+    }
+
+    .proc-step:hover { background: rgba(255,255,255,0.02); }
+
+    .proc-step::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--gold), transparent);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s ease;
+    }
+
+    .proc-step:hover::after { transform: scaleX(1); }
+
+    .step-num {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 4rem;
+      letter-spacing: 0.05em;
+      line-height: 1;
+      color: rgba(245,166,35,0.08);
+      margin-bottom: 16px;
+    }
+
+    .step-title {
+      font-family: 'Syne', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 8px;
+    }
+
+    .step-title em {
+      font-style: normal;
+      color: var(--gold);
+    }
+
+    .step-desc {
+      font-size: 0.82rem;
+      line-height: 1.6;
+      color: var(--text-muted);
+    }
+
+    /* ── GUARANTEE ── */
+    .guarantee-box {
+      background: var(--bg-glass);
+      border: 1px solid rgba(0,232,122,0.15);
+      padding: 36px;
+      display: flex;
+      gap: 24px;
+      align-items: flex-start;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .guarantee-box::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--emerald), transparent);
+    }
+
+    .guarantee-icon {
+      font-size: 2.5rem;
+      flex-shrink: 0;
+    }
+
+    .guarantee-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.6rem;
+      letter-spacing: 0.05em;
+      color: var(--emerald);
+      margin-bottom: 8px;
+    }
+
+    .guarantee-text {
+      font-size: 0.88rem;
+      line-height: 1.65;
+      color: var(--text-muted);
+    }
+
+    .guarantee-text strong { color: var(--text-primary); }
+
+    /* ── CALENDLY ── */
+    .calendly-section { text-align: center; }
+
+    .calendly-wrap {
+      background: var(--bg-glass);
+      border: 1px solid var(--border-gold-dim);
+      padding: 48px 40px;
+      position: relative;
+      overflow: hidden;
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    .calendly-wrap::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 20%; right: 20%;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    }
+
+    .calendly-headline {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2.4rem;
+      letter-spacing: 0.04em;
+      line-height: 1;
+      margin-bottom: 12px;
+    }
+
+    .calendly-sub {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 32px;
+      max-width: 440px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .calendly-embed-placeholder {
+      background: rgba(255,255,255,0.02);
+      border: 1px dashed var(--border-glass);
+      padding: 40px 24px;
+      margin-bottom: 24px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      color: var(--text-dim);
+      text-transform: uppercase;
+    }
+
+    /* ── FINAL CTA ── */
+    .final-cta {
+      text-align: center;
+      padding: 80px 0;
+      border-top: 1px solid var(--border-glass);
+    }
+
+    .final-headline {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(3rem, 6vw, 5rem);
+      letter-spacing: 0.02em;
+      line-height: 0.95;
+      margin-bottom: 20px;
+    }
+
+    .final-headline .fh-muted { display: block; color: var(--text-muted); }
+    .final-headline .fh-white { display: block; color: var(--text-primary); }
+    .final-headline .fh-gold { display: block; color: var(--gold); }
+
+    .final-sub {
+      font-size: 1rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+      max-width: 480px;
+      margin: 0 auto 36px;
+    }
+
+    .final-btns {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+
+    .final-note {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.12em;
+      color: var(--text-dim);
+      text-transform: uppercase;
+    }
+
+    .final-note span { color: var(--emerald); }
+
+    /* ── FOOTER ── */
+    footer {
+      position: relative;
+      z-index: 1;
+      border-top: 1px solid var(--border-glass);
+      padding: 24px;
+      max-width: 1080px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .footer-brand {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.62rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .footer-link {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .footer-link:hover { color: var(--gold); }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ── SCROLL REVEAL ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ── MOBILE ── */
+    @media (max-width: 860px) {
+      .hero { grid-template-columns: 1fr; gap: 40px; }
+      .pricing-grid { grid-template-columns: 1fr; }
+      .process-steps { grid-template-columns: 1fr; }
+      .bundle-box { grid-template-columns: 1fr; }
+      .bundle-pricing { text-align: left; }
+      .hero-right { display: none; }
+    }
+
+    @media (max-width: 560px) {
+      .nav-guarantee { display: none; }
+      .final-btns { flex-direction: column; align-items: center; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="bg-layer">
+    <div class="bg-grid"></div>
+    <div class="bg-orbs"></div>
+    <div class="bg-scanlines"></div>
+  </div>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">ExpatBuildr</a>
+      <div class="nav-right">
+        <span class="nav-guarantee">✓ 2-Round Revision Guarantee</span>
+        <a href="#pricing" class="nav-cta">See Pricing →</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="page">
+
+    <!-- HERO -->
+    <section class="hero" style="border-top: none;">
+      <div class="hero-left">
+        <div class="hero-eyebrow">You've seen the leaks</div>
+        <h1 class="hero-headline">
+          <span class="hl-dim">Now let's</span>
+          <span class="hl-white">fix every</span>
+          <span class="hl-gold">one of them.</span>
+        </h1>
+        <p class="hero-sub">
+          Your audit identified the exact revenue leaks costing you leads. <strong>I'll build the fix.</strong> Landing page, email sequence, full funnel — done for you in 3–7 days. You own every file.
+        </p>
+        <div class="hero-actions">
+          <a href="#pricing" class="btn-primary">See What Gets Fixed →</a>
+          <a href="#call" class="btn-secondary">Book a Free Strategy Call</a>
+        </div>
+      </div>
+
+      <div class="hero-right">
+        <div class="audit-card">
+          <div class="audit-card-label">Issues found in your audit</div>
+          <ul class="audit-leak-list">
+            <li class="audit-leak-item">
+              <span class="leak-severity high">HIGH</span>
+              <span class="leak-text">No email capture — visitors leave with no follow-up path</span>
+            </li>
+            <li class="audit-leak-item">
+              <span class="leak-severity high">HIGH</span>
+              <span class="leak-text">Mobile layout broken — 70% of traffic sees a broken site</span>
+            </li>
+            <li class="audit-leak-item">
+              <span class="leak-severity high">HIGH</span>
+              <span class="leak-text">No conversion CTA — visitors don't know what to do next</span>
+            </li>
+            <li class="audit-leak-item">
+              <span class="leak-severity med">MED</span>
+              <span class="leak-text">Page speed failing — 4.2s load time killing conversions</span>
+            </li>
+            <li class="audit-leak-item">
+              <span class="leak-severity med">MED</span>
+              <span class="leak-text">Pixels not firing — running ads completely blind</span>
+            </li>
+          </ul>
+          <div class="audit-card-footer">Every issue above has a fix. Scroll down to see them.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRICING -->
+    <section id="pricing">
+      <div class="section-eyebrow">The Fix</div>
+      <h2 class="section-headline">Three packages.<br /><em>One founder.</em><br />Everything you need.</h2>
+
+      <div class="pricing-grid reveal">
+
+        <div class="plan">
+          <div class="plan-tier">Starter</div>
+          <div class="plan-name">Landing Page Build</div>
+          <p class="plan-tagline">One high-converting landing page with copy written, pixel installed, and email capture live.</p>
+          <div class="plan-price-wrap">
+            <div class="plan-price"><sup>$</sup>500</div>
+          </div>
+          <div class="plan-delivery">3-day delivery</div>
+          <ul class="plan-features">
+            <li>Landing page built and deployed</li>
+            <li>Conversion copy written for you</li>
+            <li>Email capture form connected</li>
+            <li>Meta / Google pixel installed</li>
+            <li>Mobile responsive</li>
+            <li>You own the code</li>
+          </ul>
+          <a href="https://buy.stripe.com/5kQ5kC7WL07g7po5CU2oE03" class="plan-btn default" target="_blank" rel="noopener">Buy Starter — $500 →</a>
+        </div>
+
+        <div class="plan featured">
+          <div class="plan-tier">Growth</div>
+          <div class="plan-name">Landing Page + Email Sequence</div>
+          <p class="plan-tagline">Everything in Starter, plus a lead magnet PDF and 3-part welcome sequence that nurtures leads to your paid offer.</p>
+          <div class="plan-price-wrap">
+            <div class="plan-price"><sup>$</sup>950</div>
+          </div>
+          <div class="plan-delivery">5-day delivery</div>
+          <ul class="plan-features">
+            <li class="inherit">Everything in Starter, PLUS:</li>
+            <li>Thank-you + download page</li>
+            <li>Lead magnet PDF created</li>
+            <li>Beehiiv newsletter connected</li>
+            <li>3-part welcome email sequence</li>
+          </ul>
+          <a href="https://buy.stripe.com/eVqaEWdh54nw7po1mE2oE04" class="plan-btn featured-btn" target="_blank" rel="noopener">Buy Growth — $950 →</a>
+        </div>
+
+        <div class="plan">
+          <div class="plan-tier">Authority</div>
+          <div class="plan-name">Full Funnel Architecture</div>
+          <p class="plan-tagline">Everything in Growth, plus a full click funnel, multi-pixel stack, and complete QA.</p>
+          <div class="plan-price-wrap">
+            <div class="plan-price"><sup>$</sup>1,500</div>
+          </div>
+          <div class="plan-delivery">7-day delivery</div>
+          <ul class="plan-features">
+            <li class="inherit">Everything in Growth, PLUS:</li>
+            <li>Full click funnel friction page</li>
+            <li>Multi-pixel stack (Meta + Google + TikTok)</li>
+            <li>Beehiiv newsletter setup included</li>
+            <li>Full funnel QA & optimization</li>
+          </ul>
+          <a href="https://buy.stripe.com/aFa00i3Gv7zIbFE4yQ2oE05" class="plan-btn default" target="_blank" rel="noopener">Buy Authority — $1,500 →</a>
+        </div>
+
+      </div>
+
+      <!-- Bundle -->
+      <div class="bundle-box reveal">
+        <div>
+          <div class="bundle-tag">Best Value · Full Launch Kit</div>
+          <div class="bundle-name">Everything. One price.</div>
+          <p class="bundle-desc">Landing page + email sequence + lead magnet PDF. Starter + Growth bundled. The complete foundation any founder needs to launch and convert — at a discount.</p>
+        </div>
+        <div class="bundle-pricing">
+          <div class="bundle-original">$1,450 separately</div>
+          <div class="bundle-price"><sup>$</sup>1,200</div>
+          <div class="bundle-save">// Save $250 · 7-day delivery</div>
+          <a href="https://buy.stripe.com/7sY9ASb8X3jscJI5CU2oE06" class="plan-btn featured-btn" target="_blank" rel="noopener" style="width: 100%; margin-top: 4px;">Get the Full Launch Kit →</a>
+        </div>
+      </div>
+
+      <!-- Newsletter offer note -->
+      <div style="margin-top: 16px; padding: 14px 18px; background: rgba(0,232,122,0.04); border: 1px solid rgba(0,232,122,0.1); font-family: 'JetBrains Mono', monospace; font-size: 0.62rem; letter-spacing: 0.1em; color: var(--emerald); line-height: 1.6;">
+        ✦ Newsletter launch special: first 100 subscribers get 50% off any package. Prices reflect US market positioning.
+      </div>
+    </section>
+
+    <!-- PROCESS -->
+    <section id="process">
+      <div class="section-eyebrow">How It Works</div>
+      <h2 class="section-headline">Simple.<br /><em>Fast.</em> Yours.</h2>
+
+      <div class="process-steps reveal">
+        <div class="proc-step">
+          <div class="step-num">01</div>
+          <div class="step-title">You <em>pay & brief</em></div>
+          <p class="step-desc">Buy your package. You get a short intake form — tell me your product, audience, and goal. That's all I need to start.</p>
+        </div>
+        <div class="proc-step">
+          <div class="step-num">02</div>
+          <div class="step-title">I <em>build it</em></div>
+          <p class="step-desc">I write the copy, build the page, wire the pixels, and sequence the emails. You don't touch a line of code.</p>
+        </div>
+        <div class="proc-step">
+          <div class="step-num">03</div>
+          <div class="step-title">You <em>launch it</em></div>
+          <p class="step-desc">Delivered with a handover doc. Everything live, tested, and ready to send traffic to. You own every file.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- GUARANTEE -->
+    <section>
+      <div class="section-eyebrow">Guarantee</div>
+      <h2 class="section-headline">If it's not right,<br /><em>I fix it.</em></h2>
+      <div class="guarantee-box reveal">
+        <div class="guarantee-icon">🛡</div>
+        <div>
+          <div class="guarantee-title">2-Round Revision Guarantee</div>
+          <p class="guarantee-text">Every project includes two rounds of revisions at no extra cost. If the copy doesn't feel right, the layout needs adjusting, or a pixel isn't firing — <strong>I fix it.</strong> No argument, no extra invoice. You get what you paid for, working exactly as it should.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- BOOK A CALL -->
+    <section id="call" class="calendly-section">
+      <div class="section-eyebrow" style="justify-content: center;">Not sure which package?</div>
+      <h2 class="section-headline" style="text-align: center;">Talk to me <em>first.</em></h2>
+
+      <div class="calendly-wrap reveal">
+        <div class="calendly-headline">Book a free 15-min call</div>
+        <p class="calendly-sub">Tell me what you're building. I'll tell you exactly what you need — and what you don't. No pitch, no pressure.</p>
+
+        <!-- REPLACE THIS DIV WITH YOUR CALENDLY INLINE EMBED -->
+        <div class="calendly-embed-placeholder">
+          → Paste Calendly inline embed here
+        </div>
+
+        <p style="font-family: 'JetBrains Mono', monospace; font-size: 0.6rem; letter-spacing: 0.12em; color: var(--text-dim); text-transform: uppercase;">
+          Free · 15 minutes · No obligation
+        </p>
+      </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <div class="final-cta">
+      <h2 class="final-headline">
+        <span class="fh-muted">Your launch is</span>
+        <span class="fh-white">one decision</span>
+        <span class="fh-gold">away.</span>
+      </h2>
+      <p class="final-sub">Pick your package. Brief me in 5 minutes. Get your entire launch infrastructure built while you focus on everything else.</p>
+      <div class="final-btns">
+        <a href="https://buy.stripe.com/7sY9ASb8X3jscJI5CU2oE06" class="btn-primary" target="_blank" rel="noopener">Get the Full Launch Kit — $1,200 →</a>
+        <a href="#pricing" class="btn-secondary">See All Packages</a>
+      </div>
+      <p class="final-note">Secure payment via Stripe · Response within 24hrs · <span>2-round revision guarantee</span></p>
+    </div>
+
+  </main>
+
+  <footer>
+    <span class="footer-brand">ExpatBuildr · Founder Launch Services · Built in the Philippines 🇵🇭</span>
+    <nav class="footer-links">
+      <a href="/privacy" class="footer-link">Privacy</a>
+      <a href="/terms" class="footer-link">Terms</a>
+      <a href="https://x.com/expatbuildr" class="footer-link" target="_blank" rel="noopener">X</a>
+    </nav>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver(
+      entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }),
+      { threshold: 0.08 }
+    );
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>

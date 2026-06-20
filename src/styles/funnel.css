@@ -1,0 +1,115 @@
+/* Shared Funnel CSS for Founders Pages */
+
+:root {
+  --bg:       #050505;
+  --bg-2:     #0a0a0a;
+  --bg-3:     #111;
+  --border:   rgba(255,255,255,.07);
+  --border-hi:rgba(255,255,255,.14);
+  --text:     #f0ede8;
+  --text-muted:#9a9490;
+  --text-dim: #5a5652;
+  --accent-1: #a8e6a3;
+  --accent-2: #c084fc;
+  --accent-3: #f472b6;
+  --amber:    #e8a020;
+  --amber-dim:rgba(232,160,32,.2);
+  --amber-glow:rgba(232,160,32,.06);
+  --locked:   rgba(255,255,255,.03);
+  --accent-glow: rgba(168,230,163,.06);
+  /* The fonts are now handled by Layout.astro, but we map them to the new brand fonts */
+  --serif:    var(--font-display, 'Bebas Neue', sans-serif);
+  --mono:     var(--font-mono, 'JetBrains Mono', monospace);
+  --sans:     var(--font-body, 'Inter', sans-serif);
+}
+
+html.light {
+  --bg:       #f8fafc;
+  --bg-2:     #f1f5f9;
+  --bg-3:     #ffffff;
+  --border:   rgba(15,23,42,.08);
+  --border-hi:rgba(15,23,42,.12);
+  --text:     #0f172a;
+  /* Task 7: Fix light mode contrast */
+  --text-muted:#334155; /* improved contrast from #475569 */
+  --text-dim: #475569;  /* improved contrast from #64748b */
+  --locked:   rgba(15,23,42,.03);
+  --accent-1: #15803d;
+}
+
+/* Base Body styles handled by Layout, but let's override where needed */
+body {
+  background-color: var(--bg);
+  color: var(--text);
+}
+
+/* ── NAV ── */
+.funnel-nav {
+  position: sticky; top: 0; z-index: 100;
+  border-bottom: 1px solid var(--border);
+  background: rgba(5,5,5,.92);
+  backdrop-filter: blur(14px);
+}
+html.light .funnel-nav { background: rgba(252,252,252,.92); }
+.nav-inner {
+  max-width: 1060px; margin: 0 auto;
+  padding: .9rem clamp(1.25rem,5vw,2.5rem);
+  display: flex; align-items: center; justify-content: space-between;
+}
+.nav-logo { display: flex; align-items: center; gap: .65rem; text-decoration: none; }
+.logo-mark {
+  width: 28px; height: 28px; border-radius: 6px;
+  display: flex; align-items: center; justify-content: center;
+  overflow: hidden;
+}
+.logo-text {
+  font-family: var(--sans); font-weight: 600; font-size: 1rem;
+  letter-spacing: -.02em; color: var(--text); text-transform: uppercase;
+}
+.logo-text span { color: var(--accent-1); font-weight: 300; }
+.nav-badge {
+  font-family: var(--mono); font-size: .6rem; letter-spacing: .12em;
+  text-transform: uppercase; color: #fff;
+  border: 1px solid var(--accent-2);
+  background: rgba(192,132,252,.1);
+  padding: .3em .7em;
+}
+
+/* ── FOOTER ── */
+.funnel-footer {
+  border-top: 1px solid var(--border);
+  padding: 1.5rem 0;
+  position: relative; z-index: 5;
+}
+.footer-inner {
+  max-width: 1060px; margin: 0 auto;
+  padding: 0 clamp(1.25rem,5vw,2.5rem);
+  display: flex; align-items: center; justify-content: space-between;
+  flex-wrap: wrap; gap: 1rem;
+}
+.footer-brand { font-family: var(--mono); font-size: .62rem; color: var(--text-dim); letter-spacing: .06em; }
+.footer-brand span { color: var(--accent-1); }
+.footer-links { list-style: none; display: flex; gap: 1.5rem; }
+.footer-links a { font-family: var(--mono); font-size: .6rem; color: var(--text-dim); text-decoration: none; letter-spacing: .08em; text-transform: uppercase; transition: color .15s; }
+.footer-links a:hover { color: var(--accent-3); }
+
+/* ── ANIMATIONS ── */
+.fade-up {
+  opacity: 0; transform: translateY(18px);
+  transition: opacity .55s ease, transform .55s ease;
+}
+.fade-up.visible { opacity: 1; transform: translateY(0); }
+
+.fade-1 { animation: fadeUp .6s ease .05s forwards; opacity: 0; }
+.fade-2 { animation: fadeUp .6s ease .15s forwards; opacity: 0; }
+.fade-3 { animation: fadeUp .6s ease .25s forwards; opacity: 0; }
+.fade-4 { animation: fadeUp .6s ease .35s forwards; opacity: 0; }
+.fade-5 { animation: fadeUp .6s ease .45s forwards; opacity: 0; }
+@keyframes fadeUp { to { opacity: 1; transform: translateY(0); } from { opacity: 0; transform: translateY(14px); } }
+
+/* Shared Utilities */
+.wrap {
+  max-width: 900px; margin: 0 auto;
+  padding: 0 clamp(1.25rem,5vw,2.5rem);
+  position: relative; z-index: 5;
+}

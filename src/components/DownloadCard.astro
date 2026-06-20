@@ -1,0 +1,62 @@
+---
+interface Props {
+  magnet: string;
+  title: string;
+  icon: string;
+  type: string;
+}
+
+const { magnet, title, icon, type } = Astro.props;
+---
+
+<a href={`/downloads/${magnet}?ref=download-page`} class="more-card group">
+  <span class="more-card-icon group-hover:scale-110 transition-transform">{icon}</span>
+  <div class="more-card-text">
+    <strong>{title}</strong>
+    <span>{type}</span>
+  </div>
+</a>
+
+<style>
+  .more-card {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 20px;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+  }
+
+  .more-card:hover {
+    border-color: rgba(245, 200, 66, 0.3);
+    background: rgba(255, 255, 255, 0.05);
+    transform: translateY(-2px);
+  }
+
+  .more-card-icon {
+    font-size: 1.6rem;
+    flex-shrink: 0;
+  }
+
+  .more-card-text strong {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 800;
+    color: #f0f4ff;
+    margin-bottom: 2px;
+    line-height: 1.3;
+    font-family: 'Syne', sans-serif;
+  }
+
+  .more-card-text span {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    color: #8892b0;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+</style>
