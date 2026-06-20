@@ -1,7 +1,7 @@
 import { promises as fs } from 'fs';
 import path from 'path';
 
-const INDEXNOW_KEY = "eb8248d2036248cc8da2a80695123d9b";
+const INDEXNOW_KEY = "339882e4b460f2a1d41095797bf60c40";
 const HOST = "expatbuildr.com";
 const INDEXNOW_API = "https://www.bing.com/indexnow";
 

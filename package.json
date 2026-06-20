@@ -8,7 +8,7 @@
     "build": "set NODE_OPTIONS=--max-old-space-size=4096 && astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "postbuild": "node scripts/generateInstitutionalSitemap.mjs",
+    "postbuild": "node scripts/generateInstitutionalSitemap.mjs && node scripts/pingIndexNow.mjs",
     "validate:seo": "node scripts/validateSEOConfig.mjs"
   },
   "dependencies": {
