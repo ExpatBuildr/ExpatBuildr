@@ -2,8 +2,8 @@
 import Layout from '../layouts/Layout.astro';
 import Pixels from '../components/Pixels.astro';
 
-const title = "Galaxy Arbitrage — The Weekly Arbitrage Playbook for Remote Income & Financial Freedom";
-const description = "Free weekly newsletter breaking down geographic, crypto, remote work, and AI arbitrage every week. Built for Remote Hustlers, Lead Builders, and Freedom Seekers.";
+const title = "Galaxy Arbitrage — The Weekly Playbook for Founders Who Want to Live Cheaper & Happier";
+const description = "Free weekly newsletter for founders and business owners running location-independent businesses and cutting their cost of living in half.";
 ---
 
 <Layout
@@ -15,7 +15,7 @@ const description = "Free weekly newsletter breaking down geographic, crypto, re
   <Fragment slot="head">
     <Pixels page="newsletter-landing" />
     <meta property="og:title" content="Galaxy Arbitrage by ExpatBuildr" />
-    <meta property="og:description" content="Every week I break down a different arbitrage — geographic, crypto, remote work, AI, time, attention. Free. 4 resources on signup." />
+    <meta property="og:description" content="For founders and business owners who want to run their business from anywhere and live cheaper, happier. Free. 4 resources on signup." />
   </Fragment>
 
   <div class="newsletter-root">
@@ -24,17 +24,23 @@ const description = "Free weekly newsletter breaking down geographic, crypto, re
     <nav class="top-nav">
       <div class="container top-nav-inner">
         <a href="/" class="back-to-site">
-          <img src="/logo.jpg" alt="Galaxy" class="nav-logo" width="28" height="28" />
+          <img src="/galaxyarblogo.jpeg" alt="Galaxy Arbitrage" class="nav-logo" width="28" height="28" />
           <span class="nav-site-name text-black dark:text-white">Expat<span class="text-gradient">Buildr</span></span>
         </a>
-        <a href="/" class="back-link">← Back to Main Site</a>
+        <div style="display: flex; align-items: center; gap: 16px;">
+          <a href="/" class="back-link">← Back to Main Site</a>
+          <button id="newsletterThemeToggle" class="theme-toggle-btn" aria-label="Toggle dark mode">
+            <span class="theme-icon-light">🌙</span>
+            <span class="theme-icon-dark" style="display:none;">☀️</span>
+          </button>
+        </div>
       </div>
     </nav>
 
     <!-- Member Counter Bar -->
     <div class="launch-bar">
       <span class="launch-dot"></span>
-      <span><span class="sub-count">80</span> members and growing — next stop: <strong>300</strong></span>
+      <span><strong class="sub-count">750</strong>+ members and growing every week</span>
     </div>
 
     <main class="container">
@@ -43,7 +49,7 @@ const description = "Free weekly newsletter breaking down geographic, crypto, re
         <div class="hero-content">
           <h1 class="hero-title flex flex-col items-center">
             <div class="flex items-center gap-4 md:gap-6">
-              <img src="/logo.jpg" alt="Galaxy" width="80" height="80" class="hero-logo" />
+              <img src="/galaxyarblogo.jpeg" alt="Galaxy Arbitrage" width="80" height="80" class="hero-logo" />
               <span class="text-galaxy-gradient">GALAXY</span>
             </div>
             <span><span class="text-arbi">ARBI</span><span class="text-trage">TRAGE</span></span>
@@ -51,15 +57,12 @@ const description = "Free weekly newsletter breaking down geographic, crypto, re
 
           <!-- EMAIL FORM — immediately below title -->
           <div class="hero-cta-group">
-            <p class="hero-subtitle-line">Geographic. Crypto. Remote Work. AI. Time. Attention.<br/>Every week I break down a different arbitrage — and exactly how to exploit it.</p>
+            <p class="hero-subtitle-line">Run your business from anywhere. Cut your cost of living in half.<br/>Every week I show founders and business owners exactly how.</p>
             <p class="form-eyebrow">↓ Enter your email to get instant access — it's free</p>
             <div class="subscribe-box subscribe-box--hero">
               <div class="progress-header">
-                <span class="progress-label">Beta Capacity</span>
-                <strong class="progress-count" id="beta-capacity-text"><span class="sub-count">80</span>/300 Next Milestone</strong>
-              </div>
-              <div class="progress-bar-bg">
-                <div class="progress-bar-fill sub-progress" style="width: 80%"></div>
+                <span class="progress-label">Trusted By</span>
+                <strong class="progress-count"><span class="sub-count">750</span>+ Founders</strong>
               </div>
 
               <form id="subscribe-form" class="sub-form">
@@ -89,8 +92,8 @@ const description = "Free weekly newsletter breaking down geographic, crypto, re
               <span class="av4 text-white">+</span>
             </div>
             <div class="counter-text">
-              <strong>Join <span class="sub-count">80</span>+ Freedom Seekers</strong>
-              <span>Building a life beyond borders</span>
+              <strong>Join <span class="sub-count">750</span>+ Founders & Business Owners</strong>
+              <span>Living cheaper, happier, and on their own terms</span>
             </div>
           </div>
 
@@ -98,15 +101,15 @@ const description = "Free weekly newsletter breaking down geographic, crypto, re
           <div class="hero-audience-list">
             <div class="audience-line" style="border-left: 3px solid var(--accent-gold);">
               <span class="icon">🌏</span>
-              <p><strong>Freedom Seeker</strong> — Geographic and lifestyle arbitrage. Real cost-of-living math and the life most people only dream about.</p>
+              <p><strong>Lower Your Cost of Living</strong> — Real cost-of-living math across countries, so the same revenue stretches 2-4x further.</p>
             </div>
             <div class="audience-line" style="border-left: 3px solid var(--accent-cyan);">
               <span class="icon">💼</span>
-              <p><strong>Remote Hustler</strong> — Remote work and AI arbitrage. The systems to earn more while working from anywhere.</p>
+              <p><strong>Run Your Business From Anywhere</strong> — The systems, tools, and AI workflows that let you operate location-independent.</p>
             </div>
             <div class="audience-line" style="border-left: 3px solid var(--accent-emerald);">
               <span class="icon">⚙️</span>
-              <p><strong>Lead Builder</strong> — Lead gen and attention arbitrage. Income systems and automation that run while you sleep.</p>
+              <p><strong>Build a Happier Life</strong> — The honest tradeoffs, logistics, and playbooks for founders making the move for real.</p>
             </div>
           </div>
         </div>
@@ -138,10 +141,10 @@ const description = "Free weekly newsletter breaking down geographic, crypto, re
             <div class="rc-body">
               <div class="rc-tag">Resource 02</div>
               <h3 class="rc-title">Arbitrage Calculator</h3>
-              <p class="rc-desc">The Austin vs Manila breakdown. Full cost-of-living math, salary tiers, and your FIRE number.</p>
+              <p class="rc-desc">The Austin vs Cebu breakdown. Full cost-of-living math, salary tiers, and your FIRE number.</p>
               <div class="rc-stats">
-                <span>4.75x Cheaper</span>
-                <span>$36k Saved/yr</span>
+                <span>5x Cheaper</span>
+                <span>$52k Saved/yr</span>
                 <span>3 Cities</span>
               </div>
             </div>
@@ -245,14 +248,14 @@ const description = "Free weekly newsletter breaking down geographic, crypto, re
             <div class="math-vs">VS</div>
 
             <div class="math-card good">
-              <div class="math-location">📍 Manila, Philippines</div>
+              <div class="math-location">📍 Cebu City, Philippines</div>
               <div class="math-row"><span class="label">Monthly Income</span><span class="value">$8,500</span></div>
-              <div class="math-row"><span class="label">Luxury Condo</span><span class="value">-$1,200</span></div>
+              <div class="math-row"><span class="label">Luxury Condo</span><span class="value">-$840</span></div>
               <div class="math-row"><span class="label">Tax Efficiency</span><span class="value">-$400</span></div>
               <div class="math-row"><span class="label">Living Exp.</span><span class="value">-$900</span></div>
               <div class="math-total">
                 <span class="label">Net Savings</span>
-                <span class="value">$6,000</span>
+                <span class="value">$6,360</span>
               </div>
             </div>
           </div>
@@ -263,7 +266,7 @@ const description = "Free weekly newsletter breaking down geographic, crypto, re
       <section class="section pt-0 pb-10">
         <div class="teaser-banner">
           <div class="teaser-text">
-            <span class="teaser-label">SUBSCRIBER EARLY ACCESS</span>
+            <span class="teaser-label">SUBSCRIBER PERKS</span>
             <p class="teaser-desc">Galaxy Arbitrage subscribers get first access to new tools, prompt packs, and digital products before they go public.</p>
           </div>
           <a href="/shop" class="btn-ghost">Browse the Ecosystem →</a>
@@ -273,28 +276,28 @@ const description = "Free weekly newsletter breaking down geographic, crypto, re
       <!-- Audience Cards -->
       <section class="section pt-0">
         <div class="text-center">
-          <h2 class="section-title">BUILT FOR THREE<br/><span>TYPES OF PEOPLE.</span></h2>
+          <h2 class="section-title">BUILT FOR FOUNDERS<br/><span>WHO WANT MORE OUT OF LIFE.</span></h2>
         </div>
         <div class="audience-grid-new">
           <div class="audience-card-new glass-card" style="--accent: var(--accent-cyan);">
             <div class="ac-icon">💼</div>
-            <h3 class="ac-title">Remote Hustler</h3>
-            <p class="ac-desc">You want remote work but the job search feels broken</p>
-            <p class="ac-body">The remote work arbitrage breakdowns, AI prompt toolkit, and automation case studies are built for you. Every issue saves you hours of manual searching and shows you how to position yourself for location-independent income.</p>
+            <h3 class="ac-title">Run From Anywhere</h3>
+            <p class="ac-desc">You want to operate your business location-independent without it falling apart</p>
+            <p class="ac-body">The systems, AI workflows, and automation breakdowns are built for you. Every issue saves you hours of trial and error and shows you exactly how founders run real businesses from anywhere in the world.</p>
             <a href="/newsletter/archive" class="ac-link">→ See this week's issue</a>
           </div>
           <div class="audience-card-new glass-card" style="--accent: var(--accent-emerald);">
             <div class="ac-icon">⚙️</div>
-            <h3 class="ac-title">Lead Builder</h3>
-            <p class="ac-desc">You want systems that generate income without trading hours for dollars</p>
-            <p class="ac-body">The attention arbitrage section, automation case studies, and GalaxyLeads breakdowns show you exactly how operators are building income machines — what they cost and how they scale without a team.</p>
+            <h3 class="ac-title">Build Without Burning Out</h3>
+            <p class="ac-desc">You want systems and income that don't require trading every hour for a dollar</p>
+            <p class="ac-body">The automation case studies and income-system breakdowns show you exactly how other founders are building businesses that run without a bloated team or a brutal schedule.</p>
             <a href="/blog" class="ac-link">→ See a case study</a>
           </div>
           <div class="audience-card-new glass-card" style="--accent: var(--accent-gold);">
             <div class="ac-icon">🌏</div>
-            <h3 class="ac-title">Freedom Seeker</h3>
+            <h3 class="ac-title">Live Cheaper, Happier</h3>
             <p class="ac-desc">You suspect you're overpaying for your own life</p>
-            <p class="ac-body">The geographic arbitrage math, crypto and market opportunities, and cost-of-living breakdowns give you the honest numbers behind what's actually possible with the same income somewhere else.</p>
+            <p class="ac-body">The geographic arbitrage math and cost-of-living breakdowns give you the honest numbers behind what's actually possible — same revenue, lower cost, better life, somewhere else.</p>
             <a href="/downloads/arbitrage-calculator?ref=newsletter" class="ac-link">→ Run the arbitrage calculator</a>
           </div>
         </div>
@@ -344,18 +347,42 @@ const description = "Free weekly newsletter breaking down geographic, crypto, re
     .then(d => {
       const elements = document.querySelectorAll('.sub-count');
       elements.forEach(el => el.textContent = d.count.toLocaleString());
-      
-      const bars = document.querySelectorAll('.sub-progress');
-      bars.forEach(bar => {
-        const percent = Math.min(100, Math.max(0, (d.count / 300) * 100));
-        bar.style.width = percent + '%';
-      });
     })
     .catch(err => console.error('Failed to load subscriber count', err));
+
+  const newsletterThemeBtn = document.getElementById('newsletterThemeToggle');
+  function syncNewsletterThemeIcon() {
+    const isDark = document.documentElement.classList.contains('dark');
+    newsletterThemeBtn.querySelector('.theme-icon-light').style.display = isDark ? 'none' : 'inline';
+    newsletterThemeBtn.querySelector('.theme-icon-dark').style.display = isDark ? 'inline' : 'none';
+  }
+  syncNewsletterThemeIcon();
+  newsletterThemeBtn?.addEventListener('click', () => {
+    const isDark = document.documentElement.classList.toggle('dark');
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    syncNewsletterThemeIcon();
+  });
 </script>
 
 <style>
   :root {
+    --bg-primary: #faf9f7;
+    --accent-gold: #c98a00;
+    --accent-orange: #d9501f;
+    --accent-cyan: #0090a8;
+    --accent-emerald: #00875e;
+    --accent-blue: #2552d9;
+    --text-primary: #14151a;
+    --text-secondary: #5a5f73;
+    --glass-bg: rgba(10,10,15,0.03);
+    --glass-border: rgba(10,10,15,0.1);
+    --nav-bg: #faf9f7;
+    --font-display: 'Bebas Neue', sans-serif;
+    --font-body: 'Syne', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+  }
+
+  html.dark .newsletter-root {
     --bg-primary: #060810;
     --accent-gold: #f5c842;
     --accent-orange: #ff6b35;
@@ -366,9 +393,7 @@ const description = "Free weekly newsletter breaking down geographic, crypto, re
     --text-secondary: #8892b0;
     --glass-bg: rgba(255,255,255,0.03);
     --glass-border: rgba(255,255,255,0.07);
-    --font-display: 'Bebas Neue', sans-serif;
-    --font-body: 'Syne', sans-serif;
-    --font-mono: 'JetBrains Mono', monospace;
+    --nav-bg: #060810;
   }
 
   .newsletter-root {
@@ -378,13 +403,27 @@ const description = "Free weekly newsletter breaking down geographic, crypto, re
     min-height: 100vh;
     position: relative;
     overflow-x: hidden;
+    transition: background-color 0.3s ease, color 0.3s ease;
   }
 
   .top-nav {
     position: relative;
     z-index: 10;
     border-bottom: 1px solid var(--glass-border);
-    background: #060810;
+    background: var(--nav-bg);
+  }
+  .theme-toggle-btn {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    color: var(--text-secondary);
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
   }
   .top-nav-inner {
     display: flex;
@@ -405,7 +444,7 @@ const description = "Free weekly newsletter breaking down geographic, crypto, re
     height: 28px;
     border-radius: 6px;
     object-fit: cover;
-    border: 1px solid rgba(255,255,255,0.15);
+    border: 1px solid var(--glass-border);
   }
   .nav-site-name {
     font-family: var(--font-display);
@@ -457,7 +496,7 @@ const description = "Free weekly newsletter breaking down geographic, crypto, re
     height: 0.85em;
     object-fit: cover;
     border-radius: 16px;
-    border: 2px solid rgba(255,255,255,0.1);
+    border: 2px solid var(--glass-border);
   }
 
   .hero-title {
@@ -474,7 +513,7 @@ const description = "Free weekly newsletter breaking down geographic, crypto, re
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
-  .text-arbi { color: #ffffff; }
+  .text-arbi { color: var(--text-primary); }
   .text-trage {
     background: linear-gradient(90deg, #5ef0e8 0%, #00d4e8 40%, #0099cc 70%, #0066aa 100%);
     -webkit-background-clip: text;
@@ -492,7 +531,7 @@ const description = "Free weekly newsletter breaking down geographic, crypto, re
   }
 
   .subscribe-box {
-    background: rgba(255,255,255,0.04);
+    background: var(--glass-bg);
     border: 1px solid var(--glass-border);
     border-radius: 24px;
     padding: 24px;
@@ -509,10 +548,10 @@ const description = "Free weekly newsletter breaking down geographic, crypto, re
 
   .fake-input--hero {
     border-color: rgba(245, 200, 66, 0.3);
-    background: rgba(255,255,255,0.06);
+    background: var(--glass-bg);
     font-size: 1rem;
   }
-  .fake-input--hero::placeholder { color: rgba(255,255,255,0.4); }
+  .fake-input--hero::placeholder { color: var(--text-secondary); }
 
   .progress-header {
     display: flex;
@@ -532,19 +571,6 @@ const description = "Free weekly newsletter breaking down geographic, crypto, re
     font-size: 0.75rem;
     color: var(--accent-gold);
   }
-  .progress-bar-bg {
-    height: 6px;
-    background: rgba(255,255,255,0.06);
-    border-radius: 100px;
-    overflow: hidden;
-    margin-bottom: 20px;
-  }
-  .progress-bar-fill {
-    height: 100%;
-    background: linear-gradient(90deg, var(--accent-gold), var(--accent-orange));
-    border-radius: 100px;
-  }
-
   .sub-form {
     display: flex;
     flex-direction: column;
@@ -571,7 +597,7 @@ const description = "Free weekly newsletter breaking down geographic, crypto, re
 
   .fake-input {
     padding: 16px 20px;
-    background: rgba(255,255,255,0.04);
+    background: var(--glass-bg);
     border: 1px solid var(--glass-border);
     border-radius: 100px;
     color: var(--text-primary);
@@ -667,8 +693,8 @@ const description = "Free weekly newsletter breaking down geographic, crypto, re
     width: 52px; height: 52px;
     display: flex; align-items: center; justify-content: center;
     border-radius: 14px;
-    background: rgba(255,255,255,0.04);
-    border: 1px solid rgba(255,255,255,0.06);
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
   }
   .rc-body { flex: 1; min-width: 0; }
   .rc-tag {
@@ -682,8 +708,8 @@ const description = "Free weekly newsletter breaking down geographic, crypto, re
   .rc-stats span {
     font-family: var(--font-mono); font-size: 0.7rem;
     padding: 3px 10px; border-radius: 100px;
-    background: rgba(255,255,255,0.04);
-    border: 1px solid rgba(255,255,255,0.08);
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
     color: var(--text-secondary); letter-spacing: 0.04em;
   }
 
@@ -705,15 +731,15 @@ const description = "Free weekly newsletter breaking down geographic, crypto, re
     border-left: 3px solid var(--arb);
     transition: background 0.2s;
   }
-  .arb-type:hover { background: rgba(255,255,255,0.05); }
+  .arb-type:hover { background: var(--glass-border); }
   .arb-icon {
     font-size: 1.6rem;
     flex-shrink: 0;
     width: 44px; height: 44px;
     display: flex; align-items: center; justify-content: center;
     border-radius: 10px;
-    background: rgba(255,255,255,0.04);
-    border: 1px solid rgba(255,255,255,0.06);
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
   }
   .arb-label {
     display: block;
@@ -766,7 +792,7 @@ const description = "Free weekly newsletter breaking down geographic, crypto, re
   .math-row {
     display: flex; justify-content: space-between; align-items: center;
     gap: 24px; padding: 14px 0;
-    border-bottom: 1px solid rgba(255,255,255,0.05); font-size: 1rem;
+    border-bottom: 1px solid var(--glass-border); font-size: 1rem;
   }
   .math-row .label { color: var(--text-secondary); white-space: nowrap; flex-shrink: 0; }
   .math-row .value { font-family: var(--font-mono); font-size: 0.95rem; letter-spacing: 0.04em; text-align: right; }
@@ -796,7 +822,7 @@ const description = "Free weekly newsletter breaking down geographic, crypto, re
     .teaser-banner { flex-direction: row; justify-content: space-between; text-align: left; }
   }
   .teaser-label { font-family: var(--font-mono); font-size: 0.85rem; color: var(--accent-gold); letter-spacing: 0.1em; display: block; margin-bottom: 8px; }
-  .teaser-desc { color: #fff; font-weight: 800; font-size: 1.2rem; line-height: 1.5; max-width: 600px; }
+  .teaser-desc { color: var(--text-primary); font-weight: 800; font-size: 1.2rem; line-height: 1.5; max-width: 600px; }
   .btn-ghost {
     padding: 14px 28px; background: transparent;
     color: var(--text-primary);

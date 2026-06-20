@@ -17,13 +17,13 @@ const benefits = [
 >
   <div class="relative min-h-screen flex flex-col items-center pt-32 px-4 pb-20 overflow-hidden">
     <!-- Cinematic Background -->
-    <div class="absolute inset-0 -z-10 bg-slate-950">
-        <img 
-            src="/images/remote work.jpg" 
-            alt="Remote Income" 
-            class="w-full h-full object-cover opacity-20 grayscale"
+    <div class="absolute inset-0 -z-10 bg-white dark:bg-slate-950">
+        <img
+            src="/images/remote work.jpg"
+            alt="Remote Income"
+            class="w-full h-full object-cover opacity-10 dark:opacity-20 grayscale"
         />
-        <div class="absolute inset-0 bg-radial-at-t from-accent-blue/20 via-slate-950/80 to-slate-950"></div>
+        <div class="absolute inset-0 bg-radial-at-t from-accent-blue/10 dark:from-accent-blue/20 via-white/80 dark:via-slate-950/80 to-white dark:to-slate-950"></div>
     </div>
 
     <!-- Header Content -->
@@ -32,17 +32,17 @@ const benefits = [
         Active Protocol: Remote Income v2.0
       </div>
       
-      <h1 class="text-6xl md:text-8xl font-black font-display tracking-tight text-white leading-none uppercase">
+      <h1 class="text-6xl md:text-8xl font-black font-display tracking-tight text-slate-900 dark:text-white leading-none uppercase">
         SECURE YOUR <span class="text-gradient">SOVEREIGN</span> SALARY.
       </h1>
 
-      <p class="text-xl text-slate-400 max-w-2xl mx-auto font-inter">
+      <p class="text-xl text-slate-600 dark:text-slate-400 max-w-2xl mx-auto font-inter">
         Most technical professionals trade time for money at a 1:1 ratio. We trade systems for scale. This is the definitive manual for the high-velocity remote operator.
       </p>
 
       <div class="pt-8">
         <form id="hero-subscribe-form" class="flex flex-col sm:flex-row items-center gap-4 justify-center w-full max-w-lg mx-auto">
-            <input type="email" id="hero-email" placeholder="Enter your best email" required class="w-full px-6 py-4 rounded-xl bg-slate-900 border border-accent-blue/30 text-white focus:outline-none focus:border-accent-blue font-sans" />
+            <input type="email" id="hero-email" placeholder="Enter your best email" required class="w-full px-6 py-4 rounded-xl bg-white dark:bg-slate-900 border border-accent-blue/30 text-slate-900 dark:text-white focus:outline-none focus:border-accent-blue font-sans" />
             <button type="submit" id="hero-submit-btn" class="btn-primary flex items-center gap-3 px-8 py-4 text-lg w-full sm:w-auto justify-center rounded-xl whitespace-nowrap pixel-border">
                 JOIN THE ARBITRAGE <ArrowRight size={20} />
             </button>
@@ -54,17 +54,17 @@ const benefits = [
     <!-- The Framework -->
     <div class="max-w-6xl w-full grid grid-cols-1 md:grid-cols-2 gap-12 mt-40 reveal-on-scroll">
         <div class="space-y-8">
-            <h2 class="text-4xl font-black font-display text-white uppercase tracking-tighter">
+            <h2 class="text-4xl font-black font-display text-slate-900 dark:text-white uppercase tracking-tighter">
                 The <span class="text-accent-blue">Sniper</span> Framework
             </h2>
-            <p class="text-slate-400 text-lg leading-relaxed">
+            <p class="text-slate-600 dark:text-slate-400 text-lg leading-relaxed">
                 We've spent the last 5 years perfecting the technical architecture required to dominate remote markets. We don't "wait" for raises; we engineer them.
             </p>
             <div class="space-y-4">
                 {benefits.map(benefit => (
-                    <div class="flex items-start gap-4 p-4 rounded-2xl glass-card border border-white/5 group hover:border-accent-blue/30 transition-all">
+                    <div class="flex items-start gap-4 p-4 rounded-2xl glass-card border border-slate-200 dark:border-white/5 group hover:border-accent-blue/30 transition-all">
                         <div class="mt-1 text-emerald-500"><CheckCircle2 size={24} /></div>
-                        <p class="text-white font-inter">{benefit}</p>
+                        <p class="text-slate-900 dark:text-white font-inter">{benefit}</p>
                     </div>
                 ))}
             </div>
@@ -72,7 +72,7 @@ const benefits = [
 
         <div class="relative group">
             <div class="absolute inset-0 bg-accent-blue/20 blur-[100px] rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></div>
-            <div class="relative glass-card p-1 rounded-[3rem] border border-white/10 overflow-hidden shadow-2xl">
+            <div class="relative glass-card p-1 rounded-[3rem] border border-slate-200 dark:border-white/10 overflow-hidden shadow-2xl">
                 <img src="/images/remote work.jpg" alt="Dashboard" class="w-full h-full object-cover rounded-[2.8rem]" />
             </div>
         </div>
@@ -82,19 +82,19 @@ const benefits = [
     <div id="newsletter" class="max-w-5xl w-full mt-40 p-12 rounded-[3.5rem] glass-gradient border border-accent-blue/20 text-center space-y-8 reveal-on-scroll relative overflow-hidden">
         <div class="absolute top-0 left-0 w-full h-1 bg-linear-to-r from-accent-blue via-accent-purple to-accent-cyan"></div>
         
-        <h3 class="text-4xl md:text-5xl font-black font-display text-white uppercase tracking-tighter">
+        <h3 class="text-4xl md:text-5xl font-black font-display text-slate-900 dark:text-white uppercase tracking-tighter">
             JOIN <span class="text-gradient">GALAXY ARBITRAGE</span>
         </h3>
-        <p class="text-slate-400 max-w-xl mx-auto text-lg leading-relaxed">
+        <p class="text-slate-600 dark:text-slate-400 max-w-xl mx-auto text-lg leading-relaxed">
             Get weekly strategic briefings on remote income hacks, job sniping protocols, and autonomous wealth engines.
         </p>
-        
+
         <!-- Redirect to /newsletter -->
         <a href="/newsletter" class="btn-primary inline-flex items-center gap-4 px-12 py-6 text-xl mx-auto">
             ACCESS THE PROTOCOL <Zap size={24} />
         </a>
-        
-        <p class="text-[10px] font-mono text-slate-500 uppercase tracking-widest pt-8">
+
+        <p class="text-[10px] font-mono text-slate-500 dark:text-slate-500 uppercase tracking-widest pt-8">
             No Spam. No Noise. Just Industrial-Grade Intelligence.
         </p>
     </div>
@@ -154,7 +154,10 @@ const benefits = [
     transform: translateY(0);
   }
   .glass-gradient {
-    background: linear-gradient(135deg, rgba(15, 23, 42, 0.9) 0%, rgba(30, 41, 59, 0.8) 100%);
+    background: linear-gradient(135deg, rgba(241, 245, 249, 0.9) 0%, rgba(226, 232, 240, 0.8) 100%);
     backdrop-filter: blur(20px);
+  }
+  html.dark .glass-gradient {
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.9) 0%, rgba(30, 41, 59, 0.8) 100%);
   }
 </style>

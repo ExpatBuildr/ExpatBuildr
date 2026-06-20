@@ -17,13 +17,13 @@ const playbook = [
 >
   <div class="relative min-h-screen flex flex-col items-center pt-32 px-4 pb-20 overflow-hidden">
     <!-- Cinematic Background -->
-    <div class="absolute inset-0 -z-10 bg-slate-950">
-        <img 
-            src="/images/geo-arbitrage.jpg" 
-            alt="Geo-Arbitrage" 
-            class="w-full h-full object-cover opacity-20 grayscale"
+    <div class="absolute inset-0 -z-10 bg-white dark:bg-slate-950">
+        <img
+            src="/images/geo-arbitrage.jpg"
+            alt="Geo-Arbitrage"
+            class="w-full h-full object-cover opacity-10 dark:opacity-20 grayscale"
         />
-        <div class="absolute inset-0 bg-radial-at-t from-cyan-500/10 via-slate-950/80 to-slate-950"></div>
+        <div class="absolute inset-0 bg-radial-at-t from-cyan-500/5 dark:from-cyan-500/10 via-white/80 dark:via-slate-950/80 to-white dark:to-slate-950"></div>
     </div>
 
     <!-- Header Content -->
@@ -32,11 +32,11 @@ const playbook = [
         Active Protocol: Geo-Strategy v2.0
       </div>
       
-      <h1 class="text-6xl md:text-8xl font-black font-display tracking-tight text-white leading-none uppercase">
+      <h1 class="text-6xl md:text-8xl font-black font-display tracking-tight text-slate-900 dark:text-white leading-none uppercase">
         ENGINEER A <span class="text-gradient">GLOBAL</span> LIFESTYLE.
       </h1>
 
-      <p class="text-xl text-slate-400 max-w-2xl mx-auto font-inter">
+      <p class="text-xl text-slate-600 dark:text-slate-400 max-w-2xl mx-auto font-inter">
         Decouple your location from your liquidity. Learn the exact protocols we use to live like royalty in high-efficiency hubs while earning in high-velocity markets.
       </p>
 
@@ -50,17 +50,17 @@ const playbook = [
     <!-- The Framework -->
     <div class="max-w-6xl w-full grid grid-cols-1 md:grid-cols-2 gap-12 mt-40 reveal-on-scroll">
         <div class="space-y-8">
-            <h2 class="text-4xl font-black font-display text-white uppercase tracking-tighter">
+            <h2 class="text-4xl font-black font-display text-slate-900 dark:text-white uppercase tracking-tighter">
                 The <span class="text-cyan-400">Sovereign</span> Operator
             </h2>
-            <p class="text-slate-400 text-lg leading-relaxed">
+            <p class="text-slate-600 dark:text-slate-400 text-lg leading-relaxed">
                 Geo-arbitrage is not just about "living cheaply." It's about buying your time back at an industrial scale. We identify regional disconnects where $2,000/mo buys a lifestyle that costs $15,000/mo in San Francisco.
             </p>
             <div class="space-y-4">
                 {playbook.map(item => (
-                    <div class="flex items-start gap-4 p-4 rounded-2xl glass-card border border-white/5 group hover:border-cyan-400/30 transition-all">
+                    <div class="flex items-start gap-4 p-4 rounded-2xl glass-card border border-slate-200 dark:border-white/5 group hover:border-cyan-400/30 transition-all">
                         <div class="mt-1 text-cyan-400"><CheckCircle2 size={24} /></div>
-                        <p class="text-white font-inter">{item}</p>
+                        <p class="text-slate-900 dark:text-white font-inter">{item}</p>
                     </div>
                 ))}
             </div>
@@ -68,7 +68,7 @@ const playbook = [
 
         <div class="relative group">
             <div class="absolute inset-0 bg-cyan-500/10 blur-[100px] rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></div>
-            <div class="relative glass-card p-1 rounded-[3rem] border border-white/10 overflow-hidden shadow-2xl">
+            <div class="relative glass-card p-1 rounded-[3rem] border border-slate-200 dark:border-white/10 overflow-hidden shadow-2xl">
                 <img src="/images/geo-arbitrage.jpg" alt="Dashboard" class="w-full h-full object-cover rounded-[2.8rem]" />
             </div>
         </div>
@@ -78,10 +78,10 @@ const playbook = [
     <div id="newsletter" class="max-w-5xl w-full mt-40 p-12 rounded-[3.5rem] glass-gradient border border-cyan-500/20 text-center space-y-8 reveal-on-scroll relative overflow-hidden">
         <div class="absolute top-0 left-0 w-full h-1 bg-linear-to-r from-cyan-500 via-emerald-400 to-accent-cyan"></div>
         
-        <h3 class="text-4xl md:text-5xl font-black font-display text-white uppercase tracking-tighter">
+        <h3 class="text-4xl md:text-5xl font-black font-display text-slate-900 dark:text-white uppercase tracking-tighter">
             JOIN <span class="text-gradient">GALAXY ARBITRAGE</span>
         </h3>
-        <p class="text-slate-400 max-w-xl mx-auto text-lg leading-relaxed">
+        <p class="text-slate-600 dark:text-slate-400 max-w-xl mx-auto text-lg leading-relaxed">
             Get the exact regional breakdowns, digital nomad security stacks, and offshore logistics we use to live sovereign.
         </p>
         
@@ -103,7 +103,10 @@ const playbook = [
     transform: translateY(0);
   }
   .glass-gradient {
-    background: linear-gradient(135deg, rgba(15, 23, 42, 0.9) 0%, rgba(30, 41, 59, 0.8) 100%);
+    background: linear-gradient(135deg, rgba(241, 245, 249, 0.9) 0%, rgba(226, 232, 240, 0.8) 100%);
     backdrop-filter: blur(20px);
+  }
+  html.dark .glass-gradient {
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.9) 0%, rgba(30, 41, 59, 0.8) 100%);
   }
 </style>
