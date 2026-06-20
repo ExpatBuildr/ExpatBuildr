@@ -1,11 +1,12 @@
-// In-memory cache — persists across requests on the same isolate
-let _cachedCount = null;
+import type { APIRoute } from 'astro';
+
+let _cachedCount: number | null = null;
 let _cacheExpiry = 0;
 const CACHE_TTL_MS = 60 * 60 * 1000; // 1 hour
 
-async function fetchBeehiivCount(apiKey, pubId) {
+async function fetchBeehiivCount(apiKey: string, pubId: string): Promise<number> {
   let count = 0;
-  let cursor = null;
+  let cursor: string | null = null;
   let hasMore = true;
 
   while (hasMore) {
@@ -29,10 +30,10 @@ async function fetchBeehiivCount(apiKey, pubId) {
   return count;
 }
 
-export async function onRequestGet(context) {
-  const { env } = context;
-  const apiKey = env.BEEHIIV_API_KEY;
-  const pubId = env.BEEHIIV_PUB_ID;
+export const GET: APIRoute = async ({ locals }) => {
+  const env = (locals as any).runtime?.env;
+  const apiKey = env?.BEEHIIV_API_KEY ?? import.meta.env.BEEHIIV_API_KEY;
+  const pubId = env?.BEEHIIV_PUB_ID ?? import.meta.env.BEEHIIV_PUB_ID;
 
   const corsHeaders = {
     'Access-Control-Allow-Origin': '*',
@@ -58,4 +59,4 @@ export async function onRequestGet(context) {
   } catch {
     return new Response(JSON.stringify({ count: _cachedCount ?? 0 }), { headers: corsHeaders });
   }
-}
+};
