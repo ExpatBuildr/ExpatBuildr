@@ -1,431 +1,378 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Pixels from '../components/Pixels.astro';
+import { getCollection } from 'astro:content';
+import { ArrowRight, Globe, TrendingUp, MonitorPlay, Code2, Rss, ArrowUpRight, Twitter, Youtube, Instagram, Linkedin, Send } from 'lucide-astro';
 
-const title = "ExpatBuildr — Tony Long";
-const description = "American founder building from Cebu, Philippines. Publishing the arbitrage playbook weekly.";
+// Fetch top 3 latest posts for the "Featured Blog Posts" section
+const allPosts = await getCollection('blog', ({ data }) => {
+  return import.meta.env.PROD ? data.draft !== true : true;
+});
+// Pin the pillar hub article for each pillar on the homepage
+const targetPillars = ['lead-generation', 'remote-income', 'geo-arbitrage'];
+const featuredPosts = targetPillars.map(pillar =>
+  allPosts.find(p => p.data.pillarId === pillar && p.data.category === 'Pillar Hub')
+).filter(Boolean);
 ---
 
-<Layout title={title} description={description} ogImage="/expatog.jpg">
-  <Fragment slot="head">
-    <Pixels page="newsletter-landing" source="homepage" />
-    <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;500;700;900&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
-  </Fragment>
+<Layout
+	title="ExpatBuildr — Lead Generation & Geographic Arbitrage"
+	description="Lead generation systems, remote income protocols, and geographic arbitrage consulting. Autonomous acquisition engines for modern operators."
+>
+	<!-- SECTION 1: Hero -->
+	<section class="max-w-7xl mx-auto text-center space-y-8 py-20 relative px-4">
+		<div class="absolute -top-40 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-accent-blue/20 rounded-full blur-[120px] -z-10 animate-pulse"></div>
+		
+		<h1 class="text-5xl sm:text-6xl md:text-8xl font-black font-display tracking-tight leading-[0.9] uppercase text-slate-900 dark:text-white w-full">
+			EXPAT<br/>
+			<span class="text-gradient inline-block">BUILDR.</span>
+		</h1>
 
-  <div class="expat-home">
-    <!-- HERO -->
-    <section class="hero">
-      <div class="eyebrow">American · Cebu, Philippines · Building in public</div>
-      <h1>
-        Lost everything.<br>
-        <span class="strike">stayed broke.</span><br>
-        Did the math.<br>
-        <span class="signal">Left.</span>
-      </h1>
-      <p class="hero-sub">
-        I'm Tony Long. I lost $300K in crypto, moved to Cebu, and started earning in USD while spending in pesos. Now I build online businesses from Southeast Asia and document everything in public.
-      </p>
-      <div class="form-wrap">
-        <label class="form-label">Get the weekly arbitrage playbook — free</label>
-        <form id="subscribe-form-hero" class="sub-form">
-          <input type="email" id="email-hero" name="email" placeholder="Enter your best email" required class="email-input" />
-          <button type="submit" id="submit-btn-hero" class="btn-primary">GET INSTANT ACCESS →</button>
-        </form>
-        <p id="form-message-hero" class="form-msg hidden"></p>
-        <div class="form-trust">
-          <span>Free forever</span>
-          <span>4 resources instantly</span>
-          <span>No spam. Ever.</span>
-        </div>
-      </div>
-    </section>
+		<h2 class="text-lg md:text-xl font-mono tracking-[0.2em] text-accent-cyan uppercase font-semibold mx-auto">
+			Lead Generation & Remote Income Protocols
+		</h2>
 
-    <hr class="section-divider" />
+		<p class="max-w-2xl mx-auto text-institutional-secondary text-base md:text-lg leading-relaxed mt-4">
+			We build autonomous client acquisition systems and geographic arbitrage frameworks. Engineered for evergreen authority and industrial scale. Trusted by founders across 12 timezones.
+		</p>
 
-    <!-- STORY -->
-    <section class="story-section" id="story">
-      <div class="section-label">The story</div>
-      <h2>I didn't leave because things went well.</h2>
-      <p>
-        I lost $300K in crypto. Not in one trade — in a series of increasingly confident bets on things I couldn't control. I had skill. My position was wrong. <strong>Skill in a bad position still loses.</strong>
-      </p>
-      <p>
-        That loss forced me to look at everything differently. Not just how I earn money — but where I earn it, where I spend it, and what systems I build in between.
-      </p>
-      <p>
-        I moved to Cebu, Philippines. Started earning in USD. Spending in pesos. The gap between those two currencies became my weapon. <strong>That's arbitrage.</strong> It works in 15 countries. I'm running it from one of them — and building it all in public.
-      </p>
-    </section>
+		<div class="flex flex-col sm:flex-row justify-center items-center gap-4 pt-6">
+			<a href="/blog" class="btn-primary w-full sm:w-auto text-center flex justify-center items-center gap-2">
+				Read the Blog <ArrowRight size={18} />
+			</a>
+			<a href="/newsletter" class="px-8 py-3 rounded-full font-bold text-sm tracking-widest uppercase border border-slate-300 dark:border-white/10 hover:bg-slate-100 dark:hover:bg-white/5 transition-all flex items-center gap-2 w-full sm:w-auto justify-center text-slate-900 dark:text-white">
+				Free Strategy Pack <TrendingUp size={18} />
+			</a>
+		</div>
 
-    <!-- STATS -->
-    <div class="stats-bar">
-      <div class="stats-inner">
-        <div class="stat-block">
-          <div class="stat-number"><span class="signal">$300K</span></div>
-          <div class="stat-label">Lost in crypto.<br>The lesson that changed everything.</div>
-        </div>
-        <div class="stat-block">
-          <div class="stat-number">15</div>
-          <div class="stat-label">Arbitrage Diamond<br>countries in the playbook.</div>
-        </div>
-        <div class="stat-block">
-          <div class="stat-number" id="sub-count">566</div>
-          <div class="stat-label">Freedom Seekers<br>reading every Tuesday.</div>
-        </div>
-      </div>
-    </div>
+		<!-- Floating Social Icons -->
+		<div class="flex justify-center items-center gap-4 pt-4">
+			<a href="https://x.com/expatbuildr" target="_blank" rel="noopener" class="p-3 rounded-full glass-card text-slate-500 dark:text-slate-400 hover:text-black dark:hover:text-white transition-colors floating" style="animation-delay: 0s;" aria-label="X / Twitter">
+				<Twitter size={20} />
+			</a>
+			<a href="https://www.youtube.com/@GalaxyArb" target="_blank" rel="noopener" class="p-3 rounded-full glass-card text-slate-500 dark:text-slate-400 hover:text-rose-500 transition-colors floating" style="animation-delay: 0.5s;" aria-label="YouTube">
+				<Youtube size={20} />
+			</a>
+			<a href="https://www.instagram.com/expatbuildr" target="_blank" rel="noopener" class="p-3 rounded-full glass-card text-slate-500 dark:text-slate-400 hover:text-pink-500 transition-colors floating" style="animation-delay: 1s;" aria-label="Instagram">
+				<Instagram size={20} />
+			</a>
+			<a href="https://www.linkedin.com/in/expatbuildr/" target="_blank" rel="noopener" class="p-3 rounded-full glass-card text-slate-500 dark:text-slate-400 hover:text-blue-500 transition-colors floating" style="animation-delay: 1.5s;" aria-label="LinkedIn">
+				<Linkedin size={20} />
+			</a>
+			<a href="https://t.me/galaxyleads" target="_blank" rel="noopener" class="p-3 rounded-full glass-card text-slate-500 dark:text-slate-400 hover:text-accent-cyan transition-colors floating" style="animation-delay: 2s;" aria-label="Telegram">
+				<Send size={20} />
+			</a>
+		</div>
+	</section>
 
-    <!-- PROPERTIES -->
-    <section class="properties-section" id="work">
-      <div class="properties-inner">
-        <div class="section-label">What I'm building</div>
-        <h2>Four properties.<br>One mission.</h2>
-        <div class="props-grid">
-          <a href="https://galaxyarbitrage.com" target="_blank" rel="noopener" class="prop-card">
-            <div>
-              <span class="prop-tag">Newsletter</span>
-              <div class="prop-name">Galaxy Arbitrage Weekly</div>
-              <p class="prop-desc">The weekly playbook for Americans living abroad. Geographic arbitrage, currency gaps, labor plays, AI leverage, and health arbitrage. Every Tuesday. Free forever.</p>
-            </div>
-            <div class="prop-arrow">→</div>
-          </a>
-          <a href="https://galaxybuilt.dev" target="_blank" rel="noopener" class="prop-card">
-            <div>
-              <span class="prop-tag">Studio</span>
-              <div class="prop-name">GalaxyBuilt</div>
-              <p class="prop-desc">Done-for-you landing pages and conversion funnels for expat founders and remote business owners. If your website is leaking customers — I fix that.</p>
-            </div>
-            <div class="prop-arrow">→</div>
-          </a>
-          <a href="https://youtube.com/@GalaxyArb" target="_blank" rel="noopener" class="prop-card">
-            <div>
-              <span class="prop-tag">YouTube</span>
-              <div class="prop-name">@GalaxyArb</div>
-              <p class="prop-desc">Deeper dives on the arbitrage plays covered in the newsletter. Real numbers, real locations, real math — filmed from Cebu.</p>
-            </div>
-            <div class="prop-arrow">→</div>
-          </a>
-          <a href="https://youtube.com/@expatbuildr" target="_blank" rel="noopener" class="prop-card">
-            <div>
-              <span class="prop-tag">YouTube</span>
-              <div class="prop-name">@ExpatBuildr</div>
-              <p class="prop-desc">The unfiltered, behind-the-scenes look into my life as an expat.</p>
-            </div>
-            <div class="prop-arrow">→</div>
-          </a>
-        </div>
-      </div>
-    </section>
+	<!-- SECTION 1.5: Newsletter Join Bar -->
+	<section class="max-w-4xl mx-auto px-4 pb-12">
+		<div class="glass-card rounded-[2.5rem] px-8 py-10 border border-accent-cyan/20 relative overflow-hidden">
+			<div class="absolute top-0 right-0 w-64 h-64 bg-accent-cyan/10 blur-[80px] rounded-full pointer-events-none"></div>
+			<div class="relative z-10 flex flex-col lg:flex-row items-center gap-8">
+				<div class="flex-1 text-center lg:text-left space-y-2">
+					<p class="text-xs font-mono tracking-widest uppercase text-accent-cyan">Galaxy Arbitrage Newsletter</p>
+					<h3 class="text-2xl md:text-3xl font-black font-display text-slate-900 dark:text-white leading-tight">
+						Join the <span id="join-counter" class="text-accent-cyan">—</span> founders already inside.
+					</h3>
+					<p class="text-slate-500 text-sm">
+						Weekly playbooks, systems &amp; geo-arb intel. Free.
+					</p>
+				</div>
+				<form id="hero-newsletter-form" class="flex flex-col sm:flex-row gap-3 w-full lg:w-auto">
+					<input type="email" id="hero-newsletter-email" placeholder="your@email.com" required
+						class="flex-1 min-w-0 sm:min-w-[240px] bg-white dark:bg-white/10 border border-slate-200 dark:border-white/10 rounded-full px-6 py-3 text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500 text-sm focus:outline-none focus:border-accent-cyan/60 transition-colors" />
+					<button type="submit" class="btn-primary px-8 py-3 whitespace-nowrap flex items-center justify-center gap-2">
+						Join Free <ArrowRight size={18} />
+					</button>
+				</form>
+				<div id="hero-newsletter-status" class="hidden text-xs font-mono text-red-400 text-center"></div>
+			</div>
+		</div>
+	</section>
 
-    <!-- NEWSLETTER -->
-    <section class="newsletter-section" id="newsletter">
-      <div class="section-label">Every Tuesday · Free forever</div>
-      <h2>The arbitrage playbook.<br>Weekly.</h2>
-      <p>
-        Real strategies for Americans living abroad. Geographic arbitrage, currency gaps, remote income plays, health savings, and AI leverage — written by someone running the model in real time from Cebu.
-      </p>
-      <div class="form-wrap">
-        <label class="form-label">Join 566 Freedom Seekers</label>
-        <form id="subscribe-form-bottom" class="sub-form">
-          <input type="email" id="email-bottom" name="email" placeholder="Enter your best email" required class="email-input" />
-          <button type="submit" id="submit-btn-bottom" class="btn-primary">Join Free →</button>
-        </form>
-        <p id="form-message-bottom" class="form-msg hidden"></p>
-        <div class="form-trust">
-          <span>Free forever</span>
-          <span>4 resources delivered instantly</span>
-          <span>Unsubscribe anytime</span>
-        </div>
-      </div>
-    </section>
-  </div>
+	<!-- SECTION 2: Done-For-You Services Grid -->
+	<section class="max-w-7xl mx-auto py-24 px-4 sm:px-6">
+		<div class="mb-12 text-center md:text-left">
+			<h3 class="text-3xl md:text-4xl font-black font-display text-slate-900 dark:text-white">DONE-FOR-YOU SYSTEMS</h3>
+			<p class="text-institutional-secondary mt-2">Institutional-grade infrastructure installed directly into your business.</p>
+		</div>
+		<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+			<!-- Service 1: Landing Pages -->
+			<a href="/founders/offer" class="glass-card p-10 rounded-[2rem] space-y-6 hover:border-accent-cyan/50 transition-all hover:-translate-y-1 block group">
+				<div class="w-14 h-14 rounded-2xl bg-accent-cyan/10 flex items-center justify-center text-accent-cyan mb-2">
+					<MonitorPlay size={28} />
+				</div>
+				<h4 class="text-2xl font-bold dark:text-white text-slate-900 group-hover:text-accent-cyan transition-colors">Landing Pages & Funnels</h4>
+				<p class="text-slate-500 text-base leading-relaxed">High-converting landing pages and acquisition funnels built specifically for founders. Engineered for maximum conversion rate, true ROI scoring, and aesthetic dominance.</p>
+				<div class="pt-4 flex items-center text-accent-cyan font-bold text-sm uppercase tracking-widest gap-2">
+					Explore Service <ArrowRight size={16} class="group-hover:translate-x-1 transition-transform" />
+				</div>
+			</a>
+			<!-- Service 2: Automation -->
+			<a href="/automation-systems/automation" class="glass-card p-10 rounded-[2rem] space-y-6 hover:border-accent-purple/50 transition-all hover:-translate-y-1 block group">
+				<div class="w-14 h-14 rounded-2xl bg-purple-500/10 flex items-center justify-center text-purple-400 mb-2">
+					<Code2 size={28} />
+				</div>
+				<h4 class="text-2xl font-bold dark:text-white text-slate-900 group-hover:text-purple-400 transition-colors">Autonomous Systems</h4>
+				<p class="text-slate-500 text-base leading-relaxed">Turn manual tasks into autonomous intelligence. We build multi-agent AI workflows and operational systems that scale your output without scaling your headcount.</p>
+				<div class="pt-4 flex items-center text-purple-400 font-bold text-sm uppercase tracking-widest gap-2">
+					Explore Service <ArrowRight size={16} class="group-hover:translate-x-1 transition-transform" />
+				</div>
+			</a>
+		</div>
+	</section>
 
-  <style>
-    .expat-home {
-      --white: #ffffff;
-      --off: #f7f7f5;
-      --black: #0a0a0a;
-      --gray: #6b6b6b;
-      --border: #e2e2de;
-      --signal: #ff4d00;
-      --signal-hover: #e63d00;
-      font-family: 'Epilogue', sans-serif;
-      color: var(--black);
-    }
+	<!-- SECTION 3: Persona Segmentation Widget -->
+	<section class="py-32 relative overflow-hidden">
+		<!-- Subtle glow effects -->
+		<div class="absolute left-1/4 top-1/4 w-[400px] h-[400px] bg-yellow-500/20 blur-[100px] rounded-full pointer-events-none opacity-40"></div>
+		<div class="absolute right-1/4 top-1/3 w-[350px] h-[350px] bg-accent-cyan/15 blur-[90px] rounded-full pointer-events-none opacity-35"></div>
+		<div class="absolute left-1/2 bottom-0 w-[300px] h-[300px] bg-accent-purple/15 blur-[80px] rounded-full pointer-events-none opacity-30"></div>
 
-    .expat-home .hero {
-      max-width: 860px;
-      margin: 0 auto;
-      padding: 40px 20px 60px;
-    }
+		<div class="max-w-4xl mx-auto px-4 sm:px-6 relative z-10 text-center space-y-4 mb-16">
+			<div class="inline-block px-3 py-1 rounded-full border border-accent-cyan/30 bg-accent-cyan/10 text-accent-cyan text-xs font-bold tracking-widest uppercase">
+				Identify Your Protocol
+			</div>
+			<h3 class="text-4xl md:text-5xl font-black font-display text-slate-900 dark:text-white">WHO ARE YOU?</h3>
+			<p class="text-slate-600 dark:text-slate-400 text-lg max-w-xl mx-auto">Select your operator profile. We'll send you the exact playbook built for your situation.</p>
+		</div>
 
-    .expat-home .eyebrow {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 13px;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--signal);
-      margin-bottom: 28px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-    .expat-home .eyebrow::before {
-      content: '';
-      width: 24px;
-      height: 2px;
-      background: var(--signal);
-      display: inline-block;
-      flex-shrink: 0;
-    }
+		<div class="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
+			<!-- Persona Cards -->
+			<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
 
-    .expat-home .hero h1 {
-      font-size: clamp(44px, 8vw, 80px);
-      font-weight: 900;
-      line-height: 1.03;
-      letter-spacing: -0.03em;
-      color: var(--black);
-      margin: 0 0 28px;
-    }
-    .expat-home .hero h1 .strike { text-decoration: line-through; color: #bbb; font-weight: 400; }
-    .expat-home .hero h1 .signal { color: var(--signal); }
+				<!-- Freedom Seeker -->
+				<a href="/freedom-seeker"
+					class="text-left p-12 rounded-[2.5rem] glass-card hover:border-yellow-500/40 transition-all duration-300 group space-y-6 min-h-[360px] flex flex-col">
+					<div class="text-3xl">🌏</div>
+					<div>
+						<div class="text-3xl md:text-5xl font-black tracking-tight uppercase text-yellow-500 mb-2 leading-tight">Freedom Seeker</div>
+						<h4 class="text-base font-semibold text-slate-900 dark:text-white leading-tight">Earn in USD.<br/>Live for $1,200/mo.</h4>
+					</div>
+					<p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">You want to escape the cost-of-living trap, go full remote, and build a life in geo-arbitrage paradise.</p>
+					<div class="pt-2 text-yellow-500 font-black text-sm uppercase tracking-widest flex items-center gap-2 mt-auto">
+						This is me <ArrowRight size={20} class="group-hover:translate-x-1 transition-transform" />
+					</div>
+				</a>
 
-    .expat-home .hero-sub {
-      font-size: 20px;
-      color: #444;
-      line-height: 1.65;
-      margin-bottom: 40px;
-      max-width: 620px;
-    }
+				<!-- Remote Hustler -->
+				<a href="/remote-hustler"
+					class="text-left p-12 rounded-[2.5rem] glass-card hover:border-accent-cyan/40 transition-all duration-300 group space-y-6 min-h-[360px] flex flex-col">
+					<div class="text-3xl">💻</div>
+					<div>
+						<div class="text-3xl md:text-5xl font-black tracking-tight uppercase text-accent-cyan mb-2 leading-tight">Remote Hustler</div>
+						<h4 class="text-base font-semibold text-slate-900 dark:text-white leading-tight">Scale income<br/>from anywhere.</h4>
+					</div>
+					<p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">You're already remote or close to it. You need systems, income stacks, and protocols that multiply your output.</p>
+					<div class="pt-2 text-accent-cyan font-black text-sm uppercase tracking-widest flex items-center gap-2 mt-auto">
+						This is me <ArrowRight size={20} class="group-hover:translate-x-1 transition-transform" />
+					</div>
+				</a>
 
-    .expat-home .form-wrap {
-      background: var(--off);
-      border: 1px solid var(--border);
-      padding: 32px;
-      margin-bottom: 16px;
-    }
+				<!-- Lead Builder -->
+				<a href="/lead-builder"
+					class="text-left p-12 rounded-[2.5rem] glass-card hover:border-accent-purple/40 transition-all duration-300 group space-y-6 min-h-[360px] flex flex-col">
+					<div class="text-3xl">🎯</div>
+					<div>
+						<div class="text-3xl md:text-5xl font-black tracking-tight uppercase text-accent-purple mb-2 leading-tight">Lead Builder</div>
+						<h4 class="text-base font-semibold text-slate-900 dark:text-white leading-tight">Build client<br/>acquisition machines.</h4>
+					</div>
+					<p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">You're a founder or operator who needs autonomous lead generation — pipelines that run without you.</p>
+					<div class="pt-2 text-accent-purple font-black text-sm uppercase tracking-widest flex items-center gap-2 mt-auto">
+						This is me <ArrowRight size={20} class="group-hover:translate-x-1 transition-transform" />
+					</div>
+				</a>
 
-    .expat-home .form-label {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 12px;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--gray);
-      margin-bottom: 14px;
-      display: block;
-    }
+			</div>
+		</div>
+	</section>
 
-    .expat-home .sub-form { display: flex; gap: 0; flex-wrap: wrap; }
+	<script>
+	// Fetch founder count from KV counter
+	(function () {
+		fetch('/get-counter', { method: 'GET' })
+			.then(r => r.json())
+			.then((data: { count?: number }) => {
+				const el = document.getElementById('join-counter');
+				if (el && typeof data.count === 'number') {
+					el.textContent = data.count.toLocaleString() + '+';
+				}
+			})
+			.catch(() => {
+				const el = document.getElementById('join-counter');
+				if (el) el.textContent = '100+';
+			});
+	})();
 
-    .expat-home .email-input {
-      flex: 1;
-      min-width: 200px;
-      padding: 16px 20px;
-      font-size: 16px;
-      font-family: 'Epilogue', sans-serif;
-      border: 2px solid var(--black);
-      border-right: none;
-      outline: none;
-      background: var(--white);
-      color: var(--black);
-    }
-    .expat-home .email-input:focus { border-color: var(--signal); }
+	// Hero newsletter form
+	(function () {
+		const form = document.getElementById('hero-newsletter-form');
+		const emailInput = document.getElementById('hero-newsletter-email') as HTMLInputElement;
+		const submitBtn = form?.querySelector('button[type="submit"]') as HTMLButtonElement;
+		const status = document.getElementById('hero-newsletter-status');
 
-    .expat-home .btn-primary {
-      padding: 16px 28px;
-      background: var(--signal);
-      color: var(--white);
-      font-family: 'Epilogue', sans-serif;
-      font-size: 14px;
-      font-weight: 700;
-      border: 2px solid var(--signal);
-      cursor: pointer;
-      white-space: nowrap;
-      letter-spacing: 0.02em;
-    }
-    .expat-home .btn-primary:hover { background: var(--signal-hover); border-color: var(--signal-hover); }
-    .expat-home .btn-primary:disabled { opacity: 0.6; cursor: default; }
+		form?.addEventListener('submit', async (e) => {
+			e.preventDefault();
+			const email = emailInput.value.trim();
+			if (!email) return;
+			submitBtn.disabled = true;
+			const orig = submitBtn.innerHTML;
+			submitBtn.innerHTML = 'Sending…';
+			try {
+				const res = await fetch('/api/subscribe', {
+					method: 'POST',
+					headers: { 'Content-Type': 'application/json' },
+					body: JSON.stringify({ email, source: 'homepage_hero', tags: ['founder'] })
+				});
+				const data = await res.json();
+				if (data.success) {
+					(form as HTMLFormElement).innerHTML = '<p class="text-emerald-400 font-bold text-sm text-center w-full">✓ You\'re in — check your inbox for the playbook.</p>';
+				} else {
+					throw new Error(data.error || 'Failed');
+				}
+			} catch {
+				submitBtn.disabled = false;
+				submitBtn.innerHTML = orig;
+				if (status) {
+					status.textContent = 'Something went wrong. Try again.';
+					status.classList.remove('hidden');
+				}
+			}
+		});
+	})();
 
-    .expat-home .form-msg {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 12px;
-      margin-top: 12px;
-      color: var(--gray);
-    }
-    .expat-home .form-msg.hidden { display: none; }
+	(function () {
+		const form = document.getElementById('footer-newsletter-form');
+		const emailInput = document.getElementById('footer-newsletter-email') as HTMLInputElement;
+		const submitBtn = form?.querySelector('button[type="submit"]') as HTMLButtonElement;
+		const status = document.getElementById('footer-newsletter-status');
 
-    .expat-home .form-trust {
-      font-size: 12px;
-      color: var(--gray);
-      margin-top: 14px;
-      display: flex;
-      gap: 16px;
-      flex-wrap: wrap;
-      font-family: 'IBM Plex Mono', monospace;
-    }
-    .expat-home .form-trust span::before { content: '✓ '; color: var(--signal); }
+		form?.addEventListener('submit', async (e) => {
+			e.preventDefault();
+			const email = emailInput.value.trim();
+			if (!email) return;
 
-    .expat-home .section-divider { border: none; border-top: 1px solid var(--border); max-width: 860px; margin: 0 auto; }
+			submitBtn.disabled = true;
+			const originalText = submitBtn.innerHTML;
+			submitBtn.innerHTML = 'Sending…';
 
-    .expat-home .story-section {
-      padding: 60px 20px;
-      max-width: 860px;
-      margin: 0 auto;
-    }
-    .expat-home .section-label {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 12px;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--signal);
-      margin-bottom: 20px;
-    }
-    .expat-home .story-section h2,
-    .expat-home .properties-inner h2,
-    .expat-home .newsletter-section h2 {
-      font-size: clamp(32px, 4.5vw, 48px);
-      font-weight: 900;
-      letter-spacing: -0.03em;
-      line-height: 1.08;
-      color: var(--black);
-      margin: 0 0 28px;
-    }
-    .expat-home .story-section p {
-      font-size: 18px;
-      color: #444;
-      line-height: 1.75;
-      margin-bottom: 20px;
-    }
-    .expat-home .story-section p strong { color: var(--black); }
+			try {
+				const res = await fetch('/api/subscribe', {
+					method: 'POST',
+					headers: { 'Content-Type': 'application/json' },
+					body: JSON.stringify({
+						email,
+						source: 'newsletter_footer',
+						tags: ['founder']
+					})
+				});
+				const data = await res.json();
 
-    .expat-home .stats-bar { background: var(--black); padding: 50px 20px; }
-    .expat-home .stats-inner {
-      max-width: 860px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2px;
-    }
-    .expat-home .stat-block { padding: 32px 24px; background: #111; }
-    .expat-home .stat-number {
-      font-size: clamp(34px, 5vw, 52px);
-      font-weight: 900;
-      color: var(--white);
-      letter-spacing: -0.03em;
-      line-height: 1;
-      margin-bottom: 8px;
-    }
-    .expat-home .stat-number .signal { color: var(--signal); }
-    .expat-home .stat-label {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 11px;
-      color: #666;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      line-height: 1.5;
-    }
+				if (data.success) {
+					form.innerHTML = `<p class="text-emerald-400 font-bold text-base">✓ Check your inbox — your playbooks are on the way.</p>`;
+					status!.classList.add('hidden');
+				} else {
+					throw new Error(data.error || 'Failed');
+				}
+			} catch {
+				submitBtn.disabled = false;
+				submitBtn.innerHTML = originalText;
+				status!.textContent = 'Something went wrong. Try again.';
+				status!.className = 'text-xs font-mono text-red-400';
+				status!.classList.remove('hidden');
+			}
+		});
+	})();
+	</script>
 
-    .expat-home .properties-section { padding: 60px 20px; background: var(--off); }
-    .expat-home .properties-inner { max-width: 860px; margin: 0 auto; }
-    .expat-home .props-grid { display: flex; flex-direction: column; gap: 3px; }
-    .expat-home .prop-card {
-      background: var(--white);
-      padding: 28px 24px;
-      text-decoration: none;
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      gap: 24px;
-      border-left: 3px solid transparent;
-      transition: border-color 0.2s;
-    }
-    .expat-home .prop-card:hover { border-color: var(--signal); }
-    .expat-home .prop-tag {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 11px;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--signal);
-      margin-bottom: 10px;
-      display: block;
-    }
-    .expat-home .prop-name { font-size: 22px; font-weight: 700; color: var(--black); margin-bottom: 8px; }
-    .expat-home .prop-desc { font-size: 14px; color: var(--gray); line-height: 1.6; max-width: 480px; }
-    .expat-home .prop-arrow { font-size: 22px; color: var(--signal); flex-shrink: 0; }
+	<!-- SECTION 4: Featured Blog Posts -->
+	<section class="max-w-7xl mx-auto py-24 px-4 sm:px-6">
+		<div class="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-12 gap-4">
+			<div>
+				<h3 class="text-3xl md:text-4xl font-black font-display text-slate-900 dark:text-white">THE INTELLIGENCE INDEX</h3>
+				<p class="text-institutional-secondary mt-2">Latest tactical guides and operational protocols.</p>
+			</div>
+			<a href="/blog" class="text-sm font-bold uppercase tracking-widest text-accent-cyan hover:text-white transition-colors flex items-center gap-1">
+				View All Transmissions <ArrowRight size={16} />
+			</a>
+		</div>
 
-    .expat-home .newsletter-section { padding: 60px 20px 80px; max-width: 860px; margin: 0 auto; }
-    .expat-home .newsletter-section p { font-size: 18px; color: #444; line-height: 1.65; margin-bottom: 32px; max-width: 560px; }
+		<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+			{featuredPosts.map(post => (
+				<a href={`/blog/${post.id.replace(/\.mdx?$/, '')}`} class="group block glass-card rounded-[2rem] overflow-hidden hover:border-accent-cyan/40 transition-colors h-full flex flex-col">
+					<div class="h-48 w-full overflow-hidden border-b border-white/5 relative">
+						<img 
+							src={post.data.heroImage || `/images/blog/pillars/${post.data.pillarId}-hub.png`}
+							alt={post.data.title}
+							class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+						/>
+						<div class="absolute top-4 left-4 bg-black/45 backdrop-blur-md border border-white/10 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+							{post.data.pillarId ? post.data.pillarId.replace('-', ' ') : 'Intelligence'}
+						</div>
+					</div>
+					<div class="p-6 flex-1 flex flex-col">
+						<div class="text-xs text-slate-500 font-mono mb-3">
+							{new Intl.DateTimeFormat('en-US', { month: 'short', day: 'numeric', year: 'numeric' }).format(post.data.pubDate)}
+						</div>
+						<h4 class="text-xl font-bold dark:text-white text-slate-900 mb-3 leading-tight group-hover:text-accent-cyan transition-colors">
+							{post.data.title}
+						</h4>
+						<p class="text-slate-500 text-sm line-clamp-3 mb-6 flex-1">
+							{post.data.description}
+						</p>
+						<div class="flex items-center text-accent-cyan font-bold text-xs uppercase tracking-widest gap-1 mt-auto">
+							Read Protocol <ArrowRight size={14} class="group-hover:translate-x-1 transition-transform" />
+						</div>
+					</div>
+				</a>
+			))}
+		</div>
+	</section>
 
-    @media (max-width: 640px) {
-      .expat-home .sub-form { flex-direction: column; }
-      .expat-home .email-input { border-right: 2px solid var(--black); border-bottom: none; }
-      .expat-home .btn-primary { justify-content: center; }
-      .expat-home .stats-inner { grid-template-columns: 1fr; }
-      .expat-home .prop-card { flex-direction: column; gap: 12px; }
-    }
-  </style>
+	<!-- SECTION 5: Newsletter CTA -->
+	<section class="max-w-7xl mx-auto px-4 pb-20">
+		<div class="glass-card rounded-[3rem] p-8 md:p-16 border-accent-cyan/20 relative overflow-hidden bg-gradient-to-br from-slate-900 to-black">
+			<div class="absolute top-0 right-0 w-96 h-96 bg-accent-cyan/10 blur-[100px] rounded-full"></div>
+			<div class="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+				<div class="space-y-6">
+					<div class="inline-flex items-center gap-2 text-accent-cyan font-mono text-sm tracking-widest uppercase">
+						<Rss size={16} /> Galaxy Arbitrage Newsletter
+					</div>
+					<h3 class="text-4xl md:text-5xl font-black font-display text-white leading-tight">
+						THE WEEKLY PLAYBOOK FOR REMOTE INCOME.
+					</h3>
+					<p class="text-slate-400 text-lg">
+						Join 60+ operators getting weekly breakdowns on geographic arbitrage, lead generation, and remote work systems. Free.
+					</p>
+					<form id="footer-newsletter-form" class="pt-4 space-y-3 max-w-md">
+						<div class="flex flex-col sm:flex-row gap-3">
+							<input type="email" id="footer-newsletter-email" placeholder="your@email.com" required
+								class="flex-1 bg-white/10 border border-white/10 rounded-full px-6 py-3 text-white placeholder:text-slate-500 text-sm focus:outline-none focus:border-accent-cyan/50 transition-colors" />
+							<button type="submit" class="btn-primary px-8 py-3 whitespace-nowrap flex items-center justify-center gap-2">
+								Subscribe <ArrowRight size={18} />
+							</button>
+						</div>
+						<div id="footer-newsletter-status" class="text-xs font-mono hidden"></div>
+						<p class="text-xs text-slate-500 font-mono">✓ 4 Free Resources &nbsp;·&nbsp; ✓ No Spam</p>
+					</form>
+				</div>
+				<div class="relative order-first lg:order-last">
+					<img src="/images/arbmockup.jpg" alt="Galaxy Arbitrage Newsletter Mockup" class="w-full h-auto rounded-2xl transform rotate-2 hover:rotate-0 transition-transform duration-500 border border-white/10 shadow-2xl"  />
+				</div>
+			</div>
+		</div>
+	</section>
 
-  <script is:inline>
-    async function handleHomeSubmit(emailVal, btnEl, msgEl) {
-      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      if (!emailRegex.test(emailVal)) {
-        msgEl.innerText = '❌ Please enter a valid email address.';
-        msgEl.classList.remove('hidden');
-        return;
-      }
-      btnEl.disabled = true;
-      btnEl.innerText = 'Joining...';
-      msgEl.innerText = '';
-      msgEl.classList.add('hidden');
-      try {
-        const response = await fetch('/api/subscribe', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ email: emailVal, source: 'web', magnet: 'remote-jobs-pack', tags: ['expatbuildr-homepage'] })
-        });
-        const data = await response.json();
-        if (data.success) {
-          if (window.fireLeadEvent) window.fireLeadEvent();
-          btnEl.innerText = 'Redirecting...';
-          window.location.href = data.redirect_url || '/newsletter/thank-you';
-        } else {
-          btnEl.disabled = false;
-          btnEl.innerText = 'Join Free →';
-          msgEl.innerText = '❌ ' + (data.error || 'Error, try again.');
-          msgEl.classList.remove('hidden');
-        }
-      } catch (err) {
-        btnEl.disabled = false;
-        btnEl.innerText = 'Join Free →';
-        msgEl.innerText = '❌ Network error.';
-        msgEl.classList.remove('hidden');
-      }
-    }
 
-    document.getElementById('subscribe-form-hero')?.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      await handleHomeSubmit(
-        document.getElementById('email-hero').value.trim(),
-        document.getElementById('submit-btn-hero'),
-        document.getElementById('form-message-hero')
-      );
-    });
 
-    document.getElementById('subscribe-form-bottom')?.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      await handleHomeSubmit(
-        document.getElementById('email-bottom').value.trim(),
-        document.getElementById('submit-btn-bottom'),
-        document.getElementById('form-message-bottom')
-      );
-    });
-
-    fetch('/get-counter')
-      .then(r => r.json())
-      .then(d => {
-        const el = document.getElementById('sub-count');
-        if (el) el.textContent = d.count.toLocaleString();
-      })
-      .catch(() => {});
-  </script>
+	<!-- SECTION 6: Portfolio Teaser -->
+	<section class="max-w-7xl mx-auto py-20 px-4 text-center space-y-8 border-t border-glass-border">
+		<h3 class="text-3xl font-black font-display dark:text-white text-slate-900">Looking for our past work?</h3>
+		<p class="text-institutional-secondary max-w-xl mx-auto">
+			We've built institutional-grade crypto megablogs, proprietary trading algorithms, and viral media brands. View the full catalog of internal and client projects.
+		</p>
+		<a href="/portfolio" class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full border border-slate-300 dark:border-white/10 hover:bg-slate-100 dark:hover:bg-white/5 font-bold uppercase tracking-widest text-sm text-slate-900 dark:text-white transition-all">
+			View Portfolio <ArrowUpRight size={16} />
+		</a>
+	</section>
 </Layout>
