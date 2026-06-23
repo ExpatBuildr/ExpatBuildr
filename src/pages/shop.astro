@@ -120,7 +120,24 @@ import { Sun, Moon, Menu, X } from 'lucide-astro';
         "price": "19.00",
         "priceCurrency": "USD",
         "availability": "https://schema.org/InStock",
-        "seller": { "@type": "Organization", "name": "ExpatBuildr" }
+        "seller": { "@type": "Organization", "name": "ExpatBuildr" },
+        "shippingDetails": {
+          "@type": "OfferShippingDetails",
+          "shippingRate": { "@type": "MonetaryAmount", "value": "0.00", "currency": "USD" },
+          "deliveryTime": {
+            "@type": "ShippingDeliveryTime",
+            "handlingTime": { "@type": "QuantitativeValue", "minValue": 0, "maxValue": 0, "unitCode": "DAY" },
+            "transitTime": { "@type": "QuantitativeValue", "minValue": 0, "maxValue": 0, "unitCode": "DAY" }
+          },
+          "shippingDestination": { "@type": "DefinedRegion", "addressCountry": "US" }
+        },
+        "hasMerchantReturnPolicy": {
+          "@type": "MerchantReturnPolicy",
+          "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+          "merchantReturnDays": 30,
+          "returnMethod": "https://schema.org/ReturnByMail",
+          "returnFees": "https://schema.org/FreeReturn"
+        }
       },
       "image": "https://expatbuildr.com/images/crm-tracker-mockup.png",
       "category": "Business Software > CRM Tools"
@@ -136,7 +153,24 @@ import { Sun, Moon, Menu, X } from 'lucide-astro';
         "price": "22.00",
         "priceCurrency": "USD",
         "availability": "https://schema.org/InStock",
-        "seller": { "@type": "Organization", "name": "ExpatBuildr" }
+        "seller": { "@type": "Organization", "name": "ExpatBuildr" },
+        "shippingDetails": {
+          "@type": "OfferShippingDetails",
+          "shippingRate": { "@type": "MonetaryAmount", "value": "0.00", "currency": "USD" },
+          "deliveryTime": {
+            "@type": "ShippingDeliveryTime",
+            "handlingTime": { "@type": "QuantitativeValue", "minValue": 0, "maxValue": 0, "unitCode": "DAY" },
+            "transitTime": { "@type": "QuantitativeValue", "minValue": 0, "maxValue": 0, "unitCode": "DAY" }
+          },
+          "shippingDestination": { "@type": "DefinedRegion", "addressCountry": "US" }
+        },
+        "hasMerchantReturnPolicy": {
+          "@type": "MerchantReturnPolicy",
+          "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+          "merchantReturnDays": 30,
+          "returnMethod": "https://schema.org/ReturnByMail",
+          "returnFees": "https://schema.org/FreeReturn"
+        }
       },
       "image": "https://expatbuildr.com/images/geo-arb-calculator-mockup.png",
       "category": "Business Software > Financial Calculators"
@@ -181,29 +215,129 @@ import { Sun, Moon, Menu, X } from 'lucide-astro';
       "@type": "Product",
       "@id": "https://expatbuildr.com/shop#jobs-list",
       "name": "US Remote Jobs Master List",
-      "description": "Curated directory of highly-paid US remote positions.",
+      "description": "A handpicked, curated list of high-value US remote jobs paying $17/hr+ available globally.",
       "brand": { "@type": "Brand", "name": "ExpatBuildr" },
-      "offers": { "@type": "Offer", "price": "50.00", "priceCurrency": "USD", "availability": "https://schema.org/InStock", "seller": { "@type": "Organization", "name": "ExpatBuildr" } }
+      "image": "https://expatbuildr.com/jobs_list_mockup.png",
+      "offers": {
+        "@type": "Offer",
+        "price": "50.00",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "seller": { "@type": "Organization", "name": "ExpatBuildr" },
+        "shippingDetails": {
+          "@type": "OfferShippingDetails",
+          "shippingRate": { "@type": "MonetaryAmount", "value": "0.00", "currency": "USD" },
+          "deliveryTime": {
+            "@type": "ShippingDeliveryTime",
+            "handlingTime": { "@type": "QuantitativeValue", "minValue": 0, "maxValue": 0, "unitCode": "DAY" },
+            "transitTime": { "@type": "QuantitativeValue", "minValue": 0, "maxValue": 0, "unitCode": "DAY" }
+          },
+          "shippingDestination": { "@type": "DefinedRegion", "addressCountry": "US" }
+        },
+        "hasMerchantReturnPolicy": {
+          "@type": "MerchantReturnPolicy",
+          "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+          "merchantReturnDays": 30,
+          "returnMethod": "https://schema.org/ReturnByMail",
+          "returnFees": "https://schema.org/FreeReturn"
+        }
+      }
     },
     {
       "@type": "Product",
       "@id": "https://expatbuildr.com/shop#lead-gen-list",
       "name": "Lead Gen List",
-      "description": "Premium verified lead lists for your cold outreach campaigns.",
+      "description": "Premium verified lead lists for your cold outreach campaigns. Access highly-targeted decision makers.",
       "brand": { "@type": "Brand", "name": "ExpatBuildr" },
-      "offers": { "@type": "Offer", "price": "100.00", "priceCurrency": "USD", "availability": "https://schema.org/InStock", "seller": { "@type": "Organization", "name": "ExpatBuildr" } }
+      "image": "https://expatbuildr.com/images/lead gen.jpg",
+      "offers": {
+        "@type": "Offer",
+        "price": "100.00",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "seller": { "@type": "Organization", "name": "ExpatBuildr" },
+        "shippingDetails": {
+          "@type": "OfferShippingDetails",
+          "shippingRate": { "@type": "MonetaryAmount", "value": "0.00", "currency": "USD" },
+          "deliveryTime": {
+            "@type": "ShippingDeliveryTime",
+            "handlingTime": { "@type": "QuantitativeValue", "minValue": 0, "maxValue": 0, "unitCode": "DAY" },
+            "transitTime": { "@type": "QuantitativeValue", "minValue": 0, "maxValue": 0, "unitCode": "DAY" }
+          },
+          "shippingDestination": { "@type": "DefinedRegion", "addressCountry": "US" }
+        },
+        "hasMerchantReturnPolicy": {
+          "@type": "MerchantReturnPolicy",
+          "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+          "merchantReturnDays": 30,
+          "returnMethod": "https://schema.org/ReturnByMail",
+          "returnFees": "https://schema.org/FreeReturn"
+        }
+      }
     },
     {
       "@type": "Product",
       "@id": "https://expatbuildr.com/shop#starter-system",
       "name": "Starter Automation System",
-      "offers": { "@type": "Offer", "price": "500.00", "priceCurrency": "USD", "availability": "https://schema.org/InStock", "seller": { "@type": "Organization", "name": "ExpatBuildr" } }
+      "description": "Production-ready scraped data engine and automated CRM pipeline to jumpstart your agency.",
+      "brand": { "@type": "Brand", "name": "ExpatBuildr" },
+      "image": "https://expatbuildr.com/starter_system_mockup.png",
+      "offers": {
+        "@type": "Offer",
+        "price": "500.00",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "seller": { "@type": "Organization", "name": "ExpatBuildr" },
+        "shippingDetails": {
+          "@type": "OfferShippingDetails",
+          "shippingRate": { "@type": "MonetaryAmount", "value": "0.00", "currency": "USD" },
+          "deliveryTime": {
+            "@type": "ShippingDeliveryTime",
+            "handlingTime": { "@type": "QuantitativeValue", "minValue": 0, "maxValue": 0, "unitCode": "DAY" },
+            "transitTime": { "@type": "QuantitativeValue", "minValue": 0, "maxValue": 0, "unitCode": "DAY" }
+          },
+          "shippingDestination": { "@type": "DefinedRegion", "addressCountry": "US" }
+        },
+        "hasMerchantReturnPolicy": {
+          "@type": "MerchantReturnPolicy",
+          "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+          "merchantReturnDays": 30,
+          "returnMethod": "https://schema.org/ReturnByMail",
+          "returnFees": "https://schema.org/FreeReturn"
+        }
+      }
     },
     {
       "@type": "Product",
       "@id": "https://expatbuildr.com/shop#advanced-system",
       "name": "Advanced Automation System",
-      "offers": { "@type": "Offer", "price": "1800.00", "priceCurrency": "USD", "availability": "https://schema.org/InStock", "seller": { "@type": "Organization", "name": "ExpatBuildr" } }
+      "description": "Institutional-grade autonomous AI routing, multi-channel outreach, and deep operational integration.",
+      "brand": { "@type": "Brand", "name": "ExpatBuildr" },
+      "image": "https://expatbuildr.com/advanced_system_mockup.png",
+      "offers": {
+        "@type": "Offer",
+        "price": "1800.00",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "seller": { "@type": "Organization", "name": "ExpatBuildr" },
+        "shippingDetails": {
+          "@type": "OfferShippingDetails",
+          "shippingRate": { "@type": "MonetaryAmount", "value": "0.00", "currency": "USD" },
+          "deliveryTime": {
+            "@type": "ShippingDeliveryTime",
+            "handlingTime": { "@type": "QuantitativeValue", "minValue": 0, "maxValue": 0, "unitCode": "DAY" },
+            "transitTime": { "@type": "QuantitativeValue", "minValue": 0, "maxValue": 0, "unitCode": "DAY" }
+          },
+          "shippingDestination": { "@type": "DefinedRegion", "addressCountry": "US" }
+        },
+        "hasMerchantReturnPolicy": {
+          "@type": "MerchantReturnPolicy",
+          "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+          "merchantReturnDays": 30,
+          "returnMethod": "https://schema.org/ReturnByMail",
+          "returnFees": "https://schema.org/FreeReturn"
+        }
+      }
     }
   ]
 }
