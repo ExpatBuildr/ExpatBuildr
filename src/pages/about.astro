@@ -9,24 +9,58 @@ import Layout from '../layouts/Layout.astro';
   canonicalUrl="https://expatbuildr.com/about"
   ogImage="/expatog.jpg"
 >
-  <section class="story-section">
-    <div class="section-label">About</div>
-    <h2>I'm Tony Long II.</h2>
-    <p>
-      I lost $300K in crypto. Not in one trade — in a series of increasingly confident bets on things I couldn't control. I had skill. My position was wrong. <strong>Skill in a bad position still loses.</strong>
-    </p>
-    <p>
-      That loss forced me to look at everything differently. Not just how I earn money — but where I earn it, where I spend it, and what systems I build in between.
-    </p>
-    <p>
-      I moved to Cebu, Philippines. Started earning in USD. Spending in pesos. The gap between those two currencies became my weapon. <strong>That's arbitrage.</strong> It works in 15 countries. I'm running it from one of them — and building it all in public.
-    </p>
-    <p>
-      Today I run Galaxy Arbitrage Weekly, a newsletter for Americans living abroad, and ExpatBuildr, a studio building landing pages and conversion funnels for expat founders. ExpatBuildr is where I document all of it — the wins, the math, and the mistakes.
-    </p>
-  </section>
+  <div class="max-w-4xl mx-auto py-12 px-6">
 
-  <div class="properties-section" style="text-align:center;">
-    <a href="/newsletter" class="btn-primary">Join the newsletter →</a>
+    <header class="mb-16 reveal-on-scroll">
+      <p class="text-[10px] font-mono uppercase tracking-[0.4em] text-accent-blue mb-4">
+        Founder / Origin Story
+      </p>
+      <h1 class="text-5xl md:text-8xl font-black font-display tracking-tighter leading-none mb-6 text-slate-900 dark:text-white uppercase">
+        ABOUT<br/>
+        <span class="text-slate-900/20 dark:text-white/20">ME.</span>
+      </h1>
+    </header>
+
+    <section class="flex flex-col md:flex-row gap-10 items-start mb-16 reveal-on-scroll">
+      <div class="shrink-0 mx-auto md:mx-0">
+        <div class="glass-card rounded-3xl p-2 w-48 md:w-56">
+          <img
+            src="/authors/galaxy.jpg"
+            alt="Tony Long II"
+            class="rounded-2xl w-full aspect-square object-cover"
+          />
+        </div>
+      </div>
+      <div class="flex-1 text-center md:text-left">
+        <h2 class="text-3xl font-black font-display tracking-tight text-slate-900 dark:text-white mb-2">
+          Tony Long II
+        </h2>
+        <p class="text-accent-blue font-mono text-xs uppercase tracking-widest mb-4">
+          Founder, ExpatBuildr · Cebu, Philippines
+        </p>
+        <p class="text-slate-600 dark:text-slate-400 leading-relaxed">
+          I lost $300K in crypto. Not in one trade — in a series of increasingly confident bets on things I couldn't control. <strong class="text-slate-900 dark:text-white">Skill in a bad position still loses.</strong>
+        </p>
+      </div>
+    </section>
+
+    <div class="prose">
+      <section class="space-y-4">
+        <p>
+          That loss forced me to look at everything differently. Not just how I earn money — but where I earn it, where I spend it, and what systems I build in between.
+        </p>
+        <p>
+          I moved to Cebu, Philippines. Started earning in USD. Spending in pesos. The gap between those two currencies became my weapon. <strong>That's arbitrage.</strong> It works in 15 countries. I'm running it from one of them — and building it all in public.
+        </p>
+        <p>
+          Today I run Galaxy Arbitrage Weekly, a newsletter for Americans living abroad, and ExpatBuildr, a studio building landing pages and conversion funnels for expat founders. ExpatBuildr is where I document all of it — the wins, the math, and the mistakes.
+        </p>
+      </section>
+    </div>
+
+    <div class="mt-16 pt-8 border-t border-slate-900/10 dark:border-white/10 text-center">
+      <a href="/newsletter" class="btn-primary">Join the newsletter →</a>
+    </div>
+
   </div>
 </Layout>
