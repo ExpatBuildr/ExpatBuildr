@@ -1,6 +1,8 @@
 ---
 // /fixleaks — Service Close Page
 // Context: Arrives here after receiving their audit report via email
+const TEXT_NUMBER = "+13104618859";
+const TEXT_NUMBER_DISPLAY = "(310) 461-8859";
 ---
 
 <!DOCTYPE html>
@@ -10,6 +12,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Fix the Leaks — ExpatBuildr Done-For-You Services</title>
   <meta name="description" content="You've seen the audit. Now let's fix it. Landing pages, email sequences, and full funnel architecture. Done for you in 3–7 days." />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Syne:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
@@ -784,16 +789,10 @@
       margin-right: auto;
     }
 
-    .calendly-embed-placeholder {
-      background: rgba(255,255,255,0.02);
-      border: 1px dashed var(--border-glass);
-      padding: 40px 24px;
+    .calendly-inline-widget {
+      min-width: 280px;
+      height: 700px;
       margin-bottom: 24px;
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.65rem;
-      letter-spacing: 0.12em;
-      color: var(--text-dim);
-      text-transform: uppercase;
     }
 
     /* ── FINAL CTA ── */
@@ -910,6 +909,34 @@
     @media (max-width: 560px) {
       .nav-guarantee { display: none; }
       .final-btns { flex-direction: column; align-items: center; }
+    }
+
+    /* TEXT ME WIDGET */
+    .text-me-widget { position: fixed; bottom: 24px; right: 24px; z-index: 200; font-family: 'Syne', sans-serif; }
+    .text-me-bubble {
+      display: flex; align-items: center; justify-content: center;
+      width: 56px; height: 56px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--gold), var(--orange));
+      color: #060809; font-size: 1.4rem; cursor: pointer; border: none;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+      transition: transform 0.15s ease;
+    }
+    .text-me-bubble:hover { transform: scale(1.06); }
+    .text-me-panel {
+      display: none;
+      position: absolute; bottom: 68px; right: 0;
+      width: 250px; padding: 18px;
+      background: var(--bg-deep); border: 1px solid var(--border-glass);
+      border-radius: 12px; box-shadow: 0 12px 40px rgba(0,0,0,0.5);
+    }
+    .text-me-panel.open { display: block; }
+    .text-me-title { font-family: 'Bebas Neue', sans-serif; font-size: 1.2rem; letter-spacing: 0.03em; margin-bottom: 6px; }
+    .text-me-sub { font-size: 0.8rem; color: var(--text-muted); line-height: 1.5; margin-bottom: 14px; }
+    .text-me-link {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      font-family: 'JetBrains Mono', monospace; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.04em;
+      text-decoration: none; padding: 11px 14px; border-radius: 8px;
+      background: linear-gradient(135deg, var(--gold), var(--orange)); color: #060809;
     }
   </style>
 </head>
@@ -1114,10 +1141,10 @@
         <div class="calendly-headline">Book a free 15-min call</div>
         <p class="calendly-sub">Tell me what you're building. I'll tell you exactly what you need — and what you don't. No pitch, no pressure.</p>
 
-        <!-- REPLACE THIS DIV WITH YOUR CALENDLY INLINE EMBED -->
-        <div class="calendly-embed-placeholder">
-          → Paste Calendly inline embed here
-        </div>
+        <!-- Calendly inline widget begin -->
+        <div class="calendly-inline-widget" data-url="https://calendly.com/expatbuildr/fixmyleaks" style="min-width:320px;height:700px;"></div>
+        <script is:inline type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+        <!-- Calendly inline widget end -->
 
         <p style="font-family: 'JetBrains Mono', monospace; font-size: 0.6rem; letter-spacing: 0.12em; color: var(--text-dim); text-transform: uppercase;">
           Free · 15 minutes · No obligation
@@ -1151,12 +1178,34 @@
     </nav>
   </footer>
 
+  <div class="text-me-widget">
+    <div class="text-me-panel" id="textMePanel">
+      <div class="text-me-title">How can I help you?</div>
+      <p class="text-me-sub">Text me directly — no forms, no bots. I'll answer myself.</p>
+      <a href={`sms:${TEXT_NUMBER}`} class="text-me-link">💬 {TEXT_NUMBER_DISPLAY}</a>
+    </div>
+    <button type="button" class="text-me-bubble" id="textMeBubble" aria-label="Text me if you have questions">💬</button>
+  </div>
+
   <script>
     const observer = new IntersectionObserver(
       entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }),
       { threshold: 0.08 }
     );
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    const textMeBubble = document.getElementById('textMeBubble');
+    const textMePanel = document.getElementById('textMePanel');
+    if (textMeBubble && textMePanel) {
+      textMeBubble.addEventListener('click', () => {
+        textMePanel.classList.toggle('open');
+      });
+      document.addEventListener('click', (e) => {
+        if (!textMePanel.contains(e.target) && !textMeBubble.contains(e.target)) {
+          textMePanel.classList.remove('open');
+        }
+      });
+    }
   </script>
 
 </body>
