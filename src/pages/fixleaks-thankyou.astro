@@ -1,0 +1,522 @@
+---
+// /fixleaks-thankyou — Payment Confirmation Page
+// Context: Set as the "after payment" redirect URL on each /fixleaks Stripe Payment Link.
+// Job: kill post-purchase anxiety, give a concrete timeline, and offer a direct line to Tony.
+// No upsells here — that's a follow-up email's job, not this page's.
+export const prerender = true;
+const CALENDLY_URL = "https://calendly.com/expatbuildr/fixmyleaks";
+const SUPPORT_EMAIL = "support@expatbuildr.com";
+const TEXT_NUMBER = "+13104618859";
+const TEXT_NUMBER_DISPLAY = "(310) 461-8859";
+const META_PIXEL_ID = import.meta.env.META_PIXEL_ID || '1480646753745240';
+const GTAG_ID = import.meta.env.GTAG_ID;
+
+// Package name/price come from the Stripe Payment Link's redirect query string,
+// e.g. https://expatbuildr.com/fixleaks-thankyou?package=Growth&price=950
+// Set these per-link in Stripe (Payment Link → After payment → redirect URL).
+const PACKAGES = {
+  starter: { name: "Starter", price: "500", delivery: "3 business days" },
+  growth: { name: "Growth", price: "950", delivery: "5 business days" },
+  authority: { name: "Authority", price: "1,500", delivery: "7 business days" },
+  launch: { name: "Full Launch Kit", price: "1,200", delivery: "7 business days" },
+  empire: { name: "Empire", price: "2,997", delivery: "10 business days" },
+};
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Payment Received — ExpatBuildr</title>
+  <meta name="description" content="Your ExpatBuildr package is confirmed. Here's exactly what happens next." />
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Syne:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <script is:inline>
+    const theme = (() => {
+      if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+        return localStorage.getItem('theme');
+      }
+      return 'light';
+    })();
+    if (theme === 'light') {
+      document.documentElement.classList.remove('dark');
+    } else {
+      document.documentElement.classList.add('dark');
+    }
+    window.localStorage.setItem('theme', theme);
+  </script>
+
+  <!-- Meta Pixel -->
+  <script is:inline define:vars={{ META_PIXEL_ID }}>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window,document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', META_PIXEL_ID);
+    fbq('track', 'PageView');
+  </script>
+  <noscript>
+    <img height="1" width="1" style="display:none"
+      src={`https://www.facebook.com/tr?id=${META_PIXEL_ID}&ev=PageView&noscript=1`} />
+  </noscript>
+
+  {GTAG_ID && (
+    <script is:inline define:vars={{ GTAG_ID }} async src={`https://www.googletagmanager.com/gtag/js?id=${GTAG_ID}`}></script>
+  )}
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --gold: #3b82f6;
+      --orange: #8b5cf6;
+      --cyan: #22d3ee;
+      --emerald: #0a9e5c;
+      --red: #d92d4c;
+      --bg-deep: #faf5ff;
+      --bg-glass: rgba(2,6,23,0.035);
+      --bg-glass-hover: rgba(2,6,23,0.06);
+      --border-glass: rgba(217,70,239,0.12);
+      --border-gold: rgba(59,130,246,0.35);
+      --border-gold-dim: rgba(59,130,246,0.16);
+      --border-emerald: rgba(10,158,92,0.3);
+      --text-primary: #020617;
+      --text-muted: #475569;
+      --text-dim: #64748b;
+      --nav-bg: rgba(250,245,255,0.92);
+      --btn-ink: #ffffff;
+    }
+
+    html.dark {
+      --gold: #f5a623;
+      --orange: #ff6b35;
+      --cyan: #00d4ff;
+      --emerald: #00e87a;
+      --red: #ff2d55;
+      --bg-deep: #060809;
+      --bg-glass: rgba(255,255,255,0.028);
+      --bg-glass-hover: rgba(255,255,255,0.05);
+      --border-glass: rgba(255,255,255,0.07);
+      --border-gold: rgba(245,166,35,0.35);
+      --border-gold-dim: rgba(245,166,35,0.15);
+      --border-emerald: rgba(0,232,122,0.25);
+      --text-primary: #f0ece4;
+      --text-muted: rgba(240,236,228,0.52);
+      --text-dim: rgba(240,236,228,0.28);
+      --nav-bg: rgba(6,8,9,0.9);
+      --btn-ink: #060809;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg-deep);
+      color: var(--text-primary);
+      font-family: 'Syne', sans-serif;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    .bg-layer { position: fixed; inset: 0; z-index: 0; pointer-events: none; }
+    .bg-grid {
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(0,232,122,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,232,122,0.03) 1px, transparent 1px);
+      background-size: 64px 64px;
+    }
+    .bg-orbs {
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 60% 40% at 50% 0%, rgba(0,232,122,0.07) 0%, transparent 60%),
+        radial-gradient(ellipse 50% 35% at 15% 85%, rgba(245,166,35,0.05) 0%, transparent 50%),
+        radial-gradient(ellipse 45% 40% at 85% 30%, rgba(0,212,255,0.04) 0%, transparent 50%);
+    }
+
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: var(--nav-bg);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border-glass);
+    }
+    .nav-inner {
+      max-width: 720px; margin: 0 auto; padding: 16px 24px;
+      display: flex; align-items: center; gap: 12px; justify-content: space-between;
+    }
+    .nav-logo { display: inline-flex; align-items: center; gap: 8px; font-family: 'Bebas Neue', sans-serif; font-size: 1.3rem; letter-spacing: 0.12em; color: var(--gold); text-decoration: none; }
+    .nav-logo img { width: 28px; height: 28px; border-radius: 6px; object-fit: cover; flex-shrink: 0; }
+    .theme-toggle {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 30px; height: 30px; border-radius: 50%;
+      background: var(--bg-glass); border: 1px solid var(--border-glass);
+      color: var(--text-muted); cursor: pointer; font-size: 0.85rem; flex-shrink: 0;
+    }
+    .theme-toggle:hover { border-color: var(--border-gold); color: var(--gold); }
+    .nav-tag {
+      font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase;
+      color: var(--emerald); border: 1px solid var(--border-emerald); padding: 5px 10px; border-radius: 2px;
+      display: flex; align-items: center; gap: 6px; white-space: nowrap;
+    }
+    .nav-tag::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--emerald); animation: blink 2s ease infinite; }
+    @keyframes blink { 0%,100% { opacity: 1; } 50% { opacity: 0.3; } }
+
+    .page { position: relative; z-index: 1; max-width: 620px; margin: 0 auto; padding: 56px 24px 40px; }
+
+    /* CONFIRM ICON */
+    .confirm-ring { width: 72px; height: 72px; margin: 0 auto 28px; animation: fadeUp 0.5s ease both; }
+    .confirm-ring svg { width: 72px; height: 72px; }
+    .ring-circle { stroke-dasharray: 220; stroke-dashoffset: 220; animation: drawCircle 0.6s 0.2s ease forwards; }
+    .ring-check { stroke-dasharray: 50; stroke-dashoffset: 50; animation: drawCheck 0.4s 0.7s ease forwards; }
+    @keyframes drawCircle { to { stroke-dashoffset: 0; } }
+    @keyframes drawCheck { to { stroke-dashoffset: 0; } }
+
+    /* HEADER */
+    .confirm-eyebrow {
+      display: block; text-align: center;
+      font-family: 'JetBrains Mono', monospace; font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--emerald); margin-bottom: 14px; animation: fadeUp 0.5s 0.1s ease both;
+    }
+    .confirm-headline {
+      text-align: center;
+      font-family: 'Bebas Neue', sans-serif; font-size: clamp(2.6rem, 7vw, 3.8rem);
+      letter-spacing: 0.02em; line-height: 0.95; margin-bottom: 18px;
+      animation: fadeUp 0.5s 0.15s ease both;
+    }
+    .confirm-headline em { font-style: normal; color: var(--emerald); }
+    .confirm-sub {
+      text-align: center; font-size: 0.98rem; line-height: 1.7; color: var(--text-muted);
+      max-width: 460px; margin: 0 auto 36px; animation: fadeUp 0.5s 0.2s ease both;
+    }
+    .confirm-sub strong { color: var(--text-primary); }
+
+    /* ORDER SUMMARY */
+    .order-card {
+      background: var(--bg-glass); border: 1px solid var(--border-glass);
+      padding: 22px 24px; margin-bottom: 36px; animation: fadeUp 0.5s 0.22s ease both;
+    }
+    .order-row { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid var(--border-glass); }
+    .order-row:last-child { border-bottom: none; }
+    .order-label { font-family: 'JetBrains Mono', monospace; font-size: 0.68rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-dim); }
+    .order-value { font-family: 'JetBrains Mono', monospace; font-size: 0.78rem; font-weight: 600; color: var(--text-muted); }
+    .order-value.emerald { color: var(--emerald); }
+    .order-value.gold { color: var(--gold); }
+
+    /* TIMELINE */
+    .tl-label {
+      font-family: 'JetBrains Mono', monospace; font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--text-dim); margin-bottom: 20px; animation: fadeUp 0.5s 0.25s ease both;
+    }
+    .timeline { display: flex; flex-direction: column; margin-bottom: 40px; animation: fadeUp 0.5s 0.27s ease both; }
+    .tl-item { display: flex; gap: 16px; padding-bottom: 28px; position: relative; }
+    .tl-item::after { content: ''; position: absolute; left: 15px; top: 32px; bottom: 0; width: 1px; background: var(--border-glass); }
+    .tl-item:last-child::after { display: none; }
+    .tl-dot {
+      width: 32px; height: 32px; border-radius: 50%; flex-shrink: 0; position: relative; z-index: 1;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'JetBrains Mono', monospace; font-size: 0.7rem;
+      background: var(--bg-glass); border: 1px solid var(--border-glass); color: var(--text-dim);
+    }
+    .tl-item.done .tl-dot { background: rgba(0,232,122,0.15); border-color: var(--border-emerald); color: var(--emerald); }
+    .tl-item.next .tl-dot { background: rgba(245,166,35,0.15); border-color: var(--border-gold); color: var(--gold); }
+    .tl-title { font-size: 0.9rem; font-weight: 700; color: var(--text-primary); margin-bottom: 4px; }
+    .tl-item.done .tl-title { color: var(--text-muted); }
+    .tl-desc { font-size: 0.82rem; color: var(--text-muted); line-height: 1.6; }
+    .tl-time {
+      font-family: 'JetBrains Mono', monospace; font-size: 0.6rem; letter-spacing: 0.05em; text-transform: uppercase;
+      color: var(--text-dim); margin-top: 6px;
+    }
+    .tl-cta {
+      display: inline-block; margin-top: 10px;
+      font-family: 'JetBrains Mono', monospace; font-size: 0.68rem; font-weight: 600; letter-spacing: 0.04em;
+      text-decoration: none; padding: 8px 14px; border-radius: 4px;
+      background: linear-gradient(135deg, var(--gold), var(--orange)); color: var(--btn-ink);
+    }
+
+    /* CONTACT / ESCAPE HATCH */
+    .contact-box {
+      background: var(--bg-glass); border: 1px solid var(--border-glass);
+      padding: 22px 24px; margin-bottom: 40px; animation: fadeUp 0.5s 0.3s ease both;
+    }
+    .contact-label { font-family: 'JetBrains Mono', monospace; font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; }
+    .contact-text { font-size: 0.85rem; line-height: 1.65; color: var(--text-muted); margin-bottom: 14px; }
+    .contact-links { display: flex; flex-wrap: wrap; gap: 10px; }
+    .contact-link {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 600;
+      text-decoration: none; padding: 9px 14px; border-radius: 4px;
+      background: var(--bg-glass-hover); border: 1px solid var(--border-glass); color: var(--text-primary);
+    }
+    .contact-link:hover { border-color: var(--border-gold); color: var(--gold); }
+
+    /* CALENDLY */
+    .call-box { margin-bottom: 40px; animation: fadeUp 0.5s 0.32s ease both; }
+    .call-label { font-family: 'JetBrains Mono', monospace; font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-dim); margin-bottom: 8px; text-align: center; }
+    .call-heading { font-family: 'Bebas Neue', sans-serif; font-size: 1.6rem; letter-spacing: 0.02em; text-align: center; margin-bottom: 6px; }
+    .call-heading em { font-style: normal; color: var(--gold); }
+    .call-sub { font-size: 0.85rem; color: var(--text-muted); text-align: center; max-width: 420px; margin: 0 auto 20px; line-height: 1.6; }
+
+    /* DIVIDER */
+    .divider { display: flex; align-items: center; gap: 14px; margin-bottom: 28px; animation: fadeUp 0.5s 0.34s ease both; }
+    .divider-line { flex: 1; height: 1px; background: var(--border-glass); }
+    .divider-text { font-family: 'JetBrains Mono', monospace; font-size: 0.6rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-dim); white-space: nowrap; }
+
+    /* FOLLOW CARDS */
+    .follow-prompt { text-align: center; font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--text-dim); margin-bottom: 16px; animation: fadeUp 0.5s 0.36s ease both; }
+    .follow-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 40px; animation: fadeUp 0.5s 0.38s ease both; }
+    .follow-card {
+      display: flex; flex-direction: column; align-items: center; gap: 10px;
+      padding: 20px 16px; background: var(--bg-glass); border: 1px solid var(--border-glass);
+      text-decoration: none; transition: background 0.2s ease, transform 0.15s ease;
+    }
+    .follow-card:hover { background: var(--bg-glass-hover); transform: translateY(-2px); }
+    .follow-icon { width: 38px; height: 38px; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+    .follow-icon.yt { background: rgba(255,0,0,0.1); border: 1px solid rgba(255,0,0,0.2); }
+    .follow-icon.x { background: rgba(0,212,255,0.08); border: 1px solid rgba(0,212,255,0.15); }
+    .follow-icon svg { width: 18px; height: 18px; }
+    .follow-handle { font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 600; }
+    .follow-handle.yt { color: #ff4444; }
+    .follow-handle.x { color: var(--cyan); }
+    .follow-desc { font-size: 0.72rem; color: var(--text-dim); text-align: center; line-height: 1.4; }
+
+    /* SIGN OFF */
+    .signoff { text-align: center; padding: 24px 0 8px; animation: fadeUp 0.5s 0.4s ease both; }
+    .signoff-text { font-size: 0.9rem; color: var(--text-muted); line-height: 1.7; max-width: 440px; margin: 0 auto 12px; }
+    .signoff-name { font-family: 'Bebas Neue', sans-serif; font-size: 1.3rem; letter-spacing: 0.05em; color: var(--gold); }
+    .signoff-role { font-family: 'JetBrains Mono', monospace; font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-dim); margin-top: 2px; }
+
+    footer {
+      border-top: 1px solid var(--border-glass); padding: 22px 24px;
+      max-width: 620px; margin: 40px auto 0;
+      display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px;
+    }
+    .footer-brand { font-family: 'JetBrains Mono', monospace; font-size: 0.6rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-dim); }
+    .footer-links { display: flex; gap: 18px; }
+    .footer-link { font-family: 'JetBrains Mono', monospace; font-size: 0.58rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-dim); text-decoration: none; }
+    .footer-link:hover { color: var(--gold); }
+
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+
+    @media (max-width: 560px) {
+      .follow-cards { grid-template-columns: 1fr; }
+      .confirm-headline { font-size: 2.4rem; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="bg-layer">
+    <div class="bg-grid"></div>
+    <div class="bg-orbs"></div>
+  </div>
+
+  <nav>
+    <div class="nav-inner">
+      <a href="/" class="nav-logo"><img src="/logo.jpg" alt="ExpatBuildr" />ExpatBuildr</a>
+      <button type="button" class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">🌙</button>
+      <span class="nav-tag">✓ Payment Received</span>
+    </div>
+  </nav>
+
+  <main class="page">
+
+    <!-- 1. CONFIRMATION HEADER -->
+    <div class="confirm-ring">
+      <svg viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle class="ring-circle" cx="36" cy="36" r="31" stroke="var(--emerald)" stroke-width="2" stroke-linecap="round" transform="rotate(-90 36 36)" />
+        <polyline class="ring-check" points="21,37 31,47 51,27" stroke="var(--emerald)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+      </svg>
+    </div>
+
+    <span class="confirm-eyebrow">Payment confirmed</span>
+    <h1 class="confirm-headline">You're <em>in.</em></h1>
+    <p class="confirm-sub">
+      <strong>Your landing page rebuild is officially underway.</strong> That's not a form-letter response — I saw the payment hit and I'm already thinking through your build. You made the right call.
+    </p>
+
+    <!-- ORDER SUMMARY -->
+    <div class="order-card">
+      <div class="order-row">
+        <span class="order-label">Status</span>
+        <span class="order-value emerald">✓ Confirmed</span>
+      </div>
+      <div class="order-row">
+        <span class="order-label">Confirmation email</span>
+        <span class="order-value gold">Within 1 hour</span>
+      </div>
+      <div class="order-row">
+        <span class="order-label">First draft delivery</span>
+        <span class="order-value" id="deliveryValue">5 business days</span>
+      </div>
+      <div class="order-row">
+        <span class="order-label">Revisions included</span>
+        <span class="order-value emerald">2 rounds — no extra charge</span>
+      </div>
+      <div class="order-row">
+        <span class="order-label">Code ownership</span>
+        <span class="order-value emerald">100% yours on delivery</span>
+      </div>
+    </div>
+
+    <!-- 3. WHAT HAPPENS NEXT -->
+    <div class="tl-label">// What happens next</div>
+    <div class="timeline">
+      <div class="tl-item done">
+        <div class="tl-dot">✓</div>
+        <div>
+          <div class="tl-title">Payment received</div>
+          <div class="tl-desc">Your order is confirmed. Stripe's own receipt is already in your inbox.</div>
+          <div class="tl-time">Done — just now</div>
+        </div>
+      </div>
+      <div class="tl-item next">
+        <div class="tl-dot">1</div>
+        <div>
+          <div class="tl-title">Confirmation email + intake form</div>
+          <div class="tl-desc">Within the hour I'll send a short intake form — your product, audience, goal, and any brand assets. Takes 5 minutes to fill out.</div>
+          <div class="tl-time">Within 1 hour</div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot">2</div>
+        <div>
+          <div class="tl-title">Kickoff call (optional)</div>
+          <div class="tl-desc">Want to walk through the brief live instead of by email? Grab 15 minutes below — same-session booking, no back-and-forth required.</div>
+          <div class="tl-time">Book anytime this week</div>
+          <a href={CALENDLY_URL} target="_blank" rel="noopener" class="tl-cta">Book kickoff call →</a>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot">3</div>
+        <div>
+          <div class="tl-title">First draft lands in your inbox</div>
+          <div class="tl-desc">Full build delivered with a handover doc. Review it, request revisions, and we iterate until it's exactly right.</div>
+          <div class="tl-time" id="deliveryTime">Within 5 business days</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. DIRECT CONTACT -->
+    <div class="contact-box">
+      <div class="contact-label">Questions before then?</div>
+      <p class="contact-text">You don't have to wait for the intake form. Email or text me directly — I answer these myself, not a support inbox.</p>
+      <div class="contact-links">
+        <a href={`mailto:${SUPPORT_EMAIL}`} class="contact-link">✉ {SUPPORT_EMAIL}</a>
+        <a href={`sms:${TEXT_NUMBER}`} class="contact-link">💬 {TEXT_NUMBER_DISPLAY}</a>
+      </div>
+    </div>
+
+    <!-- 5. KICKOFF SCHEDULING EMBED -->
+    <div class="call-box">
+      <div class="call-label">Optional</div>
+      <h2 class="call-heading">Prefer to talk <em>it through?</em></h2>
+      <p class="call-sub">Book your kickoff call right here — no separate email required.</p>
+      <div class="calendly-inline-widget" data-url={CALENDLY_URL} style="min-width:280px;height:650px;"></div>
+      <script is:inline type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+    </div>
+
+    <!-- DIVIDER -->
+    <div class="divider">
+      <div class="divider-line"></div>
+      <span class="divider-text">While you wait</span>
+      <div class="divider-line"></div>
+    </div>
+
+    <!-- 6. SOCIAL / COMMUNITY FOLLOW -->
+    <p class="follow-prompt">Follow the build in public</p>
+    <div class="follow-cards">
+      <a href="https://youtube.com/@expatbuildr" target="_blank" rel="noopener noreferrer" class="follow-card">
+        <div class="follow-icon yt">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z" fill="#ff0000"/>
+            <polygon points="9.75,15.02 15.5,12 9.75,8.98 9.75,15.02" fill="white"/>
+          </svg>
+        </div>
+        <div class="follow-handle yt">@expatbuildr</div>
+        <div class="follow-desc">Client builds and launches, in public</div>
+      </a>
+      <a href="https://x.com/expatbuildr" target="_blank" rel="noopener noreferrer" class="follow-card">
+        <div class="follow-icon x">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.253 5.622 5.912-5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z" fill="#00d4ff"/>
+          </svg>
+        </div>
+        <div class="follow-handle x">@expatbuildr</div>
+        <div class="follow-desc">Daily ops from a beach office in Cebu</div>
+      </a>
+    </div>
+
+    <!-- 7. SIGN-OFF -->
+    <div class="signoff">
+      <p class="signoff-text">
+        Thanks for trusting me with this. I built ExpatBuildr to be the opposite of an agency — no account managers, no outsourcing, no disappearing after the invoice clears. I'll be the one in your inbox this week.
+      </p>
+      <div class="signoff-name">— Tony</div>
+      <div class="signoff-role">Founder, ExpatBuildr</div>
+    </div>
+
+  </main>
+
+  <footer>
+    <span class="footer-brand">ExpatBuildr · Built in the Philippines 🇵🇭</span>
+    <nav class="footer-links">
+      <a href="/privacy" class="footer-link">Privacy</a>
+      <a href="/terms" class="footer-link">Terms</a>
+      <a href="https://x.com/expatbuildr" target="_blank" rel="noopener" class="footer-link">X</a>
+    </nav>
+  </footer>
+
+  <script define:vars={{ PACKAGES }}>
+    const params = new URLSearchParams(window.location.search);
+    const pkg = params.get('package');
+    const price = params.get('price');
+
+    const matched = pkg
+      ? Object.values(PACKAGES).find(p => p.name.toLowerCase() === pkg.toLowerCase())
+      : null;
+
+    if (pkg) {
+      const sub = document.querySelector('.confirm-sub');
+      if (sub) {
+        sub.innerHTML = `<strong>Your ${pkg}${price ? ` ($${price})` : ''} package is officially underway.</strong> That's not a form-letter response — I saw the payment hit and I'm already thinking through your build. You made the right call.`;
+      }
+    }
+
+    if (matched?.delivery) {
+      const deliveryValue = document.getElementById('deliveryValue');
+      const deliveryTime = document.getElementById('deliveryTime');
+      if (deliveryValue) deliveryValue.textContent = matched.delivery;
+      if (deliveryTime) deliveryTime.textContent = `Within ${matched.delivery}`;
+    }
+
+    if (window.fbq) {
+      fbq('track', 'Purchase', { currency: 'USD', value: price ? parseFloat(price.replace(/,/g, '')) : 0, content_name: pkg || 'ExpatBuildr Package' });
+    }
+
+    const toggleBtn = document.getElementById('themeToggle');
+    if (toggleBtn) {
+      const syncIcon = () => {
+        toggleBtn.textContent = document.documentElement.classList.contains('dark') ? '☀️' : '🌙';
+      };
+      syncIcon();
+      toggleBtn.addEventListener('click', () => {
+        document.documentElement.classList.toggle('dark');
+        const isDark = document.documentElement.classList.contains('dark');
+        localStorage.setItem('theme', isDark ? 'dark' : 'light');
+        syncIcon();
+      });
+    }
+  </script>
+
+</body>
+</html>

@@ -139,12 +139,16 @@ const META_PIXEL_ID = '1480646753745240';
     backdrop-filter: blur(10px);
   }
   .nav-logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
     font-family: var(--serif);
     font-size: 20px;
     color: var(--ink);
     text-decoration: none;
     letter-spacing: -0.02em;
   }
+  .nav-logo img { width: 28px; height: 28px; border-radius: 6px; object-fit: cover; flex-shrink: 0; }
   .nav-logo em { background: linear-gradient(135deg, var(--gold), var(--gold-light)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-style: italic; }
   .nav-right {
     font-family: var(--mono);
@@ -668,7 +672,7 @@ gtag('event', 'purchase', { transaction_id: Date.now(), value: 50.00, currency: 
   </script>
 
   <nav>
-  <a href="/" class="nav-logo">Expat <em>Buildr</em></a>
+  <a href="/" class="nav-logo"><img src="/logo.jpg" alt="ExpatBuildr" />Expat <em>Buildr</em></a>
   <div class="nav-right">Order Confirmed ✔</div>
 </nav>
 

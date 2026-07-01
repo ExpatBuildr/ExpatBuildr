@@ -19,10 +19,46 @@ const TEXT_NUMBER_DISPLAY = "(310) 461-8859";
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Syne:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 
+  <script is:inline>
+    const theme = (() => {
+      if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+        return localStorage.getItem('theme');
+      }
+      return 'light';
+    })();
+    if (theme === 'light') {
+      document.documentElement.classList.remove('dark');
+    } else {
+      document.documentElement.classList.add('dark');
+    }
+    window.localStorage.setItem('theme', theme);
+  </script>
+
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
+      --gold: #3b82f6;
+      --orange: #8b5cf6;
+      --cyan: #22d3ee;
+      --emerald: #0a9e5c;
+      --red: #d92d4c;
+      --bg-deep: #faf5ff;
+      --bg-glass: rgba(2,6,23,0.035);
+      --bg-glass-hover: rgba(2,6,23,0.06);
+      --bg-featured: rgba(59,130,246,0.06);
+      --border-glass: rgba(217,70,239,0.12);
+      --border-gold: rgba(59,130,246,0.35);
+      --border-gold-dim: rgba(59,130,246,0.16);
+      --text-primary: #020617;
+      --text-muted: #475569;
+      --text-dim: #64748b;
+      --nav-bg: rgba(250,245,255,0.92);
+      --btn-ink: #ffffff;
+      --mock-bg: #f3e8ff;
+    }
+
+    html.dark {
       --gold: #f5a623;
       --orange: #ff6b35;
       --cyan: #00d4ff;
@@ -38,6 +74,9 @@ const TEXT_NUMBER_DISPLAY = "(310) 461-8859";
       --text-primary: #f0ece4;
       --text-muted: rgba(240,236,228,0.52);
       --text-dim: rgba(240,236,228,0.28);
+      --nav-bg: rgba(6,8,9,0.9);
+      --btn-ink: #060809;
+      --mock-bg: #0d0f10;
     }
 
     html { scroll-behavior: smooth; }
@@ -94,7 +133,7 @@ const TEXT_NUMBER_DISPLAY = "(310) 461-8859";
       position: sticky;
       top: 0;
       z-index: 100;
-      background: rgba(6,8,9,0.9);
+      background: var(--nav-bg);
       backdrop-filter: blur(16px);
       border-bottom: 1px solid var(--border-glass);
     }
@@ -109,18 +148,30 @@ const TEXT_NUMBER_DISPLAY = "(310) 461-8859";
     }
 
     .nav-logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
       font-family: 'Bebas Neue', sans-serif;
       font-size: 1.4rem;
       letter-spacing: 0.12em;
       color: var(--gold);
       text-decoration: none;
     }
+    .nav-logo img { width: 28px; height: 28px; border-radius: 6px; object-fit: cover; flex-shrink: 0; }
 
     .nav-right {
       display: flex;
       align-items: center;
       gap: 20px;
     }
+
+    .theme-toggle {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 30px; height: 30px; border-radius: 50%;
+      background: var(--bg-glass); border: 1px solid var(--border-glass);
+      color: var(--text-muted); cursor: pointer; font-size: 0.85rem; flex-shrink: 0;
+    }
+    .theme-toggle:hover { border-color: var(--border-gold); color: var(--gold); }
 
     .nav-guarantee {
       font-family: 'JetBrains Mono', monospace;
@@ -142,7 +193,7 @@ const TEXT_NUMBER_DISPLAY = "(310) 461-8859";
       text-decoration: none;
       padding: 8px 16px;
       background: linear-gradient(135deg, var(--gold), var(--orange));
-      color: #060809;
+      color: var(--btn-ink);
       transition: filter 0.15s ease, transform 0.15s ease;
     }
 
@@ -236,7 +287,7 @@ const TEXT_NUMBER_DISPLAY = "(310) 461-8859";
       text-decoration: none;
       padding: 16px 28px;
       background: linear-gradient(135deg, var(--gold), var(--orange));
-      color: #060809;
+      color: var(--btn-ink);
       position: relative;
       overflow: hidden;
       transition: transform 0.15s ease, box-shadow 0.15s ease;
@@ -438,7 +489,7 @@ const TEXT_NUMBER_DISPLAY = "(310) 461-8859";
       font-size: 0.55rem;
       letter-spacing: 0.18em;
       background: linear-gradient(135deg, var(--gold), var(--orange));
-      color: #060809;
+      color: var(--btn-ink);
       padding: 3px 12px;
       font-weight: 600;
       white-space: nowrap;
@@ -562,7 +613,7 @@ const TEXT_NUMBER_DISPLAY = "(310) 461-8859";
 
     .plan-btn.featured-btn {
       background: linear-gradient(135deg, var(--gold), var(--orange));
-      color: #060809;
+      color: var(--btn-ink);
     }
 
     .plan-btn.featured-btn:hover {
@@ -571,82 +622,163 @@ const TEXT_NUMBER_DISPLAY = "(310) 461-8859";
       box-shadow: 0 8px 28px rgba(245,166,35,0.25);
     }
 
-    /* ── BUNDLE ── */
-    .bundle-box {
-      background: var(--bg-glass);
+    /* ── EMPIRE ── */
+    .empire-box {
+      background: linear-gradient(180deg, var(--bg-featured), var(--bg-glass));
       border: 1px solid var(--border-gold);
-      padding: 32px;
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 32px;
-      align-items: center;
+      box-shadow: 0 0 0 1px var(--border-gold-dim), 0 24px 64px -24px rgba(245,166,35,0.25);
+      padding: 40px;
+      margin-top: 20px;
       position: relative;
       overflow: hidden;
     }
 
-    .bundle-box::before {
+    .empire-box::before {
       content: '';
       position: absolute;
       top: 0; left: 0; right: 0;
-      height: 2px;
-      background: linear-gradient(90deg, var(--gold), var(--orange), transparent);
+      height: 3px;
+      background: linear-gradient(90deg, transparent, var(--gold), var(--orange), var(--gold), transparent);
     }
 
-    .bundle-tag {
+    .empire-box::after {
+      content: 'FLAGSHIP';
+      position: absolute;
+      top: -1px;
+      right: 32px;
+      transform: translateY(-50%);
       font-family: 'JetBrains Mono', monospace;
       font-size: 0.58rem;
       letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 10px;
+      background: linear-gradient(135deg, var(--gold), var(--orange));
+      color: var(--btn-ink);
+      padding: 4px 14px;
+      font-weight: 600;
+      white-space: nowrap;
     }
 
-    .bundle-name {
+    .empire-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      gap: 40px;
+      align-items: start;
+    }
+
+    .empire-tier {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.62rem;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 12px;
+    }
+
+    .empire-name {
       font-family: 'Bebas Neue', sans-serif;
-      font-size: 2rem;
-      letter-spacing: 0.04em;
-      margin-bottom: 8px;
+      font-size: 2.4rem;
+      letter-spacing: 0.03em;
+      line-height: 1;
+      margin-bottom: 12px;
       color: var(--text-primary);
     }
 
-    .bundle-desc {
-      font-size: 0.85rem;
+    .empire-tagline {
+      font-size: 0.92rem;
+      line-height: 1.65;
       color: var(--text-muted);
-      line-height: 1.6;
-      max-width: 500px;
+      margin-bottom: 24px;
+      max-width: 480px;
     }
 
-    .bundle-pricing {
-      text-align: right;
-      flex-shrink: 0;
+    .empire-features {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
     }
 
-    .bundle-original {
+    .empire-features li {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      padding: 10px 0;
+      border-bottom: 1px solid var(--border-glass);
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      line-height: 1.5;
+    }
+
+    .empire-features li:last-child { border-bottom: none; }
+
+    .empire-features li::before {
+      content: '✓';
+      color: var(--emerald);
       font-family: 'JetBrains Mono', monospace;
-      font-size: 0.65rem;
-      letter-spacing: 0.1em;
-      color: var(--text-dim);
-      text-decoration: line-through;
-      margin-bottom: 4px;
+      font-size: 0.68rem;
+      flex-shrink: 0;
+      margin-top: 2px;
     }
 
-    .bundle-price {
+    .empire-features li.inherit {
+      color: var(--text-dim);
+      font-style: italic;
+    }
+
+    .empire-features li.inherit::before { color: var(--text-dim); }
+
+    .empire-pricing {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding-left: 40px;
+      border-left: 1px solid var(--border-glass);
+    }
+
+    .empire-price {
       font-family: 'Bebas Neue', sans-serif;
-      font-size: 3rem;
+      font-size: 3.6rem;
       letter-spacing: 0.02em;
       color: var(--gold);
       line-height: 1;
-      margin-bottom: 2px;
+      margin-bottom: 6px;
     }
 
-    .bundle-price sup { font-size: 1.2rem; vertical-align: super; }
+    .empire-price sup { font-size: 1.3rem; vertical-align: super; }
 
-    .bundle-save {
+    .empire-delivery {
       font-family: 'JetBrains Mono', monospace;
-      font-size: 0.58rem;
-      letter-spacing: 0.12em;
-      color: var(--emerald);
-      margin-bottom: 16px;
+      font-size: 0.6rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      margin-bottom: 24px;
+    }
+
+    .empire-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.1rem;
+      letter-spacing: 0.08em;
+      text-decoration: none;
+      padding: 16px 20px;
+      background: linear-gradient(135deg, var(--gold), var(--orange));
+      color: var(--btn-ink);
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .empire-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 32px rgba(245,166,35,0.3);
+    }
+
+    .empire-note {
+      margin-top: 16px;
+      font-size: 0.72rem;
+      line-height: 1.5;
+      color: var(--text-dim);
     }
 
     /* ── PROCESS ── */
@@ -901,9 +1033,9 @@ const TEXT_NUMBER_DISPLAY = "(310) 461-8859";
       .hero { grid-template-columns: 1fr; gap: 40px; }
       .pricing-grid { grid-template-columns: 1fr; }
       .process-steps { grid-template-columns: 1fr; }
-      .bundle-box { grid-template-columns: 1fr; }
-      .bundle-pricing { text-align: left; }
       .hero-right { display: none; }
+      .empire-grid { grid-template-columns: 1fr; }
+      .empire-pricing { padding-left: 0; border-left: none; border-top: 1px solid var(--border-glass); padding-top: 24px; margin-top: 4px; align-items: stretch; }
     }
 
     @media (max-width: 560px) {
@@ -917,7 +1049,7 @@ const TEXT_NUMBER_DISPLAY = "(310) 461-8859";
       display: flex; align-items: center; justify-content: center;
       width: 56px; height: 56px; border-radius: 50%;
       background: linear-gradient(135deg, var(--gold), var(--orange));
-      color: #060809; font-size: 1.4rem; cursor: pointer; border: none;
+      color: var(--btn-ink); font-size: 1.4rem; cursor: pointer; border: none;
       box-shadow: 0 8px 24px rgba(0,0,0,0.4);
       transition: transform 0.15s ease;
     }
@@ -936,7 +1068,7 @@ const TEXT_NUMBER_DISPLAY = "(310) 461-8859";
       display: flex; align-items: center; justify-content: center; gap: 8px;
       font-family: 'JetBrains Mono', monospace; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.04em;
       text-decoration: none; padding: 11px 14px; border-radius: 8px;
-      background: linear-gradient(135deg, var(--gold), var(--orange)); color: #060809;
+      background: linear-gradient(135deg, var(--gold), var(--orange)); color: var(--btn-ink);
     }
   </style>
 </head>
@@ -952,8 +1084,9 @@ const TEXT_NUMBER_DISPLAY = "(310) 461-8859";
   <!-- NAV -->
   <nav>
     <div class="nav-inner">
-      <a href="/" class="nav-logo">ExpatBuildr</a>
+      <a href="/" class="nav-logo"><img src="/logo.jpg" alt="ExpatBuildr" />ExpatBuildr</a>
       <div class="nav-right">
+        <button type="button" class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">🌙</button>
         <span class="nav-guarantee">✓ 2-Round Revision Guarantee</span>
         <a href="#pricing" class="nav-cta">See Pricing →</a>
       </div>
@@ -1033,7 +1166,7 @@ const TEXT_NUMBER_DISPLAY = "(310) 461-8859";
             <li>Mobile responsive</li>
             <li>You own the code</li>
           </ul>
-          <a href="https://buy.stripe.com/5kQ5kC7WL07g7po5CU2oE03" class="plan-btn default" target="_blank" rel="noopener">Buy Starter — $500 →</a>
+          <a href="https://buy.stripe.com/8x2fZg3Gv6vE9xwc1i2oE0f" class="plan-btn default" target="_blank" rel="noopener">Buy Starter — $500 →</a>
         </div>
 
         <div class="plan featured">
@@ -1051,7 +1184,7 @@ const TEXT_NUMBER_DISPLAY = "(310) 461-8859";
             <li>Beehiiv newsletter connected</li>
             <li>3-part welcome email sequence</li>
           </ul>
-          <a href="https://buy.stripe.com/eVqaEWdh54nw7po1mE2oE04" class="plan-btn featured-btn" target="_blank" rel="noopener">Buy Growth — $950 →</a>
+          <a href="https://buy.stripe.com/28E8wO7WLbPY8ts8P62oE0g" class="plan-btn featured-btn" target="_blank" rel="noopener">Buy Growth — $950 →</a>
         </div>
 
         <div class="plan">
@@ -1069,23 +1202,33 @@ const TEXT_NUMBER_DISPLAY = "(310) 461-8859";
             <li>Beehiiv newsletter setup included</li>
             <li>Full funnel QA & optimization</li>
           </ul>
-          <a href="https://buy.stripe.com/aFa00i3Gv7zIbFE4yQ2oE05" class="plan-btn default" target="_blank" rel="noopener">Buy Authority — $1,500 →</a>
+          <a href="https://buy.stripe.com/14AdR85ODbPY4dc6GY2oE0h" class="plan-btn default" target="_blank" rel="noopener">Buy Authority — $1,500 →</a>
         </div>
 
       </div>
 
-      <!-- Bundle -->
-      <div class="bundle-box reveal">
-        <div>
-          <div class="bundle-tag">Best Value · Full Launch Kit</div>
-          <div class="bundle-name">Everything. One price.</div>
-          <p class="bundle-desc">Landing page + email sequence + lead magnet PDF. Starter + Growth bundled. The complete foundation any founder needs to launch and convert — at a discount.</p>
-        </div>
-        <div class="bundle-pricing">
-          <div class="bundle-original">$1,450 separately</div>
-          <div class="bundle-price"><sup>$</sup>1,200</div>
-          <div class="bundle-save">// Save $250 · 7-day delivery</div>
-          <a href="https://buy.stripe.com/7sY9ASb8X3jscJI5CU2oE06" class="plan-btn featured-btn" target="_blank" rel="noopener" style="width: 100%; margin-top: 4px;">Get the Full Launch Kit →</a>
+      <!-- Empire -->
+      <div class="empire-box reveal">
+        <div class="empire-grid">
+          <div>
+            <div class="empire-tier">Empire</div>
+            <div class="empire-name">Full Takeover</div>
+            <p class="empire-tagline">Everything in Authority, plus the complete acquisition system running on autopilot.</p>
+            <ul class="empire-features">
+              <li class="inherit">Everything in Authority, PLUS:</li>
+              <li>Instagram Trip Wire Funnel — dedicated funnel for IG traffic</li>
+              <li>Branded short links + full UTM tracking setup</li>
+              <li>Newsletter welcome email sequence (Beehiiv, 3-5 emails, automated)</li>
+              <li>Full automation wiring — leads routed, nurtured, and notified automatically</li>
+              <li>Priority delivery + extended support window</li>
+            </ul>
+          </div>
+          <div class="empire-pricing">
+            <div class="empire-price"><sup>$</sup>2,997</div>
+            <div class="empire-delivery">10-day delivery</div>
+            <a href="https://buy.stripe.com/bJeeVcb8XbPYaBAd5m2oE0i" class="empire-btn" target="_blank" rel="noopener">Get Empire — $2,997 →</a>
+            <p class="empire-note">This isn't a landing page — it's a complete, automated acquisition system that runs itself after launch.</p>
+          </div>
         </div>
       </div>
 
@@ -1161,7 +1304,7 @@ const TEXT_NUMBER_DISPLAY = "(310) 461-8859";
       </h2>
       <p class="final-sub">Pick your package. Brief me in 5 minutes. Get your entire launch infrastructure built while you focus on everything else.</p>
       <div class="final-btns">
-        <a href="https://buy.stripe.com/7sY9ASb8X3jscJI5CU2oE06" class="btn-primary" target="_blank" rel="noopener">Get the Full Launch Kit — $1,200 →</a>
+        <a href="https://buy.stripe.com/bJeeVcb8XbPYaBAd5m2oE0i" class="btn-primary" target="_blank" rel="noopener">Get Empire — $2,997 →</a>
         <a href="#pricing" class="btn-secondary">See All Packages</a>
       </div>
       <p class="final-note">Secure payment via Stripe · Response within 24hrs · <span>2-round revision guarantee</span></p>
@@ -1204,6 +1347,20 @@ const TEXT_NUMBER_DISPLAY = "(310) 461-8859";
         if (!textMePanel.contains(e.target) && !textMeBubble.contains(e.target)) {
           textMePanel.classList.remove('open');
         }
+      });
+    }
+
+    const toggleBtn = document.getElementById('themeToggle');
+    if (toggleBtn) {
+      const syncIcon = () => {
+        toggleBtn.textContent = document.documentElement.classList.contains('dark') ? '☀️' : '🌙';
+      };
+      syncIcon();
+      toggleBtn.addEventListener('click', () => {
+        document.documentElement.classList.toggle('dark');
+        const isDark = document.documentElement.classList.contains('dark');
+        localStorage.setItem('theme', isDark ? 'dark' : 'light');
+        syncIcon();
       });
     }
   </script>

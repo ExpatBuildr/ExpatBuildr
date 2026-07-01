@@ -92,12 +92,16 @@
     }
 
     .nav-logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
       font-family: 'Bebas Neue', sans-serif;
       font-size: 1.4rem;
       letter-spacing: 0.12em;
       color: var(--gold);
       text-decoration: none;
     }
+    .nav-logo img { width: 28px; height: 28px; border-radius: 6px; object-fit: cover; flex-shrink: 0; }
 
     .nav-tag {
       font-family: 'JetBrains Mono', monospace;
@@ -508,7 +512,7 @@
   </div>
 
   <nav>
-    <a href="/" class="nav-logo">ExpatBuildr</a>
+    <a href="/" class="nav-logo"><img src="/logo.jpg" alt="ExpatBuildr" />ExpatBuildr</a>
     <span class="nav-tag">✓ Request Received</span>
   </nav>
 
