@@ -369,7 +369,7 @@ const postUrl = type === 'post' ? new URL(`/blog/${post.id.replace(/\.mdx?$/, ''
                 "description": post.data.description,
                 "image": post.data.ogImage
                     ? new URL(post.data.ogImage, siteUrl).toString()
-                    : (post.data.heroImage ? new URL(post.data.heroImage, siteUrl).toString() : `${siteUrl}/expatbuildr_og_banner.png`),
+                    : (post.data.heroImage ? new URL(post.data.heroImage, siteUrl).toString() : `${siteUrl}/expatog.jpg`),
                 "url": postUrl,
                 "mainEntityOfPage": { "@type": "WebPage", "@id": postUrl },
                 "datePublished": post.data.pubDate.toISOString(),
