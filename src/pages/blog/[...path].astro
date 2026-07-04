@@ -50,7 +50,14 @@ export async function getStaticPaths() {
 
 
     // Sub-category routes: /blog/[pillar]/[category]
-    const categories = [...new Set(pillarPosts.map(p => p.data.category.toLowerCase().replace(/\s+/g, '-')))];
+    // "Pillar Hub" and "Service" are reserved labels (used to feature the hub
+    // article and service offerings on the pillar page), not real categories —
+    // exclude them so we don't generate empty/duplicate listing pages for them.
+    const categories = [...new Set(
+      pillarPosts
+        .filter(p => p.data.category !== 'Pillar Hub' && p.data.category !== 'Service')
+        .map(p => p.data.category.toLowerCase().replace(/\s+/g, '-'))
+    )];
     categories.forEach(category => {
         const categoryPosts = pillarPosts.filter(p => p.data.category.toLowerCase().replace(/\s+/g, '-') === category);
         paths.push({
