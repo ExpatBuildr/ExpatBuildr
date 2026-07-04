@@ -1,6 +1,5 @@
 User-agent: *
 Disallow: /internal
-Disallow: /portfolio
 Disallow: /*/unlock
 Disallow: /*/thank-you
 Disallow: /*/success

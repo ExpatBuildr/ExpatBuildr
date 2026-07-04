@@ -62,6 +62,13 @@ export default defineConfig({
   // - Sitemap, canonicals, and all internal links use no-trailing-slash format
   // - See: scripts/validateSEOConfig.mjs for pre-deployment SEO validation
   trailingSlash: 'never',
+  // build.format: 'file' outputs prerendered routes as slug.html instead of
+  // slug/index.html — without this, Cloudflare's static server treats the
+  // slug as a directory and 308-redirects to add the trailing slash back,
+  // which breaks link-preview crawlers (Facebook/Twitter/etc. don't follow redirects)
+  build: {
+    format: 'file',
+  },
   adapter: cloudflare(),
   vite: {
     plugins: [tailwindcss()]
