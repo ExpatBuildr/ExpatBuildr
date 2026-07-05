@@ -6,8 +6,8 @@ author: "ExpatBuildr"
 pillarId: "remote-income"
 category: "Guide"
 tags: ["remote resume", "remote first resume", "work from home resume", "async resume", "remote job application", "resume tips 2026"]
-ogImage: "/images/remote work.jpg"
-heroImage: "/images/remote work.jpg"
+ogImage: "/images/remote-work.jpg"
+heroImage: "/images/remote-work.jpg"
 canonicalUrl: "https://expatbuildr.com/blog/remote-income/remote-first-resume-that-gets-callbacks"
 primaryKeyword: "remote first resume that gets callbacks"
 secondaryKeywords:

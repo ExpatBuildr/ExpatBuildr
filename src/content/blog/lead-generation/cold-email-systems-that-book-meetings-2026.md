@@ -6,8 +6,8 @@ author: "ExpatBuildr"
 pillarId: "lead-generation"
 category: "Guide"
 tags: ["cold email", "cold email systems", "book meetings", "outreach", "lead generation", "B2B sales 2026"]
-ogImage: "/images/lead gen.jpg"
-heroImage: "/images/lead gen.jpg"
+ogImage: "/images/lead-gen.jpg"
+heroImage: "/images/lead-gen.jpg"
 canonicalUrl: "https://expatbuildr.com/blog/lead-generation/cold-email-systems-that-book-meetings-2026"
 primaryKeyword: "cold email systems that book meetings 2026"
 secondaryKeywords:

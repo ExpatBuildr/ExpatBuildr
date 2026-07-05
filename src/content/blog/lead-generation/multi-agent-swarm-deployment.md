@@ -6,8 +6,8 @@ author: "ExpatBuildr"
 pillarId: "lead-generation"
 category: "Automation"
 tags: ["AI Orchestration", "Multi-Agent", "Automation", "Lead Generation", "AI Workflows"]
-ogImage: "/images/lead gen.jpg"
-heroImage: "/images/lead gen.jpg"
+ogImage: "/images/lead-gen.jpg"
+heroImage: "/images/lead-gen.jpg"
 canonicalUrl: "https://expatbuildr.com/blog/lead-generation/multi-agent-swarm-deployment"
 primaryKeyword: "multi-agent AI swarm deployment"
 secondaryKeywords: ["AI orchestration workflow", "autonomous business automation", "agentic AI lead generation", "multi-agent business systems"]

@@ -6,8 +6,8 @@ author: "ExpatBuildr"
 pillarId: "lead-generation"
 category: "Automation"
 tags: ["how to use Clay for outreach", "Clay personalized outreach", "Clay.com lead generation", "AI cold email personalization", "Clay outreach automation"]
-ogImage: "/images/lead gen.jpg"
-heroImage: "/images/lead gen.jpg"
+ogImage: "/images/lead-gen.jpg"
+heroImage: "/images/lead-gen.jpg"
 canonicalUrl: "https://expatbuildr.com/blog/lead-generation/how-to-use-clay-personalized-outreach-at-scale"
 primaryKeyword: "how to use Clay for personalized outreach at scale"
 secondaryKeywords: ["Clay.com outreach", "Clay lead enrichment", "personalized cold email at scale", "Clay AI email writing", "Clay outreach automation"]

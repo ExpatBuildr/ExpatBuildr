@@ -6,8 +6,8 @@ pillarId: "remote-income"
 category: "Guide"
 tags: ["Micro SaaS", "Remote Income", "Product", "Indie Hacking"]
 author: "ExpatBuildr"
-ogImage: "/images/remote work.jpg"
-heroImage: "/images/remote work.jpg"
+ogImage: "/images/remote-work.jpg"
+heroImage: "/images/remote-work.jpg"
 draft: false
 gated: true
 archived: false

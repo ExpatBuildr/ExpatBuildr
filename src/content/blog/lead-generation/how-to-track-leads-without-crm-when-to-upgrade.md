@@ -6,8 +6,8 @@ author: "ExpatBuildr"
 pillarId: "lead-generation"
 category: "Guide"
 tags: ["track leads without CRM", "lead tracking spreadsheet", "CRM alternative small business", "how to manage leads without software", "when to get a CRM"]
-ogImage: "/images/lead gen.jpg"
-heroImage: "/images/lead gen.jpg"
+ogImage: "/images/lead-gen.jpg"
+heroImage: "/images/lead-gen.jpg"
 canonicalUrl: "https://expatbuildr.com/blog/lead-generation/how-to-track-leads-without-crm-when-to-upgrade"
 primaryKeyword: "how to track leads without a CRM"
 secondaryKeywords: ["lead tracking without CRM", "spreadsheet CRM alternative", "manage sales pipeline without CRM", "when to buy a CRM", "simple lead tracking system"]

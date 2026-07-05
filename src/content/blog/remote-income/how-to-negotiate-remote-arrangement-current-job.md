@@ -6,8 +6,8 @@ author: "ExpatBuildr"
 pillarId: "remote-income"
 category: "Guide"
 tags: ["negotiate remote work", "work from home negotiation", "remote arrangement", "RTO", "remote-first", "career"]
-ogImage: "/images/remote work.jpg"
-heroImage: "/images/remote work.jpg"
+ogImage: "/images/remote-work.jpg"
+heroImage: "/images/remote-work.jpg"
 canonicalUrl: "https://expatbuildr.com/blog/remote-income/how-to-negotiate-remote-arrangement-current-job"
 primaryKeyword: "how to negotiate a remote arrangement at your current job"
 secondaryKeywords:

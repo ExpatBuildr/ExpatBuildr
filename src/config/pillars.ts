@@ -19,7 +19,7 @@ export const pillars = [
     color: 'text-red-500',
     accent: 'bg-red-500/10',
     cta: 'Start Sniping',
-    heroImage: '/images/remote work.jpg',
+    heroImage: '/images/remote-work.jpg',
     longDescription: 'The Remote Income pillar focuses on high-speed monetization. From job sniping to data arbitrage and micro-SaaS assets, we build the infrastructure required to generate consistent, location-independent yield.'
   },
   {
@@ -31,7 +31,7 @@ export const pillars = [
     color: 'text-emerald-500',
     accent: 'bg-emerald-500/10',
     cta: 'Activate Systems',
-    heroImage: '/images/lead gen.jpg',
+    heroImage: '/images/lead-gen.jpg',
     longDescription: 'Lead Generation is the engine of your business. We architect autonomous outreach systems, multi-vector intent scoring, and high-conversion client acquisition loops that decouple growth from manual labor.'
   },
   {

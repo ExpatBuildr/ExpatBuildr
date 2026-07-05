@@ -6,8 +6,8 @@ author: "ExpatBuildr"
 pillarId: "remote-income"
 category: "Guide"
 tags: ["personal brand remote work", "how to get recruited remotely", "remote work personal brand", "build personal brand online", "remote career visibility"]
-ogImage: "/images/remote work.jpg"
-heroImage: "/images/remote work.jpg"
+ogImage: "/images/remote-work.jpg"
+heroImage: "/images/remote-work.jpg"
 canonicalUrl: "https://expatbuildr.com/blog/remote-income/how-to-build-personal-brand-that-gets-you-recruited-remotely"
 primaryKeyword: "how to build a personal brand that gets you recruited remotely"
 secondaryKeywords: ["personal brand for remote workers", "get recruited remotely", "remote work visibility online", "LinkedIn personal brand", "inbound job opportunities remote"]

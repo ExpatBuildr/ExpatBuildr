@@ -6,7 +6,7 @@ pillarId: "remote-income"
 category: "Deep Dive"
 tags: ["Arbitrage", "Signals", "Information Asymmetry"]
 author: "ExpatBuildr"
-heroImage: "/images/remote work.jpg"
+heroImage: "/images/remote-work.jpg"
 canonicalUrl: "https://expatbuildr.com/blog/remote-income/build-signal-arbitrage-loop"
 draft: false
 gated: false

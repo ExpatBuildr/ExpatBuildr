@@ -6,8 +6,8 @@ author: "ExpatBuildr"
 pillarId: "lead-generation"
 category: "Guide"
 tags: ["LinkedIn outreach", "LinkedIn sequences", "LinkedIn lead generation", "B2B outreach", "LinkedIn messaging", "sales outreach 2026"]
-ogImage: "/images/lead gen.jpg"
-heroImage: "/images/lead gen.jpg"
+ogImage: "/images/lead-gen.jpg"
+heroImage: "/images/lead-gen.jpg"
 canonicalUrl: "https://expatbuildr.com/blog/lead-generation/linkedin-outreach-sequences-that-get-replies"
 primaryKeyword: "LinkedIn outreach sequences that get replies"
 secondaryKeywords:

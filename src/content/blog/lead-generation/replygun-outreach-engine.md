@@ -6,8 +6,8 @@ author: "ExpatBuildr"
 pillarId: "lead-generation"
 category: "Service"
 tags: ["Cold Outreach", "ReplyGun", "Lead Generation", "Outbound", "Automation"]
-ogImage: "/images/lead gen.jpg"
-heroImage: "/images/lead gen.jpg"
+ogImage: "/images/lead-gen.jpg"
+heroImage: "/images/lead-gen.jpg"
 canonicalUrl: "https://expatbuildr.com/blog/lead-generation/replygun-outreach-engine"
 primaryKeyword: "cold outreach automation service"
 secondaryKeywords: ["ReplyGun engine", "autonomous outbound system", "high reply rate cold email", "conversational strike outreach"]

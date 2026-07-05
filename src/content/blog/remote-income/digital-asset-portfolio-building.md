@@ -6,8 +6,8 @@ author: "ExpatBuildr"
 pillarId: "remote-income"
 category: "Deep Dive"
 tags: ["Digital Assets", "SaaS", "Passive Income", "Megablog", "Remote Income"]
-ogImage: "/images/remote work.jpg"
-heroImage: "/images/remote work.jpg"
+ogImage: "/images/remote-work.jpg"
+heroImage: "/images/remote-work.jpg"
 canonicalUrl: "https://expatbuildr.com/blog/remote-income/digital-asset-portfolio-building"
 primaryKeyword: "digital asset portfolio building"
 secondaryKeywords: ["SaaS asset building", "megablog income", "autonomous digital income", "remote income assets"]

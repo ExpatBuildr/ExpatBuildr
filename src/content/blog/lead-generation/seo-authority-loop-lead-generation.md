@@ -6,8 +6,8 @@ author: "ExpatBuildr"
 pillarId: "lead-generation"
 category: "Deep Dive"
 tags: ["SEO", "Lead Generation", "Topic Authority", "EverRank", "Content Strategy"]
-ogImage: "/images/lead gen.jpg"
-heroImage: "/images/lead gen.jpg"
+ogImage: "/images/lead-gen.jpg"
+heroImage: "/images/lead-gen.jpg"
 canonicalUrl: "https://expatbuildr.com/blog/lead-generation/seo-authority-loop-lead-generation"
 primaryKeyword: "SEO authority loop lead generation"
 secondaryKeywords: ["topic cluster lead generation", "EverRank SEO strategy", "zero-cost leads SEO", "niche authority building"]

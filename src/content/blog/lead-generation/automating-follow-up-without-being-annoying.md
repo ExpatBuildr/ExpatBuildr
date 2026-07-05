@@ -6,8 +6,8 @@ author: "ExpatBuildr"
 pillarId: "lead-generation"
 category: "Guide"
 tags: ["follow-up automation", "cold email follow-up", "outreach automation", "lead generation automation", "sales follow-up", "B2B outreach 2026"]
-ogImage: "/images/lead gen.jpg"
-heroImage: "/images/lead gen.jpg"
+ogImage: "/images/lead-gen.jpg"
+heroImage: "/images/lead-gen.jpg"
 canonicalUrl: "https://expatbuildr.com/blog/lead-generation/automating-follow-up-without-being-annoying"
 primaryKeyword: "automating follow-up without being annoying"
 secondaryKeywords:

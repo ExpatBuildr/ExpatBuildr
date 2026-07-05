@@ -6,8 +6,8 @@ author: "ExpatBuildr"
 pillarId: "remote-income"
 category: "Deep Dive"
 tags: ["Arbitrage", "Signal Flipping", "Data Monetization", "Automation", "Remote Income"]
-ogImage: "/images/remote work.jpg"
-heroImage: "/images/remote work.jpg"
+ogImage: "/images/remote-work.jpg"
+heroImage: "/images/remote-work.jpg"
 canonicalUrl: "https://expatbuildr.com/blog/remote-income/arbitrage-node-installation"
 primaryKeyword: "information arbitrage engine"
 secondaryKeywords: ["market signal flipping", "data monetization system", "arbitrage income automation", "signal to profit"]

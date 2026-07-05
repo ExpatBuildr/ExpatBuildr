@@ -6,8 +6,8 @@ author: "ExpatBuildr"
 pillarId: "remote-income"
 category: "Guide"
 tags: ["remote jobs", "work from home", "RTO", "remote-first", "async work", "job hunting"]
-ogImage: "/images/remote work.jpg"
-heroImage: "/images/remote work.jpg"
+ogImage: "/images/remote-work.jpg"
+heroImage: "/images/remote-work.jpg"
 canonicalUrl: "https://expatbuildr.com/blog/remote-income/how-to-find-fully-remote-jobs-that-never-rto"
 primaryKeyword: "fully remote jobs that never RTO"
 secondaryKeywords:

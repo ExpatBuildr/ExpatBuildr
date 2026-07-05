@@ -6,8 +6,8 @@ author: "ExpatBuildr"
 pillarId: "lead-generation"
 category: "Deep Dive"
 tags: ["reply rate", "cold outreach", "cold email metrics", "outreach benchmarks", "B2B sales 2026", "lead generation metrics"]
-ogImage: "/images/lead gen.jpg"
-heroImage: "/images/lead gen.jpg"
+ogImage: "/images/lead-gen.jpg"
+heroImage: "/images/lead-gen.jpg"
 canonicalUrl: "https://expatbuildr.com/blog/lead-generation/reply-rate-formula-cold-outreach"
 primaryKeyword: "reply rate formula for cold outreach"
 secondaryKeywords:

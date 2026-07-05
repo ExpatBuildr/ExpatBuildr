@@ -6,8 +6,8 @@ author: "ExpatBuildr"
 pillarId: "remote-income"
 category: "Guide"
 tags: ["remote promotion", "remote career growth", "how to get promoted remotely", "remote work visibility", "career advancement remote"]
-ogImage: "/images/remote work.jpg"
-heroImage: "/images/remote work.jpg"
+ogImage: "/images/remote-work.jpg"
+heroImage: "/images/remote-work.jpg"
 canonicalUrl: "https://expatbuildr.com/blog/remote-income/how-to-get-promoted-while-working-fully-remote"
 primaryKeyword: "how to get promoted while working fully remote"
 secondaryKeywords: ["remote career advancement", "visibility at work remotely", "remote promotion strategy", "how to stand out working from home", "career growth remote job"]
