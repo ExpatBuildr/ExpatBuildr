@@ -17,8 +17,6 @@ draft: false
 gated: false
 ---
 
-# Remote Income: Architecting the Sovereign Salary
-
 In the old world, a "Job" was a cage. In the Sovereign Era, income is a **Technical Metric** that you control through architecture. Most people trade time for money at a 1:1 ratio. At **ExpatBuildr**, we trade **Systems for Scale**.
 
 This Hub is the entry point for the **Remote Work Sniper** methodology. We don't "apply" for jobs; we **Poach Markets**. We don't "wait" for raises; we **Arbitrage Inefficiencies**.

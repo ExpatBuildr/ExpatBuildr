@@ -24,8 +24,6 @@ noindex: false
 gated: true
 ---
 
-# Building a Remote-First Resume That Gets Callbacks
-
 A remote first resume that gets callbacks does one thing a standard resume doesn't: it signals that you already know how to work without supervision, communicate across time zones, and deliver output without someone checking over your shoulder. Remote-first hiring teams aren't looking for the most qualified candidate in the traditional sense. They're looking for the lowest-risk remote hire. Your resume needs to answer that question before the interview does.
 
 This isn't about reformatting your existing resume with "Remote" added next to your job titles. It's about rewriting the entire document through the lens of distributed work: what you delivered, how you communicated, and what tools you used to do both.

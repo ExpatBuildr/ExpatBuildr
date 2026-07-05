@@ -14,8 +14,6 @@ archived: false
 noindex: false
 ---
 
-# Systems Overview: Capitalizing on Information Asymmetry
-
 In the modern digital economy, the most valuable commodity is not the data itself, but the **Information Gap**. **The Arbitrage Engine** is the ExpatBuildr framework for identifying, capturing, and monetizing these gaps. We operate on the principle of **Information Arbitrage**: buying or capturing data where it is undervalued (raw signals) and selling it where it is highly prized (refined leads/insights).
 
 The Arbitrage Engine moves beyond simple "middleman" tactics. It is a technical infrastructure that identifies market signals at the source, enriches that data with proprietary logic, and flips it into high-margin products like the **ExpatBuildr Jobs List** or **Targeted Lead Lists**.
@@ -25,7 +23,7 @@ The goal is to find “Alpha” — market signals that the broader market has n
 
 ---
 
-# The Mechanism: Signal Identification & Data Laundering
+## The Mechanism: Signal Identification & Data Laundering
 
 The Arbitrage Engine operates through a three-stage technical process: Extraction, Refinement, and Distribution.
 
@@ -49,7 +47,7 @@ Once the data is refined, it is moved to the highest-value endpoint.
 
 ---
 
-# 2026 Strategy: The Speed-to-Market Arbitrage
+## 2026 Strategy: The Speed-to-Market Arbitrage
 
 The 2026 evolution of arbitrage focuses on **Latency Reduction**.
 
@@ -61,7 +59,7 @@ We are experimenting with AI agents that can not only identify a lead but initia
 
 ---
 
-# Data Sources & Technical References
+## Data Sources & Technical References
 
 The Arbitrage Engine is grounded in the following technical benchmarks:
 
@@ -72,7 +70,7 @@ The Arbitrage Engine is grounded in the following technical benchmarks:
 
 ---
 
-# Conclusion: Owning the Information Gap
+## Conclusion: Owning the Information Gap
 
 The Arbitrage Engine is the ultimate tool for the technical founder. By mastering the flow of information and building the systems to flip that information into profit, we create a business that is immune to market volatility.
 

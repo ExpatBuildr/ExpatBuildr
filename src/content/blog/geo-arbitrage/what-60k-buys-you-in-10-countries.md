@@ -23,8 +23,6 @@ archived: false
 noindex: false
 ---
 
-# What $60K Actually Buys You in 10 Countries
-
 A $60,000 remote salary produces a comfortable but not wealthy lifestyle in most US cities. In Manila, Chiang Mai, or Ho Chi Minh City, it produces financial freedom. In Lisbon or Mexico City, it produces a quality of life that would cost $120,000 to replicate in San Francisco or New York. This article breaks down exactly what $60,000 buys you in 10 countries, including monthly expenses, savings rate, and the honest lifestyle tradeoffs at each location.
 
 All figures use a take-home of approximately $4,200 per month, which reflects a $60,000 gross income for a single filer with no state income tax after standard federal deductions.[1]

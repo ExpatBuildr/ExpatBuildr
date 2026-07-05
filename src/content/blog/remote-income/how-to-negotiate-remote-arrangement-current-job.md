@@ -24,8 +24,6 @@ archived: false
 noindex: false
 ---
 
-# How to Negotiate a Remote Arrangement at Your Current Job
-
 Negotiating a remote arrangement at your current job is possible, and often easier than finding a new remote role from scratch, if you approach it as a business case rather than a personal request. The employees who successfully keep remote arrangements don't ask for a favor. They make their manager's life easier by removing the risk of losing a productive person. This guide gives you the exact framework, timing, and language to do that.
 
 If your company has issued an RTO mandate or you're sensing one coming, the window to negotiate is now. Don't wait until after the policy is announced and your manager is under pressure to enforce it.

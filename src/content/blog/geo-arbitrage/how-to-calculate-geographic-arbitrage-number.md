@@ -23,8 +23,6 @@ archived: false
 noindex: false
 ---
 
-# How to Calculate Your Geographic Arbitrage Number
-
 Your geographic arbitrage number is the monthly cost difference between where you currently live and where you could live on the same income, expressed as additional monthly savings. Calculating it requires four inputs: your current monthly take-home income, your current monthly expenses, your projected monthly expenses in the target location, and your one-time transition costs. Once you have those four numbers, the calculation tells you exactly how long it takes to recoup the transition cost and what your new savings trajectory looks like from there.
 
 This guide walks through the full calculation with a real example, covers the variables most people miss, and shows you how to use the number to compare multiple locations before committing to any of them.

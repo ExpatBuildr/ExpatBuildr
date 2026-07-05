@@ -23,8 +23,6 @@ archived: false
 noindex: false
 ---
 
-# Automating Follow-Up Without Being Annoying
-
 Automating follow-up without being annoying comes down to one principle: your sequence should feel like a thoughtful person following up, not a system executing a script. The prospects who mark you as spam are not reacting to follow-up itself. They are reacting to follow-up that adds no value, ignores context, and keeps going long after the signal to stop has been given. Build the sequence around value and timing rather than volume and persistence, and automation becomes a tool that scales your best behavior rather than your worst.
 
 This guide covers the timing, messaging, channel logic, and tooling for a follow-up system that books meetings without burning your list.

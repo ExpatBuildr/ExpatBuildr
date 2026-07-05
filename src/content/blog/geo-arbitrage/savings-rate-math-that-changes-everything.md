@@ -23,8 +23,6 @@ archived: false
 noindex: false
 ---
 
-# The Savings Rate Math That Changes Everything
-
 Savings rate is the single most powerful variable in any financial independence calculation, and geographic arbitrage is the fastest legitimate way to increase it without increasing your income. Moving from a 15% savings rate to a 65% savings rate does not just mean saving more money each month. It compresses the number of years required to reach financial independence from several decades to under ten. This article shows you the exact math, explains why savings rate dominates income in the wealth-building equation, and demonstrates what geo-arbitrage does to the timeline.
 
 ---

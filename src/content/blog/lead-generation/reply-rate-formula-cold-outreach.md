@@ -23,8 +23,6 @@ archived: false
 noindex: false
 ---
 
-# The Reply Rate Formula for Cold Outreach
-
 The reply rate formula for cold outreach is simple: replies divided by delivered emails, multiplied by 100. A reply rate of 2 to 5% is the realistic benchmark for a well-targeted cold email campaign in 2026. Above 5% means your targeting and messaging are unusually strong. Below 1% means something fundamental is broken, and that breakdown is almost always in the list, the offer, or the first line of your email rather than in the subject line or send time. This guide shows you how to calculate your actual performance, what the numbers mean, and the systematic approach to improving each variable.
 
 ---

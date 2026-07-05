@@ -24,8 +24,6 @@ noindex: false
 gated: true
 ---
 
-# How to Build a Lead List from Scratch Without Buying Data
-
 You can build a highly targeted B2B lead list without buying data from Apollo, ZoomInfo, or any other database. In most cases the list you build manually will outperform a purchased one because it's built around intent signals rather than demographic filters. The methods in this guide use publicly available information, free tools, and a small amount of structured research to produce lists of prospects who are actively demonstrating the problem your offer solves.
 
 Purchased data has its place. But for most early-stage outreach, especially when you're still validating your ICP, building from scratch gives you better signal, lower cost, and a list that isn't being worked simultaneously by every other operator who bought the same export.

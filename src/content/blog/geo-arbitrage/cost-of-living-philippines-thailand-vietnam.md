@@ -23,8 +23,6 @@ archived: false
 noindex: false
 ---
 
-# Cost of Living Comparison: Philippines vs Thailand vs Vietnam
-
 For remote workers earning in US dollars, the Philippines, Thailand, and Vietnam are the three strongest geo-arbitrage destinations in Southeast Asia in 2026. All three offer dramatically lower costs than Western cities, reliable enough infrastructure for remote work, and large enough expat communities that the transition is manageable. The differences between them matter more for lifestyle and visa purposes than for pure financial optimization, since all three produce savings rates between 60 and 75% on a $70,000 to $90,000 US income. This comparison breaks down what each country actually costs, where the meaningful differences are, and which one suits which type of remote worker.
 
 ---

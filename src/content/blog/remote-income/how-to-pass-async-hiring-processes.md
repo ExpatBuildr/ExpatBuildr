@@ -24,8 +24,6 @@ noindex: false
 gated: true
 ---
 
-# How to Pass Async Hiring Processes
-
 Async hiring processes are the standard at remote-first companies — and they're designed to filter out people who can't work without real-time hand-holding. To pass them, you need to treat every written response, take-home assignment, and Loom recording as a live demonstration of exactly how you'll work on the job. The candidates who fail these processes don't fail because they lack skill. They fail because they approach async tasks the same way they'd approach a live interview — waiting for cues, asking for clarification instead of making decisions, and underestimating how much the format itself is being evaluated.
 
 This guide covers every stage of the async hiring process and what remote-first companies are actually screening for at each one.
