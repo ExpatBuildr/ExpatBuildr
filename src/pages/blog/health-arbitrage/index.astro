@@ -1,0 +1,145 @@
+---
+export const prerender = true;
+import Layout from '../../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+import { ArrowRight, Heart, DollarSign, Globe, BookOpen } from 'lucide-astro';
+
+const allPosts = await getCollection('blog', ({ data }) => {
+  return import.meta.env.PROD ? data.draft !== true && data.archived !== true : true;
+});
+
+const posts = allPosts
+  .filter(p => p.data.pillarId === 'health-arbitrage' && p.data.category !== 'Pillar Hub')
+  .sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime());
+
+const formatDate = (date: Date) =>
+  new Intl.DateTimeFormat('en-US', { month: 'short', day: 'numeric', year: 'numeric' }).format(date);
+
+const calcReadTime = (body: string) => Math.max(1, Math.ceil(body.trim().split(/\s+/).length / 220));
+---
+
+<Layout
+  title="Health Arbitrage: World-Class Healthcare at a Fraction of US Cost | ExpatBuildr"
+  description="Health arbitrage guides for expat founders — private hospitals, dental tourism, health insurance, and fitness infrastructure across Southeast Asia."
+  canonicalUrl="https://expatbuildr.com/blog/health-arbitrage"
+  ogImage="/images/blog/pillars/health-arbitrage-hub.png"
+>
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Health Arbitrage Hub | ExpatBuildr",
+    "description": "Private hospitals, dental tourism, health insurance, and wellness infrastructure guides for expat founders.",
+    "url": "https://expatbuildr.com/blog/health-arbitrage",
+    "publisher": {
+      "@type": "Organization",
+      "name": "ExpatBuildr",
+      "url": "https://expatbuildr.com"
+    },
+    "hasPart": posts.map(p => ({
+      "@type": "BlogPosting",
+      "headline": p.data.title,
+      "url": `https://expatbuildr.com/blog/${p.id.replace(/\.mdx?$/, '')}`,
+      "datePublished": p.data.pubDate.toISOString()
+    }))
+  })} />
+
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <!-- Hero -->
+    <div class="text-center mb-20">
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs uppercase tracking-[0.2em] font-mono mb-8">
+        <Heart size={12} /> Health Arbitrage
+      </div>
+      <h1 class="text-5xl md:text-7xl font-black font-display tracking-tighter text-slate-900 dark:text-white mb-6 uppercase leading-none">
+        PREMIUM HEALTH.<br /><span class="text-emerald-400">LOCAL COST.</span>
+      </h1>
+      <p class="text-xl text-slate-600 dark:text-slate-400 max-w-2xl mx-auto font-inter leading-relaxed mb-8">
+        Health arbitrage is access to world-class healthcare, dental, fitness, and longevity infrastructure at a fraction of what it costs in the United States. For expat founders, staying healthy is not a lifestyle choice — it is operational infrastructure.
+      </p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="/newsletter" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-emerald-500 text-white font-bold text-sm hover:bg-emerald-400 transition-all">
+          Join the Newsletter <ArrowRight size={16} />
+        </a>
+        <a href="/newsletter" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-slate-200 dark:border-white/10 text-slate-700 dark:text-slate-300 font-semibold text-sm hover:border-emerald-500/40 transition-all">
+          Weekly Intel
+        </a>
+      </div>
+    </div>
+
+    <!-- Stats -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-20">
+      <div class="glass-card rounded-2xl p-6 border border-emerald-500/20">
+        <Heart class="text-emerald-400 mb-3" size={24} />
+        <div class="text-3xl font-black text-slate-900 dark:text-white mb-1">70%</div>
+        <div class="text-sm text-slate-600 dark:text-slate-400">Average savings on private hospital procedures in Southeast Asia vs equivalent US facilities</div>
+      </div>
+      <div class="glass-card rounded-2xl p-6 border border-emerald-500/20">
+        <DollarSign class="text-emerald-400 mb-3" size={24} />
+        <div class="text-3xl font-black text-slate-900 dark:text-white mb-1">$200</div>
+        <div class="text-sm text-slate-600 dark:text-slate-400">Average cost of a full dental crown in the Philippines vs $1,500 to $2,500 in the US</div>
+      </div>
+      <div class="glass-card rounded-2xl p-6 border border-emerald-500/20">
+        <Globe class="text-emerald-400 mb-3" size={24} />
+        <div class="text-3xl font-black text-slate-900 dark:text-white mb-1">Top 5</div>
+        <div class="text-sm text-slate-600 dark:text-slate-400">Southeast Asian countries rank among the top global destinations for medical tourism quality</div>
+      </div>
+    </div>
+
+    <!-- What This Pillar Covers -->
+    <div class="mb-20 prose prose-slate dark:prose-invert max-w-none">
+      <h2 class="text-3xl font-black font-display uppercase tracking-tight text-slate-900 dark:text-white mb-6">What This Pillar Covers</h2>
+      <p class="text-lg text-slate-600 dark:text-slate-400 leading-relaxed mb-4">
+        Most founders treat health as a personal matter separate from business. Expat founders learn quickly that it is not. Your cognitive performance, your energy, and your long-term capacity to build are directly tied to your health infrastructure — and that infrastructure is dramatically better and cheaper in Southeast Asia than most people expect.
+      </p>
+      <p class="text-lg text-slate-600 dark:text-slate-400 leading-relaxed mb-4">
+        The health arbitrage pillar covers the practical reality of staying healthy as an expat founder: which private hospitals are actually good in the Philippines, Thailand, and Vietnam, what dental tourism actually costs and what to expect, how to find quality fitness infrastructure in your base city, and how to structure health insurance so you are genuinely covered without overpaying.
+      </p>
+      <p class="text-lg text-slate-600 dark:text-slate-400 leading-relaxed">
+        This is not about cutting corners on health to save money. It is about accessing better infrastructure at lower cost — the same quality or better than what you had in the US, at a fraction of the price, with the surplus going back into the business and the savings stack.
+      </p>
+    </div>
+
+    <!-- Article Index -->
+    <div class="mb-20">
+      <div class="flex items-center gap-3 mb-8">
+        <BookOpen class="text-emerald-400" size={20} />
+        <h2 class="text-2xl font-black font-display uppercase tracking-tight text-slate-900 dark:text-white">All Health Arbitrage Guides</h2>
+        <div class="h-px flex-1 bg-slate-200 dark:bg-white/10"></div>
+        <span class="text-xs font-mono text-slate-400">{posts.length} articles</span>
+      </div>
+
+      <div class="space-y-4">
+        {posts.map(post => (
+          <a
+            href={`/blog/${post.id.replace(/\.mdx?$/, '')}`}
+            class="group flex items-start gap-5 p-5 rounded-2xl border border-slate-200 dark:border-white/10 hover:border-emerald-500/40 bg-white dark:bg-white/[0.03] hover:bg-emerald-500/5 transition-all duration-300"
+          >
+            <div class="shrink-0 w-12 h-12 rounded-xl bg-emerald-500/10 flex items-center justify-center">
+              <Heart class="text-emerald-400" size={20} />
+            </div>
+            <div class="flex-1 min-w-0">
+              <div class="flex items-center gap-3 mb-1">
+                <span class="text-xs font-mono uppercase tracking-wider text-emerald-400 font-semibold">{post.data.category}</span>
+                <span class="text-xs text-slate-400">{formatDate(post.data.pubDate)}</span>
+                <span class="text-xs text-slate-400">{calcReadTime(post.body ?? '')} min read</span>
+              </div>
+              <h3 class="text-base font-bold text-slate-900 dark:text-white group-hover:text-emerald-400 transition-colors leading-snug mb-1">{post.data.title}</h3>
+              <p class="text-sm text-slate-500 dark:text-slate-400 line-clamp-2 leading-relaxed">{post.data.description}</p>
+            </div>
+            <ArrowRight class="shrink-0 text-slate-300 dark:text-slate-600 group-hover:text-emerald-400 group-hover:translate-x-1 transition-all mt-1" size={18} />
+          </a>
+        ))}
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="rounded-2xl border border-emerald-500/20 bg-emerald-500/5 p-10 text-center mb-12">
+      <h2 class="text-2xl font-black font-display uppercase tracking-tight text-slate-900 dark:text-white mb-3">Get the Weekly Health Arbitrage Intel</h2>
+      <p class="text-slate-600 dark:text-slate-400 mb-6 max-w-lg mx-auto">Private hospital breakdowns, dental tourism guides, health insurance options, and fitness infrastructure for expat founders — in the weekly newsletter.</p>
+      <a href="/newsletter" class="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-emerald-500 text-white font-bold hover:bg-emerald-400 transition-all">
+        Join Free <ArrowRight size={16} />
+      </a>
+    </div>
+
+  </div>
+</Layout>

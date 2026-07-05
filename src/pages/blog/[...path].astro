@@ -37,16 +37,22 @@ export async function getStaticPaths() {
     }
   });
 
+  // Pillars with a dedicated static hub page (src/pages/blog/[pillar]/index.astro)
+  // instead of the dynamic type:'pillar' route generated below.
+  const STATIC_HUB_PILLARS = ['remote-income', 'lead-generation', 'geo-arbitrage', 'time-arbitrage', 'ai-arbitrage', 'health-arbitrage', 'market-arbitrage'];
+
   // 2. Aggregation paths (Pillars and Categories)
   pillars.forEach(pConfig => {
     const pillarId = pConfig.id;
     const pillarPosts = posts.filter(p => p.data.pillarId === pillarId);
 
     // Pillar index: /blog/[pillar]
-    paths.push({
-      params: { path: pillarId },
-      props: { type: 'pillar', pillarId, posts: pillarPosts }
-    });
+    if (!STATIC_HUB_PILLARS.includes(pillarId)) {
+      paths.push({
+        params: { path: pillarId },
+        props: { type: 'pillar', pillarId, posts: pillarPosts }
+      });
+    }
 
 
     // Sub-category routes: /blog/[pillar]/[category]

@@ -1,0 +1,145 @@
+---
+export const prerender = true;
+import Layout from '../../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+import { ArrowRight, TrendingUp, DollarSign, Globe, BookOpen } from 'lucide-astro';
+
+const allPosts = await getCollection('blog', ({ data }) => {
+  return import.meta.env.PROD ? data.draft !== true && data.archived !== true : true;
+});
+
+const posts = allPosts
+  .filter(p => p.data.pillarId === 'market-arbitrage' && p.data.category !== 'Pillar Hub')
+  .sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime());
+
+const formatDate = (date: Date) =>
+  new Intl.DateTimeFormat('en-US', { month: 'short', day: 'numeric', year: 'numeric' }).format(date);
+
+const calcReadTime = (body: string) => Math.max(1, Math.ceil(body.trim().split(/\s+/).length / 220));
+---
+
+<Layout
+  title="Market Arbitrage: How Expat Founders Capture Information and Financial Edge | ExpatBuildr"
+  description="Market arbitrage guides for expat founders — information asymmetry, financial infrastructure, currency strategy, investing from abroad, and the FEIE breakdown."
+  canonicalUrl="https://expatbuildr.com/blog/market-arbitrage"
+  ogImage="/images/blog/pillars/market-arbitrage-hub.png"
+>
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Market Arbitrage Hub | ExpatBuildr",
+    "description": "Currency strategy, FEIE, investing from abroad, and information arbitrage guides for expat founders building wealth.",
+    "url": "https://expatbuildr.com/blog/market-arbitrage",
+    "publisher": {
+      "@type": "Organization",
+      "name": "ExpatBuildr",
+      "url": "https://expatbuildr.com"
+    },
+    "hasPart": posts.map(p => ({
+      "@type": "BlogPosting",
+      "headline": p.data.title,
+      "url": `https://expatbuildr.com/blog/${p.id.replace(/\.mdx?$/, '')}`,
+      "datePublished": p.data.pubDate.toISOString()
+    }))
+  })} />
+
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <!-- Hero -->
+    <div class="text-center mb-20">
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-400 text-xs uppercase tracking-[0.2em] font-mono mb-8">
+        <TrendingUp size={12} /> Market Arbitrage
+      </div>
+      <h1 class="text-5xl md:text-7xl font-black font-display tracking-tighter text-slate-900 dark:text-white mb-6 uppercase leading-none">
+        FIND THE EDGE.<br /><span class="text-amber-400">CAPTURE THE SPREAD.</span>
+      </h1>
+      <p class="text-xl text-slate-600 dark:text-slate-400 max-w-2xl mx-auto font-inter leading-relaxed mb-8">
+        Market arbitrage is the practice of identifying and capturing value in the gap between where assets, information, or capital are undervalued and where they are not. For expat founders, the opportunities range from currency strategy and cross-border investing to information asymmetry plays that generate income from signals others ignore.
+      </p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="/newsletter" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-amber-500 text-black font-bold text-sm hover:bg-amber-400 transition-all">
+          Join the Newsletter <ArrowRight size={16} />
+        </a>
+        <a href="/shop" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-slate-200 dark:border-white/10 text-slate-700 dark:text-slate-300 font-semibold text-sm hover:border-amber-500/40 transition-all">
+          Browse the Shop
+        </a>
+      </div>
+    </div>
+
+    <!-- Stats -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-20">
+      <div class="glass-card rounded-2xl p-6 border border-amber-500/20">
+        <TrendingUp class="text-amber-400 mb-3" size={24} />
+        <div class="text-3xl font-black text-slate-900 dark:text-white mb-1">4x</div>
+        <div class="text-sm text-slate-600 dark:text-slate-400">Purchasing power differential between USD earnings and Southeast Asian cost of living markets</div>
+      </div>
+      <div class="glass-card rounded-2xl p-6 border border-amber-500/20">
+        <DollarSign class="text-amber-400 mb-3" size={24} />
+        <div class="text-3xl font-black text-slate-900 dark:text-white mb-1">$130K</div>
+        <div class="text-sm text-slate-600 dark:text-slate-400">Foreign Earned Income Exclusion limit for qualifying US expats — tax-free income threshold</div>
+      </div>
+      <div class="glass-card rounded-2xl p-6 border border-amber-500/20">
+        <Globe class="text-amber-400 mb-3" size={24} />
+        <div class="text-3xl font-black text-slate-900 dark:text-white mb-1">12%+</div>
+        <div class="text-sm text-slate-600 dark:text-slate-400">Average annual return available to expat founders reinvesting geo-arbitrage surplus into diversified assets</div>
+      </div>
+    </div>
+
+    <!-- What This Pillar Covers -->
+    <div class="mb-20 prose prose-slate dark:prose-invert max-w-none">
+      <h2 class="text-3xl font-black font-display uppercase tracking-tight text-slate-900 dark:text-white mb-6">What This Pillar Covers</h2>
+      <p class="text-lg text-slate-600 dark:text-slate-400 leading-relaxed mb-4">
+        Markets produce spreads everywhere — between currencies, between information and action, between what skilled labor costs in one geography versus another, between where capital is taxed and where it is not. Expat founders are uniquely positioned to capture multiple spreads simultaneously because they already sit at the intersection of several markets.
+      </p>
+      <p class="text-lg text-slate-600 dark:text-slate-400 leading-relaxed mb-4">
+        The market arbitrage pillar covers the full range of financial and informational edge available to expat founders: how to structure your money across borders, how the Foreign Earned Income Exclusion works for self-employed founders, currency strategy for founders earning in USD and spending in Southeast Asia, how to invest from abroad, and how information asymmetry creates income opportunities that most founders never see.
+      </p>
+      <p class="text-lg text-slate-600 dark:text-slate-400 leading-relaxed">
+        This is the most advanced pillar in the ExpatBuildr stack. The other pillars build the operating system. Market arbitrage is where you learn to make the operating system compound — turning the structural advantages of the expat founder position into permanent, growing wealth rather than just a higher savings rate.
+      </p>
+    </div>
+
+    <!-- Article Index -->
+    <div class="mb-20">
+      <div class="flex items-center gap-3 mb-8">
+        <BookOpen class="text-amber-400" size={20} />
+        <h2 class="text-2xl font-black font-display uppercase tracking-tight text-slate-900 dark:text-white">All Market Arbitrage Guides</h2>
+        <div class="h-px flex-1 bg-slate-200 dark:bg-white/10"></div>
+        <span class="text-xs font-mono text-slate-400">{posts.length} articles</span>
+      </div>
+
+      <div class="space-y-4">
+        {posts.map(post => (
+          <a
+            href={`/blog/${post.id.replace(/\.mdx?$/, '')}`}
+            class="group flex items-start gap-5 p-5 rounded-2xl border border-slate-200 dark:border-white/10 hover:border-amber-500/40 bg-white dark:bg-white/[0.03] hover:bg-amber-500/5 transition-all duration-300"
+          >
+            <div class="shrink-0 w-12 h-12 rounded-xl bg-amber-500/10 flex items-center justify-center">
+              <TrendingUp class="text-amber-400" size={20} />
+            </div>
+            <div class="flex-1 min-w-0">
+              <div class="flex items-center gap-3 mb-1">
+                <span class="text-xs font-mono uppercase tracking-wider text-amber-400 font-semibold">{post.data.category}</span>
+                <span class="text-xs text-slate-400">{formatDate(post.data.pubDate)}</span>
+                <span class="text-xs text-slate-400">{calcReadTime(post.body ?? '')} min read</span>
+              </div>
+              <h3 class="text-base font-bold text-slate-900 dark:text-white group-hover:text-amber-400 transition-colors leading-snug mb-1">{post.data.title}</h3>
+              <p class="text-sm text-slate-500 dark:text-slate-400 line-clamp-2 leading-relaxed">{post.data.description}</p>
+            </div>
+            <ArrowRight class="shrink-0 text-slate-300 dark:text-slate-600 group-hover:text-amber-400 group-hover:translate-x-1 transition-all mt-1" size={18} />
+          </a>
+        ))}
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="rounded-2xl border border-amber-500/20 bg-amber-500/5 p-10 text-center mb-12">
+      <h2 class="text-2xl font-black font-display uppercase tracking-tight text-slate-900 dark:text-white mb-3">Get the Weekly Market Arbitrage Intel</h2>
+      <p class="text-slate-600 dark:text-slate-400 mb-6 max-w-lg mx-auto">Currency plays, investing from abroad, FEIE breakdowns, and information arbitrage strategies for expat founders building wealth — in the weekly newsletter.</p>
+      <a href="/newsletter" class="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-amber-500 text-black font-bold hover:bg-amber-400 transition-all">
+        Join Free <ArrowRight size={16} />
+      </a>
+    </div>
+
+  </div>
+</Layout>
