@@ -39,8 +39,11 @@ Once active income is stabilized, we deploy extra capital into "Micro-SaaS" asse
 ---
 
 ## 🎯 Supporting Articles:
-- **[How to Poach $150k+ Remote Roles Without a Resume]**(/blog/remote-income/micro-saas-launchpad)
-- **[Building a Signal-to-Profit Arbitrage Loop]**(/blog/remote-income/signal-arbitrage-overview)
+- **[How to Start a Remote Micro SaaS for $10k/mo Residual Yield](/blog/remote-income/how-to-start-remote-micro-saas)**
+- **[How to Build a Signal-to-Profit Arbitrage Loop for Daily Gains](/blog/remote-income/build-signal-arbitrage-loop)**
+- **[Building a Remote-First Resume That Gets Callbacks](/blog/remote-income/remote-first-resume-that-gets-callbacks)**
+- **[How to Find Fully Remote Jobs That Never RTO](/blog/remote-income/how-to-find-fully-remote-jobs-that-never-rto)**
+- **[How to Negotiate a Higher Salary for a Remote Job Offer](/blog/remote-income/how-to-negotiate-higher-salary-remote-job-offer)**
 
 ---
 **Build Status**: Operational // **Last Logic Update**: April 2026 // **Architect**: ExpatBuildr

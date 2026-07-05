@@ -39,8 +39,11 @@ We use local-first AI to score every lead on a "Thermal Scale." We only engage "
 ---
 
 ## 🎯 Supporting Articles:
-- **[How to Build a Multi-Vector Intent Scoring Engine]**(/blog/lead-generation/intent-scoring-engine-how-to)
-- **[Scaling Personalization: 20% Reply Rates at Scale]**(/blog/lead-generation/personalization-at-scale-how-to)
+- **[How to Build an Intent-Scoring Engine for 20% Higher Conversion](/blog/lead-generation/build-intent-scoring-engine)**
+- **[How to Scale Personalized Outreach Without Losing the Human Touch](/blog/lead-generation/scaling-personalized-outreach)**
+- **[How to Build a Lead List from Scratch Without Buying Data](/blog/lead-generation/how-to-build-lead-list-without-buying-data)**
+- **[The Reply Rate Formula for Cold Outreach](/blog/lead-generation/reply-rate-formula-cold-outreach)**
+- **[LinkedIn Outreach Sequences That Actually Get Replies](/blog/lead-generation/linkedin-outreach-sequences-that-get-replies)**
 
 ---
 **Build Status**: Operational // **Last Logic Update**: April 2026 // **Architect**: ExpatBuildr

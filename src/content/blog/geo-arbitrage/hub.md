@@ -41,8 +41,11 @@ Living abroad increases your physical and digital attack surface. We apply redun
 ---
 
 ## 🎯 Supporting Articles:
-- **[Expat Business Setup: The Philippines Protocol]**(/blog/geo-arbitrage/philippines-expat-business-setup-guide)
-- **[Hiring and Scaling Remote Teams in ASEAN]**(/blog/geo-arbitrage/remote-team-asean-case-study)
+- **[How to Set Up a Geo-Arbitraged Business in the Philippines](/blog/geo-arbitrage/philippines-business-protocol)**
+- **[How to Scale Remote Teams in ASEAN for Maximum Margin](/blog/geo-arbitrage/scale-remote-teams-asean)**
+- **[How to Calculate Your Geographic Arbitrage Number](/blog/geo-arbitrage/how-to-calculate-geographic-arbitrage-number)**
+- **[Cost of Living Comparison: Philippines vs Thailand vs Vietnam](/blog/geo-arbitrage/cost-of-living-philippines-thailand-vietnam)**
+- **[Austin vs Manila: The Full Cost of Living Breakdown](/blog/geo-arbitrage/austin-vs-manila-cost-of-living)**
 
 ---
 **Build Status**: Operational // **Last Logic Update**: April 2026 // **Architect**: ExpatBuildr
