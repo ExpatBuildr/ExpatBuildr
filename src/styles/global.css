@@ -41,7 +41,11 @@
     color: var(--text-primary);
     scroll-behavior: smooth;
     width: 100%;
-    overflow-x: hidden;
+    max-width: 100%;
+    /* clip is more reliable than hidden on mobile: it prevents rightward
+       drag/rubber-band scroll without creating a scroll container that
+       breaks position:fixed nav alignment */
+    overflow-x: clip;
     overflow-y: scroll;
     /* Android Chrome overlay scrollbar fix - force non-overlay scrollbars */
     -webkit-overflow-scrolling: touch;
@@ -76,8 +80,8 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     width: 100%;
-    max-width: 100vw;
-    overflow-x: hidden;
+    max-width: 100%;
+    overflow-x: clip;
     position: relative;
     color: var(--text-primary);
     background-color: var(--bg-primary);
@@ -642,6 +646,9 @@
   z-index: 2;
   opacity: 0;
   transition: opacity 2s ease-in-out;
+  /* Star box-shadows extend ~1900px right; clip so they can never
+     add to horizontal scroll width on mobile */
+  overflow: hidden;
 }
 
 :root.dark .starfield {
