@@ -2,7 +2,11 @@ import {
   Zap,
   Target,
   Globe,
-  Pencil
+  Pencil,
+  Clock,
+  Sparkles,
+  Heart,
+  Coins
 } from 'lucide-astro';
 
 export const pillars = [
@@ -53,6 +57,54 @@ export const pillars = [
     cta: 'Follow the Build',
     heroImage: '/images/build-in-public-pillar.jpeg',
     longDescription: 'Build in Public documents the real journey — wins, failures, systems, and experiments — of constructing a one-person digital business ecosystem from Southeast Asia. Public execution compounds trust and turns transparency into leverage.'
+  },
+  {
+    id: 'time-arbitrage',
+    name: 'Time Arbitrage',
+    label: 'Async Systems, SOPs & Delegation',
+    description: 'Async systems, SOPs, delegation frameworks, and how to turn timezone differences into a compounding advantage.',
+    icon: Clock,
+    color: 'text-orange-500',
+    accent: 'bg-orange-500/10',
+    cta: 'Build Async Systems',
+    heroImage: '/images/blog/pillars/time-arbitrage-hub.png',
+    longDescription: 'Time arbitrage is the discipline of multiplying your output without multiplying your hours. For expat founders operating across time zones, the right systems, SOPs, and delegation stack turn the timezone gap into a compounding advantage.'
+  },
+  {
+    id: 'ai-arbitrage',
+    name: 'AI Arbitrage',
+    label: 'Tools, Workflows & Multi-Agent Systems',
+    description: 'The AI tools, workflows, and multi-agent systems that give solo expat founders team-size output on a lean budget.',
+    icon: Sparkles,
+    color: 'text-violet-500',
+    accent: 'bg-violet-500/10',
+    cta: 'Build Your AI Stack',
+    heroImage: '/images/blog/pillars/ai-arbitrage-hub.png',
+    longDescription: 'AI arbitrage is the practice of using artificial intelligence to capture capabilities that previously required a full team. For expat founders running lean from Southeast Asia, the right AI stack closes the gap between solo operator and agency-scale output.'
+  },
+  {
+    id: 'health-arbitrage',
+    name: 'Health Arbitrage',
+    label: 'Healthcare, Dental & Wellness Abroad',
+    description: 'Private hospitals, dental tourism, health insurance, and fitness infrastructure for expat founders living abroad.',
+    icon: Heart,
+    color: 'text-emerald-500',
+    accent: 'bg-emerald-500/10',
+    cta: 'Get Health Intel',
+    heroImage: '/images/blog/pillars/health-arbitrage-hub.png',
+    longDescription: 'Health arbitrage is access to world-class healthcare, dental, fitness, and longevity infrastructure at a fraction of what it costs in the United States. For expat founders, staying healthy is not a lifestyle choice — it is operational infrastructure.'
+  },
+  {
+    id: 'market-arbitrage',
+    name: 'Market Arbitrage',
+    label: 'Currency, Investing & Information Edge',
+    description: 'Currency strategy, FEIE, investing from abroad, and information asymmetry plays for expat founders building wealth.',
+    icon: Coins,
+    color: 'text-amber-500',
+    accent: 'bg-amber-500/10',
+    cta: 'Find Your Edge',
+    heroImage: '/images/blog/pillars/market-arbitrage-hub.png',
+    longDescription: 'Market arbitrage is the practice of identifying and capturing value in the gap between where assets, information, or capital are undervalued and where they are not. For expat founders, opportunities range from currency strategy and cross-border investing to information asymmetry plays.'
   }
 ];
 

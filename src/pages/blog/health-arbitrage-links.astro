@@ -1,0 +1,84 @@
+---
+export const prerender = true;
+import Layout from '../../layouts/Layout.astro';
+import { ArrowRight, Heart, BookOpen } from 'lucide-astro';
+---
+
+<Layout
+  title="Health Arbitrage Resources: Healthcare, Dental and Wellness Abroad | ExpatBuildr"
+  description="Everything in the Health Arbitrage pillar in one place — private hospital guides, dental tourism costs, health insurance options, and fitness infrastructure for expat founders."
+  canonicalUrl="https://expatbuildr.com/blog/health-arbitrage-links"
+  ogImage="/images/blog/pillars/health-arbitrage-hub.png"
+>
+
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <!-- Hero -->
+    <div class="text-center mb-20">
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs uppercase tracking-[0.2em] font-mono mb-8">
+        <Heart size={12} /> Health Arbitrage
+      </div>
+      <h1 class="text-5xl md:text-7xl font-black font-display tracking-tighter text-slate-900 dark:text-white mb-6 uppercase leading-none">
+        EVERYTHING<br /><span class="text-emerald-400">HEALTH ARBITRAGE.</span>
+      </h1>
+      <p class="text-xl text-slate-600 dark:text-slate-400 max-w-2xl mx-auto font-inter leading-relaxed mb-8">
+        Every guide and resource in the Health Arbitrage pillar — in one place. Premium healthcare, dental, and fitness infrastructure at local cost.
+      </p>
+    </div>
+
+    <!-- Featured Resource -->
+    <div class="mb-12">
+      <div class="glass-card rounded-2xl p-8 border border-emerald-500/30 bg-emerald-500/5">
+        <div class="flex flex-col md:flex-row md:items-center gap-6">
+          <div class="shrink-0 w-16 h-16 rounded-2xl bg-emerald-500/10 flex items-center justify-center">
+            <Heart class="text-emerald-400" size={28} />
+          </div>
+          <div class="flex-1">
+            <div class="text-xs font-mono uppercase tracking-wider text-emerald-400 font-semibold mb-2">Featured Resource</div>
+            <h2 class="text-2xl font-black font-display uppercase tracking-tight text-slate-900 dark:text-white mb-2">Weekly Newsletter</h2>
+            <p class="text-slate-600 dark:text-slate-400 leading-relaxed mb-4">Private hospital breakdowns, dental tourism guides, and health insurance options for expat founders — delivered weekly.</p>
+            <a href="/newsletter" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-emerald-500 text-white font-bold text-sm hover:bg-emerald-400 transition-all">
+              Join Free <ArrowRight size={16} />
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Content Library -->
+    <div class="mb-16">
+      <div class="flex items-center gap-3 mb-8">
+        <BookOpen class="text-emerald-400" size={20} />
+        <h2 class="text-2xl font-black font-display uppercase tracking-tight text-slate-900 dark:text-white">Content Library</h2>
+        <div class="h-px flex-1 bg-slate-200 dark:bg-white/10"></div>
+      </div>
+
+      <div class="p-4 rounded-xl border border-slate-200 dark:border-white/10">
+        <p class="text-sm text-slate-500 dark:text-slate-400 mb-3">Articles in this pillar are in production:</p>
+        <ul class="space-y-2 list-disc list-inside">
+          <li class="text-sm text-slate-700 dark:text-slate-300">What Is Health Arbitrage and Why Expat Founders Have a Massive Advantage</li>
+          <li class="text-sm text-slate-700 dark:text-slate-300">The Best Private Hospitals for Expats in Southeast Asia</li>
+          <li class="text-sm text-slate-700 dark:text-slate-300">Dental Tourism in the Philippines and Thailand: Real Costs and What to Expect</li>
+          <li class="text-sm text-slate-700 dark:text-slate-300">How to Build a Fitness Routine as a Founder Living Abroad</li>
+          <li class="text-sm text-slate-700 dark:text-slate-300">Health Insurance for Expat Founders: The Full Options Breakdown</li>
+        </ul>
+      </div>
+
+      <div class="mt-6 text-center">
+        <a href="/blog/health-arbitrage" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-slate-200 dark:border-white/10 text-slate-700 dark:text-slate-300 font-semibold text-sm hover:border-emerald-500/40 transition-all">
+          View All Health Arbitrage Guides <ArrowRight size={16} />
+        </a>
+      </div>
+    </div>
+
+    <!-- Newsletter CTA -->
+    <div class="rounded-2xl border border-emerald-500/20 bg-emerald-500/5 p-10 text-center mb-12">
+      <h2 class="text-2xl font-black font-display uppercase tracking-tight text-slate-900 dark:text-white mb-3">Get the Weekly Health Arbitrage Intel</h2>
+      <p class="text-slate-600 dark:text-slate-400 mb-6 max-w-lg mx-auto">Private hospital breakdowns, dental tourism guides, fitness infrastructure, and health insurance options for expat founders — in the weekly newsletter.</p>
+      <a href="/newsletter" class="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-emerald-500 text-white font-bold hover:bg-emerald-400 transition-all">
+        Join Free <ArrowRight size={16} />
+      </a>
+    </div>
+
+  </div>
+</Layout>

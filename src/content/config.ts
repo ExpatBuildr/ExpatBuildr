@@ -10,7 +10,11 @@ const blog = defineCollection({
     pillarId: z.enum([
       'remote-income',
       'lead-generation',
-      'geo-arbitrage'
+      'geo-arbitrage',
+      'time-arbitrage',
+      'ai-arbitrage',
+      'health-arbitrage',
+      'market-arbitrage'
     ]).optional(),
     category: z.string(),
     tags: z.array(z.string()),

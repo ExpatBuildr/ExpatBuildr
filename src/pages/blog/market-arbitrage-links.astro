@@ -1,0 +1,85 @@
+---
+export const prerender = true;
+import Layout from '../../layouts/Layout.astro';
+import { ArrowRight, Coins, BookOpen } from 'lucide-astro';
+---
+
+<Layout
+  title="Market Arbitrage Resources: Finance, Currency and Edge for Expat Founders | ExpatBuildr"
+  description="Everything in the Market Arbitrage pillar in one place — FEIE guides, currency strategy, investing from abroad, information arbitrage plays, and the weekly newsletter."
+  canonicalUrl="https://expatbuildr.com/blog/market-arbitrage-links"
+  ogImage="/images/blog/pillars/market-arbitrage-hub.png"
+>
+
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <!-- Hero -->
+    <div class="text-center mb-20">
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-400 text-xs uppercase tracking-[0.2em] font-mono mb-8">
+        <Coins size={12} /> Market Arbitrage
+      </div>
+      <h1 class="text-5xl md:text-7xl font-black font-display tracking-tighter text-slate-900 dark:text-white mb-6 uppercase leading-none">
+        EVERYTHING<br /><span class="text-amber-400">MARKET ARBITRAGE.</span>
+      </h1>
+      <p class="text-xl text-slate-600 dark:text-slate-400 max-w-2xl mx-auto font-inter leading-relaxed mb-8">
+        Every guide and resource in the Market Arbitrage pillar — in one place. Currency strategy, FEIE, and information edge for expat founders.
+      </p>
+    </div>
+
+    <!-- Featured Resources -->
+    <div class="mb-12 grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="glass-card rounded-2xl p-8 border border-amber-500/30 bg-amber-500/5">
+        <div class="text-xs font-mono uppercase tracking-wider text-amber-400 font-semibold mb-2">Featured Resource</div>
+        <h2 class="text-xl font-black font-display uppercase tracking-tight text-slate-900 dark:text-white mb-2">Weekly Newsletter</h2>
+        <p class="text-slate-600 dark:text-slate-400 leading-relaxed mb-4">Currency plays, investing from abroad, and FEIE breakdowns delivered weekly.</p>
+        <a href="/newsletter" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-amber-500 text-white font-bold text-sm hover:bg-amber-400 transition-all">
+          Join Free <ArrowRight size={14} />
+        </a>
+      </div>
+      <div class="glass-card rounded-2xl p-8 border border-slate-200 dark:border-white/10 hover:border-amber-500/40 transition-all">
+        <div class="text-xs font-mono uppercase tracking-wider text-amber-400 font-semibold mb-2">Shop</div>
+        <h2 class="text-xl font-black font-display uppercase tracking-tight text-slate-900 dark:text-white mb-2">Digital Products</h2>
+        <p class="text-slate-600 dark:text-slate-400 leading-relaxed mb-4">Calculators and tools for founders optimizing across currencies and geographies.</p>
+        <a href="/shop" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-amber-500/10 text-amber-400 font-bold text-sm hover:bg-amber-500/20 transition-all">
+          Browse the Shop <ArrowRight size={14} />
+        </a>
+      </div>
+    </div>
+
+    <!-- Content Library -->
+    <div class="mb-16">
+      <div class="flex items-center gap-3 mb-8">
+        <BookOpen class="text-amber-400" size={20} />
+        <h2 class="text-2xl font-black font-display uppercase tracking-tight text-slate-900 dark:text-white">Content Library</h2>
+        <div class="h-px flex-1 bg-slate-200 dark:bg-white/10"></div>
+      </div>
+
+      <div class="p-4 rounded-xl border border-slate-200 dark:border-white/10">
+        <p class="text-sm text-slate-500 dark:text-slate-400 mb-3">Articles in this pillar are in production:</p>
+        <ul class="space-y-2 list-disc list-inside">
+          <li class="text-sm text-slate-700 dark:text-slate-300">What Is Market Arbitrage and How Expat Founders Use It to Build Wealth Faster</li>
+          <li class="text-sm text-slate-700 dark:text-slate-300">The Expat Founder Money Stack: Banking, Entity, and Tax Setup</li>
+          <li class="text-sm text-slate-700 dark:text-slate-300">How to Invest as a US Expat: What Actually Works From Abroad</li>
+          <li class="text-sm text-slate-700 dark:text-slate-300">Currency Strategy for Founders Earning in USD and Spending in SEA</li>
+          <li class="text-sm text-slate-700 dark:text-slate-300">How the Foreign Earned Income Exclusion Works for Self-Employed Expats</li>
+        </ul>
+      </div>
+
+      <div class="mt-6 text-center">
+        <a href="/blog/market-arbitrage" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-slate-200 dark:border-white/10 text-slate-700 dark:text-slate-300 font-semibold text-sm hover:border-amber-500/40 transition-all">
+          View All Market Arbitrage Guides <ArrowRight size={16} />
+        </a>
+      </div>
+    </div>
+
+    <!-- Newsletter CTA -->
+    <div class="rounded-2xl border border-amber-500/20 bg-amber-500/5 p-10 text-center mb-12">
+      <h2 class="text-2xl font-black font-display uppercase tracking-tight text-slate-900 dark:text-white mb-3">Get the Weekly Market Arbitrage Intel</h2>
+      <p class="text-slate-600 dark:text-slate-400 mb-6 max-w-lg mx-auto">Currency plays, investing from abroad, FEIE breakdowns, and information arbitrage strategies — every week, free.</p>
+      <a href="/newsletter" class="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-amber-500 text-white font-bold hover:bg-amber-400 transition-all">
+        Join Free <ArrowRight size={16} />
+      </a>
+    </div>
+
+  </div>
+</Layout>
