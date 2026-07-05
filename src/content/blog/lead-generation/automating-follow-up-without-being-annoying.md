@@ -1,7 +1,7 @@
 ---
 title: "Automating Follow-Up Without Being Annoying"
 description: "How to automate follow-up sequences that get replies without burning your prospects — timing, messaging, and the systems that keep outreach human at scale."
-pubDate: 2026-06-05
+pubDate: 2026-07-03
 author: "ExpatBuildr"
 pillarId: "lead-generation"
 category: "Guide"
@@ -18,7 +18,7 @@ secondaryKeywords:
   - "B2B follow-up sequence 2026"
   - "how many follow-up emails to send"
 searchIntent: "problem-solving"
-draft: true
+draft: false
 archived: false
 noindex: false
 ---
