@@ -175,7 +175,7 @@ ${generatedFiles.map(f => `  <sitemap>
 async function pingIndexNow(urls) {
     if (urls.length === 0) return;
 
-    const INDEX_NOW_KEY = '2a5f277633d4400ea231882d7d58ae69';
+    const INDEX_NOW_KEY = '4721511478b74020a71bca4768c72299';
     const host = 'expatbuildr.com';
     const payload = {
         host,
