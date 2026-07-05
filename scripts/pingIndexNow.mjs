@@ -3,13 +3,6 @@ import path from 'path';
 
 const INDEXNOW_KEY = "339882e4b460f2a1d41095797bf60c40";
 const HOST = "expatbuildr.com";
-const INDEXNOW_API = "https://www.bing.com/indexnow";
-
-async function getPillarFolders() {
-    const blogDir = path.join(process.cwd(), 'src/content/blog');
-    const folders = await fs.readdir(blogDir);
-    return folders;
-}
 
 async function getAllPosts() {
     const blogDir = path.join(process.cwd(), 'src/content/blog');
@@ -36,7 +29,7 @@ async function getAllPosts() {
 
 async function ping() {
     console.log('🚀 IndexNow Automation: Syncing content to search engines...');
-    
+
     try {
         const urlList = await getAllPosts();
         urlList.push(`https://${HOST}/`);
@@ -48,24 +41,45 @@ async function ping() {
             host: HOST,
             key: INDEXNOW_KEY,
             keyLocation: `https://${HOST}/${INDEXNOW_KEY}.txt`,
-            urlList: urlList
+            urlList: urlList.slice(0, 10000)
         };
 
-        const response = await fetch(INDEXNOW_API, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json; charset=utf-8'
-            },
-            body: JSON.stringify(payload)
-        });
-
-        if (response.ok) {
-            console.log('✅ IndexNow Success: Content propagated to Bing, Yandex, and Seznam.');
-        } else {
-            console.error(`❌ IndexNow Failed: ${response.status} ${response.statusText}`);
+        // Bing IndexNow
+        try {
+            const res = await fetch('https://www.bing.com/indexnow', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json; charset=utf-8' },
+                body: JSON.stringify(payload)
+            });
+            if (res.ok || res.status === 202) {
+                console.log('✅ IndexNow Success: Content propagated to Bing, Yandex, and Seznam.');
+            } else {
+                const body = await res.text();
+                console.warn(`⚠️  IndexNow: Bing responded ${res.status} — ${body}`);
+            }
+        } catch (err) {
+            console.warn('⚠️  IndexNow: Bing ping failed (non-blocking):', err.message);
         }
+
+        // IndexNow.org (broadcasts to multiple engines)
+        try {
+            const res2 = await fetch('https://api.indexnow.org/indexnow', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json; charset=utf-8' },
+                body: JSON.stringify(payload)
+            });
+            if (res2.ok || res2.status === 202) {
+                console.log('✅ IndexNow.org: Submission accepted.');
+            } else {
+                const body2 = await res2.text();
+                console.warn(`⚠️  IndexNow.org responded ${res2.status} — ${body2}`);
+            }
+        } catch (err2) {
+            console.warn('⚠️  IndexNow.org ping failed (non-blocking):', err2.message);
+        }
+
     } catch (err) {
-        console.error('❌ IndexNow Automation Error:', err.message);
+        console.warn('⚠️  IndexNow Automation Error (non-blocking):', err.message);
     }
 }
 
