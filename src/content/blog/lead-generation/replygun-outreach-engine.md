@@ -4,7 +4,7 @@ description: "Stop sending spam. Start sending signals. We build autonomous outb
 pubDate: 2026-04-27
 author: "ExpatBuildr"
 pillarId: "lead-generation"
-category: "Service"
+category: "Automation"
 tags: ["Cold Outreach", "ReplyGun", "Lead Generation", "Outbound", "Automation"]
 ogImage: "/images/lead-gen.jpg"
 heroImage: "/images/lead-gen.jpg"

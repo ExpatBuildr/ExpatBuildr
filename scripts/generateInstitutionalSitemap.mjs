@@ -159,66 +159,6 @@ ${generatedFiles.map(f => `  <sitemap>
     
     fs.writeFileSync(path.join(DIST_DIR, indexFileName), indexContent);
     console.log(`🏆 Mastersheet Complete: ${indexFileName}`);
-
-    // Ping IndexNow with all URLs from all sources only in production/CI
-    if (process.env.CI || process.env.NODE_ENV === 'production' || process.env.CF_PAGES) {
-        const allUrls = [
-            ...Object.values(silos).flat(),
-            ...astroUrls
-        ];
-        await pingIndexNow(allUrls);
-    } else {
-        console.log('⏭️  Skipping IndexNow ping for local development build.');
-    }
-}
-
-async function pingIndexNow(urls) {
-    if (urls.length === 0) return;
-
-    const INDEX_NOW_KEY = '4721511478b74020a71bca4768c72299';
-    const host = 'expatbuildr.com';
-    const payload = {
-        host,
-        key: INDEX_NOW_KEY,
-        keyLocation: `https://${host}/${INDEX_NOW_KEY}.txt`,
-        urlList: urls.slice(0, 10000)
-    };
-
-    // Submit to Bing IndexNow
-    console.log(`🚀 IndexNow: Submitting ${urls.length} URLs to Bing...`);
-    try {
-        const res = await fetch('https://www.bing.com/indexnow', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json; charset=utf-8' },
-            body: JSON.stringify(payload)
-        });
-        if (res.ok || res.status === 202) {
-            console.log('✅ IndexNow: Bing accepted the submission.');
-        } else {
-            const body = await res.text();
-            console.warn(`⚠️  IndexNow: Bing responded ${res.status} — ${body}`);
-        }
-    } catch (err) {
-        console.warn('⚠️  IndexNow: Bing ping failed (non-blocking):', err.message);
-    }
-
-    // Submit to IndexNow.org (broadcasts to Yandex + Seznam + others)
-    console.log(`🚀 IndexNow: Submitting ${urls.length} URLs to IndexNow.org...`);
-    try {
-        const res2 = await fetch('https://api.indexnow.org/indexnow', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json; charset=utf-8' },
-            body: JSON.stringify(payload)
-        });
-        if (res2.ok || res2.status === 202) {
-            console.log('✅ IndexNow: IndexNow.org accepted the submission.');
-        } else {
-            const body2 = await res2.text();
-            console.warn(`⚠️  IndexNow: IndexNow.org responded ${res2.status} — ${body2}`);
-        }
-    } catch (err2) {
-        console.warn('⚠️  IndexNow: IndexNow.org ping failed (non-blocking):', err2.message);
-    }
 }
 
 run().catch(console.error);

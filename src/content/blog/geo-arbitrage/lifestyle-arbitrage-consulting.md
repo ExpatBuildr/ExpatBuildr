@@ -4,7 +4,7 @@ description: "Earn in the West, live in the East. We consult on the technical an
 pubDate: 2026-04-12
 author: "ExpatBuildr"
 pillarId: "geo-arbitrage"
-category: "Service"
+category: "Deep Dive"
 tags: ["Geo-Arbitrage", "Lifestyle Design", "Philippines", "Sovereign Living", "Consulting"]
 ogImage: "/images/geo-arbitrage.jpg"
 heroImage: "/images/geo-arbitrage.jpg"

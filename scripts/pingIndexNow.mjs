@@ -1,7 +1,7 @@
 import { promises as fs } from 'fs';
 import path from 'path';
 
-const INDEXNOW_KEY = "4721511478b74020a71bca4768c72299";
+const INDEXNOW_KEY = "eb8248d2036248cc8da2a80695123d9b";
 const HOST = "expatbuildr.com";
 
 async function getAllPosts() {
