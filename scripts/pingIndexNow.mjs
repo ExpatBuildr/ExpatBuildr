@@ -1,8 +1,11 @@
 import { promises as fs } from 'fs';
 import path from 'path';
 
-const INDEXNOW_KEY = "eb8248d2036248cc8da2a80695123d9b";
+const INDEXNOW_KEY = "a9b6d2b68f724b0492cc76188c479e0e";
 const HOST = "expatbuildr.com";
+// TEMP: new key just issued by Bing Webmaster Tools — submit only the homepage
+// until Bing verifies this key, then switch back to the full bulk urlList below.
+const SINGLE_URL_TRUST_BUILD = true;
 
 async function getAllPosts() {
     const blogDir = path.join(process.cwd(), 'src/content/blog');
@@ -31,9 +34,14 @@ async function ping() {
     console.log('🚀 IndexNow Automation: Syncing content to search engines...');
 
     try {
-        const urlList = await getAllPosts();
+        let urlList = await getAllPosts();
         urlList.push(`https://${HOST}/`);
         urlList.push(`https://${HOST}/blog/`);
+
+        if (SINGLE_URL_TRUST_BUILD) {
+            urlList = [`https://${HOST}/`];
+            console.log('🔑 Trust-building submission: sending only the homepage while the new key verifies.');
+        }
 
         console.log(`Found ${urlList.length} unique nodes to index.`);
 
