@@ -34,15 +34,18 @@ async function ping() {
     console.log('🚀 IndexNow Automation: Syncing content to search engines...');
 
     try {
-        let urlList = await getAllPosts();
-        urlList.push(`https://${HOST}/`);
-        urlList.push(`https://${HOST}/blog/`);
+        let urlList;
 
         if (SINGLE_URL_TRUST_BUILD) {
-            // Use a genuinely unindexed URL, not the homepage — Bing already
-            // knows the homepage from normal crawling, so submitting it proves nothing.
+            // Use a genuinely unindexed URL, not the homepage/contact/newsletter —
+            // those are already indexed by Bing independent of IndexNow, so
+            // submitting them would not prove the new key actually works.
             urlList = [`https://${HOST}/blog/ai-arbitrage/ai-chief-of-staff-for-your-business`];
-            console.log('🔑 Trust-building submission: sending one unindexed article while the new key verifies.');
+            console.log('🔑 Trust-building submission: sending ONLY one unindexed article while the new key verifies.');
+        } else {
+            urlList = await getAllPosts();
+            urlList.push(`https://${HOST}/`);
+            urlList.push(`https://${HOST}/blog/`);
         }
 
         console.log(`Found ${urlList.length} unique nodes to index.`);
