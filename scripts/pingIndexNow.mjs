@@ -39,8 +39,10 @@ async function ping() {
         urlList.push(`https://${HOST}/blog/`);
 
         if (SINGLE_URL_TRUST_BUILD) {
-            urlList = [`https://${HOST}/`];
-            console.log('🔑 Trust-building submission: sending only the homepage while the new key verifies.');
+            // Use a genuinely unindexed URL, not the homepage — Bing already
+            // knows the homepage from normal crawling, so submitting it proves nothing.
+            urlList = [`https://${HOST}/blog/ai-arbitrage/ai-chief-of-staff-for-your-business`];
+            console.log('🔑 Trust-building submission: sending one unindexed article while the new key verifies.');
         }
 
         console.log(`Found ${urlList.length} unique nodes to index.`);
