@@ -1,7 +1,7 @@
 import { promises as fs } from 'fs';
 import path from 'path';
 
-const INDEXNOW_KEY = "a9b6d2b68f724b0492cc76188c479e0e";
+const INDEXNOW_KEY = process.env.INDEXNOW_KEY || "a9b6d2b68f724b0492cc76188c479e0e";
 const HOST = "expatbuildr.com";
 // TEMP: new key just issued by Bing Webmaster Tools — submit only the homepage
 // until Bing verifies this key, then switch back to the full bulk urlList below.
