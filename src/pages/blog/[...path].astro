@@ -208,7 +208,7 @@ const postUrl = type === 'post' ? new URL(`/blog/${post.id.replace(/\.mdx?$/, ''
                         </span>
                         <a href="https://x.com/expatbuildr" target="_blank" class="flex items-center gap-2 hover:text-accent-blue transition-colors cursor-pointer group/author">
                             <User size={14} class="text-pink-500 group-hover/author:text-accent-blue transition-colors" />
-                            {post.data.author}
+                            {postAuthor?.name || post.data.author}
                         </a>
                         <span class="flex items-center gap-2">
                             <Tag size={14} class="text-accent-cyan" />
