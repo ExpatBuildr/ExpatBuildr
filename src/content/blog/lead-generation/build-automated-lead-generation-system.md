@@ -7,8 +7,8 @@ pillarId: "lead-generation"
 category: "Automation"
 gated: true
 tags: ["automated lead generation", "lead generation system", "outreach automation", "expat founder lead gen", "automated prospecting"]
-ogImage: "/images/blog/pillars/lead-generation-hub.png"
-heroImage: "/images/blog/pillars/lead-generation-hub.png"
+ogImage: "/images/lead-gen.jpg"
+heroImage: "/images/lead-gen.jpg"
 canonicalUrl: "https://expatbuildr.com/blog/lead-generation/build-automated-lead-generation-system"
 primaryKeyword: "how to build an automated lead generation system"
 secondaryKeywords: ["automated lead generation system", "build outreach automation", "lead generation automation", "automated prospecting system", "outbound automation founder"]

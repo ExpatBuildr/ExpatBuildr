@@ -7,8 +7,8 @@ pillarId: "lead-generation"
 category: "Guide"
 gated: true
 tags: ["lead generation agency", "start agency from zero", "build lead gen agency", "outbound agency", "expat founder agency"]
-ogImage: "/images/blog/pillars/lead-generation-hub.png"
-heroImage: "/images/blog/pillars/lead-generation-hub.png"
+ogImage: "/images/lead-gen.jpg"
+heroImage: "/images/lead-gen.jpg"
 canonicalUrl: "https://expatbuildr.com/blog/lead-generation/build-lead-generation-agency-from-zero"
 primaryKeyword: "how to build a lead generation agency from zero"
 secondaryKeywords: ["start lead generation agency", "build outbound agency", "lead gen agency model", "expat founder agency", "lead generation business"]

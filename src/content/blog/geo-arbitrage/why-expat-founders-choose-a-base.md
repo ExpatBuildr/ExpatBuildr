@@ -6,8 +6,8 @@ author: "ExpatBuildr"
 pillarId: "geo-arbitrage"
 category: "Guide"
 tags: ["expat founder base country", "why choose one base", "expat founder vs nomad", "base country strategy", "long term expat base"]
-ogImage: "/images/blog/pillars/geo-arbitrage-hub.png"
-heroImage: "/images/blog/pillars/geo-arbitrage-hub.png"
+ogImage: "/images/geo-arbitrage.jpg"
+heroImage: "/images/geo-arbitrage.jpg"
 canonicalUrl: "https://expatbuildr.com/blog/geo-arbitrage/why-expat-founders-choose-a-base"
 primaryKeyword: "why expat founders choose a base country instead of constantly moving"
 secondaryKeywords: ["expat founder base country", "why settle in one country abroad", "base country vs nomadic", "long term expat base strategy", "choosing base country expat founder"]

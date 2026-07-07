@@ -7,8 +7,8 @@ pillarId: "remote-income"
 category: "Guide"
 gated: true
 tags: ["remote productivity", "time zones remote work", "async productivity", "expat founder productivity", "remote work focus"]
-ogImage: "/images/blog/pillars/remote-income-hub.png"
-heroImage: "/images/blog/pillars/remote-income-hub.png"
+ogImage: "/images/remote-work.jpg"
+heroImage: "/images/remote-work.jpg"
 canonicalUrl: "https://expatbuildr.com/blog/remote-income/stay-productive-remotely-across-time-zones"
 primaryKeyword: "how to stay productive working remotely across time zones"
 secondaryKeywords: ["remote work productivity time zones", "async work productivity", "expat founder focus", "deep work remote", "time zone productivity system"]

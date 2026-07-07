@@ -7,8 +7,8 @@ pillarId: "remote-income"
 category: "Guide"
 gated: true
 tags: ["async remote work tools", "remote team tools", "best async tools", "remote work stack", "distributed team tools"]
-ogImage: "/images/blog/pillars/remote-income-hub.png"
-heroImage: "/images/blog/pillars/remote-income-hub.png"
+ogImage: "/images/remote-work.jpg"
+heroImage: "/images/remote-work.jpg"
 canonicalUrl: "https://expatbuildr.com/blog/remote-income/best-remote-work-tools-async-teams"
 primaryKeyword: "best remote work tools for async teams"
 secondaryKeywords: ["async team tools", "remote work tool stack", "distributed team productivity tools", "async communication tools", "remote collaboration tools"]

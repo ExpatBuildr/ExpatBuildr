@@ -7,8 +7,8 @@ pillarId: "geo-arbitrage"
 category: "Guide"
 gated: true
 tags: ["move to Southeast Asia remote worker", "Southeast Asia relocation checklist", "remote worker relocation SEA", "how to move abroad remote work", "digital nomad Southeast Asia"]
-ogImage: "/images/blog/pillars/geo-arbitrage-hub.png"
-heroImage: "/images/blog/pillars/geo-arbitrage-hub.png"
+ogImage: "/images/geo-arbitrage.jpg"
+heroImage: "/images/geo-arbitrage.jpg"
 canonicalUrl: "https://expatbuildr.com/blog/geo-arbitrage/how-to-move-to-southeast-asia-remote-worker-checklist"
 primaryKeyword: "how to move to Southeast Asia as a remote worker"
 secondaryKeywords: ["Southeast Asia relocation guide", "remote worker visa SEA", "moving abroad remote work checklist", "digital nomad relocation", "expat remote worker Southeast Asia"]

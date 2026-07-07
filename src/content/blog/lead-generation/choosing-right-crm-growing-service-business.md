@@ -7,8 +7,8 @@ pillarId: "lead-generation"
 category: "Guide"
 gated: true
 tags: ["CRM for service business", "choosing a CRM", "best CRM small business", "CRM comparison", "expat founder CRM"]
-ogImage: "/images/blog/pillars/lead-generation-hub.png"
-heroImage: "/images/blog/pillars/lead-generation-hub.png"
+ogImage: "/images/lead-gen.jpg"
+heroImage: "/images/lead-gen.jpg"
 canonicalUrl: "https://expatbuildr.com/blog/lead-generation/choosing-right-crm-growing-service-business"
 primaryKeyword: "choosing the right CRM for a growing service business"
 secondaryKeywords: ["best CRM service business", "CRM selection guide", "CRM for small agency", "HubSpot vs GoHighLevel", "expat founder CRM choice"]

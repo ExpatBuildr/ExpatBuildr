@@ -7,8 +7,8 @@ pillarId: "geo-arbitrage"
 category: "Deep Dive"
 gated: true
 tags: ["best neighborhoods Phuket remote workers", "where to live Phuket", "Phuket digital nomad", "remote work Phuket Thailand", "Phuket expat areas"]
-ogImage: "/images/blog/pillars/geo-arbitrage-hub.png"
-heroImage: "/images/blog/pillars/geo-arbitrage-hub.png"
+ogImage: "/images/geo-arbitrage.jpg"
+heroImage: "/images/geo-arbitrage.jpg"
 canonicalUrl: "https://expatbuildr.com/blog/geo-arbitrage/best-neighborhoods-remote-workers-phuket"
 primaryKeyword: "best neighborhoods for remote workers in Phuket"
 secondaryKeywords: ["Phuket neighborhoods remote work", "where to stay Phuket long term", "Phuket digital nomad areas", "Phuket expat cost of living", "Rawai Phuket remote worker"]

@@ -7,8 +7,8 @@ pillarId: "geo-arbitrage"
 category: "Deep Dive"
 gated: true
 tags: ["US remote worker taxes abroad", "banking abroad remote worker", "expat banking US", "foreign earned income exclusion", "money management living abroad"]
-ogImage: "/images/blog/pillars/geo-arbitrage-hub.png"
-heroImage: "/images/blog/pillars/geo-arbitrage-hub.png"
+ogImage: "/images/geo-arbitrage.jpg"
+heroImage: "/images/geo-arbitrage.jpg"
 canonicalUrl: "https://expatbuildr.com/blog/geo-arbitrage/banking-taxes-money-us-remote-workers-living-abroad"
 primaryKeyword: "banking taxes and money for US remote workers living abroad"
 secondaryKeywords: ["US expat taxes remote work", "banking setup living abroad", "FEIE remote worker", "foreign bank account US citizen", "money management expat remote worker"]

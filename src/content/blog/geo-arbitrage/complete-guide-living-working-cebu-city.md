@@ -7,8 +7,8 @@ pillarId: "geo-arbitrage"
 category: "Deep Dive"
 gated: true
 tags: ["Cebu City remote work", "living Cebu City", "expat Cebu guide", "remote worker Cebu", "Cebu Philippines expat"]
-ogImage: "/images/blog/pillars/geo-arbitrage-hub.png"
-heroImage: "/images/blog/pillars/geo-arbitrage-hub.png"
+ogImage: "/images/geo-arbitrage.jpg"
+heroImage: "/images/geo-arbitrage.jpg"
 canonicalUrl: "https://expatbuildr.com/blog/geo-arbitrage/complete-guide-living-working-cebu-city"
 primaryKeyword: "complete guide living and working in Cebu City remote worker"
 secondaryKeywords: ["Cebu City remote work guide", "living in Cebu Philippines", "expat guide Cebu City", "remote worker Cebu Philippines", "Cebu City cost of living expat"]

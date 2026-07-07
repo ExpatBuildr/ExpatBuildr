@@ -7,8 +7,8 @@ pillarId: "lead-generation"
 category: "Guide"
 gated: true
 tags: ["lead qualification", "qualify leads", "sales qualification framework", "BANT qualification", "expat founder sales"]
-ogImage: "/images/blog/pillars/lead-generation-hub.png"
-heroImage: "/images/blog/pillars/lead-generation-hub.png"
+ogImage: "/images/lead-gen.jpg"
+heroImage: "/images/lead-gen.jpg"
 canonicalUrl: "https://expatbuildr.com/blog/lead-generation/qualify-leads-only-talk-to-people-who-can-buy"
 primaryKeyword: "how to qualify leads so you only talk to people who can buy"
 secondaryKeywords: ["lead qualification framework", "qualify sales leads", "sales qualification process", "how to qualify prospects", "lead scoring qualification"]

@@ -7,8 +7,8 @@ pillarId: "lead-generation"
 category: "Guide"
 gated: true
 tags: ["referral system", "referral marketing", "inbound without ads", "word of mouth marketing", "expat founder referrals"]
-ogImage: "/images/blog/pillars/lead-generation-hub.png"
-heroImage: "/images/blog/pillars/lead-generation-hub.png"
+ogImage: "/images/lead-gen.jpg"
+heroImage: "/images/lead-gen.jpg"
 canonicalUrl: "https://expatbuildr.com/blog/lead-generation/build-referral-system-inbound-without-ads"
 primaryKeyword: "how to build a referral system that generates inbound without ads"
 secondaryKeywords: ["referral system service business", "build referral program", "word of mouth lead generation", "inbound referrals founder", "referral marketing small business"]

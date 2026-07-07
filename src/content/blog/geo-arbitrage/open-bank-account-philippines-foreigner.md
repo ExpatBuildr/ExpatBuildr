@@ -7,8 +7,8 @@ pillarId: "geo-arbitrage"
 category: "Guide"
 gated: true
 tags: ["open bank account Philippines foreigner", "Philippine bank account expat", "BDO foreigner account", "banking Philippines expat", "expat banking Philippines"]
-ogImage: "/images/blog/pillars/geo-arbitrage-hub.png"
-heroImage: "/images/blog/pillars/geo-arbitrage-hub.png"
+ogImage: "/images/geo-arbitrage.jpg"
+heroImage: "/images/geo-arbitrage.jpg"
 canonicalUrl: "https://expatbuildr.com/blog/geo-arbitrage/open-bank-account-philippines-foreigner"
 primaryKeyword: "how to open a bank account in the Philippines as a foreigner"
 secondaryKeywords: ["Philippine bank account foreigner", "open bank account Philippines expat", "BDO account foreigner", "banking Philippines remote worker", "expat founder banking Philippines"]

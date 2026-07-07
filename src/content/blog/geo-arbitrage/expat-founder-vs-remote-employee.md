@@ -6,8 +6,8 @@ author: "ExpatBuildr"
 pillarId: "geo-arbitrage"
 category: "Guide"
 tags: ["expat founder vs remote employee", "remote employee abroad", "expat founder equity", "remote work vs founder", "location independent career vs business"]
-ogImage: "/images/blog/pillars/geo-arbitrage-hub.png"
-heroImage: "/images/blog/pillars/geo-arbitrage-hub.png"
+ogImage: "/images/geo-arbitrage.jpg"
+heroImage: "/images/geo-arbitrage.jpg"
 canonicalUrl: "https://expatbuildr.com/blog/geo-arbitrage/expat-founder-vs-remote-employee"
 primaryKeyword: "expat founder vs remote employee"
 secondaryKeywords: ["remote employee abroad vs founder", "expat remote worker vs entrepreneur", "geo-arbitrage employee vs founder", "remote job vs own business abroad", "expat career vs expat founder"]

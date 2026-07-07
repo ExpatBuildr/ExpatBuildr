@@ -6,8 +6,8 @@ author: "ExpatBuildr"
 pillarId: "geo-arbitrage"
 category: "Guide"
 tags: ["expat founder mindset", "expat founder psychology", "building from abroad", "expat entrepreneur mindset", "location independent mindset"]
-ogImage: "/images/blog/pillars/geo-arbitrage-hub.png"
-heroImage: "/images/blog/pillars/geo-arbitrage-hub.png"
+ogImage: "/images/geo-arbitrage.jpg"
+heroImage: "/images/geo-arbitrage.jpg"
 canonicalUrl: "https://expatbuildr.com/blog/geo-arbitrage/expat-founder-mindset"
 primaryKeyword: "expat founder mindset"
 secondaryKeywords: ["expat founder psychology", "building abroad mindset", "location independent founder mindset", "expat entrepreneur thinking", "expat founder vs nomad mindset"]

@@ -6,8 +6,8 @@ author: "ExpatBuildr"
 pillarId: "geo-arbitrage"
 category: "Deep Dive"
 tags: ["problems with digital nomad lifestyle", "digital nomad downsides", "digital nomad tax problems", "digital nomad reality", "why digital nomad lifestyle fails"]
-ogImage: "/images/blog/pillars/geo-arbitrage-hub.png"
-heroImage: "/images/blog/pillars/geo-arbitrage-hub.png"
+ogImage: "/images/geo-arbitrage.jpg"
+heroImage: "/images/geo-arbitrage.jpg"
 canonicalUrl: "https://expatbuildr.com/blog/geo-arbitrage/problems-with-being-a-digital-nomad"
 primaryKeyword: "real problems with being a digital nomad that nobody talks about"
 secondaryKeywords: ["digital nomad problems", "digital nomad lifestyle downsides", "problems digital nomad tax", "digital nomad reality check", "why digital nomad fails long term"]

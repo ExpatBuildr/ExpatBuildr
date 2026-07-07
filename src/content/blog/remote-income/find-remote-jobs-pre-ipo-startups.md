@@ -7,8 +7,8 @@ pillarId: "remote-income"
 category: "Guide"
 gated: true
 tags: ["pre-IPO remote jobs", "startup remote jobs", "remote work equity", "find startup jobs", "expat founder remote income"]
-ogImage: "/images/blog/pillars/remote-income-hub.png"
-heroImage: "/images/blog/pillars/remote-income-hub.png"
+ogImage: "/images/remote-work.jpg"
+heroImage: "/images/remote-work.jpg"
 canonicalUrl: "https://expatbuildr.com/blog/remote-income/find-remote-jobs-pre-ipo-startups"
 primaryKeyword: "how to find remote jobs at pre-IPO startups"
 secondaryKeywords: ["pre-IPO startup remote jobs", "remote startup equity", "find startup jobs remote", "pre-IPO remote work", "startup remote hiring"]

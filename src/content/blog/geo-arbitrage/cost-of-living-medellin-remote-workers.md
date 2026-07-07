@@ -7,8 +7,8 @@ pillarId: "geo-arbitrage"
 category: "Deep Dive"
 gated: true
 tags: ["Medellín cost of living", "Medellín remote work", "Medellín expat guide", "Colombia remote worker", "cost of living Medellín"]
-ogImage: "/images/blog/pillars/geo-arbitrage-hub.png"
-heroImage: "/images/blog/pillars/geo-arbitrage-hub.png"
+ogImage: "/images/geo-arbitrage.jpg"
+heroImage: "/images/geo-arbitrage.jpg"
 canonicalUrl: "https://expatbuildr.com/blog/geo-arbitrage/cost-of-living-medellin-remote-workers"
 primaryKeyword: "cost of living Medellín for remote workers"
 secondaryKeywords: ["Medellín cost of living expat", "living in Medellín remote work", "Medellín Colombia expat costs", "Medellín monthly expenses remote worker", "Colombia geo-arbitrage"]

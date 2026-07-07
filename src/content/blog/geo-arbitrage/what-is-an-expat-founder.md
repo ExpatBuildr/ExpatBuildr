@@ -6,8 +6,8 @@ author: "ExpatBuildr"
 pillarId: "geo-arbitrage"
 category: "Guide"
 tags: ["expat founder", "what is expat founder", "expat founder vs digital nomad", "expat founder definition", "location independent founder"]
-ogImage: "/images/blog/pillars/geo-arbitrage-hub.png"
-heroImage: "/images/blog/pillars/geo-arbitrage-hub.png"
+ogImage: "/images/geo-arbitrage.jpg"
+heroImage: "/images/geo-arbitrage.jpg"
 canonicalUrl: "https://expatbuildr.com/blog/geo-arbitrage/what-is-an-expat-founder"
 primaryKeyword: "what is an expat founder"
 secondaryKeywords: ["expat founder definition", "expat founder vs digital nomad", "location independent founder", "what does expat founder mean", "expat entrepreneur definition"]

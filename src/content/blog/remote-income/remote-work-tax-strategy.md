@@ -7,8 +7,8 @@ pillarId: "remote-income"
 category: "Deep Dive"
 gated: true
 tags: ["remote work tax deductions", "work from home tax", "expat founder taxes", "self-employed tax deductions", "remote worker tax strategy"]
-ogImage: "/images/blog/pillars/remote-income-hub.png"
-heroImage: "/images/blog/pillars/remote-income-hub.png"
+ogImage: "/images/remote-work.jpg"
+heroImage: "/images/remote-work.jpg"
 canonicalUrl: "https://expatbuildr.com/blog/remote-income/remote-work-tax-strategy-what-you-can-deduct"
 primaryKeyword: "remote work tax strategy what you can deduct"
 secondaryKeywords: ["remote work tax deductions", "work from home deductions", "self-employed remote worker taxes", "home office deduction", "expat tax deductions remote work"]

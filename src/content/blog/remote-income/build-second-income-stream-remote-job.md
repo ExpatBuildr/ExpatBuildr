@@ -7,8 +7,8 @@ pillarId: "remote-income"
 category: "Guide"
 gated: true
 tags: ["second income stream", "side income remote job", "income diversification", "remote work side income", "expat founder income"]
-ogImage: "/images/blog/pillars/remote-income-hub.png"
-heroImage: "/images/blog/pillars/remote-income-hub.png"
+ogImage: "/images/remote-work.jpg"
+heroImage: "/images/remote-work.jpg"
 canonicalUrl: "https://expatbuildr.com/blog/remote-income/build-second-income-stream-remote-job"
 primaryKeyword: "how to build a second income stream while working a remote job"
 secondaryKeywords: ["second income remote worker", "side income while employed", "income diversification remote job", "build income stream alongside job", "remote work second income"]
