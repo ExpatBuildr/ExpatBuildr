@@ -1,7 +1,7 @@
 ---
 title: "The Complete Guide to Living and Working in Cebu City as a Remote Worker"
 description: "Cebu City is one of Southeast Asia's best remote work bases. This guide covers neighborhoods, internet, healthcare, cost of living, and daily life."
-pubDate: 2026-08-02
+pubDate: 2026-07-07
 author: "ExpatBuildr"
 pillarId: "geo-arbitrage"
 category: "Deep Dive"
