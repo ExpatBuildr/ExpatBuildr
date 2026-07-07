@@ -5,6 +5,7 @@ pubDate: 2026-05-09
 author: "ExpatBuildr"
 pillarId: "remote-income"
 category: "Guide"
+gated: true
 tags: ["how to ask for a raise remotely", "remote salary negotiation", "remote work raise", "negotiate salary remote job", "remote income growth"]
 ogImage: "/images/remote-work.jpg"
 heroImage: "/images/remote-work.jpg"

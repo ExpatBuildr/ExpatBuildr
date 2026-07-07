@@ -5,6 +5,7 @@ pubDate: 2026-05-26
 author: "ExpatBuildr"
 pillarId: "lead-generation"
 category: "Automation"
+gated: true
 tags: ["how to use Clay for outreach", "Clay personalized outreach", "Clay.com lead generation", "AI cold email personalization", "Clay outreach automation"]
 ogImage: "/images/lead-gen.jpg"
 heroImage: "/images/lead-gen.jpg"

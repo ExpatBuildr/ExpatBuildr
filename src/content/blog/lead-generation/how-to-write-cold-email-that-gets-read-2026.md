@@ -5,6 +5,7 @@ pubDate: 2026-05-20
 author: "ExpatBuildr"
 pillarId: "lead-generation"
 category: "Guide"
+gated: true
 tags: ["how to write a cold email", "cold email that gets read", "cold email tips 2026", "cold outreach email", "cold email strategy"]
 ogImage: "/images/lead-gen.jpg"
 heroImage: "/images/lead-gen.jpg"

@@ -1,6 +1,6 @@
 ---
 title: "The Expat Founder vs the Remote Employee: Two Different Games"
-description: "Both expat founders and remote employees use geo-arbitrage. But they are playing entirely different games with different rules, different ceilings, and different compounding trajectories."
+description: "Both expat founders and remote employees use geo-arbitrage. But they are playing entirely different games with different rules and ceilings."
 pubDate: 2026-07-07
 author: "ExpatBuildr"
 pillarId: "geo-arbitrage"

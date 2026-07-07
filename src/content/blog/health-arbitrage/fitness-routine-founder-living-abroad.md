@@ -5,6 +5,7 @@ pubDate: 2026-06-27
 author: "ExpatBuildr"
 pillarId: "health-arbitrage"
 category: "Guide"
+gated: true
 tags: ["expat founder fitness", "fitness Southeast Asia", "founder wellness", "gym Cebu", "expat workout routine"]
 ogImage: "/images/blog/pillars/health-arbitrage-hub.png"
 heroImage: "/images/blog/pillars/health-arbitrage-hub.png"

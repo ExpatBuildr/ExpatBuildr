@@ -5,6 +5,7 @@ pubDate: 2026-07-03
 author: "ExpatBuildr"
 pillarId: "ai-arbitrage"
 category: "Automation"
+gated: true
 tags: ["client onboarding automation", "AI onboarding", "expat founder client ops", "automate client onboarding", "AI client experience"]
 ogImage: "/images/blog/pillars/ai-arbitrage-hub.png"
 heroImage: "/images/blog/pillars/ai-arbitrage-hub.png"

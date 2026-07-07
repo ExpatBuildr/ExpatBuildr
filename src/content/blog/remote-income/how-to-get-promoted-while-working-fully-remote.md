@@ -5,6 +5,7 @@ pubDate: 2026-05-13
 author: "ExpatBuildr"
 pillarId: "remote-income"
 category: "Guide"
+gated: true
 tags: ["remote promotion", "remote career growth", "how to get promoted remotely", "remote work visibility", "career advancement remote"]
 ogImage: "/images/remote-work.jpg"
 heroImage: "/images/remote-work.jpg"

@@ -5,6 +5,7 @@ pubDate: 2026-05-30
 author: "ExpatBuildr"
 pillarId: "lead-generation"
 category: "Guide"
+gated: true
 tags: ["B2B landing page", "landing page that converts cold traffic", "B2B conversion optimization", "service business landing page", "cold traffic landing page"]
 ogImage: "/images/lead-gen.jpg"
 heroImage: "/images/lead-gen.jpg"

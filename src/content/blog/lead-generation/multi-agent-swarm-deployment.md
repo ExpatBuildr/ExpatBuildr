@@ -13,7 +13,7 @@ primaryKeyword: "multi-agent AI swarm deployment"
 secondaryKeywords: ["AI orchestration workflow", "autonomous business automation", "agentic AI lead generation", "multi-agent business systems"]
 searchIntent: "informational"
 draft: false
-gated: false
+gated: true
 archived: false
 noindex: false
 ---

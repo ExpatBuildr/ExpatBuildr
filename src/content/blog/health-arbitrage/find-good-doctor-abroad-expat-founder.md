@@ -5,6 +5,7 @@ pubDate: 2026-07-03
 author: "ExpatBuildr"
 pillarId: "health-arbitrage"
 category: "Guide"
+gated: true
 tags: ["find doctor abroad", "expat founder doctor", "medical care Southeast Asia", "expat healthcare", "doctor Philippines Thailand"]
 ogImage: "/images/blog/pillars/health-arbitrage-hub.png"
 heroImage: "/images/blog/pillars/health-arbitrage-hub.png"

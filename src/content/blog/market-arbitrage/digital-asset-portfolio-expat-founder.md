@@ -5,6 +5,7 @@ pubDate: 2026-06-30
 author: "ExpatBuildr"
 pillarId: "market-arbitrage"
 category: "Deep Dive"
+gated: true
 tags: ["digital asset portfolio", "expat founder investing", "digital assets", "market arbitrage", "expat wealth building"]
 ogImage: "/images/blog/pillars/market-arbitrage-hub.png"
 heroImage: "/images/blog/pillars/market-arbitrage-hub.png"

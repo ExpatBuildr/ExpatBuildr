@@ -5,6 +5,7 @@ pubDate: 2026-07-02
 author: "ExpatBuildr"
 pillarId: "market-arbitrage"
 category: "Deep Dive"
+gated: true
 tags: ["FEIE self-employed", "Foreign Earned Income Exclusion", "expat founder taxes", "US expat tax", "self-employed expat tax"]
 ogImage: "/images/blog/pillars/market-arbitrage-hub.png"
 heroImage: "/images/blog/pillars/market-arbitrage-hub.png"

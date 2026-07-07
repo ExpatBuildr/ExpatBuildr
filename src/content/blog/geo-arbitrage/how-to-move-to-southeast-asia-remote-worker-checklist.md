@@ -5,6 +5,7 @@ pubDate: 2026-05-25
 author: "ExpatBuildr"
 pillarId: "geo-arbitrage"
 category: "Guide"
+gated: true
 tags: ["move to Southeast Asia remote worker", "Southeast Asia relocation checklist", "remote worker relocation SEA", "how to move abroad remote work", "digital nomad Southeast Asia"]
 ogImage: "/images/blog/pillars/geo-arbitrage-hub.png"
 heroImage: "/images/blog/pillars/geo-arbitrage-hub.png"

@@ -5,6 +5,7 @@ pubDate: 2026-06-02
 author: "ExpatBuildr"
 pillarId: "remote-income"
 category: "Deep Dive"
+gated: true
 tags: ["freelance vs remote job", "freelance vs full time remote", "which pays more freelance or remote", "remote income comparison", "freelance income vs salary"]
 ogImage: "/images/freelance-vs-remote-featured.jpg"
 heroImage: "/images/freelance-vs-remote-featured.jpg"

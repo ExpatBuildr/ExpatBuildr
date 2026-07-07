@@ -5,6 +5,7 @@ pubDate: 2026-05-28
 author: "ExpatBuildr"
 pillarId: "geo-arbitrage"
 category: "Deep Dive"
+gated: true
 tags: ["US remote worker taxes abroad", "banking abroad remote worker", "expat banking US", "foreign earned income exclusion", "money management living abroad"]
 ogImage: "/images/blog/pillars/geo-arbitrage-hub.png"
 heroImage: "/images/blog/pillars/geo-arbitrage-hub.png"

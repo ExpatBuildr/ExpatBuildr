@@ -5,6 +5,7 @@ pubDate: 2026-06-29
 author: "ExpatBuildr"
 pillarId: "time-arbitrage"
 category: "Guide"
+gated: true
 tags: ["virtual assistant", "expat founder", "Philippines hiring", "remote team", "delegation"]
 ogImage: "/images/blog/pillars/time-arbitrage-hub.png"
 heroImage: "/images/blog/pillars/time-arbitrage-hub.png"

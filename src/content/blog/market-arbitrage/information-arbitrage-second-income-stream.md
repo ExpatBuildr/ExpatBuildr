@@ -5,6 +5,7 @@ pubDate: 2026-07-04
 author: "ExpatBuildr"
 pillarId: "market-arbitrage"
 category: "Guide"
+gated: true
 tags: ["information arbitrage income", "second income stream founder", "expat founder income", "information gap monetization", "market arbitrage income"]
 ogImage: "/images/blog/pillars/market-arbitrage-hub.png"
 heroImage: "/images/blog/pillars/market-arbitrage-hub.png"

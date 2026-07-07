@@ -13,7 +13,7 @@ primaryKeyword: "cold outreach automation service"
 secondaryKeywords: ["ReplyGun engine", "autonomous outbound system", "high reply rate cold email", "conversational strike outreach"]
 searchIntent: "transactional"
 draft: false
-gated: false
+gated: true
 archived: false
 noindex: false
 ---

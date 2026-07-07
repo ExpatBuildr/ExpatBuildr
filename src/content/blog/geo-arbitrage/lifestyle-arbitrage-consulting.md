@@ -13,7 +13,7 @@ primaryKeyword: "geo-arbitrage lifestyle consulting"
 secondaryKeywords: ["sovereign lifestyle design", "philippines compound setup", "lifestyle engineering service", "expat consulting"]
 searchIntent: "transactional"
 draft: false
-gated: false
+gated: true
 archived: false
 noindex: false
 ---

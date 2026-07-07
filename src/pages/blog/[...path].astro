@@ -2,6 +2,7 @@
 export const prerender = true;
 import Layout from '../../layouts/Layout.astro';
 import GatedContent from '../../components/blog/GatedContent.astro';
+import SoftInlineCTA from '../../components/blog/SoftInlineCTA.astro';
 import NicheRedirect from '../../components/blog/NicheRedirect.astro';
 import AuthorCard from '../../components/blog/AuthorCard.astro';
 import ShareButtons from '../../components/blog/ShareButtons.astro';
@@ -161,6 +162,44 @@ const logoUrl = `${siteUrl}/logo.jpg`;
 // Canonical post URL
 const postUrl = type === 'post' ? new URL(`/blog/${post.id.replace(/\.mdx?$/, '')}`, Astro.site || 'https://expatbuildr.com').toString() : '';
 
+// --- Content gate classification ---
+// Rule 1 (hard gate, 65%): category is Guide, Deep Dive, Case Study, or Automation across all pillars
+// Rule 2 (soft inline CTA, 60%, no hard gate): "what-is" slugs, the Expat Founder Identity Cluster,
+// and foundational philosophy/framework pieces — these ungate entirely and never show the hard gate.
+const HARD_GATE_CATEGORIES = new Set(['Guide', 'Deep Dive', 'Case Study', 'Automation']);
+
+const EXPAT_FOUNDER_IDENTITY_CLUSTER = new Set([
+    'what-is-an-expat-founder',
+    'expat-founder-mindset',
+    'is-expat-founder-path-right-for-you',
+    'expat-founder-vs-remote-employee',
+    'why-expat-founders-choose-a-base',
+    'problems-with-being-a-digital-nomad',
+]);
+
+const PHILOSOPHY_FRAMEWORK_SLUGS = new Set([
+    'savings-rate-math-that-changes-everything',
+    'expat-founder-money-stack',
+    'revenue-generating-system-works-while-you-sleep',
+    'longevity-stack-founders-southeast-asia',
+    'expat-founders-stay-mentally-sharp-abroad',
+]);
+
+const postSlug = type === 'post' ? post.id.replace(/\.mdx?$/, '').split('/').pop() ?? '' : '';
+
+const isSoftCTAArticle = type === 'post' && (
+    postSlug.includes('what-is') ||
+    EXPAT_FOUNDER_IDENTITY_CLUSTER.has(postSlug) ||
+    PHILOSOPHY_FRAMEWORK_SLUGS.has(postSlug)
+);
+
+const isHardGateArticle = type === 'post' &&
+    !isSoftCTAArticle &&
+    post.data.gated &&
+    HARD_GATE_CATEGORIES.has(post.data.category);
+
+const gateMode: 'hard' | 'soft' | 'none' = isSoftCTAArticle ? 'soft' : (isHardGateArticle ? 'hard' : 'none');
+
 ---
 
 <Layout
@@ -254,10 +293,14 @@ const postUrl = type === 'post' ? new URL(`/blog/${post.id.replace(/\.mdx?$/, ''
                 <div class="flex-1 min-w-0">
                     <div class="glass-card p-8 md:p-12 rounded-[2.5rem] border border-slate-900/5 dark:border-white/5 bg-slate-900/[0.02] dark:bg-white/[0.02] shadow-2xl relative overflow-hidden">
                         <div class="prose">
-                            {post.data.gated ? (
-                                <GatedContent>
+                            {gateMode === 'hard' ? (
+                                <GatedContent gatePosition={0.65}>
                                     <Content />
                                 </GatedContent>
+                            ) : gateMode === 'soft' ? (
+                                <SoftInlineCTA gatePosition={0.6}>
+                                    <Content />
+                                </SoftInlineCTA>
                             ) : (
                                 <Content />
                             )}

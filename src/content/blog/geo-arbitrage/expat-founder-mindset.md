@@ -1,6 +1,6 @@
 ---
 title: "The Expat Founder Mindset: Why You Are Building a Base, Not Taking a Trip"
-description: "The expat founder mindset is defined by one distinction: you are building, not traveling. Here is what that shift in orientation changes about how you make decisions, manage time, and compound your advantages."
+description: "The expat founder mindset is defined by one distinction: you are building, not traveling. Here is what that shift changes about how you operate."
 pubDate: 2026-07-07
 author: "ExpatBuildr"
 pillarId: "geo-arbitrage"

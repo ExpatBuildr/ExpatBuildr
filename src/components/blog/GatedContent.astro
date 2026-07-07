@@ -1,14 +1,15 @@
 ---
 interface Props {
 	title?: string;
+	gatePosition?: number;
 }
 
-const { title = "Unlock the Full Breakdown" } = Astro.props;
+const { title = "Unlock the Full Breakdown", gatePosition = 0.65 } = Astro.props;
 const html = await Astro.slots.render('default');
 
-// Logic: Attempt to split at approximately 40% of the content
+// Logic: Attempt to split at approximately gatePosition of the content
 // We look for the nearest closing paragraph tag to avoid breaking HTML structure
-const splitTarget = Math.floor(html.length * 0.4);
+const splitTarget = Math.floor(html.length * gatePosition);
 const closingTag = '</p>';
 let splitIndex = html.indexOf(closingTag, splitTarget);
 

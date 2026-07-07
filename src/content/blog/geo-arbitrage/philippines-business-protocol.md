@@ -14,7 +14,7 @@ primaryKeyword: "philippines expat business setup"
 secondaryKeywords: ["overseas banking setup", "asean remote team", "expat tax basics", "asia business compliance"]
 searchIntent: "transactional"
 draft: false
-gated: false
+gated: true
 archived: false
 noindex: false
 ---

@@ -5,6 +5,7 @@ pubDate: 2026-07-02
 author: "ExpatBuildr"
 pillarId: "ai-arbitrage"
 category: "Guide"
+gated: true
 tags: ["AI chief of staff", "AI business assistant", "expat founder AI", "AI operations", "founder AI leverage"]
 ogImage: "/images/blog/pillars/ai-arbitrage-hub.png"
 heroImage: "/images/blog/pillars/ai-arbitrage-hub.png"

@@ -5,6 +5,7 @@ pubDate: 2026-07-04
 author: "ExpatBuildr"
 pillarId: "ai-arbitrage"
 category: "Guide"
+gated: true
 tags: ["AI stack audit", "AI tools review", "expat founder AI", "optimize AI stack", "AI tool evaluation"]
 ogImage: "/images/blog/pillars/ai-arbitrage-hub.png"
 heroImage: "/images/blog/pillars/ai-arbitrage-hub.png"

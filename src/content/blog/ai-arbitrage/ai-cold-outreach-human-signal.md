@@ -5,6 +5,7 @@ pubDate: 2026-06-22
 author: "ExpatBuildr"
 pillarId: "ai-arbitrage"
 category: "Guide"
+gated: true
 tags: ["AI cold outreach", "personalized outreach AI", "Clay outreach", "expat founder outreach", "AI lead generation"]
 ogImage: "/images/blog/pillars/ai-arbitrage-hub.png"
 heroImage: "/images/blog/pillars/ai-arbitrage-hub.png"

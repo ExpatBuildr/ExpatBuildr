@@ -5,6 +5,7 @@ pubDate: 2026-06-30
 author: "ExpatBuildr"
 pillarId: "ai-arbitrage"
 category: "Guide"
+gated: true
 tags: ["prompt engineering", "AI prompting", "expat founder", "AI output quality", "Claude prompts"]
 ogImage: "/images/blog/pillars/ai-arbitrage-hub.png"
 heroImage: "/images/blog/pillars/ai-arbitrage-hub.png"

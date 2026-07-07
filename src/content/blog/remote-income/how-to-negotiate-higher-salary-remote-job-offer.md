@@ -5,6 +5,7 @@ pubDate: 2026-05-06
 author: "ExpatBuildr"
 pillarId: "remote-income"
 category: "Guide"
+gated: true
 tags: ["negotiate remote job offer", "remote salary negotiation", "how to negotiate remote salary", "remote job offer negotiation", "remote work salary"]
 ogImage: "/images/remote-work.jpg"
 heroImage: "/images/remote-work.jpg"

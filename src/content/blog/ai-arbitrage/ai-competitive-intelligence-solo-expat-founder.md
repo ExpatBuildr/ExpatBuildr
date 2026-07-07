@@ -5,6 +5,7 @@ pubDate: 2026-07-01
 author: "ExpatBuildr"
 pillarId: "ai-arbitrage"
 category: "Guide"
+gated: true
 tags: ["AI competitive intelligence", "market research AI", "expat founder research", "competitor monitoring AI", "AI market analysis"]
 ogImage: "/images/blog/pillars/ai-arbitrage-hub.png"
 heroImage: "/images/blog/pillars/ai-arbitrage-hub.png"

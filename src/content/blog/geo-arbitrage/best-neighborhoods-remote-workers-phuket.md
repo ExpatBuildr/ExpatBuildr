@@ -5,6 +5,7 @@ pubDate: 2026-05-30
 author: "ExpatBuildr"
 pillarId: "geo-arbitrage"
 category: "Deep Dive"
+gated: true
 tags: ["best neighborhoods Phuket remote workers", "where to live Phuket", "Phuket digital nomad", "remote work Phuket Thailand", "Phuket expat areas"]
 ogImage: "/images/blog/pillars/geo-arbitrage-hub.png"
 heroImage: "/images/blog/pillars/geo-arbitrage-hub.png"

@@ -5,6 +5,7 @@ pubDate: 2026-07-03
 author: "ExpatBuildr"
 pillarId: "market-arbitrage"
 category: "Deep Dive"
+gated: true
 tags: ["expat founder exit strategy", "build to sell founder", "sell online business", "expat business exit", "digital asset exit"]
 ogImage: "/images/blog/pillars/market-arbitrage-hub.png"
 heroImage: "/images/blog/pillars/market-arbitrage-hub.png"

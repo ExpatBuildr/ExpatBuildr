@@ -14,7 +14,7 @@ primaryKeyword: "remote team philippines case study"
 secondaryKeywords: ["asean remote hiring", "offshore team setup", "ops case study", "geo arbitrage team"]
 searchIntent: "problem-solving"
 draft: false
-gated: false
+gated: true
 archived: false
 noindex: false
 ---

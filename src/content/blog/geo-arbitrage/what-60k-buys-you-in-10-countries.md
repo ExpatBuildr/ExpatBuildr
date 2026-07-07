@@ -5,6 +5,7 @@ pubDate: 2026-05-22
 author: "ExpatBuildr"
 pillarId: "geo-arbitrage"
 category: "Deep Dive"
+gated: true
 tags: ["geo-arbitrage", "$60k salary abroad", "cost of living", "remote work abroad", "geographic arbitrage", "remote salary comparison"]
 ogImage: "/images/geo-arbitrage.jpg"
 heroImage: "/images/geo-arbitrage.jpg"

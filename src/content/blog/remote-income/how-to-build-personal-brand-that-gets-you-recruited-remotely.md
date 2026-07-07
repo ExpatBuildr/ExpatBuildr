@@ -5,6 +5,7 @@ pubDate: 2026-05-28
 author: "ExpatBuildr"
 pillarId: "remote-income"
 category: "Guide"
+gated: true
 tags: ["personal brand remote work", "how to get recruited remotely", "remote work personal brand", "build personal brand online", "remote career visibility"]
 ogImage: "/images/remote-work.jpg"
 heroImage: "/images/remote-work.jpg"

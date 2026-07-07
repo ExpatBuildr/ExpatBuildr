@@ -5,6 +5,7 @@ pubDate: 2026-07-01
 author: "ExpatBuildr"
 pillarId: "health-arbitrage"
 category: "Deep Dive"
+gated: false
 tags: ["longevity founder", "longevity Southeast Asia", "expat founder health", "longevity stack", "health optimization expat"]
 ogImage: "/images/blog/pillars/health-arbitrage-hub.png"
 heroImage: "/images/blog/pillars/health-arbitrage-hub.png"

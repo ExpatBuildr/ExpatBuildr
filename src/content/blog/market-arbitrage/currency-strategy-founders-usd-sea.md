@@ -5,6 +5,7 @@ pubDate: 2026-06-28
 author: "ExpatBuildr"
 pillarId: "market-arbitrage"
 category: "Guide"
+gated: true
 tags: ["currency strategy expat founder", "USD to PHP", "foreign exchange expat", "Wise currency", "expat money management"]
 ogImage: "/images/blog/pillars/market-arbitrage-hub.png"
 heroImage: "/images/blog/pillars/market-arbitrage-hub.png"

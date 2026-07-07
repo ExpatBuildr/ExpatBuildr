@@ -5,6 +5,7 @@ pubDate: 2026-07-03
 author: "ExpatBuildr"
 pillarId: "lead-generation"
 category: "Guide"
+gated: true
 tags: ["follow-up automation", "cold email follow-up", "outreach automation", "lead generation automation", "sales follow-up", "B2B outreach 2026"]
 ogImage: "/images/lead-gen.jpg"
 heroImage: "/images/lead-gen.jpg"

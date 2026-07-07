@@ -5,6 +5,7 @@ pubDate: 2026-07-02
 author: "ExpatBuildr"
 pillarId: "time-arbitrage"
 category: "Guide"
+gated: true
 tags: ["virtual assistant training", "train VA", "expat founder VA", "VA onboarding", "delegation"]
 ogImage: "/images/blog/pillars/time-arbitrage-hub.png"
 heroImage: "/images/blog/pillars/time-arbitrage-hub.png"

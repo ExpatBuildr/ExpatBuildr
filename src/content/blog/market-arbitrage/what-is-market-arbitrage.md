@@ -5,6 +5,7 @@ pubDate: 2026-06-16
 author: "ExpatBuildr"
 pillarId: "market-arbitrage"
 category: "Guide"
+gated: false
 tags: ["market arbitrage", "expat founder wealth", "financial arbitrage", "information arbitrage", "expat founder money"]
 ogImage: "/images/blog/pillars/market-arbitrage-hub.png"
 heroImage: "/images/blog/pillars/market-arbitrage-hub.png"

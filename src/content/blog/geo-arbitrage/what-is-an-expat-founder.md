@@ -1,6 +1,6 @@
 ---
 title: "What Is an Expat Founder and Why It Is Different From Being a Digital Nomad"
-description: "An expat founder is not a digital nomad. The distinction is strategic, financial, and operational. Here is exactly what an expat founder is and why the difference matters."
+description: "An expat founder is not a digital nomad. The distinction is strategic, financial, and operational. Here is what an expat founder actually is."
 pubDate: 2026-07-07
 author: "ExpatBuildr"
 pillarId: "geo-arbitrage"

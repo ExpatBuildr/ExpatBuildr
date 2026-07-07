@@ -5,6 +5,7 @@ pubDate: 2026-07-04
 author: "ExpatBuildr"
 pillarId: "health-arbitrage"
 category: "Guide"
+gated: true
 tags: ["sleep optimization founder", "sleep time zones", "expat founder sleep", "sleep remote founder", "time zone sleep"]
 ogImage: "/images/blog/pillars/health-arbitrage-hub.png"
 heroImage: "/images/blog/pillars/health-arbitrage-hub.png"

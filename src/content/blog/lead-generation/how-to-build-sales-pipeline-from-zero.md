@@ -5,6 +5,7 @@ pubDate: 2026-05-16
 author: "ExpatBuildr"
 pillarId: "lead-generation"
 category: "Guide"
+gated: true
 tags: ["how to build a sales pipeline", "sales pipeline from zero", "build sales pipeline small business", "B2B sales pipeline", "outbound sales pipeline"]
 ogImage: "/images/lead-gen.jpg"
 heroImage: "/images/lead-gen.jpg"

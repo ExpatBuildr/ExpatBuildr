@@ -5,6 +5,7 @@ pubDate: 2026-07-02
 author: "ExpatBuildr"
 pillarId: "health-arbitrage"
 category: "Guide"
+gated: true
 tags: ["expat founder nutrition", "eating well Southeast Asia", "nutrition abroad founder", "healthy eating expat", "food budget Southeast Asia"]
 ogImage: "/images/blog/pillars/health-arbitrage-hub.png"
 heroImage: "/images/blog/pillars/health-arbitrage-hub.png"

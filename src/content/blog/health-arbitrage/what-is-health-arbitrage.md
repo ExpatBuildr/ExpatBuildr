@@ -5,6 +5,7 @@ pubDate: 2026-06-15
 author: "ExpatBuildr"
 pillarId: "health-arbitrage"
 category: "Guide"
+gated: false
 tags: ["health arbitrage", "expat founder health", "healthcare abroad", "medical tourism", "expat wellness"]
 ogImage: "/images/blog/pillars/health-arbitrage-hub.png"
 heroImage: "/images/blog/pillars/health-arbitrage-hub.png"

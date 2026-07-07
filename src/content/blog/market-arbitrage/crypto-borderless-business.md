@@ -5,6 +5,7 @@ pubDate: 2026-07-01
 author: "ExpatBuildr"
 pillarId: "market-arbitrage"
 category: "Guide"
+gated: true
 tags: ["crypto borderless business", "crypto expat founder", "crypto payments global", "Bitcoin expat", "crypto financial infrastructure"]
 ogImage: "/images/blog/pillars/market-arbitrage-hub.png"
 heroImage: "/images/blog/pillars/market-arbitrage-hub.png"

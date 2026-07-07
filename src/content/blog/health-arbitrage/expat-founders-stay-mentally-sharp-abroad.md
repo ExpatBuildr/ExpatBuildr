@@ -5,6 +5,7 @@ pubDate: 2026-06-30
 author: "ExpatBuildr"
 pillarId: "health-arbitrage"
 category: "Guide"
+gated: false
 tags: ["mental performance expat founder", "cognitive performance abroad", "expat founder mental health", "focus founder lifestyle", "mental sharpness expat"]
 ogImage: "/images/blog/pillars/health-arbitrage-hub.png"
 heroImage: "/images/blog/pillars/health-arbitrage-hub.png"

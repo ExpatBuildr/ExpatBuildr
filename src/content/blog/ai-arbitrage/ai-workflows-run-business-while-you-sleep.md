@@ -5,6 +5,7 @@ pubDate: 2026-06-26
 author: "ExpatBuildr"
 pillarId: "ai-arbitrage"
 category: "Automation"
+gated: true
 tags: ["AI workflows", "business automation", "expat founder", "autonomous AI", "Make automation"]
 ogImage: "/images/blog/pillars/ai-arbitrage-hub.png"
 heroImage: "/images/blog/pillars/ai-arbitrage-hub.png"

@@ -1,6 +1,6 @@
 ---
 title: "Why Expat Founders Choose a Base Country Instead of Constantly Moving"
-description: "Constant movement feels like freedom but produces compounding friction. Here is why experienced expat founders almost universally choose a base country and why the math supports that decision."
+description: "Constant movement feels like freedom but produces compounding friction. Here is why experienced expat founders almost universally choose a base."
 pubDate: 2026-07-08
 author: "ExpatBuildr"
 pillarId: "geo-arbitrage"

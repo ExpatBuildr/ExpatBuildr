@@ -5,6 +5,7 @@ pubDate: 2026-05-23
 author: "ExpatBuildr"
 pillarId: "lead-generation"
 category: "Guide"
+gated: true
 tags: ["track leads without CRM", "lead tracking spreadsheet", "CRM alternative small business", "how to manage leads without software", "when to get a CRM"]
 ogImage: "/images/lead-gen.jpg"
 heroImage: "/images/lead-gen.jpg"

@@ -1,6 +1,6 @@
 ---
 title: "How to Know if the Expat Founder Path Is Right for You"
-description: "The expat founder path produces extraordinary outcomes for the right person and genuine misery for the wrong one. Here is the honest self-assessment framework for making the decision clearly."
+description: "The expat founder path produces extraordinary outcomes for the right person and genuine misery for the wrong one. Here is the self-assessment."
 pubDate: 2026-07-07
 author: "ExpatBuildr"
 pillarId: "geo-arbitrage"

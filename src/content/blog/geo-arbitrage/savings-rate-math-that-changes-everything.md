@@ -5,6 +5,7 @@ pubDate: 2026-05-19
 author: "ExpatBuildr"
 pillarId: "geo-arbitrage"
 category: "Deep Dive"
+gated: false
 tags: ["savings rate", "geo-arbitrage math", "financial independence", "remote income savings", "FIRE", "geographic arbitrage"]
 ogImage: "/images/geo-arbitrage.jpg"
 heroImage: "/images/geo-arbitrage.jpg"

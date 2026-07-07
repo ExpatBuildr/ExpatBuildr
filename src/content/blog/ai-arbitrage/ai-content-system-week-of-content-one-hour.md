@@ -5,6 +5,7 @@ pubDate: 2026-06-30
 author: "ExpatBuildr"
 pillarId: "ai-arbitrage"
 category: "Automation"
+gated: true
 tags: ["AI content system", "content production AI", "expat founder content", "AI writing system", "content automation"]
 ogImage: "/images/blog/pillars/ai-arbitrage-hub.png"
 heroImage: "/images/blog/pillars/ai-arbitrage-hub.png"

@@ -5,6 +5,7 @@ pubDate: 2026-06-24
 author: "ExpatBuildr"
 pillarId: "market-arbitrage"
 category: "Deep Dive"
+gated: true
 tags: ["investing US expat", "expat founder investing", "investing from abroad", "expat investment accounts", "wealth building expat"]
 ogImage: "/images/blog/pillars/market-arbitrage-hub.png"
 heroImage: "/images/blog/pillars/market-arbitrage-hub.png"

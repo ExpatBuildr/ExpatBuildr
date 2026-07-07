@@ -5,6 +5,7 @@ pubDate: 2026-07-01
 author: "ExpatBuildr"
 pillarId: "health-arbitrage"
 category: "Deep Dive"
+gated: true
 tags: ["expat health insurance", "international health insurance founder", "SafetyWing", "Cigna Global expat", "expat founder insurance"]
 ogImage: "/images/blog/pillars/health-arbitrage-hub.png"
 heroImage: "/images/blog/pillars/health-arbitrage-hub.png"

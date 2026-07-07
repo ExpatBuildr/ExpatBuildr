@@ -5,6 +5,7 @@ pubDate: 2026-06-19
 author: "ExpatBuildr"
 pillarId: "health-arbitrage"
 category: "Deep Dive"
+gated: true
 tags: ["private hospitals Southeast Asia", "expat healthcare Philippines", "Bangkok hospital", "expat founder health", "medical tourism SEA"]
 ogImage: "/images/blog/pillars/health-arbitrage-hub.png"
 heroImage: "/images/blog/pillars/health-arbitrage-hub.png"
