@@ -13,7 +13,7 @@ canonicalUrl: "https://expatbuildr.com/blog/geo-arbitrage/complete-guide-living-
 primaryKeyword: "complete guide living and working in Cebu City remote worker"
 secondaryKeywords: ["Cebu City remote work guide", "living in Cebu Philippines", "expat guide Cebu City", "remote worker Cebu Philippines", "Cebu City cost of living expat"]
 searchIntent: "informational"
-draft: true
+draft: false
 archived: false
 noindex: false
 ---
