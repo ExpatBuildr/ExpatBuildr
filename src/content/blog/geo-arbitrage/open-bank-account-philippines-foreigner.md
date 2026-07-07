@@ -13,7 +13,7 @@ canonicalUrl: "https://expatbuildr.com/blog/geo-arbitrage/open-bank-account-phil
 primaryKeyword: "how to open a bank account in the Philippines as a foreigner"
 secondaryKeywords: ["Philippine bank account foreigner", "open bank account Philippines expat", "BDO account foreigner", "banking Philippines remote worker", "expat founder banking Philippines"]
 searchIntent: "problem-solving"
-draft: true
+draft: false
 archived: false
 noindex: false
 ---
