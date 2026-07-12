@@ -232,6 +232,67 @@
   .prose li {
     margin-bottom: 0.75rem;
   }
+
+  .prose table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin: 2rem 0;
+    font-size: 0.9375rem;
+    border-radius: 1rem;
+    overflow: hidden;
+    border: 1px solid rgba(15, 23, 42, 0.1);
+    box-shadow: 0 4px 24px -8px rgba(0, 0, 0, 0.08);
+  }
+  :root.dark .prose table {
+    border-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 24px -8px rgba(0, 0, 0, 0.4);
+  }
+  .prose thead {
+    background-color: var(--color-accent-blue);
+  }
+  .prose th {
+    color: #fff;
+    font-weight: 700;
+    text-align: left;
+    padding: 0.875rem 1.25rem;
+    letter-spacing: 0.01em;
+  }
+  .prose td {
+    padding: 0.875rem 1.25rem;
+    border-top: 1px solid rgba(15, 23, 42, 0.08);
+    color: #334155;
+  }
+  :root.dark .prose td {
+    border-top-color: rgba(255, 255, 255, 0.08);
+    color: #cbd5e1;
+  }
+  .prose tbody tr:nth-child(even) {
+    background-color: rgba(15, 23, 42, 0.03);
+  }
+  :root.dark .prose tbody tr:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.03);
+  }
+  .prose tbody tr:last-child td {
+    font-weight: 700;
+    background-color: rgba(59, 130, 246, 0.08);
+    color: var(--color-accent-blue);
+    border-top: 2px solid var(--color-accent-blue);
+  }
+  :root.dark .prose tbody tr:last-child td {
+    background-color: rgba(56, 189, 248, 0.1);
+    color: var(--color-accent-cyan);
+    border-top-color: var(--color-accent-cyan);
+  }
+  @media (max-width: 640px) {
+    .prose table {
+      font-size: 0.8125rem;
+    }
+    .prose th, .prose td {
+      padding: 0.625rem 0.75rem;
+    }
+  }
+
   .glass-card {
     background: var(--glass-bg);
     border: 1px solid var(--glass-border);

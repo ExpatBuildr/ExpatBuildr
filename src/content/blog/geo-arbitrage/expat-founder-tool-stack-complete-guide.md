@@ -5,7 +5,7 @@ pubDate: 2026-07-12
 author: "ExpatBuildr"
 pillarId: "geo-arbitrage"
 category: "Guide"
-gated: true
+gated: false
 tags: ["expat tools", "expat founder", "remote work tools", "wise", "safetywing", "nordvpn", "geographic arbitrage"]
 ogImage: "/images/geo-arbitrage.jpg"
 heroImage: "/images/geo-arbitrage.jpg"

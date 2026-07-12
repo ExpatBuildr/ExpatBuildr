@@ -5,7 +5,7 @@ pubDate: 2026-07-12
 author: "ExpatBuildr"
 pillarId: "geo-arbitrage"
 category: "Guide"
-gated: true
+gated: false
 tags: ["expat base", "geographic arbitrage", "expat founder", "colombia vs philippines", "where to live abroad"]
 ogImage: "/images/geo-arbitrage.jpg"
 heroImage: "/images/geo-arbitrage.jpg"

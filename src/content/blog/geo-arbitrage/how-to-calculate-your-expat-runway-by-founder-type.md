@@ -5,7 +5,7 @@ pubDate: 2026-07-12
 author: "ExpatBuildr"
 pillarId: "geo-arbitrage"
 category: "Guide"
-gated: true
+gated: false
 tags: ["expat runway", "burn rate", "geographic arbitrage", "expat founder", "runway extension"]
 ogImage: "/images/geo-arbitrage.jpg"
 heroImage: "/images/geo-arbitrage.jpg"
