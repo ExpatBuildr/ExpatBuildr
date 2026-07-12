@@ -1,6 +1,6 @@
 ---
 title: "How to Calculate Your Expat Runway by Founder Type"
-description: "Runway is the only metric that matters before the machine works. Here is how to calculate exactly how many months you have — and how moving abroad extends it by founder type."
+description: "Runway is the only metric that matters before the machine works. Here is how to calculate your exact runway — and how abroad extends it by founder type."
 pubDate: 2026-07-12
 author: "ExpatBuildr"
 pillarId: "geo-arbitrage"

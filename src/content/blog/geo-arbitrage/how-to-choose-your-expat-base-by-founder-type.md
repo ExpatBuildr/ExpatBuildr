@@ -1,6 +1,6 @@
 ---
 title: "How to Choose Your Expat Base by Founder Type"
-description: "Not every arbitrage country works for every founder. The right base depends on your income structure, how often you need to return to the US, and which founder type you are."
+description: "Not every arbitrage country works for every founder. The right base depends on your income structure, US return frequency, and founder type."
 pubDate: 2026-07-12
 author: "ExpatBuildr"
 pillarId: "geo-arbitrage"

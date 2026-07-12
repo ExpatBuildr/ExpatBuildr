@@ -1,6 +1,6 @@
 ---
 title: "The Expat Founder Tool Stack — Complete Guide"
-description: "Every tool an expat founder needs to operate remotely, organized by infrastructure layer and founder type. Banking, protection, operations, and scouting — the complete setup."
+description: "Every tool an expat founder needs to operate remotely, organized by layer: banking, protection, operations, and scouting — the complete setup."
 pubDate: 2026-07-12
 author: "ExpatBuildr"
 pillarId: "geo-arbitrage"
