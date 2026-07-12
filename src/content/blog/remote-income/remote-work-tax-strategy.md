@@ -1,7 +1,7 @@
 ---
 title: "Remote Work Tax Strategy: What You Can Actually Deduct"
 description: "Remote workers have legitimate tax deductions that most people miss. Here is the breakdown of what you can actually deduct and how to document it."
-pubDate: 2026-07-26
+pubDate: 2026-07-17
 author: "ExpatBuildr"
 pillarId: "remote-income"
 category: "Deep Dive"

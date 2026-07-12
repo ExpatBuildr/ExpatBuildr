@@ -1,7 +1,7 @@
 ---
 title: "How to Build an Automated Lead Generation System"
 description: "An automated lead generation system runs prospecting, enrichment, and outreach without daily involvement. Here is the architecture and steps."
-pubDate: 2026-07-30
+pubDate: 2026-07-13
 author: "ExpatBuildr"
 pillarId: "lead-generation"
 category: "Automation"

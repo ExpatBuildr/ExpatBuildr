@@ -1,7 +1,7 @@
 ---
 title: "How to Build a Referral System That Generates Inbound Without Ads"
 description: "Referrals are the highest-converting lead source available. Here is how to build a systematic referral engine that generates consistent inbound."
-pubDate: 2026-08-01
+pubDate: 2026-07-19
 author: "ExpatBuildr"
 pillarId: "lead-generation"
 category: "Guide"

@@ -1,7 +1,7 @@
 ---
 title: "How to Find Remote Jobs at Pre-IPO Startups"
 description: "Pre-IPO startups offer remote-friendly roles, meaningful equity, and accelerated career growth. Here is how to find them and get hired."
-pubDate: 2026-07-27
+pubDate: 2026-07-19
 author: "ExpatBuildr"
 pillarId: "remote-income"
 category: "Guide"

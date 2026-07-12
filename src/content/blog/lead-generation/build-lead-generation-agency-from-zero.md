@@ -1,7 +1,7 @@
 ---
 title: "How to Build a Lead Generation Agency From Zero"
 description: "A lead generation agency is one of the most accessible service businesses to start from scratch. Here is the roadmap from zero clients to profitable."
-pubDate: 2026-07-28
+pubDate: 2026-07-09
 author: "ExpatBuildr"
 pillarId: "lead-generation"
 category: "Guide"
@@ -13,7 +13,7 @@ canonicalUrl: "https://expatbuildr.com/blog/lead-generation/build-lead-generatio
 primaryKeyword: "how to build a lead generation agency from zero"
 secondaryKeywords: ["start lead generation agency", "build outbound agency", "lead gen agency model", "expat founder agency", "lead generation business"]
 searchIntent: "problem-solving"
-draft: true
+draft: false
 archived: false
 noindex: false
 ---

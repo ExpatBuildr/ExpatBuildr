@@ -1,7 +1,7 @@
 ---
 title: "Chiang Mai vs Cebu: Which Is the Better Remote Work Base"
 description: "Chiang Mai and Cebu are the two most established remote work bases in Southeast Asia. Here is the honest comparison across cost, infrastructure, and lifestyle."
-pubDate: 2026-08-03
+pubDate: 2026-07-15
 author: "ExpatBuildr"
 pillarId: "geo-arbitrage"
 category: "Deep Dive"

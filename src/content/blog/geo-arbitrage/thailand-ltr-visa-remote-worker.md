@@ -1,7 +1,7 @@
 ---
 title: "How to Get the Thailand LTR Visa as a Remote Worker"
 description: "The Thailand Long-Term Resident visa is one of the best visa options in Southeast Asia for remote workers. Here is how to qualify and apply."
-pubDate: 2026-08-04
+pubDate: 2026-07-17
 author: "ExpatBuildr"
 pillarId: "geo-arbitrage"
 category: "Guide"

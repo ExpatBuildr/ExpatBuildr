@@ -1,7 +1,7 @@
 ---
 title: "How to Qualify Leads So You Only Talk to People Who Can Buy"
 description: "Talking to unqualified leads wastes your most valuable resource — time. Here is the qualification framework that fixes that."
-pubDate: 2026-07-29
+pubDate: 2026-07-11
 author: "ExpatBuildr"
 pillarId: "lead-generation"
 category: "Guide"

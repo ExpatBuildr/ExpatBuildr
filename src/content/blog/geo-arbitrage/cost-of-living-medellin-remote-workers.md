@@ -1,7 +1,7 @@
 ---
 title: "Cost of Living in Medellín for Remote Workers: The Full Breakdown"
 description: "Medellín has transformed into one of Latin America's best remote work bases. Here is the full cost of living breakdown for remote workers."
-pubDate: 2026-08-05
+pubDate: 2026-07-19
 author: "ExpatBuildr"
 pillarId: "geo-arbitrage"
 category: "Deep Dive"

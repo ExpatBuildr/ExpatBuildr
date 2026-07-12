@@ -1,7 +1,7 @@
 ---
 title: "How to Build a Second Income Stream While Working a Remote Job"
 description: "A second income stream while employed gives you financial optionality without quitting your job. Here is how remote workers build one safely."
-pubDate: 2026-07-25
+pubDate: 2026-07-15
 author: "ExpatBuildr"
 pillarId: "remote-income"
 category: "Guide"

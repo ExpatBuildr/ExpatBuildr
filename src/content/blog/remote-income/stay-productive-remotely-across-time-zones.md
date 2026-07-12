@@ -1,7 +1,7 @@
 ---
 title: "How to Stay Productive Working Remotely Across Time Zones"
 description: "Working remotely across time zones creates unique productivity challenges. Here is the framework founders use to protect deep work and stay productive."
-pubDate: 2026-07-23
+pubDate: 2026-07-09
 author: "ExpatBuildr"
 pillarId: "remote-income"
 category: "Guide"
@@ -13,7 +13,7 @@ canonicalUrl: "https://expatbuildr.com/blog/remote-income/stay-productive-remote
 primaryKeyword: "how to stay productive working remotely across time zones"
 secondaryKeywords: ["remote work productivity time zones", "async work productivity", "expat founder focus", "deep work remote", "time zone productivity system"]
 searchIntent: "problem-solving"
-draft: true
+draft: false
 archived: false
 noindex: false
 ---
