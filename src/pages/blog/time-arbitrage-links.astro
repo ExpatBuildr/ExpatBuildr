@@ -1,7 +1,7 @@
 ---
 export const prerender = true;
 import Layout from '../../layouts/Layout.astro';
-import { ArrowRight, Clock, BookOpen, TrendingUp } from 'lucide-astro';
+import { ArrowRight, Clock, BookOpen, TrendingUp, Zap } from 'lucide-astro';
 ---
 
 <Layout
@@ -67,6 +67,42 @@ import { ArrowRight, Clock, BookOpen, TrendingUp } from 'lucide-astro';
       </div>
     </div>
 
+    <!-- Recommended Tools -->
+    <div class="mb-16">
+      <div class="flex items-center gap-3 mb-8">
+        <Zap class="text-orange-400" size={20} />
+        <h2 class="text-2xl font-black font-display uppercase tracking-tight text-slate-900 dark:text-white">Recommended Tools</h2>
+        <div class="h-px flex-1 bg-slate-200 dark:bg-white/10"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="p-5 rounded-xl border border-slate-200 dark:border-white/10 hover:border-orange-500/40 transition-all">
+          <h3 class="text-sm font-black text-slate-900 dark:text-white mb-1">Claude</h3>
+          <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">Research, writing, code, strategy — the AI assistant used daily in this operation. claude.ai</p>
+        </div>
+        <div class="p-5 rounded-xl border border-slate-200 dark:border-white/10 hover:border-orange-500/40 transition-all">
+          <h3 class="text-sm font-black text-slate-900 dark:text-white mb-1">ChatGPT</h3>
+          <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">The most versatile AI assistant for content creation, research, and prompt-based workflows. chat.openai.com</p>
+        </div>
+        <div class="p-5 rounded-xl border border-slate-200 dark:border-white/10 hover:border-orange-500/40 transition-all">
+          <h3 class="text-sm font-black text-slate-900 dark:text-white mb-1">Make.com</h3>
+          <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">Automate repetitive workflows without code. Connects your tools so they work while you sleep.</p>
+        </div>
+        <div class="p-5 rounded-xl border border-slate-200 dark:border-white/10 hover:border-orange-500/40 transition-all">
+          <h3 class="text-sm font-black text-slate-900 dark:text-white mb-1">Notion</h3>
+          <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">Document everything. Build your operating system. The async communication hub for solo founders.</p>
+        </div>
+        <div class="p-5 rounded-xl border border-slate-200 dark:border-white/10 hover:border-orange-500/40 transition-all">
+          <h3 class="text-sm font-black text-slate-900 dark:text-white mb-1">Loom</h3>
+          <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">Record your screen and explain anything in minutes. Faster than writing. Clearer than text.</p>
+        </div>
+        <div class="p-5 rounded-xl border border-slate-200 dark:border-white/10 hover:border-orange-500/40 transition-all">
+          <h3 class="text-sm font-black text-slate-900 dark:text-white mb-1">beehiiv</h3>
+          <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">Build and monetize an audience that compounds over time. The newsletter platform behind Galaxy Arbitrage Weekly.</p>
+        </div>
+      </div>
+    </div>
+
     <!-- Content Library -->
     <div class="mb-16">
       <div class="flex items-center gap-3 mb-8">
@@ -75,15 +111,25 @@ import { ArrowRight, Clock, BookOpen, TrendingUp } from 'lucide-astro';
         <div class="h-px flex-1 bg-slate-200 dark:bg-white/10"></div>
       </div>
 
-      <div class="p-4 rounded-xl border border-slate-200 dark:border-white/10">
-        <p class="text-sm text-slate-500 dark:text-slate-400 mb-3">Articles in this pillar are in production:</p>
-        <ul class="space-y-2 list-disc list-inside">
-          <li class="text-sm text-slate-700 dark:text-slate-300">What Is Time Arbitrage and Why It Changes Everything for Founders</li>
-          <li class="text-sm text-slate-700 dark:text-slate-300">How to Build an Async Business That Runs Without You</li>
-          <li class="text-sm text-slate-700 dark:text-slate-300">The Founder SOP Stack: How to Document Everything So Anyone Can Run It</li>
-          <li class="text-sm text-slate-700 dark:text-slate-300">How to Use Time Zone Differences as a Competitive Advantage</li>
-          <li class="text-sm text-slate-700 dark:text-slate-300">Hiring Your First Virtual Assistant as an Expat Founder</li>
-        </ul>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="p-4 rounded-xl border border-slate-200 dark:border-white/10 hover:border-orange-500/40 transition-all">
+          <ul class="space-y-2">
+            <li><a href="/blog/time-arbitrage/what-is-time-arbitrage" class="text-sm text-slate-700 dark:text-slate-300 hover:text-orange-400 transition-colors">What Is Time Arbitrage and Why It Changes Everything for Founders</a></li>
+            <li><a href="/blog/time-arbitrage/how-to-build-async-business-runs-without-you" class="text-sm text-slate-700 dark:text-slate-300 hover:text-orange-400 transition-colors">How to Build an Async Business That Runs Without You</a></li>
+            <li><a href="/blog/time-arbitrage/founder-sop-stack" class="text-sm text-slate-700 dark:text-slate-300 hover:text-orange-400 transition-colors">The Founder SOP Stack: How to Document Everything So Anyone Can Run It</a></li>
+            <li><a href="/blog/time-arbitrage/time-zone-competitive-advantage" class="text-sm text-slate-700 dark:text-slate-300 hover:text-orange-400 transition-colors">How to Use Time Zone Differences as a Competitive Advantage</a></li>
+            <li><a href="/blog/time-arbitrage/hiring-first-virtual-assistant-expat-founder" class="text-sm text-slate-700 dark:text-slate-300 hover:text-orange-400 transition-colors">Hiring Your First Virtual Assistant as an Expat Founder</a></li>
+          </ul>
+        </div>
+        <div class="p-4 rounded-xl border border-slate-200 dark:border-white/10 hover:border-orange-500/40 transition-all">
+          <ul class="space-y-2">
+            <li><a href="/blog/time-arbitrage/founder-delegation-framework" class="text-sm text-slate-700 dark:text-slate-300 hover:text-orange-400 transition-colors">The Complete Founder Delegation Framework: What to Keep, What to Hand Off</a></li>
+            <li><a href="/blog/time-arbitrage/one-person-agency-team-of-three" class="text-sm text-slate-700 dark:text-slate-300 hover:text-orange-400 transition-colors">How to Run a One-Person Agency With a Team of Three</a></li>
+            <li><a href="/blog/time-arbitrage/revenue-generating-system-works-while-you-sleep" class="text-sm text-slate-700 dark:text-slate-300 hover:text-orange-400 transition-colors">How to Build a Revenue-Generating System That Works While You Sleep</a></li>
+            <li><a href="/blog/time-arbitrage/train-virtual-assistant-think-like-you" class="text-sm text-slate-700 dark:text-slate-300 hover:text-orange-400 transition-colors">How to Train a Virtual Assistant to Think Like You</a></li>
+            <li><a href="/blog/ai-arbitrage/expat-founder-ai-stack" class="text-sm text-slate-700 dark:text-slate-300 hover:text-orange-400 transition-colors">The Expat Founder AI Stack: Tools That Replace an Entire Team</a></li>
+          </ul>
+        </div>
       </div>
 
       <div class="mt-6 text-center">

@@ -1,0 +1,452 @@
+---
+// Astro Component — standalone free product page, not part of the founders/ sales funnel
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Expat Founder Stack | ExpatBuildr</title>
+  <meta name="description" content="The free checklist every expat founder needs. Tools, infrastructure, and the Philippines playbook — organized by founder type." />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://expatbuildr.com/founder-stack" />
+  <meta property="og:title" content="The Expat Founder Stack | ExpatBuildr" />
+  <meta property="og:description" content="The free checklist every expat founder needs. Tools, infrastructure, and the Philippines playbook — organized by founder type." />
+  <meta property="og:image" content="https://expatbuildr.com/images/geo-arbitrage.jpg" />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://expatbuildr.com/founder-stack" />
+  <meta property="twitter:title" content="The Expat Founder Stack | ExpatBuildr" />
+  <meta property="twitter:description" content="The free checklist every expat founder needs. Tools, infrastructure, and the Philippines playbook — organized by founder type." />
+  <meta property="twitter:image" content="https://expatbuildr.com/images/geo-arbitrage.jpg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;500;700;900&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --white: #ffffff;
+      --off: #f7f7f5;
+      --black: #0a0a0a;
+      --gray: #6b6b6b;
+      --border: #e2e2de;
+      --signal: #ff4d00;
+      --signal-hover: #e63d00;
+    }
+
+    body {
+      background: var(--white);
+      color: var(--black);
+      font-family: 'Epilogue', sans-serif;
+      font-size: 17px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    nav {
+      padding: 20px 40px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav-logo {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--black);
+      text-decoration: none;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .nav-link {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px;
+      color: var(--gray);
+      text-decoration: none;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+
+    .nav-link:hover { color: var(--signal); }
+
+    .hero {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 80px 40px 60px;
+    }
+
+    .eyebrow {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--signal);
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .eyebrow::before {
+      content: '';
+      width: 24px;
+      height: 2px;
+      background: var(--signal);
+      display: inline-block;
+    }
+
+    .hero h1 {
+      font-size: clamp(36px, 6vw, 56px);
+      font-weight: 900;
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+      color: var(--black);
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 19px;
+      color: #444;
+      line-height: 1.65;
+      max-width: 560px;
+      margin-bottom: 0;
+    }
+
+    .container {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 0 40px 80px;
+    }
+
+    .section-label {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--signal);
+      margin-bottom: 20px;
+      margin-top: 60px;
+    }
+
+    .founder-type {
+      background: var(--off);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--signal);
+      padding: 32px;
+      margin-bottom: 16px;
+    }
+
+    .founder-type h3 {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--black);
+      margin-bottom: 8px;
+    }
+
+    .founder-type p {
+      font-size: 15px;
+      color: var(--gray);
+      line-height: 1.7;
+      margin-bottom: 16px;
+    }
+
+    .checklist {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .checklist li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 15px;
+      color: var(--black);
+      line-height: 1.5;
+    }
+
+    .checklist li::before {
+      content: '→';
+      color: var(--signal);
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .checklist a {
+      color: var(--signal);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .checklist a:hover { text-decoration: underline; }
+
+    .divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 48px 0;
+    }
+
+    .playbook-box {
+      background: var(--black);
+      padding: 48px 40px;
+      margin-top: 60px;
+      text-align: center;
+    }
+
+    .playbook-box .eyebrow {
+      color: var(--signal);
+      justify-content: center;
+      margin-bottom: 16px;
+    }
+
+    .playbook-box .eyebrow::before { background: var(--signal); }
+
+    .playbook-box h2 {
+      font-size: clamp(28px, 4vw, 40px);
+      font-weight: 900;
+      color: var(--white);
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
+      line-height: 1.1;
+    }
+
+    .playbook-box p {
+      font-size: 16px;
+      color: #888;
+      margin-bottom: 32px;
+      line-height: 1.6;
+      max-width: 480px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .country-select {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      max-width: 400px;
+      margin: 0 auto 32px;
+    }
+
+    .country-btn {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 24px;
+      background: #1a1a1a;
+      border: 1px solid #2a2a2a;
+      color: var(--white);
+      text-decoration: none;
+      font-family: 'Epilogue', sans-serif;
+      font-size: 15px;
+      font-weight: 600;
+      transition: background 0.2s, border-color 0.2s;
+      cursor: pointer;
+    }
+
+    .country-btn:hover {
+      background: #222;
+      border-color: var(--signal);
+    }
+
+    .country-btn.available {
+      border-color: var(--signal);
+    }
+
+    .country-btn .badge {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--signal);
+    }
+
+    .country-btn .badge.soon {
+      color: #555;
+    }
+
+    .newsletter-cta {
+      padding: 60px 40px;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .newsletter-cta h2 {
+      font-size: clamp(24px, 4vw, 36px);
+      font-weight: 900;
+      color: var(--black);
+      letter-spacing: -0.02em;
+      margin-bottom: 14px;
+      line-height: 1.1;
+    }
+
+    .newsletter-cta p {
+      font-size: 16px;
+      color: var(--gray);
+      margin-bottom: 28px;
+    }
+
+    .btn-primary {
+      display: inline-block;
+      padding: 16px 36px;
+      background: var(--signal);
+      color: var(--white);
+      font-family: 'Epilogue', sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      text-decoration: none;
+      letter-spacing: 0.02em;
+      transition: background 0.2s;
+    }
+
+    .btn-primary:hover { background: var(--signal-hover); }
+
+    footer {
+      background: var(--black);
+      color: #555;
+      text-align: center;
+      padding: 28px;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px;
+      letter-spacing: 0.05em;
+    }
+
+    footer a { color: #555; text-decoration: none; }
+    footer a:hover { color: var(--signal); }
+
+    @media (max-width: 640px) {
+      nav { padding: 16px 20px; }
+      .hero { padding: 60px 20px 40px; }
+      .container { padding: 0 20px 60px; }
+      .founder-type { padding: 24px 20px; }
+      .playbook-box { padding: 40px 24px; }
+      .newsletter-cta { padding: 48px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="https://expatbuildr.com" class="nav-logo">ExpatBuildr</a>
+  <a href="/newsletter" class="nav-link">Subscribe Free →</a>
+</nav>
+
+<section class="hero">
+  <div class="eyebrow">Free Resource</div>
+  <h1>The Expat Founder Stack</h1>
+  <p>The tools, infrastructure, and country setup that keep expat founders operating — organized by which type of founder you are. Free. No email required.</p>
+</section>
+
+<div class="container">
+
+  <div class="section-label">Step 1 — Find your founder type</div>
+
+  <div class="founder-type">
+    <h3>Type 1 — The Remote Operator</h3>
+    <p>You own a business generating income in the US that runs without your daily presence. Real estate, construction, franchise, rentals. Your move abroad reduces burn rate on income that already exists.</p>
+    <ul class="checklist">
+      <li><a href="https://wise.com" target="_blank" rel="noopener noreferrer">Wise</a> — receive and convert USD without bank spread fees</li>
+      <li><a href="https://safetywing.com" target="_blank" rel="noopener noreferrer">SafetyWing</a> — international health coverage from $56/month</li>
+      <li><a href="https://nordvpn.com" target="_blank" rel="noopener noreferrer">NordVPN</a> — secure access to US banking and services from abroad</li>
+      <li>Notion — remote operations documentation</li>
+      <li><a href="/founders/strategy">Book a strategy call</a> — if you need help structuring the transition</li>
+    </ul>
+  </div>
+
+  <div class="founder-type">
+    <h3>Type 2 — The Digital Founder</h3>
+    <p>SaaS, newsletter, YouTube, affiliate income. Already location-independent. You are multiplying what the same income produces by changing your cost structure.</p>
+    <ul class="checklist">
+      <li><a href="https://wise.com" target="_blank" rel="noopener noreferrer">Wise</a> — convert USD to local currency at real exchange rates</li>
+      <li><a href="https://safetywing.com" target="_blank" rel="noopener noreferrer">SafetyWing</a> — international health coverage</li>
+      <li><a href="https://nordvpn.com" target="_blank" rel="noopener noreferrer">NordVPN</a> — security and US service access</li>
+      <li>Stripe — collect payments from anywhere</li>
+      <li>beehiiv — newsletter platform for audience-based income</li>
+      <li>Make.com — automation stack</li>
+      <li>Notion — operations and documentation</li>
+    </ul>
+  </div>
+
+  <div class="founder-type">
+    <h3>Type 3 — The Skill-Based Founder</h3>
+    <p>High-value skill, irregular income. Real estate agents, consultants, developers, designers. You earn in large chunks and live cheaply between them — building Layer 3 in the gaps.</p>
+    <ul class="checklist">
+      <li><a href="https://wise.com" target="_blank" rel="noopener noreferrer">Wise</a> — receive and convert commission or project payments</li>
+      <li><a href="https://safetywing.com" target="_blank" rel="noopener noreferrer">SafetyWing</a> — health coverage that travels with you</li>
+      <li><a href="https://nordvpn.com" target="_blank" rel="noopener noreferrer">NordVPN</a> — secure access on every public network</li>
+      <li>Stripe — collect client payments internationally</li>
+      <li>Calendly — async scheduling across timezones</li>
+      <li><a href="/founders/strategy">Book a strategy call</a> — help structuring the move around your US obligations</li>
+    </ul>
+  </div>
+
+  <hr class="divider" />
+
+  <div class="section-label">Step 2 — Core infrastructure every founder needs</div>
+
+  <ul class="checklist" style="margin-bottom: 0;">
+    <li><strong>Money:</strong> <a href="https://wise.com" target="_blank" rel="noopener noreferrer">Wise</a> — real exchange rates, no hidden spreads</li>
+    <li><strong>Health:</strong> <a href="https://safetywing.com" target="_blank" rel="noopener noreferrer">SafetyWing</a> — 185+ countries, from $56/month</li>
+    <li><strong>Security:</strong> <a href="https://nordvpn.com" target="_blank" rel="noopener noreferrer">NordVPN</a> — every device, every network</li>
+    <li><strong>Payments:</strong> Stripe — collect from anywhere, pay out to US bank</li>
+    <li><strong>Operations:</strong> Notion + Make.com — document and automate</li>
+    <li><strong>Scouting:</strong> Numbeo for cost research, Booking.com for base testing</li>
+  </ul>
+
+</div>
+
+<div class="playbook-box">
+  <div class="eyebrow">Step 3 — Get the country playbook</div>
+  <h2>Choose your destination.</h2>
+  <p>Each playbook covers cost of living, neighborhoods, banking setup, visa options, and the mistakes most people make in year one. Free for newsletter subscribers.</p>
+
+  <div class="country-select">
+    <a href="/blog/geo-arbitrage/complete-guide-living-working-cebu-city" class="country-btn available">
+      <span>🇵🇭 Philippines</span>
+      <span class="badge">Available now →</span>
+    </a>
+    <div class="country-btn">
+      <span>🇹🇭 Thailand</span>
+      <span class="badge soon">Coming soon</span>
+    </div>
+    <div class="country-btn">
+      <span>🇲🇾 Malaysia</span>
+      <span class="badge soon">Coming soon</span>
+    </div>
+    <div class="country-btn">
+      <span>🇨🇴 Colombia</span>
+      <span class="badge soon">Coming soon</span>
+    </div>
+    <div class="country-btn">
+      <span>🇵🇹 Portugal</span>
+      <span class="badge soon">Coming soon</span>
+    </div>
+  </div>
+
+  <p style="font-size: 13px; color: #555; font-family: 'IBM Plex Mono', monospace;">More countries added as we visit them. Some links are affiliate links.</p>
+</div>
+
+<div class="newsletter-cta">
+  <h2>Get the playbook every Tuesday.</h2>
+  <p>Free strategies for expat founders — geographic arbitrage, income structure, tools, and the real math behind building a life abroad.</p>
+  <a href="/newsletter" class="btn-primary">Subscribe Free →</a>
+</div>
+
+<footer>
+  <div>© 2026 ExpatBuildr · <a href="https://expatbuildr.com">expatbuildr.com</a> · <a href="/newsletter">Galaxy Arbitrage Weekly</a></div>
+</footer>
+
+</body>
+</html>

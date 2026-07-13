@@ -1,7 +1,7 @@
 ---
 export const prerender = true;
 import Layout from '../../layouts/Layout.astro';
-import { ArrowRight, Sparkles, BookOpen, TrendingUp } from 'lucide-astro';
+import { ArrowRight, Sparkles, BookOpen, TrendingUp, Zap } from 'lucide-astro';
 ---
 
 <Layout
@@ -67,6 +67,38 @@ import { ArrowRight, Sparkles, BookOpen, TrendingUp } from 'lucide-astro';
       </div>
     </div>
 
+    <!-- Recommended Tools -->
+    <div class="mb-16">
+      <div class="flex items-center gap-3 mb-8">
+        <Zap class="text-violet-400" size={20} />
+        <h2 class="text-2xl font-black font-display uppercase tracking-tight text-slate-900 dark:text-white">Recommended Tools</h2>
+        <div class="h-px flex-1 bg-slate-200 dark:bg-white/10"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="p-5 rounded-xl border border-slate-200 dark:border-white/10 hover:border-violet-500/40 transition-all">
+          <h3 class="text-sm font-black text-slate-900 dark:text-white mb-1">Claude</h3>
+          <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">Research, writing, strategy, and the core of most AI workflows built into the expat founder stack.</p>
+        </div>
+        <div class="p-5 rounded-xl border border-slate-200 dark:border-white/10 hover:border-violet-500/40 transition-all">
+          <h3 class="text-sm font-black text-slate-900 dark:text-white mb-1">ChatGPT</h3>
+          <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">Versatile assistant for content, research, and prompt-based workflows across the AI stack.</p>
+        </div>
+        <div class="p-5 rounded-xl border border-slate-200 dark:border-white/10 hover:border-violet-500/40 transition-all">
+          <h3 class="text-sm font-black text-slate-900 dark:text-white mb-1">Make.com</h3>
+          <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">Automation layer that connects AI tools into workflows that run without daily intervention.</p>
+        </div>
+        <div class="p-5 rounded-xl border border-slate-200 dark:border-white/10 hover:border-violet-500/40 transition-all">
+          <h3 class="text-sm font-black text-slate-900 dark:text-white mb-1">Notion</h3>
+          <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">Documentation hub for prompts, SOPs, and the AI workflows that keep the business async.</p>
+        </div>
+        <div class="p-5 rounded-xl border border-slate-200 dark:border-white/10 hover:border-violet-500/40 transition-all">
+          <h3 class="text-sm font-black text-slate-900 dark:text-white mb-1">Loom</h3>
+          <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">Screen recording for documenting AI workflows and training a team or VA on the system.</p>
+        </div>
+      </div>
+    </div>
+
     <!-- Content Library -->
     <div class="mb-16">
       <div class="flex items-center gap-3 mb-8">
@@ -75,15 +107,25 @@ import { ArrowRight, Sparkles, BookOpen, TrendingUp } from 'lucide-astro';
         <div class="h-px flex-1 bg-slate-200 dark:bg-white/10"></div>
       </div>
 
-      <div class="p-4 rounded-xl border border-slate-200 dark:border-white/10">
-        <p class="text-sm text-slate-500 dark:text-slate-400 mb-3">Articles in this pillar are in production:</p>
-        <ul class="space-y-2 list-disc list-inside">
-          <li class="text-sm text-slate-700 dark:text-slate-300">What Is AI Arbitrage and How Founders Use It to Compete at Any Scale</li>
-          <li class="text-sm text-slate-700 dark:text-slate-300">The Expat Founder AI Stack: Tools That Replace an Entire Team</li>
-          <li class="text-sm text-slate-700 dark:text-slate-300">How to Use AI for Cold Outreach Without Losing the Human Signal</li>
-          <li class="text-sm text-slate-700 dark:text-slate-300">How to Build AI Workflows That Run Your Business While You Sleep</li>
-          <li class="text-sm text-slate-700 dark:text-slate-300">Prompt Engineering for Founders: Getting Consistent Output From AI Tools</li>
-        </ul>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="p-4 rounded-xl border border-slate-200 dark:border-white/10 hover:border-violet-500/40 transition-all">
+          <ul class="space-y-2">
+            <li><a href="/blog/ai-arbitrage/what-is-ai-arbitrage" class="text-sm text-slate-700 dark:text-slate-300 hover:text-violet-400 transition-colors">What Is AI Arbitrage and How Founders Use It to Compete at Any Scale</a></li>
+            <li><a href="/blog/ai-arbitrage/expat-founder-ai-stack" class="text-sm text-slate-700 dark:text-slate-300 hover:text-violet-400 transition-colors">The Expat Founder AI Stack: Tools That Replace an Entire Team</a></li>
+            <li><a href="/blog/ai-arbitrage/ai-cold-outreach-human-signal" class="text-sm text-slate-700 dark:text-slate-300 hover:text-violet-400 transition-colors">How to Use AI for Cold Outreach Without Losing the Human Signal</a></li>
+            <li><a href="/blog/ai-arbitrage/ai-workflows-run-business-while-you-sleep" class="text-sm text-slate-700 dark:text-slate-300 hover:text-violet-400 transition-colors">How to Build AI Workflows That Run Your Business While You Sleep</a></li>
+            <li><a href="/blog/ai-arbitrage/prompt-engineering-for-founders" class="text-sm text-slate-700 dark:text-slate-300 hover:text-violet-400 transition-colors">Prompt Engineering for Founders: Getting Consistent Output From AI Tools</a></li>
+          </ul>
+        </div>
+        <div class="p-4 rounded-xl border border-slate-200 dark:border-white/10 hover:border-violet-500/40 transition-all">
+          <ul class="space-y-2">
+            <li><a href="/blog/ai-arbitrage/ai-chief-of-staff-for-your-business" class="text-sm text-slate-700 dark:text-slate-300 hover:text-violet-400 transition-colors">How to Build an AI Chief of Staff for Your Business</a></li>
+            <li><a href="/blog/ai-arbitrage/ai-competitive-intelligence-solo-expat-founder" class="text-sm text-slate-700 dark:text-slate-300 hover:text-violet-400 transition-colors">Using AI for Competitive Intelligence as a Solo Expat Founder</a></li>
+            <li><a href="/blog/ai-arbitrage/ai-content-system-week-of-content-one-hour" class="text-sm text-slate-700 dark:text-slate-300 hover:text-violet-400 transition-colors">How to Build an AI Content System That Produces a Week of Content in One Hour</a></li>
+            <li><a href="/blog/ai-arbitrage/audit-improve-ai-stack-90-days" class="text-sm text-slate-700 dark:text-slate-300 hover:text-violet-400 transition-colors">How to Audit and Improve Your AI Stack Every 90 Days</a></li>
+            <li><a href="/blog/ai-arbitrage/automate-client-onboarding-ai" class="text-sm text-slate-700 dark:text-slate-300 hover:text-violet-400 transition-colors">How to Automate Your Client Onboarding With AI</a></li>
+          </ul>
+        </div>
       </div>
 
       <div class="mt-6 text-center">

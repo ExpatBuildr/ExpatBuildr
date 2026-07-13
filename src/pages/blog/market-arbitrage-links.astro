@@ -1,7 +1,7 @@
 ---
 export const prerender = true;
 import Layout from '../../layouts/Layout.astro';
-import { ArrowRight, Coins, BookOpen } from 'lucide-astro';
+import { ArrowRight, Coins, BookOpen, Zap } from 'lucide-astro';
 ---
 
 <Layout
@@ -46,6 +46,38 @@ import { ArrowRight, Coins, BookOpen } from 'lucide-astro';
       </div>
     </div>
 
+    <!-- Recommended Tools -->
+    <div class="mb-16">
+      <div class="flex items-center gap-3 mb-8">
+        <Zap class="text-amber-400" size={20} />
+        <h2 class="text-2xl font-black font-display uppercase tracking-tight text-slate-900 dark:text-white">Recommended Tools</h2>
+        <div class="h-px flex-1 bg-slate-200 dark:bg-white/10"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="p-5 rounded-xl border border-slate-200 dark:border-white/10 hover:border-amber-500/40 transition-all">
+          <h3 class="text-sm font-black text-slate-900 dark:text-white mb-1">Wise</h3>
+          <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">Currency conversion and cross-border banking at real exchange rates — the core of the founder money stack.</p>
+        </div>
+        <div class="p-5 rounded-xl border border-slate-200 dark:border-white/10 hover:border-amber-500/40 transition-all">
+          <h3 class="text-sm font-black text-slate-900 dark:text-white mb-1">Charles Schwab</h3>
+          <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">The standard US-expat-friendly brokerage for investing while living abroad.</p>
+        </div>
+        <div class="p-5 rounded-xl border border-slate-200 dark:border-white/10 hover:border-amber-500/40 transition-all">
+          <h3 class="text-sm font-black text-slate-900 dark:text-white mb-1">Interactive Brokers</h3>
+          <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">Alternative brokerage option for expats investing from abroad with broader market access.</p>
+        </div>
+        <div class="p-5 rounded-xl border border-slate-200 dark:border-white/10 hover:border-amber-500/40 transition-all">
+          <h3 class="text-sm font-black text-slate-900 dark:text-white mb-1">Coinbase / Kraken</h3>
+          <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">Exchanges used for on/off ramping into crypto and stablecoins as part of a borderless money stack.</p>
+        </div>
+        <div class="p-5 rounded-xl border border-slate-200 dark:border-white/10 hover:border-amber-500/40 transition-all">
+          <h3 class="text-sm font-black text-slate-900 dark:text-white mb-1">Ledger</h3>
+          <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">Hardware wallet recommended for securely holding crypto long-term.</p>
+        </div>
+      </div>
+    </div>
+
     <!-- Content Library -->
     <div class="mb-16">
       <div class="flex items-center gap-3 mb-8">
@@ -54,15 +86,25 @@ import { ArrowRight, Coins, BookOpen } from 'lucide-astro';
         <div class="h-px flex-1 bg-slate-200 dark:bg-white/10"></div>
       </div>
 
-      <div class="p-4 rounded-xl border border-slate-200 dark:border-white/10">
-        <p class="text-sm text-slate-500 dark:text-slate-400 mb-3">Articles in this pillar are in production:</p>
-        <ul class="space-y-2 list-disc list-inside">
-          <li class="text-sm text-slate-700 dark:text-slate-300">What Is Market Arbitrage and How Expat Founders Use It to Build Wealth Faster</li>
-          <li class="text-sm text-slate-700 dark:text-slate-300">The Expat Founder Money Stack: Banking, Entity, and Tax Setup</li>
-          <li class="text-sm text-slate-700 dark:text-slate-300">How to Invest as a US Expat: What Actually Works From Abroad</li>
-          <li class="text-sm text-slate-700 dark:text-slate-300">Currency Strategy for Founders Earning in USD and Spending in SEA</li>
-          <li class="text-sm text-slate-700 dark:text-slate-300">How the Foreign Earned Income Exclusion Works for Self-Employed Expats</li>
-        </ul>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="p-4 rounded-xl border border-slate-200 dark:border-white/10 hover:border-amber-500/40 transition-all">
+          <ul class="space-y-2">
+            <li><a href="/blog/market-arbitrage/what-is-market-arbitrage" class="text-sm text-slate-700 dark:text-slate-300 hover:text-amber-400 transition-colors">What Is Market Arbitrage and How Expat Founders Use It to Build Wealth Faster</a></li>
+            <li><a href="/blog/market-arbitrage/expat-founder-money-stack" class="text-sm text-slate-700 dark:text-slate-300 hover:text-amber-400 transition-colors">The Expat Founder Money Stack: Banking, Entity, and Tax Setup</a></li>
+            <li><a href="/blog/market-arbitrage/investing-us-expat-what-works" class="text-sm text-slate-700 dark:text-slate-300 hover:text-amber-400 transition-colors">How to Invest as a US Expat: What Actually Works From Abroad</a></li>
+            <li><a href="/blog/market-arbitrage/currency-strategy-founders-usd-sea" class="text-sm text-slate-700 dark:text-slate-300 hover:text-amber-400 transition-colors">Currency Strategy for Founders Earning in USD and Spending in SEA</a></li>
+            <li><a href="/blog/market-arbitrage/feie-self-employed-expats" class="text-sm text-slate-700 dark:text-slate-300 hover:text-amber-400 transition-colors">How the Foreign Earned Income Exclusion Works for Self-Employed Expats</a></li>
+          </ul>
+        </div>
+        <div class="p-4 rounded-xl border border-slate-200 dark:border-white/10 hover:border-amber-500/40 transition-all">
+          <ul class="space-y-2">
+            <li><a href="/blog/market-arbitrage/crypto-borderless-business" class="text-sm text-slate-700 dark:text-slate-300 hover:text-amber-400 transition-colors">Using Crypto to Run a Borderless Business</a></li>
+            <li><a href="/blog/market-arbitrage/digital-asset-portfolio-expat-founder" class="text-sm text-slate-700 dark:text-slate-300 hover:text-amber-400 transition-colors">How to Build a Digital Asset Portfolio as an Expat Founder</a></li>
+            <li><a href="/blog/market-arbitrage/expat-founder-exit-strategy" class="text-sm text-slate-700 dark:text-slate-300 hover:text-amber-400 transition-colors">The Expat Founder Exit Strategy: Building to Sell From Abroad</a></li>
+            <li><a href="/blog/market-arbitrage/information-arbitrage-second-income-stream" class="text-sm text-slate-700 dark:text-slate-300 hover:text-amber-400 transition-colors">How to Use Information Arbitrage to Generate a Second Income Stream</a></li>
+            <li><a href="/blog/market-arbitrage/undervalued-business-opportunities-southeast-asia" class="text-sm text-slate-700 dark:text-slate-300 hover:text-amber-400 transition-colors">How to Find Undervalued Business Opportunities in Southeast Asian Markets</a></li>
+          </ul>
+        </div>
       </div>
 
       <div class="mt-6 text-center">

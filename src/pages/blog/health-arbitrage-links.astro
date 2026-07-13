@@ -1,7 +1,7 @@
 ---
 export const prerender = true;
 import Layout from '../../layouts/Layout.astro';
-import { ArrowRight, Heart, BookOpen } from 'lucide-astro';
+import { ArrowRight, Heart, BookOpen, Zap } from 'lucide-astro';
 ---
 
 <Layout
@@ -45,6 +45,34 @@ import { ArrowRight, Heart, BookOpen } from 'lucide-astro';
       </div>
     </div>
 
+    <!-- Recommended Tools -->
+    <div class="mb-16">
+      <div class="flex items-center gap-3 mb-8">
+        <Zap class="text-emerald-400" size={20} />
+        <h2 class="text-2xl font-black font-display uppercase tracking-tight text-slate-900 dark:text-white">Recommended Tools</h2>
+        <div class="h-px flex-1 bg-slate-200 dark:bg-white/10"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="p-5 rounded-xl border border-slate-200 dark:border-white/10 hover:border-emerald-500/40 transition-all">
+          <h3 class="text-sm font-black text-slate-900 dark:text-white mb-1">SafetyWing</h3>
+          <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">Budget nomad insurance recommended for the first year abroad, covering emergencies and hospitalization from $56/month.</p>
+        </div>
+        <div class="p-5 rounded-xl border border-slate-200 dark:border-white/10 hover:border-emerald-500/40 transition-all">
+          <h3 class="text-sm font-black text-slate-900 dark:text-white mb-1">Cigna Global</h3>
+          <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">Mid-to-upper-tier comprehensive international health insurance for long-term expats.</p>
+        </div>
+        <div class="p-5 rounded-xl border border-slate-200 dark:border-white/10 hover:border-emerald-500/40 transition-all">
+          <h3 class="text-sm font-black text-slate-900 dark:text-white mb-1">Allianz Care</h3>
+          <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">Premium global health plan option, including coverage for trips back to the US.</p>
+        </div>
+        <div class="p-5 rounded-xl border border-slate-200 dark:border-white/10 hover:border-emerald-500/40 transition-all">
+          <h3 class="text-sm font-black text-slate-900 dark:text-white mb-1">Aetna International</h3>
+          <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">Comprehensive expat coverage, a common alternative to Cigna for stable long-term residents.</p>
+        </div>
+      </div>
+    </div>
+
     <!-- Content Library -->
     <div class="mb-16">
       <div class="flex items-center gap-3 mb-8">
@@ -53,15 +81,25 @@ import { ArrowRight, Heart, BookOpen } from 'lucide-astro';
         <div class="h-px flex-1 bg-slate-200 dark:bg-white/10"></div>
       </div>
 
-      <div class="p-4 rounded-xl border border-slate-200 dark:border-white/10">
-        <p class="text-sm text-slate-500 dark:text-slate-400 mb-3">Articles in this pillar are in production:</p>
-        <ul class="space-y-2 list-disc list-inside">
-          <li class="text-sm text-slate-700 dark:text-slate-300">What Is Health Arbitrage and Why Expat Founders Have a Massive Advantage</li>
-          <li class="text-sm text-slate-700 dark:text-slate-300">The Best Private Hospitals for Expats in Southeast Asia</li>
-          <li class="text-sm text-slate-700 dark:text-slate-300">Dental Tourism in the Philippines and Thailand: Real Costs and What to Expect</li>
-          <li class="text-sm text-slate-700 dark:text-slate-300">How to Build a Fitness Routine as a Founder Living Abroad</li>
-          <li class="text-sm text-slate-700 dark:text-slate-300">Health Insurance for Expat Founders: The Full Options Breakdown</li>
-        </ul>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="p-4 rounded-xl border border-slate-200 dark:border-white/10 hover:border-emerald-500/40 transition-all">
+          <ul class="space-y-2">
+            <li><a href="/blog/health-arbitrage/what-is-health-arbitrage" class="text-sm text-slate-700 dark:text-slate-300 hover:text-emerald-400 transition-colors">What Is Health Arbitrage and Why Expat Founders Have a Massive Advantage</a></li>
+            <li><a href="/blog/health-arbitrage/best-private-hospitals-expats-southeast-asia" class="text-sm text-slate-700 dark:text-slate-300 hover:text-emerald-400 transition-colors">The Best Private Hospitals for Expats in Southeast Asia</a></li>
+            <li><a href="/blog/health-arbitrage/dental-tourism-philippines-thailand" class="text-sm text-slate-700 dark:text-slate-300 hover:text-emerald-400 transition-colors">Dental Tourism in the Philippines and Thailand: Real Costs and What to Expect</a></li>
+            <li><a href="/blog/health-arbitrage/fitness-routine-founder-living-abroad" class="text-sm text-slate-700 dark:text-slate-300 hover:text-emerald-400 transition-colors">How to Build a Fitness Routine as a Founder Living Abroad</a></li>
+            <li><a href="/blog/health-arbitrage/health-insurance-expat-founders" class="text-sm text-slate-700 dark:text-slate-300 hover:text-emerald-400 transition-colors">Health Insurance for Expat Founders: The Full Options Breakdown</a></li>
+          </ul>
+        </div>
+        <div class="p-4 rounded-xl border border-slate-200 dark:border-white/10 hover:border-emerald-500/40 transition-all">
+          <ul class="space-y-2">
+            <li><a href="/blog/health-arbitrage/eating-well-expat-founder-southeast-asia-budget" class="text-sm text-slate-700 dark:text-slate-300 hover:text-emerald-400 transition-colors">Eating Well as an Expat Founder: Nutrition on a Southeast Asia Budget</a></li>
+            <li><a href="/blog/health-arbitrage/expat-founders-stay-mentally-sharp-abroad" class="text-sm text-slate-700 dark:text-slate-300 hover:text-emerald-400 transition-colors">How Expat Founders Stay Mentally Sharp While Living Abroad</a></li>
+            <li><a href="/blog/health-arbitrage/find-good-doctor-abroad-expat-founder" class="text-sm text-slate-700 dark:text-slate-300 hover:text-emerald-400 transition-colors">How to Find a Good Doctor Abroad as an Expat Founder</a></li>
+            <li><a href="/blog/health-arbitrage/longevity-stack-founders-southeast-asia" class="text-sm text-slate-700 dark:text-slate-300 hover:text-emerald-400 transition-colors">The Longevity Stack for Founders in Southeast Asia</a></li>
+            <li><a href="/blog/health-arbitrage/sleep-optimization-founders-across-time-zones" class="text-sm text-slate-700 dark:text-slate-300 hover:text-emerald-400 transition-colors">Sleep Optimization for Founders Working Across Time Zones</a></li>
+          </ul>
+        </div>
       </div>
 
       <div class="mt-6 text-center">

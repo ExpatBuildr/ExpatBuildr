@@ -1,7 +1,7 @@
 ---
 export const prerender = true;
 import Layout from '../../layouts/Layout.astro';
-import { ArrowRight, Globe, Zap, DollarSign, BookOpen, TrendingUp, MapPin } from 'lucide-astro';
+import { ArrowRight, Globe, Zap, DollarSign, BookOpen, TrendingUp, MapPin, Compass } from 'lucide-astro';
 ---
 
 <Layout
@@ -107,6 +107,42 @@ import { ArrowRight, Globe, Zap, DollarSign, BookOpen, TrendingUp, MapPin } from
       </div>
     </div>
 
+    <!-- Recommended Tools -->
+    <div class="mb-16">
+      <div class="flex items-center gap-3 mb-8">
+        <Zap class="text-cyan-400" size={20} />
+        <h2 class="text-2xl font-black font-display uppercase tracking-tight text-slate-900 dark:text-white">Recommended Tools</h2>
+        <div class="h-px flex-1 bg-slate-200 dark:bg-white/10"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="p-5 rounded-xl border border-slate-200 dark:border-white/10 hover:border-cyan-400/40 transition-all">
+          <h3 class="text-sm font-black text-slate-900 dark:text-white mb-1">Wise</h3>
+          <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">Move USD income into local currency at real exchange rates, without hidden bank spread fees.</p>
+        </div>
+        <div class="p-5 rounded-xl border border-slate-200 dark:border-white/10 hover:border-cyan-400/40 transition-all">
+          <h3 class="text-sm font-black text-slate-900 dark:text-white mb-1">SafetyWing</h3>
+          <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">Nomad health insurance for founders just starting their move abroad, from $56/month.</p>
+        </div>
+        <div class="p-5 rounded-xl border border-slate-200 dark:border-white/10 hover:border-cyan-400/40 transition-all">
+          <h3 class="text-sm font-black text-slate-900 dark:text-white mb-1">NordVPN</h3>
+          <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">Security on public networks, plus access to US banking and services from abroad.</p>
+        </div>
+        <div class="p-5 rounded-xl border border-slate-200 dark:border-white/10 hover:border-cyan-400/40 transition-all">
+          <h3 class="text-sm font-black text-slate-900 dark:text-white mb-1">Numbeo</h3>
+          <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">Crowd-sourced cost of living data used to build a realistic budget before you move.</p>
+        </div>
+        <div class="p-5 rounded-xl border border-slate-200 dark:border-white/10 hover:border-cyan-400/40 transition-all">
+          <h3 class="text-sm font-black text-slate-900 dark:text-white mb-1">Booking.com</h3>
+          <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">Furnished short-term stays for testing a neighborhood before signing a longer lease.</p>
+        </div>
+        <div class="p-5 rounded-xl border border-slate-200 dark:border-white/10 hover:border-cyan-400/40 transition-all">
+          <h3 class="text-sm font-black text-slate-900 dark:text-white mb-1">Lamudi</h3>
+          <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">Property listing site used for apartment hunting once you're ready to commit in the Philippines.</p>
+        </div>
+      </div>
+    </div>
+
     <!-- Content Library -->
     <div class="mb-16">
       <div class="flex items-center gap-3 mb-8">
@@ -136,6 +172,44 @@ import { ArrowRight, Globe, Zap, DollarSign, BookOpen, TrendingUp, MapPin } from
             <li><a href="/blog/geo-arbitrage/best-neighborhoods-remote-workers-cebu-city" class="text-sm text-slate-700 dark:text-slate-300 hover:text-cyan-400 transition-colors">Best Neighborhoods for Remote Workers in Cebu City</a></li>
             <li><a href="/blog/geo-arbitrage/best-neighborhoods-remote-workers-phuket" class="text-sm text-slate-700 dark:text-slate-300 hover:text-cyan-400 transition-colors">Best Neighborhoods for Remote Workers in Phuket</a></li>
             <li><a href="/blog/geo-arbitrage/how-to-find-apartment-abroad-without-getting-scammed" class="text-sm text-slate-700 dark:text-slate-300 hover:text-cyan-400 transition-colors">How to Find an Apartment Abroad Without Getting Scammed</a></li>
+          </ul>
+        </div>
+
+        <div class="p-4 rounded-xl border border-slate-200 dark:border-white/10 hover:border-cyan-400/40 transition-all">
+          <div class="text-xs font-mono text-cyan-400 uppercase tracking-wider mb-1">Cluster 3 · The Expat Founder</div>
+          <ul class="space-y-2">
+            <li><a href="/blog/geo-arbitrage/what-is-an-expat-founder" class="text-sm text-slate-700 dark:text-slate-300 hover:text-cyan-400 transition-colors">What Is an Expat Founder</a></li>
+            <li><a href="/blog/geo-arbitrage/expat-founder-mindset" class="text-sm text-slate-700 dark:text-slate-300 hover:text-cyan-400 transition-colors">The Expat Founder Mindset</a></li>
+            <li><a href="/blog/geo-arbitrage/expat-founder-vs-remote-employee" class="text-sm text-slate-700 dark:text-slate-300 hover:text-cyan-400 transition-colors">The Expat Founder vs the Remote Employee</a></li>
+            <li><a href="/blog/geo-arbitrage/is-expat-founder-path-right-for-you" class="text-sm text-slate-700 dark:text-slate-300 hover:text-cyan-400 transition-colors">How to Know if the Expat Founder Path Is Right for You</a></li>
+            <li><a href="/blog/geo-arbitrage/why-expat-founders-choose-a-base" class="text-sm text-slate-700 dark:text-slate-300 hover:text-cyan-400 transition-colors">Why Expat Founders Choose a Base Country Instead of Constantly Moving</a></li>
+          </ul>
+        </div>
+
+        <div class="p-4 rounded-xl border border-slate-200 dark:border-white/10 hover:border-cyan-400/40 transition-all">
+          <div class="text-xs font-mono text-cyan-400 uppercase tracking-wider mb-1">Cluster 4 · Setting Up in the Philippines</div>
+          <ul class="space-y-2">
+            <li><a href="/blog/geo-arbitrage/open-bank-account-philippines-foreigner" class="text-sm text-slate-700 dark:text-slate-300 hover:text-cyan-400 transition-colors">How to Open a Bank Account in the Philippines as a Foreigner</a></li>
+            <li><a href="/blog/geo-arbitrage/philippines-business-protocol" class="text-sm text-slate-700 dark:text-slate-300 hover:text-cyan-400 transition-colors">How to Set Up a Geo-Arbitraged Business in the Philippines</a></li>
+            <li><a href="/blog/geo-arbitrage/scale-remote-teams-asean" class="text-sm text-slate-700 dark:text-slate-300 hover:text-cyan-400 transition-colors">How to Scale Remote Teams in ASEAN</a></li>
+            <li><a href="/blog/geo-arbitrage/complete-guide-living-working-cebu-city" class="text-sm text-slate-700 dark:text-slate-300 hover:text-cyan-400 transition-colors">The Complete Guide to Living and Working in Cebu City</a></li>
+          </ul>
+        </div>
+
+        <div class="p-4 rounded-xl border border-slate-200 dark:border-white/10 hover:border-cyan-400/40 transition-all">
+          <div class="text-xs font-mono text-cyan-400 uppercase tracking-wider mb-1">Cluster 5 · Choosing Your Base</div>
+          <ul class="space-y-2">
+            <li><a href="/blog/geo-arbitrage/how-to-choose-your-expat-base-by-founder-type" class="text-sm text-slate-700 dark:text-slate-300 hover:text-cyan-400 transition-colors">How to Choose Your Expat Base by Founder Type</a></li>
+            <li><a href="/blog/geo-arbitrage/how-to-calculate-your-expat-runway-by-founder-type" class="text-sm text-slate-700 dark:text-slate-300 hover:text-cyan-400 transition-colors">How to Calculate Your Expat Runway by Founder Type</a></li>
+            <li><a href="/blog/geo-arbitrage/expat-founder-tool-stack-complete-guide" class="text-sm text-slate-700 dark:text-slate-300 hover:text-cyan-400 transition-colors">The Expat Founder Tool Stack — Complete Guide</a></li>
+          </ul>
+        </div>
+
+        <div class="p-4 rounded-xl border border-slate-200 dark:border-white/10 hover:border-cyan-400/40 transition-all">
+          <div class="text-xs font-mono text-cyan-400 uppercase tracking-wider mb-1">Cluster 6 · Lifestyle Design</div>
+          <ul class="space-y-2">
+            <li><a href="/blog/geo-arbitrage/lifestyle-arbitrage-consulting" class="text-sm text-slate-700 dark:text-slate-300 hover:text-cyan-400 transition-colors">Lifestyle Arbitrage Consulting</a></li>
+            <li><a href="/blog/geo-arbitrage/lifestyle-design-and-compound-architecture" class="text-sm text-slate-700 dark:text-slate-300 hover:text-cyan-400 transition-colors">Lifestyle Design and Compound Architecture</a></li>
           </ul>
         </div>
 
