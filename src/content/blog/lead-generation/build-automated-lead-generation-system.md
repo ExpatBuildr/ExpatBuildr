@@ -13,7 +13,7 @@ canonicalUrl: "https://expatbuildr.com/blog/lead-generation/build-automated-lead
 primaryKeyword: "how to build an automated lead generation system"
 secondaryKeywords: ["automated lead generation system", "build outreach automation", "lead generation automation", "automated prospecting system", "outbound automation founder"]
 searchIntent: "problem-solving"
-draft: true
+draft: false
 archived: false
 noindex: false
 ---

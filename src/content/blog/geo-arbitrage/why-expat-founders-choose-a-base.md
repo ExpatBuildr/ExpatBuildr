@@ -12,7 +12,7 @@ canonicalUrl: "https://expatbuildr.com/blog/geo-arbitrage/why-expat-founders-cho
 primaryKeyword: "why expat founders choose a base country instead of constantly moving"
 secondaryKeywords: ["expat founder base country", "why settle in one country abroad", "base country vs nomadic", "long term expat base strategy", "choosing base country expat founder"]
 searchIntent: "informational"
-draft: true
+draft: false
 gated: false
 archived: false
 noindex: false
