@@ -100,5 +100,6 @@ export default defineConfig({
     '/arbjobs': '/geo-arbitrage/arbjobs',
     '/automation': '/automation-systems/automation',
     '/job': '/geo-arbitrage/job',
+    '/build-with-galaxy/build': '/build-with-expatbuildr',
   }
 });

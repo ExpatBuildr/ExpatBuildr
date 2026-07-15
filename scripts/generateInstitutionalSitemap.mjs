@@ -68,9 +68,18 @@ const SKIP_SUFFIXES = [
     '/success',
 ];
 
+// Pages with noindex set but that don't match the suffix patterns above
+const SKIP_EXACT = [
+    '/founders/payment-received',
+    '/geo-arbitrage/confirmed',
+    '/nfs/turbo',
+    '/lead-gen/edge',
+];
+
 function shouldSkip(pathname) {
     return SKIP_PREFIXES.some(p => pathname.startsWith(p))
-        || SKIP_SUFFIXES.some(s => pathname.endsWith(s));
+        || SKIP_SUFFIXES.some(s => pathname.endsWith(s))
+        || SKIP_EXACT.includes(pathname);
 }
 
 async function run() {

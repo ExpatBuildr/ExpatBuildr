@@ -3,6 +3,10 @@ Disallow: /internal
 Disallow: /*/unlock
 Disallow: /*/thank-you
 Disallow: /*/success
+Disallow: /founders/payment-received
+Disallow: /geo-arbitrage/confirmed
+Disallow: /nfs/turbo
+Disallow: /lead-gen/edge
 Allow: /
 
 Sitemap: https://expatbuildr.com/sitemap-index.xml
