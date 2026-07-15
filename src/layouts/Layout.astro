@@ -199,41 +199,83 @@ const websiteSchema = {
 					
 					<!-- Desktop Navigation -->
 					<div class="hidden md:flex items-center gap-8 font-medium text-sm text-slate-700 dark:text-slate-400">
-						<!-- Services Dropdown -->
+						<!-- Free Resources Dropdown -->
 						<div class="relative group/dropdown">
 							<button class="flex items-center gap-1.5 hover:text-accent-blue transition-colors cursor-pointer py-2 text-slate-900 dark:text-white font-bold">
-								Services <ChevronDown size={14} />
+								Free Resources <ChevronDown size={14} />
 							</button>
 							<div class="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-64 opacity-0 translate-y-2 pointer-events-none group-hover/dropdown:opacity-100 group-hover/dropdown:translate-y-0 group-hover/dropdown:pointer-events-auto transition-all duration-300">
-								<div class="glass-card rounded-2xl p-2 border border-slate-200 dark:border-white/10 shadow-2xl backdrop-blur-2xl bg-white/95 dark:bg-slate-900/95 overflow-hidden">
-									<!-- Landing Pages -->
-									<a href="/founders/offer" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-slate-100 dark:hover:bg-white/10 hover:text-accent-cyan transition-all group">
+								<div class="glass-card rounded-2xl p-2 border border-slate-200 dark:border-white/10 shadow-2xl backdrop-blur-2xl bg-white/95 dark:bg-slate-900/95 overflow-hidden max-h-[70vh] overflow-y-auto">
+									<a href="/founder-stack" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-slate-100 dark:hover:bg-white/10 hover:text-accent-cyan transition-all group">
 										<div class="p-2 rounded-lg bg-accent-cyan/10 text-accent-cyan group-hover:scale-110 transition-transform">
-											<MonitorPlay size={18} />
+											<Rocket size={18} />
 										</div>
 										<div>
-											<div class="text-xs font-bold">Landing Pages</div>
-											<div class="text-[10px] text-slate-500">High Converting Funnels</div>
+											<div class="text-xs font-bold">Founder Stack</div>
+											<div class="text-[10px] text-slate-500">Free Checklist</div>
 										</div>
 									</a>
-									<!-- Lead Gen -->
-									<a href="/lead-gen/edge" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-slate-100 dark:hover:bg-white/10 hover:text-accent-blue transition-all group">
-										<div class="p-2 rounded-lg bg-accent-cyan/10 text-accent-cyan group-hover:scale-110 transition-transform">
+									<a href="/blog/geo-arbitrage-links" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-slate-100 dark:hover:bg-white/10 hover:text-cyan-400 transition-all group">
+										<div class="p-2 rounded-lg bg-cyan-400/10 text-cyan-400 group-hover:scale-110 transition-transform">
+											<Briefcase size={18} />
+										</div>
+										<div>
+											<div class="text-xs font-bold">Geo-Arbitrage Resources</div>
+											<div class="text-[10px] text-slate-500">Tools & Guides</div>
+										</div>
+									</a>
+									<a href="/blog/remote-income-links" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-slate-100 dark:hover:bg-white/10 hover:text-amber-500 transition-all group">
+										<div class="p-2 rounded-lg bg-amber-500/10 text-amber-500 group-hover:scale-110 transition-transform">
+											<TrendingUp size={18} />
+										</div>
+										<div>
+											<div class="text-xs font-bold">Remote Income Resources</div>
+											<div class="text-[10px] text-slate-500">Tools & Guides</div>
+										</div>
+									</a>
+									<a href="/blog/lead-generation-links" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-slate-100 dark:hover:bg-white/10 hover:text-emerald-500 transition-all group">
+										<div class="p-2 rounded-lg bg-emerald-500/10 text-emerald-500 group-hover:scale-110 transition-transform">
 											<Target size={18} />
 										</div>
 										<div>
-											<div class="text-xs font-bold">Lead Gen Systems</div>
-											<div class="text-[10px] text-slate-500">Autonomous Prospecting</div>
+											<div class="text-xs font-bold">Lead Generation Resources</div>
+											<div class="text-[10px] text-slate-500">Tools & Guides</div>
 										</div>
 									</a>
-									<!-- Founders -->
+									<a href="/ai-business/prompts" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-slate-100 dark:hover:bg-white/10 hover:text-accent-purple transition-all group">
+										<div class="p-2 rounded-lg bg-accent-purple/10 text-accent-purple group-hover:scale-110 transition-transform">
+											<Cpu size={18} />
+										</div>
+										<div>
+											<div class="text-xs font-bold">AI Prompts</div>
+											<div class="text-[10px] text-slate-500">Free Prompt Pack</div>
+										</div>
+									</a>
+									<a href="/expats" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-slate-100 dark:hover:bg-white/10 hover:text-accent-blue transition-all group">
+										<div class="p-2 rounded-lg bg-accent-blue/10 text-accent-blue group-hover:scale-110 transition-transform">
+											<Layers size={18} />
+										</div>
+										<div>
+											<div class="text-xs font-bold">Expats</div>
+											<div class="text-[10px] text-slate-500">Relocation Resources</div>
+										</div>
+									</a>
 									<a href="/founders/strategy" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-slate-100 dark:hover:bg-white/10 hover:text-accent-purple transition-all group">
 										<div class="p-2 rounded-lg bg-accent-purple/10 text-accent-purple group-hover:scale-110 transition-transform">
 											<Rocket size={18} />
 										</div>
 										<div>
-											<div class="text-xs font-bold">Expat Founders Launch</div>
+											<div class="text-xs font-bold">Founders Launch Kit</div>
 											<div class="text-[10px] text-slate-500">Launch Infrastructure</div>
+										</div>
+									</a>
+									<a href="/automation-systems/automate" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-slate-100 dark:hover:bg-white/10 hover:text-accent-blue transition-all group">
+										<div class="p-2 rounded-lg bg-accent-blue/10 text-accent-blue group-hover:scale-110 transition-transform">
+											<Cpu size={18} />
+										</div>
+										<div>
+											<div class="text-xs font-bold">Automation</div>
+											<div class="text-[10px] text-slate-500">Free Breakdown</div>
 										</div>
 									</a>
 									<a href="/geo-arbitrage/arbjobs" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-slate-100 dark:hover:bg-white/10 hover:text-emerald-500 transition-all group">
@@ -241,18 +283,43 @@ const websiteSchema = {
 											<Briefcase size={18} />
 										</div>
 										<div>
-											<div class="text-xs font-bold">Geo-Arbitrage</div>
-											<div class="text-[10px] text-slate-500">Global Roles & Jobs</div>
+											<div class="text-xs font-bold">Remote Job Board</div>
+											<div class="text-[10px] text-slate-500">Curated Openings</div>
 										</div>
 									</a>
-									<!-- Remote Income -->
-									<a href="/remote-income/sniper" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-slate-100 dark:hover:bg-white/10 hover:text-amber-500 transition-all group">
-										<div class="p-2 rounded-lg bg-amber-500/10 text-amber-500 group-hover:scale-110 transition-transform">
-											<TrendingUp size={18} />
+									<div class="my-1 border-t border-slate-200 dark:border-white/10"></div>
+									<a href="/blog" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-slate-100 dark:hover:bg-white/10 hover:text-accent-blue transition-all group font-bold">
+										<Layers size={16} /> See All Resources
+									</a>
+								</div>
+							</div>
+						</div>
+
+						<!-- Services Dropdown -->
+						<div class="relative group/dropdown">
+							<button class="flex items-center gap-1.5 hover:text-accent-blue transition-colors cursor-pointer py-2 text-slate-900 dark:text-white font-bold">
+								Services <ChevronDown size={14} />
+							</button>
+							<div class="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-64 opacity-0 translate-y-2 pointer-events-none group-hover/dropdown:opacity-100 group-hover/dropdown:translate-y-0 group-hover/dropdown:pointer-events-auto transition-all duration-300">
+								<div class="glass-card rounded-2xl p-2 border border-slate-200 dark:border-white/10 shadow-2xl backdrop-blur-2xl bg-white/95 dark:bg-slate-900/95 overflow-hidden">
+									<!-- Landing Pages / Free Audit -->
+									<a href="/leaks" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-slate-100 dark:hover:bg-white/10 hover:text-accent-cyan transition-all group">
+										<div class="p-2 rounded-lg bg-accent-cyan/10 text-accent-cyan group-hover:scale-110 transition-transform">
+											<MonitorPlay size={18} />
 										</div>
 										<div>
-											<div class="text-xs font-bold">Remote Income</div>
-											<div class="text-[10px] text-slate-500">Wealth Generation</div>
+											<div class="text-xs font-bold">Landing Pages</div>
+											<div class="text-[10px] text-slate-500">Free Audit</div>
+										</div>
+									</a>
+									<!-- Lead Gen -->
+									<a href="/lead-generation" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-slate-100 dark:hover:bg-white/10 hover:text-accent-blue transition-all group">
+										<div class="p-2 rounded-lg bg-accent-cyan/10 text-accent-cyan group-hover:scale-110 transition-transform">
+											<Target size={18} />
+										</div>
+										<div>
+											<div class="text-xs font-bold">Lead Gen Systems</div>
+											<div class="text-[10px] text-slate-500">Autonomous Prospecting</div>
 										</div>
 									</a>
 									<!-- Automation -->
@@ -265,35 +332,45 @@ const websiteSchema = {
 											<div class="text-[10px] text-slate-500">Autonomous Workflows</div>
 										</div>
 									</a>
-								</div>
-							</div>
-						</div>
-
-						<!-- Teleport Dropdown -->
-						<div class="relative group/dropdown">
-							<button class="flex items-center gap-1.5 hover:text-accent-blue transition-colors cursor-pointer py-2">
-								Explore <ChevronDown size={14} />
-							</button>
-							<div class="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-56 opacity-0 translate-y-2 pointer-events-none group-hover/dropdown:opacity-100 group-hover/dropdown:translate-y-0 group-hover/dropdown:pointer-events-auto transition-all duration-300">
-								<div class="glass-card rounded-2xl p-2 border border-slate-200 dark:border-white/10 shadow-2xl backdrop-blur-2xl bg-white/95 dark:bg-slate-900/95 overflow-hidden">
-									<a href="/portfolio" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-slate-100 dark:hover:bg-white/10 hover:text-accent-cyan transition-all group font-bold">
-										<Layers size={16} /> Portfolio
+									<!-- Founders / Strategy Call -->
+									<a href="/meet-tony" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-slate-100 dark:hover:bg-white/10 hover:text-accent-purple transition-all group">
+										<div class="p-2 rounded-lg bg-accent-purple/10 text-accent-purple group-hover:scale-110 transition-transform">
+											<Rocket size={18} />
+										</div>
+										<div>
+											<div class="text-xs font-bold">Expat Founder Launch</div>
+											<div class="text-[10px] text-slate-500">Book a Strategy Call</div>
+										</div>
 									</a>
-									<div class="my-1 border-t border-slate-200 dark:border-white/10"></div>
-									<a href="/founders/strategy" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-slate-100 dark:hover:bg-white/10 hover:text-accent-blue transition-all group">
-										<Rocket size={16} /> Expat Founders Launch
+									<!-- Google Business Profile -->
+									<a href="/getfound" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-slate-100 dark:hover:bg-white/10 hover:text-amber-500 transition-all group">
+										<div class="p-2 rounded-lg bg-amber-500/10 text-amber-500 group-hover:scale-110 transition-transform">
+											<MonitorPlay size={18} />
+										</div>
+										<div>
+											<div class="text-xs font-bold">Google Business Profile</div>
+											<div class="text-[10px] text-slate-500">Get Found Locally</div>
+										</div>
 									</a>
-									<a href="/portfolio#saas" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-slate-100 dark:hover:bg-white/10 hover:text-accent-blue transition-all group">
-										<Rocket size={16} /> SaaS Platforms
+									<!-- Remote Job Board -->
+									<a href="/geo-arbitrage/job" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-slate-100 dark:hover:bg-white/10 hover:text-emerald-500 transition-all group">
+										<div class="p-2 rounded-lg bg-emerald-500/10 text-emerald-500 group-hover:scale-110 transition-transform">
+											<Briefcase size={18} />
+										</div>
+										<div>
+											<div class="text-xs font-bold">Remote Job Board</div>
+											<div class="text-[10px] text-slate-500">Curated Openings</div>
+										</div>
 									</a>
-									<a href="/portfolio#trading" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-slate-100 dark:hover:bg-white/10 hover:text-accent-blue transition-all group">
-										<LineChart size={16} /> Trading Systems
-									</a>
-									<a href="/portfolio#software" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-slate-100 dark:hover:bg-white/10 hover:text-accent-blue transition-all group">
-										<Code2 size={16} /> Software & Tools
-									</a>
-									<a href="/portfolio#music" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-slate-100 dark:hover:bg-white/10 hover:text-accent-purple transition-all group">
-										<Music size={16} /> Music Licensing
+									<!-- Build With ExpatBuildr -->
+									<a href="/build-with-expatbuildr" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-slate-100 dark:hover:bg-white/10 hover:text-accent-blue transition-all group">
+										<div class="p-2 rounded-lg bg-accent-blue/10 text-accent-blue group-hover:scale-110 transition-transform">
+											<Rocket size={18} />
+										</div>
+										<div>
+											<div class="text-xs font-bold">Build With ExpatBuildr</div>
+											<div class="text-[10px] text-slate-500">Flagship Offer</div>
+										</div>
 									</a>
 								</div>
 							</div>
@@ -360,12 +437,25 @@ const websiteSchema = {
 				<div id="mobileMenuOverlay" class="fixed inset-0 z-40 bg-white/95 dark:bg-galaxy-950/95 backdrop-blur-2xl opacity-0 pointer-events-none translate-y-4 transition-all duration-300 md:hidden overflow-y-auto" style="top: 110px;">
 					<div class="max-w-7xl mx-auto px-6 py-12 space-y-8">
 						<div class="grid grid-cols-1 gap-4">
-							<a href="/lead-gen/edge" class="mobile-nav-link text-accent-cyan"><Target size={20} /> Lead Gen</a>
-							<a href="/founders/strategy" class="mobile-nav-link text-accent-purple"><Rocket size={20} /> Expat Founders</a>
-							<a href="/geo-arbitrage/arbjobs" class="mobile-nav-link text-emerald-600 dark:text-emerald-500"><Briefcase size={20} /> Jobs</a>
-							<a href="/remote-income/sniper" class="mobile-nav-link text-amber-500"><TrendingUp size={20} /> Remote Income</a>
-							<a href="/automation-systems/automation" class="mobile-nav-link text-accent-blue"><Cpu size={20} /> Automation</a>
 							<a href="/newsletter" class="mobile-nav-link font-bold" style="color: #f5c842;"><Mail size={20} /> Join Arbitrage</a>
+
+							<div class="text-[10px] font-mono uppercase tracking-[0.2em] text-slate-400 pt-2">Free Resources</div>
+							<a href="/founder-stack" class="mobile-nav-link text-accent-cyan"><Rocket size={20} /> Founder Stack</a>
+							<a href="/blog/geo-arbitrage-links" class="mobile-nav-link text-cyan-500"><Briefcase size={20} /> Geo-Arbitrage Resources</a>
+							<a href="/blog/remote-income-links" class="mobile-nav-link text-amber-500"><TrendingUp size={20} /> Remote Income Resources</a>
+							<a href="/blog/lead-generation-links" class="mobile-nav-link text-emerald-600 dark:text-emerald-500"><Target size={20} /> Lead Generation Resources</a>
+							<a href="/ai-business/prompts" class="mobile-nav-link text-accent-purple"><Cpu size={20} /> AI Prompts</a>
+							<a href="/expats" class="mobile-nav-link text-accent-blue"><Layers size={20} /> Expats</a>
+							<a href="/geo-arbitrage/arbjobs" class="mobile-nav-link text-emerald-600 dark:text-emerald-500"><Briefcase size={20} /> Remote Job Board</a>
+
+							<div class="text-[10px] font-mono uppercase tracking-[0.2em] text-slate-400 pt-2">Services</div>
+							<a href="/leaks" class="mobile-nav-link text-accent-cyan"><MonitorPlay size={20} /> Landing Pages (Free Audit)</a>
+							<a href="/lead-generation" class="mobile-nav-link text-accent-blue"><Target size={20} /> Lead Gen Systems</a>
+							<a href="/automation-systems/automation" class="mobile-nav-link text-accent-blue"><Cpu size={20} /> Automation Systems</a>
+							<a href="/meet-tony" class="mobile-nav-link text-accent-purple"><Rocket size={20} /> Book a Strategy Call</a>
+							<a href="/build-with-expatbuildr" class="mobile-nav-link text-accent-blue"><Rocket size={20} /> Build With ExpatBuildr</a>
+
+							<div class="text-[10px] font-mono uppercase tracking-[0.2em] text-slate-400 pt-2">More</div>
 							<a href="/blog" class="mobile-nav-link text-accent-cyan"><Cpu size={20} /> Blog</a>
 							<a href="/shop" class="mobile-nav-link text-pink-500 dark:text-pink-400"><ShoppingCart size={20} /> Shop</a>
 							<a href="/contact" class="mobile-nav-link text-slate-700 dark:text-slate-400"><Mail size={20} /> Contact</a>

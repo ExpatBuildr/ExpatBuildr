@@ -54,7 +54,7 @@ const description = "High‑intent acquisition systems: intent extraction, deep 
       <div class="subscribe-box">
         <div class="progress-header">
           <span class="progress-label">Free Resource</span>
-          <strong class="progress-count">Lead Engine Playbook</strong>
+          <strong class="progress-count">Prompt Vault</strong>
         </div>
         <form id="subscribe-leads" class="sub-form">
           <input type="email" id="email-leads" name="email" placeholder="Your best email" required class="fake-input" />
@@ -76,12 +76,78 @@ const description = "High‑intent acquisition systems: intent extraction, deep 
       if(!re.test(email)){ msg.innerText='Please enter a valid email.'; msg.classList.remove('hidden'); return; }
       btn.disabled=true; btn.innerText='Submitting...';
       try{
-        const res = await fetch('/api/subscribe',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email,source:'money-lead-generation',magnet:'lead-engine-playbook',tags:['lead_builder']})});
+        const res = await fetch('/api/subscribe',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email,source:'money-lead-generation',magnet:'prompt-vault',tags:['lead_builder']})});
         const data = await res.json();
-        if(data.success){ window.location.href=data.redirect_url || '/download?magnet=lead-engine-playbook'; }
+        if(data.success){ window.location.href=data.redirect_url || '/download?magnet=prompt-vault'; }
         else { btn.disabled=false; btn.innerText='Get The Playbook →'; msg.innerText=data.error||'Error'; msg.classList.remove('hidden'); }
       }catch(err){ btn.disabled=false; btn.innerText='Get The Playbook →'; msg.innerText='Network error'; msg.classList.remove('hidden'); }
     }
     document.getElementById('subscribe-leads')?.addEventListener('submit', submitLeads);
   </script>
+
+  <style>
+    .subscribe-box {
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: 24px;
+      padding: 24px;
+      width: 100%;
+      max-width: 500px;
+      margin-bottom: 20px;
+    }
+    .progress-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+    .progress-label {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      color: var(--text-secondary);
+      text-transform: uppercase;
+    }
+    .progress-count {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--accent-gold);
+    }
+    .sub-form {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    @media (min-width: 480px) {
+      .sub-form { flex-direction: row; }
+    }
+    .btn-primary {
+      padding: 16px 28px;
+      background: linear-gradient(135deg, var(--accent-gold), var(--accent-orange));
+      color: #000;
+      font-family: var(--font-body);
+      font-weight: 800;
+      font-size: 0.9rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      border: none;
+      border-radius: 100px;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+    .fake-input {
+      padding: 16px 20px;
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: 100px;
+      color: var(--text-primary);
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      outline: none;
+      flex: 1;
+    }
+    .fake-input:focus { border-color: var(--accent-gold); }
+    .form-msg { margin-top: 12px; font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-secondary); text-align: center; }
+    .form-msg.hidden { display: none; }
+  </style>
 </Layout>
