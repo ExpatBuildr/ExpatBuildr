@@ -17,10 +17,18 @@ const CONFIG = {
 
 const date = new Date().toISOString();
 
-function createUrlNode(url, config) {
+function toIsoDate(value) {
+    if (!value) return null;
+    const d = new Date(value);
+    return isNaN(d.getTime()) ? null : d.toISOString();
+}
+
+function createUrlNode(entry, config) {
+    const url = typeof entry === 'string' ? entry : entry.url;
+    const lastmod = (typeof entry === 'object' && entry.lastmod) || date;
     return `  <url>
     <loc>${url}</loc>
-    <lastmod>${date}</lastmod>
+    <lastmod>${lastmod}</lastmod>
     <changefreq>${config.changefreq}</changefreq>
     <priority>${config.priority}</priority>
   </url>`;
@@ -97,13 +105,15 @@ async function run() {
                 const relativePath = path.relative(BLOG_SRC, fullPath);
                 const slug = relativePath.replace(/\.mdx?$/, '').replace(/\\/g, '/');
                 const url = `https://${HOST}/blog/${slug}`;
+                const lastmod = toIsoDate(data.updatedDate) || toIsoDate(data.pubDate) || date;
+                const entry = { url, lastmod };
 
                 if (data.category === 'Pillar Hub') {
-                    silos.hubs.push(url);
+                    silos.hubs.push(entry);
                 } else if (data.category === 'Service') {
-                    silos.services.push(url);
+                    silos.services.push(entry);
                 } else {
-                    silos.briefings.push(url);
+                    silos.briefings.push(entry);
                 }
             }
         }
