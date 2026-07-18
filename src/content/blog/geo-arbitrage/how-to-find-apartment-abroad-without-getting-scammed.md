@@ -77,6 +77,15 @@ The remote worker community in most Southeast Asian cities is connected. If you 
 **Airbnb for the first month**
 Not for long-term rental prices — Airbnb monthly rates are higher than direct rentals. But for the first 30 days while you search for a direct rental on the ground, a verified Airbnb with reviews gives you a safe, no-deposit landing spot. The review system makes scamming difficult. Use it as a bridge, not a long-term solution.
 
+<div class="my-10 p-8 rounded-[2rem] border border-slate-200 dark:border-white/5 bg-slate-900/[0.02] dark:bg-white/[0.02] text-center">
+  <p class="text-[10px] font-mono uppercase tracking-[0.25em] text-institutional-muted mb-2">Partner</p>
+  <p class="text-2xl font-black font-display text-institutional-primary uppercase tracking-tight mb-3">SafetyWing Nomad Insurance</p>
+  <p class="text-institutional-secondary text-sm leading-relaxed max-w-sm mx-auto mb-6">Live pricing for the coverage you'll want in place before you land.</p>
+  <div class="safetywing-price-widget mx-auto" data-safetywingaffiliateid="26554119" data-scale="1.0"></div>
+</div>
+
+<script type="text/javascript" src="https://storage.googleapis.com/safetywing-static/widget/safetywing-price-widget.js"></script>
+
 ---
 
 ## How to Negotiate Rent Correctly

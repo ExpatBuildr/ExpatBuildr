@@ -1,0 +1,19 @@
+---
+// Partner widget — SafetyWing Nomad Insurance pricing, sidebar placement
+// Shown only on health-arbitrage / geo-arbitrage posts (see [...path].astro)
+---
+
+<div class="space-y-3">
+    <p class="text-xs font-bold font-mono uppercase tracking-[0.2em] text-institutional-muted">Partner</p>
+    <div class="p-6 rounded-2xl border border-slate-200 dark:border-white/5 bg-slate-900/[0.02] dark:bg-white/[0.02]">
+        <p class="text-sm font-black font-display text-institutional-primary uppercase tracking-tight leading-tight mb-1">
+            SafetyWing<br/>Nomad Insurance
+        </p>
+        <p class="text-[11px] text-institutional-secondary font-inter mb-4 leading-relaxed">
+            Live pricing for the plan we recommend for Tier 1 coverage.
+        </p>
+        <div class="safetywing-price-widget" data-safetywingaffiliateid="26554119" data-scale="1.0"></div>
+    </div>
+</div>
+
+<script is:inline type="text/javascript" src="https://storage.googleapis.com/safetywing-static/widget/safetywing-price-widget.js"></script>

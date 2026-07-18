@@ -13,7 +13,7 @@ canonicalUrl: "https://expatbuildr.com/blog/geo-arbitrage/thailand-ltr-visa-remo
 primaryKeyword: "how to get Thailand LTR visa remote worker"
 secondaryKeywords: ["Thailand LTR visa requirements", "Thailand long term resident visa", "remote worker Thailand visa 2026", "Thailand visa expat founder", "LTR visa application process"]
 searchIntent: "problem-solving"
-draft: true
+draft: false
 archived: false
 noindex: false
 ---

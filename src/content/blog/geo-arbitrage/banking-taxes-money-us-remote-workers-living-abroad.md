@@ -81,6 +81,15 @@ If you pay income tax in your country of residence, you can claim a Foreign Tax 
 
 Most Southeast Asian countries have low income tax rates for foreigners, and some have territorial tax systems — meaning foreign-sourced income (like a US salary) is not taxed locally at all. In practice, many remote workers in the Philippines, Thailand, and Vietnam pay little to no local income tax on their US-sourced income, which makes the Foreign Tax Credit less relevant but the FEIE more valuable.
 
+<div class="my-10 p-8 rounded-[2rem] border border-slate-200 dark:border-white/5 bg-slate-900/[0.02] dark:bg-white/[0.02] text-center">
+  <p class="text-[10px] font-mono uppercase tracking-[0.25em] text-institutional-muted mb-2">Partner</p>
+  <p class="text-2xl font-black font-display text-institutional-primary uppercase tracking-tight mb-3">SafetyWing Nomad Insurance</p>
+  <p class="text-institutional-secondary text-sm leading-relaxed max-w-sm mx-auto mb-6">Live pricing for coverage before you file abroad.</p>
+  <div class="safetywing-price-widget mx-auto" data-safetywingaffiliateid="26554119" data-scale="1.0"></div>
+</div>
+
+<script type="text/javascript" src="https://storage.googleapis.com/safetywing-static/widget/safetywing-price-widget.js"></script>
+
 ### FBAR and FATCA Reporting
 
 **FBAR (FinCEN Form 114):** If the aggregate value of your foreign bank accounts exceeds $10,000 at any point during the calendar year, you must file an FBAR by April 15 (with automatic extension to October 15). The penalty for non-filing is severe — up to $10,000 per violation for non-willful failures.

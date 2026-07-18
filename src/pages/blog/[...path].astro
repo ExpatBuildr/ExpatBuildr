@@ -10,6 +10,7 @@ import TableOfContents from '../../components/blog/TableOfContents.astro';
 import RelatedPosts from '../../components/blog/RelatedPosts.astro';
 import GalaxyAd from '../../components/blog/GalaxyAd.astro';
 import NewsletterAd from '../../components/blog/NewsletterAd.astro';
+import SafetyWingAd from '../../components/blog/SafetyWingAd.astro';
 import NewsletterPopup from '../../components/NewsletterPopup.astro';
 import Comments from '../../components/blog/Comments.astro';
 import { getCollection, render } from 'astro:content';
@@ -186,6 +187,18 @@ const PHILOSOPHY_FRAMEWORK_SLUGS = new Set([
 ]);
 
 const postSlug = type === 'post' ? post.id.replace(/\.mdx?$/, '').split('/').pop() ?? '' : '';
+
+// These posts embed the SafetyWing widget inline in the article body (right before
+// the gate cutoff) instead of the sidebar, so the widget script isn't loaded twice.
+const SAFETYWING_INLINE_SLUGS = new Set([
+    'how-to-move-to-southeast-asia-remote-worker-checklist',
+    'how-to-find-apartment-abroad-without-getting-scammed',
+    'open-bank-account-philippines-foreigner',
+    'banking-taxes-money-us-remote-workers-living-abroad',
+    'health-insurance-expat-founders',
+    'best-private-hospitals-expats-southeast-asia',
+    'find-good-doctor-abroad-expat-founder',
+]);
 
 const isSoftCTAArticle = type === 'post' && (
     postSlug.includes('what-is') ||
@@ -384,6 +397,10 @@ const gateMode: 'hard' | 'soft' | 'none' = isSoftCTAArticle ? 'soft' : (isHardGa
                                             </button>
                                         </div>
                                     </div>
+
+                                    {(post.data.pillarId === 'health-arbitrage' || post.data.pillarId === 'geo-arbitrage') && !SAFETYWING_INLINE_SLUGS.has(postSlug) && (
+                                        <SafetyWingAd />
+                                    )}
 
                                     {/* More in this pillar */}
                                     {pillarPosts.length > 0 && (

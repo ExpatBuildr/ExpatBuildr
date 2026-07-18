@@ -13,7 +13,7 @@ canonicalUrl: "https://expatbuildr.com/blog/remote-income/best-remote-work-tools
 primaryKeyword: "best remote work tools for async teams"
 secondaryKeywords: ["async team tools", "remote work tool stack", "distributed team productivity tools", "async communication tools", "remote collaboration tools"]
 searchIntent: "informational"
-draft: true
+draft: false
 archived: false
 noindex: false
 ---

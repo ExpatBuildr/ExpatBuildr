@@ -68,6 +68,15 @@ The exact document requirements vary slightly by bank and branch, but the follow
 - BPI regular savings: ₱3,000 minimum (approximately $52)
 - USD savings accounts require $100 to $200 minimum deposit
 
+<div class="my-10 p-8 rounded-[2rem] border border-slate-200 dark:border-white/5 bg-slate-900/[0.02] dark:bg-white/[0.02] text-center">
+  <p class="text-[10px] font-mono uppercase tracking-[0.25em] text-institutional-muted mb-2">Partner</p>
+  <p class="text-2xl font-black font-display text-institutional-primary uppercase tracking-tight mb-3">SafetyWing Nomad Insurance</p>
+  <p class="text-institutional-secondary text-sm leading-relaxed max-w-sm mx-auto mb-6">Live pricing for coverage while you handle the paperwork.</p>
+  <div class="safetywing-price-widget mx-auto" data-safetywingaffiliateid="26554119" data-scale="1.0"></div>
+</div>
+
+<script type="text/javascript" src="https://storage.googleapis.com/safetywing-static/widget/safetywing-price-widget.js"></script>
+
 ## The Process Step by Step
 
 **Step 1: Choose the right branch**

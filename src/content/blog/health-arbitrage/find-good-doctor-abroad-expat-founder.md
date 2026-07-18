@@ -48,6 +48,15 @@ Before starting the search, define what you need in a doctor. For most expat fou
 
 **Book an initial consultation before you need it:** Do not wait until you are sick to find a doctor. Schedule a routine check-up or health assessment as the first appointment — this gives you a low-stakes opportunity to evaluate the doctor's communication quality, the clinic's organization, and whether you feel comfortable with them before you actually need care.
 
+<div class="my-10 p-8 rounded-[2rem] border border-slate-200 dark:border-white/5 bg-slate-900/[0.02] dark:bg-white/[0.02] text-center">
+  <p class="text-[10px] font-mono uppercase tracking-[0.25em] text-institutional-muted mb-2">Partner</p>
+  <p class="text-2xl font-black font-display text-institutional-primary uppercase tracking-tight mb-3">SafetyWing Nomad Insurance</p>
+  <p class="text-institutional-secondary text-sm leading-relaxed max-w-sm mx-auto mb-6">Live pricing for coverage before your first visit.</p>
+  <div class="safetywing-price-widget mx-auto" data-safetywingaffiliateid="26554119" data-scale="1.0"></div>
+</div>
+
+<script type="text/javascript" src="https://storage.googleapis.com/safetywing-static/widget/safetywing-price-widget.js"></script>
+
 **The first appointment evaluation:** Use the first visit to assess:
 - Do they speak English clearly and in a way you can follow?
 - Do they ask enough questions about your health history?

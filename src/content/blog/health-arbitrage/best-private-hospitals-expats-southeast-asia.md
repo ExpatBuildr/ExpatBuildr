@@ -63,6 +63,15 @@ Consistently rated alongside Bumrungrad, with strong pediatric and women's healt
 **Bangkok Hospital**
 A large network with facilities across Thailand including Chiang Mai and Phuket. Reliable across most specialties. The Chiang Mai Bangkok Hospital is the primary recommendation for Chiang Mai-based expats — strong English proficiency, good emergency coverage, and accessible pricing.
 
+<div class="my-10 p-8 rounded-[2rem] border border-slate-200 dark:border-white/5 bg-slate-900/[0.02] dark:bg-white/[0.02] text-center">
+  <p class="text-[10px] font-mono uppercase tracking-[0.25em] text-institutional-muted mb-2">Partner</p>
+  <p class="text-2xl font-black font-display text-institutional-primary uppercase tracking-tight mb-3">SafetyWing Nomad Insurance</p>
+  <p class="text-institutional-secondary text-sm leading-relaxed max-w-sm mx-auto mb-6">Live pricing for the network above.</p>
+  <div class="safetywing-price-widget mx-auto" data-safetywingaffiliateid="26554119" data-scale="1.0"></div>
+</div>
+
+<script type="text/javascript" src="https://storage.googleapis.com/safetywing-static/widget/safetywing-price-widget.js"></script>
+
 **Cost reference (Thailand private hospitals):**
 - Specialist consultation: $40 to $120
 - Emergency room visit: $75 to $200 depending on treatment

@@ -13,7 +13,7 @@ canonicalUrl: "https://expatbuildr.com/blog/lead-generation/qualify-leads-only-t
 primaryKeyword: "how to qualify leads so you only talk to people who can buy"
 secondaryKeywords: ["lead qualification framework", "qualify sales leads", "sales qualification process", "how to qualify prospects", "lead scoring qualification"]
 searchIntent: "problem-solving"
-draft: true
+draft: false
 archived: false
 noindex: false
 ---

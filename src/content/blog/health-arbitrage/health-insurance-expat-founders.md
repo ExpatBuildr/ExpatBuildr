@@ -62,6 +62,15 @@ Best for: Founders who travel frequently to the US, who have family in the US, o
 
 **If you are in your first year abroad and your monthly budget for insurance is under $100:** Start with SafetyWing. It protects you against the catastrophic scenario — a serious emergency that would otherwise financially devastate you — while you establish your operations and income stability.
 
+<div class="my-10 p-8 rounded-[2rem] border border-slate-200 dark:border-white/5 bg-slate-900/[0.02] dark:bg-white/[0.02] text-center">
+  <p class="text-[10px] font-mono uppercase tracking-[0.25em] text-institutional-muted mb-2">Partner</p>
+  <p class="text-2xl font-black font-display text-institutional-primary uppercase tracking-tight mb-3">SafetyWing Nomad Insurance</p>
+  <p class="text-institutional-secondary text-sm leading-relaxed max-w-sm mx-auto mb-6">Live pricing for the Tier 1 plan above.</p>
+  <div class="safetywing-price-widget mx-auto" data-safetywingaffiliateid="26554119" data-scale="1.0"></div>
+</div>
+
+<script type="text/javascript" src="https://storage.googleapis.com/safetywing-static/widget/safetywing-price-widget.js"></script>
+
 **If you are committed to living abroad for two or more years and your income is stable:** Move to Cigna Global or Aetna International comprehensive coverage. The additional cost relative to SafetyWing is offset by the elimination of out-of-pocket costs for routine and specialist care, which adds up meaningfully over a two-year period in Southeast Asia.
 
 **If you travel to the US regularly or have US-based obligations:** Invest in a global plan that includes US coverage. The cost is higher but the alternative — being uninsured in the US during a visit — exposes you to costs that dwarf the premium difference.

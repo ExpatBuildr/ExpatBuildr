@@ -12,7 +12,7 @@ canonicalUrl: "https://expatbuildr.com/blog/geo-arbitrage/problems-with-being-a-
 primaryKeyword: "real problems with being a digital nomad that nobody talks about"
 secondaryKeywords: ["digital nomad problems", "digital nomad lifestyle downsides", "problems digital nomad tax", "digital nomad reality check", "why digital nomad fails long term"]
 searchIntent: "problem-solving"
-draft: true
+draft: false
 gated: false
 archived: false
 noindex: false
