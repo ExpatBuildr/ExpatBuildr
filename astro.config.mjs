@@ -39,6 +39,17 @@ const GHOST_LIST = [
   '/newsletter/downloads',
 ];
 
+// Mirrors robots.txt's Disallow rules — these paths must never appear in the
+// sitemap, or Google flags them as "Blocked by robots.txt" / picks a different
+// canonical since it can't crawl the page to read its own canonical tag.
+const ROBOTS_DISALLOWED_SUFFIXES = ['/unlock', '/thank-you', '/success'];
+const ROBOTS_DISALLOWED_EXACT = [
+  '/founders/payment-received',
+  '/geo-arbitrage/confirmed',
+  '/nfs/turbo',
+  '/lead-gen/edge',
+];
+
 const INDEXED_TAG_SLUGS = new Set([
   'career-advancement-remote',
   'philippines-vs-thailand-vs-vietnam',
@@ -79,6 +90,9 @@ export default defineConfig({
     sitemap({
       filter: (page) => {
         if (GHOST_LIST.some(ghost => page.includes(ghost))) return false;
+        const pathname = new URL(page).pathname.replace(/\/$/, '');
+        if (ROBOTS_DISALLOWED_SUFFIXES.some(s => pathname.endsWith(s))) return false;
+        if (ROBOTS_DISALLOWED_EXACT.includes(pathname)) return false;
         const tagMatch = page.match(/\/blog\/tag\/([^/]+)$/);
         if (tagMatch) return INDEXED_TAG_SLUGS.has(tagMatch[1]);
         return true;
