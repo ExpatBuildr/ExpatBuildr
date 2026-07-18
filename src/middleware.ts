@@ -27,6 +27,15 @@ const GHOST_LIST = [
 
 export const onRequest = defineMiddleware((context, next) => {
   const url = new URL(context.request.url);
+
+  // Canonicalize www -> apex domain. Both hosts were serving identical live
+  // content (200 on both), which is why Search Console was picking a
+  // different canonical than the one declared in <link rel="canonical">.
+  if (url.hostname.startsWith('www.')) {
+    url.hostname = url.hostname.slice(4);
+    return context.redirect(url.toString(), 301);
+  }
+
   const pathname = url.pathname.replace(/\/$/, ""); // Normalize by removing trailing slash
 
   // 1. Redirect /systems to /automation (301 Moved Permanently)
