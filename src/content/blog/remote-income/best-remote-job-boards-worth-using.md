@@ -8,7 +8,7 @@ category: "Guide"
 tags: ["remote job boards", "remote jobs 2026", "work from home", "remote-first", "job hunting", "async jobs"]
 ogImage: "/images/remote-work.jpg"
 heroImage: "/images/remote-work.jpg"
-canonicalUrl: "https://expatbuildr.com/blog/remote-income/best-remote-job-boards-worth-using-2026"
+canonicalUrl: "https://expatbuildr.com/blog/remote-income/best-remote-job-boards-worth-using"
 primaryKeyword: "best remote job boards 2026"
 secondaryKeywords:
   - "remote job boards that actually work"
