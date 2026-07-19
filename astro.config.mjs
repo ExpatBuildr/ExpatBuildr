@@ -80,7 +80,11 @@ export default defineConfig({
   build: {
     format: 'file',
   },
-  adapter: cloudflare(),
+  adapter: cloudflare({
+    // Cloudflare's edge runtime can't run sharp, but 'compile' runs it at
+    // build time for prerendered pages instead of serving images unprocessed.
+    imageService: 'compile',
+  }),
   vite: {
     plugins: [tailwindcss()]
   },
