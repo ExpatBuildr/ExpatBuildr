@@ -13,7 +13,7 @@ canonicalUrl: "https://expatbuildr.com/blog/lead-generation/build-referral-syste
 primaryKeyword: "how to build a referral system that generates inbound without ads"
 secondaryKeywords: ["referral system service business", "build referral program", "word of mouth lead generation", "inbound referrals founder", "referral marketing small business"]
 searchIntent: "problem-solving"
-draft: true
+draft: false
 archived: false
 noindex: false
 ---

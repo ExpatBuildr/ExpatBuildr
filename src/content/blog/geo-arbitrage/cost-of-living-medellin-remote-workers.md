@@ -13,7 +13,7 @@ canonicalUrl: "https://expatbuildr.com/blog/geo-arbitrage/cost-of-living-medelli
 primaryKeyword: "cost of living Medellín for remote workers"
 secondaryKeywords: ["Medellín cost of living expat", "living in Medellín remote work", "Medellín Colombia expat costs", "Medellín monthly expenses remote worker", "Colombia geo-arbitrage"]
 searchIntent: "informational"
-draft: true
+draft: false
 archived: false
 noindex: false
 ---

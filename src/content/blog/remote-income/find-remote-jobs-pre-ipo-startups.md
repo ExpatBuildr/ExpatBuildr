@@ -13,7 +13,7 @@ canonicalUrl: "https://expatbuildr.com/blog/remote-income/find-remote-jobs-pre-i
 primaryKeyword: "how to find remote jobs at pre-IPO startups"
 secondaryKeywords: ["pre-IPO startup remote jobs", "remote startup equity", "find startup jobs remote", "pre-IPO remote work", "startup remote hiring"]
 searchIntent: "problem-solving"
-draft: true
+draft: false
 archived: false
 noindex: false
 ---
