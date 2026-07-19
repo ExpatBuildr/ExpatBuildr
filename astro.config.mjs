@@ -101,6 +101,7 @@ export default defineConfig({
   ],
   redirects: {
     '/blog/remote-income/best-remote-job-boards-actually-worth-using-2026': '/blog/remote-income/best-remote-job-boards-worth-using',
+    '/blog/remote-income/best-remote-job-boards-worth-using-2026': '/blog/remote-income/best-remote-job-boards-worth-using',
     '/free': '/founders/free',
     '/unlock': '/founders/unlock',
     '/x': '/ai-business/claude',

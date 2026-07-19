@@ -91,7 +91,7 @@ const websiteSchema = {
 		<title>{(title.includes('Expat Buildr') || title.includes('ExpatBuildr')) ? title : `${title} | Expat Buildr`}</title>
 		<meta name="description" content={description} />
 		{noindex && <meta name="robots" content="noindex, nofollow, noarchive" />}
-		<link rel="canonical" href={(() => { const u = canonicalUrl || new URL(Astro.url.pathname, Astro.site).toString(); return u.endsWith('/') && u !== (Astro.site?.toString() ?? '') ? u.slice(0, -1) : u; })()} />
+		<link rel="canonical" href={(() => { let u = canonicalUrl || new URL(Astro.url.pathname, Astro.site).toString(); if (u.endsWith('.html')) u = u.slice(0, -'.html'.length); return u.endsWith('/') && u !== (Astro.site?.toString() ?? '') ? u.slice(0, -1) : u; })()} />
 		
 		<!-- Google Fonts -->
 		<link rel="preconnect" href="https://fonts.googleapis.com">
