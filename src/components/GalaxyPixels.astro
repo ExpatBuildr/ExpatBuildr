@@ -1,0 +1,122 @@
+---
+interface Props {
+  page: 'newsletter-landing' | 'thank-you-friction' | 'download-page' | 'newsletter-downloads';
+  magnet?: string;
+  source?: string;
+}
+
+const { page, magnet, source } = Astro.props;
+const META_PIXEL_ID = import.meta.env.META_PIXEL_ID;
+const GTAG_ID = import.meta.env.GTAG_ID;
+---
+
+{META_PIXEL_ID && (
+  <>
+    <!-- Meta Pixel Base Code -->
+    <script is:inline define:vars={{ META_PIXEL_ID }}>
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window,document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', META_PIXEL_ID);
+      fbq('track', 'PageView');
+    </script>
+    <noscript>
+      <img height="1" width="1" style="display:none"
+        src={`https://www.facebook.com/tr?id=${META_PIXEL_ID}&ev=PageView&noscript=1`} />
+    </noscript>
+
+    <!-- Page-specific events -->
+    <script is:inline define:vars={{ page, magnet, source }}>
+      function firePageEvents() {
+        if (!window.fbq) return;
+
+        if (page === 'newsletter-landing') {
+          // Landing page view — track as ViewContent + custom
+          fbq('track', 'ViewContent', {
+            content_name: 'Newsletter Landing',
+            content_category: source || 'newsletter',
+          });
+          fbq('trackCustom', 'NewsletterLandingView', { source });
+
+        } else if (page === 'thank-you-friction') {
+          // Post-subscribe friction gate — CompleteRegistration
+          fbq('track', 'CompleteRegistration', {
+            content_name: magnet || 'Newsletter Signup',
+            status: true,
+          });
+          fbq('trackCustom', 'ThankYouFrictionPage', { magnet });
+
+        } else if (page === 'download-page') {
+          // Download delivery page
+          fbq('track', 'ViewContent', {
+            content_name: magnet || 'Download',
+            content_category: 'Lead Magnet',
+          });
+          fbq('trackCustom', 'DownloadPageView', { magnet, source });
+
+        } else if (page === 'newsletter-downloads') {
+          // Subscriber download delivery
+          fbq('track', 'ViewContent', {
+            content_name: 'Newsletter Downloads',
+            content_category: 'Subscriber Content',
+          });
+        }
+      }
+
+      if (document.readyState === 'complete') {
+        firePageEvents();
+      } else {
+        window.addEventListener('load', firePageEvents);
+      }
+
+      // Global helpers for inline scripts on landing/form pages
+      window.firePixelEvent = function(name, params) {
+        if (window.fbq) fbq('trackCustom', name, params || {});
+        if (window.gtag) gtag('event', name, params || {});
+      };
+
+      window.fireLeadEvent = function() {
+        if (window.fbq) {
+          fbq('track', 'Lead', { content_name: magnet || 'Newsletter Signup' });
+        }
+        if (window.gtag) gtag('event', 'generate_lead', { magnet });
+      };
+    </script>
+  </>
+)}
+
+{GTAG_ID && (
+  <>
+    <script is:inline define:vars={{ GTAG_ID }} async src={`https://www.googletagmanager.com/gtag/js?id=${GTAG_ID}`}></script>
+    <script is:inline define:vars={{ GTAG_ID, page, magnet, source }}>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', GTAG_ID);
+
+      if (page === 'newsletter-landing') {
+        gtag('event', 'newsletter_landing_view', { source });
+      } else if (page === 'thank-you-friction') {
+        gtag('event', 'thank_you_friction_view', { magnet });
+      } else if (page === 'download-page') {
+        gtag('event', 'download_page_view', { magnet, source });
+      } else if (page === 'newsletter-downloads') {
+        gtag('event', 'newsletter_downloads_view');
+      }
+    </script>
+  </>
+)}
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-KHYR24Q11Z"></script>
+<script is:inline>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-KHYR24Q11Z');
+</script>

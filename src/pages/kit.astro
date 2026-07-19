@@ -1,0 +1,266 @@
+---
+import Pixels from '../components/GalaxyPixels.astro';
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/jpeg" href="/galaxyarblogo.jpeg">
+<title>Expat Arbitrage Starter Kit — Philippines Edition</title>
+<meta name="robots" content="noindex, nofollow">
+<Pixels page="download-page" magnet="expat-arbitrage-starter-kit" source="kit" />
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
+:root {
+  --ink:#111118; --ink-soft:#444455; --ink-mute:#8888AA;
+  --white:#FFFFFF; --cream:#FAFAF7; --amber:#F59E0B;
+  --amber-lt:#FEF3C7; --amber-dk:#B45309; --border:#E8E8F0;
+  --green:#16A34A; --green-lt:#DCFCE7;
+}
+body { font-family:'Inter',sans-serif; background:var(--cream); color:var(--ink); line-height:1.6; }
+
+.sales-nav { background:var(--white); border-bottom:1px solid var(--border); padding:16px 24px; display:flex; align-items:center; justify-content:center; }
+.capture-logo { font-family:'Syne',sans-serif; font-weight:800; font-size:16px; color:var(--ink); display:flex; align-items:center; gap:6px; text-decoration:none; }
+.capture-logo-img { width:24px; height:24px; border-radius:50%; object-fit:cover; }
+.logo-dot { width:7px; height:7px; border-radius:50%; background:var(--amber); display:inline-block; }
+
+/* Hero */
+.sales-hero { background:linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),url('/drone2.jpg') center/cover no-repeat; padding:72px 24px 64px; text-align:center; }
+.sales-eyebrow { display:inline-flex; align-items:center; gap:6px; background:rgba(245,158,11,.2); color:var(--amber); font-size:11px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; padding:5px 14px; border-radius:100px; margin-bottom:28px; }
+.sales-hero h1 { font-family:'Syne',sans-serif; font-size:clamp(28px,5vw,52px); font-weight:800; line-height:1.1; color:var(--white); letter-spacing:-.02em; max-width:700px; margin:0 auto 20px; }
+.sales-hero h1 em { font-style:normal; color:var(--amber); }
+.sales-hero .hero-sub { font-size:18px; color:#aaaacc; max-width:540px; margin:0 auto 40px; line-height:1.6; }
+.price-hero { display:inline-flex; align-items:baseline; gap:12px; background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.15); border-radius:16px; padding:20px 32px; margin-bottom:28px; }
+.price-main { font-family:'Syne',sans-serif; font-size:52px; font-weight:800; color:var(--white); line-height:1; }
+.price-detail { text-align:left; }
+.price-was { font-size:13px; color:#888899; text-decoration:line-through; display:block; }
+.price-save { font-size:13px; color:var(--amber); font-weight:600; display:block; }
+.btn-hero { display:block; max-width:400px; margin:0 auto; background:var(--amber); color:var(--ink); border:none; border-radius:12px; padding:18px; font-size:17px; font-weight:800; cursor:pointer; font-family:'Syne',sans-serif; transition:opacity .15s; text-decoration:none; text-align:center; }
+.btn-hero:hover { opacity:.88; }
+.btn-sub-text { font-size:12px; color:#666688; margin-top:10px; }
+
+/* Body */
+.sales-body { max-width:720px; margin:0 auto; padding:64px 24px; }
+.section-label { font-size:11px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:var(--ink-mute); margin-bottom:12px; }
+.sales-body h2 { font-family:'Syne',sans-serif; font-size:clamp(22px,4vw,32px); font-weight:800; line-height:1.2; margin-bottom:20px; letter-spacing:-.01em; }
+.sales-body h2 span { color:var(--amber); }
+.sales-body p { font-size:16px; color:var(--ink-soft); margin-bottom:16px; line-height:1.7; }
+.sales-body p strong { color:var(--ink); }
+.divider { border:none; border-top:1px solid var(--border); margin:48px 0; }
+
+.story-callout { background:var(--white); border-left:4px solid var(--amber); border-radius:0 12px 12px 0; padding:24px 28px; margin:32px 0; }
+.story-callout p { font-size:16px; color:var(--ink); font-style:italic; line-height:1.7; margin:0; }
+.story-callout cite { font-size:13px; color:var(--ink-mute); font-style:normal; display:block; margin-top:10px; }
+
+/* Bundle box */
+.bundle-box { background:var(--white); border:2px solid var(--amber); border-radius:20px; overflow:hidden; margin:32px 0; }
+.bundle-box-header { background:var(--amber); padding:20px 28px; display:flex; align-items:center; justify-content:space-between; }
+.bundle-box-header h3 { font-family:'Syne',sans-serif; font-size:18px; font-weight:800; color:var(--ink); }
+.bundle-box-header span { font-family:'Syne',sans-serif; font-size:14px; font-weight:700; color:var(--amber-dk); background:var(--white); padding:4px 12px; border-radius:100px; }
+.bundle-item { display:flex; align-items:flex-start; gap:16px; padding:20px 28px; border-bottom:1px solid var(--border); }
+.bundle-item:last-child { border-bottom:none; }
+.bi-icon { width:44px; height:44px; border-radius:10px; background:var(--amber-lt); display:flex; align-items:center; justify-content:center; font-size:20px; flex-shrink:0; }
+.bi-body { flex:1; }
+.bi-name { font-family:'Syne',sans-serif; font-size:15px; font-weight:700; margin-bottom:3px; }
+.bi-desc { font-size:13px; color:var(--ink-soft); line-height:1.5; }
+.bi-price { font-family:'Syne',sans-serif; font-size:14px; font-weight:700; color:var(--ink-mute); text-decoration:line-through; flex-shrink:0; align-self:center; }
+
+.value-bar { background:var(--white); border:1px solid var(--border); border-radius:12px; padding:16px 24px; display:flex; align-items:center; justify-content:space-between; margin:24px 0; }
+.value-bar-left { font-size:14px; color:var(--ink-soft); }
+.value-bar-right { display:flex; align-items:center; gap:16px; }
+.value-total { font-size:13px; color:var(--ink-mute); text-decoration:line-through; }
+.value-price { font-family:'Syne',sans-serif; font-size:28px; font-weight:800; color:var(--ink); }
+
+/* CTA */
+.cta-section { background:var(--ink); border-radius:20px; padding:48px 40px; text-align:center; margin:48px 0; }
+.cta-section h2 { font-family:'Syne',sans-serif; font-size:clamp(22px,4vw,32px); font-weight:800; color:var(--white); line-height:1.2; margin-bottom:12px; }
+.cta-section h2 span { color:var(--amber); }
+.cta-section p { font-size:15px; color:#aaaacc; margin-bottom:32px; }
+.cta-price-row { display:flex; align-items:center; justify-content:center; gap:16px; margin-bottom:24px; }
+.cta-price { font-family:'Syne',sans-serif; font-size:48px; font-weight:800; color:var(--white); line-height:1; }
+.cta-price-detail { text-align:left; }
+.cta-was { font-size:13px; color:#666688; text-decoration:line-through; }
+.cta-save { font-size:14px; color:var(--amber); font-weight:600; }
+.btn-cta { display:block; max-width:420px; margin:0 auto 12px; background:var(--amber); color:var(--ink); border:none; border-radius:12px; padding:18px; font-size:17px; font-weight:800; cursor:pointer; font-family:'Syne',sans-serif; transition:opacity .15s; text-decoration:none; text-align:center; }
+.btn-cta:hover { opacity:.88; }
+.cta-guarantee { font-size:12px; color:#666688; margin-top:16px; }
+.cta-guarantee span { color:var(--amber); }
+
+/* FAQ */
+.faq-section { margin:48px 0; }
+.faq-section h2 { font-family:'Syne',sans-serif; font-size:24px; font-weight:800; margin-bottom:24px; }
+.faq-item { border-bottom:1px solid var(--border); padding:20px 0; }
+.faq-q { font-family:'Syne',sans-serif; font-size:15px; font-weight:700; margin-bottom:8px; }
+.faq-a { font-size:14px; color:var(--ink-soft); line-height:1.6; }
+
+@media(max-width:600px) { .bundle-box-header{flex-direction:column;gap:8px;align-items:flex-start;} .cta-section{padding:32px 24px;} .value-bar{flex-direction:column;gap:8px;text-align:center;} }
+</style>
+</head>
+<body>
+
+<nav class="sales-nav">
+  <a href="https://newsletter.galaxyarbitrage.com" class="capture-logo"><img src="/galaxyarblogo.jpeg" alt="GalaxyArbitrage" class="capture-logo-img">GalaxyArbitrage</a>
+</nav>
+
+<section class="sales-hero">
+  <div class="sales-eyebrow">🇵🇭 Philippines Expat Toolkit</div>
+  <h1>The playbook tells you <em>what</em> to do.<br>This kit lets you actually <em>do it.</em></h1>
+  <p class="hero-sub">6 calculators, trackers, and checklists built specifically for Americans moving to the Philippines. Download once, use forever.</p>
+  <div class="price-hero">
+    <div class="price-main">$47</div>
+    <div class="price-detail">
+      <span class="price-was">$112 individual value</span>
+      <span class="price-save">You save $65 today</span>
+    </div>
+  </div>
+  <a href="https://buy.stripe.com/14AeVc0uj1bkbFE6GY2oE07" class="btn-hero buy-btn" onclick="fireBuyClick()">Get the Kit — $47 →</a>
+  <p class="btn-sub-text">Instant download · Stripe secure checkout · 30-day guarantee</p>
+</section>
+
+<div class="sales-body">
+
+  <div class="section-label">The problem</div>
+  <h2>The playbook is the map.<br><span>You still need the tools.</span></h2>
+  <p>The free playbook gives you the strategy. It tells you to calculate your arbitrage gap. It tells you to track your spending. It tells you to build a budget before you move.</p>
+  <p><strong>But then what?</strong> You open a blank spreadsheet and start from scratch. You Google "Philippines cost of living" and get ten different answers. You guess.</p>
+  <p>That's where most people lose the arbitrage before they even land.</p>
+
+  <div class="story-callout">
+    <p>"I spent three weeks trying to build my own budget tracker before I moved. I got it wrong twice. Month one in Cebu I overspent by $400 because I didn't account for the setup costs. This kit would have cost me $47 and saved me $400 and three weeks of frustration."</p>
+    <cite>— Galaxy, @ExpatBuildr · Cebu, Philippines</cite>
+  </div>
+
+  <hr class="divider">
+
+  <div class="section-label">What's included</div>
+  <h2>6 tools. <span>One complete system.</span></h2>
+
+  <div class="bundle-box">
+    <div class="bundle-box-header">
+      <h3>Expat Arbitrage Starter Kit — Philippines</h3>
+      <span>6 products</span>
+    </div>
+    <div>
+      <div class="bundle-item">
+        <div class="bi-icon">🇵🇭</div>
+        <div class="bi-body">
+          <div class="bi-name">Geo-Arbitrage Philippines Edition</div>
+          <div class="bi-desc">Enter your USD income. See your real purchasing power across Cebu, Manila, and Davao. The number that makes the move real.</div>
+        </div>
+        <div class="bi-price">$17</div>
+      </div>
+      <div class="bundle-item">
+        <div class="bi-icon">📊</div>
+        <div class="bi-body">
+          <div class="bi-name">Expat Income & Expense Tracker</div>
+          <div class="bi-desc">Track USD income vs PHP spending every month. Watch your arbitrage gap compound in real numbers. The tool you'll open every single day.</div>
+        </div>
+        <div class="bi-price">$24</div>
+      </div>
+      <div class="bundle-item">
+        <div class="bi-icon">✅</div>
+        <div class="bi-body">
+          <div class="bi-name">Philippines Expat Setup Checklist</div>
+          <div class="bi-desc">Banking, SIM, visa, barangay ID, healthcare — every step in the right order so nothing falls through the cracks.</div>
+        </div>
+        <div class="bi-price">$17</div>
+      </div>
+      <div class="bundle-item">
+        <div class="bi-icon">🗺️</div>
+        <div class="bi-body">
+          <div class="bi-name">Geographic Arbitrage Calculator — SEA</div>
+          <div class="bi-desc">Compare your purchasing power across 6 Southeast Asian countries side by side. Useful when you're deciding between countries.</div>
+        </div>
+        <div class="bi-price">$15</div>
+      </div>
+      <div class="bundle-item">
+        <div class="bi-icon">🧮</div>
+        <div class="bi-body">
+          <div class="bi-name">Geo-Arbitrage Country Calculator</div>
+          <div class="bi-desc">Global version. Any country, any currency. Model your arbitrage before committing to any destination.</div>
+        </div>
+        <div class="bi-price">$22</div>
+      </div>
+      <div class="bundle-item">
+        <div class="bi-icon">📋</div>
+        <div class="bi-body">
+          <div class="bi-name">Digital Nomad Monthly Budget Planner</div>
+          <div class="bi-desc">Location-flexible monthly budget template. USD anchored. Works from anywhere, updates as your situation changes.</div>
+        </div>
+        <div class="bi-price">$17</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="value-bar">
+    <div class="value-bar-left">Individual value if bought separately</div>
+    <div class="value-bar-right">
+      <span class="value-total">$112</span>
+      <span class="value-price">$47</span>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="cta-section">
+    <h2>Get the full kit for <span>$47</span></h2>
+    <p>Instant download. Use it before you land. Yours forever.</p>
+    <div class="cta-price-row">
+      <div class="cta-price">$47</div>
+      <div class="cta-price-detail">
+        <span class="cta-was">$112 individual value</span>
+        <span class="cta-save">Save $65 today</span>
+      </div>
+    </div>
+    <a href="https://buy.stripe.com/14AeVc0uj1bkbFE6GY2oE07" class="btn-cta buy-btn" onclick="fireBuyClick()">Get the Kit Now — $47 →</a>
+    <p class="cta-guarantee">🔒 Stripe secure checkout · Instant download · <span>30-day money-back guarantee</span></p>
+  </div>
+
+  <div class="faq-section">
+    <h2>Questions</h2>
+    <div class="faq-item">
+      <div class="faq-q">What format are the files?</div>
+      <div class="faq-a">Excel spreadsheets (.xlsx) and one PDF. They work on Mac, Windows, and Google Sheets. No special software needed.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">I'm not moving yet — is this still useful?</div>
+      <div class="faq-a">Yes. The calculators are designed for the planning phase. Most people who buy this are 3–12 months out and use it to decide if the move makes financial sense before committing.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">What if I'm already in the Philippines?</div>
+      <div class="faq-a">The Income & Expense Tracker is built for this exact situation. Start tracking this month. You'll see your real arbitrage gap within 30 days.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Is there a guarantee?</div>
+      <div class="faq-a">30 days. If you buy it, open it, and it's not what you expected — email Galaxy directly and you get a full refund. No forms. No hoops.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Why $47 and not free like the playbook?</div>
+      <div class="faq-a">The playbook is the strategy. These are the tools. It took real time to build six working spreadsheets with formulas, Philippine-specific categories, and logic that makes them actually useful. $47 for a system that runs your finances for the next year is not a hard decision.</div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+function fireBuyClick() {
+  if (window.fbq) {
+    fbq('track', 'InitiateCheckout', {
+      content_name: 'Expat Arbitrage Starter Kit',
+      currency: 'USD',
+      value: 47,
+    });
+  }
+  if (window.gtag) {
+    gtag('event', 'begin_checkout', {
+      currency: 'USD',
+      value: 47,
+      items: [{ item_name: 'Expat Arbitrage Starter Kit' }],
+    });
+  }
+}
+</script>
+</body>
+</html>
