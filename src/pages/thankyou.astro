@@ -67,10 +67,10 @@ h1 span { color:var(--green); }
 <div class="ty-redirect-box">
   <div class="label">⬇️ Downloading now</div>
   <strong>Philippines Arbitrage Playbook</strong>
-  <p>Your PDF is downloading automatically. If it does not start in a few seconds, <a href="https://galaxyarbitrage.com/downloads/philippines-arbitrage-playbook.pdf" download="Philippines_Arbitrage_Playbook_by_Galaxy.pdf">click here to download manually.</a></p>
+  <p>Your PDF is downloading automatically. If it does not start in a few seconds, <a href="https://galaxyarbitrage.com/downloads/philippines-arbitrage-playbook.pdf" target="_blank" rel="noopener">click here to download manually.</a></p>
 </div>
 
-<p class="ty-countdown">Taking you to the full toolkit in <span id="countdown">15</span> seconds — or</p>
+<p class="ty-countdown">Taking you to the full toolkit in <span id="countdown">20</span> seconds — or</p>
 
 <a href="/kit" class="btn-skip">See the Kit Now →</a>
 
@@ -97,14 +97,15 @@ h1 span { color:var(--green); }
 window.addEventListener('load', () => {
   const link = document.createElement('a');
   link.href = 'https://galaxyarbitrage.com/downloads/philippines-arbitrage-playbook.pdf';
-  link.download = 'Philippines_Arbitrage_Playbook_by_Galaxy.pdf';
+  link.target = '_blank';
+  link.rel = 'noopener';
   document.body.appendChild(link);
   link.click();
   document.body.removeChild(link);
 });
 
-// 15 second countdown then redirect to /kit
-let count = 15;
+// 20 second countdown then redirect to /kit
+let count = 20;
 const el = document.getElementById('countdown');
 const timer = setInterval(() => {
   count--;
