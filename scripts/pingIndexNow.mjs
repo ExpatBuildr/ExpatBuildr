@@ -1,7 +1,13 @@
 import { promises as fs } from 'fs';
 import path from 'path';
 
-const INDEXNOW_KEY = process.env.INDEXNOW_KEY || "eb8248d2036248cc8da2a80695123d9b";
+// This key was generated directly from Bing Webmaster Tools' IndexNow flow for
+// expatbuildr.com specifically -- the previous key was copied over from
+// galaxybuilt.dev during the site migration and was never actually valid for
+// this domain (it belonged to galaxybuilt.dev's verified property), which is
+// why every submission 403'd with UserForbiddedToAccessSite regardless of how
+// many times it was rotated.
+const INDEXNOW_KEY = process.env.INDEXNOW_KEY || "72d10283634c4727b9ef3150e229da0c";
 const HOST = "expatbuildr.com";
 // TEMP: new key just issued by Bing Webmaster Tools — submit only the homepage
 // until Bing verifies this key, then switch back to the full bulk urlList below.
