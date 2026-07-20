@@ -9,7 +9,6 @@ const XSL_PATH = '/sitemap-style.xsl';
 
 // Configuration for Priorities
 const CONFIG = {
-    hubs: { priority: '1.0', changefreq: 'weekly' },
     services: { priority: '1.0', changefreq: 'weekly' },
     briefings: { priority: '0.7', changefreq: 'monthly' },
     core: { priority: '0.8', changefreq: 'weekly' }
@@ -86,11 +85,15 @@ async function run() {
     console.log('🚀 Engineering Institutional Sitemap Architecture...');
 
     const silos = {
-        hubs: [],
         services: [],
         briefings: [],
         core: []
     };
+
+    // URLs already covered by silos.briefings/services below -- used to keep
+    // the Astro-generated sitemap-0.xml from re-listing the same post twice
+    // when we fold its non-post pages into core.
+    const coveredUrls = new Set();
 
     // Recursive walk through blog content
     async function walk(dir) {
@@ -111,15 +114,21 @@ async function run() {
                 if (data.archived) continue;
                 if (data.noindex) continue;
 
+                // Pillar Hub articles declare their pillar overview page as
+                // their own canonical (see NON_CANONICAL_BLOG_PAGES in
+                // astro.config.mjs) -- that overview page is what belongs in
+                // the sitemap, and it's already covered via the core silo
+                // below (folded in from sitemap-0.xml), not this raw slug.
+                if (data.category === 'Pillar Hub') continue;
+
                 const relativePath = path.relative(BLOG_SRC, fullPath);
                 const slug = relativePath.replace(/\.mdx?$/, '').replace(/\\/g, '/');
                 const url = `https://${HOST}/blog/${slug}`;
                 const lastmod = toIsoDate(data.updatedDate) || toIsoDate(data.pubDate) || date;
                 const entry = { url, lastmod };
 
-                if (data.category === 'Pillar Hub') {
-                    silos.hubs.push(entry);
-                } else if (data.category === 'Service') {
+                coveredUrls.add(url);
+                if (data.category === 'Service') {
                     silos.services.push(entry);
                 } else {
                     silos.briefings.push(entry);
@@ -128,23 +137,22 @@ async function run() {
         }
     }
 
-    // Parse the Astro-generated sitemap for all landing pages
+    await walk(BLOG_SRC);
+
+    // Fold every remaining Astro-generated URL (pillar overviews, tag pages,
+    // category-listing pages, and all non-blog pages) into core, skipping
+    // only what's already covered above -- this replaces sitemap-0.xml
+    // entirely instead of shipping it as a second, duplicate sitemap.
     const astroSitemapPath = path.join(DIST_DIR, 'sitemap-0.xml');
-    const astroUrls = [];
     if (fs.existsSync(astroSitemapPath)) {
         const allUrls = extractUrlsFromXml(astroSitemapPath);
         for (const url of allUrls) {
             const pathname = new URL(url).pathname;
             if (shouldSkip(pathname)) continue;
-            astroUrls.push(url);
-            // Only include non-blog pages in core; blog pages go in their silos
-            if (!pathname.startsWith('/blog/') && pathname !== '/blog') {
-                silos.core.push(url);
-            }
+            if (coveredUrls.has(url)) continue;
+            silos.core.push(url);
         }
     }
-
-    await walk(BLOG_SRC);
 
     // Ensure dist exists
     if (!fs.existsSync(DIST_DIR)) fs.mkdirSync(DIST_DIR);
@@ -160,10 +168,10 @@ async function run() {
         console.log(`✅ Generated: ${fileName} (${urls.length} nodes)`);
     }
 
-    // Include the Astro-generated sitemap in the index too
-    if (fs.existsSync(astroSitemapPath)) {
-        generatedFiles.push('sitemap-0.xml');
-    }
+    // Note: sitemap-0.xml (Astro's own auto-generated sitemap) is deliberately
+    // NOT included here -- every URL worth keeping from it has already been
+    // folded into core above, and re-adding it would list ~110+ blog posts a
+    // second time (this was flagged by Ahrefs as "page in multiple sitemaps").
 
     // Write Index
     const indexFileName = 'sitemap-index.xml';

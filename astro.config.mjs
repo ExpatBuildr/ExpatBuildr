@@ -39,6 +39,22 @@ const GHOST_LIST = [
   '/newsletter/downloads',
 ];
 
+// Each pillar's "hub" article declares a shorter canonicalUrl (the pillar
+// overview page itself, e.g. /blog/geo-arbitrage) rather than its own raw
+// slug -- it's featured inline on the pillar page, not meant to be its own
+// indexed destination. Astro's sitemap integration has no awareness of a
+// post's canonicalUrl though, so without this exclusion it lists the raw
+// /hub slug directly, which is a non-canonical URL sitting in the sitemap.
+const NON_CANONICAL_BLOG_PAGES = [
+  '/blog/remote-income/hub',
+  '/blog/lead-generation/hub',
+  '/blog/geo-arbitrage/hub',
+  '/blog/time-arbitrage/hub',
+  '/blog/ai-arbitrage/hub',
+  '/blog/health-arbitrage/hub',
+  '/blog/market-arbitrage/hub',
+];
+
 // Mirrors robots.txt's Disallow rules — these paths must never appear in the
 // sitemap, or Google flags them as "Blocked by robots.txt" / picks a different
 // canonical since it can't crawl the page to read its own canonical tag.
@@ -95,6 +111,7 @@ export default defineConfig({
       filter: (page) => {
         if (GHOST_LIST.some(ghost => page.includes(ghost))) return false;
         const pathname = new URL(page).pathname.replace(/\/$/, '');
+        if (NON_CANONICAL_BLOG_PAGES.includes(pathname)) return false;
         if (ROBOTS_DISALLOWED_SUFFIXES.some(s => pathname.endsWith(s))) return false;
         if (ROBOTS_DISALLOWED_EXACT.includes(pathname)) return false;
         const tagMatch = page.match(/\/blog\/tag\/([^/]+)$/);
