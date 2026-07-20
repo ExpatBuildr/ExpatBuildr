@@ -29,6 +29,17 @@ const ogImageUrl = ogImage.startsWith('http')
     ? ogImage
     : new URL(ogImage, Astro.site || 'https://expatbuildr.com').toString();
 
+// Single source of truth for this page's canonical URL — used by both the
+// canonical link tag and og:url so they can never drift apart. Falls back to
+// Astro.url.pathname when no explicit canonicalUrl is passed, but strips a
+// .html suffix (build.format:'file' means that's the literal prerender path)
+// and a trailing slash (except on the site root).
+const resolvedCanonicalUrl = (() => {
+	let u = canonicalUrl || new URL(Astro.url.pathname, Astro.site).toString();
+	if (u.endsWith('.html')) u = u.slice(0, -'.html'.length);
+	return u.endsWith('/') && u !== (Astro.site?.toString() ?? '') ? u.slice(0, -1) : u;
+})();
+
 // Schema.org structured data — computed in frontmatter so set:html can JSON.stringify them
 const siteUrl = Astro.site?.toString().replace(/\/$/, '') ?? 'https://expatbuildr.com';
 const logoUrl = `${siteUrl}/logo.jpg`;
@@ -91,7 +102,7 @@ const websiteSchema = {
 		<title>{(title.includes('Expat Buildr') || title.includes('ExpatBuildr')) ? title : `${title} | Expat Buildr`}</title>
 		<meta name="description" content={description} />
 		{noindex && <meta name="robots" content="noindex, nofollow, noarchive" />}
-		<link rel="canonical" href={(() => { let u = canonicalUrl || new URL(Astro.url.pathname, Astro.site).toString(); if (u.endsWith('.html')) u = u.slice(0, -'.html'.length); return u.endsWith('/') && u !== (Astro.site?.toString() ?? '') ? u.slice(0, -1) : u; })()} />
+		<link rel="canonical" href={resolvedCanonicalUrl} />
 		
 		<!-- Google Fonts -->
 		<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -109,7 +120,7 @@ const websiteSchema = {
 		<meta property="og:image:width" content="1200" />
 		<meta property="og:image:height" content="630" />
 		<meta property="og:image:alt" content="Expat Buildr - Institutional-Grade AI & SaaS Infrastructure" />
-		<meta property="og:url" content={new URL(Astro.url.pathname, Astro.site)} />
+		<meta property="og:url" content={resolvedCanonicalUrl} />
 		<meta property="og:type" content="website" />
 		<meta property="og:locale" content="en_US" />
 		
