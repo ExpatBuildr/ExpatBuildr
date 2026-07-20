@@ -6,6 +6,25 @@
 
 ---
 
+## Ahrefs Site Audit pass (2026-07-20)
+
+Fixed from the first Ahrefs report:
+- [x] `og:url` not matching canonical (35 pages) — consolidated into one `resolvedCanonicalUrl` in `Layout.astro`
+- [x] Non-canonical page in sitemap (7) — hub articles' raw `/hub` slug excluded from Astro's sitemap via `NON_CANONICAL_BLOG_PAGES`
+- [x] Page in multiple sitemaps (43) — `sitemap-0.xml` no longer double-shipped alongside the hand-built silos
+- [x] Title too long (22, really ~96 once you count the site-wide brand suffix) — stopped appending `" | Expat Buildr"` to blog post titles; remaining long titles are intentional long-tail keyword targeting, left as-is per explicit direction
+- [x] Meta description too short — `contact.astro` expanded from 46 to 138 chars (the other 3 short ones Ahrefs found are correctly noindex'd already)
+- [x] Missing alt text (42 images) — added `alt=""` to the Meta Pixel noscript tracking images across 6 shared files
+- [x] Page has links to redirect (partial) — fixed the 2 concretely found in `archive/index-galaxy.astro`; the reported 43 total couldn't be fully verified without Ahrefs' per-URL export, since not all of them matched known redirect-source paths in the current codebase
+- [x] Ahrefs Analytics installed (`analytics.ahrefs.com/analytics.js`)
+
+Still open, needs Ahrefs' per-page URL export to act on precisely (not derivable from code alone):
+- [ ] Orphan pages (3) — need the specific URLs to know what's unlinked
+- [ ] Page has only one dofollow incoming internal link (3 total)
+- [ ] Redirect chain (1) — likely the `http://www` → `https://www` → `https://apex` two-hop chain, which is a Cloudflare-level redirect rule, not something in this repo
+- [ ] External 3XX redirect (1) — need the specific external link
+- [ ] Pages to submit to IndexNow (36) — should self-resolve now that bulk IndexNow submission works again; re-check after the next crawl
+
 ## Priority 1 — Technical fixes (quick wins, do these first)
 
 - [x] **Fix IndexNow bulk submission.** ~~`scripts/pingIndexNow.mjs:8` has `SINGLE_URL_TRUST_BUILD = true`...~~ **Real root cause found and fixed 2026-07-20**: the key (`eb8248d2036248cc8da2a80695123d9b`) had been carried over verbatim from galaxybuilt.dev during the site migration and was never valid for expatbuildr.com — it belonged to galaxybuilt.dev's verified Bing Webmaster Tools property, which is why every past rotation still 403'd with `UserForbiddedToAccessSite`. Generated a fresh key directly from expatbuildr.com's own Bing Webmaster Tools IndexNow flow, hosted it, removed the old key file, and confirmed a real deploy returned success on both Bing and IndexNow.org. Flipped `SINGLE_URL_TRUST_BUILD` back to `false` — full bulk submission resumes on every deploy. Worth a final glance at the next 1-2 real deploy logs to confirm it's staying stable (isolated local retries showed some flakiness, likely rate-limiting from rapid repeat testing, not the key itself).
