@@ -9,9 +9,10 @@ import path from 'path';
 // many times it was rotated.
 const INDEXNOW_KEY = process.env.INDEXNOW_KEY || "72d10283634c4727b9ef3150e229da0c";
 const HOST = "expatbuildr.com";
-// TEMP: new key just issued by Bing Webmaster Tools — submit only the homepage
-// until Bing verifies this key, then switch back to the full bulk urlList below.
-const SINGLE_URL_TRUST_BUILD = true;
+// Verified 2026-07-20: trust-building submission returned 200/202 from both
+// Bing and IndexNow.org, confirming this key is valid for expatbuildr.com.
+// Back to full bulk submission on every deploy.
+const SINGLE_URL_TRUST_BUILD = false;
 
 async function getAllPosts() {
     const blogDir = path.join(process.cwd(), 'src/content/blog');
