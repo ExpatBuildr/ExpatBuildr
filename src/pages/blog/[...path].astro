@@ -221,6 +221,7 @@ const gateMode: 'hard' | 'soft' | 'none' = isSoftCTAArticle ? 'soft' : (isHardGa
     ogImage={resolvedHeroImage}
     canonicalUrl={type === 'post' ? post.data.canonicalUrl : undefined}
     noindex={type === 'post' ? post.data.noindex : false}
+    appendBrandToTitle={false}
 >
     <!-- Breadcrumbs -->
     <nav class="max-w-7xl mx-auto mb-12 flex items-center gap-2 text-[10px] font-mono uppercase tracking-[0.2em] text-institutional-secondary">

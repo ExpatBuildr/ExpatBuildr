@@ -12,22 +12,33 @@ interface Props {
 	minimal?: boolean;
 	canonicalUrl?: string;
 	noAnimations?: boolean;
+	appendBrandToTitle?: boolean;
 }
 
-const { 
-	title, 
-	description = "Institutional-grade SaaS platforms, autonomous AI workflows, and proprietary trading systems. Built by ExpatBuildr.", 
+const {
+	title,
+	description = "Institutional-grade SaaS platforms, autonomous AI workflows, and proprietary trading systems. Built by ExpatBuildr.",
 	ogImage = "/expatog.jpg",
 	noindex = false,
 	minimal = false,
 	canonicalUrl,
-	noAnimations = false
+	noAnimations = false,
+	appendBrandToTitle = true
 } = Astro.props;
 
 // Ensure absolute URL for OG image
 const ogImageUrl = ogImage.startsWith('http')
     ? ogImage
     : new URL(ogImage, Astro.site || 'https://expatbuildr.com').toString();
+
+// Single source of truth for the rendered <title> — used by the title tag,
+// og:title, and twitter:title so they can't drift out of sync. Blog content
+// pages pass appendBrandToTitle={false} since the brand suffix eats into an
+// already-tight character budget and the site nav/chrome already carries the
+// ExpatBuildr branding on every page.
+const resolvedTitle = (!appendBrandToTitle || title.includes('Expat Buildr') || title.includes('ExpatBuildr'))
+	? title
+	: `${title} | Expat Buildr`;
 
 // Single source of truth for this page's canonical URL — used by both the
 // canonical link tag and og:url so they can never drift apart. Falls back to
@@ -99,7 +110,7 @@ const websiteSchema = {
 		<link rel="manifest" href="/site.webmanifest" />
 
 		<meta name="generator" content={Astro.generator} />
-		<title>{(title.includes('Expat Buildr') || title.includes('ExpatBuildr')) ? title : `${title} | Expat Buildr`}</title>
+		<title>{resolvedTitle}</title>
 		<meta name="description" content={description} />
 		{noindex && <meta name="robots" content="noindex, nofollow, noarchive" />}
 		<link rel="canonical" href={resolvedCanonicalUrl} />
@@ -111,7 +122,7 @@ const websiteSchema = {
 
 		<!-- OG Meta Tags -->
 		<meta property="og:site_name" content="Expat Buildr" />
-		<meta property="og:title" content={title.includes('Expat Buildr') ? title : `${title} | Expat Buildr`} />
+		<meta property="og:title" content={resolvedTitle} />
 		<meta property="og:description" content={description} />
 		<meta property="og:image" content={ogImageUrl} />
 		<meta property="og:image:url" content={ogImageUrl} />
@@ -127,7 +138,7 @@ const websiteSchema = {
 		<meta name="twitter:card" content="summary_large_image" />
 		<meta name="twitter:site" content="@expatbuildr" />
 		<meta name="twitter:creator" content="@expatbuildr" />
-		<meta name="twitter:title" content={title.includes('Expat Buildr') ? title : `${title} | Expat Buildr`} />
+		<meta name="twitter:title" content={resolvedTitle} />
 		<meta name="twitter:description" content={description} />
 		<meta name="twitter:image" content={ogImageUrl} />
 
