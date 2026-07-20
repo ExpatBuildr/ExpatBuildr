@@ -4,6 +4,8 @@
 
 **Status:** Living document — keep updating as items are completed. **Do not delete until every item below is checked off and the strategy has been folded into normal build practice.** This is the reference for future builds, not a one-time task list.
 
+**See also:** `BING-WEBMASTER-GUIDELINES.md` — a permanent (non-deletable) reference doc auditing this codebase against Bing's official webmaster/grounding guidelines. Check new work against it, not just against this file.
+
 ---
 
 ## Ahrefs Site Audit pass (2026-07-20)
