@@ -89,7 +89,7 @@ const secondHalf = html.slice(splitIndex);
 
                 const result = await response.json();
 
-                if (response.ok && result.ok) {
+                if (response.ok && result.success) {
                     form.classList.add('hidden');
                     if (status) {
                         status.textContent = "You're in — check your inbox to confirm.";

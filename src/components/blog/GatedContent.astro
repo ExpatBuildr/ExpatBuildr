@@ -189,7 +189,7 @@ const gatedContent = html.slice(splitIndex);
 
                 const result = await response.json();
 
-                if (response.ok && result.ok) {
+                if (response.ok && result.success) {
                     // Save unlock for 30 days
                     saveUnlock(email);
 

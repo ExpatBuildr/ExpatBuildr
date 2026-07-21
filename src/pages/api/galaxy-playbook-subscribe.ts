@@ -23,25 +23,30 @@ export const POST: APIRoute = async ({ request, locals }) => {
     return new Response(JSON.stringify({ error: 'Server misconfigured' }), { status: 500 });
   }
 
-  const res = await fetch(
-    `https://api.beehiiv.com/v2/publications/${pubId}/subscriptions`,
-    {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${apiKey}`,
-      },
-      body: JSON.stringify({
-        email,
-        reactivate_existing: true,
-        send_welcome_email: true,
-        utm_source: 'galaxyarbitrage.com',
-        utm_medium: 'website',
-        utm_campaign: 'homepage',
-        ...(firstName && { custom_fields: [{ name: 'First Name', value: firstName }] }),
-      }),
-    }
-  );
+  let res: Response;
+  try {
+    res = await fetch(
+      `https://api.beehiiv.com/v2/publications/${pubId}/subscriptions`,
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${apiKey}`,
+        },
+        body: JSON.stringify({
+          email,
+          reactivate_existing: true,
+          send_welcome_email: true,
+          utm_source: 'galaxyarbitrage.com',
+          utm_medium: 'website',
+          utm_campaign: 'homepage',
+          ...(firstName && { custom_fields: [{ name: 'First Name', value: firstName }] }),
+        }),
+      }
+    );
+  } catch (err) {
+    return new Response(JSON.stringify({ error: 'Subscription service unreachable' }), { status: 502 });
+  }
 
   const data = await res.json().catch(() => ({}));
 

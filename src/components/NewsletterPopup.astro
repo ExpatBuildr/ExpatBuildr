@@ -140,7 +140,7 @@ const { trigger, delayMs = 8000, inactivityMs = 40000 } = Astro.props;
         });
         const data = await res.json();
 
-        if (res.ok && data.ok) {
+        if (res.ok && data.success) {
           setCookie(COOKIE_JOINED, 30);
           setCookie('gb_subscribed', 30);
           formWrap?.classList.add('hidden');

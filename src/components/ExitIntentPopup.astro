@@ -262,7 +262,7 @@ const { disableDownload = false, telegramMode = false } = Astro.props;
 
             const result = await response.json();
 
-            if (response.ok && result.ok) {
+            if (response.ok && result.success) {
                 form.classList.add('hidden');
                 success.classList.remove('hidden');
                 

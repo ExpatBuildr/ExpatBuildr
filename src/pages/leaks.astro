@@ -970,7 +970,7 @@ const META_PIXEL_ID = import.meta.env.META_PIXEL_ID || '1480646753745240';
       submitBtn.textContent = 'Sending...';
 
       try {
-        const res = await fetch('/audit-leads', {
+        const res = await fetch('/api/audit-leads', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
