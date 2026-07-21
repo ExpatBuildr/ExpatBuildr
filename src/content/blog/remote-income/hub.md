@@ -5,7 +5,7 @@ pubDate: 2026-04-17
 author: "ExpatBuildr"
 pillarId: "remote-income"
 category: "Pillar Hub"
-tags: ["Remote Work", "Income Generation", "Arbitrage", "Automation"]
+tags: ["Remote Income", "Remote Jobs"]
 ogImage: "/images/remote-work.jpg"
 heroImage: "/images/remote-work.jpg"
 imagePrompt: "A high-tech digital workspace overlooking a futuristic city; glowing income symbols and charts; dark obsidian aesthetic."

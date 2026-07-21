@@ -6,7 +6,7 @@ author: "ExpatBuildr"
 pillarId: "time-arbitrage"
 category: "Guide"
 gated: false
-tags: ["revenue system", "passive income founder", "expat founder systems", "automated revenue", "time arbitrage"]
+tags: ["Time Arbitrage", "Automation", "Expat Founder"]
 ogImage: "/images/blog/pillars/time-arbitrage-hub.png"
 heroImage: "/images/blog/pillars/time-arbitrage-hub.png"
 canonicalUrl: "https://expatbuildr.com/blog/time-arbitrage/revenue-generating-system-works-while-you-sleep"

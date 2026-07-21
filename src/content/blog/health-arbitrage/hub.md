@@ -5,7 +5,7 @@ pubDate: 2026-07-05
 author: "ExpatBuildr"
 pillarId: "health-arbitrage"
 category: "Pillar Hub"
-tags: ["Health Arbitrage", "Medical Tourism", "Expat Living", "Wellness"]
+tags: ["Health Arbitrage", "Medical Tourism", "Founder Wellness"]
 ogImage: "/images/blog/pillars/health-arbitrage-hub.png"
 heroImage: "/images/blog/pillars/health-arbitrage-hub.png"
 canonicalUrl: "https://expatbuildr.com/blog/health-arbitrage"

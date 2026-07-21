@@ -6,7 +6,7 @@ author: "ExpatBuildr"
 pillarId: "health-arbitrage"
 category: "Deep Dive"
 gated: true
-tags: ["dental tourism Philippines", "dental tourism Thailand", "expat dental care", "dental cost Southeast Asia", "expat founder dental"]
+tags: ["Health Arbitrage", "Medical Tourism", "Southeast Asia"]
 ogImage: "/images/blog/pillars/health-arbitrage-hub.png"
 heroImage: "/images/blog/pillars/health-arbitrage-hub.png"
 canonicalUrl: "https://expatbuildr.com/blog/health-arbitrage/dental-tourism-philippines-thailand"

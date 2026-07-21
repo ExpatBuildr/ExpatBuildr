@@ -6,7 +6,7 @@ author: "ExpatBuildr"
 pillarId: "time-arbitrage"
 category: "Guide"
 gated: true
-tags: ["time zone advantage", "expat founder", "async operations", "timezone strategy", "competitive advantage"]
+tags: ["Time Arbitrage", "Async Business"]
 ogImage: "/images/blog/pillars/time-arbitrage-hub.png"
 heroImage: "/images/blog/pillars/time-arbitrage-hub.png"
 canonicalUrl: "https://expatbuildr.com/blog/time-arbitrage/time-zone-competitive-advantage"

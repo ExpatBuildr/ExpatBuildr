@@ -6,7 +6,7 @@ author: "ExpatBuildr"
 pillarId: "ai-arbitrage"
 category: "Guide"
 gated: true
-tags: ["AI stack audit", "AI tools review", "expat founder AI", "optimize AI stack", "AI tool evaluation"]
+tags: ["AI Arbitrage", "AI Tools"]
 ogImage: "/images/blog/pillars/ai-arbitrage-hub.png"
 heroImage: "/images/blog/pillars/ai-arbitrage-hub.png"
 canonicalUrl: "https://expatbuildr.com/blog/ai-arbitrage/audit-improve-ai-stack-90-days"

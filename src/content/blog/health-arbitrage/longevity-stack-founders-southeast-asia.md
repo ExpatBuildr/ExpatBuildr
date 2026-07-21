@@ -6,7 +6,7 @@ author: "ExpatBuildr"
 pillarId: "health-arbitrage"
 category: "Deep Dive"
 gated: false
-tags: ["longevity founder", "longevity Southeast Asia", "expat founder health", "longevity stack", "health optimization expat"]
+tags: ["Health Arbitrage", "Founder Wellness", "Expat Founder"]
 ogImage: "/images/blog/pillars/health-arbitrage-hub.png"
 heroImage: "/images/blog/pillars/health-arbitrage-hub.png"
 canonicalUrl: "https://expatbuildr.com/blog/health-arbitrage/longevity-stack-founders-southeast-asia"

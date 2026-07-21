@@ -6,7 +6,7 @@ author: "ExpatBuildr"
 pillarId: "geo-arbitrage"
 category: "Deep Dive"
 gated: true
-tags: ["geo-arbitrage", "$60k salary abroad", "cost of living", "remote work abroad", "geographic arbitrage", "remote salary comparison"]
+tags: ["Geo-Arbitrage", "Cost of Living"]
 ogImage: "/images/geo-arbitrage.jpg"
 heroImage: "/images/geo-arbitrage.jpg"
 canonicalUrl: "https://expatbuildr.com/blog/geo-arbitrage/what-60k-buys-you-in-10-countries"

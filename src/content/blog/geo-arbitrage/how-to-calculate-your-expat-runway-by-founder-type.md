@@ -6,7 +6,7 @@ author: "ExpatBuildr"
 pillarId: "geo-arbitrage"
 category: "Guide"
 gated: false
-tags: ["expat runway", "burn rate", "geographic arbitrage", "expat founder", "runway extension"]
+tags: ["Geo-Arbitrage", "Expat Founder"]
 ogImage: "/images/geo-arbitrage.jpg"
 heroImage: "/images/geo-arbitrage.jpg"
 canonicalUrl: "https://expatbuildr.com/blog/geo-arbitrage/how-to-calculate-your-expat-runway-by-founder-type"

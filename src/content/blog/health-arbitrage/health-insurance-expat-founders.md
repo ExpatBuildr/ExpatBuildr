@@ -6,7 +6,7 @@ author: "ExpatBuildr"
 pillarId: "health-arbitrage"
 category: "Deep Dive"
 gated: true
-tags: ["expat health insurance", "international health insurance founder", "SafetyWing", "Cigna Global expat", "expat founder insurance"]
+tags: ["Health Arbitrage", "Expat Healthcare", "Expat Founder"]
 ogImage: "/images/blog/pillars/health-arbitrage-hub.png"
 heroImage: "/images/blog/pillars/health-arbitrage-hub.png"
 canonicalUrl: "https://expatbuildr.com/blog/health-arbitrage/health-insurance-expat-founders"

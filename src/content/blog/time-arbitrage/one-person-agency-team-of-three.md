@@ -6,7 +6,7 @@ author: "ExpatBuildr"
 pillarId: "time-arbitrage"
 category: "Guide"
 gated: true
-tags: ["one person agency", "small agency model", "expat founder agency", "lean agency", "remote team agency"]
+tags: ["Time Arbitrage", "Expat Founder"]
 ogImage: "/images/blog/pillars/time-arbitrage-hub.png"
 heroImage: "/images/blog/pillars/time-arbitrage-hub.png"
 canonicalUrl: "https://expatbuildr.com/blog/time-arbitrage/one-person-agency-team-of-three"

@@ -6,7 +6,7 @@ author: "ExpatBuildr"
 pillarId: "lead-generation"
 category: "Guide"
 gated: true
-tags: ["CRM for service business", "choosing a CRM", "best CRM small business", "CRM comparison", "expat founder CRM"]
+tags: ["Lead Generation", "CRM"]
 ogImage: "/images/lead-gen.jpg"
 heroImage: "/images/lead-gen.jpg"
 canonicalUrl: "https://expatbuildr.com/blog/lead-generation/choosing-right-crm-growing-service-business"

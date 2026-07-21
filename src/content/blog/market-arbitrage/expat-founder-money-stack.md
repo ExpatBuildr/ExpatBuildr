@@ -6,7 +6,7 @@ author: "ExpatBuildr"
 pillarId: "market-arbitrage"
 category: "Guide"
 gated: false
-tags: ["expat founder banking", "expat entity structure", "expat tax setup", "money stack expat founder", "offshore banking expat"]
+tags: ["Market Arbitrage", "Expat Banking", "Expat Taxes", "Expat Founder"]
 ogImage: "/images/blog/pillars/market-arbitrage-hub.png"
 heroImage: "/images/blog/pillars/market-arbitrage-hub.png"
 canonicalUrl: "https://expatbuildr.com/blog/market-arbitrage/expat-founder-money-stack"

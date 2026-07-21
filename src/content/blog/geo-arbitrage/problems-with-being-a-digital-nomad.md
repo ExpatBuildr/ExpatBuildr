@@ -5,7 +5,7 @@ pubDate: 2026-07-11
 author: "ExpatBuildr"
 pillarId: "geo-arbitrage"
 category: "Deep Dive"
-tags: ["problems with digital nomad lifestyle", "digital nomad downsides", "digital nomad tax problems", "digital nomad reality", "why digital nomad lifestyle fails"]
+tags: ["Geo-Arbitrage", "Digital Nomad"]
 ogImage: "/images/geo-arbitrage.jpg"
 heroImage: "/images/geo-arbitrage.jpg"
 canonicalUrl: "https://expatbuildr.com/blog/geo-arbitrage/problems-with-being-a-digital-nomad"

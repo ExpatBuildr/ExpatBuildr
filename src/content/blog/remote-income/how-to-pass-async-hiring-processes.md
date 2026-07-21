@@ -5,7 +5,7 @@ pubDate: 2026-05-01
 author: "ExpatBuildr"
 pillarId: "remote-income"
 category: "Guide"
-tags: ["async hiring", "remote hiring process", "async interview", "take-home assignment", "remote job application", "remote-first hiring"]
+tags: ["Remote Income", "Remote Jobs", "Async Work"]
 ogImage: "/images/remote-work.jpg"
 heroImage: "/images/remote-work.jpg"
 canonicalUrl: "https://expatbuildr.com/blog/remote-income/how-to-pass-async-hiring-processes"

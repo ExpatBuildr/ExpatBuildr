@@ -6,7 +6,7 @@ author: "ExpatBuildr"
 pillarId: "geo-arbitrage"
 category: "Deep Dive"
 gated: true
-tags: ["Philippines vs Thailand vs Vietnam", "cost of living Southeast Asia", "geo-arbitrage", "remote work Southeast Asia", "digital nomad comparison", "Southeast Asia cost of living 2026"]
+tags: ["Geo-Arbitrage", "Cost of Living", "Southeast Asia", "Digital Nomad"]
 ogImage: "/images/geo-arbitrage.jpg"
 heroImage: "/images/geo-arbitrage.jpg"
 canonicalUrl: "https://expatbuildr.com/blog/geo-arbitrage/cost-of-living-philippines-thailand-vietnam"

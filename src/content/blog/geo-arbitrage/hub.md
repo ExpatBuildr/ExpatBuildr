@@ -5,7 +5,7 @@ pubDate: 2026-04-17
 author: "ExpatBuildr"
 pillarId: "geo-arbitrage"
 category: "Pillar Hub"
-tags: ["Geo-Arbitrage", "Digital Nomad", "Lifestyle Design", "Tax Optimization"]
+tags: ["Geo-Arbitrage", "Digital Nomad"]
 ogImage: "/images/geo-arbitrage.jpg"
 heroImage: "/images/geo-arbitrage.jpg"
 imagePrompt: "A professional nomad in a tropical villa; glowing maps and global flight paths; cinematic sun-lit aesthetic with obsidian accents."

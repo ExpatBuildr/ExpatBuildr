@@ -6,7 +6,7 @@ author: "ExpatBuildr"
 pillarId: "time-arbitrage"
 category: "Guide"
 gated: false
-tags: ["time arbitrage", "expat founder", "async business", "founder productivity", "leverage"]
+tags: ["Time Arbitrage", "Expat Founder"]
 ogImage: "/images/blog/pillars/time-arbitrage-hub.png"
 heroImage: "/images/blog/pillars/time-arbitrage-hub.png"
 canonicalUrl: "https://expatbuildr.com/blog/time-arbitrage/what-is-time-arbitrage"

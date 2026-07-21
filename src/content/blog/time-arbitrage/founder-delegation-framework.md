@@ -6,7 +6,7 @@ author: "ExpatBuildr"
 pillarId: "time-arbitrage"
 category: "Guide"
 gated: true
-tags: ["founder delegation", "delegation framework", "expat founder", "time arbitrage", "what to delegate"]
+tags: ["Time Arbitrage", "Delegation", "Expat Founder"]
 ogImage: "/images/blog/pillars/time-arbitrage-hub.png"
 heroImage: "/images/blog/pillars/time-arbitrage-hub.png"
 canonicalUrl: "https://expatbuildr.com/blog/time-arbitrage/founder-delegation-framework"

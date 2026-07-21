@@ -6,7 +6,7 @@ author: "ExpatBuildr"
 pillarId: "health-arbitrage"
 category: "Guide"
 gated: true
-tags: ["expat founder fitness", "fitness Southeast Asia", "founder wellness", "gym Cebu", "expat workout routine"]
+tags: ["Health Arbitrage", "Founder Wellness", "Expat Founder"]
 ogImage: "/images/blog/pillars/health-arbitrage-hub.png"
 heroImage: "/images/blog/pillars/health-arbitrage-hub.png"
 canonicalUrl: "https://expatbuildr.com/blog/health-arbitrage/fitness-routine-founder-living-abroad"

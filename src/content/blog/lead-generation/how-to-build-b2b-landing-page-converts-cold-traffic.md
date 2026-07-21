@@ -6,7 +6,7 @@ author: "ExpatBuildr"
 pillarId: "lead-generation"
 category: "Guide"
 gated: true
-tags: ["B2B landing page", "landing page that converts cold traffic", "B2B conversion optimization", "service business landing page", "cold traffic landing page"]
+tags: ["Lead Generation", "B2B Sales"]
 ogImage: "/images/lead-gen.jpg"
 heroImage: "/images/lead-gen.jpg"
 canonicalUrl: "https://expatbuildr.com/blog/lead-generation/how-to-build-b2b-landing-page-converts-cold-traffic"

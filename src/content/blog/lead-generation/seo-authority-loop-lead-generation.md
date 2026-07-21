@@ -5,7 +5,7 @@ pubDate: 2026-04-26
 author: "ExpatBuildr"
 pillarId: "lead-generation"
 category: "Deep Dive"
-tags: ["SEO", "Lead Generation", "Topic Authority", "EverRank", "Content Strategy"]
+tags: ["Lead Generation", "Expat Founder"]
 ogImage: "/images/lead-gen.jpg"
 heroImage: "/images/lead-gen.jpg"
 canonicalUrl: "https://expatbuildr.com/blog/lead-generation/seo-authority-loop-lead-generation"

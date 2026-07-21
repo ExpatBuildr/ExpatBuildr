@@ -6,7 +6,7 @@ author: "ExpatBuildr"
 pillarId: "ai-arbitrage"
 category: "Guide"
 gated: true
-tags: ["AI cold outreach", "personalized outreach AI", "Clay outreach", "expat founder outreach", "AI lead generation"]
+tags: ["AI Arbitrage", "Cold Outreach", "AI Tools", "Expat Founder"]
 ogImage: "/images/blog/pillars/ai-arbitrage-hub.png"
 heroImage: "/images/blog/pillars/ai-arbitrage-hub.png"
 canonicalUrl: "https://expatbuildr.com/blog/ai-arbitrage/ai-cold-outreach-human-signal"

@@ -6,7 +6,7 @@ author: "ExpatBuildr"
 pillarId: "ai-arbitrage"
 category: "Guide"
 gated: true
-tags: ["prompt engineering", "AI prompting", "expat founder", "AI output quality", "Claude prompts"]
+tags: ["AI Arbitrage", "Prompt Engineering", "AI Tools", "Expat Founder"]
 ogImage: "/images/blog/pillars/ai-arbitrage-hub.png"
 heroImage: "/images/blog/pillars/ai-arbitrage-hub.png"
 canonicalUrl: "https://expatbuildr.com/blog/ai-arbitrage/prompt-engineering-for-founders"

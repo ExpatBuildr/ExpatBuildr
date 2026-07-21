@@ -6,7 +6,7 @@ author: "ExpatBuildr"
 pillarId: "geo-arbitrage"
 category: "Deep Dive"
 gated: true
-tags: ["US remote worker taxes abroad", "banking abroad remote worker", "expat banking US", "foreign earned income exclusion", "money management living abroad"]
+tags: ["Geo-Arbitrage", "Expat Banking", "Expat Taxes"]
 ogImage: "/images/geo-arbitrage.jpg"
 heroImage: "/images/geo-arbitrage.jpg"
 canonicalUrl: "https://expatbuildr.com/blog/geo-arbitrage/banking-taxes-money-us-remote-workers-living-abroad"

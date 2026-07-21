@@ -6,7 +6,7 @@ author: "ExpatBuildr"
 pillarId: "market-arbitrage"
 category: "Guide"
 gated: true
-tags: ["currency strategy expat founder", "USD to PHP", "foreign exchange expat", "Wise currency", "expat money management"]
+tags: ["Market Arbitrage", "Currency Strategy", "Expat Founder"]
 ogImage: "/images/blog/pillars/market-arbitrage-hub.png"
 heroImage: "/images/blog/pillars/market-arbitrage-hub.png"
 canonicalUrl: "https://expatbuildr.com/blog/market-arbitrage/currency-strategy-founders-usd-sea"

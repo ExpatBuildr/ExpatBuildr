@@ -5,7 +5,7 @@ pubDate: 2026-04-22
 author: "ExpatBuildr"
 pillarId: "lead-generation"
 category: "Automation"
-tags: ["AI Orchestration", "Multi-Agent", "Automation", "Lead Generation", "AI Workflows"]
+tags: ["Lead Generation", "Automation", "AI Arbitrage"]
 ogImage: "/images/lead-gen.jpg"
 heroImage: "/images/lead-gen.jpg"
 canonicalUrl: "https://expatbuildr.com/blog/lead-generation/multi-agent-swarm-deployment"

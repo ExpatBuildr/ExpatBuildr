@@ -5,7 +5,7 @@ pubDate: 2026-04-26
 author: "ExpatBuildr"
 pillarId: "geo-arbitrage"
 category: "Case Study"
-tags: ["Case Study", "Remote Team", "ASEAN", "Operations"]
+tags: ["Geo-Arbitrage", "Southeast Asia", "Expat Founder"]
 ogImage: "/images/geo-arbitrage.jpg"
 heroImage: "/images/geo-arbitrage.jpg"
 imagePrompt: "Team map of ASEAN with cost/perf deltas; warm earth tone minimalist chart."

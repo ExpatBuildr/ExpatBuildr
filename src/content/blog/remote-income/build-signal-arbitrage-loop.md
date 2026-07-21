@@ -4,7 +4,7 @@ description: "Informational overview of market signal arbitrage: identify alpha,
 pubDate: 2026-04-25
 pillarId: "remote-income"
 category: "Deep Dive"
-tags: ["Arbitrage", "Signals", "Information Asymmetry"]
+tags: ["Remote Income", "Market Arbitrage"]
 author: "ExpatBuildr"
 heroImage: "/images/remote-work.jpg"
 canonicalUrl: "https://expatbuildr.com/blog/remote-income/build-signal-arbitrage-loop"

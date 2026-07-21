@@ -5,7 +5,7 @@ pubDate: 2026-04-29
 author: "ExpatBuildr"
 pillarId: "geo-arbitrage"
 category: "Guide"
-tags: ["Geo-Arbitrage", "Business Setup", "Banking", "Compliance"]
+tags: ["Geo-Arbitrage", "Southeast Asia", "Expat Founder"]
 ogImage: "/images/geo-arbitrage.jpg"
 heroImage: "/images/geo-arbitrage.jpg"
 imagePrompt: "A world map focused on Southeast Asia with business and banking icons; warm earth tones, clean vector style."

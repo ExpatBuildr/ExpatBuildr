@@ -6,7 +6,7 @@ author: "ExpatBuildr"
 pillarId: "ai-arbitrage"
 category: "Automation"
 gated: true
-tags: ["AI content system", "content production AI", "expat founder content", "AI writing system", "content automation"]
+tags: ["AI Arbitrage", "AI Content", "Automation"]
 ogImage: "/images/blog/pillars/ai-arbitrage-hub.png"
 heroImage: "/images/blog/pillars/ai-arbitrage-hub.png"
 canonicalUrl: "https://expatbuildr.com/blog/ai-arbitrage/ai-content-system-week-of-content-one-hour"

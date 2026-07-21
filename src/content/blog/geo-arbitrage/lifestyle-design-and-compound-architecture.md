@@ -5,7 +5,7 @@ pubDate: 2026-04-19
 author: "ExpatBuildr"
 pillarId: "geo-arbitrage"
 category: "Deep Dive"
-tags: ["Geo-Arbitrage", "Lifestyle Design", "Compound Architecture", "Digital Nomad", "Wealth Engineering"]
+tags: ["Geo-Arbitrage", "Expat Founder"]
 ogImage: "/images/geo-arbitrage.jpg"
 heroImage: "/images/geo-arbitrage.jpg"
 primaryKeyword: "lifestyle design geo-arbitrage"

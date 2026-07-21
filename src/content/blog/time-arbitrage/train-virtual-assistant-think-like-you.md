@@ -6,7 +6,7 @@ author: "ExpatBuildr"
 pillarId: "time-arbitrage"
 category: "Guide"
 gated: true
-tags: ["virtual assistant training", "train VA", "expat founder VA", "VA onboarding", "delegation"]
+tags: ["Time Arbitrage", "Virtual Assistants", "Delegation"]
 ogImage: "/images/blog/pillars/time-arbitrage-hub.png"
 heroImage: "/images/blog/pillars/time-arbitrage-hub.png"
 canonicalUrl: "https://expatbuildr.com/blog/time-arbitrage/train-virtual-assistant-think-like-you"

@@ -5,7 +5,7 @@ pubDate: 2026-07-05
 author: "ExpatBuildr"
 pillarId: "time-arbitrage"
 category: "Pillar Hub"
-tags: ["Time Arbitrage", "Async Work", "Delegation", "SOPs"]
+tags: ["Time Arbitrage", "Async Business", "Delegation"]
 ogImage: "/images/blog/pillars/time-arbitrage-hub.png"
 heroImage: "/images/blog/pillars/time-arbitrage-hub.png"
 canonicalUrl: "https://expatbuildr.com/blog/time-arbitrage"

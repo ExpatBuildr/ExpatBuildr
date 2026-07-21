@@ -6,7 +6,7 @@ author: "ExpatBuildr"
 pillarId: "market-arbitrage"
 category: "Guide"
 gated: true
-tags: ["crypto borderless business", "crypto expat founder", "crypto payments global", "Bitcoin expat", "crypto financial infrastructure"]
+tags: ["Market Arbitrage", "Expat Founder"]
 ogImage: "/images/blog/pillars/market-arbitrage-hub.png"
 heroImage: "/images/blog/pillars/market-arbitrage-hub.png"
 canonicalUrl: "https://expatbuildr.com/blog/market-arbitrage/crypto-borderless-business"

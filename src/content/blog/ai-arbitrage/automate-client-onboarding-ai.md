@@ -6,7 +6,7 @@ author: "ExpatBuildr"
 pillarId: "ai-arbitrage"
 category: "Automation"
 gated: true
-tags: ["client onboarding automation", "AI onboarding", "expat founder client ops", "automate client onboarding", "AI client experience"]
+tags: ["AI Arbitrage", "Automation", "Expat Founder"]
 ogImage: "/images/blog/pillars/ai-arbitrage-hub.png"
 heroImage: "/images/blog/pillars/ai-arbitrage-hub.png"
 canonicalUrl: "https://expatbuildr.com/blog/ai-arbitrage/automate-client-onboarding-ai"

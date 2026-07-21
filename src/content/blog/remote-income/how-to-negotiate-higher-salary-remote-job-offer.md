@@ -6,7 +6,7 @@ author: "ExpatBuildr"
 pillarId: "remote-income"
 category: "Guide"
 gated: true
-tags: ["negotiate remote job offer", "remote salary negotiation", "how to negotiate remote salary", "remote job offer negotiation", "remote work salary"]
+tags: ["Remote Income", "Salary Negotiation"]
 ogImage: "/images/remote-work.jpg"
 heroImage: "/images/remote-work.jpg"
 canonicalUrl: "https://expatbuildr.com/blog/remote-income/how-to-negotiate-higher-salary-remote-job-offer"

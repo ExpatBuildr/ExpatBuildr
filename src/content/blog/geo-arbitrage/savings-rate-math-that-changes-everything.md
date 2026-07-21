@@ -6,7 +6,7 @@ author: "ExpatBuildr"
 pillarId: "geo-arbitrage"
 category: "Deep Dive"
 gated: false
-tags: ["savings rate", "geo-arbitrage math", "financial independence", "remote income savings", "FIRE", "geographic arbitrage"]
+tags: ["Geo-Arbitrage", "Cost of Living"]
 ogImage: "/images/geo-arbitrage.jpg"
 heroImage: "/images/geo-arbitrage.jpg"
 canonicalUrl: "https://expatbuildr.com/blog/geo-arbitrage/savings-rate-math-that-changes-everything"

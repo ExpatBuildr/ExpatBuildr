@@ -5,7 +5,7 @@ pubDate: 2026-05-12
 author: "ExpatBuildr"
 pillarId: "lead-generation"
 category: "Guide"
-tags: ["LinkedIn outreach", "LinkedIn sequences", "LinkedIn lead generation", "B2B outreach", "LinkedIn messaging", "sales outreach 2026"]
+tags: ["Lead Generation", "Cold Outreach", "B2B Sales"]
 ogImage: "/images/lead-gen.jpg"
 heroImage: "/images/lead-gen.jpg"
 canonicalUrl: "https://expatbuildr.com/blog/lead-generation/linkedin-outreach-sequences-that-get-replies"

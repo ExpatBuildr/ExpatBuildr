@@ -6,7 +6,7 @@ author: "ExpatBuildr"
 pillarId: "remote-income"
 category: "Guide"
 gated: true
-tags: ["pre-IPO remote jobs", "startup remote jobs", "remote work equity", "find startup jobs", "expat founder remote income"]
+tags: ["Remote Income", "Remote Jobs"]
 ogImage: "/images/remote-work.jpg"
 heroImage: "/images/remote-work.jpg"
 canonicalUrl: "https://expatbuildr.com/blog/remote-income/find-remote-jobs-pre-ipo-startups"

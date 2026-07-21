@@ -17,7 +17,17 @@ const blog = defineCollection({
       'market-arbitrage'
     ]).optional(),
     category: z.string(),
-    tags: z.array(z.string()),
+    tags: z.array(z.enum([
+      'AI Arbitrage', 'AI Content', 'AI Tools', 'Async Business', 'Async Work',
+      'Automation', 'B2B Sales', 'CRM', 'Career Growth', 'Cold Outreach',
+      'Cost of Living', 'Currency Strategy', 'Delegation', 'Digital Nomad',
+      'Expat Banking', 'Expat Founder', 'Expat Healthcare', 'Expat Taxes',
+      'Expat Visas', 'Founder Wellness', 'Geo-Arbitrage', 'Health Arbitrage',
+      'Investing Abroad', 'Lead Generation', 'Market Arbitrage', 'Medical Tourism',
+      'Prompt Engineering', 'Relocation', 'Remote Income', 'Remote Jobs',
+      'Salary Negotiation', 'Sales Pipeline', 'Southeast Asia', 'Time Arbitrage',
+      'Virtual Assistants',
+    ])),
     draft: z.boolean().default(true),
     gated: z.boolean().default(true),
     noindex: z.boolean().default(false),

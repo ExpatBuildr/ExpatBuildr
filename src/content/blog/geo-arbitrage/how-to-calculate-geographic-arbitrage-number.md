@@ -6,7 +6,7 @@ author: "ExpatBuildr"
 pillarId: "geo-arbitrage"
 category: "Guide"
 gated: true
-tags: ["geographic arbitrage", "geo-arbitrage calculator", "cost of living calculator", "savings rate", "remote income", "financial independence"]
+tags: ["Geo-Arbitrage", "Cost of Living"]
 ogImage: "/images/geo-arbitrage.jpg"
 heroImage: "/images/geo-arbitrage.jpg"
 canonicalUrl: "https://expatbuildr.com/blog/geo-arbitrage/how-to-calculate-geographic-arbitrage-number"

@@ -5,7 +5,7 @@ pubDate: 2026-04-23
 author: "ExpatBuildr"
 pillarId: "remote-income"
 category: "Deep Dive"
-tags: ["Digital Assets", "SaaS", "Passive Income", "Megablog", "Remote Income"]
+tags: ["Remote Income", "Investing Abroad"]
 ogImage: "/images/remote-work.jpg"
 heroImage: "/images/remote-work.jpg"
 canonicalUrl: "https://expatbuildr.com/blog/remote-income/digital-asset-portfolio-building"

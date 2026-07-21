@@ -6,7 +6,7 @@ author: "ExpatBuildr"
 pillarId: "health-arbitrage"
 category: "Guide"
 gated: false
-tags: ["mental performance expat founder", "cognitive performance abroad", "expat founder mental health", "focus founder lifestyle", "mental sharpness expat"]
+tags: ["Health Arbitrage", "Founder Wellness", "Expat Founder"]
 ogImage: "/images/blog/pillars/health-arbitrage-hub.png"
 heroImage: "/images/blog/pillars/health-arbitrage-hub.png"
 canonicalUrl: "https://expatbuildr.com/blog/health-arbitrage/expat-founders-stay-mentally-sharp-abroad"

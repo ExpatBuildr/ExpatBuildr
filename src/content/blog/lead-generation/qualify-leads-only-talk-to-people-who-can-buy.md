@@ -6,7 +6,7 @@ author: "ExpatBuildr"
 pillarId: "lead-generation"
 category: "Guide"
 gated: true
-tags: ["lead qualification", "qualify leads", "sales qualification framework", "BANT qualification", "expat founder sales"]
+tags: ["Lead Generation", "Sales Pipeline", "B2B Sales"]
 ogImage: "/images/lead-gen.jpg"
 heroImage: "/images/lead-gen.jpg"
 canonicalUrl: "https://expatbuildr.com/blog/lead-generation/qualify-leads-only-talk-to-people-who-can-buy"

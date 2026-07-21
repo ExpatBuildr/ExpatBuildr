@@ -6,7 +6,7 @@ author: "ExpatBuildr"
 pillarId: "geo-arbitrage"
 category: "Guide"
 gated: false
-tags: ["expat base", "geographic arbitrage", "expat founder", "colombia vs philippines", "where to live abroad"]
+tags: ["Geo-Arbitrage", "Expat Founder", "Relocation"]
 ogImage: "/images/geo-arbitrage.jpg"
 heroImage: "/images/geo-arbitrage.jpg"
 canonicalUrl: "https://expatbuildr.com/blog/geo-arbitrage/how-to-choose-your-expat-base-by-founder-type"

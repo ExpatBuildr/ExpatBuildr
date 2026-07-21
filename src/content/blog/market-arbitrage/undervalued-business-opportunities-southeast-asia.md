@@ -6,7 +6,7 @@ author: "ExpatBuildr"
 pillarId: "market-arbitrage"
 category: "Deep Dive"
 gated: true
-tags: ["business opportunities Southeast Asia", "expat founder opportunities", "SEA market arbitrage", "undervalued business SEA", "market opportunity expat"]
+tags: ["Market Arbitrage", "Southeast Asia", "Expat Founder"]
 ogImage: "/images/blog/pillars/market-arbitrage-hub.png"
 heroImage: "/images/blog/pillars/market-arbitrage-hub.png"
 canonicalUrl: "https://expatbuildr.com/blog/market-arbitrage/undervalued-business-opportunities-southeast-asia"

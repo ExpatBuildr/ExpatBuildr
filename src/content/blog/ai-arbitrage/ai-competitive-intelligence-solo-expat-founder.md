@@ -6,7 +6,7 @@ author: "ExpatBuildr"
 pillarId: "ai-arbitrage"
 category: "Guide"
 gated: true
-tags: ["AI competitive intelligence", "market research AI", "expat founder research", "competitor monitoring AI", "AI market analysis"]
+tags: ["AI Arbitrage", "AI Tools", "Expat Founder"]
 ogImage: "/images/blog/pillars/ai-arbitrage-hub.png"
 heroImage: "/images/blog/pillars/ai-arbitrage-hub.png"
 canonicalUrl: "https://expatbuildr.com/blog/ai-arbitrage/ai-competitive-intelligence-solo-expat-founder"

@@ -5,7 +5,7 @@ pubDate: 2026-07-07
 author: "ExpatBuildr"
 pillarId: "geo-arbitrage"
 category: "Guide"
-tags: ["is expat founder right for me", "expat founder self assessment", "should I become expat founder", "expat founder tradeoffs", "moving abroad founder decision"]
+tags: ["Geo-Arbitrage", "Expat Founder"]
 ogImage: "/images/geo-arbitrage.jpg"
 heroImage: "/images/geo-arbitrage.jpg"
 canonicalUrl: "https://expatbuildr.com/blog/geo-arbitrage/is-expat-founder-path-right-for-you"

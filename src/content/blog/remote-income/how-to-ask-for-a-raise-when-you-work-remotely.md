@@ -6,7 +6,7 @@ author: "ExpatBuildr"
 pillarId: "remote-income"
 category: "Guide"
 gated: true
-tags: ["how to ask for a raise remotely", "remote salary negotiation", "remote work raise", "negotiate salary remote job", "remote income growth"]
+tags: ["Remote Income", "Salary Negotiation"]
 ogImage: "/images/remote-work.jpg"
 heroImage: "/images/remote-work.jpg"
 canonicalUrl: "https://expatbuildr.com/blog/remote-income/how-to-ask-for-a-raise-when-you-work-remotely"

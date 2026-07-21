@@ -6,7 +6,7 @@ author: "ExpatBuildr"
 pillarId: "geo-arbitrage"
 category: "Guide"
 gated: false
-tags: ["expat tools", "expat founder", "remote work tools", "wise", "safetywing", "nordvpn", "geographic arbitrage"]
+tags: ["Geo-Arbitrage", "Expat Founder"]
 ogImage: "/images/geo-arbitrage.jpg"
 heroImage: "/images/geo-arbitrage.jpg"
 canonicalUrl: "https://expatbuildr.com/blog/geo-arbitrage/expat-founder-tool-stack-complete-guide"

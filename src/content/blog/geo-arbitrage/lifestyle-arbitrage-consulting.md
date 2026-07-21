@@ -5,7 +5,7 @@ pubDate: 2026-04-12
 author: "ExpatBuildr"
 pillarId: "geo-arbitrage"
 category: "Deep Dive"
-tags: ["Geo-Arbitrage", "Lifestyle Design", "Philippines", "Sovereign Living", "Consulting"]
+tags: ["Geo-Arbitrage", "Expat Founder"]
 ogImage: "/images/geo-arbitrage.jpg"
 heroImage: "/images/geo-arbitrage.jpg"
 canonicalUrl: "https://expatbuildr.com/blog/geo-arbitrage/lifestyle-arbitrage-consulting"

@@ -5,7 +5,7 @@ pubDate: 2026-04-17
 author: "ExpatBuildr"
 pillarId: "lead-generation"
 category: "Pillar Hub"
-tags: ["Lead Generation", "Systems Architecture", "Automation", "B2B"]
+tags: ["Lead Generation", "Automation", "B2B Sales"]
 ogImage: "/images/lead-gen.jpg"
 heroImage: "/images/lead-gen.jpg"
 imagePrompt: "Architectural blueprint of a digital lead engine; glowing nodes and data flow lines; dark industrial aesthetic."

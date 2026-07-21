@@ -5,7 +5,7 @@ pubDate: 2026-04-21
 author: "ExpatBuildr"
 pillarId: "remote-income"
 category: "Guide"
-tags: ["remote job boards", "remote jobs 2026", "work from home", "remote-first", "job hunting", "async jobs"]
+tags: ["Remote Income", "Remote Jobs"]
 ogImage: "/images/remote-work.jpg"
 heroImage: "/images/remote-work.jpg"
 canonicalUrl: "https://expatbuildr.com/blog/remote-income/best-remote-job-boards-worth-using"

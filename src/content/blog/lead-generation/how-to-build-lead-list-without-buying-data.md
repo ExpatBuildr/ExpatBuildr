@@ -5,7 +5,7 @@ pubDate: 2026-04-28
 author: "ExpatBuildr"
 pillarId: "lead-generation"
 category: "Guide"
-tags: ["lead list building", "B2B lead generation", "prospecting without data", "free lead generation", "lead list 2026", "outreach list building"]
+tags: ["Lead Generation", "B2B Sales"]
 ogImage: "/images/lead-gen.jpg"
 heroImage: "/images/lead-gen.jpg"
 canonicalUrl: "https://expatbuildr.com/blog/lead-generation/how-to-build-lead-list-without-buying-data"

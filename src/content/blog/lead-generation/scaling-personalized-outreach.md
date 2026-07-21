@@ -5,7 +5,7 @@ pubDate: 2026-04-20
 author: "ExpatBuildr"
 pillarId: "lead-generation"
 category: "Guide"
-tags: ["Cold Outreach", "Personalization", "Automation", "ReplyGun"]
+tags: ["Lead Generation", "Cold Outreach", "Automation"]
 ogImage: "/images/lead-gen.jpg"
 heroImage: "/images/lead-gen.jpg"
 imagePrompt: "Outreach workflow with branching personalization paths and contact icons; cool tones, clean vector UI."

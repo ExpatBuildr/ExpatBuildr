@@ -6,7 +6,7 @@ author: "ExpatBuildr"
 pillarId: "time-arbitrage"
 category: "Guide"
 gated: true
-tags: ["async operating system", "async business", "expat founder operations", "remote operations", "time arbitrage"]
+tags: ["Time Arbitrage", "Async Business", "Expat Founder"]
 ogImage: "/images/blog/pillars/time-arbitrage-hub.png"
 heroImage: "/images/blog/pillars/time-arbitrage-hub.png"
 canonicalUrl: "https://expatbuildr.com/blog/time-arbitrage/async-operating-system-for-your-business"

@@ -6,7 +6,7 @@ author: "ExpatBuildr"
 pillarId: "market-arbitrage"
 category: "Guide"
 gated: false
-tags: ["market arbitrage", "expat founder wealth", "financial arbitrage", "information arbitrage", "expat founder money"]
+tags: ["Market Arbitrage", "Expat Founder"]
 ogImage: "/images/blog/pillars/market-arbitrage-hub.png"
 heroImage: "/images/blog/pillars/market-arbitrage-hub.png"
 canonicalUrl: "https://expatbuildr.com/blog/market-arbitrage/what-is-market-arbitrage"

@@ -5,7 +5,7 @@ pubDate: 2026-07-05
 author: "ExpatBuildr"
 pillarId: "ai-arbitrage"
 category: "Pillar Hub"
-tags: ["AI Arbitrage", "Automation", "Multi-Agent Systems", "Founder Tools"]
+tags: ["AI Arbitrage", "Automation", "AI Tools"]
 ogImage: "/images/blog/pillars/ai-arbitrage-hub.png"
 heroImage: "/images/blog/pillars/ai-arbitrage-hub.png"
 canonicalUrl: "https://expatbuildr.com/blog/ai-arbitrage"

@@ -6,7 +6,7 @@ author: "ExpatBuildr"
 pillarId: "geo-arbitrage"
 category: "Guide"
 gated: true
-tags: ["find apartment abroad without getting scammed", "renting abroad remote worker", "expat apartment search", "avoid rental scams abroad", "how to rent apartment Southeast Asia"]
+tags: ["Geo-Arbitrage", "Relocation", "Southeast Asia"]
 ogImage: "/images/geo-arbitrage.jpg"
 heroImage: "/images/geo-arbitrage.jpg"
 canonicalUrl: "https://expatbuildr.com/blog/geo-arbitrage/how-to-find-apartment-abroad-without-getting-scammed"

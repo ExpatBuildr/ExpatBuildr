@@ -6,7 +6,7 @@ author: "ExpatBuildr"
 pillarId: "market-arbitrage"
 category: "Deep Dive"
 gated: true
-tags: ["investing US expat", "expat founder investing", "investing from abroad", "expat investment accounts", "wealth building expat"]
+tags: ["Market Arbitrage", "Investing Abroad", "Expat Taxes"]
 ogImage: "/images/blog/pillars/market-arbitrage-hub.png"
 heroImage: "/images/blog/pillars/market-arbitrage-hub.png"
 canonicalUrl: "https://expatbuildr.com/blog/market-arbitrage/investing-us-expat-what-works"

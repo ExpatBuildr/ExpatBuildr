@@ -6,7 +6,7 @@ author: "ExpatBuildr"
 pillarId: "geo-arbitrage"
 category: "Deep Dive"
 gated: true
-tags: ["best neighborhoods Cebu City remote workers", "where to live Cebu City", "Cebu City expat areas", "remote work Cebu Philippines", "Cebu City digital nomad"]
+tags: ["Geo-Arbitrage", "Southeast Asia", "Relocation", "Digital Nomad"]
 ogImage: "/images/geo-arbitrage.jpg"
 heroImage: "/images/geo-arbitrage.jpg"
 canonicalUrl: "https://expatbuildr.com/blog/geo-arbitrage/best-neighborhoods-remote-workers-cebu-city"

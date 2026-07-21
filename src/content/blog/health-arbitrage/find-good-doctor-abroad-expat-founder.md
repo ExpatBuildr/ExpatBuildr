@@ -6,7 +6,7 @@ author: "ExpatBuildr"
 pillarId: "health-arbitrage"
 category: "Guide"
 gated: true
-tags: ["find doctor abroad", "expat founder doctor", "medical care Southeast Asia", "expat healthcare", "doctor Philippines Thailand"]
+tags: ["Health Arbitrage", "Expat Healthcare", "Expat Founder"]
 ogImage: "/images/blog/pillars/health-arbitrage-hub.png"
 heroImage: "/images/blog/pillars/health-arbitrage-hub.png"
 canonicalUrl: "https://expatbuildr.com/blog/health-arbitrage/find-good-doctor-abroad-expat-founder"

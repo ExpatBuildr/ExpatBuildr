@@ -6,7 +6,7 @@ author: "ExpatBuildr"
 pillarId: "lead-generation"
 category: "Automation"
 gated: true
-tags: ["automated lead generation", "lead generation system", "outreach automation", "expat founder lead gen", "automated prospecting"]
+tags: ["Lead Generation", "Automation", "Expat Founder"]
 ogImage: "/images/lead-gen.jpg"
 heroImage: "/images/lead-gen.jpg"
 canonicalUrl: "https://expatbuildr.com/blog/lead-generation/build-automated-lead-generation-system"

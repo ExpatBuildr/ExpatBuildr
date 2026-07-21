@@ -6,7 +6,7 @@ author: "ExpatBuildr"
 pillarId: "geo-arbitrage"
 category: "Deep Dive"
 gated: true
-tags: ["Chiang Mai vs Cebu", "remote work base comparison", "Chiang Mai remote work", "Cebu vs Chiang Mai", "best SEA remote work base"]
+tags: ["Geo-Arbitrage", "Southeast Asia", "Relocation"]
 ogImage: "/images/geo-arbitrage.jpg"
 heroImage: "/images/geo-arbitrage.jpg"
 canonicalUrl: "https://expatbuildr.com/blog/geo-arbitrage/chiang-mai-vs-cebu-remote-work-base"

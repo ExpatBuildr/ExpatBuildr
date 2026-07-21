@@ -6,7 +6,7 @@ author: "ExpatBuildr"
 pillarId: "ai-arbitrage"
 category: "Automation"
 gated: true
-tags: ["AI workflows", "business automation", "expat founder", "autonomous AI", "Make automation"]
+tags: ["AI Arbitrage", "Automation", "Expat Founder"]
 ogImage: "/images/blog/pillars/ai-arbitrage-hub.png"
 heroImage: "/images/blog/pillars/ai-arbitrage-hub.png"
 canonicalUrl: "https://expatbuildr.com/blog/ai-arbitrage/ai-workflows-run-business-while-you-sleep"

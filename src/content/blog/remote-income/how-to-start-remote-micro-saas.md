@@ -4,7 +4,7 @@ description: "A step-by-step guide to building a remote micro-SaaS from zero: ni
 pubDate: 2026-04-18
 pillarId: "remote-income"
 category: "Guide"
-tags: ["Micro SaaS", "Remote Income", "Product", "Indie Hacking"]
+tags: ["Remote Income", "Expat Founder"]
 author: "ExpatBuildr"
 ogImage: "/images/remote-work.jpg"
 heroImage: "/images/remote-work.jpg"

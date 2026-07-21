@@ -6,7 +6,7 @@ author: "ExpatBuildr"
 pillarId: "health-arbitrage"
 category: "Guide"
 gated: false
-tags: ["health arbitrage", "expat founder health", "healthcare abroad", "medical tourism", "expat wellness"]
+tags: ["Health Arbitrage", "Expat Healthcare", "Medical Tourism"]
 ogImage: "/images/blog/pillars/health-arbitrage-hub.png"
 heroImage: "/images/blog/pillars/health-arbitrage-hub.png"
 canonicalUrl: "https://expatbuildr.com/blog/health-arbitrage/what-is-health-arbitrage"

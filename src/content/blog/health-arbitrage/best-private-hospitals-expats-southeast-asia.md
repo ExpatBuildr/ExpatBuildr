@@ -6,7 +6,7 @@ author: "ExpatBuildr"
 pillarId: "health-arbitrage"
 category: "Deep Dive"
 gated: true
-tags: ["private hospitals Southeast Asia", "expat healthcare Philippines", "Bangkok hospital", "expat founder health", "medical tourism SEA"]
+tags: ["Health Arbitrage", "Expat Healthcare", "Medical Tourism", "Southeast Asia"]
 ogImage: "/images/blog/pillars/health-arbitrage-hub.png"
 heroImage: "/images/blog/pillars/health-arbitrage-hub.png"
 canonicalUrl: "https://expatbuildr.com/blog/health-arbitrage/best-private-hospitals-expats-southeast-asia"

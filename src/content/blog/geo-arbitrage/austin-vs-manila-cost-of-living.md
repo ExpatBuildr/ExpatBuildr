@@ -6,7 +6,7 @@ author: "ExpatBuildr"
 pillarId: "geo-arbitrage"
 category: "Deep Dive"
 gated: true
-tags: ["Austin vs Manila", "cost of living comparison", "geo-arbitrage", "Philippines cost of living", "Austin cost of living", "geographic arbitrage"]
+tags: ["Geo-Arbitrage", "Cost of Living", "Southeast Asia"]
 ogImage: "/images/geo-arbitrage.jpg"
 heroImage: "/images/geo-arbitrage.jpg"
 canonicalUrl: "https://expatbuildr.com/blog/geo-arbitrage/austin-vs-manila-cost-of-living"

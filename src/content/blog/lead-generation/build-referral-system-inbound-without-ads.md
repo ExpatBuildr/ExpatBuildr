@@ -6,7 +6,7 @@ author: "ExpatBuildr"
 pillarId: "lead-generation"
 category: "Guide"
 gated: true
-tags: ["referral system", "referral marketing", "inbound without ads", "word of mouth marketing", "expat founder referrals"]
+tags: ["Lead Generation", "Expat Founder"]
 ogImage: "/images/lead-gen.jpg"
 heroImage: "/images/lead-gen.jpg"
 canonicalUrl: "https://expatbuildr.com/blog/lead-generation/build-referral-system-inbound-without-ads"

@@ -5,7 +5,7 @@ pubDate: 2026-04-20
 author: "ExpatBuildr"
 pillarId: "lead-generation"
 category: "Guide"
-tags: ["Intent Scoring", "Lead Engine", "Automation", "Signals"]
+tags: ["Lead Generation", "Automation"]
 ogImage: "/images/lead-gen.jpg"
 heroImage: "/images/lead-gen.jpg"
 imagePrompt: "Lead pipeline diagram with scoring nodes and agent icons; blue-gray dashboard aesthetic."

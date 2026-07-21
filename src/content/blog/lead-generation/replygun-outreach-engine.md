@@ -5,7 +5,7 @@ pubDate: 2026-04-27
 author: "ExpatBuildr"
 pillarId: "lead-generation"
 category: "Automation"
-tags: ["Cold Outreach", "ReplyGun", "Lead Generation", "Outbound", "Automation"]
+tags: ["Lead Generation", "Cold Outreach", "Automation"]
 ogImage: "/images/lead-gen.jpg"
 heroImage: "/images/lead-gen.jpg"
 canonicalUrl: "https://expatbuildr.com/blog/lead-generation/replygun-outreach-engine"

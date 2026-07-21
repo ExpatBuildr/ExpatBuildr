@@ -5,7 +5,7 @@ pubDate: 2026-04-23
 author: "ExpatBuildr"
 pillarId: "remote-income"
 category: "Deep Dive"
-tags: ["Arbitrage", "Signal Flipping", "Data Monetization", "Automation", "Remote Income"]
+tags: ["Remote Income", "Automation"]
 ogImage: "/images/remote-work.jpg"
 heroImage: "/images/remote-work.jpg"
 canonicalUrl: "https://expatbuildr.com/blog/remote-income/arbitrage-node-installation"

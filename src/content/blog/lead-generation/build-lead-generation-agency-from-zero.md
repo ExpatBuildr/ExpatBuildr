@@ -6,7 +6,7 @@ author: "ExpatBuildr"
 pillarId: "lead-generation"
 category: "Guide"
 gated: true
-tags: ["lead generation agency", "start agency from zero", "build lead gen agency", "outbound agency", "expat founder agency"]
+tags: ["Lead Generation", "Expat Founder"]
 ogImage: "/images/lead-gen.jpg"
 heroImage: "/images/lead-gen.jpg"
 canonicalUrl: "https://expatbuildr.com/blog/lead-generation/build-lead-generation-agency-from-zero"

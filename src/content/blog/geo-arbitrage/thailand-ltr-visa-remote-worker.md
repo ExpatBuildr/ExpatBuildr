@@ -6,7 +6,7 @@ author: "ExpatBuildr"
 pillarId: "geo-arbitrage"
 category: "Guide"
 gated: true
-tags: ["Thailand LTR visa", "Thailand remote worker visa", "LTR visa requirements", "Thailand expat visa", "remote work Thailand visa"]
+tags: ["Geo-Arbitrage", "Expat Visas", "Southeast Asia"]
 ogImage: "/images/geo-arbitrage.jpg"
 heroImage: "/images/geo-arbitrage.jpg"
 canonicalUrl: "https://expatbuildr.com/blog/geo-arbitrage/thailand-ltr-visa-remote-worker"

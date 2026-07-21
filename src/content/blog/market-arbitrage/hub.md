@@ -5,7 +5,7 @@ pubDate: 2026-07-05
 author: "ExpatBuildr"
 pillarId: "market-arbitrage"
 category: "Pillar Hub"
-tags: ["Market Arbitrage", "Currency Strategy", "Investing Abroad", "FEIE"]
+tags: ["Market Arbitrage", "Currency Strategy", "Investing Abroad"]
 ogImage: "/images/blog/pillars/market-arbitrage-hub.png"
 heroImage: "/images/blog/pillars/market-arbitrage-hub.png"
 canonicalUrl: "https://expatbuildr.com/blog/market-arbitrage"

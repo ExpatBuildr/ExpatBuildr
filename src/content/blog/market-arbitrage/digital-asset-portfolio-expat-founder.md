@@ -6,7 +6,7 @@ author: "ExpatBuildr"
 pillarId: "market-arbitrage"
 category: "Deep Dive"
 gated: true
-tags: ["digital asset portfolio", "expat founder investing", "digital assets", "market arbitrage", "expat wealth building"]
+tags: ["Market Arbitrage", "Investing Abroad", "Expat Founder"]
 ogImage: "/images/blog/pillars/market-arbitrage-hub.png"
 heroImage: "/images/blog/pillars/market-arbitrage-hub.png"
 canonicalUrl: "https://expatbuildr.com/blog/market-arbitrage/digital-asset-portfolio-expat-founder"

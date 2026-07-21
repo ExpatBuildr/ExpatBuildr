@@ -6,7 +6,7 @@ author: "ExpatBuildr"
 pillarId: "ai-arbitrage"
 category: "Guide"
 gated: true
-tags: ["AI chief of staff", "AI business assistant", "expat founder AI", "AI operations", "founder AI leverage"]
+tags: ["AI Arbitrage", "AI Tools", "Automation", "Expat Founder"]
 ogImage: "/images/blog/pillars/ai-arbitrage-hub.png"
 heroImage: "/images/blog/pillars/ai-arbitrage-hub.png"
 canonicalUrl: "https://expatbuildr.com/blog/ai-arbitrage/ai-chief-of-staff-for-your-business"

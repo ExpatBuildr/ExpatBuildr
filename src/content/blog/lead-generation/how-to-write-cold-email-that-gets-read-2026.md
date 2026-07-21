@@ -6,7 +6,7 @@ author: "ExpatBuildr"
 pillarId: "lead-generation"
 category: "Guide"
 gated: true
-tags: ["how to write a cold email", "cold email that gets read", "cold email tips 2026", "cold outreach email", "cold email strategy"]
+tags: ["Lead Generation", "Cold Outreach"]
 ogImage: "/images/lead-gen.jpg"
 heroImage: "/images/lead-gen.jpg"
 canonicalUrl: "https://expatbuildr.com/blog/lead-generation/how-to-write-cold-email-that-gets-read-2026"

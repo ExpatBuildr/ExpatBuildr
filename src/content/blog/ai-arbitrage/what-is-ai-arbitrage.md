@@ -6,7 +6,7 @@ author: "ExpatBuildr"
 pillarId: "ai-arbitrage"
 category: "Guide"
 gated: false
-tags: ["AI arbitrage", "expat founder", "AI tools for founders", "founder AI stack", "solo founder leverage"]
+tags: ["AI Arbitrage", "Expat Founder"]
 ogImage: "/images/blog/pillars/ai-arbitrage-hub.png"
 heroImage: "/images/blog/pillars/ai-arbitrage-hub.png"
 canonicalUrl: "https://expatbuildr.com/blog/ai-arbitrage/what-is-ai-arbitrage"

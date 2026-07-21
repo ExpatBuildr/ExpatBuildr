@@ -6,7 +6,7 @@ author: "ExpatBuildr"
 pillarId: "lead-generation"
 category: "Guide"
 gated: true
-tags: ["how to build a sales pipeline", "sales pipeline from zero", "build sales pipeline small business", "B2B sales pipeline", "outbound sales pipeline"]
+tags: ["Lead Generation", "Sales Pipeline", "B2B Sales"]
 ogImage: "/images/lead-gen.jpg"
 heroImage: "/images/lead-gen.jpg"
 canonicalUrl: "https://expatbuildr.com/blog/lead-generation/how-to-build-sales-pipeline-from-zero"
