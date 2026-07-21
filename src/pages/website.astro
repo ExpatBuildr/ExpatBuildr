@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Start Here — Build the Website That Keeps You Here</title>
+  <meta name="description" content="I almost went home. The first thing that changed it was fixing my website. $500, live in 3 days, built by someone who's actually been where you are." />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Syne:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500&family=Caveat:wght@500;600&display=swap" rel="stylesheet" />
+
+  <script is:inline>
+    const theme = (() => {
+      if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+        return localStorage.getItem('theme');
+      }
+      return 'light';
+    })();
+    if (theme === 'light') {
+      document.documentElement.classList.remove('dark');
+    } else {
+      document.documentElement.classList.add('dark');
+    }
+    window.localStorage.setItem('theme', theme);
+  </script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --gold: #3b82f6;
+      --orange: #8b5cf6;
+      --emerald: #0a9e5c;
+      --bg-deep: #faf5ff;
+      --bg-glass: rgba(2,6,23,0.035);
+      --bg-glass-hover: rgba(2,6,23,0.06);
+      --border-glass: rgba(217,70,239,0.12);
+      --border-gold: rgba(59,130,246,0.35);
+      --border-gold-dim: rgba(59,130,246,0.16);
+      --text-primary: #020617;
+      --text-muted: #475569;
+      --text-dim: #64748b;
+      --nav-bg: rgba(250,245,255,0.92);
+      --btn-ink: #ffffff;
+      --note-bg: #fdf8ec;
+      --note-ink: #2a2013;
+    }
+
+    html.dark {
+      --gold: #f5a623;
+      --orange: #ff6b35;
+      --emerald: #00e87a;
+      --bg-deep: #060809;
+      --bg-glass: rgba(255,255,255,0.028);
+      --bg-glass-hover: rgba(255,255,255,0.05);
+      --border-glass: rgba(255,255,255,0.07);
+      --border-gold: rgba(245,166,35,0.35);
+      --border-gold-dim: rgba(245,166,35,0.15);
+      --text-primary: #f0ece4;
+      --text-muted: rgba(240,236,228,0.52);
+      --text-dim: rgba(240,236,228,0.28);
+      --nav-bg: rgba(6,8,9,0.9);
+      --btn-ink: #060809;
+      --note-bg: #1a140a;
+      --note-ink: #e8d9b8;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg-deep);
+      color: var(--text-primary);
+      font-family: 'Syne', sans-serif;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    .bg-layer { position: fixed; inset: 0; z-index: 0; pointer-events: none; }
+    .bg-grid {
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(245,166,35,0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(245,166,35,0.035) 1px, transparent 1px);
+      background-size: 72px 72px;
+    }
+    .bg-orbs {
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 60% 40% at 15% 10%, rgba(255,107,53,0.08) 0%, transparent 55%),
+        radial-gradient(ellipse 50% 35% at 85% 20%, rgba(245,166,35,0.07) 0%, transparent 50%),
+        radial-gradient(ellipse 70% 50% at 50% 95%, rgba(0,212,255,0.04) 0%, transparent 55%);
+    }
+
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: var(--nav-bg);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border-glass);
+    }
+    .nav-inner {
+      max-width: 900px; margin: 0 auto; padding: 18px 24px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-family: 'Bebas Neue', sans-serif; font-size: 1.4rem; letter-spacing: 0.12em;
+      color: var(--gold); text-decoration: none;
+    }
+    .nav-logo img { width: 28px; height: 28px; border-radius: 6px; object-fit: cover; flex-shrink: 0; }
+    .theme-toggle {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 30px; height: 30px; border-radius: 50%;
+      background: var(--bg-glass); border: 1px solid var(--border-glass);
+      color: var(--text-muted); cursor: pointer; font-size: 0.85rem; flex-shrink: 0;
+    }
+    .theme-toggle:hover { border-color: var(--border-gold); color: var(--gold); }
+
+    .page { position: relative; z-index: 1; max-width: 900px; margin: 0 auto; padding: 0 24px; }
+
+    /* ── HERO / VIDEO ── */
+    .hero { padding: 56px 0 40px; text-align: center; }
+
+    .hero-eyebrow {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-family: 'JetBrains Mono', monospace; font-size: 0.65rem;
+      letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold);
+      margin-bottom: 20px; padding: 6px 12px;
+      background: rgba(245,166,35,0.06); border: 1px solid var(--border-gold-dim);
+    }
+    .hero-eyebrow::before {
+      content: ''; width: 5px; height: 5px; border-radius: 50%;
+      background: var(--gold); animation: blink 2s ease infinite; flex-shrink: 0;
+    }
+    @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.2; } }
+
+    .hero-headline {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(2.6rem, 6vw, 4.2rem);
+      line-height: 0.98; letter-spacing: 0.01em;
+      margin-bottom: 16px; max-width: 720px; margin-left: auto; margin-right: auto;
+    }
+    .hero-headline .hl-gold { color: var(--gold); }
+
+    .hero-sub {
+      font-size: 1rem; line-height: 1.65; color: var(--text-muted);
+      max-width: 480px; margin: 0 auto 36px;
+    }
+    .hero-sub strong { color: var(--text-primary); }
+
+    /* ── FIELD NOTE (signature element) ── */
+    .field-note {
+      margin: 56px auto; max-width: 560px;
+      background: var(--note-bg); color: var(--note-ink);
+      padding: 28px 32px; position: relative;
+      transform: rotate(-0.6deg);
+      box-shadow: 0 12px 32px -12px rgba(0,0,0,0.35);
+    }
+    .field-note::before {
+      content: '';
+      position: absolute; inset: 0;
+      background-image: repeating-linear-gradient(rgba(0,0,0,0.03) 0 1px, transparent 1px 28px);
+      pointer-events: none;
+    }
+    .field-note-stamp {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.6rem; letter-spacing: 0.14em; text-transform: uppercase;
+      opacity: 0.55; margin-bottom: 10px;
+    }
+    .field-note-text {
+      font-family: 'Caveat', cursive;
+      font-size: 1.5rem; line-height: 1.4;
+      position: relative;
+    }
+
+    /* ── SECTION BASE ── */
+    section { padding: 56px 0; border-top: 1px solid var(--border-glass); }
+    .section-eyebrow {
+      font-family: 'JetBrains Mono', monospace; font-size: 0.62rem;
+      letter-spacing: 0.22em; text-transform: uppercase; color: var(--text-dim);
+      margin-bottom: 16px; display: flex; align-items: center; gap: 12px;
+    }
+    .section-eyebrow::after { content: ''; flex: 0 0 40px; height: 1px; background: var(--border-glass); }
+
+    .story-block { max-width: 640px; }
+    .story-block p {
+      font-size: 1.02rem; line-height: 1.75; color: var(--text-muted);
+      margin-bottom: 20px;
+    }
+    .story-block p strong { color: var(--text-primary); }
+    .story-block p.lede {
+      font-size: 1.2rem; color: var(--text-primary); font-weight: 600;
+    }
+
+    /* ── THE OFFER ── */
+    .offer-wrap {
+      background: var(--bg-glass);
+      border: 1px solid var(--border-gold);
+      box-shadow: 0 0 0 1px var(--border-gold-dim), 0 24px 64px -24px rgba(245,166,35,0.25);
+      padding: 40px 36px;
+      position: relative;
+      overflow: hidden;
+    }
+    .offer-wrap::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      background: linear-gradient(90deg, transparent, var(--gold), var(--orange), var(--gold), transparent);
+    }
+
+    .offer-tier {
+      font-family: 'JetBrains Mono', monospace; font-size: 0.62rem;
+      letter-spacing: 0.24em; text-transform: uppercase; color: var(--gold);
+      margin-bottom: 10px;
+    }
+    .offer-name {
+      font-family: 'Bebas Neue', sans-serif; font-size: 2.4rem;
+      letter-spacing: 0.02em; line-height: 1; margin-bottom: 14px;
+    }
+    .offer-tagline {
+      font-size: 0.95rem; line-height: 1.65; color: var(--text-muted);
+      max-width: 460px; margin-bottom: 28px;
+    }
+
+    .offer-price-row {
+      display: flex; align-items: baseline; gap: 16px;
+      margin-bottom: 24px; flex-wrap: wrap;
+    }
+    .offer-price {
+      font-family: 'Bebas Neue', sans-serif; font-size: 3.6rem;
+      letter-spacing: 0.02em; color: var(--gold); line-height: 1;
+    }
+    .offer-price sup { font-size: 1.3rem; vertical-align: super; }
+    .offer-delivery {
+      font-family: 'JetBrains Mono', monospace; font-size: 0.65rem;
+      letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-dim);
+    }
+
+    .offer-features { list-style: none; margin-bottom: 28px; }
+    .offer-features li {
+      font-size: 0.88rem; color: var(--text-muted);
+      padding: 11px 0; border-bottom: 1px solid var(--border-glass);
+      display: flex; align-items: flex-start; gap: 10px; line-height: 1.5;
+    }
+    .offer-features li:last-child { border-bottom: none; }
+    .offer-features li::before {
+      content: '✓'; color: var(--emerald);
+      font-family: 'JetBrains Mono', monospace; font-size: 0.7rem;
+      flex-shrink: 0; margin-top: 2px;
+    }
+
+    .offer-btn {
+      display: flex; align-items: center; justify-content: center;
+      width: 100%; font-family: 'Bebas Neue', sans-serif; font-size: 1.25rem;
+      letter-spacing: 0.06em; text-decoration: none; padding: 18px 24px;
+      background: linear-gradient(135deg, var(--gold), var(--orange));
+      color: var(--btn-ink);
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+    .offer-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 32px rgba(245,166,35,0.3); }
+
+    .offer-note {
+      margin-top: 14px; text-align: center;
+      font-family: 'JetBrains Mono', monospace; font-size: 0.62rem;
+      letter-spacing: 0.1em; color: var(--text-dim); text-transform: uppercase;
+    }
+    .offer-note span { color: var(--emerald); }
+
+    /* ── GUARANTEE ── */
+    .guarantee-box {
+      background: var(--bg-glass); border: 1px solid rgba(0,232,122,0.15);
+      padding: 28px 32px; display: flex; gap: 20px; align-items: flex-start;
+    }
+    .guarantee-icon { font-size: 2rem; flex-shrink: 0; }
+    .guarantee-title {
+      font-family: 'Bebas Neue', sans-serif; font-size: 1.4rem;
+      letter-spacing: 0.05em; color: var(--emerald); margin-bottom: 6px;
+    }
+    .guarantee-text { font-size: 0.85rem; line-height: 1.6; color: var(--text-muted); }
+    .guarantee-text strong { color: var(--text-primary); }
+
+    /* ── NOT SURE / UPGRADE PATH ── */
+    .upgrade-path { text-align: center; }
+    .upgrade-headline {
+      font-family: 'Bebas Neue', sans-serif; font-size: 1.9rem;
+      letter-spacing: 0.03em; margin-bottom: 12px;
+    }
+    .upgrade-sub {
+      font-size: 0.88rem; color: var(--text-muted); line-height: 1.6;
+      max-width: 440px; margin: 0 auto 28px;
+    }
+    .upgrade-actions {
+      display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;
+    }
+    .btn-secondary {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      font-family: 'JetBrains Mono', monospace; font-size: 0.72rem;
+      letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none;
+      padding: 13px 24px; background: transparent; border: 1px solid var(--border-glass);
+      color: var(--text-muted); transition: border-color 0.2s ease, color 0.2s ease;
+    }
+    .btn-secondary:hover { border-color: var(--gold); color: var(--gold); }
+
+    /* ── FOOTER ── */
+    footer {
+      position: relative; z-index: 1;
+      border-top: 1px solid var(--border-glass);
+      padding: 24px; max-width: 900px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 12px;
+    }
+    .footer-brand {
+      font-family: 'JetBrains Mono', monospace; font-size: 0.62rem;
+      letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-dim);
+    }
+    .footer-links { display: flex; gap: 20px; }
+    .footer-link {
+      font-family: 'JetBrains Mono', monospace; font-size: 0.6rem;
+      letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-dim);
+      text-decoration: none; transition: color 0.2s ease;
+    }
+    .footer-link:hover { color: var(--gold); }
+
+    /* ── TEXT ME WIDGET ── */
+    .text-me-widget { position: fixed; bottom: 24px; right: 24px; z-index: 200; font-family: 'Syne', sans-serif; }
+    .text-me-bubble {
+      display: flex; align-items: center; justify-content: center;
+      width: 56px; height: 56px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--gold), var(--orange));
+      color: var(--btn-ink); font-size: 1.4rem; cursor: pointer; border: none;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.4); transition: transform 0.15s ease;
+    }
+    .text-me-bubble:hover { transform: scale(1.06); }
+    .text-me-panel {
+      display: none; position: absolute; bottom: 68px; right: 0;
+      width: 250px; padding: 18px; background: var(--bg-deep);
+      border: 1px solid var(--border-glass); border-radius: 12px;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.5);
+    }
+    .text-me-panel.open { display: block; }
+    .text-me-title { font-family: 'Bebas Neue', sans-serif; font-size: 1.2rem; letter-spacing: 0.03em; margin-bottom: 6px; }
+    .text-me-sub { font-size: 0.8rem; color: var(--text-muted); line-height: 1.5; margin-bottom: 14px; }
+    .text-me-link {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      font-family: 'JetBrains Mono', monospace; font-size: 0.78rem; font-weight: 600;
+      letter-spacing: 0.04em; text-decoration: none; padding: 11px 14px; border-radius: 8px;
+      background: linear-gradient(135deg, var(--gold), var(--orange)); color: var(--btn-ink);
+    }
+
+    @media (max-width: 640px) {
+      .offer-wrap { padding: 28px 22px; }
+      .field-note { padding: 22px 22px; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="bg-layer">
+    <div class="bg-grid"></div>
+    <div class="bg-orbs"></div>
+  </div>
+
+  <nav>
+    <div class="nav-inner">
+      <a href="/" class="nav-logo"><img src="/logo.jpg" alt="ExpatBuildr" />ExpatBuildr</a>
+      <button type="button" class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">🌙</button>
+    </div>
+  </nav>
+
+  <main class="page">
+
+    <!-- HERO -->
+    <section class="hero" style="border-top: none;">
+      <div class="hero-eyebrow">Phuket, Thailand · Not a pitch, just what happened</div>
+      <h1 class="hero-headline">
+        I almost went home.<br />
+        <span class="hl-gold">Then I fixed one thing first.</span>
+      </h1>
+      <p class="hero-sub">
+        Almost ran out of runway in Thailand. The first thing that changed my trajectory was a website that actually converted. <strong>Here's the exact offer.</strong>
+      </p>
+      <a href="#offer" class="btn-secondary" style="margin-top: 4px;">See the offer ↓</a>
+    </section>
+
+    <!-- THE STORY -->
+    <section>
+      <div class="section-eyebrow">What Actually Happened</div>
+      <div class="story-block">
+        <p class="lede">The runway math doesn't lie. Mine ran out in Thailand, and almost sent me home.</p>
+        <p>I didn't leave the US because I had it all figured out. I left because I did the math and it made sense. What nobody tells you is that the math keeps changing after you land. Savings go down. The flight home starts looking cheaper every month it doesn't work.</p>
+        <p>I've been broke in Thailand. I've rebuilt in the Philippines. I've done the math over and over in different currencies, different apartments, different cities. <strong>The thing that actually changed my trajectory wasn't a mindset shift. It was building something that made money while I was still figuring everything else out.</strong></p>
+        <p>The first piece of that was my website. Not a blog. Not a portfolio. A site that actually turned a stranger into a client. Before that existed, I had an idea and no way to prove it to anyone. After it existed, I had something I could point people to and get paid.</p>
+        <p>If you're already building something here, wherever "here" is for you, and your website isn't doing that job yet, that's the fix. Not more content. Not another course. A site that works.</p>
+      </div>
+
+    </section>
+
+    <!-- FIELD NOTE -->
+    <div class="field-note">
+      <div class="field-note-stamp">✦ Bangkok → Cebu → wherever you're reading this from</div>
+      <p class="field-note-text">
+        "I built this offer because I needed it myself first. $500 was the number that got me moving when I didn't have room to wait."
+      </p>
+    </div>
+
+    <!-- THE OFFER -->
+    <section id="offer">
+      <div class="section-eyebrow">The Offer</div>
+      <div class="offer-wrap">
+        <div class="offer-tier">For Newsletter Subscribers Only</div>
+        <div class="offer-name">Landing Page Build</div>
+        <p class="offer-tagline">One high-converting page. Copy written for your actual business, not a template. Live in 3 days.</p>
+
+        <div class="offer-price-row">
+          <div class="offer-price"><sup>$</sup>500</div>
+          <div class="offer-delivery">3-day delivery · you own everything</div>
+        </div>
+
+        <ul class="offer-features">
+          <li>Landing page built and deployed, ready to send traffic to</li>
+          <li>Conversion copy written for your business, not filler text</li>
+          <li>Email capture connected so leads don't disappear</li>
+          <li>Meta / Google pixel installed, ready for ads when you are</li>
+          <li>Mobile responsive, checked on real phones</li>
+          <li>You own the code, no lock-in, no monthly fee to me</li>
+        </ul>
+
+        <a href="https://buy.stripe.com/8x2fZg3Gv6vE9xwc1i2oE0f" class="offer-btn" target="_blank" rel="noopener">Start My Build — $500 →</a>
+        <p class="offer-note">Secure payment via Stripe · <span>2-round revision guarantee</span> · response within 24hrs</p>
+      </div>
+    </section>
+
+    <!-- GUARANTEE -->
+    <section>
+      <div class="guarantee-box">
+        <div class="guarantee-icon">🛡</div>
+        <div>
+          <div class="guarantee-title">If it's not right, I fix it.</div>
+          <p class="guarantee-text">Two rounds of revisions included, no extra invoice. If the copy doesn't sound like your business or the layout needs work, <strong>I fix it until it's right.</strong></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- UPGRADE PATH -->
+    <section class="upgrade-path">
+      <div class="upgrade-headline">Need more than one page?</div>
+      <p class="upgrade-sub">
+        I've got bigger packages, email sequences, full funnels, done-for-you ad setups, but let's talk about what you actually need first. No sense paying for more than the job requires.
+      </p>
+      <div class="upgrade-actions">
+        <a href="https://calendly.com/expatbuildr/fixmyleaks" class="btn-secondary" target="_blank" rel="noopener">Book a Free 15-Min Call</a>
+        <a href="sms:+13104618859" class="btn-secondary">Text Me — (310) 461-8859</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <span class="footer-brand">ExpatBuildr · Built in the Philippines 🇵🇭</span>
+    <nav class="footer-links">
+      <a href="/privacy" class="footer-link">Privacy</a>
+      <a href="/terms" class="footer-link">Terms</a>
+      <a href="https://x.com/expatbuildr" class="footer-link" target="_blank" rel="noopener">X</a>
+    </nav>
+  </footer>
+
+  <div class="text-me-widget">
+    <div class="text-me-panel" id="textMePanel">
+      <div class="text-me-title">Questions first?</div>
+      <p class="text-me-sub">Text me directly, no forms, no bots. I'll answer myself.</p>
+      <a href="sms:+13104618859" class="text-me-link">💬 (310) 461-8859</a>
+    </div>
+    <button type="button" class="text-me-bubble" id="textMeBubble" aria-label="Text me if you have questions">💬</button>
+  </div>
+
+  <script>
+    const textMeBubble = document.getElementById('textMeBubble');
+    const textMePanel = document.getElementById('textMePanel');
+    if (textMeBubble && textMePanel) {
+      textMeBubble.addEventListener('click', () => textMePanel.classList.toggle('open'));
+      document.addEventListener('click', (e) => {
+        if (!textMePanel.contains(e.target) && !textMeBubble.contains(e.target)) {
+          textMePanel.classList.remove('open');
+        }
+      });
+    }
+
+    const toggleBtn = document.getElementById('themeToggle');
+    if (toggleBtn) {
+      const syncIcon = () => {
+        toggleBtn.textContent = document.documentElement.classList.contains('dark') ? '☀️' : '🌙';
+      };
+      syncIcon();
+      toggleBtn.addEventListener('click', () => {
+        document.documentElement.classList.toggle('dark');
+        const isDark = document.documentElement.classList.contains('dark');
+        localStorage.setItem('theme', isDark ? 'dark' : 'light');
+        syncIcon();
+      });
+    }
+  </script>
+
+</body>
+</html>
