@@ -2,6 +2,7 @@
 title: "Geo-Arbitrage: Lifestyle Engineering & High-Performance Compound Architecture"
 description: "Earn in the West, live in the East. We consult on the technical and logistical setup of your global command center to 10x your focus and 4x your capital."
 pubDate: 2026-04-12
+updatedDate: 2026-08-04
 author: "ExpatBuildr"
 pillarId: "geo-arbitrage"
 category: "Deep Dive"
@@ -106,7 +107,7 @@ To protect your privacy in a foreign land, we implement cyber-hygiene protocols.
 **A:** We help you secure roles that are timezone-agnostic or prioritize async output. We also set up time-shifting workflows to ensure you remain visible during your client's core hours without burning out.
 
 **Q: Do I need a special visa?**
-**A:** The Philippines offers the SRRV, SIRV, and various digital nomad visa options. We provide a technical briefing to help you choose the one that fits your long-term sovereignty goals.
+**A:** Long-term residents typically use the SRRV or SIRV. There's also a dedicated Digital Nomad Visa (DNV) under Executive Order 86, which lets remote workers earning foreign income live in the Philippines for a renewable one-year term — but it comes with a catch: eligibility is limited to nationals of countries that offer Filipinos a reciprocal digital nomad visa, and as of this writing no official reciprocity list has been published. It also carries a minimum foreign-earned income threshold (reported around $24,000/year). We track the reciprocity list and income rules as they firm up and help you pick the visa that actually clears for your passport today, rather than the one that sounds best on paper.
 
 ---
 
