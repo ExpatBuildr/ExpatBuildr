@@ -14,6 +14,7 @@ primaryKeyword: "how expat founders stay mentally sharp while living abroad"
 secondaryKeywords: ["expat founder mental performance", "cognitive performance living abroad", "mental sharpness expat founder", "focus expat lifestyle", "founder mental health abroad"]
 searchIntent: "informational"
 draft: false
+hasVideoEmbed: false
 archived: false
 noindex: false
 ---

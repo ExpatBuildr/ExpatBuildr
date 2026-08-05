@@ -14,6 +14,7 @@ primaryKeyword: "how to train a virtual assistant to think like you"
 secondaryKeywords: ["VA training framework", "train virtual assistant founder", "virtual assistant onboarding", "expat founder delegation training", "how to delegate to VA"]
 searchIntent: "problem-solving"
 draft: false
+hasVideoEmbed: false
 archived: false
 noindex: false
 ---

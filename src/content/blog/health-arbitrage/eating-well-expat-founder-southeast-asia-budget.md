@@ -14,6 +14,7 @@ primaryKeyword: "eating well expat founder Southeast Asia budget"
 secondaryKeywords: ["expat founder food budget", "healthy eating Southeast Asia", "nutrition expat founder", "food budget Philippines Thailand", "eating healthy abroad founder"]
 searchIntent: "informational"
 draft: false
+hasVideoEmbed: false
 archived: false
 noindex: false
 ---

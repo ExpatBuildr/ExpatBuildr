@@ -14,6 +14,7 @@ primaryKeyword: "remote work tax strategy what you can deduct"
 secondaryKeywords: ["remote work tax deductions", "work from home deductions", "self-employed remote worker taxes", "home office deduction", "expat tax deductions remote work"]
 searchIntent: "problem-solving"
 draft: false
+hasVideoEmbed: false
 archived: false
 noindex: false
 ---

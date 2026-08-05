@@ -14,6 +14,7 @@ primaryKeyword: "best neighborhoods for remote workers in Phuket"
 secondaryKeywords: ["Phuket neighborhoods remote work", "where to stay Phuket long term", "Phuket digital nomad areas", "Phuket expat cost of living", "Rawai Phuket remote worker"]
 searchIntent: "informational"
 draft: false
+hasVideoEmbed: false
 archived: false
 noindex: false
 ---

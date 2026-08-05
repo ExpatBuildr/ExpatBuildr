@@ -14,6 +14,7 @@ primaryKeyword: "AI chief of staff for your business"
 secondaryKeywords: ["AI business chief of staff", "build AI assistant founder", "AI operations assistant", "expat founder AI leverage", "AI executive assistant"]
 searchIntent: "problem-solving"
 draft: false
+hasVideoEmbed: false
 archived: false
 noindex: false
 ---

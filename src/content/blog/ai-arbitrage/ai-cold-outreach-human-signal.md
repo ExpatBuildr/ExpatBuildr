@@ -14,6 +14,7 @@ primaryKeyword: "AI cold outreach human signal"
 secondaryKeywords: ["AI personalized outreach", "Clay AI outreach", "cold email AI personalization", "founder outreach automation", "AI first line cold email"]
 searchIntent: "problem-solving"
 draft: false
+hasVideoEmbed: false
 archived: false
 noindex: false
 ---

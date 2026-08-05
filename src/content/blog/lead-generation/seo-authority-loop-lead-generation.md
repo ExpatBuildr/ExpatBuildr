@@ -13,6 +13,7 @@ primaryKeyword: "SEO authority loop lead generation"
 secondaryKeywords: ["topic cluster lead generation", "EverRank SEO strategy", "zero-cost leads SEO", "niche authority building"]
 searchIntent: "informational"
 draft: false
+hasVideoEmbed: false
 gated: true
 archived: false
 noindex: false

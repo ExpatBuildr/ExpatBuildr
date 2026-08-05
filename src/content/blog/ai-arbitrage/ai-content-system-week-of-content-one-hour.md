@@ -14,6 +14,7 @@ primaryKeyword: "AI content system week of content one hour"
 secondaryKeywords: ["AI content production system", "content automation founder", "AI writing workflow", "batch content production AI", "expat founder content system"]
 searchIntent: "problem-solving"
 draft: false
+hasVideoEmbed: false
 archived: false
 noindex: false
 ---

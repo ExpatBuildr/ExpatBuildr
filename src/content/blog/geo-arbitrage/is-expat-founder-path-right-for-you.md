@@ -13,6 +13,7 @@ primaryKeyword: "how to know if the expat founder path is right for you"
 secondaryKeywords: ["expat founder self assessment", "should I move abroad as founder", "expat founder decision framework", "is expat lifestyle right for me", "moving abroad founder tradeoffs"]
 searchIntent: "problem-solving"
 draft: false
+hasVideoEmbed: false
 gated: false
 archived: false
 noindex: false

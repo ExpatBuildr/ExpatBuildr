@@ -14,6 +14,7 @@ primaryKeyword: "how to choose your expat base by founder type"
 secondaryKeywords: ["best country for expat founders", "colombia vs philippines expat", "where to live as a remote founder", "expat base selection", "geographic arbitrage country comparison"]
 searchIntent: "problem-solving"
 draft: false
+hasVideoEmbed: false
 archived: false
 noindex: false
 ---

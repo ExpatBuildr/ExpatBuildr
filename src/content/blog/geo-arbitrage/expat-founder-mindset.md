@@ -13,6 +13,7 @@ primaryKeyword: "expat founder mindset"
 secondaryKeywords: ["expat founder psychology", "building abroad mindset", "location independent founder mindset", "expat entrepreneur thinking", "expat founder vs nomad mindset"]
 searchIntent: "informational"
 draft: false
+hasVideoEmbed: false
 gated: false
 archived: false
 noindex: false

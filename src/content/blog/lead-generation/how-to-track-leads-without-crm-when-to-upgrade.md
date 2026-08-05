@@ -14,6 +14,7 @@ primaryKeyword: "how to track leads without a CRM"
 secondaryKeywords: ["lead tracking without CRM", "spreadsheet CRM alternative", "manage sales pipeline without CRM", "when to buy a CRM", "simple lead tracking system"]
 searchIntent: "problem-solving"
 draft: false
+hasVideoEmbed: false
 archived: false
 noindex: false
 ---

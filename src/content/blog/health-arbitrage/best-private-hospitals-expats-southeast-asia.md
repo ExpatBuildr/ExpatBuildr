@@ -14,6 +14,7 @@ primaryKeyword: "best private hospitals expats Southeast Asia"
 secondaryKeywords: ["private hospital Philippines expat", "Bangkok expat hospital", "Vietnam private hospital expat", "international hospital SEA", "expat medical care Southeast Asia"]
 searchIntent: "informational"
 draft: false
+hasVideoEmbed: false
 archived: false
 noindex: false
 ---

@@ -15,6 +15,7 @@ primaryKeyword: "Chiang Mai vs Cebu which is the better remote work base"
 secondaryKeywords: ["Chiang Mai vs Cebu remote work", "best remote work base Southeast Asia", "Cebu or Chiang Mai expat", "compare Chiang Mai Cebu", "SEA remote work base comparison"]
 searchIntent: "problem-solving"
 draft: false
+hasVideoEmbed: true
 archived: false
 noindex: false
 ---

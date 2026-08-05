@@ -13,6 +13,7 @@ primaryKeyword: "information arbitrage engine"
 secondaryKeywords: ["market signal flipping", "data monetization system", "arbitrage income automation", "signal to profit"]
 searchIntent: "informational"
 draft: false
+hasVideoEmbed: false
 gated: true
 archived: false
 noindex: false

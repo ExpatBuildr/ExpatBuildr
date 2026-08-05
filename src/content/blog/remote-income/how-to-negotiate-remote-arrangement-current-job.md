@@ -19,6 +19,7 @@ secondaryKeywords:
   - "how to avoid return to office"
 searchIntent: "problem-solving"
 draft: false
+hasVideoEmbed: false
 gated: true
 archived: false
 noindex: false

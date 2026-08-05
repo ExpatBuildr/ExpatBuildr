@@ -14,6 +14,7 @@ primaryKeyword: "time zone competitive advantage expat founder"
 secondaryKeywords: ["timezone advantage remote founder", "expat timezone strategy", "time zone arbitrage business", "async timezone operations", "Southeast Asia time zone business"]
 searchIntent: "informational"
 draft: false
+hasVideoEmbed: false
 archived: false
 noindex: false
 ---

@@ -13,6 +13,7 @@ primaryKeyword: "digital asset portfolio building"
 secondaryKeywords: ["SaaS asset building", "megablog income", "autonomous digital income", "remote income assets"]
 searchIntent: "informational"
 draft: false
+hasVideoEmbed: false
 gated: true
 archived: false
 noindex: false

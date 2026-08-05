@@ -14,6 +14,7 @@ primaryKeyword: "how to find a good doctor abroad expat founder"
 secondaryKeywords: ["find doctor Southeast Asia expat", "expat medical care Philippines", "doctor Thailand expat", "healthcare abroad expat founder", "good doctor overseas"]
 searchIntent: "problem-solving"
 draft: false
+hasVideoEmbed: false
 archived: false
 noindex: false
 ---

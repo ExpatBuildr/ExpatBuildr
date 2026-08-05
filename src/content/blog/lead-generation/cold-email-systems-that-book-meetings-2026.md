@@ -19,6 +19,7 @@ secondaryKeywords:
   - "cold outreach system for booking calls"
 searchIntent: "problem-solving"
 draft: false
+hasVideoEmbed: false
 archived: false
 noindex: false
 gated: true

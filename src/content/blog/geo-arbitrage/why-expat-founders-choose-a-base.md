@@ -13,6 +13,7 @@ primaryKeyword: "why expat founders choose a base country instead of constantly 
 secondaryKeywords: ["expat founder base country", "why settle in one country abroad", "base country vs nomadic", "long term expat base strategy", "choosing base country expat founder"]
 searchIntent: "informational"
 draft: false
+hasVideoEmbed: false
 gated: false
 archived: false
 noindex: false

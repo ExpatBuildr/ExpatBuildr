@@ -14,6 +14,7 @@ primaryKeyword: "best neighborhoods for remote workers in Cebu City"
 secondaryKeywords: ["Cebu City neighborhoods remote work", "where to stay Cebu remote worker", "IT Park Cebu", "Lahug Cebu expat", "Cebu City cost of living remote worker"]
 searchIntent: "informational"
 draft: false
+hasVideoEmbed: false
 archived: false
 noindex: false
 ---

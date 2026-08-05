@@ -14,6 +14,7 @@ primaryKeyword: "founder SOP stack"
 secondaryKeywords: ["how to write SOPs for business", "founder documentation system", "delegate with SOPs", "standard operating procedures founders", "expat founder systems"]
 searchIntent: "problem-solving"
 draft: false
+hasVideoEmbed: false
 archived: false
 noindex: false
 ---

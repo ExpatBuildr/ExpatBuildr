@@ -13,6 +13,7 @@ primaryKeyword: "market arbitrage"
 secondaryKeywords: ["FEIE for expats", "currency strategy expat founders", "investing from abroad", "information arbitrage"]
 searchIntent: "informational"
 draft: false
+hasVideoEmbed: false
 gated: false
 ---
 

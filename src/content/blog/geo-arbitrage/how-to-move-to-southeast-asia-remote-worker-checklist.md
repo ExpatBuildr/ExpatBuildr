@@ -15,6 +15,7 @@ primaryKeyword: "how to move to Southeast Asia as a remote worker"
 secondaryKeywords: ["Southeast Asia relocation guide", "remote worker visa SEA", "moving abroad remote work checklist", "digital nomad relocation", "expat remote worker Southeast Asia"]
 searchIntent: "problem-solving"
 draft: false
+hasVideoEmbed: true
 archived: false
 noindex: false
 ---

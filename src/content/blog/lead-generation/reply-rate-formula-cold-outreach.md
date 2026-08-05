@@ -20,6 +20,7 @@ secondaryKeywords:
   - "how to calculate cold email performance"
 searchIntent: "informational"
 draft: false
+hasVideoEmbed: false
 archived: false
 noindex: false
 ---

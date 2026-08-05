@@ -14,6 +14,7 @@ primaryKeyword: "how to use Clay for personalized outreach at scale"
 secondaryKeywords: ["Clay.com outreach", "Clay lead enrichment", "personalized cold email at scale", "Clay AI email writing", "Clay outreach automation"]
 searchIntent: "informational"
 draft: false
+hasVideoEmbed: false
 archived: false
 noindex: false
 ---

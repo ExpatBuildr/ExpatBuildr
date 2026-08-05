@@ -14,6 +14,7 @@ primaryKeyword: "how to build an async business"
 secondaryKeywords: ["async business operations", "remote business without founder", "async founder systems", "business runs without you", "expat founder operations"]
 searchIntent: "problem-solving"
 draft: false
+hasVideoEmbed: false
 archived: false
 noindex: false
 ---

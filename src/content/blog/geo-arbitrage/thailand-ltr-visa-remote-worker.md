@@ -15,6 +15,7 @@ primaryKeyword: "how to get Thailand LTR visa remote worker"
 secondaryKeywords: ["Thailand LTR visa requirements", "Thailand long term resident visa", "remote worker Thailand visa 2026", "Thailand visa expat founder", "LTR visa application process"]
 searchIntent: "problem-solving"
 draft: false
+hasVideoEmbed: true
 archived: false
 noindex: false
 ---

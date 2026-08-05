@@ -14,6 +14,7 @@ primaryKeyword: "expat founder tool stack"
 secondaryKeywords: ["best tools for expat founders", "remote founder infrastructure", "wise safetywing nordvpn expat", "expat banking and insurance tools", "remote work setup abroad"]
 searchIntent: "informational"
 draft: false
+hasVideoEmbed: false
 archived: false
 noindex: false
 ---

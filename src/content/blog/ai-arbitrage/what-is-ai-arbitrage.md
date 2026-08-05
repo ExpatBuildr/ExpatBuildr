@@ -14,6 +14,7 @@ primaryKeyword: "what is AI arbitrage"
 secondaryKeywords: ["AI arbitrage for founders", "founder AI leverage", "AI tools solo founder", "expat founder AI stack", "AI competitive advantage founders"]
 searchIntent: "informational"
 draft: false
+hasVideoEmbed: false
 archived: false
 noindex: false
 ---

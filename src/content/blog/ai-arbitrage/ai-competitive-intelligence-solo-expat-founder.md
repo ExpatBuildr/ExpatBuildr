@@ -14,6 +14,7 @@ primaryKeyword: "AI competitive intelligence solo expat founder"
 secondaryKeywords: ["AI market research founder", "competitor monitoring AI tools", "expat founder competitive analysis", "AI research system", "competitive intelligence automation"]
 searchIntent: "informational"
 draft: false
+hasVideoEmbed: false
 archived: false
 noindex: false
 ---

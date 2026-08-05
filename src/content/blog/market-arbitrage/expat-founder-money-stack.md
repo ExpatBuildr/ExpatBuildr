@@ -14,6 +14,7 @@ primaryKeyword: "expat founder money stack"
 secondaryKeywords: ["expat founder banking setup", "entity structure expat founder", "expat tax strategy founder", "banking abroad US founder", "offshore structure expat business"]
 searchIntent: "problem-solving"
 draft: false
+hasVideoEmbed: false
 archived: false
 noindex: false
 ---

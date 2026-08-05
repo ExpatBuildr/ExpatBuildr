@@ -15,6 +15,7 @@ primaryKeyword: "intent scoring engine"
 secondaryKeywords: ["lead scoring automation", "intent signals", "autonomous lead generation", "scoring framework"]
 searchIntent: "informational"
 draft: false
+hasVideoEmbed: false
 gated: true
 archived: false
 noindex: false

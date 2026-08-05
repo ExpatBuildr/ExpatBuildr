@@ -13,6 +13,7 @@ primaryKeyword: "health arbitrage"
 secondaryKeywords: ["medical tourism Southeast Asia", "dental tourism Philippines", "expat health insurance", "private hospitals abroad"]
 searchIntent: "informational"
 draft: false
+hasVideoEmbed: false
 gated: false
 ---
 

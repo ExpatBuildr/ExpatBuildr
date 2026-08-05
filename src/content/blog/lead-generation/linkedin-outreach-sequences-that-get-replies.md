@@ -19,6 +19,7 @@ secondaryKeywords:
   - "LinkedIn DM sequence for sales"
 searchIntent: "problem-solving"
 draft: false
+hasVideoEmbed: false
 archived: false
 noindex: false
 gated: true

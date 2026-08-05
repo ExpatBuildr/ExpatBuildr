@@ -19,6 +19,7 @@ secondaryKeywords:
   - "remote job search sites ranked"
 searchIntent: "informational"
 draft: false
+hasVideoEmbed: false
 gated: true
 archived: false
 noindex: false

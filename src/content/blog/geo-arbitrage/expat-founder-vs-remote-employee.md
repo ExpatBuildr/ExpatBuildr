@@ -13,6 +13,7 @@ primaryKeyword: "expat founder vs remote employee"
 secondaryKeywords: ["remote employee abroad vs founder", "expat remote worker vs entrepreneur", "geo-arbitrage employee vs founder", "remote job vs own business abroad", "expat career vs expat founder"]
 searchIntent: "informational"
 draft: false
+hasVideoEmbed: false
 gated: false
 archived: false
 noindex: false

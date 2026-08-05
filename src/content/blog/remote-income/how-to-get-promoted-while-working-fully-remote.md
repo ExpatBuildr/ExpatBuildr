@@ -14,6 +14,7 @@ primaryKeyword: "how to get promoted while working fully remote"
 secondaryKeywords: ["remote career advancement", "visibility at work remotely", "remote promotion strategy", "how to stand out working from home", "career growth remote job"]
 searchIntent: "problem-solving"
 draft: false
+hasVideoEmbed: false
 archived: false
 noindex: false
 ---

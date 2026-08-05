@@ -19,6 +19,7 @@ secondaryKeywords:
   - "B2B prospecting without LinkedIn Sales Navigator"
 searchIntent: "problem-solving"
 draft: false
+hasVideoEmbed: false
 archived: false
 noindex: false
 gated: true

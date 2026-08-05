@@ -13,6 +13,7 @@ primaryKeyword: "what is an expat founder"
 secondaryKeywords: ["expat founder definition", "expat founder vs digital nomad", "location independent founder", "what does expat founder mean", "expat entrepreneur definition"]
 searchIntent: "informational"
 draft: false
+hasVideoEmbed: false
 gated: false
 archived: false
 noindex: false

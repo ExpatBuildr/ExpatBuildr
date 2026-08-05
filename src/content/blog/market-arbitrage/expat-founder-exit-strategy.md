@@ -14,6 +14,7 @@ primaryKeyword: "expat founder exit strategy building to sell from abroad"
 secondaryKeywords: ["build to sell expat founder", "sell online business founder", "exit strategy digital asset", "expat business valuation", "founder exit plan abroad"]
 searchIntent: "informational"
 draft: false
+hasVideoEmbed: false
 archived: false
 noindex: false
 ---

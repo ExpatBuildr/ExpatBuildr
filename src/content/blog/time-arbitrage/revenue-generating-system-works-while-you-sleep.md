@@ -14,6 +14,7 @@ primaryKeyword: "revenue generating system works while you sleep"
 secondaryKeywords: ["automated revenue system founder", "passive income expat founder", "revenue system without active work", "founder income automation", "expat business revenue system"]
 searchIntent: "informational"
 draft: false
+hasVideoEmbed: false
 archived: false
 noindex: false
 ---

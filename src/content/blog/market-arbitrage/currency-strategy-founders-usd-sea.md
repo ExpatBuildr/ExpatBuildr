@@ -14,6 +14,7 @@ primaryKeyword: "currency strategy founders earning USD spending SEA"
 secondaryKeywords: ["USD to PHP strategy expat", "foreign exchange expat founder", "Wise vs bank currency conversion", "expat currency management", "USD spending Southeast Asia"]
 searchIntent: "problem-solving"
 draft: false
+hasVideoEmbed: false
 archived: false
 noindex: false
 ---

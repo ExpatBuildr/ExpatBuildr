@@ -14,6 +14,7 @@ primaryKeyword: "real problems with being a digital nomad that nobody talks abou
 secondaryKeywords: ["digital nomad problems", "digital nomad lifestyle downsides", "problems digital nomad tax", "digital nomad reality check", "why digital nomad fails long term"]
 searchIntent: "problem-solving"
 draft: false
+hasVideoEmbed: true
 gated: false
 archived: false
 noindex: false

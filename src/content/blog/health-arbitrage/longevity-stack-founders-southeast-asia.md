@@ -14,6 +14,7 @@ primaryKeyword: "longevity stack founders Southeast Asia"
 secondaryKeywords: ["longevity founder abroad", "health optimization expat founder", "longevity Southeast Asia", "expat founder longevity", "founder health stack"]
 searchIntent: "informational"
 draft: false
+hasVideoEmbed: false
 archived: false
 noindex: false
 ---

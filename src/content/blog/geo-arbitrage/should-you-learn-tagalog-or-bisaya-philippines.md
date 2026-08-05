@@ -12,6 +12,7 @@ primaryKeyword: "should you learn tagalog before moving to the philippines"
 secondaryKeywords: ["tagalog vs bisaya", "cebuano language philippines", "do you need to speak tagalog in cebu", "learning filipino before moving"]
 searchIntent: "problem-solving"
 draft: false
+hasVideoEmbed: true
 gated: false
 archived: false
 noindex: false

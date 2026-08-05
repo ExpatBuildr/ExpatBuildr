@@ -14,6 +14,7 @@ primaryKeyword: "what is market arbitrage expat founder"
 secondaryKeywords: ["market arbitrage for founders", "expat founder financial arbitrage", "information arbitrage income", "currency arbitrage expat", "wealth building expat founder"]
 searchIntent: "informational"
 draft: false
+hasVideoEmbed: false
 archived: false
 noindex: false
 ---

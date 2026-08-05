@@ -14,6 +14,7 @@ primaryKeyword: "expat founder AI stack"
 secondaryKeywords: ["best AI tools for founders 2026", "AI tools replace team", "solo founder AI workflow", "founder AI tool stack", "AI tools for expat business"]
 searchIntent: "informational"
 draft: false
+hasVideoEmbed: false
 archived: false
 noindex: false
 ---

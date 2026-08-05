@@ -21,6 +21,7 @@ secondaryKeywords:
   - "geographic arbitrage Southeast Asia"
 searchIntent: "informational"
 draft: false
+hasVideoEmbed: true
 archived: false
 noindex: false
 ---

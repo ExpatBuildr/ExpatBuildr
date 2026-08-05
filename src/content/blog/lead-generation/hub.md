@@ -14,6 +14,7 @@ primaryKeyword: "lead engine architecture"
 secondaryKeywords: ["autonomous outreach", "intent signals", "B2B lead systems", "lead generation framework"]
 searchIntent: "informational"
 draft: false
+hasVideoEmbed: false
 gated: false
 ---
 

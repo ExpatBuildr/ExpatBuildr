@@ -21,6 +21,7 @@ secondaryKeywords:
   - "remote work cost of living Southeast Asia"
 searchIntent: "informational"
 draft: false
+hasVideoEmbed: true
 archived: false
 noindex: false
 ---

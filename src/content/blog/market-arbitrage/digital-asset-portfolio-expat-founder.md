@@ -14,6 +14,7 @@ primaryKeyword: "how to build digital asset portfolio expat founder"
 secondaryKeywords: ["digital asset portfolio founder", "expat founder digital assets", "build digital portfolio abroad", "digital assets wealth building expat", "content site portfolio founder"]
 searchIntent: "informational"
 draft: false
+hasVideoEmbed: false
 archived: false
 noindex: false
 ---

@@ -14,6 +14,7 @@ primaryKeyword: "how to negotiate a higher salary for a remote job offer"
 secondaryKeywords: ["remote offer negotiation", "negotiate salary remote work", "remote job compensation", "counter offer remote job", "how to negotiate remote pay"]
 searchIntent: "problem-solving"
 draft: false
+hasVideoEmbed: false
 archived: false
 noindex: false
 ---

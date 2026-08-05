@@ -14,6 +14,7 @@ primaryKeyword: "how to build a sales pipeline from zero"
 secondaryKeywords: ["sales pipeline for small business", "build outbound pipeline", "B2B pipeline from scratch", "sales pipeline stages", "how to fill a sales pipeline"]
 searchIntent: "problem-solving"
 draft: false
+hasVideoEmbed: false
 archived: false
 noindex: false
 ---

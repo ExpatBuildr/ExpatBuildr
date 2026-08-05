@@ -14,6 +14,7 @@ primaryKeyword: "hiring first virtual assistant expat founder"
 secondaryKeywords: ["how to hire virtual assistant Philippines", "VA hire expat founder", "Philippines virtual assistant", "delegate as expat founder", "OnlineJobs.ph hiring guide"]
 searchIntent: "problem-solving"
 draft: false
+hasVideoEmbed: false
 archived: false
 noindex: false
 ---

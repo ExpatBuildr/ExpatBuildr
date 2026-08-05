@@ -163,6 +163,42 @@ const logoUrl = `${siteUrl}/logo.jpg`;
 // Canonical post URL
 const postUrl = type === 'post' ? new URL(`/blog/${post.id.replace(/\.mdx?$/, '')}`, Astro.site || 'https://expatbuildr.com').toString() : '';
 
+// VideoObject schema extraction — pulled from the raw body rather than
+// duplicated in frontmatter, so the schema can never drift out of sync
+// with the actual embed. Gated on the explicit hasVideoEmbed flag (see
+// content/config.ts) so we don't regex every post's body for nothing.
+// Matches the embed pattern documented in VIDEO-LIBRARY.md.
+let videoSchema: Record<string, unknown> | null = null;
+if (type === 'post' && post.data.hasVideoEmbed && post.body) {
+    const embedMatch = post.body.match(
+        /youtube\.com\/embed\/([a-zA-Z0-9_-]+)"[\s\S]{0,300}?title="([^"]+)"/
+    );
+    if (embedMatch) {
+        const [, videoId, videoTitle] = embedMatch;
+        videoSchema = {
+            "@context": "https://schema.org",
+            "@type": "VideoObject",
+            "name": videoTitle,
+            "description": post.data.description,
+            "thumbnailUrl": [`https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`],
+            // uploadDate deliberately omitted: it's recommended by Google, not
+            // required, and the article's pubDate is not the video's real
+            // YouTube upload date. Google can cross-check this field against
+            // YouTube's own metadata for the same video, so a wrong guess is
+            // worse than leaving it out. Add real per-video upload dates to
+            // VIDEO-LIBRARY.md if we want this field populated accurately.
+            "embedUrl": `https://www.youtube.com/embed/${videoId}`,
+            "contentUrl": `https://www.youtube.com/watch?v=${videoId}`,
+            "publisher": {
+                "@type": "Organization",
+                "name": "Expat Buildr",
+                "url": siteUrl,
+                "logo": { "@type": "ImageObject", "url": logoUrl }
+            }
+        };
+    }
+}
+
 // --- Content gate classification ---
 // Rule 1 (hard gate, 65%): category is Guide, Deep Dive, Case Study, or Automation across all pillars
 // Rule 2 (soft inline CTA, 60%, no hard gate): "what-is" slugs, the Expat Founder Identity Cluster,
@@ -465,6 +501,10 @@ const gateMode: 'hard' | 'soft' | 'none' = isSoftCTAArticle ? 'soft' : (isHardGa
                     "logo": { "@type": "ImageObject", "url": logoUrl }
                 }
             })} />
+
+            {videoSchema && (
+                <script type="application/ld+json" set:html={JSON.stringify(videoSchema)} />
+            )}
         </article>
     )}
 

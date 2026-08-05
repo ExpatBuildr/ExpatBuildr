@@ -14,6 +14,7 @@ primaryKeyword: "using crypto to run a borderless business"
 secondaryKeywords: ["crypto expat founder payments", "Bitcoin borderless business", "crypto global payments founder", "expat crypto infrastructure", "stablecoin business payments"]
 searchIntent: "informational"
 draft: false
+hasVideoEmbed: false
 archived: false
 noindex: false
 ---

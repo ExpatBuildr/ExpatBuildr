@@ -14,6 +14,7 @@ primaryKeyword: "how to audit improve AI stack 90 days"
 secondaryKeywords: ["AI stack audit framework", "review AI tools founder", "optimize AI tools", "90 day AI review", "expat founder AI optimization"]
 searchIntent: "problem-solving"
 draft: false
+hasVideoEmbed: false
 archived: false
 noindex: false
 ---

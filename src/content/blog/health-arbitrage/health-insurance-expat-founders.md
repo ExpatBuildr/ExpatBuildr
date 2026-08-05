@@ -14,6 +14,7 @@ primaryKeyword: "health insurance expat founders"
 secondaryKeywords: ["international health insurance expat", "SafetyWing review", "Cigna Global expat review", "expat founder health coverage", "health insurance Philippines expat"]
 searchIntent: "problem-solving"
 draft: false
+hasVideoEmbed: false
 archived: false
 noindex: false
 ---

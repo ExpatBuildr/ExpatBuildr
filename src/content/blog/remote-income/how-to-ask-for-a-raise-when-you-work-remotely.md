@@ -14,6 +14,7 @@ primaryKeyword: "how to ask for a raise when you work remotely"
 secondaryKeywords: ["remote salary negotiation", "asking for a raise working from home", "remote work compensation", "how to negotiate pay remotely", "remote income increase"]
 searchIntent: "problem-solving"
 draft: false
+hasVideoEmbed: false
 archived: false
 noindex: false
 ---

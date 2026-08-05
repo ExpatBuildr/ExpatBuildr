@@ -12,6 +12,7 @@ primaryKeyword: "personal brand for remote founders abroad"
 secondaryKeywords: ["income resilience remote work", "building an audience while traveling", "digital nomad personal brand", "expat founder visibility"]
 searchIntent: "problem-solving"
 draft: false
+hasVideoEmbed: true
 gated: false
 archived: false
 noindex: false

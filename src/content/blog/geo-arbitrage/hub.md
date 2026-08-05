@@ -14,6 +14,7 @@ primaryKeyword: "geo-arbitrage strategy"
 secondaryKeywords: ["digital nomad lifestyle", "cost of living optimization", "Global market positioning", "expat logistics"]
 searchIntent: "informational"
 draft: false
+hasVideoEmbed: false
 gated: false
 archived: false
 noindex: false

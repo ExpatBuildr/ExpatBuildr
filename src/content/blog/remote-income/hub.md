@@ -14,6 +14,7 @@ primaryKeyword: "remote income strategy"
 secondaryKeywords: ["job sniping", "remote career path", "micro-SaaS income", "digital arbitrage"]
 searchIntent: "problem-solving"
 draft: false
+hasVideoEmbed: false
 gated: false
 ---
 

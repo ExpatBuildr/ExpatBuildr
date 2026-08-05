@@ -14,6 +14,7 @@ primaryKeyword: "how FEIE works self-employed expats"
 secondaryKeywords: ["Foreign Earned Income Exclusion self-employed", "FEIE freelancer abroad", "expat founder tax exclusion", "self-employed FEIE qualification", "US expat self-employment tax"]
 searchIntent: "informational"
 draft: false
+hasVideoEmbed: false
 archived: false
 noindex: false
 ---

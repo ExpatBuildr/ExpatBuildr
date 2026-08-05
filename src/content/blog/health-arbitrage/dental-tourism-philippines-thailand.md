@@ -14,6 +14,7 @@ primaryKeyword: "dental tourism Philippines Thailand"
 secondaryKeywords: ["dental tourism cost Philippines", "dental care Thailand expat", "dental work abroad", "cheap dental Southeast Asia", "expat dental treatment"]
 searchIntent: "informational"
 draft: false
+hasVideoEmbed: false
 archived: false
 noindex: false
 ---

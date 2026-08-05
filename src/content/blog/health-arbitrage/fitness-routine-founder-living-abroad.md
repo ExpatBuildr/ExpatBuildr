@@ -14,6 +14,7 @@ primaryKeyword: "fitness routine founder living abroad"
 secondaryKeywords: ["expat founder fitness routine", "gym Philippines expat", "fitness Southeast Asia founder", "workout routine expat", "founder health routine abroad"]
 searchIntent: "problem-solving"
 draft: false
+hasVideoEmbed: false
 archived: false
 noindex: false
 ---

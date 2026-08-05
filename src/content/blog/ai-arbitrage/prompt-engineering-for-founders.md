@@ -14,6 +14,7 @@ primaryKeyword: "prompt engineering for founders"
 secondaryKeywords: ["how to prompt AI for business", "founder prompt engineering", "consistent AI output", "Claude prompt guide", "AI prompting best practices founders"]
 searchIntent: "problem-solving"
 draft: false
+hasVideoEmbed: false
 archived: false
 noindex: false
 ---

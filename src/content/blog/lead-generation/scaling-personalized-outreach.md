@@ -14,6 +14,7 @@ primaryKeyword: "personalized cold email at scale"
 secondaryKeywords: ["intent based outreach", "cold email personalization", "outreach automation", "reply rate optimization"]
 searchIntent: "informational"
 draft: false
+hasVideoEmbed: false
 gated: true
 archived: false
 noindex: false

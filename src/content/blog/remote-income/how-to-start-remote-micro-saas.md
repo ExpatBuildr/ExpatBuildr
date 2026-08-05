@@ -10,6 +10,7 @@ author: "ExpatBuildr"
 ogImage: "/images/remote-work.jpg"
 heroImage: "/images/remote-work.jpg"
 draft: false
+hasVideoEmbed: false
 gated: true
 archived: false
 noindex: false

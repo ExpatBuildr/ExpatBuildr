@@ -32,6 +32,11 @@ const blog = defineCollection({
     gated: z.boolean().default(true),
     noindex: z.boolean().default(false),
     archived: z.boolean().default(false),
+    // Explicit flag (not inferred) marking whether this post has a YouTube
+    // embed in its body. Gates VideoObject JSON-LD rendering — see
+    // VIDEO-LIBRARY.md for the embed pattern and the registry of which
+    // videos live in which articles.
+    hasVideoEmbed: z.boolean().default(false),
     author: z.literal('ExpatBuildr'),
     ogImage: z.string().optional(),
     // Optional display helpers used across posts

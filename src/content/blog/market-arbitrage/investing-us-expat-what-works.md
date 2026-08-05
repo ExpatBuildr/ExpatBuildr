@@ -14,6 +14,7 @@ primaryKeyword: "investing as US expat what works"
 secondaryKeywords: ["US expat investing guide", "expat founder investment accounts", "investing from Southeast Asia", "expat wealth building strategy", "best investments US expat"]
 searchIntent: "problem-solving"
 draft: false
+hasVideoEmbed: false
 archived: false
 noindex: false
 ---

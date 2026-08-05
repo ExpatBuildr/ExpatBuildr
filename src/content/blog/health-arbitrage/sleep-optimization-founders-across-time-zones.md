@@ -14,6 +14,7 @@ primaryKeyword: "sleep optimization founders working across time zones"
 secondaryKeywords: ["sleep time zone founder", "expat founder sleep quality", "sleep remote work time zones", "founder sleep optimization", "time zone sleep management"]
 searchIntent: "problem-solving"
 draft: false
+hasVideoEmbed: false
 archived: false
 noindex: false
 ---

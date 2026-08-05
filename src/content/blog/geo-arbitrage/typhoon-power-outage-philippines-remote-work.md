@@ -12,6 +12,7 @@ primaryKeyword: "philippines typhoon power outage remote work"
 secondaryKeywords: ["backup power philippines", "starlink philippines internet", "typhoon season philippines business continuity", "remote work power outage"]
 searchIntent: "problem-solving"
 draft: false
+hasVideoEmbed: true
 gated: false
 archived: false
 noindex: false

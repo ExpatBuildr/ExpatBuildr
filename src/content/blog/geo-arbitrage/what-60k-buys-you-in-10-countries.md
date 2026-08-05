@@ -20,6 +20,7 @@ secondaryKeywords:
   - "geographic arbitrage salary comparison"
 searchIntent: "informational"
 draft: false
+hasVideoEmbed: false
 archived: false
 noindex: false
 ---

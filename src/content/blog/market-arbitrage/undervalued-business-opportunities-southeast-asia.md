@@ -14,6 +14,7 @@ primaryKeyword: "undervalued business opportunities Southeast Asian markets"
 secondaryKeywords: ["business opportunities Philippines Thailand", "expat founder market opportunity", "Southeast Asia business arbitrage", "SEA market gaps", "expat business opportunity"]
 searchIntent: "informational"
 draft: false
+hasVideoEmbed: false
 archived: false
 noindex: false
 ---

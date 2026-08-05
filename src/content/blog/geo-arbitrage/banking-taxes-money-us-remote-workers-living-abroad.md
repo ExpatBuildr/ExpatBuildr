@@ -14,6 +14,7 @@ primaryKeyword: "banking taxes and money for US remote workers living abroad"
 secondaryKeywords: ["US expat taxes remote work", "banking setup living abroad", "FEIE remote worker", "foreign bank account US citizen", "money management expat remote worker"]
 searchIntent: "problem-solving"
 draft: false
+hasVideoEmbed: false
 archived: false
 noindex: false
 ---

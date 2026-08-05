@@ -20,6 +20,7 @@ secondaryKeywords:
   - "geographic arbitrage wealth building"
 searchIntent: "informational"
 draft: false
+hasVideoEmbed: false
 archived: false
 noindex: false
 ---

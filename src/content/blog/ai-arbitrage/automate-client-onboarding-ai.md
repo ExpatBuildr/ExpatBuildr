@@ -14,6 +14,7 @@ primaryKeyword: "how to automate client onboarding with AI"
 secondaryKeywords: ["client onboarding automation", "AI client onboarding system", "automate onboarding founder", "client intake automation", "expat founder client system"]
 searchIntent: "problem-solving"
 draft: false
+hasVideoEmbed: false
 archived: false
 noindex: false
 ---

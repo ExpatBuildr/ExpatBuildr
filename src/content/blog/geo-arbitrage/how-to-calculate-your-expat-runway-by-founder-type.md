@@ -15,6 +15,7 @@ primaryKeyword: "how to calculate your expat runway by founder type"
 secondaryKeywords: ["expat runway calculator", "burn rate reduction remote founder", "runway extension abroad", "founder runway math", "geographic arbitrage runway"]
 searchIntent: "problem-solving"
 draft: false
+hasVideoEmbed: true
 archived: false
 noindex: false
 ---

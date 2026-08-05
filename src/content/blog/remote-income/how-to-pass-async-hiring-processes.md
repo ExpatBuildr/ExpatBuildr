@@ -19,6 +19,7 @@ secondaryKeywords:
   - "remote-first hiring process what to expect"
 searchIntent: "problem-solving"
 draft: false
+hasVideoEmbed: false
 archived: false
 noindex: false
 gated: true

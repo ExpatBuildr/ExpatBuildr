@@ -19,6 +19,7 @@ secondaryKeywords:
   - "remote job application tips"
 searchIntent: "problem-solving"
 draft: false
+hasVideoEmbed: false
 archived: false
 noindex: false
 gated: true

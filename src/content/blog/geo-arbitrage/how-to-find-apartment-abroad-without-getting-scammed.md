@@ -14,6 +14,7 @@ primaryKeyword: "how to find an apartment abroad without getting scammed"
 secondaryKeywords: ["apartment rental scams abroad", "renting abroad as a remote worker", "expat apartment search Southeast Asia", "how to rent long term abroad", "avoid landlord scams expat"]
 searchIntent: "problem-solving"
 draft: false
+hasVideoEmbed: false
 archived: false
 noindex: false
 ---

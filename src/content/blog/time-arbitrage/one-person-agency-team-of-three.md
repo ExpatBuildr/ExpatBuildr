@@ -14,6 +14,7 @@ primaryKeyword: "how to run one person agency with team of three"
 secondaryKeywords: ["lean agency model founder", "one person agency structure", "expat founder agency team", "small agency remote team", "agency of one model"]
 searchIntent: "informational"
 draft: false
+hasVideoEmbed: false
 archived: false
 noindex: false
 ---

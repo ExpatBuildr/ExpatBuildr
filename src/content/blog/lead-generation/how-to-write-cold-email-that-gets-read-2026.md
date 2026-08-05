@@ -14,6 +14,7 @@ primaryKeyword: "how to write a cold email that gets read in 2026"
 secondaryKeywords: ["cold email open rates", "cold email subject lines", "B2B cold email strategy", "cold outreach that works", "cold email reply rate"]
 searchIntent: "problem-solving"
 draft: false
+hasVideoEmbed: false
 archived: false
 noindex: false
 ---

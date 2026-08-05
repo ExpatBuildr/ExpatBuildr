@@ -19,6 +19,7 @@ secondaryKeywords:
   - "cheapest city Southeast Asia expat founder"
 searchIntent: "informational"
 draft: false
+hasVideoEmbed: false
 archived: false
 noindex: false
 ---

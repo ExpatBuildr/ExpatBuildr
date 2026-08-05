@@ -14,6 +14,7 @@ primaryKeyword: "what is health arbitrage"
 secondaryKeywords: ["health arbitrage expat founder", "healthcare cost abroad", "medical tourism Southeast Asia", "expat health infrastructure", "founder wellness abroad"]
 searchIntent: "informational"
 draft: false
+hasVideoEmbed: false
 archived: false
 noindex: false
 ---

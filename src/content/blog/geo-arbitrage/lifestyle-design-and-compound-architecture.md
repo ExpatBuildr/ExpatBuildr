@@ -14,6 +14,7 @@ secondaryKeywords: ["compound lifestyle architecture", "geo-arbitrage wealth bui
 searchIntent: "informational"
 canonicalUrl: "https://expatbuildr.com/blog/geo-arbitrage/lifestyle-design-and-compound-architecture"
 draft: false
+hasVideoEmbed: false
 gated: true
 archived: false
 noindex: false

@@ -19,6 +19,7 @@ secondaryKeywords:
   - "permanent remote work jobs"
 searchIntent: "problem-solving"
 draft: false
+hasVideoEmbed: false
 gated: true
 archived: false
 noindex: false

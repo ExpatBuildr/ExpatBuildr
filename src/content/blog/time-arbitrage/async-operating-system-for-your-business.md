@@ -14,6 +14,7 @@ primaryKeyword: "async operating system for your business"
 secondaryKeywords: ["async business operating system", "remote operating system founder", "expat founder async ops", "build async business system", "Notion async operating system"]
 searchIntent: "problem-solving"
 draft: false
+hasVideoEmbed: false
 archived: false
 noindex: false
 ---

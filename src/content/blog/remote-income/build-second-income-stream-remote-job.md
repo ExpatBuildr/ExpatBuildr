@@ -14,6 +14,7 @@ primaryKeyword: "how to build a second income stream while working a remote job"
 secondaryKeywords: ["second income remote worker", "side income while employed", "income diversification remote job", "build income stream alongside job", "remote work second income"]
 searchIntent: "problem-solving"
 draft: false
+hasVideoEmbed: false
 archived: false
 noindex: false
 ---

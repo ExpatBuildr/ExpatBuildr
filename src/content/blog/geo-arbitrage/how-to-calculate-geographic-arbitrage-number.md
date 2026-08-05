@@ -20,6 +20,7 @@ secondaryKeywords:
   - "remote work geo-arbitrage financial calculation"
 searchIntent: "problem-solving"
 draft: false
+hasVideoEmbed: false
 archived: false
 noindex: false
 ---

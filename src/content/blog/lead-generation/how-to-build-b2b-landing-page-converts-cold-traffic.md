@@ -14,6 +14,7 @@ primaryKeyword: "how to build a B2B landing page that converts cold traffic"
 secondaryKeywords: ["B2B landing page conversion", "cold traffic conversion rate", "service business landing page", "landing page for cold outreach", "B2B page that converts"]
 searchIntent: "problem-solving"
 draft: false
+hasVideoEmbed: false
 archived: false
 noindex: false
 ---

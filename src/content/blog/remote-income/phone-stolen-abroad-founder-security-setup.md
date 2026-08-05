@@ -13,6 +13,7 @@ primaryKeyword: "phone security for remote founders"
 secondaryKeywords: ["phone stolen abroad", "sim swap attack", "founder security checklist", "digital nomad security setup"]
 searchIntent: "problem-solving"
 draft: false
+hasVideoEmbed: true
 gated: true
 archived: false
 noindex: false

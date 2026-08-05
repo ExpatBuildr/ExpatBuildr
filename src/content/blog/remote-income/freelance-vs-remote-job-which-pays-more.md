@@ -14,6 +14,7 @@ primaryKeyword: "freelance vs remote job which one actually pays more"
 secondaryKeywords: ["freelance vs full time remote salary", "remote job vs freelancing income", "should I freelance or get a remote job", "freelance income comparison", "remote work income options"]
 searchIntent: "informational"
 draft: false
+hasVideoEmbed: false
 archived: false
 noindex: false
 ---
