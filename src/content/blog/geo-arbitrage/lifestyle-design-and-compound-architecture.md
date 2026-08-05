@@ -2,6 +2,7 @@
 title: "Lifestyle Design and Compound Architecture: The Geo-Arbitrage Blueprint"
 description: "Engineer a compounding lifestyle with geo-arbitrage: location economics, time leverage, and sovereign infrastructure to multiply your wealth."
 pubDate: 2026-04-19
+updatedDate: 2026-08-05
 author: "ExpatBuildr"
 pillarId: "geo-arbitrage"
 category: "Deep Dive"
@@ -105,7 +106,7 @@ The compound architecture requires more than a cheap apartment. You need a sover
 
 **Entity Structure.** If your income exceeds $60,000/year, operating as a sole proprietor is leaving money on the table. An Estonian e-Residency company, a Wyoming LLC, or a UAE Free Zone entity each offer different advantages depending on your citizenship, tax obligations, and client base. This is not one-size-fits-all. Model it specifically.
 
-**Health Infrastructure.** Long-term geo-arbitrage requires long-term health maintenance. International health insurance (Cigna Global, Allianz Care, or Safety Wing for shorter stints) is the foundation. Most ASEAN and Latin American countries have private hospitals at 15–30% of US cost with comparable quality for most procedures.
+**Health Infrastructure.** Long-term geo-arbitrage requires long-term health maintenance. International health insurance (Cigna Global, Allianz Care, or SafetyWing) is the foundation. SafetyWing's Essential plan still covers short stints on a rolling monthly subscription, but its newer Complete plan adds preventive care, wellness, and mental health coverage across 175+ countries — worth the upgrade if you're settling into a base rather than just passing through. Most ASEAN and Latin American countries have private hospitals at 15–30% of US cost with comparable quality for most procedures.
 
 **Communication and Client Management.** A US or UK phone number through Google Voice or a virtual carrier, a professional email domain, and your standard set of project management tools travel with you without friction. Clients rarely know or care where you are physically located.
 
