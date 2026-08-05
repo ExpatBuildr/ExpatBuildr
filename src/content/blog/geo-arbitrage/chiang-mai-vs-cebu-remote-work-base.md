@@ -2,6 +2,7 @@
 title: "Chiang Mai vs Cebu: Which Is the Better Remote Work Base"
 description: "Chiang Mai and Cebu are the two most established remote work bases in Southeast Asia. Here is the honest comparison across cost, infrastructure, and lifestyle."
 pubDate: 2026-07-15
+updatedDate: 2026-08-05
 author: "ExpatBuildr"
 pillarId: "geo-arbitrage"
 category: "Deep Dive"
@@ -44,6 +45,18 @@ For everything in the Geo-Arbitrage pillar, visit [Geo-Arbitrage Links](/blog/ge
 | Visa situation | Complex — requires regular border runs or LTR | Easy — tourist visa renewals or SRRV |
 | Air connectivity | Good — regional hub | Good — Mactan International |
 | Talent pool for hiring | Good | Exceptional — BPO-trained English speakers |
+
+<div class="video-embed">
+  <iframe
+    width="100%"
+    height="480"
+    src="https://www.youtube.com/embed/r6MRc1DR15Q"
+    title="Why I Chose the Philippines Over Thailand"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowfullscreen>
+  </iframe>
+</div>
 
 ## Where Chiang Mai Wins
 

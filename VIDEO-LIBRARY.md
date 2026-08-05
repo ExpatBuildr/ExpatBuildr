@@ -26,23 +26,20 @@ Keep the embed's `title` attribute matching the actual YouTube video title — i
 
 ## Matched & embedded
 
-| Video | URL | Article |
-|---|---|---|
-| Your Phone Is the Only Key to Your Business... | https://youtu.be/5QWfgyUpjOw | `remote-income/phone-stolen-abroad-founder-security-setup.md` |
-| I worked through a Philippines typhoon with no power | https://youtu.be/sSSDPww5gzY | `geo-arbitrage/typhoon-power-outage-philippines-remote-work.md` (standalone — see "Standalone articles" below) |
+| Video | URL | Article | Placement |
+|---|---|---|---|
+| Your Phone Is the Only Key to Your Business... | https://youtu.be/5QWfgyUpjOw | `remote-income/phone-stolen-abroad-founder-security-setup.md` | Top (right after intro) |
+| I worked through a Philippines typhoon with no power | https://youtu.be/sSSDPww5gzY | `geo-arbitrage/typhoon-power-outage-philippines-remote-work.md` (standalone) | Top (right after intro) |
+| He moved to the Philippines and lost it all | https://youtu.be/Hy6BUDClae8 | `geo-arbitrage/problems-with-being-a-digital-nomad.md` | Mid-article (before "The Banking Problem") |
+| I lost $21,000 moving to the Philippines | https://youtu.be/zkQ9C-kUMts | `geo-arbitrage/how-to-move-to-southeast-asia-remote-worker-checklist.md` | Mid-article (before "Health Insurance") |
+| 4 reasons expats go broke in the Philippines | https://youtu.be/eliDZqvuTd4 | `geo-arbitrage/how-to-calculate-your-expat-runway-by-founder-type.md` | Mid-article (before "United States" comparison) |
+| I moved to Thailand without enough money | https://youtu.be/jbsVpoeBKA8 | `geo-arbitrage/cost-of-living-philippines-thailand-vietnam.md` | Mid-article (before "Internet and Remote Work Infrastructure") |
+| How founders stay in Thailand long term | https://youtu.be/TnMoYdY5_dA | `geo-arbitrage/thailand-ltr-visa-remote-worker.md` | Mid-article (before "The Application Process") |
+| Why $3,500/month feels like enough in the Philippines | https://youtu.be/_yNRlNyWC6E | `geo-arbitrage/austin-vs-manila-cost-of-living.md` | Mid-article (before "Transport") |
+| Why I chose the Philippines over Thailand | https://youtu.be/r6MRc1DR15Q | `geo-arbitrage/chiang-mai-vs-cebu-remote-work-base.md` | Mid-article (before "Where Chiang Mai Wins") |
+| I left everything for Cebu, Philippines — here's what happened | https://youtu.be/nRuXPh2MR0A | `geo-arbitrage/complete-guide-living-working-cebu-city.md` | Mid-article (before "Internet: The Critical Variable") |
 
-## Matched, not yet embedded (pending confirmation to execute)
-
-| Video | URL | Best-fit article | Fit strength | Notes |
-|---|---|---|---|---|
-| He moved to the Philippines and lost it all | https://youtu.be/Hy6BUDClae8 | `geo-arbitrage/problems-with-being-a-digital-nomad.md` | Strong | Near-identical cautionary-tale premise |
-| I lost $21,000 moving to the Philippines | https://youtu.be/zkQ9C-kUMts | `geo-arbitrage/how-to-move-to-southeast-asia-remote-worker-checklist.md` | Strong | Article description literally says "...and the mistakes most people make on the way" |
-| 4 reasons expats go broke in the Philippines | https://youtu.be/eliDZqvuTd4 | `geo-arbitrage/how-to-calculate-your-expat-runway-by-founder-type.md` | Strong | Runway is the going-broke metric |
-| I moved to Thailand without enough money | https://youtu.be/jbsVpoeBKA8 | `geo-arbitrage/cost-of-living-philippines-thailand-vietnam.md` | Strong | Direct cost-of-living mismatch theme |
-| How founders stay in Thailand long term | https://youtu.be/TnMoYdY5_dA | `geo-arbitrage/thailand-ltr-visa-remote-worker.md` | Strong | Video is literally about the mechanism the article explains |
-| Why $3,500/month feels like enough in the Philippines | https://youtu.be/_yNRlNyWC6E | `geo-arbitrage/austin-vs-manila-cost-of-living.md` | Strong | Philippines-specific cost/budget sufficiency |
-| Why I chose the Philippines over Thailand | https://youtu.be/r6MRc1DR15Q | `geo-arbitrage/chiang-mai-vs-cebu-remote-work-base.md` | Strong | Direct country-comparison theme (city-level article, same decision) |
-| I left everything for Cebu, Philippines — here's what happened | https://youtu.be/nRuXPh2MR0A | `geo-arbitrage/complete-guide-living-working-cebu-city.md` | Strong | Cebu-specific relocation narrative → Cebu guide |
+Note: mid-article placements on gated articles were positioned at 45-55% of the way through the piece — comfortably before the 65% hard-gate cutoff (`GatedContent.astro`) so the video stays visible to every reader, not just subscribers.
 
 ## Unmatched / needs review
 
@@ -68,6 +65,10 @@ Pattern: file lives in the topically-closest pillar folder for URL purposes, but
 | I Built an AI Bot That Finds Memecoins Before Crypto Twitter | No genuine topical fit on the site. Closest is `market-arbitrage/crypto-borderless-business.md` (payments infra, not trading) — tonally mismatched. Not in the confirmed 11-video channel list sent 2026-08-05. Hold rather than force a placement. |
 
 ---
+
+## Strategy note
+
+User's read on this (2026-08-05): embedding videos in matching blog articles and linking back to the channel is a deliberate blog↔YouTube cross-signal play, not just a content nicety. Going forward, the plan is to work the other direction too — find pillars/topics on the blog that have **no** video coverage yet and film videos to fill those gaps, not just wait for existing videos to find a home. As of 2026-08-05, video coverage by pillar: `geo-arbitrage` (8 embedded + 1 standalone), `remote-income` (1 embedded + 1 standalone). Zero coverage so far: `lead-generation`, `time-arbitrage`, `ai-arbitrage`, `health-arbitrage`, `market-arbitrage`.
 
 ## Matching rules for future videos
 

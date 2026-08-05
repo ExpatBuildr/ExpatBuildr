@@ -2,6 +2,7 @@
 title: "The Real Problems With Being a Digital Nomad That Nobody Talks About"
 description: "The digital nomad lifestyle looks ideal from the outside. After 2 to 3 years inside it, the structural problems become undeniable — and avoidable."
 pubDate: 2026-07-11
+updatedDate: 2026-08-05
 author: "ExpatBuildr"
 pillarId: "geo-arbitrage"
 category: "Deep Dive"
@@ -59,6 +60,18 @@ The specific problems:
 **The coverage cliff.** Many nomad policies have maximum benefit periods or lifetime maximums that are significantly lower than comprehensive health insurance. A serious illness or injury can exhaust these limits quickly.
 
 **The expat founder solution:** Establish residence in one country and purchase comprehensive international health insurance — Cigna Global, Allianz Care, or Aetna International — that provides genuine coverage with continuity. The monthly cost is higher than SafetyWing's nomad offering but the coverage is genuinely comprehensive rather than travel-emergency-focused.
+
+<div class="video-embed">
+  <iframe
+    width="100%"
+    height="480"
+    src="https://www.youtube.com/embed/Hy6BUDClae8"
+    title="He Moved to the Philippines... Then Lost It All"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowfullscreen>
+  </iframe>
+</div>
 
 ## The Banking Problem
 

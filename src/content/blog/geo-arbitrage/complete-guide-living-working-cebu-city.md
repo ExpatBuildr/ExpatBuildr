@@ -2,6 +2,7 @@
 title: "The Complete Guide to Living and Working in Cebu City as a Remote Worker"
 description: "Cebu City is one of Southeast Asia's best remote work bases. This guide covers neighborhoods, internet, healthcare, cost of living, and daily life."
 pubDate: 2026-07-07
+updatedDate: 2026-08-05
 author: "ExpatBuildr"
 pillarId: "geo-arbitrage"
 category: "Deep Dive"
@@ -71,6 +72,18 @@ Rent range: one-bedroom $450 to $700, two-bedroom $600 to $900.
 Mactan is connected to Cebu City by two bridges and is home to the international airport and several beach resort areas. Lower cost than central Cebu in most areas, genuine beach access, and a slower pace. The tradeoff is internet reliability — significantly more variable than central Cebu — and the commute to IT Park for coworking or meetings.
 
 Only recommended for remote workers who have already lived in Cebu and want a different experience. Not recommended as a first base.
+
+<div class="video-embed">
+  <iframe
+    width="100%"
+    height="480"
+    src="https://www.youtube.com/embed/nRuXPh2MR0A"
+    title="I Left Everything for Cebu, Philippines — Here's What Happened"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowfullscreen>
+  </iframe>
+</div>
 
 ## Internet: The Critical Variable
 

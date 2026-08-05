@@ -2,6 +2,7 @@
 title: "How to Calculate Your Expat Runway by Founder Type"
 description: "Runway is the only metric that matters before the machine works. Here is how to calculate your exact runway — and how abroad extends it by founder type."
 pubDate: 2026-07-12
+updatedDate: 2026-08-05
 author: "ExpatBuildr"
 pillarId: "geo-arbitrage"
 category: "Guide"
@@ -93,6 +94,18 @@ Midpoint comfortable founder budget: **$1,600/month**
 | **Total** | **$2,110-3,490** |
 
 Midpoint comfortable founder budget: **$2,700/month**
+
+<div class="video-embed">
+  <iframe
+    width="100%"
+    height="480"
+    src="https://www.youtube.com/embed/eliDZqvuTd4"
+    title="4 Reasons Expats Go Broke in the Philippines"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowfullscreen>
+  </iframe>
+</div>
 
 ### United States (Mid-Tier City Comparison)
 

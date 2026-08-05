@@ -2,6 +2,7 @@
 title: "How to Get the Thailand LTR Visa as a Remote Worker"
 description: "The Thailand Long-Term Resident visa is one of the best visa options in Southeast Asia for remote workers. Here is how to qualify and apply."
 pubDate: 2026-07-17
+updatedDate: 2026-08-05
 author: "ExpatBuildr"
 pillarId: "geo-arbitrage"
 category: "Guide"
@@ -53,6 +54,18 @@ Requirements for the Work-From-Thailand Professional category:
 **Health insurance:** Must have health insurance coverage with a minimum of $50,000 USD coverage per year, valid in Thailand.
 
 **For independent founders:** The Work-From-Thailand Professional category's employment requirement is challenging for solo founders working with small business clients. The Wealthy Global Citizen category ($1 million USD in assets or income of $80,000+ per year with investment in Thailand) is more accessible for high-earning founders but requires the asset or investment component.
+
+<div class="video-embed">
+  <iframe
+    width="100%"
+    height="480"
+    src="https://www.youtube.com/embed/TnMoYdY5_dA"
+    title="How Founders Stay in Thailand Long Term"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowfullscreen>
+  </iframe>
+</div>
 
 ## The Application Process
 

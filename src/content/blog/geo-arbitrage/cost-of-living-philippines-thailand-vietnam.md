@@ -2,6 +2,7 @@
 title: "Cost of Living Comparison: Philippines vs Thailand vs Vietnam"
 description: "Cost of living comparison for remote workers in the Philippines, Thailand, and Vietnam covering housing, food, visas, internet, and tradeoffs."
 pubDate: 2026-06-09
+updatedDate: 2026-08-05
 author: "ExpatBuildr"
 pillarId: "geo-arbitrage"
 category: "Deep Dive"
@@ -84,6 +85,18 @@ Thai food in Chiang Mai is similarly excellent and similarly cheap at the street
 The Philippines has excellent food but the cost advantage is less dramatic than the other two countries, partly because Filipino food culture has more Western influence and partly because Western-style supermarkets and restaurants in BGC are priced closer to international levels.
 
 For all three countries, the key variable is how much of your diet comes from local food versus Western food. A person who eats primarily local food in any of these three countries spends $150 to $250 per month on food in total. A person who eats primarily at Western restaurants and shops primarily at international supermarkets spends $400 to $700 per month. The country matters less than the diet choice.
+
+<div class="video-embed">
+  <iframe
+    width="100%"
+    height="480"
+    src="https://www.youtube.com/embed/jbsVpoeBKA8"
+    title="I Moved to Thailand Without Enough Money — Here's What Happened"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowfullscreen>
+  </iframe>
+</div>
 
 ---
 

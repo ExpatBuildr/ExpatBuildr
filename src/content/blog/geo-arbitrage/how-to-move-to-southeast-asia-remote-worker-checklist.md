@@ -2,6 +2,7 @@
 title: "How to Move to Southeast Asia as a Remote Worker: The Full Checklist"
 description: "Everything you need to move to Southeast Asia as a remote worker — visas, banking, housing, health insurance, and the mistakes most people make on the way."
 pubDate: 2026-05-25
+updatedDate: 2026-08-05
 author: "ExpatBuildr"
 pillarId: "geo-arbitrage"
 category: "Guide"
@@ -81,6 +82,18 @@ Tools to use: Fast.com and Speedtest.net. You need a minimum of 50 Mbps download
 In the Philippines, PLDT and Globe are the two major fiber providers. Coverage and reliability vary significantly by building and neighborhood. Always ask the landlord or building admin which provider services the unit and what the actual speeds are — not the package speed but the real-world speed.
 
 In Thailand, True Move and AIS both offer reliable fiber in urban areas. Chiang Mai and Bangkok have excellent internet infrastructure. Smaller towns and beach areas do not.
+
+<div class="video-embed">
+  <iframe
+    width="100%"
+    height="480"
+    src="https://www.youtube.com/embed/zkQ9C-kUMts"
+    title="I Lost $21,000 Moving to the Philippines"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowfullscreen>
+  </iframe>
+</div>
 
 ---
 

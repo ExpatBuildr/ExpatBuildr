@@ -2,6 +2,7 @@
 title: "Austin vs Manila: The Full Cost of Living Breakdown"
 description: "Austin vs Manila cost of living comparison — housing, food, transport, healthcare, and what the gap means for your savings rate."
 pubDate: 2026-06-03
+updatedDate: 2026-08-05
 author: "ExpatBuildr"
 pillarId: "geo-arbitrage"
 category: "Deep Dive"
@@ -83,6 +84,18 @@ Groceries for one person cooking at home most days in Austin run $400 to $600 pe
 Groceries from a Western-style supermarket like S&R, Landers, or the imported section of Robinsons run $150 to $250 per month. Eating primarily from fresh markets and local grocery chains pushes that down to $80 to $150. Eating out in Manila covers a wide range: a full meal at a good local restaurant is $3 to $8, while a Western restaurant in BGC runs $12 to $25. A combined food budget for one person eating a mix of local and Western food lands at $200 to $400 per month.
 
 The food gap is real but less dramatic than housing. Eating primarily at Western restaurants in BGC will compress the savings. Eating local food most of the time, which is genuinely excellent food and not a compromise, means spending a fraction of Austin costs.
+
+<div class="video-embed">
+  <iframe
+    width="100%"
+    height="480"
+    src="https://www.youtube.com/embed/_yNRlNyWC6E"
+    title="Why $3,500 a Month Feels Like Enough in the Philippines"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowfullscreen>
+  </iframe>
+</div>
 
 ---
 
