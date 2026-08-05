@@ -2,6 +2,7 @@
 title: "How to Start a Remote Micro SaaS for $10k/mo Residual Yield"
 description: "A step-by-step guide to building a remote micro-SaaS from zero: niche selection, validation, building, and scaling to $10k/month."
 pubDate: 2026-04-18
+updatedDate: 2026-08-05
 pillarId: "remote-income"
 category: "Guide"
 tags: ["Remote Income", "Expat Founder"]
@@ -96,7 +97,7 @@ Advantages: launch in days or weeks, no deep engineering required. Disadvantages
 
 **Low-code with custom logic:**
 - Supabase (database + auth + APIs) + Next.js or Remix (frontend)
-- PlanetScale or Neon for serverless databases
+- Neon for a serverless Postgres database with a genuinely free tier (100 CU-hours/month, no credit card required); PlanetScale is still solid but dropped its free Hobby plan in 2024 and now starts at $5/month minimum — budget for it rather than assuming it's a free-tier pick
 - Vercel or Railway for hosting
 
 This stack is accessible to developers with 6–12 months of experience and produces production-grade infrastructure that scales without ceiling. It is the current default for serious micro-SaaS founders who can code.
