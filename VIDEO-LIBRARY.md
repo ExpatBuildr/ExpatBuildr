@@ -56,7 +56,7 @@ Pattern: file lives in the topically-closest pillar folder for URL purposes, but
 |---|---|---|---|
 | I worked through a Philippines typhoon with no power | https://youtu.be/sSSDPww5gzY | ✅ Published | `geo-arbitrage/typhoon-power-outage-philippines-remote-work.md` |
 | You can't live abroad long term without building a brand | https://youtu.be/IDMZ1OLMGDM | ✅ Published | `remote-income/why-you-need-a-personal-brand-living-abroad.md` |
-| Should you learn the language before moving to the Philippines (covers Tagalog *and* Bisaya/Cebuano) | https://youtu.be/253K3sGGgTE | Queued | — |
+| Should you learn the language before moving to the Philippines (covers Tagalog *and* Bisaya/Cebuano) | https://youtu.be/253K3sGGgTE | ✅ Published | `geo-arbitrage/should-you-learn-tagalog-or-bisaya-philippines.md` |
 | How I Turn Blog Traffic into Targeted Newsletter Subs for Galaxy Arbitrage | *(link not yet provided)* | Queued — need URL | — |
 | I Built an AI Bot That Finds Memecoins Before Crypto Twitter | *(link not yet provided)* | Queued — need URL | — |
 
