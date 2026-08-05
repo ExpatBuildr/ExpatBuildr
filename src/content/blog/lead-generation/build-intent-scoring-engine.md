@@ -2,6 +2,7 @@
 title: "How to Build an Intent-Scoring Engine for 20% Higher Conversion"
 description: "A practical guide to designing and deploying an autonomous intent scoring engine for leads."
 pubDate: 2026-04-20
+updatedDate: 2026-08-05
 author: "ExpatBuildr"
 pillarId: "lead-generation"
 category: "Guide"
@@ -113,7 +114,7 @@ The scoring model is only as good as the data feeding it. Here is how to constru
 
 **Level 3 — Bombora + HubSpot/Salesforce.** Bombora tracks B2B intent signals across thousands of websites and surfaces companies showing elevated research activity on topics relevant to your offering. This is third-party behavioral intent data at scale. Expensive ($1,500–$3,000/month) but high signal. Worthwhile once you are past the early traction stage and have validated your ICP.
 
-**Level 4 — Custom infrastructure.** Proprietary scrapers monitoring job boards, LinkedIn, company websites, and news sources. Enrichment APIs (Clearbit, PeopleDataLabs) for firmographic depth. A scoring engine built in Python or Node that runs on a cron job and pushes high-intent leads directly to your sales team's queue. This is what mature demand generation operations look like.
+**Level 4 — Custom infrastructure.** Proprietary scrapers monitoring job boards, LinkedIn, company websites, and news sources. Enrichment APIs (PeopleDataLabs, or Clay's enrichment layer) for firmographic depth. Note: Clearbit no longer exists as a standalone API — HubSpot acquired it in December 2023 and folded it into Breeze Intelligence, which now requires an active HubSpot subscription to use. A scoring engine built in Python or Node that runs on a cron job and pushes high-intent leads directly to your sales team's queue. This is what mature demand generation operations look like.
 
 Most operators should be operating at Level 2 within their first 90 days. Level 3 comes when you are ready to scale outreach volume significantly and need predictive signal coverage.
 
