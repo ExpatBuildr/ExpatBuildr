@@ -2,6 +2,7 @@
 title: "Geo-Arbitrage: The Global Living Strategy"
 description: "Lifestyle engineering, cost-optimization, and the architecture of global market positioning."
 pubDate: 2026-04-17
+updatedDate: 2026-08-05
 author: "ExpatBuildr"
 pillarId: "geo-arbitrage"
 category: "Pillar Hub"
@@ -47,6 +48,13 @@ Living abroad increases your physical and digital attack surface. We apply redun
 - **[How to Calculate Your Geographic Arbitrage Number](/blog/geo-arbitrage/how-to-calculate-geographic-arbitrage-number)**
 - **[Cost of Living Comparison: Philippines vs Thailand vs Vietnam](/blog/geo-arbitrage/cost-of-living-philippines-thailand-vietnam)**
 - **[Austin vs Manila: The Full Cost of Living Breakdown](/blog/geo-arbitrage/austin-vs-manila-cost-of-living)**
+- **[How to Move to Southeast Asia as a Remote Worker: The Full Checklist](/blog/geo-arbitrage/how-to-move-to-southeast-asia-remote-worker-checklist)**
+- **[The Complete Guide to Living and Working in Cebu City as a Remote Worker](/blog/geo-arbitrage/complete-guide-living-working-cebu-city)**
+- **[How to Calculate Your Expat Runway by Founder Type](/blog/geo-arbitrage/how-to-calculate-your-expat-runway-by-founder-type)**
+- **[How to Choose Your Expat Base by Founder Type](/blog/geo-arbitrage/how-to-choose-your-expat-base-by-founder-type)**
+- **[How to Get the Thailand LTR Visa as a Remote Worker](/blog/geo-arbitrage/thailand-ltr-visa-remote-worker)**
+- **[The Real Problems With Being a Digital Nomad That Nobody Talks About](/blog/geo-arbitrage/problems-with-being-a-digital-nomad)**
+- **[Chiang Mai vs Cebu: Which Is the Better Remote Work Base](/blog/geo-arbitrage/chiang-mai-vs-cebu-remote-work-base)**
 
 ---
-**Build Status**: Operational // **Last Logic Update**: April 2026 // **Architect**: ExpatBuildr
+**Build Status**: Operational // **Last Logic Update**: August 2026 // **Architect**: ExpatBuildr
