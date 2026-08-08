@@ -2,6 +2,7 @@
 title: "How to Scale Personalized Outreach Without Losing the Human Touch"
 description: "A step-by-step guide to engineering high-intent personalization at scale for cold email and DM sequences."
 pubDate: 2026-04-20
+updatedDate: 2026-08-05
 author: "ExpatBuildr"
 pillarId: "lead-generation"
 category: "Guide"
@@ -123,7 +124,7 @@ Email is the foundation, but the highest-intent prospects often deserve a multi-
 
 The best personalization in the world does not matter if your emails land in spam. Deliverability is the unsexy foundation of outreach performance.
 
-Core requirements: a properly warmed sending domain (minimum 4–6 weeks of warming before high volume sending), SPF/DKIM/DMARC records configured correctly, a sending volume that ramps gradually (start at 20–30 emails/day per inbox, not 200), and a bounce rate below 3%.
+Core requirements: a properly warmed sending domain (minimum 4–6 weeks of warming before high volume sending), SPF/DKIM/DMARC records configured correctly, a sending volume that ramps gradually (start at 20–30 emails/day per inbox, not 200), and a bounce rate below 3%. If your aggregate sending volume across the domain hits 5,000+ emails/day, Google and Yahoo also require one-click unsubscribe (RFC 8058) and a spam complaint rate under 0.3% — as of November 2025, both providers reject non-compliant mail outright rather than just routing it to spam, a real risk for any outreach operation running the multi-mailbox setups described above.
 
 Use a secondary domain for outreach, not your primary business domain. If your main domain is `yourcompany.com`, send outreach from `outreach.yourcompany.com` or a variation. This protects your primary domain's reputation from any deliverability issues that arise from outreach volume.
 
