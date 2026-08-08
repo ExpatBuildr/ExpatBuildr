@@ -2,6 +2,7 @@
 title: "Best Remote Job Boards Actually Worth Using in 2026"
 description: "The remote job boards that surface real remote-first roles in 2026, not recycled office jobs with a checkbox. Ranked and reviewed."
 pubDate: 2026-04-21
+updatedDate: 2026-08-08
 author: "ExpatBuildr"
 pillarId: "remote-income"
 category: "Guide"
@@ -134,17 +135,17 @@ These aren't $500M SaaS companies. They're 5–30 person operations with global 
 
 ---
 
-### 6. Otta (now Greenhouse Jobs) — Best for Remote Roles at Funded Startups
+### 6. Welcome to the Jungle (formerly Otta) — Best for Remote Roles at Funded Startups
 
-**URL:** otta.com  
+**URL:** welcometothejungle.com  
 **Best for:** Tech, product, engineering at Series A–C companies  
 **Worldwide listings:** Partial — many are US or EU only
 
-Otta aggregates roles from companies' own ATS (applicant tracking systems) like Greenhouse and Lever, which means listings are fresher and more accurate than boards that rely on company submissions. The remote filter here is more reliable than LinkedIn because roles are pulled from structured ATS data, not self-reported checkboxes.
+Otta was acquired by Welcome to the Jungle in January 2024 and fully absorbed into the brand — the Otta name and site no longer exist independently. The platform has shifted since the acquisition: Otta's original strength was pulling structured listings straight from companies' ATS (applicant tracking systems) like Greenhouse and Lever, which kept the remote filter more reliable than self-reported checkboxes. Welcome to the Jungle leans harder into "employer branding" — video office tours, culture photos, a vibe check before you ever see the role — which is genuinely useful for research but worth treating with some skepticism; a polished video doesn't guarantee the remote culture is real.
 
-The limitation: most truly global remote roles skew toward funded startups with at least some office presence. Otta is better for "remote with strong async culture at a 50-person startup" than for "hire me, I live in Vietnam."
+The limitation: most truly global remote roles here still skew toward funded startups with at least some office presence. It's better for "remote with strong async culture at a 50-person startup" than for "hire me, I live in Vietnam."
 
-**Use it for:** If you want a funded startup with real remote culture rather than a bootstrapped lifestyle business.
+**Use it for:** If you want a funded startup with real remote culture rather than a bootstrapped lifestyle business — but verify claims independently rather than trusting the marketing video.
 
 ---
 
