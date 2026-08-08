@@ -2,6 +2,7 @@
 title: "The Best Remote Work Tools for Async Teams"
 description: "The right async tool stack removes friction from distributed teamwork. Here is the framework for choosing tools that keep remote teams productive."
 pubDate: 2026-07-11
+updatedDate: 2026-08-08
 author: "ExpatBuildr"
 pillarId: "remote-income"
 category: "Guide"
@@ -84,10 +85,10 @@ For a lean expat founder operation with one to five team members, the minimal ef
 | Knowledge base | Notion | $0 to $16 |
 | Task management | Notion or Linear | $0 to $8 per user |
 | Communication | Slack or Discord | $0 to $7.25 per user |
-| Video walkthrough | Loom | $0 to $12.50 per user |
-| Document collaboration | Google Workspace | $6 per user |
+| Video walkthrough | Loom | $0 to $18 per user |
+| Document collaboration | Google Workspace | $7 per user |
 
-Total for a three-person team: approximately $30 to $90 per month. This is the complete infrastructure for a fully async distributed team.
+Total for a three-person team: approximately $30 to $105 per month. This is the complete infrastructure for a fully async distributed team.
 
 The trap to avoid is adding tools to solve problems that are actually protocol problems. If your team is not working asynchronously it is almost never because you have the wrong tools. It is because the expected behaviors — response time norms, documentation standards, channel usage rules — are not clearly defined and consistently enforced.
 
