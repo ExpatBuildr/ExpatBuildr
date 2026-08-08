@@ -2,6 +2,7 @@
 title: "Remote Income: The $150k+ Career Architecture"
 description: "The definitive guide to job poaching, market signal extraction, and autonomous micro-SaaS yield."
 pubDate: 2026-04-17
+updatedDate: 2026-08-05
 author: "ExpatBuildr"
 pillarId: "remote-income"
 category: "Pillar Hub"
@@ -45,6 +46,13 @@ Once active income is stabilized, we deploy extra capital into "Micro-SaaS" asse
 - **[Building a Remote-First Resume That Gets Callbacks](/blog/remote-income/remote-first-resume-that-gets-callbacks)**
 - **[How to Find Fully Remote Jobs That Never RTO](/blog/remote-income/how-to-find-fully-remote-jobs-that-never-rto)**
 - **[How to Negotiate a Higher Salary for a Remote Job Offer](/blog/remote-income/how-to-negotiate-higher-salary-remote-job-offer)**
+- **[Best Remote Job Boards Actually Worth Using in 2026](/blog/remote-income/best-remote-job-boards-worth-using)**
+- **[How to Get Promoted While Working Fully Remote](/blog/remote-income/how-to-get-promoted-while-working-fully-remote)**
+- **[How to Build a Second Income Stream While Working a Remote Job](/blog/remote-income/build-second-income-stream-remote-job)**
+- **[The Best Remote Work Tools for Async Teams](/blog/remote-income/best-remote-work-tools-async-teams)**
+- **[Remote Work Tax Strategy: What You Can Actually Deduct](/blog/remote-income/remote-work-tax-strategy)**
+- **[Digital Asset Management: Architecting Yield-Bearing Income Empires](/blog/remote-income/digital-asset-portfolio-building)**
+- **[How to Build a Personal Brand That Gets You Recruited Remotely](/blog/remote-income/how-to-build-personal-brand-that-gets-you-recruited-remotely)**
 
 ---
-**Build Status**: Operational // **Last Logic Update**: April 2026 // **Architect**: ExpatBuildr
+**Build Status**: Operational // **Last Logic Update**: August 2026 // **Architect**: ExpatBuildr
