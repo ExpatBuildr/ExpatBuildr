@@ -10,7 +10,7 @@ tags: ["Lead Generation", "Automation", "B2B Sales"]
 ogImage: "/images/lead-gen.jpg"
 heroImage: "/images/lead-gen.jpg"
 imagePrompt: "Architectural blueprint of a digital lead engine; glowing nodes and data flow lines; dark industrial aesthetic."
-canonicalUrl: "https://expatbuildr.com/blog/lead-generation"
+canonicalUrl: "https://expatbuildr.com/blog/lead-generation/hub"
 primaryKeyword: "lead engine architecture"
 secondaryKeywords: ["autonomous outreach", "intent signals", "B2B lead systems", "lead generation framework"]
 searchIntent: "informational"

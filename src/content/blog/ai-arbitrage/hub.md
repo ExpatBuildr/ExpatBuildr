@@ -8,7 +8,7 @@ category: "Pillar Hub"
 tags: ["AI Arbitrage", "Automation", "AI Tools"]
 ogImage: "/images/blog/pillars/ai-arbitrage-hub.png"
 heroImage: "/images/blog/pillars/ai-arbitrage-hub.png"
-canonicalUrl: "https://expatbuildr.com/blog/ai-arbitrage"
+canonicalUrl: "https://expatbuildr.com/blog/ai-arbitrage/hub"
 primaryKeyword: "AI arbitrage"
 secondaryKeywords: ["AI founder stack", "multi-agent systems", "AI workflows", "solo founder automation"]
 searchIntent: "problem-solving"

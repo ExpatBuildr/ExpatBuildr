@@ -10,7 +10,7 @@ tags: ["Remote Income", "Remote Jobs"]
 ogImage: "/images/remote-work.jpg"
 heroImage: "/images/remote-work.jpg"
 imagePrompt: "A high-tech digital workspace overlooking a futuristic city; glowing income symbols and charts; dark obsidian aesthetic."
-canonicalUrl: "https://expatbuildr.com/blog/remote-income"
+canonicalUrl: "https://expatbuildr.com/blog/remote-income/hub"
 primaryKeyword: "remote income strategy"
 secondaryKeywords: ["job sniping", "remote career path", "micro-SaaS income", "digital arbitrage"]
 searchIntent: "problem-solving"

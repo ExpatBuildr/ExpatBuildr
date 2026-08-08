@@ -10,7 +10,7 @@ tags: ["Geo-Arbitrage", "Digital Nomad"]
 ogImage: "/images/geo-arbitrage.jpg"
 heroImage: "/images/geo-arbitrage.jpg"
 imagePrompt: "A professional nomad in a tropical villa; glowing maps and global flight paths; cinematic sun-lit aesthetic with obsidian accents."
-canonicalUrl: "https://expatbuildr.com/blog/geo-arbitrage"
+canonicalUrl: "https://expatbuildr.com/blog/geo-arbitrage/hub"
 primaryKeyword: "geo-arbitrage strategy"
 secondaryKeywords: ["digital nomad lifestyle", "cost of living optimization", "Global market positioning", "expat logistics"]
 searchIntent: "informational"

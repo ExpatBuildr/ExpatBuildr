@@ -39,21 +39,19 @@ const GHOST_LIST = [
   '/newsletter/downloads',
 ];
 
-// Each pillar's "hub" article declares a shorter canonicalUrl (the pillar
-// overview page itself, e.g. /blog/geo-arbitrage) rather than its own raw
-// slug -- it's featured inline on the pillar page, not meant to be its own
-// indexed destination. Astro's sitemap integration has no awareness of a
-// post's canonicalUrl though, so without this exclusion it lists the raw
-// /hub slug directly, which is a non-canonical URL sitting in the sitemap.
-const NON_CANONICAL_BLOG_PAGES = [
-  '/blog/remote-income/hub',
-  '/blog/lead-generation/hub',
-  '/blog/geo-arbitrage/hub',
-  '/blog/time-arbitrage/hub',
-  '/blog/ai-arbitrage/hub',
-  '/blog/health-arbitrage/hub',
-  '/blog/market-arbitrage/hub',
-];
+// HISTORICAL NOTE (resolved 2026-08-08): each pillar's "hub" article used to
+// declare canonicalUrl as the pillar overview page itself (e.g.
+// /blog/geo-arbitrage) instead of its own real URL, on the assumption its
+// content was "featured inline on the pillar page." That assumption was
+// false -- the pillar index pages (src/pages/blog/{pillar}/index.astro) never
+// render the hub article's content anywhere; it only ever existed at its own
+// /hub route. The mismatched canonical meant Google deferred indexing of
+// /hub to the pillar page and never indexed the hub article's actual unique
+// content. Fixed at the source: every hub.md now self-canonicalizes to its
+// real URL, so this sitemap exclusion list is no longer needed -- keeping it
+// here (empty) as a placeholder in case a genuine non-canonical blog page
+// shows up again.
+const NON_CANONICAL_BLOG_PAGES = [];
 
 // Mirrors robots.txt's Disallow rules — these paths must never appear in the
 // sitemap, or Google flags them as "Blocked by robots.txt" / picks a different

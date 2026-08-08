@@ -8,7 +8,7 @@ category: "Pillar Hub"
 tags: ["Time Arbitrage", "Async Business", "Delegation"]
 ogImage: "/images/blog/pillars/time-arbitrage-hub.png"
 heroImage: "/images/blog/pillars/time-arbitrage-hub.png"
-canonicalUrl: "https://expatbuildr.com/blog/time-arbitrage"
+canonicalUrl: "https://expatbuildr.com/blog/time-arbitrage/hub"
 primaryKeyword: "time arbitrage"
 secondaryKeywords: ["async business systems", "founder SOPs", "virtual team delegation", "timezone advantage"]
 searchIntent: "problem-solving"

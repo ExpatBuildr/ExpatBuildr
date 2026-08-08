@@ -8,7 +8,7 @@ category: "Pillar Hub"
 tags: ["Health Arbitrage", "Medical Tourism", "Founder Wellness"]
 ogImage: "/images/blog/pillars/health-arbitrage-hub.png"
 heroImage: "/images/blog/pillars/health-arbitrage-hub.png"
-canonicalUrl: "https://expatbuildr.com/blog/health-arbitrage"
+canonicalUrl: "https://expatbuildr.com/blog/health-arbitrage/hub"
 primaryKeyword: "health arbitrage"
 secondaryKeywords: ["medical tourism Southeast Asia", "dental tourism Philippines", "expat health insurance", "private hospitals abroad"]
 searchIntent: "informational"

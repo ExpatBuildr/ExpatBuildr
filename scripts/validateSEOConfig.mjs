@@ -267,6 +267,74 @@ function checkCanonicalConsistency() {
 }
 
 // ═══════════════════════════════════════════════════════════════
+// CHECK 7: Blog Post canonicalUrl Matches Its Actual Route
+// ═══════════════════════════════════════════════════════════════
+// Added 2026-08-08 after discovering all 7 pillar hub.md articles declared
+// canonicalUrl as a DIFFERENT page (the pillar overview), which told Google
+// "don't index me, index that other URL instead" -- so the hub articles'
+// actual unique content was never indexed. Every post's canonicalUrl must
+// point at its own real URL (derived from its file path) unless it's
+// explicitly listed in INTENTIONAL_CROSS_CANONICALS below with a comment
+// explaining why. This is a hard failure, not a warning: a wrong canonical
+// silently kills indexing with no visible symptom until you check Search
+// Console weeks later.
+function checkPostCanonicalMatchesRoute() {
+  console.log('\n📋 CHECK 7: Blog Post canonicalUrl Matches Its Actual Route...');
+
+  // Add an entry here only with a comment justifying why that specific post
+  // should NOT self-canonicalize (e.g. genuine syndicated/duplicate content).
+  const INTENTIONAL_CROSS_CANONICALS = {
+    // 'pillar/slug': 'https://expatbuildr.com/actual-intended-canonical',
+  };
+
+  const blogRoot = path.join(PROJECT_ROOT, 'src/content/blog');
+  if (!fs.existsSync(blogRoot)) {
+    CHECKS.warn.push('⚠ src/content/blog not found — skipping canonicalUrl route check');
+    return;
+  }
+
+  let checked = 0;
+  let mismatches = 0;
+  let missing = 0;
+
+  for (const pillarDir of fs.readdirSync(blogRoot)) {
+    const pillarPath = path.join(blogRoot, pillarDir);
+    if (!fs.statSync(pillarPath).isDirectory()) continue;
+
+    for (const file of fs.readdirSync(pillarPath)) {
+      if (!file.endsWith('.md')) continue;
+      const slug = file.replace(/\.md$/, '');
+      const key = `${pillarDir}/${slug}`;
+      const expected = `https://expatbuildr.com/blog/${pillarDir}/${slug}`;
+      const content = fs.readFileSync(path.join(pillarPath, file), 'utf8');
+      const match = content.match(/^canonicalUrl:\s*"([^"]+)"/m);
+
+      checked++;
+
+      if (!match) {
+        missing++;
+        CHECKS.warn.push(`⚠ ${key} has no canonicalUrl set (expected: ${expected})`);
+        continue;
+      }
+
+      const actual = match[1];
+      const allowedOverride = INTENTIONAL_CROSS_CANONICALS[key];
+
+      if (actual === expected || actual === allowedOverride) continue;
+
+      mismatches++;
+      CHECKS.fail.push(`❌ ${key}: canonicalUrl is "${actual}" but its real route is "${expected}" — this tells Google to index the OTHER page and silently kills indexing of this one`);
+    }
+  }
+
+  if (mismatches === 0 && missing === 0) {
+    CHECKS.pass.push(`✓ All ${checked} blog posts' canonicalUrl match their actual route`);
+  } else if (mismatches === 0) {
+    CHECKS.pass.push(`✓ No canonicalUrl mismatches found (${checked} posts checked, ${missing} missing canonicalUrl — see warnings)`);
+  }
+}
+
+// ═══════════════════════════════════════════════════════════════
 // MAIN EXECUTION
 // ═══════════════════════════════════════════════════════════════
 function main() {
@@ -279,6 +347,7 @@ function main() {
   checkPhantomPages();
   checkConfigDocumentation();
   checkCanonicalConsistency();
+  checkPostCanonicalMatchesRoute();
 
   console.log('\n' + '═'.repeat(60));
   console.log('\n📊 VALIDATION RESULTS\n');

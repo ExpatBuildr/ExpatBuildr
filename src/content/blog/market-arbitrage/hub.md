@@ -8,7 +8,7 @@ category: "Pillar Hub"
 tags: ["Market Arbitrage", "Currency Strategy", "Investing Abroad"]
 ogImage: "/images/blog/pillars/market-arbitrage-hub.png"
 heroImage: "/images/blog/pillars/market-arbitrage-hub.png"
-canonicalUrl: "https://expatbuildr.com/blog/market-arbitrage"
+canonicalUrl: "https://expatbuildr.com/blog/market-arbitrage/hub"
 primaryKeyword: "market arbitrage"
 secondaryKeywords: ["FEIE for expats", "currency strategy expat founders", "investing from abroad", "information arbitrage"]
 searchIntent: "informational"
