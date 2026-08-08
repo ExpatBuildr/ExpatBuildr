@@ -2,6 +2,7 @@
 title: "How to Find Fully Remote Jobs That Never RTO"
 description: "Learn how to find fully remote jobs that have zero return-to-office risk. The boards, signals, and tactics that actually work in 2026."
 pubDate: 2026-04-24
+updatedDate: 2026-08-08
 author: "ExpatBuildr"
 pillarId: "remote-income"
 category: "Guide"
@@ -106,10 +107,10 @@ The question that exposes everything: *"How does your team make decisions — sy
 Targeting company *types* is faster than evaluating companies one by one. These categories skew heavily toward true remote:
 
 **Bootstrapped SaaS companies with global revenue**
-When your customers are in 40 countries and your team is in 12, there's no HQ to return to. Companies like Transistor, Fathom Analytics, and ConvertKit have been remote-first since founding.
+When your customers are in 40 countries and your team is in 12, there's no HQ to return to. Companies like Transistor, Fathom Analytics, and Kit (formerly ConvertKit) have been remote-first since founding.
 
 **Open source companies**
-Automattic (WordPress), HashiCorp (pre-acquisition), Elastic. Companies built around open source communities tend to hire globally and work async because their contributors already do.
+Automattic (WordPress), Elastic, and open-source-native shops like Sentry. Companies built around open source communities tend to hire globally and work async because their contributors already do.
 
 **Companies founded post-2018 with no VC office mandate**
 VC firms sometimes pressure portfolio companies to consolidate in SF or NY. Companies that bootstrapped or raised from remote-friendly investors (Calm Company Fund, TinySeed) don't have that pressure.
@@ -190,6 +191,6 @@ Finding fully remote jobs that never RTO means targeting a different type of emp
 
 [1] GitLab — "GitLab Remote Work Handbook" — handbook.gitlab.com — 2024  
 [2] 37signals (Basecamp) — *Remote: Office Not Required* — Jason Fried & David Heinemeier Hansson — 2013  
-[3] Remote-First Institute — "Remote-First Certification" — remotefirst.org — 2024  
+[3] Remote-First Institute — "Remote-First Certification" — remote-first.institute — 2024  
 [4] Doist — "Async-First Communication: The Pyramid of Communication" — blog.doist.com — 2023  
 [5] Reuters — "Amazon, Dell, others tighten return-to-office policies" — reuters.com — 2024
