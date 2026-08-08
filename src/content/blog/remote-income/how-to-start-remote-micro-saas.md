@@ -9,6 +9,7 @@ tags: ["Remote Income", "Expat Founder"]
 author: "ExpatBuildr"
 ogImage: "/images/remote-work.jpg"
 heroImage: "/images/remote-work.jpg"
+canonicalUrl: "https://expatbuildr.com/blog/remote-income/how-to-start-remote-micro-saas"
 draft: false
 hasVideoEmbed: false
 gated: true

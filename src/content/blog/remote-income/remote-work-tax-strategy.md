@@ -9,7 +9,7 @@ gated: true
 tags: ["Remote Income", "Expat Taxes"]
 ogImage: "/images/remote-work.jpg"
 heroImage: "/images/remote-work.jpg"
-canonicalUrl: "https://expatbuildr.com/blog/remote-income/remote-work-tax-strategy-what-you-can-deduct"
+canonicalUrl: "https://expatbuildr.com/blog/remote-income/remote-work-tax-strategy"
 primaryKeyword: "remote work tax strategy what you can deduct"
 secondaryKeywords: ["remote work tax deductions", "work from home deductions", "self-employed remote worker taxes", "home office deduction", "expat tax deductions remote work"]
 searchIntent: "problem-solving"
