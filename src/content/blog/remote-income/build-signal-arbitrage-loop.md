@@ -79,8 +79,5 @@ The engine is [SYNCHRONIZED]. Capture the alpha.
 
 ---
 
-[? Back to Remote Income](/blog/remote-income)
-
- 
-
+[← Back to Remote Income](/blog/remote-income)
 

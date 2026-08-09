@@ -2,6 +2,7 @@
 title: "Remote Work Tax Strategy: What You Can Actually Deduct"
 description: "Remote workers have legitimate tax deductions that most people miss. Here is the breakdown of what you can actually deduct and how to document it."
 pubDate: 2026-07-17
+updatedDate: 2026-08-09
 author: "ExpatBuildr"
 pillarId: "remote-income"
 category: "Deep Dive"
@@ -31,7 +32,7 @@ For the full picture of remote income building, visit [Remote Income Links](/blo
 
 The deductions below apply differently depending on your employment status.
 
-**W-2 employees working remotely:** The 2017 Tax Cuts and Jobs Act eliminated the home office deduction for W-2 employees through 2025. If you are a remote employee receiving a W-2, you generally cannot deduct home office expenses on your federal return regardless of how much of your home you use for work. Some states allow this deduction — check your state's rules.
+**W-2 employees working remotely:** The 2017 Tax Cuts and Jobs Act suspended the home office deduction for W-2 employees, and the One Big Beautiful Bill Act (OBBBA), passed in 2025, made that suspension permanent — it will not return in a future tax year. If you are a remote employee receiving a W-2, you cannot deduct home office expenses on your federal return regardless of how much of your home you use for work or whether your employer requires remote work. Some states allow this deduction — check your state's rules.
 
 **Self-employed individuals and independent contractors (1099):** All of the deductions below apply. You report income and expenses on Schedule C and the home office deduction is fully available if you meet the requirements.
 
