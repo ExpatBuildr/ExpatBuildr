@@ -117,7 +117,7 @@ The founders this never happens to are not lucky. They spent two hours once, set
 
 ## Related reading
 
-Learn more about building resilient income systems in our [Remote Income hub](/blog/remote-income), and see how this connects to protecting your business operations in [our guide to founder operating systems](/blog/remote-income/founder-operating-systems).
+Learn more about building resilient income systems in our [Remote Income hub](/blog/remote-income).
 
 ## References
 
