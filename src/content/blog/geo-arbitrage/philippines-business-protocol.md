@@ -2,6 +2,7 @@
 title: "How to Set Up a Geo-Arbitraged Business in the Philippines"
 description: "A practical how-to for setting up overseas operations, banking, and compliance in the Philippines."
 pubDate: 2026-04-29
+updatedDate: 2026-08-09
 author: "ExpatBuildr"
 pillarId: "geo-arbitrage"
 category: "Guide"
@@ -84,7 +85,7 @@ Total setup timeline with a competent local lawyer: 4–6 weeks. Total cost incl
 
 **9(a) Tourist Visa with Extensions.** The default entry point. Philippine tourist visas for most Western nationals are issued on arrival for 30 days, extendable to 59 days initially, then in 2-month increments up to a maximum of 36 months without leaving. Total cost for 12 months of extensions: approximately ₱12,000–₱18,000 (USD $215–$325). Convenient for operators who want flexibility before committing to longer-term residency.
 
-**Special Resident Retiree's Visa (SRRV).** Available to applicants 35+ years old. Requires a time deposit at a Philippine Retirement Authority-accredited bank: $10,000 USD for applicants 50+, $20,000 for those under 50. The deposit earns interest and can be used for approved purposes. Grants indefinite stay with multiple-entry privileges. No need for visa extensions.
+**Special Resident Retiree's Visa (SRRV).** As of a September 2025 program overhaul, available to applicants 40+ years old (the old 35+ Smile/Human Touch tiers were discontinued for new applicants). Requires a time deposit at a Philippine Retirement Authority-accredited bank: for ages 50+, $15,000 with a qualifying pension or $30,000 without; for ages 40–49, $25,000 with a qualifying pension or $50,000 without. The deposit earns interest and can be used for approved purposes. Grants indefinite stay with multiple-entry privileges. No need for visa extensions.
 
 **9(g) Pre-Arranged Employment Visa.** Required if you are formally employed by your Philippine OPC at a salary. The corporation applies on your behalf. Requires proof of the corporate position and payroll structure. Timeline: 2–3 months.
 
