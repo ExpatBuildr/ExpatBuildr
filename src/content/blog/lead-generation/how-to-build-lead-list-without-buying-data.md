@@ -2,6 +2,7 @@
 title: "How to Build a Lead List from Scratch Without Buying Data"
 description: "How to build a targeted B2B lead list from scratch without buying data. Free and low-cost methods that produce higher quality prospects than any database."
 pubDate: 2026-04-28
+updatedDate: 2026-08-09
 author: "ExpatBuildr"
 pillarId: "lead-generation"
 category: "Guide"
@@ -169,7 +170,7 @@ Once you have a list of prospects identified through the methods above, you need
 
 | Tool | What It Does | Cost |
 |------|-------------|------|
-| Hunter.io | Finds email addresses by name and domain | Free tier: 25/month |
+| Hunter.io | Finds email addresses by name and domain | Free tier: 50 credits/month |
 | Snov.io | Email finder + verification | Free tier available |
 | RocketReach | Email and phone by name/company | Limited free tier |
 | LinkedIn (directly) | Many profiles show email in contact info | Free |
