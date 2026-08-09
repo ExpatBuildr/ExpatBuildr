@@ -2,6 +2,7 @@
 title: "How to Scale Remote Teams in ASEAN for Maximum Margin"
 description: "Case study: building a remote team in the Philippines with cost and performance gains."
 pubDate: 2026-04-26
+updatedDate: 2026-08-09
 author: "ExpatBuildr"
 pillarId: "geo-arbitrage"
 category: "Case Study"
@@ -28,7 +29,7 @@ This is not theoretical. This is the exact playbook used to build lean, high-out
 
 The case for ASEAN remote hiring rests on four factors that compound each other:
 
-**English proficiency.** The Philippines has the highest English proficiency in Southeast Asia by a significant margin. It is an official language of the country, used in education, law, and media. Vietnam and Malaysia follow with strong professional English in urban markets. This eliminates the communication overhead that plagues offshore arrangements in other regions.
+**English proficiency.** The Philippines ranks among the top English-proficiency countries in Southeast Asia (second regionally on the 2025 EF EPI, just behind Malaysia) and has the deepest BPO-industry track record in the region. It is an official language of the country, used in education, law, and media. Vietnam and Malaysia follow with strong professional English in urban markets. This eliminates the communication overhead that plagues offshore arrangements in other regions.
 
 **Western cultural alignment.** Filipino professionals in particular grew up consuming American media, working with US-based companies, and operating inside Western corporate frameworks. The cultural gap that makes some offshore relationships difficult to manage is substantially narrower here than in South Asia or Eastern Europe.
 
