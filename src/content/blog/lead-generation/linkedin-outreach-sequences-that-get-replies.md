@@ -2,6 +2,7 @@
 title: "LinkedIn Outreach Sequences That Actually Get Replies"
 description: "How to build LinkedIn outreach sequences that get real replies in 2026 — connection requests, message cadence, personalization, and what to avoid."
 pubDate: 2026-05-12
+updatedDate: 2026-08-09
 author: "ExpatBuildr"
 pillarId: "lead-generation"
 category: "Guide"
@@ -89,7 +90,7 @@ The strong version references something real, signals common ground, and asks fo
 
 **When not to include a note:** If you can't write something specific — if you don't have a genuine reference point — send the connection request without a note. A blank connection request from someone with a relevant profile and a strong headline converts better than a generic note.
 
-**Volume guideline:** LinkedIn's current limits allow roughly 100–150 connection requests per week on a standard account before triggering restrictions. Stay under 80–100 to be safe. Sales Navigator accounts get higher limits — worth the investment if LinkedIn is a primary outreach channel.
+**Volume guideline:** LinkedIn caps connection requests at 100 per week as of 2026 — the same hard limit applies across Free, Premium, and Sales Navigator accounts, so a paid tier no longer buys a higher connection quota. Stay under 80 per week to leave margin for the account's activity and rejection-rate signals.
 
 ---
 
