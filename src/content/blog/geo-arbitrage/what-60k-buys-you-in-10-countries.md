@@ -2,6 +2,7 @@
 title: "What $60K Actually Buys You in 10 Countries"
 description: "What a $60,000 remote salary actually buys you in 10 countries — lifestyle, savings rate, and the real numbers behind geographic arbitrage in 2026."
 pubDate: 2026-05-22
+updatedDate: 2026-08-10
 author: "ExpatBuildr"
 pillarId: "geo-arbitrage"
 category: "Deep Dive"
@@ -140,7 +141,7 @@ If your income is $80,000 or above, Lisbon becomes a much stronger proposition. 
 **Annual savings:** $33,600 to $38,400
 **Savings rate:** 67 to 76%
 
-Tbilisi is the most underrated location on this list. Georgia allows visa-free stays of up to one year for most Western passport holders, has a flat 1% income tax for registered freelancers under its Virtual Zone program, and has seen significant infrastructure investment that has made the city genuinely livable for remote workers.[2]
+Tbilisi is the most underrated location on this list. Georgia allows visa-free stays of up to one year for most Western passport holders, has a flat 1% tax on turnover for registered freelancers under its Individual Entrepreneur / Small Business Status (up to roughly $180,000 in annual revenue), and has seen significant infrastructure investment that has made the city genuinely livable for remote workers.[2]
 
 On $60,000, Tbilisi produces a savings rate comparable to Vietnam at a fraction of the flying distance from Europe. A modern one-bedroom apartment in the best neighborhoods runs $400 to $700 per month. The food culture is excellent, the wine is world-class, and the mountains are accessible on weekends.
 
