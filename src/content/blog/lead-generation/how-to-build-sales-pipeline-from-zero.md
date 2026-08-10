@@ -2,6 +2,7 @@
 title: "How to Build a Sales Pipeline from Zero"
 description: "No leads, no clients, no system. Here's how to build a sales pipeline from scratch that fills consistently and converts without a large team or big budget."
 pubDate: 2026-05-16
+updatedDate: 2026-08-09
 author: "ExpatBuildr"
 pillarId: "lead-generation"
 category: "Guide"
@@ -63,7 +64,7 @@ With your target defined, build a list of 100 to 200 prospects to start. Larger 
 Sources for your initial list:
 
 - **LinkedIn Sales Navigator:** Filter by industry, company size, role, and location. Export to a spreadsheet.
-- **Apollo.io:** Broader database with email addresses and phone numbers included. Free tier gives you 50 contacts per month.
+- **Apollo.io:** Broader database with email addresses and phone numbers included. The free tier caps exports at 10 contacts per month, with email-reveal credits varying by domain type (100/month on personal email domains, up to 10,000/month on verified corporate domains) — plan around the export cap since that's the real bottleneck for building an initial list.
 - **Google Maps and local directories:** For local or regional service businesses, this is often faster and less competitive than database tools.
 - **Job boards:** Companies actively hiring for sales or marketing roles are companies actively investing in growth — a strong buying signal.
 - **Your own network:** Start with people who already know you. A warm introduction converts at 5x to 10x the rate of cold outreach.
