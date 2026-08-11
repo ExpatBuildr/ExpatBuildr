@@ -2,6 +2,7 @@
 title: "The Expat Founder AI Stack: Tools That Replace an Entire Team"
 description: "The right AI stack lets a solo expat founder produce at agency scale. Here is the exact tool combination covering content, outreach, research, and operations."
 pubDate: 2026-06-18
+updatedDate: 2026-08-11
 author: "ExpatBuildr"
 pillarId: "ai-arbitrage"
 category: "Guide"
@@ -47,9 +48,9 @@ Claude is the most reliable AI writing tool for founders producing professional 
 
 For a newsletter-focused expat founder operation, the Claude workflow for content production looks like this: you provide the topic, the key points, the audience context, and the tone guidelines in a structured prompt. Claude produces a complete draft. You edit for your specific voice, add first-hand examples, and publish. The draft-to-publish time drops from 4 hours to 45 minutes.
 
-**Secondary tool: GPT-4o (OpenAI)**
+**Secondary tool: GPT-5 Mini (OpenAI)**
 
-GPT-4o handles cases where you need stronger analytical reasoning, coding assistance, or a different writing style than Claude produces. Most founders use one as primary and one as a backup for tasks where the primary does not hit the mark on the first pass.
+GPT-5 Mini handles cases where you need stronger analytical reasoning, coding assistance, or a different writing style than Claude produces. Most founders use one as primary and one as a backup for tasks where the primary does not hit the mark on the first pass.
 
 ## Function 2: Research and Intelligence
 
@@ -111,10 +112,10 @@ The leverage of the stack multiplies when tools are connected rather than used i
 |---|---|---|
 | Writing and content | $20 to $40/month | $2,000 to $4,000/month |
 | Research and intelligence | $40 to $80/month | $1,500 to $3,000/month |
-| Outreach and lead gen | $150 to $300/month | $3,000 to $6,000/month |
+| Outreach and lead gen | $220 to $330/month | $3,000 to $6,000/month |
 | Operations automation | $30 to $100/month | $1,500 to $2,500/month |
 | Visual production | $30 to $60/month | $1,500 to $3,000/month |
-| **Total** | **$270 to $580/month** | **$9,500 to $18,500/month** |
+| **Total** | **$340 to $610/month** | **$9,500 to $18,500/month** |
 
 The AI stack produces an approximation of a five-function team at 3 to 6 percent of the cost. The quality ceiling on the AI outputs is determined by the founder's judgment in the loop — prompting, editing, and strategic direction. The volume and speed advantages are structural.
 
