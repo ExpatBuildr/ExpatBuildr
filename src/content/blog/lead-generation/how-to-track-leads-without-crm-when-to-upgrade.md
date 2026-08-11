@@ -2,6 +2,7 @@
 title: "How to Track Leads Without a CRM (And When to Upgrade)"
 description: "You don't need expensive CRM software to track leads. Here's how to manage your pipeline without one — and the exact signals that tell you when to upgrade."
 pubDate: 2026-05-23
+updatedDate: 2026-08-11
 author: "ExpatBuildr"
 pillarId: "lead-generation"
 category: "Guide"
@@ -129,7 +130,7 @@ When the signals above appear, these are the tools worth considering for a servi
 | HubSpot CRM | Inbound-heavy, content-driven businesses | Free tier available |
 | Instantly | Cold email volume, sequence automation | $37/month |
 | Smartlead | High-volume cold email with deliverability focus | $39/month |
-| Close.io | Phone-heavy outbound sales teams | $49/month |
+| Close.io | Phone-heavy outbound sales teams | $19/month (Solo plan) |
 
 GoHighLevel is worth the attention if you are running a service business that combines outreach, follow-up automation, and client management — it handles all three under one roof and eliminates the need to stitch together multiple tools.
 
