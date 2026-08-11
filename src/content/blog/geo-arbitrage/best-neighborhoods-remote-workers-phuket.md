@@ -2,6 +2,7 @@
 title: "Best Neighborhoods for Remote Workers in Phuket: What Nobody Tells You"
 description: "The honest breakdown of where to live in Phuket, what to avoid, and what the island is actually like to work from as a remote worker."
 pubDate: 2026-05-30
+updatedDate: 2026-08-11
 author: "ExpatBuildr"
 pillarId: "geo-arbitrage"
 category: "Deep Dive"
@@ -146,7 +147,7 @@ To map your specific USD income against purchasing power in Phuket and compare i
 | Internet reliability | Good in right areas | Good in right buildings |
 | English proficiency | Lower | Higher |
 | Coworking options | Moderate | Good (IT Park) |
-| Visa situation | 60 days visa-free, LTR for high earners | 30 days visa-free, extendable |
+| Visa situation | Being cut from 60 to 30 days visa-free (approved May 2026, confirm current status before travel), LTR for high earners | 30 days visa-free, extendable |
 | Beach access | Excellent | Good (Mactan Island) |
 | Food quality | Excellent | Excellent |
 | Urban infrastructure | Moderate (Phuket Town) | Strong (IT Park) |
