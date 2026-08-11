@@ -2,6 +2,7 @@
 title: "How to Build a Revenue-Generating System That Works While You Sleep"
 description: "A revenue system that runs without your active presence. Here is the exact architecture expat founders use to generate income autonomously."
 pubDate: 2026-06-30
+updatedDate: 2026-08-11
 author: "ExpatBuildr"
 pillarId: "time-arbitrage"
 category: "Guide"
@@ -66,7 +67,7 @@ The automation layer is what makes the system genuinely autonomous. Without it, 
 
 **Payment processing:** Stripe handles payment, receipt, and tax documentation automatically. Integrate it with your shop page so purchases complete without any manual processing on your end.
 
-**Digital product delivery:** Gumroad, Lemon Squeezy, or a direct Stripe integration with a download page delivers the product immediately after purchase. The customer pays, receives a download link by email, and accesses the product — all without your involvement.
+**Digital product delivery:** Gumroad or a direct Stripe integration (which now includes Lemon Squeezy's former functionality, following Stripe's 2024 acquisition and 2026 migration into Stripe Managed Payments) with a download page delivers the product immediately after purchase. The customer pays, receives a download link by email, and accesses the product — all without your involvement.
 
 **Email sequence automation:** Every new customer enters a post-purchase email sequence in Beehiiv or your email platform that delivers onboarding content, usage tips, and relevant upsell offers over the following days and weeks. This sequence runs automatically and converts one-time buyers into repeat customers and newsletter subscribers.
 
