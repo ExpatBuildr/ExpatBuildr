@@ -2,6 +2,7 @@
 title: "How to Use Clay for Personalized Outreach at Scale"
 description: "Clay is the most powerful personalization tool in cold outreach. Here's how to build lead lists, enrich data, and write emails that feel 1-to-1 at scale."
 pubDate: 2026-05-26
+updatedDate: 2026-08-11
 author: "ExpatBuildr"
 pillarId: "lead-generation"
 category: "Automation"
@@ -27,7 +28,7 @@ This guide covers how Clay actually works, how to set up your first table, and h
 
 ## What Clay Does That Nothing Else Does
 
-Clay is a spreadsheet-like tool that connects to over 75 data sources — LinkedIn, Apollo, Hunter, Clearbit, Google, company websites, news APIs, and more — and lets you query them all from a single table. Each row is a prospect. Each column pulls a different piece of data about that prospect from whichever source has it.
+Clay is a spreadsheet-like tool that connects to over 75 data sources — LinkedIn, Apollo, Hunter, HubSpot Breeze Intelligence, Google, company websites, news APIs, and more — and lets you query them all from a single table. Each row is a prospect. Each column pulls a different piece of data about that prospect from whichever source has it.
 
 The power is in the combination. Instead of choosing between LinkedIn data or Apollo data or your own scraped data, Clay waterfalls across all of them — trying each source in sequence until it finds a value, then moving on. This dramatically improves data coverage and reduces the cost of enrichment compared to running every source simultaneously.
 
@@ -68,7 +69,7 @@ This is where Clay earns its reputation. Columns you can pull automatically per 
 - **Company news:** Recent press, funding announcements, product launches, hiring sprees
 - **Job postings:** What roles the company is actively hiring for — a strong buying signal
 - **Website copy:** Specific language from their homepage or about page
-- **Tech stack:** What tools they are already using (via BuiltWith or Clearbit)
+- **Tech stack:** What tools they are already using (via BuiltWith or HubSpot Breeze Intelligence)
 
 Each of these becomes a variable available to your AI column.
 
@@ -100,7 +101,7 @@ This gives you the deliverability infrastructure of your sending tool with the p
 
 ## Clay Pricing and When It Makes Sense
 
-Clay operates on a credit system. Every data lookup costs credits. The free tier gives you 100 credits per month — enough to experiment but not enough to run real volume. Paid plans start at around $149 per month for the Starter tier, which covers meaningful enrichment volume for a solo outreach operation.
+Clay operates on a credit system. Every data lookup costs credits. The free tier gives you 100 credits to explore the interface. Following a March 2026 pricing overhaul, paid plans now start at the Launch tier — $185 per month billed monthly or roughly $167 per month billed annually — which covers meaningful enrichment volume for a solo outreach operation.
 
 Clay makes financial sense when:
 - You are sending more than 200 personalized emails per month
