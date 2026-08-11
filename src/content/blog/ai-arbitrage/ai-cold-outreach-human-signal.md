@@ -2,6 +2,7 @@
 title: "How to Use AI for Cold Outreach Without Losing the Human Signal"
 description: "AI cold outreach at scale only works if the personalization is real. Here is how founders write AI first lines that feel human because they're data-grounded."
 pubDate: 2026-06-22
+updatedDate: 2026-08-11
 author: "ExpatBuildr"
 pillarId: "ai-arbitrage"
 category: "Guide"
@@ -74,7 +75,7 @@ Clay is the tool that makes signal extraction at scale possible. Here is the exa
 - LinkedIn headline and recent activity (last 30 days of posts)
 - Company news from the last 60 days via news API integration
 - Current job postings via job board integration
-- Tech stack via BuiltWith or Clearbit integration
+- Tech stack via BuiltWith or HubSpot Breeze Intelligence integration
 
 Each of these becomes a variable available to your AI prompt column.
 
