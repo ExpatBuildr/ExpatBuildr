@@ -2,6 +2,7 @@
 title: "How to Invest as a US Expat: What Actually Works From Abroad"
 description: "Investing as a US expat is more complicated than most guides admit. Here is what actually works for founders building wealth from Southeast Asia."
 pubDate: 2026-06-24
+updatedDate: 2026-08-11
 author: "ExpatBuildr"
 pillarId: "market-arbitrage"
 category: "Deep Dive"
@@ -55,7 +56,7 @@ Given the geo-arbitrage surplus that most expat founders generate, the investmen
 
 **Step 1: Emergency fund in USD.** Three to six months of total expenses (not just living expenses — include business operating costs) held in a high-yield savings account or money market fund. This buffer is what allows you to make longer-term investment decisions without being forced to liquidate at bad times. For an expat founder with $2,000 per month in living costs and $1,000 in business costs, this is $9,000 to $18,000.
 
-**Step 2: Self-employed retirement accounts.** A Solo 401(k) or SEP-IRA allows self-employed founders to make tax-advantaged retirement contributions. A Solo 401(k) allows contributions up to $69,000 per year (2026 limit) combining employee and employer contributions, making it the highest-capacity tax-advantaged vehicle available to self-employed expat founders. Contributions are pre-tax, reducing your current-year US tax liability.
+**Step 2: Self-employed retirement accounts.** A Solo 401(k) or SEP-IRA allows self-employed founders to make tax-advantaged retirement contributions. A Solo 401(k) allows contributions up to $72,000 per year (2026 limit) combining employee and employer contributions — or up to $80,000 with catch-up contributions for those 50+ — making it the highest-capacity tax-advantaged vehicle available to self-employed expat founders. Contributions are pre-tax, reducing your current-year US tax liability.
 
 Important interaction: FEIE income is excluded from the foreign income exclusion for purposes of calculating retirement contribution limits. If you exclude all your income via the FEIE, you may have no earned income to base retirement contributions on. Consult a tax advisor on how to structure this optimally.
 
