@@ -2,6 +2,7 @@
 title: "The Expat Founder Money Stack: Banking, Entity, and Tax Setup"
 description: "Money infrastructure for expat founders needs deliberate setup across banking, entity, and tax strategy. Here is the framework to get it right early."
 pubDate: 2026-06-20
+updatedDate: 2026-08-11
 author: "ExpatBuildr"
 pillarId: "market-arbitrage"
 category: "Guide"
@@ -69,7 +70,7 @@ US citizens are taxed on worldwide income regardless of where they live. Moving 
 
 **The Foreign Earned Income Exclusion (FEIE)**
 
-The FEIE allows qualifying US expats to exclude foreign-earned income from US federal income tax up to approximately $130,000 per year (2026). Self-employed founders who meet the physical presence test (330 days outside the US in any 12-month period) or the bona fide residence test (genuine resident of a foreign country for a full tax year) can claim this exclusion on Form 2555.
+The FEIE allows qualifying US expats to exclude foreign-earned income from US federal income tax up to $132,900 per year (2026). Self-employed founders who meet the physical presence test (330 days outside the US in any 12-month period) or the bona fide residence test (genuine resident of a foreign country for a full tax year) can claim this exclusion on Form 2555.
 
 Critical point for self-employed founders: the FEIE excludes income from income tax only. It does not eliminate self-employment tax (Social Security and Medicare contributions). A self-employed founder with $100,000 in net income who excludes all of it via the FEIE still owes approximately $14,130 in self-employment tax.
 
