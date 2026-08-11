@@ -2,6 +2,7 @@
 title: "What Is AI Arbitrage and How Founders Use It to Compete at Any Scale"
 description: "AI arbitrage means using AI to capture capabilities that once required a full team. Here is how expat founders use it to compete at any scale."
 pubDate: 2026-06-14
+updatedDate: 2026-08-11
 author: "ExpatBuildr"
 pillarId: "ai-arbitrage"
 category: "Guide"
@@ -35,7 +36,7 @@ AI arbitrage operates across three distinct domains. Most founders capture one a
 
 **1. Capability Arbitrage**
 
-Capability arbitrage is using AI to access skills and functions that would otherwise require hiring a specialist. A solo founder with no design background can produce professional-quality graphics using Midjourney and Canva AI. A founder with no coding background can build functional automation workflows using Claude or GPT-4o to write the logic. A founder who is not a native copywriter can produce high-quality cold email sequences, landing page copy, and content using AI as the drafting layer with their own judgment as the editing layer.
+Capability arbitrage is using AI to access skills and functions that would otherwise require hiring a specialist. A solo founder with no design background can produce professional-quality graphics using Midjourney and Canva AI. A founder with no coding background can build functional automation workflows using Claude or GPT-5 Mini to write the logic. A founder who is not a native copywriter can produce high-quality cold email sequences, landing page copy, and content using AI as the drafting layer with their own judgment as the editing layer.
 
 Each of these represents a capability that previously cost $3,000 to $8,000 per month in specialized headcount. AI reduces the cost to the subscription fee plus the time required to prompt and review — typically a fraction of what a human specialist charges for the same output.
 
@@ -92,6 +93,6 @@ For the full AI Arbitrage pillar, visit the [AI Arbitrage hub](/blog/ai-arbitrag
 ## References
 
 - Anthropic. (2026). *Claude Model Capabilities and Use Cases*. Anthropic.com.
-- OpenAI. (2026). *GPT-4o Capabilities Overview*. OpenAI.com.
+- OpenAI. (2026). *GPT-5 Capabilities Overview*. OpenAI.com.
 - McKinsey Global Institute. (2025). *The Economic Potential of Generative AI*. McKinsey.com.
 - a16z. (2025). *AI in the Enterprise: Adoption and ROI Data*. A16z.com.
