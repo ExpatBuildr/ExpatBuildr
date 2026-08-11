@@ -2,6 +2,7 @@
 title: "What Is Market Arbitrage and How Expat Founders Use It to Build Wealth Faster"
 description: "Market arbitrage means capturing value in gaps between markets. Here is how founders use currency, information, and financial positioning to build wealth."
 pubDate: 2026-06-16
+updatedDate: 2026-08-11
 author: "ExpatBuildr"
 pillarId: "market-arbitrage"
 category: "Guide"
@@ -41,7 +42,7 @@ Geographic cost arbitrage is where the compounding starts. The other plays multi
 
 **Play 2: Tax Arbitrage Through the FEIE**
 
-The Foreign Earned Income Exclusion allows qualifying US expat founders to exclude up to approximately $130,000 per year (2026 limit, adjusted annually) of foreign-earned income from US federal income tax. For a self-employed founder earning $100,000 per year, this represents $22,000 to $37,000 in annual federal tax savings depending on their effective rate.
+The Foreign Earned Income Exclusion allows qualifying US expat founders to exclude up to $132,900 per year (2026 limit, adjusted annually) of foreign-earned income from US federal income tax. For a self-employed founder earning $100,000 per year, this represents $22,000 to $37,000 in annual federal tax savings depending on their effective rate.
 
 This is not a gray area or an aggressive tax position. It is a provision explicitly created by Congress to eliminate double taxation for US citizens living and working abroad. The requirements are clear: you must live outside the US and meet either the bona fide residence test or the physical presence test (330 days outside the US in a 12-month period).
 
