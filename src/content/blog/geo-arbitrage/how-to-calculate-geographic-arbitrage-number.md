@@ -2,6 +2,7 @@
 title: "How to Calculate Your Geographic Arbitrage Number"
 description: "How to calculate your personal geographic arbitrage number — the exact formula for comparing savings rates across locations and finding your optimal base."
 pubDate: 2026-06-12
+updatedDate: 2026-08-11
 author: "ExpatBuildr"
 pillarId: "geo-arbitrage"
 category: "Guide"
@@ -146,7 +147,7 @@ Running this calculation once gives you a number. Running it correctly means acc
 
 **Variable 1: Tax residency and the Foreign Earned Income Exclusion**
 
-US citizens living abroad may qualify for the Foreign Earned Income Exclusion (FEIE), which allows you to exclude up to $126,500 of foreign-earned income from US federal taxes in 2024.[1] If your income qualifies, this changes your take-home meaningfully, potentially adding $800 to $2,000 per month to the income side of the calculation.
+US citizens living abroad may qualify for the Foreign Earned Income Exclusion (FEIE), which allows you to exclude up to $132,900 of foreign-earned income from US federal taxes in 2026.[1] If your income qualifies, this changes your take-home meaningfully, potentially adding $800 to $2,000 per month to the income side of the calculation.
 
 This is complex and requires a tax professional who specializes in expat taxation. It is not automatic and not available to everyone. But it is a variable that can dramatically improve the geo-arbitrage math, and most introductory articles do not mention it.
 
