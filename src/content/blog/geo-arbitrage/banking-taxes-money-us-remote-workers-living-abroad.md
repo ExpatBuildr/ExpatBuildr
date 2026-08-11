@@ -2,6 +2,7 @@
 title: "Banking, Taxes, and Money for US Remote Workers Living Abroad"
 description: "How US remote workers should handle banking, taxes, and money management when living abroad in Southeast Asia."
 pubDate: 2026-05-28
+updatedDate: 2026-08-11
 author: "ExpatBuildr"
 pillarId: "geo-arbitrage"
 category: "Deep Dive"
@@ -66,7 +67,7 @@ What changes is how much you owe — and with the right setup, many remote worke
 
 ### The Foreign Earned Income Exclusion (FEIE)
 
-The FEIE allows qualifying US citizens living abroad to exclude a significant portion of their foreign earned income from US federal income tax. The 2025 exclusion limit is approximately $130,000 (adjusted annually for inflation).
+The FEIE allows qualifying US citizens living abroad to exclude a significant portion of their foreign earned income from US federal income tax. The 2026 exclusion limit is $132,900 (adjusted annually for inflation, up from $130,000 in 2025).
 
 To qualify you must meet one of two tests:
 
