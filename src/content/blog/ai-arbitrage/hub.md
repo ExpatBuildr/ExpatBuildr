@@ -2,6 +2,7 @@
 title: "AI Arbitrage: One Founder, Team-Size Output"
 description: "How expat founders use AI to compete at any scale — the tools, workflows, and systems behind lean, high-output solo businesses."
 pubDate: 2026-07-05
+updatedDate: 2026-08-11
 author: "ExpatBuildr"
 pillarId: "ai-arbitrage"
 category: "Pillar Hub"
@@ -36,9 +37,17 @@ Founders who build proper AI infrastructure early operate at a permanently lower
 
 ---
 
-## Supporting Articles
-
-Articles in this pillar are in production. Check back soon, or [join the newsletter](/newsletter) to get them delivered first.
+## 🎯 Supporting Articles:
+- **[What Is AI Arbitrage and How Founders Use It to Compete at Any Scale](/blog/ai-arbitrage/what-is-ai-arbitrage)**
+- **[The Expat Founder AI Stack: Tools That Replace an Entire Team](/blog/ai-arbitrage/expat-founder-ai-stack)**
+- **[How to Build AI Workflows That Run Your Business While You Sleep](/blog/ai-arbitrage/ai-workflows-run-business-while-you-sleep)**
+- **[Prompt Engineering for Founders: Getting Consistent Output From AI Tools](/blog/ai-arbitrage/prompt-engineering-for-founders)**
+- **[How to Use AI for Cold Outreach Without Losing the Human Signal](/blog/ai-arbitrage/ai-cold-outreach-human-signal)**
+- **[How to Build an AI Chief of Staff for Your Business](/blog/ai-arbitrage/ai-chief-of-staff-for-your-business)**
+- **[How to Automate Your Client Onboarding With AI](/blog/ai-arbitrage/automate-client-onboarding-ai)**
+- **[Using AI for Competitive Intelligence as a Solo Expat Founder](/blog/ai-arbitrage/ai-competitive-intelligence-solo-expat-founder)**
+- **[How to Build an AI Content System That Produces a Week of Content in One Hour](/blog/ai-arbitrage/ai-content-system-week-of-content-one-hour)**
+- **[How to Audit and Improve Your AI Stack Every 90 Days](/blog/ai-arbitrage/audit-improve-ai-stack-90-days)**
 
 ---
-**Build Status**: In Development // **Last Logic Update**: July 2026 // **Architect**: ExpatBuildr
+**Build Status**: Operational // **Last Logic Update**: August 2026 // **Architect**: ExpatBuildr

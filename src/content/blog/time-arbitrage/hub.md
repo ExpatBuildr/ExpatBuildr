@@ -2,6 +2,7 @@
 title: "Time Arbitrage: Work Less, Output More"
 description: "How expat founders multiply output without multiplying hours through async systems, SOPs, and delegation."
 pubDate: 2026-07-05
+updatedDate: 2026-08-11
 author: "ExpatBuildr"
 pillarId: "time-arbitrage"
 category: "Pillar Hub"
@@ -36,9 +37,17 @@ Hiring and managing a virtual team from Southeast Asia &mdash; and using the tim
 
 ---
 
-## Supporting Articles
-
-Articles in this pillar are in production. Check back soon, or [join the newsletter](/newsletter) to get them delivered first.
+## 🎯 Supporting Articles:
+- **[What Is Time Arbitrage and Why It Changes Everything for Founders](/blog/time-arbitrage/what-is-time-arbitrage)**
+- **[How to Build an Async Business That Runs Without You](/blog/time-arbitrage/how-to-build-async-business-runs-without-you)**
+- **[How to Build an Async Operating System for Your Business](/blog/time-arbitrage/async-operating-system-for-your-business)**
+- **[The Founder SOP Stack: How to Document Everything So Anyone Can Run It](/blog/time-arbitrage/founder-sop-stack)**
+- **[The Complete Founder Delegation Framework: What to Keep, What to Hand Off](/blog/time-arbitrage/founder-delegation-framework)**
+- **[Hiring Your First Virtual Assistant as an Expat Founder](/blog/time-arbitrage/hiring-first-virtual-assistant-expat-founder)**
+- **[How to Train a Virtual Assistant to Think Like You](/blog/time-arbitrage/train-virtual-assistant-think-like-you)**
+- **[How to Use Time Zone Differences as a Competitive Advantage](/blog/time-arbitrage/time-zone-competitive-advantage)**
+- **[How to Run a One-Person Agency With a Team of Three](/blog/time-arbitrage/one-person-agency-team-of-three)**
+- **[How to Build a Revenue-Generating System That Works While You Sleep](/blog/time-arbitrage/revenue-generating-system-works-while-you-sleep)**
 
 ---
-**Build Status**: In Development // **Last Logic Update**: July 2026 // **Architect**: ExpatBuildr
+**Build Status**: Operational // **Last Logic Update**: August 2026 // **Architect**: ExpatBuildr

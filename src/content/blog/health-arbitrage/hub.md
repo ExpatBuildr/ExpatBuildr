@@ -2,6 +2,7 @@
 title: "Health Arbitrage: Premium Health, Local Cost"
 description: "World-class healthcare, dental, fitness, and longevity infrastructure at a fraction of US cost for expat founders."
 pubDate: 2026-07-05
+updatedDate: 2026-08-11
 author: "ExpatBuildr"
 pillarId: "health-arbitrage"
 category: "Pillar Hub"
@@ -36,9 +37,17 @@ How to structure health insurance so you are genuinely covered without overpayin
 
 ---
 
-## Supporting Articles
-
-Articles in this pillar are in production. Check back soon, or [join the newsletter](/newsletter) to get them delivered first.
+## 🎯 Supporting Articles:
+- **[What Is Health Arbitrage and Why Expat Founders Have a Massive Advantage](/blog/health-arbitrage/what-is-health-arbitrage)**
+- **[The Best Private Hospitals for Expats in Southeast Asia](/blog/health-arbitrage/best-private-hospitals-expats-southeast-asia)**
+- **[Health Insurance for Expat Founders: The Full Options Breakdown](/blog/health-arbitrage/health-insurance-expat-founders)**
+- **[Dental Tourism in the Philippines and Thailand: Real Costs and What to Expect](/blog/health-arbitrage/dental-tourism-philippines-thailand)**
+- **[How to Find a Good Doctor Abroad as an Expat Founder](/blog/health-arbitrage/find-good-doctor-abroad-expat-founder)**
+- **[The Longevity Stack for Founders in Southeast Asia](/blog/health-arbitrage/longevity-stack-founders-southeast-asia)**
+- **[Sleep Optimization for Founders Working Across Time Zones](/blog/health-arbitrage/sleep-optimization-founders-across-time-zones)**
+- **[How to Build a Fitness Routine as a Founder Living Abroad](/blog/health-arbitrage/fitness-routine-founder-living-abroad)**
+- **[Eating Well as an Expat Founder: Nutrition on a Southeast Asia Budget](/blog/health-arbitrage/eating-well-expat-founder-southeast-asia-budget)**
+- **[How Expat Founders Stay Mentally Sharp While Living Abroad](/blog/health-arbitrage/expat-founders-stay-mentally-sharp-abroad)**
 
 ---
-**Build Status**: In Development // **Last Logic Update**: July 2026 // **Architect**: ExpatBuildr
+**Build Status**: Operational // **Last Logic Update**: August 2026 // **Architect**: ExpatBuildr

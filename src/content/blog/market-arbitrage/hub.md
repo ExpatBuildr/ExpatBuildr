@@ -2,6 +2,7 @@
 title: "Market Arbitrage: Find the Edge, Capture the Spread"
 description: "How expat founders capture information asymmetry, currency spreads, and financial edge to build wealth faster."
 pubDate: 2026-07-05
+updatedDate: 2026-08-11
 author: "ExpatBuildr"
 pillarId: "market-arbitrage"
 category: "Pillar Hub"
@@ -36,9 +37,17 @@ How information asymmetry creates income opportunities that most founders never 
 
 ---
 
-## Supporting Articles
-
-Articles in this pillar are in production. Check back soon, or [join the newsletter](/newsletter) to get them delivered first.
+## 🎯 Supporting Articles:
+- **[What Is Market Arbitrage and How Expat Founders Use It to Build Wealth Faster](/blog/market-arbitrage/what-is-market-arbitrage)**
+- **[The Expat Founder Money Stack: Banking, Entity, and Tax Setup](/blog/market-arbitrage/expat-founder-money-stack)**
+- **[Currency Strategy for Founders Earning in USD and Spending in SEA](/blog/market-arbitrage/currency-strategy-founders-usd-sea)**
+- **[How the Foreign Earned Income Exclusion Works for Self-Employed Expats](/blog/market-arbitrage/feie-self-employed-expats)**
+- **[How to Invest as a US Expat: What Actually Works From Abroad](/blog/market-arbitrage/investing-us-expat-what-works)**
+- **[How to Build a Digital Asset Portfolio as an Expat Founder](/blog/market-arbitrage/digital-asset-portfolio-expat-founder)**
+- **[The Expat Founder Exit Strategy: Building to Sell From Abroad](/blog/market-arbitrage/expat-founder-exit-strategy)**
+- **[How to Use Information Arbitrage to Generate a Second Income Stream](/blog/market-arbitrage/information-arbitrage-second-income-stream)**
+- **[Using Crypto to Run a Borderless Business](/blog/market-arbitrage/crypto-borderless-business)**
+- **[How to Find Undervalued Business Opportunities in Southeast Asian Markets](/blog/market-arbitrage/undervalued-business-opportunities-southeast-asia)**
 
 ---
-**Build Status**: In Development // **Last Logic Update**: July 2026 // **Architect**: ExpatBuildr
+**Build Status**: Operational // **Last Logic Update**: August 2026 // **Architect**: ExpatBuildr
