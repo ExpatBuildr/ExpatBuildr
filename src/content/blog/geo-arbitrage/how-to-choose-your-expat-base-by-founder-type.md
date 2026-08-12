@@ -2,6 +2,7 @@
 title: "How to Choose Your Expat Base by Founder Type"
 description: "Not every arbitrage country works for every founder. The right base depends on your income structure, US return frequency, and founder type."
 pubDate: 2026-07-12
+updatedDate: 2026-08-11
 author: "ExpatBuildr"
 pillarId: "geo-arbitrage"
 category: "Guide"
@@ -98,7 +99,7 @@ Portugal carries the highest burn rate of the three primary bases — $2,000-3,0
 
 Portugal works for specific founder profiles:
 
-**Type 1 operators** with European real estate holdings, clients, or partnerships who need EU credibility and banking access. Portugal's Non-Habitual Resident tax regime has historically offered significant advantages for qualifying income (confirm current status with a tax professional as rules change).
+**Type 1 operators** with European real estate holdings, clients, or partnerships who need EU credibility and banking access. Portugal's original Non-Habitual Resident tax regime ended for new applicants on January 1, 2025, replaced by the narrower IFICI ("NHR 2.0") regime, which targets scientific research, tech/innovation, and certified startup roles specifically — most general remote workers and digital founders will not qualify the way they could have under the old NHR. Confirm current eligibility with a tax professional before factoring this into a Portugal decision.
 
 **Advanced Type 2 founders** building toward a SaaS exit or seeking European investor access. Lisbon has developed a genuine tech founder community. The network access and perceived credibility for fundraising or acquisition conversations is meaningfully higher than building from Cebu or Medellín, for those to whom it matters.
 
