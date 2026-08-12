@@ -199,6 +199,33 @@ if (type === 'post' && post.data.hasVideoEmbed && post.body) {
     }
 }
 
+// FAQPage schema extraction — pulled from the raw body, same approach as
+// videoSchema above, so it can never drift out of sync with the actual
+// FAQ content. Matches the "**Q: ...?**" / "**A:** ..." pattern used
+// consistently across the handful of posts that have a real FAQ section.
+// Only fires when at least one matched pair exists — most posts don't
+// have this section and the regex costs nothing extra to skip.
+let faqSchema: Record<string, unknown> | null = null;
+if (type === 'post' && post.body) {
+    const qaPairs = [...post.body.matchAll(
+        /\*\*Q:\s*([^\n*]+?)\*\*\s*\n\*\*A:\*\*\s*([^\n]+)/g
+    )];
+    if (qaPairs.length > 0) {
+        faqSchema = {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": qaPairs.map(([, question, answer]) => ({
+                "@type": "Question",
+                "name": question.trim(),
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": answer.trim().replace(/\*\*/g, '')
+                }
+            }))
+        };
+    }
+}
+
 // --- Content gate classification ---
 // Rule 1 (hard gate, 65%): category is Guide, Deep Dive, Case Study, or Automation across all pillars
 // Rule 2 (soft inline CTA, 60%, no hard gate): "what-is" slugs, the Expat Founder Identity Cluster,
@@ -504,6 +531,10 @@ const gateMode: 'hard' | 'soft' | 'none' = isSoftCTAArticle ? 'soft' : (isHardGa
 
             {videoSchema && (
                 <script type="application/ld+json" set:html={JSON.stringify(videoSchema)} />
+            )}
+
+            {faqSchema && (
+                <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
             )}
         </article>
     )}
