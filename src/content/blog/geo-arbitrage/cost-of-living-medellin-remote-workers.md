@@ -2,6 +2,7 @@
 title: "Cost of Living in Medellín for Remote Workers: The Full Breakdown"
 description: "Medellín has transformed into one of Latin America's best remote work bases. Here is the full cost of living breakdown for remote workers."
 pubDate: 2026-07-19
+updatedDate: 2026-08-11
 author: "ExpatBuildr"
 pillarId: "geo-arbitrage"
 category: "Deep Dive"
@@ -93,7 +94,7 @@ Fiber internet from Claro or ETB: $25 to $50 per month for 100 to 300 Mbps. Mede
 
 **Language:** Spanish is essential for daily life outside the expat bubble in El Poblado. English proficiency in Medellín is significantly lower than in Cebu or among Chiang Mai's service economy workers. Most expats who build a genuinely comfortable long-term life in Medellín invest in Spanish language development. It is a reasonable investment — Spanish opens Latin America as a whole, not just Colombia.
 
-**Visa situation:** Colombia offers a straightforward tourist visa renewable for up to 180 days per year. The Digital Nomad visa (Visa de Nómada Digital) launched in 2022 provides a 2-year residence visa for remote workers earning at least 3x the Colombian minimum wage — approximately $2,400 per month at current rates — from foreign sources. For most USD-earning remote workers this threshold is easily met.
+**Visa situation:** Colombia offers a straightforward tourist visa renewable for up to 180 days per year. The Digital Nomad visa (Visa de Nómada Digital) launched in 2022 provides a 2-year residence visa for remote workers earning at least 3x the Colombian minimum wage — approximately $1,400 per month at current 2026 rates — from foreign sources, verified via official bank statements for each of the last 3 months individually (not averaged). For most USD-earning remote workers this threshold is easily met; a buffer of $150 to $200 above the minimum is recommended since the exchange rate is evaluated on review day.
 
 **Safety:** Medellín's reputation has improved dramatically over the past 20 years but it retains genuine security considerations. El Poblado and Laureles are safe neighborhoods with strong infrastructure. Common sense precautions — not displaying expensive items, using apps rather than flagging street taxis, being aware of surroundings at night — apply as they do in any Latin American city.
 
