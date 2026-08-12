@@ -2,6 +2,7 @@
 title: "How the Foreign Earned Income Exclusion Works for Self-Employed Expats"
 description: "The FEIE can eliminate US tax on up to $130,000 of foreign-earned income. Here is how it works for self-employed expats and what gets claims rejected."
 pubDate: 2026-07-02
+updatedDate: 2026-08-11
 author: "ExpatBuildr"
 pillarId: "market-arbitrage"
 category: "Deep Dive"
@@ -35,7 +36,7 @@ Get [weekly market arbitrage intel](/newsletter) on FEIE strategy and expat tax 
 
 ## What the FEIE Actually Does
 
-The Foreign Earned Income Exclusion allows qualifying US citizens and resident aliens to exclude a defined amount of foreign-earned income from US federal income tax. The 2026 exclusion limit is approximately $130,000 (adjusted annually for inflation).
+The Foreign Earned Income Exclusion allows qualifying US citizens and resident aliens to exclude a defined amount of foreign-earned income from US federal income tax. The 2026 exclusion limit is $132,900 (adjusted annually for inflation).
 
 If you earn $100,000 in net self-employment income as an expat founder and qualify for the FEIE, you exclude $100,000 from federal income tax — meaning you pay $0 in federal income tax on that income. At a 22 percent marginal rate, that is $22,000 in annual federal income tax savings.
 
@@ -77,7 +78,7 @@ Because the FEIE does not eliminate self-employment tax, the effective tax rate 
 
 The offset strategies that reduce this:
 
-**Solo 401(k) contributions.** Self-employed founders can deduct Solo 401(k) contributions from their self-employment income before calculating SE tax. The employee contribution (up to $23,000 in 2026 for those under 50) reduces both income subject to SE tax and federal income tax (though the FEIE may already reduce federal income tax to zero).
+**Solo 401(k) contributions.** Self-employed founders can deduct Solo 401(k) contributions from their self-employment income before calculating SE tax. The employee contribution (up to $24,500 in 2026 for those under 50) reduces both income subject to SE tax and federal income tax (though the FEIE may already reduce federal income tax to zero).
 
 **Business expense deductions.** All legitimate business expenses reduce net self-employment income, which reduces SE tax. Home office, equipment, software subscriptions, professional services, travel for business, and health insurance premiums (above the line deduction) all reduce the SE tax base.
 
