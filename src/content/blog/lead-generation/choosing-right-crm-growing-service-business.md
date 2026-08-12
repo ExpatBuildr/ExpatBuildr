@@ -2,6 +2,7 @@
 title: "Choosing the Right CRM for a Growing Service Business"
 description: "The wrong CRM wastes time and money. The right one compounds your sales process. Here is how to choose one for a growing service business."
 pubDate: 2026-07-15
+updatedDate: 2026-08-11
 author: "ExpatBuildr"
 pillarId: "lead-generation"
 category: "Guide"
@@ -57,7 +58,7 @@ The value proposition is consolidation — replacing 4 to 6 separate tools with 
 
 Best for: service businesses and agencies with recurring retainer clients, founders who want an all-in-one platform and are willing to invest in the learning curve, operations that involve significant client communication and delivery management alongside sales.
 
-**Close CRM ($49 to $299/month per user)**
+**Close CRM ($9 to $149/month per user)**
 
 Close is built specifically for outbound sales teams. It has the cleanest interface for managing high-volume outreach across email and phone, the best native calling and SMS features in this category, and timeline views that show every interaction with a prospect in one scrollable view.
 
