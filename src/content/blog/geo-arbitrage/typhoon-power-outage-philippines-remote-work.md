@@ -2,6 +2,7 @@
 title: "What Actually Happens When the Power Goes Out During a Philippines Typhoon (And How to Keep Working)"
 description: "A practical guide to typhoon season in the Philippines for remote workers and founders: backup power, backup internet, and the prep that keeps you online."
 pubDate: 2026-08-08
+updatedDate: 2026-08-11
 author: "ExpatBuildr"
 category: "Guide"
 tags: ["Geo-Arbitrage", "Digital Nomad", "Southeast Asia"]
@@ -39,7 +40,7 @@ Typhoon season in the Philippines runs roughly June through November, with the h
 PAGASA (the Philippine weather bureau) uses a Tropical Cyclone Warning Signal system to communicate severity, numbered 1 through 5:
 
 - **Signal 1** — 30-60 kph winds expected within 36 hours. Business as usual, but start watching.
-- **Signal 2** — 61-120 kph winds expected within 24 hours. This is when you start actually preparing, not when you plan to start.
+- **Signal 2** — 62-88 kph winds expected within 24 hours. This is when you start actually preparing, not when you plan to start.
 - **Signal 3 and above** — this is when outages become likely, not just possible, and when schools and some offices in affected areas shut down entirely.
 
 The lead time matters more than the intensity. A Signal 2 alert gives you roughly a day. That is enough time to charge everything, secure a plan, and tell clients what's coming — if you actually use it instead of waiting to see what happens.
