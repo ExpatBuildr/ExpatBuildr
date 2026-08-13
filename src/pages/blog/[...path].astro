@@ -17,6 +17,8 @@ import { getCollection, render } from 'astro:content';
 import { ChevronRight, Calendar, User, Tag, Clock, ArrowRight } from 'lucide-astro';
 import { pillars, getPillarById } from '../../config/pillars';
 import { getAuthor } from '../../config/authors';
+import fs from 'node:fs';
+import nodePath from 'node:path';
 
 export async function getStaticPaths() {
   const posts = await getCollection('blog', ({ data }) => {
@@ -138,7 +140,17 @@ const breadcrumbs = [
 ];
 
 // Robust Hero Image Resolution
-const isValidPath = (p?: string) => p && (p.startsWith('/') || p.startsWith('http') || p.startsWith('./'));
+// Checks that local (/public) paths actually exist on disk, not just that the
+// string looks like a path — a renamed/deleted asset (e.g. a "dontusever-*"
+// retired image) previously passed this check and silently 404'd on the page.
+const publicDir = nodePath.resolve('./public');
+const isValidPath = (p?: string) => {
+    if (!p) return false;
+    if (p.startsWith('http')) return true; // external URL, trust it
+    if (p.startsWith('/')) return fs.existsSync(nodePath.join(publicDir, p));
+    if (p.startsWith('./')) return true; // relative import, trust it
+    return false;
+};
 const resolvedHeroImage = type === 'post'
     ? (isValidPath(post.data.heroImage) ? post.data.heroImage : (isValidPath(post.data.ogImage) ? post.data.ogImage : pillarConfig?.heroImage))
     : pillarConfig?.heroImage;

@@ -6,8 +6,8 @@ author: "ExpatBuildr"
 pillarId: "geo-arbitrage"
 category: "Guide"
 tags: ["Relocation", "Expat Founder", "Geo-Arbitrage"]
-ogImage: "/images/blog/pillars/geo-arbitrage-hub.png"
-heroImage: "/images/blog/pillars/geo-arbitrage-hub.png"
+ogImage: "/images/geo-arbitrage.jpg"
+heroImage: "/images/geo-arbitrage.jpg"
 canonicalUrl: "https://expatbuildr.com/blog/geo-arbitrage/what-to-do-before-you-move-abroad"
 primaryKeyword: "what to do before moving abroad"
 secondaryKeywords: ["pre-move checklist expat", "moving abroad income setup", "banking before moving overseas"]
