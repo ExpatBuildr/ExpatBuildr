@@ -38,6 +38,7 @@ Keep the embed's `title` attribute matching the actual YouTube video title — i
 | Why $3,500/month feels like enough in the Philippines | https://youtu.be/_yNRlNyWC6E | `geo-arbitrage/austin-vs-manila-cost-of-living.md` | Mid-article (before "Transport") |
 | Why I chose the Philippines over Thailand | https://youtu.be/r6MRc1DR15Q | `geo-arbitrage/chiang-mai-vs-cebu-remote-work-base.md` | Mid-article (before "Where Chiang Mai Wins") |
 | I left everything for Cebu, Philippines — here's what happened | https://youtu.be/nRuXPh2MR0A | `geo-arbitrage/complete-guide-living-working-cebu-city.md` | Mid-article (before "Internet: The Critical Variable") |
+| I Wish I Knew This Before Moving Abroad | https://youtu.be/Qo4jcuo-UFE | `geo-arbitrage/what-to-do-before-you-move-abroad.md` | Top (right after intro) |
 
 Note: mid-article placements on gated articles were positioned at 45-55% of the way through the piece — comfortably before the 65% hard-gate cutoff (`GatedContent.astro`) so the video stays visible to every reader, not just subscribers.
 
@@ -54,6 +55,7 @@ Pattern: file lives in the topically-closest pillar folder for URL purposes, but
 | I worked through a Philippines typhoon with no power | https://youtu.be/sSSDPww5gzY | ✅ Published | `geo-arbitrage/typhoon-power-outage-philippines-remote-work.md` |
 | You can't live abroad long term without building a brand | https://youtu.be/IDMZ1OLMGDM | ✅ Published | `remote-income/why-you-need-a-personal-brand-living-abroad.md` |
 | Should you learn the language before moving to the Philippines (covers Tagalog *and* Bisaya/Cebuano) | https://youtu.be/253K3sGGgTE | ✅ Published | `geo-arbitrage/should-you-learn-tagalog-or-bisaya-philippines.md` |
+| I Wish I Knew This Before Moving Abroad | https://youtu.be/Qo4jcuo-UFE | ✅ Published | `geo-arbitrage/i-wish-i-knew-this-before-moving-abroad.md` |
 | How I Turn Blog Traffic into Targeted Newsletter Subs for Galaxy Arbitrage | *(link not provided)* | Not relevant to this blog — confirmed by user (2026-08-05). Belongs to a different project (Galaxy Arbitrage), not ExpatBuildr. Do not revisit for ExpatBuildr without explicit direction. | — |
 | I Built an AI Bot That Finds Memecoins Before Crypto Twitter | *(link not provided)* | Not relevant to this blog — confirmed by user (2026-08-05). Off-topic for every ExpatBuildr pillar. Do not revisit without explicit direction. | — |
 
@@ -68,7 +70,9 @@ Pattern: file lives in the topically-closest pillar folder for URL purposes, but
 
 ## Strategy note
 
-User's read on this (2026-08-05): embedding videos in matching blog articles and linking back to the channel is a deliberate blog↔YouTube cross-signal play, not just a content nicety. Going forward, the plan is to work the other direction too — find pillars/topics on the blog that have **no** video coverage yet and film videos to fill those gaps, not just wait for existing videos to find a home. As of 2026-08-05, video coverage by pillar: `geo-arbitrage` (8 embedded + 1 standalone), `remote-income` (1 embedded + 1 standalone). Zero coverage so far: `lead-generation`, `time-arbitrage`, `ai-arbitrage`, `health-arbitrage`, `market-arbitrage`.
+User's read on this (2026-08-05): embedding videos in matching blog articles and linking back to the channel is a deliberate blog↔YouTube cross-signal play, not just a content nicety. Going forward, the plan is to work the other direction too — find pillars/topics on the blog that have **no** video coverage yet and film videos to fill those gaps, not just wait for existing videos to find a home. As of 2026-08-13, video coverage by pillar: `geo-arbitrage` (10 embedded + 2 standalone), `remote-income` (1 embedded + 1 standalone). Zero coverage so far: `lead-generation`, `time-arbitrage`, `ai-arbitrage`, `health-arbitrage`, `market-arbitrage`.
+
+**Note on Qo4jcuo-UFE ("I Wish I Knew This Before Moving Abroad"):** this is the first video given two placements — its own standalone article (`i-wish-i-knew-this-before-moving-abroad.md`) plus an embed in the normal pillar article `what-to-do-before-you-move-abroad.md`, both published 2026-08-13/16 at the user's direction. Holding off on placing it in any *additional* article (e.g. `how-to-find-apartment-abroad-without-getting-scammed.md`, `is-expat-founder-path-right-for-you.md`) — those are Moderate fits at best and the two placements already exist; see matching rule 3 on not over-concentrating one video across the site.
 
 ## Matching rules for future videos
 
