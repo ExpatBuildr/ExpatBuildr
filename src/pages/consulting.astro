@@ -145,19 +145,94 @@ const canonicalUrl = "https://expatbuildr.com/consulting";
     <section id="booking" class="wrap booking">
       <div class="section-tag">Book Your Call</div>
       <h2>Pick a time<br /><em>that works for you.</em></h2>
+      <p class="booking-sub">
+        Drop your email first so I have a way to reach you — the calendar opens right after.
+      </p>
+
       <!--
-        TEMPORARY: reusing the /fixleaks Calendly event (free audit call, no payment
-        collection) as a placeholder until a dedicated paid "consulting call" event
-        type is created in Calendly with Stripe payment collection enabled.
-        TODO: swap data-url below for the real paid event link once it exists —
-        this one does NOT charge $297, it's just a stand-in so the page isn't broken.
+        Email-gated booking: capture the lead via Beehiiv *before* the Calendly
+        widget loads, so someone who bounces mid-booking is still a lead you can
+        follow up with (Calendly only hands you an email once someone fully
+        confirms a slot). On submit this swaps to the Calendly widget, prefilled
+        with the email they just gave.
       -->
-      <div
-        class="calendly-inline-widget"
-        data-url="https://calendly.com/expatbuildr/fixmyleaks"
-        style="min-width:320px;height:700px;"
-      ></div>
-      <script is:inline type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+      <form id="consultingLeadForm" class="lead-gate">
+        <input
+          type="email"
+          id="consultingLeadEmail"
+          placeholder="you@email.com"
+          autocomplete="email"
+          required
+        />
+        <button type="submit" class="nav-cta">Continue to Booking →</button>
+      </form>
+      <p id="consultingLeadError" class="lead-gate-error" hidden>Please enter a valid email.</p>
+
+      <div id="calendlyContainer" class="calendly-container" hidden></div>
+
+      <!--
+        TEMPORARY: pointed at the /fixleaks Calendly event (free audit call, no
+        payment collection) as a placeholder until a dedicated paid "consulting
+        call" event type is created in Calendly with Stripe payment collection
+        enabled. TODO: swap CALENDLY_URL below once that event exists — this one
+        does NOT charge $297, it's just a stand-in so the page isn't broken.
+      -->
+      <script is:inline src="https://assets.calendly.com/assets/external/widget.js"></script>
+      <script is:inline src="/beehiiv-v2.js"></script>
+      <script is:inline>
+        (() => {
+          const CALENDLY_URL = "https://calendly.com/expatbuildr/fixmyleaks";
+          const form = document.getElementById('consultingLeadForm');
+          const emailInput = document.getElementById('consultingLeadEmail');
+          const errorEl = document.getElementById('consultingLeadError');
+          const calContainer = document.getElementById('calendlyContainer');
+          if (!form) return;
+
+          function initCalendly(email) {
+            if (window.Calendly && typeof window.Calendly.initInlineWidget === 'function') {
+              window.Calendly.initInlineWidget({
+                url: CALENDLY_URL,
+                parentElement: calContainer,
+                prefill: { email }
+              });
+            } else {
+              // widget.js may not have finished loading yet — keep polling briefly
+              setTimeout(() => initCalendly(email), 200);
+            }
+          }
+
+          form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const email = emailInput.value.trim();
+
+            if (!window.isValidEmail || !window.isValidEmail(email)) {
+              errorEl.hidden = false;
+              emailInput.focus();
+              return;
+            }
+            errorEl.hidden = true;
+
+            const submitBtn = form.querySelector('button[type="submit"]');
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Loading...';
+
+            // Fire the capture, but don't let a Beehiiv hiccup block someone from
+            // booking a paid call — proceed to the calendar either way.
+            if (window.subscribeToBeehiiv) {
+              await window.subscribeToBeehiiv({
+                email,
+                tags: ['consulting_lead', 'consulting_page_visitor'],
+                utm_medium: 'consulting_page',
+                utm_campaign: 'consulting_call_lead'
+              });
+            }
+
+            form.hidden = true;
+            calContainer.hidden = false;
+            initCalendly(email);
+          });
+        })();
+      </script>
     </section>
 
     <section class="wrap faq">
@@ -287,7 +362,19 @@ const canonicalUrl = "https://expatbuildr.com/consulting";
   .plan-price sup { font-size: 1.25rem; vertical-align: super; color: var(--c-text-muted); }
   .plan-delivery { font-family: var(--c-mono); font-size: .68rem; letter-spacing: .1em; text-transform: uppercase; color: var(--c-text-dim); margin-top: .75rem; }
 
-  .booking :global(.calendly-inline-widget) { margin-top: 1.5rem; border: 1px solid var(--c-border); background: var(--c-bg-2); }
+  .booking-sub { color: var(--c-text-muted); font-size: .95rem; margin-bottom: 1.5rem; }
+
+  .lead-gate { display: flex; flex-wrap: wrap; gap: .75rem; max-width: 480px; }
+  .lead-gate[hidden] { display: none; }
+  .lead-gate input[type="email"] { flex: 1; min-width: 220px; padding: .9em 1.1em; font-family: var(--c-sans); font-size: .95rem; color: var(--c-text); background: var(--c-bg-2); border: 1px solid var(--c-border-hi); outline: none; transition: border-color .15s; }
+  .lead-gate input[type="email"]:focus { border-color: var(--c-accent-1); }
+  .lead-gate input[type="email"]::placeholder { color: var(--c-text-dim); }
+  .lead-gate button[type="submit"] { border: none; cursor: pointer; white-space: nowrap; }
+  .lead-gate button[type="submit"]:disabled { opacity: .6; cursor: default; }
+  .lead-gate-error { color: #dc2626; font-family: var(--c-mono); font-size: .75rem; margin-top: .6rem; }
+  html.dark .lead-gate-error { color: #f87171; }
+
+  .calendly-container { margin-top: 1.5rem; min-width: 320px; min-height: 700px; border: 1px solid var(--c-border); background: var(--c-bg-2); }
 
   .faq-item { margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid var(--c-border); }
   .faq-item:first-of-type { margin-top: 1.5rem; }
