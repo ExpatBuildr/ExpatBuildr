@@ -1,7 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
-import { ArrowRight, Globe, TrendingUp, MonitorPlay, Code2, Rss, ArrowUpRight, Twitter, Youtube, Instagram, Linkedin, Send } from 'lucide-astro';
+import { ArrowRight, Globe, TrendingUp, MonitorPlay, Code2, Rss, ArrowUpRight, Twitter, Youtube, Instagram, Linkedin, Send, Users } from 'lucide-astro';
 
 // Fetch top 3 latest posts for the "Featured Blog Posts" section
 const allPosts = await getCollection('blog', ({ data }) => {
@@ -96,7 +96,7 @@ const featuredPosts = targetPillars.map(pillar =>
 			<h3 class="text-3xl md:text-4xl font-black font-display text-slate-900 dark:text-white">DONE-FOR-YOU SYSTEMS</h3>
 			<p class="text-institutional-secondary mt-2">Institutional-grade infrastructure installed directly into your business.</p>
 		</div>
-		<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+		<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
 			<!-- Service 1: Landing Pages -->
 			<a href="/founders/offer" class="glass-card p-10 rounded-[2rem] space-y-6 hover:border-accent-cyan/50 transition-all hover:-translate-y-1 block group">
 				<div class="w-14 h-14 rounded-2xl bg-accent-cyan/10 flex items-center justify-center text-accent-cyan mb-2">
@@ -117,6 +117,17 @@ const featuredPosts = targetPillars.map(pillar =>
 				<p class="text-slate-500 text-base leading-relaxed">Turn manual tasks into autonomous intelligence. We build multi-agent AI workflows and operational systems that scale your output without scaling your headcount.</p>
 				<div class="pt-4 flex items-center text-purple-400 font-bold text-sm uppercase tracking-widest gap-2">
 					Explore Service <ArrowRight size={16} class="group-hover:translate-x-1 transition-transform" />
+				</div>
+			</a>
+			<!-- Service 3: 1-on-1 Consulting -->
+			<a href="/consulting" class="glass-card p-10 rounded-[2rem] space-y-6 hover:border-accent-blue/50 transition-all hover:-translate-y-1 block group">
+				<div class="w-14 h-14 rounded-2xl bg-accent-blue/10 flex items-center justify-center text-accent-blue mb-2">
+					<Users size={28} />
+				</div>
+				<h4 class="text-2xl font-bold dark:text-white text-slate-900 group-hover:text-accent-blue transition-colors">1-on-1 Consulting</h4>
+				<p class="text-slate-500 text-base leading-relaxed">A 60-minute strategy call, one-on-one. Your specific budget, visa path, and timeline mapped against reality, no generic checklist, no highlight reel.</p>
+				<div class="pt-4 flex items-center text-accent-blue font-bold text-sm uppercase tracking-widest gap-2">
+					Book Your Call <ArrowRight size={16} class="group-hover:translate-x-1 transition-transform" />
 				</div>
 			</a>
 		</div>
