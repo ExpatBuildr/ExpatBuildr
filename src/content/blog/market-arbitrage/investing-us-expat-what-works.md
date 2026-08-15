@@ -38,6 +38,14 @@ The most important thing US expat investors need to understand is the Passive Fo
 
 A US person who owns shares in a PFIC faces one of the most punitive tax treatments in the US tax code — in some scenarios, gains are taxed at the highest ordinary income rate plus an interest charge, regardless of how long the investment was held. This effectively makes most foreign investment products economically unattractive for US investors even when they are living abroad.
 
+<div class="my-10 md:my-12 p-6 md:p-8 rounded-3xl border border-accent-blue/15 bg-accent-blue/[0.03] flex flex-col md:flex-row items-center gap-6">
+  <div class="flex-1 text-center md:text-left">
+    <span class="block text-[10px] font-mono uppercase tracking-[0.2em] text-accent-blue mb-2">Quick Note</span>
+    <span class="block text-slate-600 dark:text-slate-300 text-base md:text-lg leading-relaxed">If you want this mapped onto your actual money situation instead of general advice, that's what the 1-on-1 call is for.</span>
+  </div>
+  <a href="/consulting" class="shrink-0 inline-flex items-center gap-2 px-6 py-3 rounded-full font-display font-bold text-white text-sm uppercase tracking-wider bg-accent-blue hover:brightness-110 transition-all whitespace-nowrap">Book a Call →</a>
+</div>
+
 The practical implication: stick to US-domiciled investment accounts and US-listed securities. The international investment landscape that non-US expats access freely is largely off-limits for US persons without significant tax complexity.
 
 ## What Actually Works: US Brokerage Accounts

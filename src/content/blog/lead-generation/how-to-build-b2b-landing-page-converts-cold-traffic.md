@@ -88,6 +88,14 @@ Three to four steps maximum. Not a detailed spec. A digestible overview that rem
 
 **4. Proof — specific, named where possible**
 
+<div class="my-10 md:my-12 p-6 md:p-8 rounded-3xl border border-accent-blue/15 bg-accent-blue/[0.03] flex flex-col md:flex-row items-center gap-6">
+  <div class="flex-1 text-center md:text-left">
+    <span class="block text-[10px] font-mono uppercase tracking-[0.2em] text-accent-blue mb-2">Quick Note</span>
+    <span class="block text-slate-600 dark:text-slate-300 text-base md:text-lg leading-relaxed">If you'd rather build this with someone who's done it than debug it alone, that's what the 1-on-1 call is for.</span>
+  </div>
+  <a href="/consulting" class="shrink-0 inline-flex items-center gap-2 px-6 py-3 rounded-full font-display font-bold text-white text-sm uppercase tracking-wider bg-accent-blue hover:brightness-110 transition-all whitespace-nowrap">Book a Call →</a>
+</div>
+
 Before investing in page optimization, make sure you have qualified traffic worth sending to the page. [How to Build a Lead List from Scratch Without Buying Data](/blog/lead-generation/how-to-build-lead-list-without-buying-data) covers how to build a targeted prospect list that makes your cold traffic actually cold — not random.
 Results with numbers. Case studies. Screenshots of booking confirmations or reply threads if you have them. Logos of clients if they are recognizable. Testimonials with full name, company, and specific outcome — not "Great service, highly recommend." Generic testimonials add no trust for cold traffic. Specific ones do.
 

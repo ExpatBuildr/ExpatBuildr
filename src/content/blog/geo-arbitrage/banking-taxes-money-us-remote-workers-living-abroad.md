@@ -81,6 +81,14 @@ To claim the FEIE, file Form 2555 with your US tax return. If you are also self-
 
 If you pay income tax in your country of residence, you can claim a Foreign Tax Credit on Form 1116 to reduce your US tax liability dollar-for-dollar by the amount of foreign tax paid. This prevents double taxation.
 
+<div class="my-10 md:my-12 p-6 md:p-8 rounded-3xl border border-accent-blue/15 bg-accent-blue/[0.03] flex flex-col md:flex-row items-center gap-6">
+  <div class="flex-1 text-center md:text-left">
+    <span class="block text-[10px] font-mono uppercase tracking-[0.2em] text-accent-blue mb-2">Quick Note</span>
+    <span class="block text-slate-600 dark:text-slate-300 text-base md:text-lg leading-relaxed">If you want your specific numbers and timeline checked against reality before you commit to any of this, that's what the 1-on-1 call is for.</span>
+  </div>
+  <a href="/consulting" class="shrink-0 inline-flex items-center gap-2 px-6 py-3 rounded-full font-display font-bold text-white text-sm uppercase tracking-wider bg-accent-blue hover:brightness-110 transition-all whitespace-nowrap">Book a Call →</a>
+</div>
+
 Most Southeast Asian countries have low income tax rates for foreigners, and some have territorial tax systems — meaning foreign-sourced income (like a US salary) is not taxed locally at all. In practice, many remote workers in the Philippines, Thailand, and Vietnam pay little to no local income tax on their US-sourced income, which makes the Foreign Tax Credit less relevant but the FEIE more valuable.
 
 <div class="my-10 p-8 rounded-[2rem] border border-slate-200 dark:border-white/5 bg-slate-900/[0.02] dark:bg-white/[0.02] text-center">

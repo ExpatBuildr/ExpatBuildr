@@ -83,6 +83,14 @@ Practical ways to build upward relationships remotely:
 - **Present your work in a broader setting** at least once per quarter. Volunteer to present a project summary, a process improvement, or a competitive analysis to a wider audience than your immediate team.
 - **Reference senior leaders' ideas back to them** in relevant contexts. If a VP mentioned a priority in an all-hands and your work connects to it, make that connection visible in writing.
 
+<div class="my-10 md:my-12 p-6 md:p-8 rounded-3xl border border-accent-blue/15 bg-accent-blue/[0.03] flex flex-col md:flex-row items-center gap-6">
+  <div class="flex-1 text-center md:text-left">
+    <span class="block text-[10px] font-mono uppercase tracking-[0.2em] text-accent-blue mb-2">Quick Note</span>
+    <span class="block text-slate-600 dark:text-slate-300 text-base md:text-lg leading-relaxed">If you want someone to check your actual numbers and timeline against reality, that's what the 1-on-1 call is for.</span>
+  </div>
+  <a href="/consulting" class="shrink-0 inline-flex items-center gap-2 px-6 py-3 rounded-full font-display font-bold text-white text-sm uppercase tracking-wider bg-accent-blue hover:brightness-110 transition-all whitespace-nowrap">Book a Call →</a>
+</div>
+
 None of this is fake. All of it is the professional behavior that in-office workers do naturally just by being in the same space. You're replicating it deliberately.
 
 ---

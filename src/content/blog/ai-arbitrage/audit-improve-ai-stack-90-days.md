@@ -62,6 +62,14 @@ The AI landscape changes every quarter. The audit is the structured time to asse
 
 The assessment process: maintain a short list of tools flagged as worth evaluating during the quarter (captured as they come up in newsletters, communities, or conversations). The audit is when you actually test them — 10 minutes per tool maximum, focused on whether the tool handles a specific use case better than what you currently use.
 
+<div class="my-10 md:my-12 p-6 md:p-8 rounded-3xl border border-accent-blue/15 bg-accent-blue/[0.03] flex flex-col md:flex-row items-center gap-6">
+  <div class="flex-1 text-center md:text-left">
+    <span class="block text-[10px] font-mono uppercase tracking-[0.2em] text-accent-blue mb-2">Quick Note</span>
+    <span class="block text-slate-600 dark:text-slate-300 text-base md:text-lg leading-relaxed">If you'd rather have someone map this onto your actual stack instead of piecing it together solo, that's what the 1-on-1 call is for.</span>
+  </div>
+  <a href="/consulting" class="shrink-0 inline-flex items-center gap-2 px-6 py-3 rounded-full font-display font-bold text-white text-sm uppercase tracking-wider bg-accent-blue hover:brightness-110 transition-all whitespace-nowrap">Book a Call →</a>
+</div>
+
 Only add a new tool if it clearly outperforms an existing tool for a specific use case you care about. The goal is not a larger stack. The goal is a better stack.
 
 **Area 4: Prompt Library Review (20 minutes)**

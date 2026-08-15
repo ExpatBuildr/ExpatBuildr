@@ -57,6 +57,14 @@ Pick one ideal client type — a specific type of B2B service business where you
 
 Do the prospecting and outreach for the first client manually. Find 50 prospects that match their ICP, write personalized emails yourself, send them from a basic email account, and book meetings. You are validating the approach and earning the revenue before investing in the infrastructure.
 
+<div class="my-10 md:my-12 p-6 md:p-8 rounded-3xl border border-accent-blue/15 bg-accent-blue/[0.03] flex flex-col md:flex-row items-center gap-6">
+  <div class="flex-1 text-center md:text-left">
+    <span class="block text-[10px] font-mono uppercase tracking-[0.2em] text-accent-blue mb-2">Quick Note</span>
+    <span class="block text-slate-600 dark:text-slate-300 text-base md:text-lg leading-relaxed">If you'd rather build this with someone who's done it than debug it alone, that's what the 1-on-1 call is for.</span>
+  </div>
+  <a href="/consulting" class="shrink-0 inline-flex items-center gap-2 px-6 py-3 rounded-full font-display font-bold text-white text-sm uppercase tracking-wider bg-accent-blue hover:brightness-110 transition-all whitespace-nowrap">Book a Call →</a>
+</div>
+
 The first client does not need you to have a team or sophisticated systems. They need results. Deliver results manually first. Systematize after.
 
 ## Phase 2: Build the Repeatable Delivery System

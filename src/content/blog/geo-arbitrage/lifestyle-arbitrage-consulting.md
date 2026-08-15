@@ -22,6 +22,14 @@ noindex: false
 
 In the 2026 economy, residency is a **Technical Variable**, not a fixed constraint. If you are earning USD or EUR while living in a high-cost Western city, you are operating with a massive "Infrastructure Tax" on your life. **Geo-Arbitrage** by ExpatBuildr is the process of repositioning your physical presence to regions with high "Lifestyle ROI," specifically the Philippines, to 4x your savings rate and recover 40+ hours of creative capacity per month.
 
+<div class="my-10 md:my-12 p-6 md:p-8 rounded-3xl border border-accent-blue/15 bg-accent-blue/[0.03] flex flex-col md:flex-row items-center gap-6">
+  <div class="flex-1 text-center md:text-left">
+    <span class="block text-[10px] font-mono uppercase tracking-[0.2em] text-accent-blue mb-2">Quick Note</span>
+    <span class="block text-slate-600 dark:text-slate-300 text-base md:text-lg leading-relaxed">If you want your specific numbers and timeline checked against reality before you commit to any of this, that's what the 1-on-1 call is for.</span>
+  </div>
+  <a href="/consulting" class="shrink-0 inline-flex items-center gap-2 px-6 py-3 rounded-full font-display font-bold text-white text-sm uppercase tracking-wider bg-accent-blue hover:brightness-110 transition-all whitespace-nowrap">Book a Call →</a>
+</div>
+
 We don't provide "travel tips." We provide **Lifestyle Architecture.** We consult on the technical setup of your high-performance compound, the logistical automation of your daily life, and the jurisdictional structures required to protect your wealth. We help you transition from a "Digital Nomad" to a **Sovereign Operator.**
 
 ---

@@ -56,6 +56,14 @@ GoHighLevel is the platform built specifically for agencies and service business
 
 The value proposition is consolidation — replacing 4 to 6 separate tools with one platform at a lower total cost. For an agency that would otherwise pay for a CRM, a separate email sequence tool, a separate scheduling tool, and a separate client portal, GoHighLevel is often significantly cheaper and simpler to manage.
 
+<div class="my-10 md:my-12 p-6 md:p-8 rounded-3xl border border-accent-blue/15 bg-accent-blue/[0.03] flex flex-col md:flex-row items-center gap-6">
+  <div class="flex-1 text-center md:text-left">
+    <span class="block text-[10px] font-mono uppercase tracking-[0.2em] text-accent-blue mb-2">Quick Note</span>
+    <span class="block text-slate-600 dark:text-slate-300 text-base md:text-lg leading-relaxed">If you'd rather build this with someone who's done it than debug it alone, that's what the 1-on-1 call is for.</span>
+  </div>
+  <a href="/consulting" class="shrink-0 inline-flex items-center gap-2 px-6 py-3 rounded-full font-display font-bold text-white text-sm uppercase tracking-wider bg-accent-blue hover:brightness-110 transition-all whitespace-nowrap">Book a Call →</a>
+</div>
+
 Best for: service businesses and agencies with recurring retainer clients, founders who want an all-in-one platform and are willing to invest in the learning curve, operations that involve significant client communication and delivery management alongside sales.
 
 **Close CRM ($9 to $149/month per user)**

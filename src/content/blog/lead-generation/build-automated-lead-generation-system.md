@@ -60,6 +60,14 @@ The AI prompt takes the enriched signals and produces a first line specific to e
 
 **Component 4: Sequence Loading and Sending**
 
+<div class="my-10 md:my-12 p-6 md:p-8 rounded-3xl border border-accent-blue/15 bg-accent-blue/[0.03] flex flex-col md:flex-row items-center gap-6">
+  <div class="flex-1 text-center md:text-left">
+    <span class="block text-[10px] font-mono uppercase tracking-[0.2em] text-accent-blue mb-2">Quick Note</span>
+    <span class="block text-slate-600 dark:text-slate-300 text-base md:text-lg leading-relaxed">If you want this mapped onto your actual pipeline instead of a generic framework, that's what the 1-on-1 call is for.</span>
+  </div>
+  <a href="/consulting" class="shrink-0 inline-flex items-center gap-2 px-6 py-3 rounded-full font-display font-bold text-white text-sm uppercase tracking-wider bg-accent-blue hover:brightness-110 transition-all whitespace-nowrap">Book a Call →</a>
+</div>
+
 The personalized drafts and contact data export from Clay and import into the sending tool — Instantly or Smartlead — where each contact is added to the appropriate sequence with their unique first line in place. The sending tool manages the cadence: initial email on day 1, follow-up on day 3, value-add on day 7, breakup on day 14.
 
 The sending infrastructure — warmed domains, rotating inboxes, SPF/DKIM/DMARC configured — runs in the background managing deliverability. You set the sending limits and the schedule. The tool handles the execution.

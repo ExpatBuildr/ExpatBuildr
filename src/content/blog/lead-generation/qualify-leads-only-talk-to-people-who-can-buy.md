@@ -59,6 +59,14 @@ The most efficient qualification happens before the sales call, not during it. A
 - What would a successful outcome look like in 90 days?
 - Are you the primary decision-maker for this kind of investment?
 
+<div class="my-10 md:my-12 p-6 md:p-8 rounded-3xl border border-accent-blue/15 bg-accent-blue/[0.03] flex flex-col md:flex-row items-center gap-6">
+  <div class="flex-1 text-center md:text-left">
+    <span class="block text-[10px] font-mono uppercase tracking-[0.2em] text-accent-blue mb-2">Quick Note</span>
+    <span class="block text-slate-600 dark:text-slate-300 text-base md:text-lg leading-relaxed">If you'd rather build this with someone who's done it than debug it alone, that's what the 1-on-1 call is for.</span>
+  </div>
+  <a href="/consulting" class="shrink-0 inline-flex items-center gap-2 px-6 py-3 rounded-full font-display font-bold text-white text-sm uppercase tracking-wider bg-accent-blue hover:brightness-110 transition-all whitespace-nowrap">Book a Call →</a>
+</div>
+
 A prospect who completes this form is demonstrating intent. The answers tell you before the call whether the fundamental qualification criteria are met. Prospects who do not complete the form or whose answers clearly indicate a qualification mismatch can be redirected before the meeting.
 
 **Research-based pre-qualification:** For outbound prospects who have not self-selected through an intake form, do 5 to 10 minutes of research before confirming a call. Check their LinkedIn for company size and recent activity. Check their website for obvious signs of the problem you solve. Check for recent funding or news that signals a timeline. This research either confirms the call is worth having or surfaces disqualifiers that save both parties' time.

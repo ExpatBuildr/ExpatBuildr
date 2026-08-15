@@ -42,6 +42,14 @@ So no, you don't *need* a local language to survive here the way you would in a 
 
 This is the part that trips people up. "Filipino," the national language, is built on Tagalog, which is the dominant language of Manila and most of Luzon. Bisaya, more precisely Cebuano, is a separate language spoken across Cebu, much of the Visayas, and large parts of Mindanao. They're related — both are Central Philippine languages and share plenty of cognates — but they are not mutually intelligible. Someone fluent in Tagalog cannot simply understand a Cebuano conversation by osmosis, and vice versa.
 
+<div class="my-10 md:my-12 p-6 md:p-8 rounded-3xl border border-accent-blue/15 bg-accent-blue/[0.03] flex flex-col md:flex-row items-center gap-6">
+  <div class="flex-1 text-center md:text-left">
+    <span class="block text-[10px] font-mono uppercase tracking-[0.2em] text-accent-blue mb-2">Quick Note</span>
+    <span class="block text-slate-600 dark:text-slate-300 text-base md:text-lg leading-relaxed">If you want this mapped onto your specific situation instead of general advice, that's what the 1-on-1 call is for.</span>
+  </div>
+  <a href="/consulting" class="shrink-0 inline-flex items-center gap-2 px-6 py-3 rounded-full font-display font-bold text-white text-sm uppercase tracking-wider bg-accent-blue hover:brightness-110 transition-all whitespace-nowrap">Book a Call →</a>
+</div>
+
 Here's the nuance that actually matters if you're basing in Cebu specifically: most Cebuano speakers understand Tagalog reasonably well, because it's taught in school and used in national media. But a meaningful number would genuinely rather speak English than Tagalog, and there's a real cultural undercurrent here — Tagalog can read as Manila-centric to people who take real pride in Cebuano identity. Showing up having learned "the Filipino language" and defaulting to Tagalog in Cebu isn't wrong, exactly, but it's a missed opportunity, and occasionally it lands slightly off in a way you won't be told about directly.
 
 ## Where It Actually Matters

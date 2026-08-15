@@ -55,6 +55,14 @@ The Cigna Global Silver plan (inpatient only, no outpatient) runs $90 to $150 pe
 
 **Tier 3: Premium Global Coverage Including US**
 
+<div class="my-10 md:my-12 p-6 md:p-8 rounded-3xl border border-accent-blue/15 bg-accent-blue/[0.03] flex flex-col md:flex-row items-center gap-6">
+  <div class="flex-1 text-center md:text-left">
+    <span class="block text-[10px] font-mono uppercase tracking-[0.2em] text-accent-blue mb-2">Quick Note</span>
+    <span class="block text-slate-600 dark:text-slate-300 text-base md:text-lg leading-relaxed">If you want this built around your actual routine and location instead of guessing, that's what the 1-on-1 call is for.</span>
+  </div>
+  <a href="/consulting" class="shrink-0 inline-flex items-center gap-2 px-6 py-3 rounded-full font-display font-bold text-white text-sm uppercase tracking-wider bg-accent-blue hover:brightness-110 transition-all whitespace-nowrap">Book a Call →</a>
+</div>
+
 Best for: Founders who travel frequently to the US, who have family in the US, or who want coverage that works seamlessly in any country including back in the United States.
 
 **Allianz Care** and **Cigna Global's highest tier plans** cover global care including the US. This is the most expensive tier — $300 to $600 per month — but the only tier that provides meaningful coverage for US medical costs, which are in a different category from anywhere else in the world.

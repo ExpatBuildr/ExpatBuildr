@@ -100,6 +100,14 @@ This summary does something powerful: it shows the hiring team how you communica
 
 Some remote-first companies replace the first-round live interview with an async video response. You receive a set of questions and record yourself answering them via Loom or a similar tool.
 
+<div class="my-10 md:my-12 p-6 md:p-8 rounded-3xl border border-accent-blue/15 bg-accent-blue/[0.03] flex flex-col md:flex-row items-center gap-6">
+  <div class="flex-1 text-center md:text-left">
+    <span class="block text-[10px] font-mono uppercase tracking-[0.2em] text-accent-blue mb-2">Quick Note</span>
+    <span class="block text-slate-600 dark:text-slate-300 text-base md:text-lg leading-relaxed">If you want this mapped onto your specific situation instead of general advice, that's what the 1-on-1 call is for.</span>
+  </div>
+  <a href="/consulting" class="shrink-0 inline-flex items-center gap-2 px-6 py-3 rounded-full font-display font-bold text-white text-sm uppercase tracking-wider bg-accent-blue hover:brightness-110 transition-all whitespace-nowrap">Book a Call →</a>
+</div>
+
 This format terrifies candidates who've only ever done live interviews. It shouldn't. It's actually easier: you can do multiple takes, you can prepare, and you're not trying to think in real time while managing someone else's facial expressions.
 
 **What remote-first companies are screening for in Loom responses:**

@@ -1,0 +1,26 @@
+---
+// End-of-article (and in-article) consulting CTA — replaces the redundant
+// second newsletter pitch that used to sit here, since most gated articles
+// already ask for an email at the gate itself. Styled to match the existing
+// NewsletterCTA block's shape/rhythm (glass card, centered, big gradient
+// button) but in the site's blue accent instead of gold, so the two CTAs
+// read as visually distinct on the page.
+interface Props {
+  compact?: boolean; // true = smaller in-article version, used mid-content
+}
+const { compact = false } = Astro.props;
+---
+
+<div class={`max-w-4xl mx-auto ${compact ? 'my-12' : 'mt-12'} p-8 md:p-12 rounded-[2.5rem] border border-accent-blue/20 bg-accent-blue/[0.04] text-center`}>
+  <p class="text-[10px] font-mono uppercase tracking-[0.2em] text-accent-blue mb-4">1-on-1 Strategy Call</p>
+  <h3 class="text-3xl md:text-5xl font-black font-display text-slate-900 dark:text-white uppercase tracking-tight mb-4">
+    WANT THIS MAPPED<br /><span class="text-accent-blue">TO YOUR SITUATION?</span>
+  </h3>
+  <p class="text-slate-500 dark:text-slate-400 font-inter mb-8 max-w-md mx-auto">
+    60 minutes, one-on-one. Your systems, your money, your move — checked against reality instead of a blog post.
+  </p>
+  <a href="/consulting" class="inline-flex items-center gap-3 px-10 py-5 rounded-full font-display font-black text-white text-lg uppercase tracking-wider bg-accent-blue hover:brightness-110 transition-all">
+    Book Your Call →
+  </a>
+  <p class="mt-4 text-[10px] font-mono text-slate-500 uppercase tracking-widest">$297 · 60 Minutes · Direct With Tony</p>
+</div>

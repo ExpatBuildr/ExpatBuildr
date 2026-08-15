@@ -47,6 +47,14 @@ For a Cebu-based founder working with US East Coast clients, the best overlap wi
 
 For West Coast clients, a morning SEA window — 7am to 10am Philippine Standard Time aligning with 6pm to 9pm Pacific the previous day — can work if your clients are willing to do early evening calls. This option protects the entire SEA day for focused work but requires clients who are flexible about late afternoon meetings.
 
+<div class="my-10 md:my-12 p-6 md:p-8 rounded-3xl border border-accent-blue/15 bg-accent-blue/[0.03] flex flex-col md:flex-row items-center gap-6">
+  <div class="flex-1 text-center md:text-left">
+    <span class="block text-[10px] font-mono uppercase tracking-[0.2em] text-accent-blue mb-2">Quick Note</span>
+    <span class="block text-slate-600 dark:text-slate-300 text-base md:text-lg leading-relaxed">If you want this mapped onto your specific situation instead of general advice, that's what the 1-on-1 call is for.</span>
+  </div>
+  <a href="/consulting" class="shrink-0 inline-flex items-center gap-2 px-6 py-3 rounded-full font-display font-bold text-white text-sm uppercase tracking-wider bg-accent-blue hover:brightness-110 transition-all whitespace-nowrap">Book a Call →</a>
+</div>
+
 The critical rule: the overlap window does not expand. When a client asks for a meeting outside the window, you propose a time within it. When a team member wants a quick sync outside the window, it becomes an async message instead. The window is a commitment, not a preference.
 
 ## The Daily Schedule Structure

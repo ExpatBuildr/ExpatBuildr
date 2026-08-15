@@ -70,6 +70,14 @@ If you don't yet have a remote income source that survives a relocation, that's 
 
 The mistake most first-time movers make isn't lack of ambition, it's lack of sequencing here too. They try to build a brand-new income stream from scratch after landing, at the exact moment they have the least stability and the most new-country friction to deal with. The stream that's actually relocation-proof is usually the one you already have, negotiated to stay remote, not a new one built from a hotel room with an unfamiliar SIM card and a 12-hour jet lag adjustment running in the background.
 
+<div class="my-10 md:my-12 p-6 md:p-8 rounded-3xl border border-accent-blue/15 bg-accent-blue/[0.03] flex flex-col md:flex-row items-center gap-6">
+  <div class="flex-1 text-center md:text-left">
+    <span class="block text-[10px] font-mono uppercase tracking-[0.2em] text-accent-blue mb-2">Quick Note</span>
+    <span class="block text-slate-600 dark:text-slate-300 text-base md:text-lg leading-relaxed">If you want your specific numbers and timeline checked against reality before you commit to any of this, that's what the 1-on-1 call is for.</span>
+  </div>
+  <a href="/consulting" class="shrink-0 inline-flex items-center gap-2 px-6 py-3 rounded-full font-display font-bold text-white text-sm uppercase tracking-wider bg-accent-blue hover:brightness-110 transition-all whitespace-nowrap">Book a Call →</a>
+</div>
+
 If a negotiation to go remote isn't realistic with a current employer, the fallback isn't to panic-launch three side projects at once. It's to pick one freelance or client-based income stream that's already validated, even at a small scale, and treat everything else as a post-move addition once the first 90 days have proven the base is stable.
 
 ## Step 3: Set up banking before the friction finds you

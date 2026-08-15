@@ -68,6 +68,14 @@ Run this prompt for each brief. The AI produces first drafts for all 5 to 7 piec
 
 **Stage 3: Review and Voice Pass (15 minutes)**
 
+<div class="my-10 md:my-12 p-6 md:p-8 rounded-3xl border border-accent-blue/15 bg-accent-blue/[0.03] flex flex-col md:flex-row items-center gap-6">
+  <div class="flex-1 text-center md:text-left">
+    <span class="block text-[10px] font-mono uppercase tracking-[0.2em] text-accent-blue mb-2">Quick Note</span>
+    <span class="block text-slate-600 dark:text-slate-300 text-base md:text-lg leading-relaxed">If you'd rather have someone map this onto your actual stack instead of piecing it together solo, that's what the 1-on-1 call is for.</span>
+  </div>
+  <a href="/consulting" class="shrink-0 inline-flex items-center gap-2 px-6 py-3 rounded-full font-display font-bold text-white text-sm uppercase tracking-wider bg-accent-blue hover:brightness-110 transition-all whitespace-nowrap">Book a Call →</a>
+</div>
+
 Review each draft for accuracy, voice consistency, and the addition of any first-hand examples or data points that only you can provide. This is not a full rewrite — it is a targeted pass that catches AI errors, adds your specific voice markers, and inserts the personal experience elements that make the content genuinely yours rather than generically correct.
 
 The review pass for a 1,200-word blog article takes 5 to 8 minutes when the draft is good. When the draft needs more work, it takes 12 to 15 minutes. If any piece consistently requires more than 15 minutes of review, the prompt needs refinement, not more review time.

@@ -98,6 +98,14 @@ If you prefer a more structured interface than a raw spreadsheet, these tools wo
 
 If you want a purpose-built solution that sits between a raw spreadsheet and a full CRM, the [Cold Outreach CRM Tracker](/shop) at ExpatBuildr is built specifically for this use case. It is a structured Google Sheets and Excel system with a multi-channel pipeline — tracking outreach across X, Reddit, LinkedIn, and email in one view — built-in follow-up sequencing, and a close rate dashboard that shows exactly what is converting and what is not.
 
+<div class="my-10 md:my-12 p-6 md:p-8 rounded-3xl border border-accent-blue/15 bg-accent-blue/[0.03] flex flex-col md:flex-row items-center gap-6">
+  <div class="flex-1 text-center md:text-left">
+    <span class="block text-[10px] font-mono uppercase tracking-[0.2em] text-accent-blue mb-2">Quick Note</span>
+    <span class="block text-slate-600 dark:text-slate-300 text-base md:text-lg leading-relaxed">If you want this mapped onto your actual pipeline instead of a generic framework, that's what the 1-on-1 call is for.</span>
+  </div>
+  <a href="/consulting" class="shrink-0 inline-flex items-center gap-2 px-6 py-3 rounded-full font-display font-bold text-white text-sm uppercase tracking-wider bg-accent-blue hover:brightness-110 transition-all whitespace-nowrap">Book a Call →</a>
+</div>
+
 It costs $19 and takes 15 minutes to set up. For anyone running outreach across multiple channels without a team, it removes the organizational overhead that kills pipeline momentum at the early stage.
 
 ---

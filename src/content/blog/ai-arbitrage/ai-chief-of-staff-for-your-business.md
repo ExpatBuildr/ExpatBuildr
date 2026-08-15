@@ -51,6 +51,14 @@ Setup: A dedicated research prompt that you can invoke at any time using a simpl
 
 Every business generates a significant volume of routine communication — client updates, follow-up emails, proposal responses, partner outreach. The AI chief of staff drafts these from brief inputs rather than requiring the founder to write them from scratch.
 
+<div class="my-10 md:my-12 p-6 md:p-8 rounded-3xl border border-accent-blue/15 bg-accent-blue/[0.03] flex flex-col md:flex-row items-center gap-6">
+  <div class="flex-1 text-center md:text-left">
+    <span class="block text-[10px] font-mono uppercase tracking-[0.2em] text-accent-blue mb-2">Quick Note</span>
+    <span class="block text-slate-600 dark:text-slate-300 text-base md:text-lg leading-relaxed">If you'd rather have someone map this onto your actual stack instead of piecing it together solo, that's what the 1-on-1 call is for.</span>
+  </div>
+  <a href="/consulting" class="shrink-0 inline-flex items-center gap-2 px-6 py-3 rounded-full font-display font-bold text-white text-sm uppercase tracking-wider bg-accent-blue hover:brightness-110 transition-all whitespace-nowrap">Book a Call →</a>
+</div>
+
 Setup: A communication request prompt that takes a brief description of the communication needed (who it is to, what it needs to say, what tone is appropriate) and returns a complete draft ready for review and sending. The draft takes 2 minutes to generate and 3 to 5 minutes to review and personalize — far less than writing from scratch.
 
 **Function 4: Meeting Preparation**

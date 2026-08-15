@@ -46,6 +46,14 @@ Ignore the vanity-metrics version of personal brand — follower counts, engagem
 
 That's it. That's the entire mechanism. A personal brand is not a marketing tactic. It's an insurance policy that pays out in the exact moment your single point of failure fails — a new client finds you because they've seen your work publicly for a year, a partnership opportunity comes inbound instead of you having to cold-pitch it from a standing start, a recruiter or collaborator already trusts your judgment because they've been reading or watching what you build.
 
+<div class="my-10 md:my-12 p-6 md:p-8 rounded-3xl border border-accent-blue/15 bg-accent-blue/[0.03] flex flex-col md:flex-row items-center gap-6">
+  <div class="flex-1 text-center md:text-left">
+    <span class="block text-[10px] font-mono uppercase tracking-[0.2em] text-accent-blue mb-2">Quick Note</span>
+    <span class="block text-slate-600 dark:text-slate-300 text-base md:text-lg leading-relaxed">If you want this mapped onto your specific situation instead of general advice, that's what the 1-on-1 call is for.</span>
+  </div>
+  <a href="/consulting" class="shrink-0 inline-flex items-center gap-2 px-6 py-3 rounded-full font-display font-bold text-white text-sm uppercase tracking-wider bg-accent-blue hover:brightness-110 transition-all whitespace-nowrap">Book a Call →</a>
+</div>
+
 The founders who get hit hardest by a lost client or a lost job abroad are, almost without exception, the ones who were completely invisible outside their one existing relationship. The ones who recover fastest are the ones a stranger could already find, evaluate, and trust without a warm introduction.
 
 ## The Channels That Actually Work for This

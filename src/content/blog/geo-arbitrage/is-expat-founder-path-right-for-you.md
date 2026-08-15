@@ -41,6 +41,14 @@ If you have worked remotely for at least 6 months and maintained or improved you
 
 **People who have a clear income foundation.** The founders who make the move successfully almost universally have a reliable income source before they move — a remote job, a service business with existing clients, or enough savings to provide genuine runway while they build. Making the move while hoping the income will materialize after arrival is a much higher-risk proposition.
 
+<div class="my-10 md:my-12 p-6 md:p-8 rounded-3xl border border-accent-blue/15 bg-accent-blue/[0.03] flex flex-col md:flex-row items-center gap-6">
+  <div class="flex-1 text-center md:text-left">
+    <span class="block text-[10px] font-mono uppercase tracking-[0.2em] text-accent-blue mb-2">Quick Note</span>
+    <span class="block text-slate-600 dark:text-slate-300 text-base md:text-lg leading-relaxed">If you're past the research stage and want your actual budget and visa path mapped out, that's what the 1-on-1 call is for.</span>
+  </div>
+  <a href="/consulting" class="shrink-0 inline-flex items-center gap-2 px-6 py-3 rounded-full font-display font-bold text-white text-sm uppercase tracking-wider bg-accent-blue hover:brightness-110 transition-all whitespace-nowrap">Book a Call →</a>
+</div>
+
 The geo-arbitrage advantage is most powerful when it is compressing a high income down to a low cost structure. It is much less useful when you are trying to survive on limited income in a foreign country while building from zero simultaneously.
 
 **People who are genuinely curious about the world.** The expat founder who is authentically interested in the culture, the people, and the environment of their base country builds a richer life and a better business than the one who treats their base as a cost-optimization mechanism and nothing more. The former builds real community. The latter stays in the expat bubble and misses most of what the model actually offers.

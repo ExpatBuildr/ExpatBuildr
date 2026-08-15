@@ -55,6 +55,14 @@ You do not need a whole-house generator to keep a laptop, a router, and a phone 
 
 **Layer 3 — Solar, if you're settled somewhere long-term.** A small panel (100-200W) paired with a power station means you're not dependent on the grid coming back at all for basic connectivity and device charging. Overkill for a short stay, close to mandatory if you've committed to a base for years.
 
+<div class="my-10 md:my-12 p-6 md:p-8 rounded-3xl border border-accent-blue/15 bg-accent-blue/[0.03] flex flex-col md:flex-row items-center gap-6">
+  <div class="flex-1 text-center md:text-left">
+    <span class="block text-[10px] font-mono uppercase tracking-[0.2em] text-accent-blue mb-2">Quick Note</span>
+    <span class="block text-slate-600 dark:text-slate-300 text-base md:text-lg leading-relaxed">If you want someone to check your actual numbers and timeline against reality, that's what the 1-on-1 call is for.</span>
+  </div>
+  <a href="/consulting" class="shrink-0 inline-flex items-center gap-2 px-6 py-3 rounded-full font-display font-bold text-white text-sm uppercase tracking-wider bg-accent-blue hover:brightness-110 transition-all whitespace-nowrap">Book a Call →</a>
+</div>
+
 Skip the diesel generator unless you're running a household staff and full appliances. It's noise, fuel logistics, and maintenance for a problem a power station solves more simply for a solo operator.
 
 ## The Backup Internet Stack

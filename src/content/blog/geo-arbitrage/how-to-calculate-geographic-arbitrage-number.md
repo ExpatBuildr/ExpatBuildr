@@ -149,6 +149,14 @@ Running this calculation once gives you a number. Running it correctly means acc
 
 US citizens living abroad may qualify for the Foreign Earned Income Exclusion (FEIE), which allows you to exclude up to $132,900 of foreign-earned income from US federal taxes in 2026.[1] If your income qualifies, this changes your take-home meaningfully, potentially adding $800 to $2,000 per month to the income side of the calculation.
 
+<div class="my-10 md:my-12 p-6 md:p-8 rounded-3xl border border-accent-blue/15 bg-accent-blue/[0.03] flex flex-col md:flex-row items-center gap-6">
+  <div class="flex-1 text-center md:text-left">
+    <span class="block text-[10px] font-mono uppercase tracking-[0.2em] text-accent-blue mb-2">Quick Note</span>
+    <span class="block text-slate-600 dark:text-slate-300 text-base md:text-lg leading-relaxed">If you want your specific numbers and timeline checked against reality before you commit to any of this, that's what the 1-on-1 call is for.</span>
+  </div>
+  <a href="/consulting" class="shrink-0 inline-flex items-center gap-2 px-6 py-3 rounded-full font-display font-bold text-white text-sm uppercase tracking-wider bg-accent-blue hover:brightness-110 transition-all whitespace-nowrap">Book a Call →</a>
+</div>
+
 This is complex and requires a tax professional who specializes in expat taxation. It is not automatic and not available to everyone. But it is a variable that can dramatically improve the geo-arbitrage math, and most introductory articles do not mention it.
 
 **Variable 2: Inflation in the target location**

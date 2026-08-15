@@ -10,6 +10,7 @@ import TableOfContents from '../../components/blog/TableOfContents.astro';
 import RelatedPosts from '../../components/blog/RelatedPosts.astro';
 import GalaxyAd from '../../components/blog/GalaxyAd.astro';
 import NewsletterAd from '../../components/blog/NewsletterAd.astro';
+import ConsultingCTA from '../../components/blog/ConsultingCTA.astro';
 import SafetyWingAd from '../../components/blog/SafetyWingAd.astro';
 import NewsletterPopup from '../../components/NewsletterPopup.astro';
 import Comments from '../../components/blog/Comments.astro';
@@ -418,16 +419,11 @@ const gateMode: 'hard' | 'soft' | 'none' = isSoftCTAArticle ? 'soft' : (isHardGa
                     <!-- Footer Ads -->
                     <GalaxyAd variant="footer" />
 
-                    <!-- Newsletter CTA -->
-                    <div class="max-w-4xl mx-auto mt-12 p-8 md:p-12 rounded-[2.5rem] border border-[rgba(245,200,66,0.2)] bg-[rgba(245,200,66,0.04)] text-center">
-                        <p class="text-[10px] font-mono uppercase tracking-[0.2em] text-[#f5c842] mb-4">Free Weekly Newsletter</p>
-                        <h3 class="text-3xl md:text-5xl font-black font-display text-white uppercase tracking-tight mb-4">GET THE INTEL<br/><span class="text-[#f5c842]">EVERY WEEK.</span></h3>
-                        <p class="text-slate-400 font-inter mb-8 max-w-md mx-auto">Geographic arbitrage, remote income systems, and AI tools — delivered free every week. Plus 4 resources on signup.</p>
-                        <a href="/newsletter" class="inline-flex items-center gap-3 px-10 py-5 rounded-full font-display font-black text-black text-lg uppercase tracking-wider" style="background: linear-gradient(135deg, #f5c842, #ff6b35);">
-                            Join Free — Get All 4 Resources →
-                        </a>
-                        <p class="mt-4 text-[10px] font-mono text-slate-500 uppercase tracking-widest">✓ Weekly Intel · ✓ 4 Free Resources · ✓ No Spam</p>
-                    </div>
+                    <!-- Consulting CTA — replaces the old end-of-article Newsletter CTA. Redundant
+                         to pitch the newsletter twice on gated articles (the gate itself already
+                         asks for an email at 65%), so this slot now offers the paid 1-on-1 call
+                         instead, on every post regardless of gate mode. -->
+                    <ConsultingCTA />
 
                     <!-- Comments -->
                     <Comments />

@@ -49,6 +49,14 @@ The overlap windows that protect sleep while maintaining US client relationships
 
 **Evening SEA time (morning US Eastern):** 7pm to 10pm Philippine Standard Time is 6am to 9am Eastern. This is the highest-quality overlap option for sleep. The founder's evening work window aligns with US East Coast morning hours. The founder finishes work at 10pm and sleeps at a normal time. The US-facing work is done before most of the US workday has started.
 
+<div class="my-10 md:my-12 p-6 md:p-8 rounded-3xl border border-accent-blue/15 bg-accent-blue/[0.03] flex flex-col md:flex-row items-center gap-6">
+  <div class="flex-1 text-center md:text-left">
+    <span class="block text-[10px] font-mono uppercase tracking-[0.2em] text-accent-blue mb-2">Quick Note</span>
+    <span class="block text-slate-600 dark:text-slate-300 text-base md:text-lg leading-relaxed">If you want a system that fits your specific setup instead of a generic checklist, that's what the 1-on-1 call is for.</span>
+  </div>
+  <a href="/consulting" class="shrink-0 inline-flex items-center gap-2 px-6 py-3 rounded-full font-display font-bold text-white text-sm uppercase tracking-wider bg-accent-blue hover:brightness-110 transition-all whitespace-nowrap">Book a Call →</a>
+</div>
+
 The evening SEA time overlap window protects the most valuable morning block — 7am to noon Philippine Standard Time — for deep work without US-facing interruption while still providing a daily window for client communication.
 
 ## The Sleep Architecture

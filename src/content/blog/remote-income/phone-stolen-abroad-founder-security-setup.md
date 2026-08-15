@@ -77,6 +77,14 @@ It helps to think about this in layers, since no single setting closes every gap
 | Password manager on multiple devices | Losing access to every account at once | Moderate, an afternoon |
 | Tested recovery paths | Slow, chaotic recovery under pressure | Moderate, an afternoon |
 
+<div class="my-10 md:my-12 p-6 md:p-8 rounded-3xl border border-accent-blue/15 bg-accent-blue/[0.03] flex flex-col md:flex-row items-center gap-6">
+  <div class="flex-1 text-center md:text-left">
+    <span class="block text-[10px] font-mono uppercase tracking-[0.2em] text-accent-blue mb-2">Quick Note</span>
+    <span class="block text-slate-600 dark:text-slate-300 text-base md:text-lg leading-relaxed">If you want someone to check your actual numbers and timeline against reality, that's what the 1-on-1 call is for.</span>
+  </div>
+  <a href="/consulting" class="shrink-0 inline-flex items-center gap-2 px-6 py-3 rounded-full font-display font-bold text-white text-sm uppercase tracking-wider bg-accent-blue hover:brightness-110 transition-all whitespace-nowrap">Book a Call →</a>
+</div>
+
 Each layer on its own reduces risk. Together, they are the difference between a stolen phone costing you an afternoon and a stolen phone costing you your business.
 
 If you are running your business on phone-based tools and want to see the exact stack we use to keep everything backed up and recoverable, [see the tools we use to run ExpatBuildr from anywhere](/automation-systems/automate).

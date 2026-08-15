@@ -59,6 +59,14 @@ A specific, easy-to-answer ask produces specific, actionable responses:
 
 "I'm glad [specific outcome] is working well. I'm looking to work with more companies at your stage facing [specific problem]. Is there anyone in your network who comes to mind?"
 
+<div class="my-10 md:my-12 p-6 md:p-8 rounded-3xl border border-accent-blue/15 bg-accent-blue/[0.03] flex flex-col md:flex-row items-center gap-6">
+  <div class="flex-1 text-center md:text-left">
+    <span class="block text-[10px] font-mono uppercase tracking-[0.2em] text-accent-blue mb-2">Quick Note</span>
+    <span class="block text-slate-600 dark:text-slate-300 text-base md:text-lg leading-relaxed">If you want this mapped onto your actual pipeline instead of a generic framework, that's what the 1-on-1 call is for.</span>
+  </div>
+  <a href="/consulting" class="shrink-0 inline-flex items-center gap-2 px-6 py-3 rounded-full font-display font-bold text-white text-sm uppercase tracking-wider bg-accent-blue hover:brightness-110 transition-all whitespace-nowrap">Book a Call →</a>
+</div>
+
 This ask is effective because it is specific about who you are looking for, it connects to the outcome the client just experienced, and it requires them to think of a specific person rather than making a general mental scan of their entire network.
 
 The follow-up that converts the referral: "Would it be okay if I reached out to them and mentioned your name? Or if you'd prefer to make an introduction, I can send you a short note you can forward." Offering both options removes the friction of the client having to figure out how to handle the referral.
