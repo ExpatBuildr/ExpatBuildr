@@ -150,11 +150,14 @@ const canonicalUrl = "https://expatbuildr.com/consulting";
       </p>
 
       <!--
-        Email-gated booking: capture the lead via Beehiiv *before* the Calendly
-        widget loads, so someone who bounces mid-booking is still a lead you can
-        follow up with (Calendly only hands you an email once someone fully
-        confirms a slot). On submit this swaps to the Calendly widget, prefilled
-        with the email they just gave.
+        Three-step booking:
+        1. Email only, mandatory — captured via Beehiiv immediately, before
+           anything else, so a bounce here still leaves you a lead (Calendly
+           only hands you an email once someone fully confirms a slot).
+        2. Name + a few qualifying questions, all optional — written to the
+           "Consulting Leads" Notion database via /api/consulting-lead so you
+           have context before the call.
+        3. Calendly widget, prefilled with the email from step 1.
       -->
       <form id="consultingLeadForm" class="lead-gate">
         <input
@@ -164,9 +167,62 @@ const canonicalUrl = "https://expatbuildr.com/consulting";
           autocomplete="email"
           required
         />
-        <button type="submit" class="nav-cta">Continue to Booking →</button>
+        <button type="submit" class="nav-cta">Continue →</button>
       </form>
       <p id="consultingLeadError" class="lead-gate-error" hidden>Please enter a valid email.</p>
+
+      <!--
+        TODO: this writes to the new "Consulting Leads" Notion database, which
+        needs to be shared with whatever Notion integration powers
+        NOTION_API_KEY (same one src/pages/api/audit-leads.ts already uses) —
+        open the database in Notion, "···" menu -> Connections -> add it.
+        Until that's done, /api/consulting-lead will fail quietly (see JS
+        below — a failure here does not block booking, same as Beehiiv).
+      -->
+      <form id="consultingQualifyForm" class="qualify-form" hidden>
+        <p class="qualify-intro">A little context before we talk — none of this is required.</p>
+        <label class="qualify-row">
+          Name <span class="optional-tag">optional</span>
+          <input type="text" id="qualifyName" placeholder="Your name" autocomplete="name" />
+        </label>
+        <label class="qualify-row">
+          When are you looking to move? <span class="optional-tag">optional</span>
+          <select id="qualifyTimeline">
+            <option value="">Prefer not to say</option>
+            <option value="0-3 months">0–3 months</option>
+            <option value="3-6 months">3–6 months</option>
+            <option value="6-12 months">6–12 months</option>
+            <option value="Just exploring">Just exploring</option>
+          </select>
+        </label>
+        <label class="qualify-row">
+          Rough monthly budget after moving? <span class="optional-tag">optional</span>
+          <select id="qualifyBudget">
+            <option value="">Prefer not to say</option>
+            <option value="Under $1.5k/mo">Under $1.5k/mo</option>
+            <option value="$1.5k-3k/mo">$1.5k–3k/mo</option>
+            <option value="$3k-5k/mo">$3k–5k/mo</option>
+            <option value="$5k+/mo">$5k+/mo</option>
+            <option value="Not sure yet">Not sure yet</option>
+          </select>
+        </label>
+        <label class="qualify-row">
+          Which country are you most seriously considering? <span class="optional-tag">optional</span>
+          <select id="qualifyCountry">
+            <option value="">Prefer not to say</option>
+            <option value="Philippines">Philippines</option>
+            <option value="Thailand">Thailand</option>
+            <option value="Vietnam">Vietnam</option>
+            <option value="Other Southeast Asia">Other Southeast Asia</option>
+            <option value="Not sure yet">Not sure yet</option>
+          </select>
+        </label>
+        <label class="qualify-row">
+          Anything specific you want to cover on the call? <span class="optional-tag">optional</span>
+          <textarea id="qualifyNotes" rows="3" placeholder="Optional — helps me prep before we talk"></textarea>
+        </label>
+        <button type="submit" class="nav-cta">Continue to Booking →</button>
+      </form>
 
       <div id="calendlyContainer" class="calendly-container" hidden></div>
 
@@ -182,11 +238,12 @@ const canonicalUrl = "https://expatbuildr.com/consulting";
       <script is:inline>
         (() => {
           const CALENDLY_URL = "https://calendly.com/expatbuildr/fixmyleaks";
-          const form = document.getElementById('consultingLeadForm');
+          const emailForm = document.getElementById('consultingLeadForm');
           const emailInput = document.getElementById('consultingLeadEmail');
           const errorEl = document.getElementById('consultingLeadError');
+          const qualifyForm = document.getElementById('consultingQualifyForm');
           const calContainer = document.getElementById('calendlyContainer');
-          if (!form) return;
+          if (!emailForm || !qualifyForm) return;
 
           function initCalendly(email) {
             if (window.Calendly && typeof window.Calendly.initInlineWidget === 'function') {
@@ -201,7 +258,8 @@ const canonicalUrl = "https://expatbuildr.com/consulting";
             }
           }
 
-          form.addEventListener('submit', async (e) => {
+          // Step 1: email (mandatory) -> Beehiiv, then reveal step 2
+          emailForm.addEventListener('submit', async (e) => {
             e.preventDefault();
             const email = emailInput.value.trim();
 
@@ -212,12 +270,12 @@ const canonicalUrl = "https://expatbuildr.com/consulting";
             }
             errorEl.hidden = true;
 
-            const submitBtn = form.querySelector('button[type="submit"]');
+            const submitBtn = emailForm.querySelector('button[type="submit"]');
             submitBtn.disabled = true;
             submitBtn.textContent = 'Loading...';
 
             // Fire the capture, but don't let a Beehiiv hiccup block someone from
-            // booking a paid call — proceed to the calendar either way.
+            // moving on — proceed to step 2 either way.
             if (window.subscribeToBeehiiv) {
               await window.subscribeToBeehiiv({
                 email,
@@ -227,7 +285,41 @@ const canonicalUrl = "https://expatbuildr.com/consulting";
               });
             }
 
-            form.hidden = true;
+            qualifyForm.dataset.email = email;
+            emailForm.hidden = true;
+            qualifyForm.hidden = false;
+          });
+
+          // Step 2: name + qualifying answers (all optional) -> Notion, then Calendly
+          qualifyForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const email = qualifyForm.dataset.email;
+            const submitBtn = qualifyForm.querySelector('button[type="submit"]');
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Loading...';
+
+            const payload = {
+              email,
+              name: document.getElementById('qualifyName').value.trim(),
+              timeline: document.getElementById('qualifyTimeline').value,
+              budget: document.getElementById('qualifyBudget').value,
+              country: document.getElementById('qualifyCountry').value,
+              notes: document.getElementById('qualifyNotes').value.trim()
+            };
+
+            // Same principle as Beehiiv above: a Notion hiccup should never
+            // block someone from getting to the calendar.
+            try {
+              await fetch('/api/consulting-lead', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
+              });
+            } catch (err) {
+              console.error('consulting-lead capture failed:', err);
+            }
+
+            qualifyForm.hidden = true;
             calContainer.hidden = false;
             initCalendly(email);
           });
@@ -375,6 +467,17 @@ const canonicalUrl = "https://expatbuildr.com/consulting";
   html.dark .lead-gate-error { color: #f87171; }
 
   .calendly-container { margin-top: 1.5rem; min-width: 320px; min-height: 700px; border: 1px solid var(--c-border); background: var(--c-bg-2); }
+
+  .qualify-form { display: flex; flex-direction: column; gap: 1.1rem; max-width: 480px; margin-top: .5rem; }
+  .qualify-form[hidden] { display: none; }
+  .qualify-intro { color: var(--c-text-dim); font-size: .85rem; font-style: italic; margin: 0; }
+  .qualify-row { display: flex; flex-direction: column; gap: .4rem; font-family: var(--c-sans); font-size: .85rem; color: var(--c-text-muted); font-weight: 500; }
+  .optional-tag { font-family: var(--c-mono); font-size: .62rem; letter-spacing: .08em; text-transform: uppercase; color: var(--c-text-dim); font-weight: 400; }
+  .qualify-row input, .qualify-row select, .qualify-row textarea { padding: .8em 1em; font-family: var(--c-sans); font-size: .9rem; color: var(--c-text); background: var(--c-bg-2); border: 1px solid var(--c-border-hi); outline: none; transition: border-color .15s; }
+  .qualify-row input:focus, .qualify-row select:focus, .qualify-row textarea:focus { border-color: var(--c-accent-1); }
+  .qualify-row textarea { resize: vertical; font-family: var(--c-sans); }
+  .qualify-form button[type="submit"] { border: none; cursor: pointer; align-self: flex-start; margin-top: .25rem; }
+  .qualify-form button[type="submit"]:disabled { opacity: .6; cursor: default; }
 
   .faq-item { margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid var(--c-border); }
   .faq-item:first-of-type { margin-top: 1.5rem; }
