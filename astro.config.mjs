@@ -181,15 +181,6 @@ export default defineConfig({
     '/ai-business/prompts': '/newsletter',
     '/ai-business/claude': '/newsletter',
     '/ai-business/thank-you': '/newsletter',
-    '/downloads': '/newsletter',
-    // /api/subscribe.ts can generate any of these 4 at runtime for cold-traffic
-    // signups (`/downloads/${magnetSlug}?ref=newsletter`), and /newsletter.astro
-    // links to the arbitrage-calculator one directly — all 4 send straight to
-    // the file rather than the now-archived per-magnet page (see report)
-    '/downloads/remote-jobs-pack': '/downloads/remote-jobs-pack.pdf',
-    '/downloads/arbitrage-calculator': '/downloads/arbitrage-calculator.xlsx',
-    '/downloads/prompt-vault': '/downloads/prompt-vault.pdf',
-    '/downloads/geo-arbitrage-starter-kit': '/downloads/GeoArbitrage-StarterKit-ExpatBuildr.pdf',
     '/tos.html': '/terms',
     '/portfolio': '/',
     '/archive/index-galaxy': '/',
