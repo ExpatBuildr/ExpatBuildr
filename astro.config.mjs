@@ -177,7 +177,6 @@ export default defineConfig({
     '/expats': '/newsletter',
     '/expats-thankyou': '/newsletter',
     '/expats-download': '/newsletter',
-    '/shop': '/kit',
     '/ai-business/prompts': '/newsletter',
     '/ai-business/claude': '/newsletter',
     '/ai-business/thank-you': '/newsletter',
