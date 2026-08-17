@@ -1,0 +1,736 @@
+---
+// Dev Vault - No Index
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>ExpatBuildr · Master Product Checklist</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Unbounded:wght@400;600;700;900&display=swap" rel="stylesheet">
+<style is:global>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg:       #080D16;
+  --surface:  #0D1525;
+  --card:     #111C30;
+  --border:   #1E2F4A;
+  --teal:     #00D4C8;
+  --gold:     #FFB800;
+  --green:    #00E676;
+  --red:      #FF4D6D;
+  --purple:   #B388FF;
+  --orange:   #FF9D00;
+  --text:     #E8EDF5;
+  --muted:    #4A5C78;
+  --mono:     'IBM Plex Mono', monospace;
+  --display:  'Unbounded', sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--mono);
+  min-height: 100vh;
+  padding: 0;
+}
+
+/* Scanline overlay */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0,212,200,0.012) 2px,
+    rgba(0,212,200,0.012) 4px
+  );
+  pointer-events: none;
+  z-index: 999;
+}
+
+/* ── Header ── */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(8,13,22,0.95);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  padding: 0 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.logo {
+  font-family: var(--display);
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--teal);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.header-stats {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+
+.hstat {
+  font-size: 10px;
+  color: var(--muted);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.hstat strong {
+  color: var(--text);
+  font-size: 13px;
+}
+
+/* ── Hero ── */
+.hero {
+  padding: 52px 28px 40px;
+  max-width: 1100px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.hero-eyebrow {
+  font-size: 10px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.hero-eyebrow::before {
+  content: '';
+  width: 20px; height: 1px;
+  background: var(--teal);
+}
+
+h1 {
+  font-family: var(--display);
+  font-size: clamp(26px, 4vw, 42px);
+  font-weight: 900;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  margin-bottom: 20px;
+}
+
+h1 .accent { color: var(--teal); }
+h1 .num { color: var(--gold); }
+
+.hero-sub {
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.7;
+  max-width: 600px;
+  margin-bottom: 36px;
+}
+
+/* ── Progress bars ── */
+.progress-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin-bottom: 48px;
+}
+
+.prog-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 16px 20px;
+}
+
+.prog-label {
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 8px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.prog-label span { color: var(--text); font-size: 13px; }
+
+.prog-bar {
+  height: 3px;
+  background: var(--border);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.prog-fill {
+  height: 100%;
+  border-radius: 2px;
+  transition: width 0.6s cubic-bezier(0.4,0,0.2,1);
+}
+
+/* ── Filter tabs ── */
+.filters {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-bottom: 28px;
+  padding: 0 28px;
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.filter-btn {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 6px 14px;
+  border-radius: 3px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.filter-btn:hover { border-color: var(--teal); color: var(--teal); }
+.filter-btn.active { background: var(--teal); color: var(--bg); border-color: var(--teal); font-weight: 600; }
+
+/* ── Main content ── */
+.content {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 28px 80px;
+}
+
+/* ── Section header ── */
+.section-head {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 36px 0 14px;
+}
+
+.section-head-line {
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+.section-title {
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+/* ── Product row ── */
+.product-row {
+  display: grid;
+  grid-template-columns: 44px 24px 1fr auto auto;
+  align-items: center;
+  gap: 12px 14px;
+  padding: 14px 18px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  margin-bottom: 3px;
+  cursor: pointer;
+  transition: border-color 0.15s, background 0.15s;
+  position: relative;
+  overflow: hidden;
+}
+
+.product-row::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 2px;
+  transition: background 0.15s;
+}
+
+.product-row:hover { background: #162038; border-color: #2A3F60; }
+
+.product-row.done::before     { background: var(--green); }
+.product-row.building::before { background: var(--gold); }
+.product-row.queued::before   { background: var(--orange); }
+.product-row.planned::before  { background: var(--muted); }
+.product-row.checked          { opacity: 0.55; }
+.product-row.checked::before  { background: var(--green) !important; }
+
+/* Checkbox */
+.checkbox {
+  width: 18px; height: 18px;
+  border: 1.5px solid var(--muted);
+  border-radius: 3px;
+  display: flex; align-items: center; justify-content: center;
+  transition: all 0.15s;
+  flex-shrink: 0;
+}
+.checkbox.ticked {
+  background: var(--green);
+  border-color: var(--green);
+}
+.checkbox.ticked::after {
+  content: '✓';
+  font-size: 11px;
+  color: var(--bg);
+  font-weight: 700;
+}
+
+/* Number */
+.prod-num {
+  font-size: 11px;
+  color: var(--muted);
+  font-weight: 500;
+}
+
+/* Body */
+.prod-info { min-width: 0; }
+
+.prod-name {
+  font-family: var(--display);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 3px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.prod-meta-row {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.pill {
+  font-size: 9px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 2px 7px;
+  border-radius: 2px;
+  font-weight: 500;
+}
+
+.pill-teal   { background: rgba(0,212,200,0.1);  color: var(--teal);   border: 1px solid rgba(0,212,200,0.2); }
+.pill-gold   { background: rgba(255,184,0,0.1);  color: var(--gold);   border: 1px solid rgba(255,184,0,0.2); }
+.pill-green  { background: rgba(0,230,118,0.1);  color: var(--green);  border: 1px solid rgba(0,230,118,0.2); }
+.pill-purple { background: rgba(179,136,255,0.1);color: var(--purple); border: 1px solid rgba(179,136,255,0.2); }
+.pill-orange { background: rgba(255,157,0,0.1);  color: var(--orange); border: 1px solid rgba(255,157,0,0.2); }
+.pill-muted  { background: rgba(74,92,120,0.15); color: var(--muted);  border: 1px solid rgba(74,92,120,0.2); }
+
+/* Price */
+.prod-price {
+  font-family: var(--display);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text);
+  min-width: 40px;
+  text-align: right;
+}
+
+/* Status badge */
+.status-chip {
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 2px;
+  white-space: nowrap;
+  font-weight: 600;
+  min-width: 76px;
+  text-align: center;
+}
+
+.chip-done     { background: rgba(0,230,118,0.12);  color: var(--green);  border: 1px solid rgba(0,230,118,0.25); }
+.chip-building { background: rgba(255,184,0,0.12);  color: var(--gold);   border: 1px solid rgba(255,184,0,0.25); }
+.chip-queued   { background: rgba(255,157,0,0.12);  color: var(--orange); border: 1px solid rgba(255,157,0,0.25); }
+.chip-planned  { background: rgba(74,92,120,0.2);   color: var(--muted);  border: 1px solid rgba(74,92,120,0.3); }
+
+/* ── Summary footer ── */
+.summary {
+  margin-top: 52px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 28px 32px;
+}
+
+.summary-title {
+  font-family: var(--display);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin-bottom: 24px;
+}
+
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 24px;
+}
+
+.sum-item {}
+.sum-val {
+  font-family: var(--display);
+  font-size: 28px;
+  font-weight: 900;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.sum-lbl { font-size: 10px; color: var(--muted); letter-spacing: 0.08em; text-transform: uppercase; }
+
+/* ── Bundle box ── */
+.bundle-strip {
+  background: rgba(255,184,0,0.05);
+  border: 1px solid rgba(255,184,0,0.2);
+  border-radius: 4px;
+  padding: 16px 20px;
+  margin: 28px 0 0;
+  font-size: 11px;
+  color: var(--muted);
+  line-height: 1.7;
+}
+.bundle-strip strong { color: var(--gold); }
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+  .product-row { grid-template-columns: 24px 1fr auto; }
+  .prod-num { display: none; }
+  .status-chip { display: none; }
+  h1 { font-size: 22px; }
+  .header-stats { display: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="logo">ExpatBuildr</div>
+  <div class="header-stats">
+    <div class="hstat">Products <strong id="hTotal">0</strong></div>
+    <div class="hstat">Built <strong id="hDone" style="color:var(--green)">0</strong></div>
+    <div class="hstat">Remaining <strong id="hLeft" style="color:var(--gold)">0</strong></div>
+    <div class="hstat">Catalog Value <strong id="hValue" style="color:var(--teal)">$0</strong></div>
+  </div>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-eyebrow">Etsy Digital Product Roadmap · 2025</div>
+  <h1>
+    <span class="num" id="totalCount">0</span> Products.<br>
+    <span class="accent">3 Pillars.</span><br>
+    1 Empire.
+  </h1>
+  <p class="hero-sub">Every product maps to a content pillar, a buyer segment, and a YouTube video. Check off items as they go live on Etsy. Progress saves automatically.</p>
+
+  <!-- Progress bars -->
+  <div class="progress-grid">
+    <div class="prog-card">
+      <div class="prog-label">Overall progress <span id="pctAll">0%</span></div>
+      <div class="prog-bar"><div class="prog-fill" id="barAll" style="width:0%;background:var(--teal)"></div></div>
+    </div>
+    <div class="prog-card">
+      <div class="prog-label">AI & Automation <span id="pctAI">0%</span></div>
+      <div class="prog-bar"><div class="prog-fill" id="barAI" style="width:0%;background:var(--purple)"></div></div>
+    </div>
+    <div class="prog-card">
+      <div class="prog-label">Lead Generation <span id="pctLG">0%</span></div>
+      <div class="prog-bar"><div class="prog-fill" id="barLG" style="width:0%;background:var(--gold)"></div></div>
+    </div>
+    <div class="prog-card">
+      <div class="prog-label">Remote Income <span id="pctRI">0%</span></div>
+      <div class="prog-bar"><div class="prog-fill" id="barRI" style="width:0%;background:var(--orange)"></div></div>
+    </div>
+    <div class="prog-card">
+      <div class="prog-label">Geo-Arbitrage <span id="pctGA">0%</span></div>
+      <div class="prog-bar"><div class="prog-fill" id="barGA" style="width:0%;background:var(--green)"></div></div>
+    </div>
+    <div class="prog-card">
+      <div class="prog-label">Conversion & Growth <span id="pctCG">0%</span></div>
+      <div class="prog-bar"><div class="prog-fill" id="barCG" style="width:0%;background:var(--teal)"></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- FILTERS -->
+<div class="filters">
+  <button class="filter-btn active" onclick="setFilter('all',this)">All Products</button>
+  <button class="filter-btn" onclick="setFilter('done',this)">✓ Built</button>
+  <button class="filter-btn" onclick="setFilter('building',this)">▶ Building</button>
+  <button class="filter-btn" onclick="setFilter('queued',this)">Queued</button>
+  <button class="filter-btn" onclick="setFilter('planned',this)">Planned</button>
+  <button class="filter-btn" onclick="setFilter('ai',this)">AI & Automation</button>
+  <button class="filter-btn" onclick="setFilter('leadgen',this)">Lead Gen</button>
+  <button class="filter-btn" onclick="setFilter('remote',this)">Remote Income</button>
+  <button class="filter-btn" onclick="setFilter('geo',this)">Geo-Arb</button>
+  <button class="filter-btn" onclick="setFilter('conversion',this)">Conversion</button>
+</div>
+
+<!-- CONTENT -->
+<div class="content" id="productList"></div>
+
+<script is:inline>
+// ── Product data ──────────────────────────────────────────────────────────────
+const products = [
+  // BUILT ✅
+  { id:1,  name:"Cold Outreach CRM Tracker",              price:19, status:"done",     pillar:"leadgen",    audience:"Lead Builders",   tags:["Lead Gen","6 tabs","1,101 formulas"],       tagStyles:["teal","gold","muted"],    priority:"HIGH — live-ready" },
+  { id:2,  name:"Geo-Arbitrage Country Calculator",       price:22, status:"done",     pillar:"geo",        audience:"Freedom Seekers", tags:["Geo-Arb","35 countries","GAI Score™"],       tagStyles:["green","teal","gold"],    priority:"HIGH — live-ready" },
+  { id:3,  name:"Freelance Income & Client Dashboard",    price:22, status:"done",     pillar:"remote",     audience:"Remote Hustlers", tags:["Remote Income","7 tabs","Rate Calculator"],  tagStyles:["orange","teal","muted"],  priority:"HIGH — live-ready" },
+
+  // BUILDING NOW ▶
+  { id:4,  name:"AI Prompt Vault for Business Builders",  price:19, status:"building", pillar:"ai",         audience:"AI Builders",     tags:["AI","50+ prompts","Highest conversion"],    tagStyles:["purple","gold","green"],  priority:"🔥 Build now" },
+
+  // QUEUED — next sprint
+  { id:5,  name:"ChatGPT Automation Playbook",            price:22, status:"queued",   pillar:"ai",         audience:"AI Builders",     tags:["AI","Automation","Workflows"],              tagStyles:["purple","teal","muted"],  priority:"Build next" },
+  { id:6,  name:"Claude Prompt Engineering Starter Kit",  price:17, status:"queued",   pillar:"ai",         audience:"AI Builders",     tags:["Claude","Prompting","Differentiator"],      tagStyles:["purple","teal","gold"],   priority:"Build next" },
+  { id:7,  name:"Cold Outreach Email Swipe File",         price:19, status:"queued",   pillar:"leadgen",    audience:"Lead Builders",   tags:["Lead Gen","20+ templates","Automation"],    tagStyles:["teal","gold","muted"],    priority:"Build next" },
+  { id:8,  name:"Geographic Arbitrage Calculator (SEA)",  price:15, status:"queued",   pillar:"geo",        audience:"Freedom Seekers", tags:["Geo-Arb","Southeast Asia","Shareable"],     tagStyles:["green","teal","gold"],    priority:"Build next" },
+  { id:9,  name:"Digital Nomad Monthly Budget Planner",   price:17, status:"queued",   pillar:"geo",        audience:"Freedom Seekers", tags:["Geo-Arb","12 months","PDF + Sheets"],       tagStyles:["green","orange","muted"], priority:"Build next" },
+  { id:10, name:"LinkedIn Outreach Tracker + Message Vault",price:17,status:"queued",  pillar:"leadgen",    audience:"Lead Builders",   tags:["Lead Gen","30 scripts","Bundles with 01"],  tagStyles:["teal","muted","gold"],    priority:"Build next" },
+  { id:11, name:"Remote Job Hunter Toolkit",              price:19, status:"queued",   pillar:"remote",     audience:"Remote Hustlers", tags:["Remote Income","ATS checklist","Salary scripts"],tagStyles:["orange","teal","muted"],priority:"Build next" },
+  { id:12, name:"Lead Gen System Blueprint",              price:24, status:"queued",   pillar:"leadgen",    audience:"Lead Builders",   tags:["Lead Gen","GalaxyLeads method","Framework"], tagStyles:["teal","purple","gold"],   priority:"Build next" },
+
+  // PLANNED ◌
+  { id:13, name:"Local Business Automation Pitch Deck",   price:22, status:"planned",  pillar:"leadgen",    audience:"Lead Builders",   tags:["Lead Gen","Canva","Pitch scripts"],          tagStyles:["teal","muted","orange"],  priority:"Sprint 3" },
+  { id:14, name:"Local Business Lead Gen Swipe Kit",      price:24, status:"planned",  pillar:"leadgen",    audience:"Lead Builders",   tags:["Lead Gen","50 templates","5 niches"],        tagStyles:["teal","gold","muted"],    priority:"Sprint 3" },
+  { id:15, name:"Remote Job Application Tracker",         price:12, status:"planned",  pillar:"remote",     audience:"Remote Hustlers", tags:["Remote Income","Entry product","7 boards"],  tagStyles:["orange","teal","muted"],  priority:"Sprint 3" },
+  { id:16, name:"Philippines Expat Setup Checklist",      price:17, status:"planned",  pillar:"geo",        audience:"Freedom Seekers", tags:["Geo-Arb","PH-specific","Banking + SIM"],     tagStyles:["green","gold","teal"],    priority:"Sprint 3" },
+  { id:17, name:"Geo-Arbitrage Philippines Edition",      price:17, status:"planned",  pillar:"geo",        audience:"Freedom Seekers", tags:["Geo-Arb","Local moat","Creator authority"],  tagStyles:["green","purple","gold"],  priority:"Sprint 3" },
+  { id:18, name:"Solo Operator OS",                       price:24, status:"planned",  pillar:"remote",     audience:"All Segments",    tags:["Systems","All segments","Notion/Sheets"],    tagStyles:["orange","teal","purple"], priority:"Sprint 4" },
+  { id:19, name:"Content Monetization Roadmap",           price:19, status:"planned",  pillar:"remote",     audience:"All Segments",    tags:["Meta product","All segments","Framework"],   tagStyles:["orange","gold","muted"],  priority:"Sprint 4" },
+  { id:20, name:"Landing Page Conversion Audit Checklist",price:19, status:"planned",  pillar:"conversion", audience:"All Segments",    tags:["Conversion","87-point audit","CRO"],         tagStyles:["teal","purple","muted"],  priority:"Sprint 4" },
+  { id:21, name:"Newsletter Growth Tracker + Content Cal",price:19, status:"planned",  pillar:"conversion", audience:"All Segments",    tags:["Newsletter","52-week cal","Beehiiv/Kit"],    tagStyles:["teal","gold","muted"],    priority:"Sprint 4" },
+  { id:22, name:"Facebook Pixel + Meta Ads Tracker",      price:22, status:"planned",  pillar:"conversion", audience:"Lead Builders",   tags:["Pixel/Tracking","UTM builder","ROAS calc"],  tagStyles:["teal","purple","orange"], priority:"Sprint 5" },
+  { id:23, name:"Sales Funnel Builder Worksheet",         price:24, status:"planned",  pillar:"conversion", audience:"All Segments",    tags:["Conversion","Revenue projector","A/B log"],  tagStyles:["teal","gold","muted"],    priority:"Sprint 5" },
+  { id:24, name:"SEO Content Planner — 90-Day Sprint",    price:22, status:"planned",  pillar:"remote",     audience:"All Segments",    tags:["SEO","3-pillar system","Traffic model"],     tagStyles:["orange","teal","purple"], priority:"Sprint 5" },
+  { id:25, name:"UTM Link Builder + Campaign Tracker",    price:15, status:"planned",  pillar:"conversion", audience:"Lead Builders",   tags:["Pixel/Tracking","Multi-channel","UTM auto"], tagStyles:["teal","muted","orange"],  priority:"Sprint 5" },
+  { id:26, name:"Email List Growth Operating System",     price:24, status:"planned",  pillar:"conversion", audience:"All Segments",    tags:["Newsletter","Per-subscriber value","Segments"],tagStyles:["teal","gold","purple"],  priority:"Sprint 5" },
+];
+
+// Storage key
+const STORE_KEY = 'expatbuildr_checklist_v1';
+
+// Load checked state
+function loadChecked() {
+  try { return JSON.parse(localStorage.getItem(STORE_KEY) || '{}'); }
+  catch { return {}; }
+}
+function saveChecked(state) {
+  try { localStorage.setItem(STORE_KEY, JSON.stringify(state)); }
+  catch {}
+}
+
+let checked = loadChecked();
+let currentFilter = 'all';
+
+// Section definitions
+const sections = [
+  { key: 'done',     label: '✓  Built & Live-Ready',          color: 'var(--green)' },
+  { key: 'building', label: '▶  Currently Building',          color: 'var(--gold)' },
+  { key: 'queued',   label: '⬡  Queued — Next Sprints',       color: 'var(--orange)' },
+  { key: 'planned',  label: '◌  Planned — Full Roadmap',      color: 'var(--muted)' },
+];
+
+const statusLabels = {
+  done:     ['chip-done',     '✓ Live-Ready'],
+  building: ['chip-building', '▶ Building'],
+  queued:   ['chip-queued',   '◆ Queued'],
+  planned:  ['chip-planned',  '◌ Planned'],
+};
+
+function pillarMatch(p, filter) {
+  if (filter === 'all') return true;
+  if (['done','building','queued','planned'].includes(filter)) return p.status === filter;
+  return p.pillar === filter;
+}
+
+function render() {
+  const list = document.getElementById('productList');
+  list.innerHTML = '';
+
+  sections.forEach(sec => {
+    const secProducts = products.filter(p =>
+      p.status === sec.key && pillarMatch(p, currentFilter)
+    );
+    if (secProducts.length === 0) return;
+
+    // Section header
+    const sh = document.createElement('div');
+    sh.className = 'section-head';
+    sh.innerHTML = `
+      <div class="section-title" style="color:${sec.color}">${sec.label}</div>
+      <div class="section-head-line"></div>
+      <div class="section-title" style="color:var(--muted)">${secProducts.length} products</div>
+    `;
+    list.appendChild(sh);
+
+    secProducts.forEach(p => {
+      const isChecked = !!checked[p.id];
+      const [chipClass, chipLabel] = statusLabels[p.status];
+
+      const row = document.createElement('div');
+      row.className = `product-row ${p.status} ${isChecked ? 'checked' : ''}`;
+      row.dataset.id = p.id;
+
+      const tagHTML = p.tags.map((t, i) =>
+        `<span class="pill pill-${p.tagStyles[i] || 'muted'}">${t}</span>`
+      ).join('');
+
+      row.innerHTML = `
+        <div class="checkbox ${isChecked ? 'ticked' : ''}" data-cb="${p.id}"></div>
+        <div class="prod-num">${String(p.id).padStart(2,'0')}</div>
+        <div class="prod-info">
+          <div class="prod-name">${p.name}</div>
+          <div class="prod-meta-row">
+            ${tagHTML}
+            <span class="pill pill-muted" style="color:var(--muted)">${p.audience}</span>
+          </div>
+        </div>
+        <div class="prod-price">$${p.price}</div>
+        <div class="status-chip ${chipClass}">${chipLabel}</div>
+      `;
+
+      row.addEventListener('click', () => toggleCheck(p.id));
+      list.appendChild(row);
+    });
+  });
+
+  // Summary
+  renderSummary();
+  updateStats();
+}
+
+function toggleCheck(id) {
+  checked[id] = !checked[id];
+  saveChecked(checked);
+  render();
+}
+
+function setFilter(f, btn) {
+  currentFilter = f;
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  render();
+}
+
+function pct(arr) {
+  if (!arr.length) return 0;
+  return Math.round(arr.filter(p => checked[p.id]).length / arr.length * 100);
+}
+
+function updateStats() {
+  const total = products.length;
+  const done = products.filter(p => p.status === 'done').length;
+  const checkedCount = Object.values(checked).filter(Boolean).length;
+  const totalValue = products.reduce((s,p) => s + p.price, 0);
+
+  document.getElementById('totalCount').textContent = total;
+  document.getElementById('hTotal').textContent = total;
+  document.getElementById('hDone').textContent = done;
+  document.getElementById('hLeft').textContent = total - done;
+  document.getElementById('hValue').textContent = `$${totalValue.toLocaleString()}`;
+
+  // Progress bars
+  const all = pct(products);
+  document.getElementById('pctAll').textContent = all + '%';
+  document.getElementById('barAll').style.width = all + '%';
+
+  const ai = pct(products.filter(p => p.pillar === 'ai'));
+  document.getElementById('pctAI').textContent = ai + '%';
+  document.getElementById('barAI').style.width = ai + '%';
+
+  const lg = pct(products.filter(p => p.pillar === 'leadgen'));
+  document.getElementById('pctLG').textContent = lg + '%';
+  document.getElementById('barLG').style.width = lg + '%';
+
+  const ri = pct(products.filter(p => p.pillar === 'remote'));
+  document.getElementById('pctRI').textContent = ri + '%';
+  document.getElementById('barRI').style.width = ri + '%';
+
+  const ga = pct(products.filter(p => p.pillar === 'geo'));
+  document.getElementById('pctGA').textContent = ga + '%';
+  document.getElementById('barGA').style.width = ga + '%';
+
+  const cg = pct(products.filter(p => p.pillar === 'conversion'));
+  document.getElementById('pctCG').textContent = cg + '%';
+  document.getElementById('barCG').style.width = cg + '%';
+}
+
+function renderSummary() {
+  const existing = document.querySelector('.summary');
+  if (existing) existing.remove();
+
+  const totalRevenue = products.reduce((s,p) => s + p.price, 0);
+  const avgPrice = Math.round(totalRevenue / products.length);
+  const month6 = Math.round(products.length * avgPrice * 6.2); // ~6.2 avg sales/product/mo at month 6
+
+  const sum = document.createElement('div');
+  sum.className = 'summary';
+  sum.innerHTML = `
+    <div class="summary-title">// catalog revenue potential</div>
+    <div class="summary-grid">
+      <div class="sum-item">
+        <div class="sum-val" style="color:var(--teal)">${products.length}</div>
+        <div class="sum-lbl">Total products</div>
+      </div>
+      <div class="sum-item">
+        <div class="sum-val" style="color:var(--gold)">$${avgPrice}</div>
+        <div class="sum-lbl">Avg price</div>
+      </div>
+      <div class="sum-item">
+        <div class="sum-val" style="color:var(--text)">$${totalRevenue.toLocaleString()}</div>
+        <div class="sum-lbl">If all sold once</div>
+      </div>
+      <div class="sum-item">
+        <div class="sum-val" style="color:var(--green)">$${month6.toLocaleString()}</div>
+        <div class="sum-lbl">Month 6 target</div>
+      </div>
+      <div class="sum-item">
+        <div class="sum-val" style="color:var(--purple)">8</div>
+        <div class="sum-lbl">Bundle combos</div>
+      </div>
+      <div class="sum-item">
+        <div class="sum-val" style="color:var(--orange)">4</div>
+        <div class="sum-lbl">Audience segments</div>
+      </div>
+    </div>
+    <div class="bundle-strip">
+      <strong>Bundle strategy:</strong>
+      Lead Gen Starter Pack (01+10+07) → $45 &nbsp;·&nbsp;
+      AI Builder Pack (04+05+06) → $49 &nbsp;·&nbsp;
+      Geo-Arb Freedom Kit (02+08+09+16) → $59 &nbsp;·&nbsp;
+      Remote Work OS (03+11+15+24) → $55 &nbsp;·&nbsp;
+      Full ExpatBuildr Vault (all 26) → $149
+    </div>
+  `;
+  document.getElementById('productList').appendChild(sum);
+}
+
+// Init
+render();
+</script>
+</body>
+</html>
