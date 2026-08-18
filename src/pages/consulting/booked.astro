@@ -1,0 +1,68 @@
+---
+// src/pages/consulting/booked.astro
+// Stripe-first consulting flow (temporary, 2026-08-18): only reachable via
+// Stripe's post-payment redirect — not linked from nav, footer, or /consulting
+// itself. Set this page's URL (https://expatbuildr.com/consulting/booked) as
+// the Payment Link's confirmation redirect in the Stripe dashboard — that's
+// config on Stripe's side, not something this file can set.
+// Self-contained, same --c-* token system as /consulting for brand match.
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<title>Payment Confirmed — ExpatBuildr</title>
+<meta name="robots" content="noindex, nofollow">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --c-bg: #ffffff;
+    --c-bg-2: #f8fafc;
+    --c-border: rgba(15,23,42,.08);
+    --c-text: #0f172a;
+    --c-text-muted: #334155;
+    --c-text-dim: #64748b;
+    --c-accent-1: #15803d;
+    --c-accent-2: #7c3aed;
+    --c-serif: 'Outfit', sans-serif;
+    --c-sans: 'Inter', sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --c-bg: #050505; --c-bg-2: #0a0a0a; --c-border: rgba(255,255,255,.08);
+      --c-text: #f0ede8; --c-text-muted: #9a9490; --c-text-dim: #5a5652;
+      --c-accent-1: #a8e6a3; --c-accent-2: #c084fc;
+    }
+  }
+  body {
+    font-family: var(--c-sans);
+    background: var(--c-bg);
+    color: var(--c-text);
+    min-height: 100vh;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    padding: 40px 24px; text-align: center;
+  }
+  .logo { font-family: var(--c-serif); font-weight: 900; font-size: 15px; color: var(--c-text-dim); margin-bottom: 32px; }
+  .logo span { background: linear-gradient(135deg,var(--c-accent-1),var(--c-accent-2)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+  .check { width: 64px; height: 64px; border-radius: 50%; background: color-mix(in srgb, var(--c-accent-1) 15%, transparent); border: 2px solid var(--c-accent-1); display: flex; align-items: center; justify-content: center; margin: 0 auto 24px; font-size: 28px; color: var(--c-accent-1); }
+  h1 { font-family: var(--c-serif); font-size: clamp(1.75rem, 5vw, 2.75rem); line-height: 1.1; margin-bottom: 16px; letter-spacing: -.02em; max-width: 18ch; }
+  .sub { color: var(--c-text-muted); font-size: 1rem; max-width: 42ch; margin: 0 auto 36px; line-height: 1.65; }
+  .btn { display: inline-flex; align-items: center; gap: .5em; font-family: var(--c-serif); font-weight: 700; font-size: 1.05rem; text-decoration: none; padding: .9em 1.8em; border-radius: 999px; background: linear-gradient(135deg,var(--c-accent-1),var(--c-accent-2)); color: #000; transition: filter .15s; }
+  .btn:hover { filter: brightness(1.1); }
+  .note { margin-top: 20px; font-size: .82rem; color: var(--c-text-dim); }
+</style>
+</head>
+<body>
+
+<div class="logo">Expat<span>Buildr</span></div>
+<div class="check">✓</div>
+<h1>Payment confirmed — pick your time below.</h1>
+<p class="sub">You're in. Grab a slot on the calendar and I'll see you there — a confirmation with the call details will land in your inbox once it's booked.</p>
+<a class="btn" href="https://calendly.com/expatbuildr/consulting" target="_blank" rel="noopener">Book Your Time →</a>
+<p class="note">Opens in a new tab.</p>
+
+</body>
+</html>

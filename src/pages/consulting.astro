@@ -146,17 +146,25 @@ const canonicalUrl = "https://expatbuildr.com/consulting";
       <div class="section-tag">Book Your Call</div>
       <h2>Pick a time<br /><em>that works for you.</em></h2>
       <p class="booking-sub">
-        Drop your email first so I have a way to reach you — the calendar opens right after.
+        Drop your email first, then complete payment to grab your slot — you'll pick your time right after.
       </p>
 
       <!--
-        Two-step booking (was three — the qualifying-questions step was
-        archived 2026-08-18 to archive-2026-08-18/consulting-qualify-step.md;
-        Calendly now collects that context itself via its own booking form):
-        1. Email only, mandatory — captured via Beehiiv immediately, before
-           anything else, so a bounce here still leaves you a lead (Calendly
-           only hands you an email once someone fully confirms a slot).
-        2. Calendly widget, prefilled with the email from step 1.
+        TEMPORARY Stripe-first flow (2026-08-18): Calendly's native payment
+        enforcement needs a paid Calendly plan we don't have tonight, so
+        payment is collected via a Stripe Payment Link BEFORE Calendly ever
+        shows, instead of Calendly gating the booking itself. Same pattern
+        already used on /kit and /shop.
+        1. Email, mandatory -> Beehiiv, then reveal step 2.
+        2. Button to the Stripe Payment Link (prefilled email via Stripe's
+           own ?prefilled_email= param). Stripe's Payment Link must have its
+           post-payment redirect set to /consulting/booked in the Stripe
+           dashboard — that's config, not code, and isn't done by this edit.
+        3. /consulting/booked (separate page) shows the Calendly link after
+           payment succeeds.
+        Revert to the old Calendly-first flow once Calendly's paid plan (or
+        native payment enforcement) is sorted — see git history for the
+        prior inline-widget version this replaced.
       -->
       <form id="consultingLeadForm" class="lead-gate">
         <input
@@ -170,52 +178,24 @@ const canonicalUrl = "https://expatbuildr.com/consulting";
       </form>
       <p id="consultingLeadError" class="lead-gate-error" hidden>Please enter a valid email.</p>
 
-      <div id="calendlyContainer" class="calendly-container" hidden></div>
-      <p id="calendlyFallback" class="calendly-fallback" hidden>
-        Calendar not loading? <a id="calendlyFallbackLink" href="https://calendly.com/expatbuildr/consulting" target="_blank" rel="noopener">Book directly on Calendly →</a>
-      </p>
+      <div id="paymentStep" class="payment-step" hidden>
+        <p class="payment-step-note">You're set, <span id="paymentStepEmail"></span> — next step is payment, then you'll pick your time.</p>
+        <a id="paymentStepBtn" class="nav-cta" href="#" target="_self">Continue to Payment — $297 →</a>
+      </div>
 
-      <script is:inline src="https://assets.calendly.com/assets/external/widget.js"></script>
       <script is:inline src="/beehiiv-v2.js"></script>
       <script is:inline>
         (() => {
-          const CALENDLY_URL = "https://calendly.com/expatbuildr/consulting";
-          const CALENDLY_LOAD_TIMEOUT_MS = 8000;
+          const STRIPE_PAYMENT_LINK_URL = "https://book.stripe.com/6oU3cu7WLf2afVU4yQ2oE0l";
           const emailForm = document.getElementById('consultingLeadForm');
           const emailInput = document.getElementById('consultingLeadEmail');
           const errorEl = document.getElementById('consultingLeadError');
-          const calContainer = document.getElementById('calendlyContainer');
-          const fallbackEl = document.getElementById('calendlyFallback');
-          const fallbackLink = document.getElementById('calendlyFallbackLink');
-          if (!emailForm || !calContainer) return;
+          const paymentStep = document.getElementById('paymentStep');
+          const paymentStepEmail = document.getElementById('paymentStepEmail');
+          const paymentStepBtn = document.getElementById('paymentStepBtn');
+          if (!emailForm || !paymentStep) return;
 
-          function initCalendly(email) {
-            const deadline = Date.now() + CALENDLY_LOAD_TIMEOUT_MS;
-
-            function tryInit() {
-              if (window.Calendly && typeof window.Calendly.initInlineWidget === 'function') {
-                window.Calendly.initInlineWidget({
-                  url: CALENDLY_URL,
-                  parentElement: calContainer,
-                  prefill: { email }
-                });
-                return;
-              }
-              if (Date.now() < deadline) {
-                // widget.js may not have finished loading yet — keep polling briefly
-                setTimeout(tryInit, 200);
-              } else {
-                // Calendly's script never loaded (blocked, offline, etc.) — don't
-                // leave visitors staring at an empty box, give them a direct link
-                console.error('Calendly widget failed to load within timeout');
-                fallbackLink.href = `${CALENDLY_URL}?email=${encodeURIComponent(email)}`;
-                fallbackEl.hidden = false;
-              }
-            }
-            tryInit();
-          }
-
-          // Email (mandatory) -> Beehiiv, then straight to Calendly
+          // Email (mandatory) -> Beehiiv, then reveal the payment button
           emailForm.addEventListener('submit', async (e) => {
             e.preventDefault();
             const email = emailInput.value.trim();
@@ -232,7 +212,7 @@ const canonicalUrl = "https://expatbuildr.com/consulting";
             submitBtn.textContent = 'Loading...';
 
             // Fire the capture, but don't let a Beehiiv hiccup block someone from
-            // getting to the calendar.
+            // getting to payment.
             if (window.subscribeToBeehiiv) {
               await window.subscribeToBeehiiv({
                 email,
@@ -242,9 +222,10 @@ const canonicalUrl = "https://expatbuildr.com/consulting";
               });
             }
 
+            paymentStepEmail.textContent = email;
+            paymentStepBtn.href = `${STRIPE_PAYMENT_LINK_URL}?prefilled_email=${encodeURIComponent(email)}`;
             emailForm.hidden = true;
-            calContainer.hidden = false;
-            initCalendly(email);
+            paymentStep.hidden = false;
           });
         })();
       </script>
@@ -389,15 +370,10 @@ const canonicalUrl = "https://expatbuildr.com/consulting";
   .lead-gate-error { color: #dc2626; font-family: var(--c-mono); font-size: .75rem; margin-top: .6rem; }
   html.dark .lead-gate-error { color: #f87171; }
 
-  .calendly-container { margin-top: 1.5rem; width: 100%; min-width: 320px; height: 1100px; border: 1px solid var(--c-border); background: var(--c-bg-2); }
-  .calendly-container[hidden] { display: none; }
-
-  @media (max-width: 640px) {
-    .calendly-container { height: 1300px; }
-  }
-
-  .calendly-fallback { margin-top: 1rem; font-size: .85rem; color: var(--c-text-dim); }
-  .calendly-fallback[hidden] { display: none; }
+  .payment-step { margin-top: 1.5rem; max-width: 480px; }
+  .payment-step[hidden] { display: none; }
+  .payment-step-note { color: var(--c-text-muted); font-size: .9rem; margin-bottom: 1rem; }
+  .payment-step-note span { color: var(--c-text); font-weight: 600; }
 
   .faq-item { margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid var(--c-border); }
   .faq-item:first-of-type { margin-top: 1.5rem; }
