@@ -64,9 +64,9 @@ const canonicalUrl = "https://expatbuildr.com/consulting";
   <main class="consulting-page">
     <section id="hero" class="wrap">
       <div class="kicker fade-1">1-on-1 Strategy Call · $297 / 60 Minutes</div>
-      <h1 class="fade-2">Build your relocation plan<br /><em>with me directly.</em></h1>
+      <h1 class="fade-2">Fell in love with the Philippines?<br /><em>Now let's make sure you can actually stay.</em></h1>
       <p class="hero-sub fade-3">
-        60 minutes. Your numbers, your timeline, your risks — mapped out with someone
+        60 minutes. Your numbers, your visa path, your income plan — mapped out with someone
         who's actually done this, not someone guessing from a blog post.
       </p>
     </section>
@@ -106,7 +106,7 @@ const canonicalUrl = "https://expatbuildr.com/consulting";
       <div class="section-tag">What's Included</div>
       <h2>Everything mapped to<br /><em>your situation.</em></h2>
       <ul class="included-list">
-        <li>A short intake form before the call so we don't waste time on basics</li>
+        <li>Drop your email, pick a time — no lengthy intake form first</li>
         <li>60 minutes, one-on-one, focused entirely on your situation</li>
         <li>A follow-up summary of what we covered and your next steps</li>
       </ul>
@@ -150,14 +150,13 @@ const canonicalUrl = "https://expatbuildr.com/consulting";
       </p>
 
       <!--
-        Three-step booking:
+        Two-step booking (was three — the qualifying-questions step was
+        archived 2026-08-18 to archive-2026-08-18/consulting-qualify-step.md;
+        Calendly now collects that context itself via its own booking form):
         1. Email only, mandatory — captured via Beehiiv immediately, before
            anything else, so a bounce here still leaves you a lead (Calendly
            only hands you an email once someone fully confirms a slot).
-        2. Name + a few qualifying questions, all optional — written to the
-           "Consulting Leads" Notion database via /api/consulting-lead so you
-           have context before the call.
-        3. Calendly widget, prefilled with the email from step 1.
+        2. Calendly widget, prefilled with the email from step 1.
       -->
       <form id="consultingLeadForm" class="lead-gate">
         <input
@@ -171,94 +170,52 @@ const canonicalUrl = "https://expatbuildr.com/consulting";
       </form>
       <p id="consultingLeadError" class="lead-gate-error" hidden>Please enter a valid email.</p>
 
-      <!--
-        TODO: this writes to the new "Consulting Leads" Notion database, which
-        needs to be shared with whatever Notion integration powers
-        NOTION_API_KEY (same one src/pages/api/audit-leads.ts already uses) —
-        open the database in Notion, "···" menu -> Connections -> add it.
-        Until that's done, /api/consulting-lead will fail quietly (see JS
-        below — a failure here does not block booking, same as Beehiiv).
-      -->
-      <form id="consultingQualifyForm" class="qualify-form" hidden>
-        <p class="qualify-intro">A little context before we talk — none of this is required.</p>
-        <label class="qualify-row">
-          Name <span class="optional-tag">optional</span>
-          <input type="text" id="qualifyName" placeholder="Your name" autocomplete="name" />
-        </label>
-        <label class="qualify-row">
-          When are you looking to move? <span class="optional-tag">optional</span>
-          <select id="qualifyTimeline">
-            <option value="">Prefer not to say</option>
-            <option value="0-3 months">0–3 months</option>
-            <option value="3-6 months">3–6 months</option>
-            <option value="6-12 months">6–12 months</option>
-            <option value="Just exploring">Just exploring</option>
-          </select>
-        </label>
-        <label class="qualify-row">
-          Rough monthly budget after moving? <span class="optional-tag">optional</span>
-          <select id="qualifyBudget">
-            <option value="">Prefer not to say</option>
-            <option value="Under $1.5k/mo">Under $1.5k/mo</option>
-            <option value="$1.5k-3k/mo">$1.5k–3k/mo</option>
-            <option value="$3k-5k/mo">$3k–5k/mo</option>
-            <option value="$5k+/mo">$5k+/mo</option>
-            <option value="Not sure yet">Not sure yet</option>
-          </select>
-        </label>
-        <label class="qualify-row">
-          Which country are you most seriously considering? <span class="optional-tag">optional</span>
-          <select id="qualifyCountry">
-            <option value="">Prefer not to say</option>
-            <option value="Philippines">Philippines</option>
-            <option value="Thailand">Thailand</option>
-            <option value="Vietnam">Vietnam</option>
-            <option value="Other Southeast Asia">Other Southeast Asia</option>
-            <option value="Not sure yet">Not sure yet</option>
-          </select>
-        </label>
-        <label class="qualify-row">
-          Anything specific you want to cover on the call? <span class="optional-tag">optional</span>
-          <textarea id="qualifyNotes" rows="3" placeholder="Optional — helps me prep before we talk"></textarea>
-        </label>
-        <button type="submit" class="nav-cta">Continue to Booking →</button>
-      </form>
-
       <div id="calendlyContainer" class="calendly-container" hidden></div>
+      <p id="calendlyFallback" class="calendly-fallback" hidden>
+        Calendar not loading? <a id="calendlyFallbackLink" href="https://calendly.com/expatbuildr/consulting" target="_blank" rel="noopener">Book directly on Calendly →</a>
+      </p>
 
-      <!--
-        TEMPORARY: pointed at the /fixleaks Calendly event (free audit call, no
-        payment collection) as a placeholder until a dedicated paid "consulting
-        call" event type is created in Calendly with Stripe payment collection
-        enabled. TODO: swap CALENDLY_URL below once that event exists — this one
-        does NOT charge $297, it's just a stand-in so the page isn't broken.
-      -->
       <script is:inline src="https://assets.calendly.com/assets/external/widget.js"></script>
       <script is:inline src="/beehiiv-v2.js"></script>
       <script is:inline>
         (() => {
-          const CALENDLY_URL = "https://calendly.com/expatbuildr/fixmyleaks";
+          const CALENDLY_URL = "https://calendly.com/expatbuildr/consulting";
+          const CALENDLY_LOAD_TIMEOUT_MS = 8000;
           const emailForm = document.getElementById('consultingLeadForm');
           const emailInput = document.getElementById('consultingLeadEmail');
           const errorEl = document.getElementById('consultingLeadError');
-          const qualifyForm = document.getElementById('consultingQualifyForm');
           const calContainer = document.getElementById('calendlyContainer');
-          if (!emailForm || !qualifyForm) return;
+          const fallbackEl = document.getElementById('calendlyFallback');
+          const fallbackLink = document.getElementById('calendlyFallbackLink');
+          if (!emailForm || !calContainer) return;
 
           function initCalendly(email) {
-            if (window.Calendly && typeof window.Calendly.initInlineWidget === 'function') {
-              window.Calendly.initInlineWidget({
-                url: CALENDLY_URL,
-                parentElement: calContainer,
-                prefill: { email }
-              });
-            } else {
-              // widget.js may not have finished loading yet — keep polling briefly
-              setTimeout(() => initCalendly(email), 200);
+            const deadline = Date.now() + CALENDLY_LOAD_TIMEOUT_MS;
+
+            function tryInit() {
+              if (window.Calendly && typeof window.Calendly.initInlineWidget === 'function') {
+                window.Calendly.initInlineWidget({
+                  url: CALENDLY_URL,
+                  parentElement: calContainer,
+                  prefill: { email }
+                });
+                return;
+              }
+              if (Date.now() < deadline) {
+                // widget.js may not have finished loading yet — keep polling briefly
+                setTimeout(tryInit, 200);
+              } else {
+                // Calendly's script never loaded (blocked, offline, etc.) — don't
+                // leave visitors staring at an empty box, give them a direct link
+                console.error('Calendly widget failed to load within timeout');
+                fallbackLink.href = `${CALENDLY_URL}?email=${encodeURIComponent(email)}`;
+                fallbackEl.hidden = false;
+              }
             }
+            tryInit();
           }
 
-          // Step 1: email (mandatory) -> Beehiiv, then reveal step 2
+          // Email (mandatory) -> Beehiiv, then straight to Calendly
           emailForm.addEventListener('submit', async (e) => {
             e.preventDefault();
             const email = emailInput.value.trim();
@@ -275,7 +232,7 @@ const canonicalUrl = "https://expatbuildr.com/consulting";
             submitBtn.textContent = 'Loading...';
 
             // Fire the capture, but don't let a Beehiiv hiccup block someone from
-            // moving on — proceed to step 2 either way.
+            // getting to the calendar.
             if (window.subscribeToBeehiiv) {
               await window.subscribeToBeehiiv({
                 email,
@@ -285,41 +242,7 @@ const canonicalUrl = "https://expatbuildr.com/consulting";
               });
             }
 
-            qualifyForm.dataset.email = email;
             emailForm.hidden = true;
-            qualifyForm.hidden = false;
-          });
-
-          // Step 2: name + qualifying answers (all optional) -> Notion, then Calendly
-          qualifyForm.addEventListener('submit', async (e) => {
-            e.preventDefault();
-            const email = qualifyForm.dataset.email;
-            const submitBtn = qualifyForm.querySelector('button[type="submit"]');
-            submitBtn.disabled = true;
-            submitBtn.textContent = 'Loading...';
-
-            const payload = {
-              email,
-              name: document.getElementById('qualifyName').value.trim(),
-              timeline: document.getElementById('qualifyTimeline').value,
-              budget: document.getElementById('qualifyBudget').value,
-              country: document.getElementById('qualifyCountry').value,
-              notes: document.getElementById('qualifyNotes').value.trim()
-            };
-
-            // Same principle as Beehiiv above: a Notion hiccup should never
-            // block someone from getting to the calendar.
-            try {
-              await fetch('/api/consulting-lead', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(payload)
-              });
-            } catch (err) {
-              console.error('consulting-lead capture failed:', err);
-            }
-
-            qualifyForm.hidden = true;
             calContainer.hidden = false;
             initCalendly(email);
           });
@@ -467,17 +390,10 @@ const canonicalUrl = "https://expatbuildr.com/consulting";
   html.dark .lead-gate-error { color: #f87171; }
 
   .calendly-container { margin-top: 1.5rem; min-width: 320px; min-height: 700px; border: 1px solid var(--c-border); background: var(--c-bg-2); }
+  .calendly-container[hidden] { display: none; }
 
-  .qualify-form { display: flex; flex-direction: column; gap: 1.1rem; max-width: 480px; margin-top: .5rem; }
-  .qualify-form[hidden] { display: none; }
-  .qualify-intro { color: var(--c-text-dim); font-size: .85rem; font-style: italic; margin: 0; }
-  .qualify-row { display: flex; flex-direction: column; gap: .4rem; font-family: var(--c-sans); font-size: .85rem; color: var(--c-text-muted); font-weight: 500; }
-  .optional-tag { font-family: var(--c-mono); font-size: .62rem; letter-spacing: .08em; text-transform: uppercase; color: var(--c-text-dim); font-weight: 400; }
-  .qualify-row input, .qualify-row select, .qualify-row textarea { padding: .8em 1em; font-family: var(--c-sans); font-size: .9rem; color: var(--c-text); background: var(--c-bg-2); border: 1px solid var(--c-border-hi); outline: none; transition: border-color .15s; }
-  .qualify-row input:focus, .qualify-row select:focus, .qualify-row textarea:focus { border-color: var(--c-accent-1); }
-  .qualify-row textarea { resize: vertical; font-family: var(--c-sans); }
-  .qualify-form button[type="submit"] { border: none; cursor: pointer; align-self: flex-start; margin-top: .25rem; }
-  .qualify-form button[type="submit"]:disabled { opacity: .6; cursor: default; }
+  .calendly-fallback { margin-top: 1rem; font-size: .85rem; color: var(--c-text-dim); }
+  .calendly-fallback[hidden] { display: none; }
 
   .faq-item { margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid var(--c-border); }
   .faq-item:first-of-type { margin-top: 1.5rem; }
