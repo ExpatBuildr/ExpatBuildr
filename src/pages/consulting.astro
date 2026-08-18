@@ -389,8 +389,12 @@ const canonicalUrl = "https://expatbuildr.com/consulting";
   .lead-gate-error { color: #dc2626; font-family: var(--c-mono); font-size: .75rem; margin-top: .6rem; }
   html.dark .lead-gate-error { color: #f87171; }
 
-  .calendly-container { margin-top: 1.5rem; min-width: 320px; min-height: 700px; border: 1px solid var(--c-border); background: var(--c-bg-2); }
+  .calendly-container { margin-top: 1.5rem; width: 100%; min-width: 320px; height: 1100px; border: 1px solid var(--c-border); background: var(--c-bg-2); }
   .calendly-container[hidden] { display: none; }
+
+  @media (max-width: 640px) {
+    .calendly-container { height: 1300px; }
+  }
 
   .calendly-fallback { margin-top: 1rem; font-size: .85rem; color: var(--c-text-dim); }
   .calendly-fallback[hidden] { display: none; }
