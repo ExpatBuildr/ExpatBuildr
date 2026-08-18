@@ -53,6 +53,7 @@
   .btn { display: inline-flex; align-items: center; gap: .5em; font-family: var(--c-serif); font-weight: 700; font-size: 1.05rem; text-decoration: none; padding: .9em 1.8em; border-radius: 999px; background: linear-gradient(135deg,var(--c-accent-1),var(--c-accent-2)); color: #000; transition: filter .15s; }
   .btn:hover { filter: brightness(1.1); }
   .note { margin-top: 20px; font-size: .82rem; color: var(--c-text-dim); }
+  .note span { font-family: var(--c-serif); font-weight: 700; color: var(--c-accent-1); }
 </style>
 </head>
 <body>
@@ -61,8 +62,25 @@
 <div class="check">✓</div>
 <h1>Payment confirmed — pick your time below.</h1>
 <p class="sub">You're in. Grab a slot on the calendar and I'll see you there — a confirmation with the call details will land in your inbox once it's booked.</p>
-<a class="btn" href="https://calendly.com/expatbuildr/consulting" target="_blank" rel="noopener">Book Your Time →</a>
-<p class="note">Opens in a new tab.</p>
+<a class="btn" id="calendlyLink" href="https://calendly.com/expatbuildr/consulting">Book Your Time →</a>
+<p class="note">Taking you there automatically in <span id="countdown">7</span> seconds — or click above.</p>
+
+<script>
+  const CALENDLY_URL = 'https://calendly.com/expatbuildr/consulting';
+  let count = 7;
+  const el = document.getElementById('countdown');
+  const timer = setInterval(() => {
+    count--;
+    if (el) el.textContent = String(count);
+    if (count <= 0) {
+      clearInterval(timer);
+      window.location.href = CALENDLY_URL;
+    }
+  }, 1000);
+
+  // Manual click should stop the countdown from firing a second navigation
+  document.getElementById('calendlyLink')?.addEventListener('click', () => clearInterval(timer));
+</script>
 
 </body>
 </html>
