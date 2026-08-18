@@ -1,7 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
-import { ArrowRight, Globe, TrendingUp, Rss, ArrowUpRight, Twitter, Youtube, Instagram, Linkedin, Send, Users } from 'lucide-astro';
+import { ArrowRight, Globe, Rss, ArrowUpRight, Twitter, Youtube, Instagram, Linkedin, Send, Users } from 'lucide-astro';
 
 // Fetch top 3 latest posts for the "Featured Blog Posts" section
 const allPosts = await getCollection('blog', ({ data }) => {
@@ -15,32 +15,48 @@ const featuredPosts = targetPillars.map(pillar =>
 ---
 
 <Layout
-	title="ExpatBuildr — The Operating System for Expat Founders"
-	description="Build your business from anywhere. ExpatBuildr helps expat founders stack geo-arbitrage, remote income, AI, and lead generation into one compounding system."
+	title="ExpatBuildr — 1-on-1 Relocation Strategy for Expats in the Philippines"
+	description="ExpatBuildr — 1-on-1 relocation strategy for Western expats moving to the Philippines. I've lived every risk since 2018. Website builds, automation, lead-gen, and income systems are all available — but everything starts with a strategy call, not a self-serve page."
 >
 	<!-- SECTION 1: Hero -->
-	<section class="max-w-7xl mx-auto text-center space-y-8 py-20 relative px-4">
+	<section class="max-w-5xl mx-auto text-center space-y-8 py-20 relative px-4">
 		<div class="absolute -top-40 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-accent-blue/20 rounded-full blur-[120px] -z-10 animate-pulse"></div>
 
-		<h1 class="text-5xl sm:text-6xl md:text-8xl font-black font-display tracking-tight leading-[0.9] uppercase text-slate-900 dark:text-white w-full">
-			EXPAT<br/>
-			<span class="text-gradient inline-block">BUILDR.</span>
-		</h1>
-
-		<h2 class="text-lg md:text-xl font-mono tracking-[0.2em] text-accent-cyan uppercase font-semibold mx-auto">
-			The Operating System for Expat Founders
-		</h2>
-
-		<p class="max-w-2xl mx-auto text-institutional-secondary text-base md:text-lg leading-relaxed mt-4">
-			Build your business from anywhere. Stack geo-arbitrage, remote income, AI leverage, and lead generation into a compounding founder system that works whether you have already made the move or are building toward it.
+		<p class="text-xs md:text-sm font-mono tracking-[0.2em] text-accent-cyan uppercase font-semibold">
+			1-on-1 Relocation Strategy · Cebu, Philippines
 		</p>
 
-		<div class="flex flex-col sm:flex-row justify-center items-center gap-4 pt-6">
-			<a href="/blog" class="btn-primary w-full sm:w-auto text-center flex justify-center items-center gap-2">
-				Read the Blog <ArrowRight size={18} />
+		<h1 class="text-4xl sm:text-5xl md:text-6xl font-black font-display leading-[1.05] tracking-tight text-slate-900 dark:text-white w-full">
+			Fell in love with the Philippines?<br/>
+			<span class="text-gradient inline-block">Now let's make sure you can actually stay.</span>
+		</h1>
+
+		<p class="max-w-2xl mx-auto text-institutional-secondary text-base md:text-lg leading-relaxed">
+			I help Western expats not lose their shirts abroad. I've lived every risk myself since 2018 — the visa mistakes, the money leaks, the moves that almost cost me everything. Book a 60-minute call and we'll map your specific numbers, your visa path, and your income plan, so you don't learn the hard way like I did.
+		</p>
+
+		<!-- How This Works -->
+		<div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-4 text-left">
+			<div class="glass-card rounded-[1.5rem] p-6 space-y-2">
+				<h3 class="text-lg font-bold font-display text-slate-900 dark:text-white">Book a call.</h3>
+				<p class="text-slate-500 text-sm leading-relaxed">60 minutes, one-on-one, focused entirely on your situation — not a generic script.</p>
+			</div>
+			<div class="glass-card rounded-[1.5rem] p-6 space-y-2">
+				<h3 class="text-lg font-bold font-display text-slate-900 dark:text-white">We map your plan.</h3>
+				<p class="text-slate-500 text-sm leading-relaxed">Your numbers, your visa path, your income plan, checked against reality.</p>
+			</div>
+			<div class="glass-card rounded-[1.5rem] p-6 space-y-2">
+				<h3 class="text-lg font-bold font-display text-slate-900 dark:text-white">You leave with a real next step.</h3>
+				<p class="text-slate-500 text-sm leading-relaxed">Not a vibe. Not more research. An actual plan.</p>
+			</div>
+		</div>
+
+		<div class="flex flex-col items-center gap-3 pt-6">
+			<a href="/consulting" class="btn-primary w-full sm:w-auto text-center flex justify-center items-center gap-2">
+				Book Your Call <ArrowRight size={18} />
 			</a>
-			<a href="/newsletter" class="px-8 py-3 rounded-full font-bold text-sm tracking-widest uppercase border border-slate-300 dark:border-white/10 hover:bg-slate-100 dark:hover:bg-white/5 transition-all flex items-center gap-2 w-full sm:w-auto justify-center text-slate-900 dark:text-white">
-				Free Strategy Pack <TrendingUp size={18} />
+			<a href="/playbook" class="text-sm text-slate-500 dark:text-slate-400 hover:text-accent-cyan transition-colors underline underline-offset-4">
+				Not ready yet? Grab the free Playbook first →
 			</a>
 		</div>
 
@@ -90,25 +106,24 @@ const featuredPosts = targetPillars.map(pillar =>
 		</div>
 	</section>
 
-	<!-- SECTION 2: Done-For-You Services Grid -->
+	<!-- SECTION 2: Consulting-First -->
 	<section class="max-w-7xl mx-auto py-24 px-4 sm:px-6">
 		<div class="mb-12 text-center md:text-left">
-			<h3 class="text-3xl md:text-4xl font-black font-display text-slate-900 dark:text-white">DONE-FOR-YOU SYSTEMS</h3>
-			<p class="text-institutional-secondary mt-2">Institutional-grade infrastructure installed directly into your business.</p>
+			<h3 class="text-3xl md:text-4xl font-black font-display text-slate-900 dark:text-white">Talk to me first.</h3>
+			<p class="text-institutional-secondary mt-2 max-w-2xl md:mx-0 mx-auto">Websites, automation, lead-gen, income systems — I build all of it. But nothing gets built until we've mapped your specific situation on a call. That's the only way in.</p>
 		</div>
-		<div class="grid grid-cols-1 max-w-md mx-auto gap-8">
-			<!-- Service 3: 1-on-1 Consulting -->
-			<a href="/consulting" class="glass-card p-10 rounded-[2rem] space-y-6 hover:border-accent-blue/50 transition-all hover:-translate-y-1 block group">
-				<div class="w-14 h-14 rounded-2xl bg-accent-blue/10 flex items-center justify-center text-accent-blue mb-2">
-					<Users size={28} />
-				</div>
+		<a href="/consulting" class="glass-card p-10 md:p-14 rounded-[2rem] flex flex-col md:flex-row md:items-center gap-8 hover:border-accent-blue/50 transition-all hover:-translate-y-1 block group">
+			<div class="w-14 h-14 shrink-0 rounded-2xl bg-accent-blue/10 flex items-center justify-center text-accent-blue">
+				<Users size={28} />
+			</div>
+			<div class="flex-1 space-y-3">
 				<h4 class="text-2xl font-bold dark:text-white text-slate-900 group-hover:text-accent-blue transition-colors">1-on-1 Consulting</h4>
-				<p class="text-slate-500 text-base leading-relaxed">A 60-minute strategy call, one-on-one. Your specific budget, visa path, and timeline mapped against reality, no generic checklist, no highlight reel.</p>
-				<div class="pt-4 flex items-center text-accent-blue font-bold text-sm uppercase tracking-widest gap-2">
-					Book Your Call <ArrowRight size={16} class="group-hover:translate-x-1 transition-transform" />
-				</div>
-			</a>
-		</div>
+				<p class="text-slate-500 text-base leading-relaxed max-w-2xl">A 60-minute strategy call, one-on-one. Your specific budget, visa path, and timeline, mapped against reality — not a generic checklist, not a highlight reel. If you need a website built, automation set up, or a lead-gen system running, this call is where we figure out exactly what that looks like for you.</p>
+			</div>
+			<div class="shrink-0 flex items-center text-accent-blue font-bold text-sm uppercase tracking-widest gap-2">
+				Book Your Call <ArrowRight size={16} class="group-hover:translate-x-1 transition-transform" />
+			</div>
+		</a>
 	</section>
 
 	<!-- SECTION 3: Two-Stage Segmentation -->
