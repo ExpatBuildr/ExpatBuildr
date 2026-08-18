@@ -391,5 +391,16 @@ const canonicalUrl = "https://expatbuildr.com/consulting";
   @media (max-width: 640px) {
     .fit-grid { grid-template-columns: 1fr; }
     .fit-column { padding: 1.25rem 1rem; }
+
+    /* Nav had no mobile handling at all — logo + slug + theme toggle + CTA
+       button in one unwrapped flex row overflowed the viewport, and since
+       the site clips (not scrolls) horizontal overflow, that read as
+       content with no margin instead of a visible scrollbar. */
+    .nav-inner { padding: .85rem 1.1rem; flex-wrap: wrap; row-gap: .5rem; }
+    .logo-text .slug { display: none; }
+    .nav-cta { font-size: .64rem; padding: .55em .9em; }
+    .lead-gate { flex-direction: column; align-items: stretch; }
+    .lead-gate input[type="email"] { min-width: 0; }
+    .payment-step .nav-cta { display: flex; justify-content: center; }
   }
 </style>
