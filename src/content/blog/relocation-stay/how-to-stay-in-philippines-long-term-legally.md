@@ -44,7 +44,7 @@ The tradeoff versus tourist extensions: this is a real application that can be r
 
 Who this actually fits: remote workers and founders with steady foreign income who want a cleaner legal footing than tourist status, but aren't ready for, or don't qualify for, SRRV or 13A.
 
-*(If none of these four quite fits and your situation has extra moving parts, income mix, timing, relationship status in flux, that's exactly what a [relocation strategy call](/consulting) exists to sort out.)*
+*(If none of these four quite fits and your situation has extra moving parts, income mix, timing, relationship status in flux, that's exactly what a [relocation strategy call](/consulting?utm_source=blog&utm_medium=article&utm_campaign=relocation-stay&utm_content=stay-long-term-inline) exists to sort out.)*
 
 ## Path 3: SRRV (the deposit-based path)
 
@@ -84,11 +84,11 @@ Some readers weighing all this haven't even settled on the Philippines yet, Thai
 
 That's the actual gap this article can't close, and it's not a content problem, it's a structural one: the right visa strategy is a function of your specific facts, and specific facts don't fit in a blog post written for everyone. If you've read this far, you're probably past the "what are my options" stage and into the "which one is actually right for me, and how do I sequence it correctly" stage. That's a strategy conversation, not a reading assignment. If none of the four paths above cleanly matches your situation, mixed income, a threshold you're about to cross, a relationship status still in flux, see [What to Do If Your Visa Situation Is Complicated](/blog/relocation-stay/what-to-do-if-your-visa-situation-is-complicated) before you book.
 
-**[Book a Relocation Strategy Call →](/consulting)**
+**[Book a Relocation Strategy Call →](/consulting?utm_source=blog&utm_medium=article&utm_campaign=relocation-stay&utm_content=stay-long-term-primary)**
 
 We'll go through your income structure, age, timeline, and relationship status, and map the actual sequence, including the mistakes that cost people months (or thousands of dollars) when they pick the wrong path or apply in the wrong order. Or browse the full [Relocation & Stay Strategy toolkit](/blog/relocation-stay-links) for every guide and resource in this pillar.
 
-Not ready for a 1:1 session yet? Grab the [Philippines Arbitrage Playbook](https://expatbuildr.com/playbook) first. It covers the broader relocation and income framework this article is part of.
+Not ready for a 1:1 session yet? Grab the [Philippines Arbitrage Playbook](https://expatbuildr.com/playbook?utm_source=blog&utm_medium=article&utm_campaign=relocation-stay&utm_content=stay-long-term-playbook) first. It covers the broader relocation and income framework this article is part of.
 
 [Weekly intel for remote workers and founders](/newsletter)
 

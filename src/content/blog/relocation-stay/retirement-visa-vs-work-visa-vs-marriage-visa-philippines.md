@@ -45,7 +45,7 @@ So before comparing cost or convenience, the actual filter is eligibility:
 - **Are you legally, genuinely married to a Filipino citizen?** 13A is on the table.
 - **None of the above, but you have steady foreign-sourced income?** You're looking at the Digital Nomad Visa or tourist extensions, not these three.
 
-*(If you're not sure which door you're actually eligible for, that's the first thing we sort out on a [relocation strategy call](/consulting).)*
+*(If you're not sure which door you're actually eligible for, that's the first thing we sort out on a [relocation strategy call](/consulting?utm_source=blog&utm_medium=article&utm_campaign=relocation-stay&utm_content=visa-comparison-inline).)*
 
 Most people asking "which visa is right for me" only actually qualify for one path once you filter by eligibility rather than preference. The comparison table matters for the minority of people who genuinely qualify for more than one, most commonly, someone who could get a work visa through a local employer but is also married to a Filipino citizen and has to decide which route to actually pursue.
 
@@ -67,11 +67,11 @@ Everything above assumes clean, textbook eligibility. Real situations are rarely
 
 That's not a gap in this article, it's the actual shape of most real situations, and it's exactly what a comparison table can't resolve because it was never built to handle timing, sequencing, or mixed circumstances.
 
-**[Book a Relocation Strategy Call →](/consulting)**
+**[Book a Relocation Strategy Call →](/consulting?utm_source=blog&utm_medium=article&utm_campaign=relocation-stay&utm_content=visa-comparison-primary)**
 
 We'll map your specific eligibility across all four paths, including timing, what to apply for first if you're straddling two categories, and what mistakes cost people months when they pick based on the table alone instead of their actual situation. Or browse the full [Relocation & Stay Strategy toolkit](/blog/relocation-stay-links) for every guide in this pillar.
 
-Not ready for a 1:1 session yet? Grab the [Philippines Arbitrage Playbook](https://expatbuildr.com/playbook) first.
+Not ready for a 1:1 session yet? Grab the [Philippines Arbitrage Playbook](https://expatbuildr.com/playbook?utm_source=blog&utm_medium=article&utm_campaign=relocation-stay&utm_content=visa-comparison-playbook) first.
 
 [Weekly intel for remote workers and founders](/newsletter)
 

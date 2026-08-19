@@ -30,7 +30,7 @@ The Philippines generally lets you convert your tourist status to a long-term vi
 
 **Practical sequencing that actually works:** arrive on a standard (convertible) tourist entry, start living in the Philippines, extend your tourist status every few months while gathering SRRV or 13A documents, then submit your application once your paperwork is complete. Processing typically runs 20-45 days depending on the source and completeness of your application. Your tourist status needs to stay valid and current the entire time you're waiting. Letting it lapse mid-process creates a separate problem on top of the one you're trying to solve.
 
-*(If you're not sure whether your specific entry status is convertible, that's the first thing worth confirming on a [relocation strategy call](/consulting) before you start gathering paperwork.)*
+*(If you're not sure whether your specific entry status is convertible, that's the first thing worth confirming on a [relocation strategy call](/consulting?utm_source=blog&utm_medium=article&utm_campaign=relocation-stay&utm_content=switch-visa-types-inline) before you start gathering paperwork.)*
 
 ## Thailand: leaving the country is usually required, and the DTV specifically requires it
 
@@ -54,11 +54,11 @@ Neither is a dealbreaker on its own. But if your timeline assumed you could just
 
 Everything above is the general rule. What it doesn't cover: what happens if your Philippine entry status is ambiguous and you're not sure if it's convertible; how to time a Thailand border run so it doesn't create a gap in your legal status; or how to sequence a transition if you're deciding between the two countries and don't want to commit to one country's paperwork before you've settled the decision. Those are the situations that actually determine whether your transition goes smoothly or turns into a multi-month headache.
 
-**[Book a Relocation Strategy Call →](/consulting)**
+**[Book a Relocation Strategy Call →](/consulting?utm_source=blog&utm_medium=article&utm_campaign=relocation-stay&utm_content=switch-visa-types-primary)**
 
 We'll check your specific entry status, confirm what's actually convertible in your case, and build the real timeline, including any required exit, before you start gathering documents for the wrong path. Or browse the full [Relocation & Stay Strategy toolkit](/blog/relocation-stay-links) for every guide in this pillar.
 
-Not ready for a 1:1 session yet? Grab the [Philippines Arbitrage Playbook](https://expatbuildr.com/playbook) first.
+Not ready for a 1:1 session yet? Grab the [Philippines Arbitrage Playbook](https://expatbuildr.com/playbook?utm_source=blog&utm_medium=article&utm_campaign=relocation-stay&utm_content=switch-visa-types-playbook) first.
 
 [Weekly intel for remote workers and founders](/newsletter)
 

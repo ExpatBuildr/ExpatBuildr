@@ -32,7 +32,7 @@ Under the Philippine Immigration Act of 1940, unresolved status creates a legal 
 
 This is worth being straight about: published overstay fee structures vary depending on the source and, in practice, the specific BI office you're dealing with. You'll see figures like a flat ₱500 per month, or ₱500 for an expedite fee plus roughly ₱3,000 per month in extension arrears, or ₱5,000 charged per year of overstay under the older visa-waiver fee schedule. All of these show up in current, reputable guidance. The honest answer is that the total isn't a single clean number you can calculate from home: it's a base fine plus back-payment of every extension you missed during the overstay window, and BI has discretion in how it's assessed.
 
-What's consistent across every source: **you can't just pay a fine and leave.** You're required to settle the fine and pay for the extensions you missed along the way, not just the penalty for being late. If you're not sure which bracket you fall into, that's exactly the kind of thing worth confirming on a [relocation strategy call](/consulting) before you assume the wrong number.
+What's consistent across every source: **you can't just pay a fine and leave.** You're required to settle the fine and pay for the extensions you missed along the way, not just the penalty for being late. If you're not sure which bracket you fall into, that's exactly the kind of thing worth confirming on a [relocation strategy call](/consulting?utm_source=blog&utm_medium=article&utm_campaign=relocation-stay&utm_content=visa-runs-out-inline) before you assume the wrong number.
 
 ## Minor overstay vs. major overstay, this is the distinction that actually matters
 
@@ -62,9 +62,9 @@ We cover the four real paths off that runway, including one built specifically f
 
 If your situation is already more complicated than "which visa should I get", mixed income sources, an approaching extension cap, a relationship status that's about to change your options, that's exactly what the call is for. Or browse the full [Relocation & Stay Strategy toolkit](/blog/relocation-stay-links) for every guide in this pillar.
 
-**[Book a Relocation Strategy Call →](/consulting)**
+**[Book a Relocation Strategy Call →](/consulting?utm_source=blog&utm_medium=article&utm_campaign=relocation-stay&utm_content=visa-runs-out-primary)**
 
-Not ready for a 1:1 session yet? Grab the [Philippines Arbitrage Playbook](https://expatbuildr.com/playbook) first.
+Not ready for a 1:1 session yet? Grab the [Philippines Arbitrage Playbook](https://expatbuildr.com/playbook?utm_source=blog&utm_medium=article&utm_campaign=relocation-stay&utm_content=visa-runs-out-playbook) first.
 
 [Weekly intel for remote workers and founders](/newsletter)
 

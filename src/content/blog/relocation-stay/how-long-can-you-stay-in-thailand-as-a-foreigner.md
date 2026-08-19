@@ -36,7 +36,7 @@ If you apply for an actual Tourist Visa in advance rather than relying on visa-f
 
 For years, "visa run" was the default long-stay strategy in Thailand: leave the country every couple of months, re-enter, get a fresh stamp, repeat indefinitely. That era is closing. Enhanced enforcement measures introduced in late 2025 specifically target repeat-entry patterns, and immigration officers review full passport history at the border, not just your current entry. Extensions are being denied to travelers with a visible history of visa-run behavior, and departing and re-entering on the same day now voids extensions rather than resetting them cleanly. Overstay carries a fine starting around ฿500 per day, and repeated short overstays compound the scrutiny on future entries.
 
-The practical result: what used to be a workable, if tedious, long-term strategy is now an increasingly risky one. Immigration is actively designed to catch exactly this pattern. *(If you're already deep into a visa-run pattern and want to regularize your status without a costly gap, that's exactly what a [relocation strategy call](/consulting) is for.)*
+The practical result: what used to be a workable, if tedious, long-term strategy is now an increasingly risky one. Immigration is actively designed to catch exactly this pattern. *(If you're already deep into a visa-run pattern and want to regularize your status without a costly gap, that's exactly what a [relocation strategy call](/consulting?utm_source=blog&utm_medium=article&utm_campaign=relocation-stay&utm_content=thailand-stay-inline) is for.)*
 
 ## The actual long-term answer: the Destination Thailand Visa (DTV)
 
@@ -63,11 +63,11 @@ We compare this same decision across the Philippines and Thailand, and the trade
 
 Where this gets genuinely situation-specific: how the DTV interacts with your existing tax residency, whether "soft power" categories are a faster path if your remote-work documentation isn't clean yet, and how to sequence an application if you're already mid-visa-run and need to regularize your status without a costly gap. That's not something a comparison table resolves.
 
-**[Book a Relocation Strategy Call →](/consulting)**
+**[Book a Relocation Strategy Call →](/consulting?utm_source=blog&utm_medium=article&utm_campaign=relocation-stay&utm_content=thailand-stay-primary)**
 
 Or browse the full [Relocation & Stay Strategy toolkit](/blog/relocation-stay-links) for every guide in this pillar.
 
-Not ready for a 1:1 session yet? Grab the [Philippines Arbitrage Playbook](https://expatbuildr.com/playbook) first. Thailand-specific resources are in progress.
+Not ready for a 1:1 session yet? Grab the [Philippines Arbitrage Playbook](https://expatbuildr.com/playbook?utm_source=blog&utm_medium=article&utm_campaign=relocation-stay&utm_content=thailand-stay-playbook) first. Thailand-specific resources are in progress.
 
 [Weekly intel for remote workers and founders](/newsletter)
 

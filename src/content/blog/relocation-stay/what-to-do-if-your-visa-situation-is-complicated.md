@@ -34,7 +34,7 @@ You're 38 and will turn 40, SRRV's minimum age, before your current tourist runw
 
 This is where sequencing becomes the actual strategy question, more than which visa is theoretically best. Applying too early locks you into a path before a better one opens up. Waiting too long can mean re-doing paperwork, losing time on an extension runway that has a hard ceiling, or missing a window entirely.
 
-*(This kind of timing question, whether to wait, apply early, or restructure your plan, is exactly what a [relocation strategy call](/consulting) is built to work through.)*
+*(This kind of timing question, whether to wait, apply early, or restructure your plan, is exactly what a [relocation strategy call](/consulting?utm_source=blog&utm_medium=article&utm_campaign=relocation-stay&utm_content=complicated-situation-inline) is built to work through.)*
 
 ## A visa history that isn't clean
 
@@ -54,11 +54,11 @@ If you recognize your situation in more than one of the sections above, that's n
 
 The other five articles in this series each cover one clean piece of the picture, [how long-term status actually works in the Philippines](/blog/relocation-stay/how-to-stay-in-philippines-long-term-legally), what happens if [your visa runs out](/blog/relocation-stay/what-happens-when-your-visa-runs-out-philippines), how the [main visa paths compare](/blog/relocation-stay/retirement-visa-vs-work-visa-vs-marriage-visa-philippines), [how Thailand's rules work](/blog/relocation-stay/how-long-can-you-stay-in-thailand-as-a-foreigner), and [whether you can convert in-country](/blog/relocation-stay/can-you-switch-visa-types-without-leaving-the-country). Read whichever of those match a piece of your situation. But if your real question is how those pieces fit together *for you specifically*, in what order, on what timeline, accounting for the parts that don't fit neatly into any one of those articles, that's not a reading problem. It's a strategy problem, and it's the specific reason the [Relocation & Stay Strategy pillar](/blog/relocation-stay) exists.
 
-**[Book a Relocation Strategy Call →](/consulting)**
+**[Book a Relocation Strategy Call →](/consulting?utm_source=blog&utm_medium=article&utm_campaign=relocation-stay&utm_content=complicated-situation-primary)**
 
 We'll go through your actual situation, income, timeline, history, relationships, the country decision if it's still open, and build a real sequence instead of trying to force your case into a template that wasn't built for it. Or browse the full [Relocation & Stay Strategy toolkit](/blog/relocation-stay-links) for every guide in this pillar.
 
-Not ready for a 1:1 session yet? Grab the [Philippines Arbitrage Playbook](https://expatbuildr.com/playbook) first.
+Not ready for a 1:1 session yet? Grab the [Philippines Arbitrage Playbook](https://expatbuildr.com/playbook?utm_source=blog&utm_medium=article&utm_campaign=relocation-stay&utm_content=complicated-situation-playbook) first.
 
 [Weekly intel for remote workers and founders](/newsletter)
 
