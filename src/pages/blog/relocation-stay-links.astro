@@ -1,0 +1,90 @@
+---
+export const prerender = true;
+import Layout from '../../layouts/Layout.astro';
+import { ArrowRight, Home, BookOpen, FileText } from 'lucide-astro';
+---
+
+<Layout
+  title="Relocation & Stay Strategy Resources: Visas, Moves and Guides | ExpatBuildr"
+  description="Everything in the Relocation & Stay Strategy pillar in one place — visa pathways, residency guides, and the weekly newsletter for expat founders."
+  canonicalUrl="https://expatbuildr.com/blog/relocation-stay-links"
+  ogImage="/images/blog/pillars/relocation-stay-hub.png"
+>
+
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <!-- Hero -->
+    <div class="text-center mb-20">
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 text-xs uppercase tracking-[0.2em] font-mono mb-8">
+        <Home size={12} /> Relocation & Stay Strategy
+      </div>
+      <h1 class="text-5xl md:text-7xl font-black font-display tracking-tighter text-slate-900 dark:text-white mb-6 uppercase leading-none">
+        EVERYTHING<br /><span class="text-indigo-400">RELOCATION & STAY.</span>
+      </h1>
+      <p class="text-xl text-slate-600 dark:text-slate-400 max-w-2xl mx-auto font-inter leading-relaxed mb-8">
+        Every guide in the Relocation & Stay Strategy pillar, in one place. Visa pathways, moving logistics, and the legal footing that lets you stay somewhere for years instead of months.
+      </p>
+    </div>
+
+    <!-- Featured Service -->
+    <div class="mb-12">
+      <div class="glass-card rounded-2xl p-8 border border-indigo-500/30 bg-indigo-500/5">
+        <div class="flex flex-col md:flex-row md:items-center gap-6">
+          <div class="shrink-0 w-16 h-16 rounded-2xl bg-indigo-500/10 flex items-center justify-center">
+            <FileText class="text-indigo-400" size={28} />
+          </div>
+          <div class="flex-1">
+            <div class="text-xs font-mono uppercase tracking-wider text-indigo-400 font-semibold mb-2">Featured Service</div>
+            <h2 class="text-2xl font-black font-display uppercase tracking-tight text-slate-900 dark:text-white mb-2">Relocation Strategy Call</h2>
+            <p class="text-slate-600 dark:text-slate-400 leading-relaxed mb-4">We map your specific eligibility across every visa path, sequence the timeline, and flag the traps that cost people months, scoped on a 1-on-1 call.</p>
+            <a href="/consulting" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-indigo-500 text-white font-bold text-sm hover:bg-indigo-400 transition-all">
+              Book a Call <ArrowRight size={16} />
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Content Library -->
+    <div class="mb-16">
+      <div class="flex items-center gap-3 mb-8">
+        <BookOpen class="text-indigo-400" size={20} />
+        <h2 class="text-2xl font-black font-display uppercase tracking-tight text-slate-900 dark:text-white">Content Library</h2>
+        <div class="h-px flex-1 bg-slate-200 dark:bg-white/10"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="p-4 rounded-xl border border-slate-200 dark:border-white/10 hover:border-indigo-500/40 transition-all">
+          <ul class="space-y-2">
+            <li><a href="/blog/relocation-stay/how-to-stay-in-philippines-long-term-legally" class="text-sm text-slate-700 dark:text-slate-300 hover:text-indigo-400 transition-colors">How to Stay in the Philippines Long Term, Legally</a></li>
+            <li><a href="/blog/relocation-stay/what-happens-when-your-visa-runs-out-philippines" class="text-sm text-slate-700 dark:text-slate-300 hover:text-indigo-400 transition-colors">What Happens When Your Visa Runs Out in the Philippines</a></li>
+            <li><a href="/blog/relocation-stay/retirement-visa-vs-work-visa-vs-marriage-visa-philippines" class="text-sm text-slate-700 dark:text-slate-300 hover:text-indigo-400 transition-colors">Retirement Visa vs Work Visa vs Marriage Visa: Which One Fits You</a></li>
+          </ul>
+        </div>
+        <div class="p-4 rounded-xl border border-slate-200 dark:border-white/10 hover:border-indigo-500/40 transition-all">
+          <ul class="space-y-2">
+            <li><a href="/blog/relocation-stay/how-long-can-you-stay-in-thailand-as-a-foreigner" class="text-sm text-slate-700 dark:text-slate-300 hover:text-indigo-400 transition-colors">How Long Can You Stay in Thailand as a Foreigner</a></li>
+            <li><a href="/blog/relocation-stay/can-you-switch-visa-types-without-leaving-the-country" class="text-sm text-slate-700 dark:text-slate-300 hover:text-indigo-400 transition-colors">Can You Switch Visa Types Without Leaving the Country</a></li>
+            <li><a href="/blog/relocation-stay/what-to-do-if-your-visa-situation-is-complicated" class="text-sm text-slate-700 dark:text-slate-300 hover:text-indigo-400 transition-colors">What to Do If Your Visa Situation Is Complicated</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mt-6 text-center">
+        <a href="/blog/relocation-stay" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-slate-200 dark:border-white/10 text-slate-700 dark:text-slate-300 font-semibold text-sm hover:border-indigo-500/40 transition-all">
+          View All Relocation & Stay Strategy Guides <ArrowRight size={16} />
+        </a>
+      </div>
+    </div>
+
+    <!-- Newsletter CTA -->
+    <div class="rounded-2xl border border-indigo-500/20 bg-indigo-500/5 p-10 text-center mb-12">
+      <h2 class="text-2xl font-black font-display uppercase tracking-tight text-slate-900 dark:text-white mb-3">Get the Weekly Relocation Intel</h2>
+      <p class="text-slate-600 dark:text-slate-400 mb-6 max-w-lg mx-auto">Visa pathways, moving logistics, and long-term stay strategy — every week, free.</p>
+      <a href="/newsletter" class="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-indigo-500 text-white font-bold hover:bg-indigo-400 transition-all">
+        Join Free <ArrowRight size={16} />
+      </a>
+    </div>
+
+  </div>
+</Layout>
