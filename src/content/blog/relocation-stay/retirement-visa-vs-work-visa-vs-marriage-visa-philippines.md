@@ -71,7 +71,7 @@ That's not a gap in this article, it's the actual shape of most real situations,
 
 We'll map your specific eligibility across all four paths, including timing, what to apply for first if you're straddling two categories, and what mistakes cost people months when they pick based on the table alone instead of their actual situation. Or browse the full [Relocation & Stay Strategy toolkit](/blog/relocation-stay-links) for every guide in this pillar.
 
-Not ready for a 1:1 session yet? Grab the [Philippines Arbitrage Playbook](/newsletter) first.
+Not ready for a 1:1 session yet? Grab the [Philippines Arbitrage Playbook](https://expatbuildr.com/playbook) first.
 
 [Weekly intel for remote workers and founders](/newsletter)
 

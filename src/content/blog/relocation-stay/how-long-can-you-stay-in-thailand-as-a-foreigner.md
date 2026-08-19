@@ -67,7 +67,7 @@ Where this gets genuinely situation-specific: how the DTV interacts with your ex
 
 Or browse the full [Relocation & Stay Strategy toolkit](/blog/relocation-stay-links) for every guide in this pillar.
 
-Not ready for a 1:1 session yet? Grab the [Philippines Arbitrage Playbook](/newsletter) first. Thailand-specific resources are in progress.
+Not ready for a 1:1 session yet? Grab the [Philippines Arbitrage Playbook](https://expatbuildr.com/playbook) first. Thailand-specific resources are in progress.
 
 [Weekly intel for remote workers and founders](/newsletter)
 

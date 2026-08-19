@@ -48,7 +48,7 @@ Who this actually fits: remote workers and founders with steady foreign income w
 
 ## Path 3: SRRV (the deposit-based path)
 
-The Special Resident Retiree's Visa, run by the Philippine Retirement Authority, is the closest thing the Philippines has to "pay your way into permanent residency." Despite the name, you don't need to be retired. Since a September 2025 reform, anyone 40 or older who meets the deposit requirement can apply, and you're free to keep working remotely or running a business the entire time you hold it.
+The Special Resident Retiree's Visa, run by the Philippine Retirement Authority, is the closest thing the Philippines has to "pay your way into permanent residency." Despite the name, you don't need to be retired. Since a September 2025 reform, anyone 40 or older who meets the deposit requirement can apply, and you're free to keep working remotely or running a business the entire time you hold it. Most applicants start this process while already living in the Philippines on a tourist visa, extending it as needed while the SRRV paperwork processes, and [not every tourist entry status actually allows that conversion](/blog/relocation-stay/can-you-switch-visa-types-without-leaving-the-country), so it's worth checking before you assume yours does.
 
 The deposit requirement is tiered by age and pension status:
 
@@ -78,15 +78,17 @@ Who this actually fits: people genuinely and legally married to a Filipino citiz
 
 ## So which one is actually right for you
 
-Here's the honest answer, and it's the same answer every one of these guides eventually backs into: **it depends on your age, your income structure, your relationship status, and your actual time horizon**, and none of those show up in a generic comparison table. A 34-year-old solo founder earning $60K/year in consulting income has a completely different correct answer than a 52-year-old with a pension and no spouse, or a 41-year-old engaged to a Filipina he hasn't married yet.
+Here's the honest answer, and it's the same answer every one of these guides eventually backs into: **it depends on your age, your income structure, your relationship status, and your actual time horizon**, and none of those show up in a generic comparison table. A 34-year-old solo founder earning $60K/year in consulting income has a completely different correct answer than a 52-year-old with a pension and no spouse, or a 41-year-old engaged to a Filipina he hasn't married yet. If you already know which of SRRV, a work visa, or 13A you'd qualify for and just want the direct trade-offs, see [Retirement Visa vs Work Visa vs Marriage Visa](/blog/relocation-stay/retirement-visa-vs-work-visa-vs-marriage-visa-philippines).
 
-That's the actual gap this article can't close, and it's not a content problem, it's a structural one: the right visa strategy is a function of your specific facts, and specific facts don't fit in a blog post written for everyone. If you've read this far, you're probably past the "what are my options" stage and into the "which one is actually right for me, and how do I sequence it correctly" stage. That's a strategy conversation, not a reading assignment.
+Some readers weighing all this haven't even settled on the Philippines yet, Thailand is the other country that comes up constantly in this comparison, and its rules work differently enough that it deserves its own look: see [how long you can actually stay in Thailand as a foreigner](/blog/relocation-stay/how-long-can-you-stay-in-thailand-as-a-foreigner) if that's still an open question for you.
+
+That's the actual gap this article can't close, and it's not a content problem, it's a structural one: the right visa strategy is a function of your specific facts, and specific facts don't fit in a blog post written for everyone. If you've read this far, you're probably past the "what are my options" stage and into the "which one is actually right for me, and how do I sequence it correctly" stage. That's a strategy conversation, not a reading assignment. If none of the four paths above cleanly matches your situation, mixed income, a threshold you're about to cross, a relationship status still in flux, see [What to Do If Your Visa Situation Is Complicated](/blog/relocation-stay/what-to-do-if-your-visa-situation-is-complicated) before you book.
 
 **[Book a Relocation Strategy Call →](/consulting)**
 
 We'll go through your income structure, age, timeline, and relationship status, and map the actual sequence, including the mistakes that cost people months (or thousands of dollars) when they pick the wrong path or apply in the wrong order. Or browse the full [Relocation & Stay Strategy toolkit](/blog/relocation-stay-links) for every guide and resource in this pillar.
 
-Not ready for a 1:1 session yet? Grab the [Philippines Arbitrage Playbook](/newsletter) first. It covers the broader relocation and income framework this article is part of.
+Not ready for a 1:1 session yet? Grab the [Philippines Arbitrage Playbook](https://expatbuildr.com/playbook) first. It covers the broader relocation and income framework this article is part of.
 
 [Weekly intel for remote workers and founders](/newsletter)
 

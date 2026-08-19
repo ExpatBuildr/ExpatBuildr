@@ -64,7 +64,7 @@ If your situation is already more complicated than "which visa should I get", mi
 
 **[Book a Relocation Strategy Call →](/consulting)**
 
-Not ready for a 1:1 session yet? Grab the [Philippines Arbitrage Playbook](/newsletter) first.
+Not ready for a 1:1 session yet? Grab the [Philippines Arbitrage Playbook](https://expatbuildr.com/playbook) first.
 
 [Weekly intel for remote workers and founders](/newsletter)
 

@@ -58,7 +58,7 @@ Everything above is the general rule. What it doesn't cover: what happens if you
 
 We'll check your specific entry status, confirm what's actually convertible in your case, and build the real timeline, including any required exit, before you start gathering documents for the wrong path. Or browse the full [Relocation & Stay Strategy toolkit](/blog/relocation-stay-links) for every guide in this pillar.
 
-Not ready for a 1:1 session yet? Grab the [Philippines Arbitrage Playbook](/newsletter) first.
+Not ready for a 1:1 session yet? Grab the [Philippines Arbitrage Playbook](https://expatbuildr.com/playbook) first.
 
 [Weekly intel for remote workers and founders](/newsletter)
 

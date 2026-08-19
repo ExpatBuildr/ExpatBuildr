@@ -58,7 +58,7 @@ The other five articles in this series each cover one clean piece of the picture
 
 We'll go through your actual situation, income, timeline, history, relationships, the country decision if it's still open, and build a real sequence instead of trying to force your case into a template that wasn't built for it. Or browse the full [Relocation & Stay Strategy toolkit](/blog/relocation-stay-links) for every guide in this pillar.
 
-Not ready for a 1:1 session yet? Grab the [Philippines Arbitrage Playbook](/newsletter) first.
+Not ready for a 1:1 session yet? Grab the [Philippines Arbitrage Playbook](https://expatbuildr.com/playbook) first.
 
 [Weekly intel for remote workers and founders](/newsletter)
 
