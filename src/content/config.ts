@@ -14,7 +14,8 @@ const blog = defineCollection({
       'time-arbitrage',
       'ai-arbitrage',
       'health-arbitrage',
-      'market-arbitrage'
+      'market-arbitrage',
+      'relocation-stay'
     ]).optional(),
     category: z.string(),
     tags: z.array(z.enum([

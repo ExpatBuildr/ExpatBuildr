@@ -1,0 +1,151 @@
+---
+export const prerender = true;
+import Layout from '../../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+import { ArrowRight, Home, FileText, ShieldCheck, BookOpen } from 'lucide-astro';
+
+const allPosts = await getCollection('blog', ({ data }) => {
+  return import.meta.env.PROD ? data.draft !== true && data.archived !== true : true;
+});
+
+const posts = allPosts
+  .filter(p => p.data.pillarId === 'relocation-stay' && p.data.category !== 'Pillar Hub')
+  .sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime());
+
+const formatDate = (date: Date) =>
+  new Intl.DateTimeFormat('en-US', { month: 'short', day: 'numeric', year: 'numeric' }).format(date);
+
+const calcReadTime = (body: string) => Math.max(1, Math.ceil(body.trim().split(/\s+/).length / 220));
+---
+
+<Layout
+  title="Relocation & Stay Strategy: Visas, Moves & Long-Term Legal Footing | ExpatBuildr"
+  description="Relocation and stay strategy guides for expat founders — visa pathways, residency permits, moving logistics, and how to stay somewhere for years instead of months."
+  canonicalUrl="https://expatbuildr.com/blog/relocation-stay"
+  ogImage="/images/blog/pillars/relocation-stay-hub.png"
+>
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Relocation & Stay Strategy Hub | ExpatBuildr",
+    "description": "Visa pathways, residency permits, moving logistics, and long-term legal footing guides for expat founders.",
+    "url": "https://expatbuildr.com/blog/relocation-stay",
+    "publisher": {
+      "@type": "Organization",
+      "name": "ExpatBuildr",
+      "url": "https://expatbuildr.com"
+    },
+    "hasPart": posts.map(p => ({
+      "@type": "BlogPosting",
+      "headline": p.data.title,
+      "url": `https://expatbuildr.com/blog/${p.id.replace(/\.mdx?$/, '')}`,
+      "datePublished": p.data.pubDate.toISOString()
+    }))
+  })} />
+
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <!-- Hero -->
+    <div class="text-center mb-20">
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 text-xs uppercase tracking-[0.2em] font-mono mb-8">
+        <Home size={12} /> Relocation & Stay Strategy
+      </div>
+      <h1 class="text-5xl md:text-7xl font-black font-display tracking-tighter text-slate-900 dark:text-white mb-6 uppercase leading-none">
+        MOVE ONCE.<br /><span class="text-indigo-400">STAY FOR YEARS.</span>
+      </h1>
+      <p class="text-xl text-slate-600 dark:text-slate-400 max-w-2xl mx-auto font-inter leading-relaxed mb-8">
+        Relocation & Stay Strategy is the legal and logistical backbone of living abroad long-term — visa pathways, residency permits, the physical move itself, and the decisions that determine whether you can stay somewhere for years instead of months.
+      </p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="/consulting" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-indigo-500 text-white font-bold text-sm hover:bg-indigo-400 transition-all">
+          Talk Through Your Move <ArrowRight size={16} />
+        </a>
+        <a href="/newsletter" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-slate-200 dark:border-white/10 text-slate-700 dark:text-slate-300 font-semibold text-sm hover:border-indigo-500/40 transition-all">
+          Weekly Intel
+        </a>
+      </div>
+    </div>
+
+    <!-- Stats -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-20">
+      <div class="glass-card rounded-2xl p-6 border border-indigo-500/20">
+        <FileText class="text-indigo-400 mb-3" size={24} />
+        <div class="text-3xl font-black text-slate-900 dark:text-white mb-1">10+</div>
+        <div class="text-sm text-slate-600 dark:text-slate-400">Visa and long-term residency pathways available to remote-income founders across Southeast Asia</div>
+      </div>
+      <div class="glass-card rounded-2xl p-6 border border-indigo-500/20">
+        <ShieldCheck class="text-indigo-400 mb-3" size={24} />
+        <div class="text-3xl font-black text-slate-900 dark:text-white mb-1">Years</div>
+        <div class="text-sm text-slate-600 dark:text-slate-400">The horizon a proper stay strategy targets, instead of renewing tourist visas indefinitely</div>
+      </div>
+      <div class="glass-card rounded-2xl p-6 border border-indigo-500/20">
+        <Home class="text-indigo-400 mb-3" size={24} />
+        <div class="text-3xl font-black text-slate-900 dark:text-white mb-1">1 Move</div>
+        <div class="text-sm text-slate-600 dark:text-slate-400">Done right, the goal is a single deliberate relocation, not a cycle of visa runs and re-packing</div>
+      </div>
+    </div>
+
+    <!-- What This Pillar Covers -->
+    <div class="mb-20 prose prose-slate dark:prose-invert max-w-none">
+      <h2 class="text-3xl font-black font-display uppercase tracking-tight text-slate-900 dark:text-white mb-6">What This Pillar Covers</h2>
+      <p class="text-lg text-slate-600 dark:text-slate-400 leading-relaxed mb-4">
+        Most people who move abroad treat the visa and the move as an afterthought — something to sort out once they land. Founders who stay for years do the opposite: they treat legal footing as infrastructure, decided before the flight is booked.
+      </p>
+      <p class="text-lg text-slate-600 dark:text-slate-400 leading-relaxed mb-4">
+        The Relocation & Stay Strategy pillar covers the full stack: which visa or residency pathway fits your income type and timeline, how to plan the physical move without getting stuck mid-transition, and how to build a legal footing that survives longer than a tourist stamp.
+      </p>
+      <p class="text-lg text-slate-600 dark:text-slate-400 leading-relaxed">
+        These guides are written for founders who have already picked a direction and want the move to hold up — and for founders still deciding, who want to see the real requirements before they commit.
+      </p>
+    </div>
+
+    <!-- Article Index -->
+    <div class="mb-20">
+      <div class="flex items-center gap-3 mb-8">
+        <BookOpen class="text-indigo-400" size={20} />
+        <h2 class="text-2xl font-black font-display uppercase tracking-tight text-slate-900 dark:text-white">All Relocation & Stay Strategy Guides</h2>
+        <div class="h-px flex-1 bg-slate-200 dark:bg-white/10"></div>
+        <span class="text-xs font-mono text-slate-400">{posts.length} articles</span>
+      </div>
+
+      {posts.length === 0 ? (
+        <div class="text-center py-16 rounded-2xl border border-dashed border-slate-200 dark:border-white/10">
+          <p class="text-slate-500 dark:text-slate-400 font-inter">No articles published in this pillar yet — check back soon.</p>
+        </div>
+      ) : (
+        <div class="space-y-4">
+          {posts.map(post => (
+            <a
+              href={`/blog/${post.id.replace(/\.mdx?$/, '')}`}
+              class="group flex items-start gap-5 p-5 rounded-2xl border border-slate-200 dark:border-white/10 hover:border-indigo-500/40 bg-white dark:bg-white/[0.03] hover:bg-indigo-500/5 transition-all duration-300"
+            >
+              <div class="shrink-0 w-12 h-12 rounded-xl bg-indigo-500/10 flex items-center justify-center">
+                <Home class="text-indigo-400" size={20} />
+              </div>
+              <div class="flex-1 min-w-0">
+                <div class="flex items-center gap-3 mb-1">
+                  <span class="text-xs font-mono uppercase tracking-wider text-indigo-400 font-semibold">{post.data.category}</span>
+                  <span class="text-xs text-slate-400">{formatDate(post.data.pubDate)}</span>
+                  <span class="text-xs text-slate-400">{calcReadTime(post.body ?? '')} min read</span>
+                </div>
+                <h3 class="text-base font-bold text-slate-900 dark:text-white group-hover:text-indigo-400 transition-colors leading-snug mb-1">{post.data.title}</h3>
+                <p class="text-sm text-slate-500 dark:text-slate-400 line-clamp-2 leading-relaxed">{post.data.description}</p>
+              </div>
+              <ArrowRight class="shrink-0 text-slate-300 dark:text-slate-600 group-hover:text-indigo-400 group-hover:translate-x-1 transition-all mt-1" size={18} />
+            </a>
+          ))}
+        </div>
+      )}
+    </div>
+
+    <!-- CTA -->
+    <div class="rounded-2xl border border-indigo-500/20 bg-indigo-500/5 p-10 text-center mb-12">
+      <h2 class="text-2xl font-black font-display uppercase tracking-tight text-slate-900 dark:text-white mb-3">Get Your Move and Visa Strategy Right the First Time</h2>
+      <p class="text-slate-600 dark:text-slate-400 mb-6 max-w-lg mx-auto">Visa pathway selection, relocation logistics, and long-term stay planning built specifically for expat founders — scoped on a 1-on-1 call.</p>
+      <a href="/consulting" class="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-indigo-500 text-white font-bold hover:bg-indigo-400 transition-all">
+        Book a Call <ArrowRight size={16} />
+      </a>
+    </div>
+
+  </div>
+</Layout>

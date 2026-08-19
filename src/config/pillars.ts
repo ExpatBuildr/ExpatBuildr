@@ -6,7 +6,8 @@ import {
   Clock,
   Sparkles,
   Heart,
-  Coins
+  Coins,
+  Home
 } from 'lucide-astro';
 
 export const pillars = [
@@ -105,6 +106,30 @@ export const pillars = [
     cta: 'Find Your Edge',
     heroImage: '/images/blog/pillars/market-arbitrage-hub.png',
     longDescription: 'Market arbitrage is the practice of identifying and capturing value in the gap between where assets, information, or capital are undervalued and where they are not. For expat founders, opportunities range from currency strategy and cross-border investing to information asymmetry plays.'
+  },
+  {
+    id: 'relocation-stay',
+    name: 'Relocation & Stay Strategy',
+    label: 'Visas, Moves & Long-Term Legal Footing',
+    description: 'Visa pathways, moving logistics, and long-term legal residency strategy for expat founders choosing where to stay.',
+    icon: Home,
+    color: 'text-indigo-500',
+    accent: 'bg-indigo-500/10',
+    cta: 'Talk Through Your Move',
+    heroImage: '/images/blog/pillars/relocation-stay-hub.png',
+    longDescription: 'Relocation & Stay Strategy covers the legal and logistical backbone of living abroad long-term — visa pathways, residency permits, the physical move itself, and the decisions that determine whether a founder can stay somewhere for years instead of months.',
+    // NOTE: This pillar intentionally does NOT use the standard 65% hard
+    // content gate. Gate behavior in this codebase is driven per-article by
+    // `post.data.category` (HARD_GATE_CATEGORIES) and the `gated` frontmatter
+    // flag in src/pages/blog/[...path].astro — it is not read from this
+    // pillars config today. To keep articles in this pillar soft-gated (or
+    // ungated) with a primary CTA to /consulting instead of /newsletter,
+    // set each article's frontmatter accordingly (e.g. `gated: false`, or a
+    // `category` outside HARD_GATE_CATEGORIES, or add its slug to the
+    // soft-CTA slug set) rather than relying on pillarId. See the chat
+    // output for full detail — this is flagged, not auto-enforced.
+    gateMode: 'soft',
+    ctaOverride: '/consulting'
   }
 ];
 
