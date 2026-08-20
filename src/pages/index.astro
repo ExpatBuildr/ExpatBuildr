@@ -2,16 +2,63 @@
 import Layout from '../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
 import { ArrowRight, Globe, Rss, ArrowUpRight, Twitter, Youtube, Instagram, Linkedin, Send, Users } from 'lucide-astro';
+import { pillars } from '../config/pillars';
 
-// Fetch top 3 latest posts for the "Featured Blog Posts" section
+// Fetch all blog posts
 const allPosts = await getCollection('blog', ({ data }) => {
   return import.meta.env.PROD ? data.draft !== true : true;
 });
-// Pin the pillar hub article for each pillar on the homepage
-const targetPillars = ['lead-generation', 'remote-income', 'geo-arbitrage'];
-const featuredPosts = targetPillars.map(pillar =>
-  allPosts.find(p => p.data.pillarId === pillar && p.data.category === 'Pillar Hub')
-).filter(Boolean);
+
+// Pin 6 featured pillars on the homepage
+const targetPillarIds = [
+  'lead-generation',
+  'remote-income',
+  'geo-arbitrage',
+  'market-arbitrage',
+  'relocation-stay',
+  'build-in-public'
+];
+
+const featuredCards = targetPillarIds.map(pillarId => {
+  const pillarInfo = pillars.find(p => p.id === pillarId);
+
+  if (pillarId === 'build-in-public') {
+    return {
+      id: 'build-in-public',
+      url: '/blog/build-in-public',
+      heroImage: pillarInfo?.heroImage || '/images/build-in-public-pillar.jpeg',
+      pillarLabel: pillarInfo?.name || 'Build in Public',
+      title: 'Build in Public: One-Person Business Ecosystem',
+      description: pillarInfo?.description || 'The live documentation of building a one-person business ecosystem from Southeast Asia.',
+      pubDate: new Date('2026-05-29')
+    };
+  }
+
+  const post = allPosts.find(p => p.data.pillarId === pillarId && p.data.category === 'Pillar Hub')
+    || allPosts.find(p => p.data.pillarId === pillarId);
+
+  if (post) {
+    return {
+      id: pillarId,
+      url: `/blog/${post.id.replace(/\.mdx?$/, '')}`,
+      heroImage: post.data.heroImage || pillarInfo?.heroImage || `/images/blog/pillars/${pillarId}-hub.png`,
+      pillarLabel: pillarInfo?.name || pillarId.replace('-', ' '),
+      title: post.data.title,
+      description: post.data.description,
+      pubDate: post.data.pubDate
+    };
+  }
+
+  return {
+    id: pillarId,
+    url: `/blog/${pillarId}`,
+    heroImage: pillarInfo?.heroImage || `/images/blog/pillars/${pillarId}-hub.png`,
+    pillarLabel: pillarInfo?.name || pillarId.replace('-', ' '),
+    title: pillarInfo?.name || pillarId.replace('-', ' '),
+    description: pillarInfo?.description || '',
+    pubDate: new Date()
+  };
+});
 ---
 
 <Layout
@@ -299,28 +346,28 @@ const featuredPosts = targetPillars.map(pillar =>
 			</a>
 		</div>
 
-		<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-			{featuredPosts.map(post => (
-				<a href={`/blog/${post.id.replace(/\.mdx?$/, '')}`} class="group block glass-card rounded-[2rem] overflow-hidden hover:border-accent-cyan/40 transition-colors h-full flex flex-col">
+		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+			{featuredCards.map(card => (
+				<a href={card.url} class="group block glass-card rounded-[2rem] overflow-hidden hover:border-accent-cyan/40 transition-colors h-full flex flex-col">
 					<div class="h-48 w-full overflow-hidden border-b border-white/5 relative">
 						<img
-							src={post.data.heroImage || `/images/blog/pillars/${post.data.pillarId}-hub.png`}
-							alt={post.data.title}
+							src={card.heroImage}
+							alt={card.title}
 							class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
 						/>
 						<div class="absolute top-4 left-4 bg-black/45 backdrop-blur-md border border-white/10 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
-							{post.data.pillarId ? post.data.pillarId.replace('-', ' ') : 'Intelligence'}
+							{card.pillarLabel}
 						</div>
 					</div>
 					<div class="p-6 flex-1 flex flex-col">
 						<div class="text-xs text-slate-500 font-mono mb-3">
-							{new Intl.DateTimeFormat('en-US', { month: 'short', day: 'numeric', year: 'numeric' }).format(post.data.pubDate)}
+							{new Intl.DateTimeFormat('en-US', { month: 'short', day: 'numeric', year: 'numeric' }).format(card.pubDate)}
 						</div>
 						<h4 class="text-xl font-bold dark:text-white text-slate-900 mb-3 leading-tight group-hover:text-accent-cyan transition-colors">
-							{post.data.title}
+							{card.title}
 						</h4>
 						<p class="text-slate-500 text-sm line-clamp-3 mb-6 flex-1">
-							{post.data.description}
+							{card.description}
 						</p>
 						<div class="flex items-center text-accent-cyan font-bold text-xs uppercase tracking-widest gap-1 mt-auto">
 							Read Guide <ArrowRight size={14} class="group-hover:translate-x-1 transition-transform" />
