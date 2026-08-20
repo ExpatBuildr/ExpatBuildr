@@ -1,7 +1,7 @@
 ---
 title: "Can Foreigners Buy Property in Thailand?"
 description: "What foreigners can legally own in Thailand: condos outright, land never, and why the nominee company workaround is riskier than it's often pitched."
-pubDate: 2026-08-19
+pubDate: 2026-08-17
 author: "ExpatBuildr"
 pillarId: "relocation-stay"
 category: "Guide"

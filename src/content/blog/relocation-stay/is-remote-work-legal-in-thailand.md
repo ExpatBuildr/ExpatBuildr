@@ -1,7 +1,7 @@
 ---
 title: "Is Remote Work Legal in Thailand? The Honest Answer"
 description: "Whether working remotely for foreign clients while living in Thailand is legal, why published guidance genuinely disagrees, and what the DTV actually resolves."
-pubDate: 2026-08-19
+pubDate: 2026-08-16
 author: "ExpatBuildr"
 pillarId: "relocation-stay"
 category: "Guide"

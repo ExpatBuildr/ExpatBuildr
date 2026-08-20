@@ -1,7 +1,7 @@
 ---
 title: "What If You Have to Leave Thailand Suddenly?"
 description: "What actually triggers deportation or blacklisting in Thailand, how the 2026 enforcement overhaul changed the rules, and the recovery path if it happens."
-pubDate: 2026-08-19
+pubDate: 2026-08-18
 author: "ExpatBuildr"
 pillarId: "relocation-stay"
 category: "Guide"

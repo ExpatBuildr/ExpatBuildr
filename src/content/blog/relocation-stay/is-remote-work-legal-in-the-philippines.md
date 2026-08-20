@@ -1,7 +1,7 @@
 ---
 title: "Is Remote Work Legal in the Philippines? What the Digital Nomad Visa Actually Covers"
 description: "Whether working remotely for foreign clients in the Philippines is legal, what the 2025 Digital Nomad Visa authorizes, and what tourist-visa work risks."
-pubDate: 2026-08-19
+pubDate: 2026-08-15
 author: "ExpatBuildr"
 pillarId: "relocation-stay"
 category: "Guide"

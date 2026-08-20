@@ -1,7 +1,7 @@
 ---
 title: "How Taxes Work When You Earn US Income While Living Abroad"
 description: "What the Foreign Earned Income Exclusion covers, the self-employment tax trap that catches freelancers, and what US expats actually owe."
-pubDate: 2026-08-19
+pubDate: 2026-08-13
 author: "ExpatBuildr"
 pillarId: "relocation-stay"
 category: "Guide"

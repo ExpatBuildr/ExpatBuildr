@@ -1,7 +1,7 @@
 ---
 title: "Protecting Your Assets as a Long-Term Expat in the Philippines"
 description: "What happens to your Philippine assets if something happens to you: compulsory heirs, why land can't be inherited by foreigners, and how to structure this."
-pubDate: 2026-08-19
+pubDate: 2026-08-18
 author: "ExpatBuildr"
 pillarId: "relocation-stay"
 category: "Guide"
