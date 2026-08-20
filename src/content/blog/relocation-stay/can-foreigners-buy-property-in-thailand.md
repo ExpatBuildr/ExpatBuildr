@@ -18,7 +18,7 @@ archived: false
 noindex: false
 ---
 
-Yes, but only condominiums outright — land ownership is off-limits to foreign individuals under a law dating back to 1954, and every "workaround" you'll hear about is either a legitimate, narrower structure with real requirements, or an illegal arrangement that can cost you the property entirely. Understanding the actual legal landscape before you start looking at listings matters more in Thailand than almost anywhere else in the region, because the workarounds here carry real, well-documented enforcement risk.
+Condominiums are the one clean path to outright ownership in Thailand — everything else involves a workaround, and one of the most commonly pitched workarounds carries real legal risk if it's not structured correctly. Land ownership itself has been off-limits to foreign individuals since 1954, no exceptions for treaty or investment size.
 
 Here's what you can legally own, and where the genuine risk sits.
 
