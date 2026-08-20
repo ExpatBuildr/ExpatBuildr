@@ -436,6 +436,13 @@ const websiteSchema = {
 				}
 			};
 
+			// Apply immediately on load too, not just reactively after a resize/
+			// visibilitychange event -- previously this only ran once Android's
+			// address bar had already shown/hidden once (e.g. via the first
+			// scroll), which is exactly why the nav/layout looked briefly wrong
+			// on initial paint and only "fixed itself" after scrolling.
+			preserveAndroidLayout();
+
 			window.addEventListener('resize', () => {
 				const currentHeight = window.innerHeight;
 				if (Math.abs(lastViewportHeight - currentHeight) > 50) {
