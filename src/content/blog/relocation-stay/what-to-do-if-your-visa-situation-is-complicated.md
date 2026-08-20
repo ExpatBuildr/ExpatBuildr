@@ -1,7 +1,7 @@
 ---
 title: "What to Do If Your Visa Situation Is Complicated"
 description: "When mixed income, timing conflicts, prior overstays, or an undecided relationship mean the standard visa guides don't apply, here's how to think about it."
-pubDate: 2026-08-25
+pubDate: 2026-08-15
 author: "ExpatBuildr"
 pillarId: "relocation-stay"
 category: "Guide"

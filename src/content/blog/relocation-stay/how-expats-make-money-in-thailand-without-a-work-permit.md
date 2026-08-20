@@ -1,7 +1,7 @@
 ---
 title: "How Expats Make Money in Thailand Without a Work Permit"
 description: "The legal ways foreign income works in Thailand without a Thai work permit, what the DTV actually authorizes, and where the real line sits."
-pubDate: 2026-08-12
+pubDate: 2026-08-16
 author: "ExpatBuildr"
 pillarId: "relocation-stay"
 category: "Guide"

@@ -1,7 +1,7 @@
 ---
 title: "What Happens to Your US Taxes and Benefits If You Stay Abroad Permanently"
 description: "Social Security, Medicare, and US taxes don't stop abroad. What actually continues, what changes, and what the 2025 Fairness Act fixed."
-pubDate: 2026-08-14
+pubDate: 2026-08-17
 author: "ExpatBuildr"
 pillarId: "relocation-stay"
 category: "Guide"

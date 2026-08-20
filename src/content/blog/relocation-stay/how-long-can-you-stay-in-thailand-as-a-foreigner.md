@@ -1,7 +1,7 @@
 ---
 title: "How Long Can You Stay in Thailand as a Foreigner"
 description: "Thailand's tourist stay rules changed in 2026. What visa-free entry, extensions, and visa runs get you now, and why the DTV is the real long-term answer."
-pubDate: 2026-08-21
+pubDate: 2026-08-14
 author: "ExpatBuildr"
 pillarId: "relocation-stay"
 category: "Guide"

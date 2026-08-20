@@ -1,7 +1,7 @@
 ---
 title: "What If You Have to Leave the Philippines Suddenly?"
 description: "The difference between exclusion, deportation, and a hold departure order in the Philippines, what triggers each, and how to protect your ability to return."
-pubDate: 2026-08-17
+pubDate: 2026-08-18
 author: "ExpatBuildr"
 pillarId: "relocation-stay"
 category: "Guide"

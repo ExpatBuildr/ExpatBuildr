@@ -1,7 +1,7 @@
 ---
 title: "Planning for Family and Kids as a Long-Term Expat in Southeast Asia"
 description: "What school, healthcare, and visa planning looks like for expat families in the Philippines and Thailand, and the costs a move doesn't have to consider."
-pubDate: 2026-08-15
+pubDate: 2026-08-18
 author: "ExpatBuildr"
 pillarId: "relocation-stay"
 category: "Guide"

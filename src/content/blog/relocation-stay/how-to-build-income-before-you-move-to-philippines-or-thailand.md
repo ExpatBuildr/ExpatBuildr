@@ -1,7 +1,7 @@
 ---
 title: "How to Build Income Before You Move to the Philippines or Thailand"
 description: "The income structure that needs to exist before you relocate: what counts as foreign-sourced, how much runway you need, and the sequencing mistakes to avoid."
-pubDate: 2026-08-12
+pubDate: 2026-08-16
 author: "ExpatBuildr"
 pillarId: "relocation-stay"
 category: "Guide"

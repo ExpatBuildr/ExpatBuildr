@@ -1,7 +1,7 @@
 ---
 title: "Can You Switch Visa Types Without Leaving the Country"
 description: "Whether you can convert your tourist status to a long-term visa without exiting the Philippines or Thailand, and the traps that catch people."
-pubDate: 2026-08-23
+pubDate: 2026-08-14
 author: "ExpatBuildr"
 pillarId: "relocation-stay"
 category: "Guide"

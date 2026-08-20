@@ -1,7 +1,7 @@
 ---
 title: "Retirement Visa vs Work Visa vs Marriage Visa: Which One Fits You"
 description: "SRRV, work visa, or 13A marriage visa: a direct comparison of cost and eligibility, so you stop guessing which one applies to you."
-pubDate: 2026-08-19
+pubDate: 2026-08-14
 author: "ExpatBuildr"
 pillarId: "relocation-stay"
 category: "Guide"

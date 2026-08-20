@@ -1,7 +1,7 @@
 ---
 title: "Can Foreigners Buy Property in the Philippines?"
 description: "What foreigners can legally own in the Philippines: condos outright, land never, and what the new 2026 99-year lease law actually changes."
-pubDate: 2026-08-16
+pubDate: 2026-08-17
 author: "ExpatBuildr"
 pillarId: "relocation-stay"
 category: "Guide"

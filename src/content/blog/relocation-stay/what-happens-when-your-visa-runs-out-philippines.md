@@ -1,7 +1,7 @@
 ---
 title: "What Happens When Your Visa Runs Out in the Philippines"
 description: "What actually happens if your Philippines visa expires: the real fine structure, minor vs major overstay, and how to fix it before it gets worse."
-pubDate: 2026-08-17
+pubDate: 2026-08-15
 author: "ExpatBuildr"
 pillarId: "relocation-stay"
 category: "Guide"

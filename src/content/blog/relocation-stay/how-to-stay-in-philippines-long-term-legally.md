@@ -1,7 +1,7 @@
 ---
 title: "How to Stay in the Philippines Long Term, Legally"
 description: "The four real paths to staying in the Philippines long term: tourist extensions, the Digital Nomad Visa, SRRV, and 13A, and what each one actually costs."
-pubDate: 2026-08-15
+pubDate: 2026-08-14
 author: "ExpatBuildr"
 pillarId: "relocation-stay"
 category: "Guide"

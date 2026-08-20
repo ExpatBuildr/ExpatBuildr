@@ -1,7 +1,7 @@
 ---
 title: "Marrying a Local: What It Actually Changes Legally"
 description: "Marrying a Filipino citizen doesn't grant land ownership, automatic citizenship, or shared property rights most people assume. Here's what it actually changes."
-pubDate: 2026-08-14
+pubDate: 2026-08-17
 author: "ExpatBuildr"
 pillarId: "relocation-stay"
 category: "Guide"

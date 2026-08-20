@@ -1,7 +1,7 @@
 ---
 title: "Do I Need a Business License to Freelance Abroad"
 description: "Whether freelancing for foreign clients while living in the Philippines or Thailand requires a local business license, and where the real distinction sits."
-pubDate: 2026-08-13
+pubDate: 2026-08-16
 author: "ExpatBuildr"
 pillarId: "relocation-stay"
 category: "Guide"
