@@ -55,6 +55,9 @@ const calcReadTime = (body: string): number =>
   })} />
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-20">
 
+    <!-- YouTube Auto-Subscribe Banner -->
+    <YouTubeAd />
+
     <!-- Header -->
     <div class="text-center">
       <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-accent-blue/10 border border-accent-blue/20 text-accent-blue text-xs uppercase tracking-[0.2em] font-mono mb-8">
@@ -91,9 +94,6 @@ const calcReadTime = (body: string): number =>
         </a>
       </div>
     </div>
-
-    <!-- YouTube Auto-Subscribe Banner -->
-    <YouTubeAd />
 
     <!-- Featured Post -->
     {featuredPost && (

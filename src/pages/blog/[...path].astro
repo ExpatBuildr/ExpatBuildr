@@ -314,6 +314,9 @@ const gateMode: 'hard' | 'soft' | 'none' = isSoftCTAArticle ? 'soft' : (isHardGa
         <article class="max-w-7xl mx-auto">
             <NicheRedirect pillar={post.data.pillarId} />
 
+            <!-- YouTube Auto-Subscribe Banner -->
+            <YouTubeAd class="mb-12" />
+
             <header class="relative w-full rounded-[3.5rem] overflow-hidden min-h-[400px] mb-16 flex flex-col justify-end p-8 md:p-16 space-y-8 group border border-slate-200 dark:border-white/5 bg-slate-50 dark:bg-slate-950 shadow-xl dark:shadow-2xl">
                 <!-- Institutional Cinematic Background Layer -->
                 {resolvedHeroImage && (
@@ -377,9 +380,6 @@ const gateMode: 'hard' | 'soft' | 'none' = isSoftCTAArticle ? 'soft' : (isHardGa
                     </div>
                 </div>
             </header>
-
-            <!-- YouTube Auto-Subscribe Banner -->
-            <YouTubeAd class="mb-16" />
 
             <!-- Content area: prose + TOC sidebar -->
             <div class="flex gap-12 items-start">

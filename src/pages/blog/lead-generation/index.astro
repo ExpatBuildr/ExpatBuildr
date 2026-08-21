@@ -3,6 +3,7 @@ export const prerender = true;
 import Layout from '../../../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
 import { ArrowRight, Target, Users, BarChart2, Zap } from 'lucide-astro';
+import YouTubeAd from '../../../components/blog/YouTubeAd.astro';
 
 const allPosts = await getCollection('blog', ({ data }) => {
   return import.meta.env.PROD ? data.draft !== true && data.archived !== true : true;
@@ -44,6 +45,9 @@ const calcReadTime = (body: string) => Math.max(1, Math.ceil(body.trim().split(/
   })} />
 
   <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <!-- YouTube Auto-Subscribe Banner -->
+    <YouTubeAd class="mb-12" />
 
     <!-- Hero -->
     <div class="text-center mb-20">
