@@ -6,6 +6,7 @@ import { pillars } from '../../config/pillars';
 import { buildInPublicArticles } from '../../config/build-in-public-articles';
 import { ArrowRight, ArrowUpRight, BookOpen, Clock, Pencil, Rss, FileJson } from 'lucide-astro';
 import NewsletterAd from '../../components/blog/NewsletterAd.astro';
+import YouTubeAd from '../../components/blog/YouTubeAd.astro';
 
 const allPosts = await getCollection('blog', ({ data }) => {
   return import.meta.env.PROD ? data.draft !== true : true;
@@ -90,6 +91,9 @@ const calcReadTime = (body: string): number =>
         </a>
       </div>
     </div>
+
+    <!-- YouTube Auto-Subscribe Banner -->
+    <YouTubeAd />
 
     <!-- Featured Post -->
     {featuredPost && (

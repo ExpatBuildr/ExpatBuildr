@@ -10,6 +10,7 @@ import TableOfContents from '../../components/blog/TableOfContents.astro';
 import RelatedPosts from '../../components/blog/RelatedPosts.astro';
 import GalaxyAd from '../../components/blog/GalaxyAd.astro';
 import NewsletterAd from '../../components/blog/NewsletterAd.astro';
+import YouTubeAd from '../../components/blog/YouTubeAd.astro';
 import ConsultingCTA from '../../components/blog/ConsultingCTA.astro';
 import SafetyWingAd from '../../components/blog/SafetyWingAd.astro';
 import NewsletterPopup from '../../components/NewsletterPopup.astro';
@@ -376,6 +377,9 @@ const gateMode: 'hard' | 'soft' | 'none' = isSoftCTAArticle ? 'soft' : (isHardGa
                     </div>
                 </div>
             </header>
+
+            <!-- YouTube Auto-Subscribe Banner -->
+            <YouTubeAd class="mb-16" />
 
             <!-- Content area: prose + TOC sidebar -->
             <div class="flex gap-12 items-start">
