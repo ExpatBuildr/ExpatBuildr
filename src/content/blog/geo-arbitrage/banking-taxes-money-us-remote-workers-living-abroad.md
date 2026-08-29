@@ -15,7 +15,7 @@ primaryKeyword: "banking taxes and money for US remote workers living abroad"
 secondaryKeywords: ["US expat taxes remote work", "banking setup living abroad", "FEIE remote worker", "foreign bank account US citizen", "money management expat remote worker"]
 searchIntent: "problem-solving"
 draft: false
-hasVideoEmbed: false
+hasVideoEmbed: true
 archived: false
 noindex: false
 ---
@@ -99,6 +99,18 @@ Most Southeast Asian countries have low income tax rates for foreigners, and som
 </div>
 
 <script type="text/javascript" src="https://storage.googleapis.com/safetywing-static/widget/safetywing-price-widget.js"></script>
+
+<div class="video-embed">
+  <iframe
+    width="100%"
+    height="480"
+    src="https://www.youtube.com/embed/CMEdKOUAjHc"
+    title="Most Expats in the Philippines Get Money Wrong"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowfullscreen>
+  </iframe>
+</div>
 
 ### FBAR and FATCA Reporting
 

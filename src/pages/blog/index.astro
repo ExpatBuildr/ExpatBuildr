@@ -3,7 +3,6 @@ export const prerender = true;
 import Layout from '../../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
 import { pillars } from '../../config/pillars';
-import { buildInPublicArticles } from '../../config/build-in-public-articles';
 import { ArrowRight, ArrowUpRight, BookOpen, Clock, Pencil, Rss, FileJson } from 'lucide-astro';
 import NewsletterAd from '../../components/blog/NewsletterAd.astro';
 import YouTubeAd from '../../components/blog/YouTubeAd.astro';
@@ -17,6 +16,8 @@ const contentPosts = allPosts.filter(p =>
 ).sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime());
 
 const featuredPost = contentPosts.find(p => p.id.includes('freelance-vs-remote-job-which-pays-more')) ?? contentPosts[0] ?? null;
+
+const buildInPublicPosts = allPosts.filter(p => p.data.pillarId === 'build-in-public' && p.data.category !== 'Pillar Hub').slice(0, 3);
 
 const pillarPreviews = pillars.map(pillar => ({
   pillar,
@@ -175,7 +176,7 @@ const calcReadTime = (body: string): number =>
                 <pillar.icon size={24} />
               </div>
               <span class="text-[10px] font-mono text-slate-400 dark:text-white/40 uppercase tracking-widest font-semibold">
-                {pillar.id === 'build-in-public' ? buildInPublicArticles.length : (postCountByPillar[pillar.id] || 0)} posts
+                {(postCountByPillar[pillar.id] || 0)} posts
               </span>
             </div>
             <div class="relative z-10">
@@ -307,11 +308,9 @@ const calcReadTime = (body: string): number =>
       </div>
 
       <div class="divide-y divide-slate-100 dark:divide-white/8 px-4">
-        {buildInPublicArticles.map((article, i) => (
+        {buildInPublicPosts.map((article, i) => (
           <a
-            href={article.url}
-            target="_blank"
-            rel="noopener noreferrer"
+            href={`/blog/${article.id.replace(/\.mdx?$/, '')}`}
             class="group flex items-start gap-6 py-8 hover:bg-slate-50 dark:hover:bg-white/[0.04] -mx-4 px-4 rounded-lg transition-colors"
           >
             <span class="text-sm font-mono text-institutional-muted w-6 shrink-0 mt-1 tabular-nums font-semibold">
@@ -319,20 +318,20 @@ const calcReadTime = (body: string): number =>
             </span>
             <div class="flex-1 min-w-0">
               <div class="flex flex-wrap items-center gap-3 text-xs md:text-sm font-mono text-institutional-muted uppercase tracking-widest mb-2">
-                <span>{article.date}</span>
+                <span>{formatDate(article.data.pubDate)}</span>
                 <span>·</span>
-                <span class="flex items-center gap-1"><Clock size={11}/> {article.readTime}</span>
+                {article.body && <span class="flex items-center gap-1"><Clock size={11}/> {calcReadTime(article.body)} min read</span>}
                 <span>·</span>
-                <span class="text-violet-400/80">{article.category}</span>
+                <span class="text-violet-400/80">{article.data.category}</span>
               </div>
               <h3 class="text-lg md:text-2xl font-bold font-display text-slate-900 dark:text-white group-hover:text-violet-400 transition-colors tracking-tight leading-snug mb-2">
-                {article.title}
+                {article.data.title}
               </h3>
               <p class="text-base text-institutional-secondary font-inter leading-relaxed line-clamp-2">
-                {article.description}
+                {article.data.description}
               </p>
             </div>
-            <ArrowUpRight size={18} class="text-institutional-muted group-hover:text-violet-400 transition-all shrink-0 mt-1" />
+            <ArrowRight size={18} class="text-institutional-muted group-hover:text-violet-400 group-hover:translate-x-1 transition-all shrink-0 mt-1" />
           </a>
         ))}
       </div>

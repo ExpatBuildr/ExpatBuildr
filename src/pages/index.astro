@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
 import { ArrowRight, Globe, Rss, ArrowUpRight, Twitter, Youtube, Instagram, Linkedin, Send, Users } from 'lucide-astro';
 import { pillars } from '../config/pillars';
+import YouTubeEmbed from '../components/YouTubeEmbed.astro';
 
 // Fetch all blog posts
 const allPosts = await getCollection('blog', ({ data }) => {
@@ -171,6 +172,13 @@ const featuredCards = targetPillarIds.map(pillarId => {
 				Book Your Call <ArrowRight size={16} class="group-hover:translate-x-1 transition-transform" />
 			</div>
 		</a>
+	</section>
+
+	<!-- SECTION: YouTube Video Embed -->
+	<section class="py-20 relative overflow-hidden">
+		<div class="max-w-4xl mx-auto px-4 sm:px-6 relative z-10 flex flex-col items-center gap-6">
+			<YouTubeEmbed videoId="CMEdKOUAjHc" title="ExpatBuildr — watch the video" />
+		</div>
 	</section>
 
 	<!-- SECTION 3: Two-Stage Segmentation -->

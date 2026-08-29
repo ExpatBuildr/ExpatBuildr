@@ -1,11 +1,22 @@
 ---
 export const prerender = true;
 import Layout from '../../layouts/Layout.astro';
-import { ArrowUpRight, BookOpen, Pencil, TrendingUp, Globe, Eye } from 'lucide-astro';
+import { getCollection } from 'astro:content';
+import { ArrowRight, BookOpen, Pencil, TrendingUp, Globe, Eye } from 'lucide-astro';
 import YouTubeAd from '../../components/blog/YouTubeAd.astro';
-import { buildInPublicArticles } from '../../config/build-in-public-articles';
 
-const articles = buildInPublicArticles;
+const allPosts = await getCollection('blog', ({ data }) => {
+  return import.meta.env.PROD ? data.draft !== true && data.archived !== true : true;
+});
+
+const posts = allPosts
+  .filter(p => p.data.pillarId === 'build-in-public' && p.data.category !== 'Pillar Hub')
+  .sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime());
+
+const formatDate = (date: Date) =>
+  new Intl.DateTimeFormat('en-US', { month: 'short', day: 'numeric', year: 'numeric' }).format(date);
+
+const calcReadTime = (body: string) => Math.max(1, Math.ceil(body.trim().split(/\s+/).length / 220));
 ---
 
 <Layout
@@ -25,11 +36,11 @@ const articles = buildInPublicArticles;
       "name": "Expat Buildr",
       "url": "https://expatbuildr.com"
     },
-    "hasPart": articles.map(a => ({
+    "hasPart": posts.map(p => ({
       "@type": "BlogPosting",
-      "headline": a.title,
-      "url": a.url,
-      "datePublished": a.date
+      "headline": p.data.title,
+      "url": `https://expatbuildr.com/blog/${p.id.replace(/\.mdx?$/, '')}`,
+      "datePublished": p.data.pubDate.toISOString()
     }))
   })} />
 
@@ -47,14 +58,14 @@ const articles = buildInPublicArticles;
         BUILD OPEN.<br /><span class="text-violet-400">COMPOUND TRUST.</span>
       </h1>
       <p class="text-xl text-slate-600 dark:text-slate-400 max-w-2xl mx-auto font-inter leading-relaxed mb-8">
-        This pillar documents the journey of building a one-person business ecosystem from Southeast Asia. The wins, failures, systems, and behind-the-scenes process — published openly on Medium to build authority, earn backlinks, and strengthen long-term SEO growth.
+        This pillar documents the journey of building a one-person business ecosystem from Southeast Asia. The wins, failures, systems, and behind-the-scenes process — published directly here on ExpatBuildr.
       </p>
       <div class="flex flex-wrap justify-center gap-4">
-        <a href="https://medium.com/@expatbuildr" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-violet-500 text-white font-bold text-sm hover:bg-violet-400 transition-all">
-          Follow on Medium <ArrowUpRight size={16} />
+        <a href="/newsletter" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-violet-500 text-white font-bold text-sm hover:bg-violet-400 transition-all">
+          Weekly Intel <ArrowRight size={16} />
         </a>
-        <a href="/newsletter" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-slate-200 dark:border-white/10 text-slate-700 dark:text-slate-300 font-semibold text-sm hover:border-violet-400/40 transition-all">
-          Weekly Intel
+        <a href="/consulting" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-slate-200 dark:border-white/10 text-slate-700 dark:text-slate-300 font-semibold text-sm hover:border-violet-400/40 transition-all">
+          Book Strategy Call
         </a>
       </div>
     </div>
@@ -68,7 +79,7 @@ const articles = buildInPublicArticles;
       </div>
       <div class="glass-card rounded-2xl p-6 border border-violet-500/20">
         <TrendingUp class="text-violet-400 mb-3" size={24} />
-        <div class="text-3xl font-black text-slate-900 dark:text-white mb-1">4 pillars</div>
+        <div class="text-3xl font-black text-slate-900 dark:text-white mb-1">Ecosystem</div>
         <div class="text-sm text-slate-600 dark:text-slate-400">Lead generation, remote income, geo-arbitrage, and build in public — one compounding ecosystem.</div>
       </div>
       <div class="glass-card rounded-2xl p-6 border border-violet-500/20">
@@ -85,10 +96,7 @@ const articles = buildInPublicArticles;
         Building in public is not content marketing dressed up as transparency. The goal here is to document actual decisions — what systems were built, what failed, what the numbers looked like, and why specific choices were made over alternatives.
       </p>
       <p class="text-lg text-slate-600 dark:text-slate-400 leading-relaxed mb-4">
-        The strategic logic is straightforward: public execution builds authority faster than private execution. Every article on Medium creates a backlink signal, a trust signal, and a discovery surface for people searching for operators doing what this operation does. The documentation serves the business, not just the audience.
-      </p>
-      <p class="text-lg text-slate-600 dark:text-slate-400 leading-relaxed">
-        The articles below are hosted on Medium for distribution reach and domain authority. The core protocols, guides, and frameworks live here on ExpatBuildr. Together they form a content flywheel: public narrative on Medium drives traffic to operational depth on ExpatBuildr.
+        The strategic logic is straightforward: public execution builds authority faster than private execution. All protocols, guides, build logs, and frameworks live directly here on ExpatBuildr.
       </p>
     </div>
 
@@ -96,40 +104,29 @@ const articles = buildInPublicArticles;
     <div class="mb-20">
       <div class="flex items-center gap-3 mb-8">
         <BookOpen class="text-violet-400" size={20} />
-        <h2 class="text-2xl font-black font-display uppercase tracking-tight text-slate-900 dark:text-white">All Build in Public Posts</h2>
+        <h2 class="text-2xl font-black font-display uppercase tracking-tight text-slate-900 dark:text-white">All Build in Public Guides</h2>
         <div class="h-px flex-1 bg-slate-200 dark:bg-white/10"></div>
-        <span class="text-xs font-mono text-slate-400">{articles.length} articles · on Medium</span>
+        <span class="text-xs font-mono text-slate-400">{posts.length} guides</span>
       </div>
 
-      <div class="space-y-4">
-        {articles.map(article => (
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {posts.map(post => (
           <a
-            href={article.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="group flex items-start gap-5 p-5 rounded-2xl border border-slate-200 dark:border-white/10 hover:border-violet-400/40 bg-white dark:bg-white/[0.03] hover:bg-violet-400/5 transition-all duration-300"
+            href={`/blog/${post.id.replace(/\.mdx?$/, '')}`}
+            class="group flex flex-col p-6 rounded-2xl border border-slate-200 dark:border-white/10 hover:border-violet-400/40 bg-white dark:bg-white/[0.03] hover:bg-violet-400/5 transition-all duration-300"
           >
-            <div class="shrink-0 w-12 h-12 rounded-xl bg-violet-500/10 flex items-center justify-center">
-              <Pencil class="text-violet-400" size={20} />
+            <div class="flex items-center gap-3 mb-3">
+              <span class="text-xs font-mono uppercase tracking-wider text-violet-400 font-semibold">{post.data.category}</span>
+              <span class="text-xs text-slate-400">{formatDate(post.data.pubDate)}</span>
+              {post.body && <span class="text-xs text-slate-400">{calcReadTime(post.body)} min read</span>}
             </div>
-            <div class="flex-1 min-w-0">
-              <div class="flex items-center gap-3 mb-1">
-                <span class="text-xs font-mono uppercase tracking-wider text-violet-400 font-semibold">{article.category}</span>
-                <span class="text-xs text-slate-400">{article.date}</span>
-                <span class="text-xs text-slate-400">{article.readTime}</span>
-              </div>
-              <h3 class="text-base font-bold text-slate-900 dark:text-white group-hover:text-violet-400 transition-colors leading-snug mb-1">{article.title}</h3>
-              <p class="text-sm text-slate-500 dark:text-slate-400 line-clamp-2 leading-relaxed">{article.description}</p>
+            <h3 class="text-xl font-bold text-slate-900 dark:text-white group-hover:text-violet-400 transition-colors leading-snug mb-2">{post.data.title}</h3>
+            <p class="text-sm text-slate-500 dark:text-slate-400 line-clamp-2 leading-relaxed mb-4 flex-1">{post.data.description}</p>
+            <div class="flex items-center text-violet-400 font-bold text-xs uppercase tracking-widest gap-1 mt-auto">
+              Read Guide <ArrowRight size={14} class="group-hover:translate-x-1 transition-transform" />
             </div>
-            <ArrowUpRight class="shrink-0 text-slate-300 dark:text-slate-600 group-hover:text-violet-400 transition-all mt-1" size={18} />
           </a>
         ))}
-      </div>
-
-      <div class="mt-8 text-center">
-        <a href="https://medium.com/@expatbuildr" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm font-mono text-slate-500 dark:text-slate-400 hover:text-violet-400 transition-colors uppercase tracking-widest">
-          View all posts on Medium <ArrowUpRight size={14} />
-        </a>
       </div>
     </div>
 
@@ -138,7 +135,7 @@ const articles = buildInPublicArticles;
       <h2 class="text-2xl font-black font-display uppercase tracking-tight text-slate-900 dark:text-white mb-3">Follow the Build as It Happens</h2>
       <p class="text-slate-600 dark:text-slate-400 mb-6 max-w-lg mx-auto">Weekly breakdowns on systems, income, geo-arbitrage, and the one-person business architecture — straight to your inbox.</p>
       <a href="/newsletter" class="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-violet-500 text-white font-bold hover:bg-violet-400 transition-all">
-        Join Free <ArrowUpRight size={16} />
+        Join Free <ArrowRight size={16} />
       </a>
     </div>
 

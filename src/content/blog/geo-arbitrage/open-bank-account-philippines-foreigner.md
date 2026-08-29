@@ -14,7 +14,7 @@ primaryKeyword: "how to open a bank account in the Philippines as a foreigner"
 secondaryKeywords: ["Philippine bank account foreigner", "open bank account Philippines expat", "BDO account foreigner", "banking Philippines remote worker", "expat founder banking Philippines"]
 searchIntent: "problem-solving"
 draft: false
-hasVideoEmbed: false
+hasVideoEmbed: true
 archived: false
 noindex: false
 ---
@@ -85,6 +85,18 @@ The exact document requirements vary slightly by bank and branch, but the follow
 </div>
 
 <script type="text/javascript" src="https://storage.googleapis.com/safetywing-static/widget/safetywing-price-widget.js"></script>
+
+<div class="video-embed">
+  <iframe
+    width="100%"
+    height="480"
+    src="https://www.youtube.com/embed/CMEdKOUAjHc"
+    title="Most Expats in the Philippines Get Money Wrong"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowfullscreen>
+  </iframe>
+</div>
 
 ## The Process Step by Step
 

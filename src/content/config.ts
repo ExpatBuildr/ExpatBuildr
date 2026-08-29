@@ -15,12 +15,13 @@ const blog = defineCollection({
       'ai-arbitrage',
       'health-arbitrage',
       'market-arbitrage',
-      'relocation-stay'
+      'relocation-stay',
+      'build-in-public'
     ]).optional(),
     category: z.string(),
     tags: z.array(z.enum([
       'AI Arbitrage', 'AI Content', 'AI Tools', 'Async Business', 'Async Work',
-      'Automation', 'B2B Sales', 'CRM', 'Career Growth', 'Cold Outreach',
+      'Automation', 'B2B Sales', 'Build in Public', 'CRM', 'Career Growth', 'Cold Outreach',
       'Cost of Living', 'Currency Strategy', 'Delegation', 'Digital Nomad',
       'Expat Banking', 'Expat Founder', 'Expat Healthcare', 'Expat Taxes',
       'Expat Visas', 'Founder Wellness', 'Geo-Arbitrage', 'Health Arbitrage',

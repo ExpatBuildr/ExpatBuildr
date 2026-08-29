@@ -1,0 +1,75 @@
+---
+// Click-to-load YouTube facade: renders a thumbnail + play button instead of
+// an eager <iframe>, and only injects the real embed after a user click.
+// This avoids loading the full YouTube player (and its scripts/trackers) on
+// every page view, which is what was hammering memory/CPU on the homepage.
+interface Props {
+  videoId: string;
+  title: string;
+  class?: string;
+}
+
+const { videoId, title, class: className = '' } = Astro.props;
+---
+
+<div
+  class={`youtube-embed relative w-full aspect-video rounded-2xl overflow-hidden shadow-2xl ring-1 ring-white/10 bg-black ${className}`}
+  data-video-id={videoId}
+  data-video-title={title}
+>
+  <button
+    type="button"
+    class="yt-facade-btn absolute inset-0 w-full h-full group cursor-pointer"
+    aria-label={`Play video: ${title}`}
+  >
+    <img
+      src={`https://i.ytimg.com/vi/${videoId}/maxresdefault.jpg`}
+      alt={title}
+      class="w-full h-full object-cover"
+      loading="lazy"
+      decoding="async"
+      width="1280"
+      height="720"
+    />
+    <span class="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-black/35 transition-colors">
+      <span class="flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-red-600 shadow-lg group-hover:scale-105 transition-transform">
+        <svg viewBox="0 0 24 24" class="w-7 h-7 sm:w-8 sm:h-8 text-white translate-x-0.5" fill="currentColor" aria-hidden="true">
+          <path d="M8 5v14l11-7z"></path>
+        </svg>
+      </span>
+    </span>
+  </button>
+</div>
+
+<script>
+  function initYouTubeFacades() {
+    const embeds = document.querySelectorAll<HTMLElement>('.youtube-embed:not([data-initialized])');
+
+    embeds.forEach((wrapper) => {
+      wrapper.setAttribute('data-initialized', 'true');
+      const btn = wrapper.querySelector('.yt-facade-btn');
+      if (!btn) return;
+
+      btn.addEventListener('click', () => {
+        const videoId = wrapper.getAttribute('data-video-id');
+        const title = wrapper.getAttribute('data-video-title') || 'YouTube video player';
+        if (!videoId) return;
+
+        const iframe = document.createElement('iframe');
+        iframe.className = 'w-full h-full absolute inset-0';
+        iframe.src = `https://www.youtube-nocookie.com/embed/${encodeURIComponent(videoId)}?autoplay=1&rel=0`;
+        iframe.title = title;
+        iframe.loading = 'lazy';
+        iframe.referrerPolicy = 'strict-origin-when-cross-origin';
+        iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+        iframe.allowFullscreen = true;
+
+        wrapper.innerHTML = '';
+        wrapper.appendChild(iframe);
+      }, { once: true });
+    });
+  }
+
+  initYouTubeFacades();
+  document.addEventListener('astro:page-load', initYouTubeFacades);
+</script>
