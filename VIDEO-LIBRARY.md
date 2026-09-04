@@ -39,6 +39,7 @@ Keep the embed's `title` attribute matching the actual YouTube video title — i
 | Why I chose the Philippines over Thailand | https://youtu.be/r6MRc1DR15Q | `geo-arbitrage/chiang-mai-vs-cebu-remote-work-base.md` | Mid-article (before "Where Chiang Mai Wins") |
 | I left everything for Cebu, Philippines — here's what happened | https://youtu.be/nRuXPh2MR0A | `geo-arbitrage/complete-guide-living-working-cebu-city.md` | Mid-article (before "Internet: The Critical Variable") |
 | I Wish I Knew This Before Moving Abroad | https://youtu.be/Qo4jcuo-UFE | `geo-arbitrage/what-to-do-before-you-move-abroad.md` | Top (right after intro) |
+| 5 Hidden Costs That Drain Expat Savings Fast | https://youtu.be/ES9CNKtv8jw | `geo-arbitrage/expat-cost-of-living-budget-what-to-actually-include.md` | Top (right after intro) |
 
 Note: mid-article placements on gated articles were positioned at 45-55% of the way through the piece — comfortably before the 65% hard-gate cutoff (`GatedContent.astro`) so the video stays visible to every reader, not just subscribers.
 
