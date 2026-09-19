@@ -1,20 +1,21 @@
 ---
 // src/pages/shop.astro
 import { Sun, Moon, Menu, X } from 'lucide-astro';
+import { offers } from '../config/offers';
 ---
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ExpatBuildr Shop - Digital Tools for Operators</title>
-<meta name="description" content="AI Workflows for businesses and Professional digital downloads for remote workers, and lead generation operators.">
+<title>ExpatBuildr Shop - Website Builds, Consulting & the SEA Software Kit</title>
+<meta name="description" content="Three ways to work with ExpatBuildr: a done-for-you Website Build, a 1-on-1 relocation Consulting Call, and the Southeast Asia Software Bundle.">
 <link rel="canonical" href="https://expatbuildr.com/shop" />
 
 <!-- ── OG META TAGS ── -->
 <meta property="og:site_name" content="ExpatBuildr" />
-<meta property="og:title" content="ExpatBuildr Shop - Digital Tools for Operators" />
-<meta property="og:description" content="AI Workflows for businesses and Professional digital downloads for remote workers, and lead generation operators." />
+<meta property="og:title" content="ExpatBuildr Shop - Website Builds, Consulting & the SEA Software Kit" />
+<meta property="og:description" content="Three ways to work with ExpatBuildr: a done-for-you Website Build, a 1-on-1 relocation Consulting Call, and the Southeast Asia Software Bundle." />
 <meta property="og:image" content="https://expatbuildr.com/shop-og.png" />
 <meta property="og:url" content="https://expatbuildr.com/shop" />
 <meta property="og:type" content="website" />
@@ -22,8 +23,8 @@ import { Sun, Moon, Menu, X } from 'lucide-astro';
 <!-- ── TWITTER META TAGS ── -->
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@expatbuilder" />
-<meta name="twitter:title" content="ExpatBuildr Shop - Digital Tools for Operators" />
-<meta name="twitter:description" content="AI Workflows for businesses and Professional digital downloads for remote workers, and lead generation operators." />
+<meta name="twitter:title" content="ExpatBuildr Shop - Website Builds, Consulting & the SEA Software Kit" />
+<meta name="twitter:description" content="Three ways to work with ExpatBuildr: a done-for-you Website Build, a 1-on-1 relocation Consulting Call, and the Southeast Asia Software Bundle." />
 <meta name="twitter:image" content="https://expatbuildr.com/shop-og.png" />
 
 <!-- ── TRACKING PIXELS: THE STACK ── -->
@@ -47,7 +48,7 @@ import { Sun, Moon, Menu, X } from 'lucide-astro';
   t.src=v;s=b.getElementsByTagName(e)[0];
   s.parentNode.insertBefore(t,s)}(window, document,'script',
   'https://connect.facebook.net/en_US/fbevents.js');
-  fbq('init', '1480646753745240'); 
+  fbq('init', '1480646753745240');
   fbq('track', 'PageView');
 </script>
 <noscript><img height="1" width="1" style="display:none" alt=""
@@ -61,7 +62,7 @@ import { Sun, Moon, Menu, X } from 'lucide-astro';
     ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};
     for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);
     ttq.instance=function(t){for(var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js",o=n&&n.partner;ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script");n.type="text/javascript",n.async=!0,n.src=r+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};
-    ttq.load('D7EJNB3C77U1RGO04F1G'); 
+    ttq.load('D7EJNB3C77U1RGO04F1G');
     ttq.page();
   }(window, document, 'ttq');
 </script>
@@ -98,8 +99,8 @@ import { Sun, Moon, Menu, X } from 'lucide-astro';
     {
       "@type": "WebPage",
       "@id": "https://expatbuildr.com/shop",
-      "name": "ExpatBuildr Shop - Digital Tools for Operators",
-      "description": "AI Workflows for businesses and Professional digital downloads for remote workers, and lead generation operators.",
+      "name": "ExpatBuildr Shop - Website Builds, Consulting & the SEA Software Kit",
+      "description": "Three ways to work with ExpatBuildr: a done-for-you Website Build, a 1-on-1 relocation Consulting Call, and the Southeast Asia Software Bundle.",
       "url": "https://expatbuildr.com/shop",
       "breadcrumb": {
         "@type": "BreadcrumbList",
@@ -111,232 +112,45 @@ import { Sun, Moon, Menu, X } from 'lucide-astro';
     },
     {
       "@type": "Product",
-      "@id": "https://expatbuildr.com/shop#crm-tracker",
-      "name": "Cold Outreach CRM Tracker",
-      "description": "A professional CRM tracker built for high-volume cold outreach campaigns. Track leads, follow-ups, pipeline stages, and close rates across multiple channels.",
+      "@id": "https://expatbuildr.com/shop#software-bundle",
+      "name": "Southeast Asia Software Bundle",
+      "description": "The unified toolkit for building and moving your income to Southeast Asia — calculators, trackers, and checklists in one bundle.",
       "brand": { "@type": "Brand", "name": "ExpatBuildr" },
       "offers": {
         "@type": "Offer",
-        "price": "19.00",
+        "price": "47.00",
         "priceCurrency": "USD",
         "availability": "https://schema.org/InStock",
-        "seller": { "@type": "Organization", "name": "ExpatBuildr" },
-        "shippingDetails": {
-          "@type": "OfferShippingDetails",
-          "shippingRate": { "@type": "MonetaryAmount", "value": "0.00", "currency": "USD" },
-          "deliveryTime": {
-            "@type": "ShippingDeliveryTime",
-            "handlingTime": { "@type": "QuantitativeValue", "minValue": 0, "maxValue": 0, "unitCode": "DAY" },
-            "transitTime": { "@type": "QuantitativeValue", "minValue": 0, "maxValue": 0, "unitCode": "DAY" }
-          },
-          "shippingDestination": { "@type": "DefinedRegion", "addressCountry": "US" }
-        },
-        "hasMerchantReturnPolicy": {
-          "@type": "MerchantReturnPolicy",
-          "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
-          "merchantReturnDays": 30,
-          "returnMethod": "https://schema.org/ReturnByMail",
-          "returnFees": "https://schema.org/FreeReturn"
-        }
+        "seller": { "@type": "Organization", "name": "ExpatBuildr" }
       },
-      "image": "https://expatbuildr.com/coldoutreachcrmtracker.jpg",
-      "category": "Business Software > CRM Tools"
+      "category": "Business Software > Relocation Tools"
     },
     {
-      "@type": "Product",
-      "@id": "https://expatbuildr.com/shop#geo-arb-calculator",
-      "name": "Geo-Arbitrage Income Calculator",
-      "description": "Calculate your real purchasing power when earning USD remotely from Southeast Asia, Eastern Europe, or Latin America. Built for digital nomads and remote income earners.",
+      "@type": "Service",
+      "@id": "https://expatbuildr.com/shop#website-build",
+      "name": "Website Build",
+      "description": "A high-converting landing page built for your business, live in days.",
       "brand": { "@type": "Brand", "name": "ExpatBuildr" },
-      "offers": {
-        "@type": "Offer",
-        "price": "22.00",
-        "priceCurrency": "USD",
-        "availability": "https://schema.org/InStock",
-        "seller": { "@type": "Organization", "name": "ExpatBuildr" },
-        "shippingDetails": {
-          "@type": "OfferShippingDetails",
-          "shippingRate": { "@type": "MonetaryAmount", "value": "0.00", "currency": "USD" },
-          "deliveryTime": {
-            "@type": "ShippingDeliveryTime",
-            "handlingTime": { "@type": "QuantitativeValue", "minValue": 0, "maxValue": 0, "unitCode": "DAY" },
-            "transitTime": { "@type": "QuantitativeValue", "minValue": 0, "maxValue": 0, "unitCode": "DAY" }
-          },
-          "shippingDestination": { "@type": "DefinedRegion", "addressCountry": "US" }
-        },
-        "hasMerchantReturnPolicy": {
-          "@type": "MerchantReturnPolicy",
-          "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
-          "merchantReturnDays": 30,
-          "returnMethod": "https://schema.org/ReturnByMail",
-          "returnFees": "https://schema.org/FreeReturn"
-        }
-      },
-      "image": "https://expatbuildr.com/geoarbitrage.jpg",
-      "category": "Business Software > Financial Calculators"
-    },
-    {
-      "@type": "SoftwareApplication",
-      "@id": "https://expatbuildr.com/shop#crm-tracker-app",
-      "name": "Cold Outreach CRM Tracker",
-      "applicationCategory": "BusinessApplication",
-      "operatingSystem": "Google Sheets, Microsoft Excel",
-      "offers": {
-        "@type": "Offer",
-        "price": "19.00",
-        "priceCurrency": "USD"
-      },
-      "featureList": [
-        "Multi-channel lead tracking",
-        "Follow-up sequencing logic",
-        "Pipeline stage automation",
-        "Close rate analytics dashboard"
-      ]
-    },
-    {
-      "@type": "SoftwareApplication",
-      "@id": "https://expatbuildr.com/shop#geo-calc-app",
-      "name": "Geo-Arbitrage Income Calculator",
-      "applicationCategory": "FinanceApplication",
-      "operatingSystem": "Google Sheets, Microsoft Excel",
-      "offers": {
-        "@type": "Offer",
-        "price": "22.00",
-        "priceCurrency": "USD"
-      },
-      "featureList": [
-        "USD to local currency purchasing power",
-        "Cost of living comparison by city",
-        "Monthly savings projection",
-        "Break-even timeline calculator"
-      ]
-    },
-    {
-      "@type": "Product",
-      "@id": "https://expatbuildr.com/shop#jobs-list",
-      "name": "US Remote Jobs Master List",
-      "description": "A handpicked, curated list of high-value US remote jobs paying $17/hr+ available globally.",
-      "brand": { "@type": "Brand", "name": "ExpatBuildr" },
-      "image": "https://expatbuildr.com/jobs_list_mockup.png",
-      "offers": {
-        "@type": "Offer",
-        "price": "50.00",
-        "priceCurrency": "USD",
-        "availability": "https://schema.org/InStock",
-        "seller": { "@type": "Organization", "name": "ExpatBuildr" },
-        "shippingDetails": {
-          "@type": "OfferShippingDetails",
-          "shippingRate": { "@type": "MonetaryAmount", "value": "0.00", "currency": "USD" },
-          "deliveryTime": {
-            "@type": "ShippingDeliveryTime",
-            "handlingTime": { "@type": "QuantitativeValue", "minValue": 0, "maxValue": 0, "unitCode": "DAY" },
-            "transitTime": { "@type": "QuantitativeValue", "minValue": 0, "maxValue": 0, "unitCode": "DAY" }
-          },
-          "shippingDestination": { "@type": "DefinedRegion", "addressCountry": "US" }
-        },
-        "hasMerchantReturnPolicy": {
-          "@type": "MerchantReturnPolicy",
-          "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
-          "merchantReturnDays": 30,
-          "returnMethod": "https://schema.org/ReturnByMail",
-          "returnFees": "https://schema.org/FreeReturn"
-        }
-      }
-    },
-    {
-      "@type": "Product",
-      "@id": "https://expatbuildr.com/shop#lead-gen-list",
-      "name": "Lead Gen List",
-      "description": "Premium verified lead lists for your cold outreach campaigns. Access highly-targeted decision makers.",
-      "brand": { "@type": "Brand", "name": "ExpatBuildr" },
-      "image": "https://expatbuildr.com/images/lead%20gen.jpg",
-      "offers": {
-        "@type": "Offer",
-        "price": "100.00",
-        "priceCurrency": "USD",
-        "availability": "https://schema.org/InStock",
-        "seller": { "@type": "Organization", "name": "ExpatBuildr" },
-        "shippingDetails": {
-          "@type": "OfferShippingDetails",
-          "shippingRate": { "@type": "MonetaryAmount", "value": "0.00", "currency": "USD" },
-          "deliveryTime": {
-            "@type": "ShippingDeliveryTime",
-            "handlingTime": { "@type": "QuantitativeValue", "minValue": 0, "maxValue": 0, "unitCode": "DAY" },
-            "transitTime": { "@type": "QuantitativeValue", "minValue": 0, "maxValue": 0, "unitCode": "DAY" }
-          },
-          "shippingDestination": { "@type": "DefinedRegion", "addressCountry": "US" }
-        },
-        "hasMerchantReturnPolicy": {
-          "@type": "MerchantReturnPolicy",
-          "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
-          "merchantReturnDays": 30,
-          "returnMethod": "https://schema.org/ReturnByMail",
-          "returnFees": "https://schema.org/FreeReturn"
-        }
-      }
-    },
-    {
-      "@type": "Product",
-      "@id": "https://expatbuildr.com/shop#starter-system",
-      "name": "Starter Automation System",
-      "description": "Production-ready scraped data engine and automated CRM pipeline to jumpstart your agency.",
-      "brand": { "@type": "Brand", "name": "ExpatBuildr" },
-      "image": "https://expatbuildr.com/starter_system_mockup.png",
       "offers": {
         "@type": "Offer",
         "price": "500.00",
         "priceCurrency": "USD",
         "availability": "https://schema.org/InStock",
-        "seller": { "@type": "Organization", "name": "ExpatBuildr" },
-        "shippingDetails": {
-          "@type": "OfferShippingDetails",
-          "shippingRate": { "@type": "MonetaryAmount", "value": "0.00", "currency": "USD" },
-          "deliveryTime": {
-            "@type": "ShippingDeliveryTime",
-            "handlingTime": { "@type": "QuantitativeValue", "minValue": 0, "maxValue": 0, "unitCode": "DAY" },
-            "transitTime": { "@type": "QuantitativeValue", "minValue": 0, "maxValue": 0, "unitCode": "DAY" }
-          },
-          "shippingDestination": { "@type": "DefinedRegion", "addressCountry": "US" }
-        },
-        "hasMerchantReturnPolicy": {
-          "@type": "MerchantReturnPolicy",
-          "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
-          "merchantReturnDays": 30,
-          "returnMethod": "https://schema.org/ReturnByMail",
-          "returnFees": "https://schema.org/FreeReturn"
-        }
+        "seller": { "@type": "Organization", "name": "ExpatBuildr" }
       }
     },
     {
-      "@type": "Product",
-      "@id": "https://expatbuildr.com/shop#advanced-system",
-      "name": "Advanced Automation System",
-      "description": "Institutional-grade autonomous AI routing, multi-channel outreach, and deep operational integration.",
+      "@type": "Service",
+      "@id": "https://expatbuildr.com/shop#consulting-call",
+      "name": "1-on-1 Consulting Call",
+      "description": "A 60-minute call scoped to relocation and bringing your existing business remote / to Southeast Asia.",
       "brand": { "@type": "Brand", "name": "ExpatBuildr" },
-      "image": "https://expatbuildr.com/advanced_system_mockup.png",
       "offers": {
         "@type": "Offer",
-        "price": "1800.00",
+        "price": "150.00",
         "priceCurrency": "USD",
         "availability": "https://schema.org/InStock",
-        "seller": { "@type": "Organization", "name": "ExpatBuildr" },
-        "shippingDetails": {
-          "@type": "OfferShippingDetails",
-          "shippingRate": { "@type": "MonetaryAmount", "value": "0.00", "currency": "USD" },
-          "deliveryTime": {
-            "@type": "ShippingDeliveryTime",
-            "handlingTime": { "@type": "QuantitativeValue", "minValue": 0, "maxValue": 0, "unitCode": "DAY" },
-            "transitTime": { "@type": "QuantitativeValue", "minValue": 0, "maxValue": 0, "unitCode": "DAY" }
-          },
-          "shippingDestination": { "@type": "DefinedRegion", "addressCountry": "US" }
-        },
-        "hasMerchantReturnPolicy": {
-          "@type": "MerchantReturnPolicy",
-          "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
-          "merchantReturnDays": 30,
-          "returnMethod": "https://schema.org/ReturnByMail",
-          "returnFees": "https://schema.org/FreeReturn"
-        }
+        "seller": { "@type": "Organization", "name": "ExpatBuildr" }
       }
     }
   ]
@@ -426,7 +240,7 @@ import { Sun, Moon, Menu, X } from 'lucide-astro';
     pointer-events: none;
     z-index: 0;
   }
-  
+
   html.dark body::after {
     content: '';
     position: fixed; inset: 0;
@@ -543,27 +357,6 @@ import { Sun, Moon, Menu, X } from 'lucide-astro';
   }
   .meta-tag-dot { color: var(--teal); font-size: 10px; }
 
-  /* ── PILLAR TABS ── */
-  .pillars {
-    display: flex; gap: 0;
-    border-bottom: 1px solid var(--border);
-    overflow-x: auto;
-    scrollbar-width: none;
-  }
-  .pillars::-webkit-scrollbar { display:none; }
-  .pillar-tab {
-    font-family: var(--sans); font-size: 14px; font-weight: 600; letter-spacing: 1.5px;
-    text-transform: uppercase; color: var(--muted);
-    padding: 20px 32px; border: none; background: none;
-    cursor: pointer; border-bottom: 3px solid transparent;
-    transition: color 0.2s, border-color 0.2s;
-    white-space: nowrap;
-  }
-  .pillar-tab:hover { color: var(--text); }
-  .pillar-tab.active {
-    color: var(--text); border-bottom-color: var(--purple);
-  }
-
   /* ── SHOP GRID ── */
   .shop-section { padding: 56px 0 80px; }
   .section-label {
@@ -602,49 +395,6 @@ import { Sun, Moon, Menu, X } from 'lucide-astro';
     transition: opacity 0.3s;
   }
   .product-card:hover::before { opacity: 1; }
-
-  /* MOCKUP */
-  .card-mockup {
-    width: 100%; aspect-ratio: 16/9;
-    background: var(--bg-3);
-    border-bottom: 1px solid var(--border);
-    position: relative; overflow: hidden;
-    display: flex; align-items: center; justify-content: center;
-  }
-  /* Placeholder mockup — replace with real screenshots */
-  .mockup-inner {
-    width: 85%; height: 78%;
-    border-radius: 6px;
-    border: 1px solid var(--border-hi);
-    background: var(--bg);
-    position: relative; overflow: hidden;
-    box-shadow: 0 8px 40px rgba(0,0,0,0.5);
-  }
-  .mockup-topbar {
-    height: 24px; background: rgba(255,255,255,0.04);
-    border-bottom: 1px solid var(--border);
-    display: flex; align-items: center; gap: 5px; padding: 0 10px;
-  }
-  .mockup-dot { width:7px; height:7px; border-radius:50%; }
-  .mockup-dot:nth-child(1) { background:#e05858; }
-  .mockup-dot:nth-child(2) { background:#e0a020; }
-  .mockup-dot:nth-child(3) { background:#40a858; }
-  .mockup-body { padding: 12px; display:flex; flex-direction:column; gap:6px; }
-  .mockup-row {
-    height: 8px; border-radius: 2px;
-    background: rgba(255,255,255,0.04);
-  }
-  .mockup-row.accent { background: linear-gradient(90deg, rgba(153,69,255,0.3), rgba(20,241,149,0.2)); }
-  .mockup-row.sm { width: 60%; }
-  .mockup-row.xs { width: 40%; }
-  .mockup-grid { display:grid; grid-template-columns:1fr 1fr 1fr; gap:4px; margin-top:6px; }
-  .mockup-cell {
-    height: 24px; border-radius: 2px;
-    background: rgba(255,255,255,0.03);
-    border: 1px solid var(--border);
-  }
-  .mockup-cell.hi { background: rgba(153,69,255,0.1); border-color: rgba(153,69,255,0.2); }
-  .mockup-cell.teal { background: rgba(20,241,149,0.08); border-color: rgba(20,241,149,0.15); }
 
   /* CARD BADGE */
   .card-badge {
@@ -731,6 +481,7 @@ import { Sun, Moon, Menu, X } from 'lucide-astro';
     cursor: pointer; letter-spacing: 0.2px;
     transition: transform 0.15s, filter 0.15s;
     white-space: nowrap;
+    text-decoration: none;
   }
   .btn-buy:hover { transform: translateY(-1px); filter: brightness(1.08); }
   .btn-arrow { font-size: 14px; transition: transform 0.2s; }
@@ -848,7 +599,7 @@ import { Sun, Moon, Menu, X } from 'lucide-astro';
   .processing-overlay.active { opacity: 1; pointer-events: all; }
 
   .processing-logo {
-    font-family: var(--sans); font-weight: 900; font-size: 24px; 
+    font-family: var(--sans); font-weight: 900; font-size: 24px;
     color: #ffffff;
     letter-spacing: -0.02em; margin-bottom: 8px;
     text-transform: uppercase;
@@ -873,22 +624,6 @@ import { Sun, Moon, Menu, X } from 'lucide-astro';
     font-size: 12px; color: rgba(255,255,255,0.5); font-family: var(--mono);
     letter-spacing: 1px;
   }
-
-  /* ── COMING SOON CARD ── */
-  .coming-soon {
-    background: rgba(255,255,255,0.01);
-    border: 1px dashed var(--dim);
-    display: flex; flex-direction: column;
-    align-items: center; justify-content: center;
-    text-align: center; padding: 48px 24px;
-    min-height: 360px; position: relative;
-  }
-  .cs-icon { font-size: 32px; margin-bottom: 16px; opacity: 0.3; }
-  .cs-title {
-    font-family: var(--serif); font-size: 18px; font-style: italic;
-    color: var(--dim); margin-bottom: 8px;
-  }
-  .cs-sub { font-family: var(--mono); font-size: 9px; color: var(--dim); letter-spacing: 1.5px; text-transform: uppercase; }
 
   /* ── TRUST STRIP ── */
   .trust-strip {
@@ -941,7 +676,7 @@ import { Sun, Moon, Menu, X } from 'lucide-astro';
   /* MOBILE */
   .mobile-nav-toggle { display: none; }
   .mobile-menu-overlay { display: none; }
-  
+
   @media (max-width: 768px) {
     .nav-links { display: none !important; }
     .mobile-nav-toggle { display: block; }
@@ -955,7 +690,7 @@ import { Sun, Moon, Menu, X } from 'lucide-astro';
       padding: 24px;
       box-shadow: 0 10px 40px rgba(0,0,0,0.1);
     }
-    
+
     .mobile-nav-list {
       list-style: none; display: flex; flex-direction: column; gap: 20px;
     }
@@ -1053,29 +788,18 @@ import { Sun, Moon, Menu, X } from 'lucide-astro';
   <div class="wrap">
     <div class="page-eyebrow fade-1">
       <div class="eyebrow-pip"></div>
-      Digital Downloads · Instant Access
+      Built in Cebu, Philippines · Instant or Done-For-You
     </div>
-    <h1 class="fade-2">Tools built for<br /><em>operators, not browsers.</em></h1>
+    <h1 class="fade-2">Three ways to<br /><em>work with me directly.</em></h1>
     <p class="page-header-sub fade-3">
-      Every product in this shop was built because we needed it ourselves. No fluff. No padding.
-      Just systems that generate leverage — downloaded, deployed, running.
+      No tiers, no fluff, no 40-item catalog. A software kit for going remote in Southeast Asia,
+      a done-for-you website build, and a 1-on-1 call — the same offers funding my own rebuild.
     </p>
     <div class="header-meta fade-3">
-      <div class="meta-tag"><span class="meta-tag-dot">●</span> Instant PDF / Sheet delivery</div>
-      <div class="meta-tag"><span class="meta-tag-dot">●</span> Stripe-secured checkout via Etsy</div>
+      <div class="meta-tag"><span class="meta-tag-dot">●</span> Instant delivery on the software kit</div>
+      <div class="meta-tag"><span class="meta-tag-dot">●</span> Stripe-secured checkout</div>
       <div class="meta-tag"><span class="meta-tag-dot">●</span> No subscription required</div>
     </div>
-  </div>
-</div>
-
-<!-- ── PILLAR TABS ── -->
-<div class="wrap">
-  <div class="pillars">
-    <button class="pillar-tab active" onclick="filterPillar('all', this)">All Tools</button>
-    <button class="pillar-tab" onclick="filterPillar('lead-gen', this)">Lead Generation</button>
-    <button class="pillar-tab" onclick="filterPillar('remote-income', this)">Remote Income</button>
-    <button class="pillar-tab" onclick="filterPillar('geo-arb', this)">Geo-Arbitrage</button>
-    <button class="pillar-tab" onclick="filterPillar('services', this)">Services</button>
   </div>
 </div>
 
@@ -1086,642 +810,96 @@ import { Sun, Moon, Menu, X } from 'lucide-astro';
 
     <div class="product-grid">
 
-      <!-- CARD 0: 1-on-1 Consulting Call -->
-      <div class="product-card" data-pillar="services">
+      <!-- CARD 1: Software Bundle -->
+      <!-- TODO: swap to the $65 unified 15-tool SEA kit + new Stripe link once that bundle content is finalized. -->
+      <div class="product-card">
+        <div class="card-mockup" style="background:linear-gradient(135deg,rgba(245,158,11,0.15),rgba(20,148,136,0.1));display:flex;align-items:center;justify-content:center;font-size:3rem;">🌏</div>
+        <div class="card-badge" style="background:linear-gradient(135deg,#f59e0b,#f97316);color:#000;">Best Value</div>
+        <div class="card-body">
+          <div class="card-pillar">Software Bundle</div>
+          <div class="card-title">Southeast Asia Software Bundle</div>
+          <div class="card-tagline">The starting toolkit for moving your income to Southeast Asia — calculators, trackers, and checklists in one download. (Currently the Philippines edition — a unified all-SEA kit is coming.)</div>
+          <ul class="value-props">
+            <li class="value-prop"><div class="vp-icon">✓</div><span><strong>One download</strong> — every calculator, tracker, and checklist together</span></li>
+            <li class="value-prop"><div class="vp-icon">✓</div><span><strong>Built from what I actually used</strong> — the tools that got me through my own move</span></li>
+            <li class="value-prop"><div class="vp-icon">✓</div><span><strong>Self-serve, instant access</strong> — no call, no waiting</span></li>
+          </ul>
+          <div class="format-tags">
+            <span class="fmt-tag">Instant Download</span>
+            <span class="fmt-tag">Google Sheets</span>
+            <span class="fmt-tag">PDF Playbook</span>
+          </div>
+        </div>
+        <div class="card-footer">
+          <div class="card-price">
+            <div class="price-amount">$47</div>
+            <div class="price-currency">USD</div>
+          </div>
+          <button class="btn-buy" onclick="openGate('Southeast Asia Software Bundle', 'https://buy.stripe.com/14AeVc0uj1bkbFE6GY2oE07', '$47')">
+            Get the Bundle <span class="btn-arrow">→</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- CARD 2: Website Build -->
+      <div class="product-card">
+        <div class="card-mockup" style="background:var(--bg-3);display:flex;align-items:center;justify-content:center;font-size:3rem;">💻</div>
+        <div class="card-badge badge-hot">Most Popular</div>
+        <div class="card-body">
+          <div class="card-pillar">Done-For-You · Website</div>
+          <div class="card-title">Website Build</div>
+          <div class="card-tagline">One high-converting page, copy written for your actual business, live in days — the exact offer that's funding my own rebuild.</div>
+          <ul class="value-props">
+            <li class="value-prop"><div class="vp-icon">✓</div><span><strong>Built and deployed</strong> — ready to send traffic to</span></li>
+            <li class="value-prop"><div class="vp-icon">✓</div><span><strong>Conversion copy for your business</strong> — not a filler template</span></li>
+            <li class="value-prop"><div class="vp-icon">✓</div><span><strong>Add-ons at checkout</strong> — extra pages, copywriting, SEO setup if you need more</span></li>
+          </ul>
+          <div class="format-tags">
+            <span class="fmt-tag">3-Day Delivery</span>
+            <span class="fmt-tag">You Own Everything</span>
+          </div>
+        </div>
+        <div class="card-footer">
+          <div class="card-price">
+            <div class="price-amount">${offers.website.price}</div>
+            <div class="price-currency">USD</div>
+          </div>
+          <a class="btn-buy" href="/website">
+            See the Offer <span class="btn-arrow">→</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- CARD 3: Consulting Call -->
+      <!-- TODO: replace REPLACE_WITH_150_CONSULTING_LINK with the real $150 Stripe Payment Link once created. -->
+      <div class="product-card">
         <div class="card-mockup">
           <img src="/authors/galaxy.jpg" alt="1-on-1 Consulting Call with Tony" style="width: 100%; height: 100%; object-fit: cover;" />
-          <div class="card-badge badge-hot">Featured</div>
         </div>
-
         <div class="card-body">
           <div class="card-pillar">Services · 1-on-1</div>
-          <div class="card-title">1-on-1 Consulting Call</div>
-          <div class="card-tagline">A 60-minute strategy call, one-on-one — your budget, visa path, and timeline mapped against reality.</div>
-
+          <div class="card-title">Consulting Call</div>
+          <div class="card-tagline">A 60-minute call scoped to relocation and bringing your existing business remote or to Southeast Asia. Not website strategy — book the Website Build for that.</div>
           <ul class="value-props">
-            <li class="value-prop">
-              <div class="vp-icon">✓</div>
-              <span><strong>Real numbers, real risks</strong> — no generic checklist, no highlight reel</span>
-            </li>
-            <li class="value-prop">
-              <div class="vp-icon">✓</div>
-              <span><strong>Focused on your situation</strong> — 60 minutes, one-on-one, nothing recycled</span>
-            </li>
-            <li class="value-prop">
-              <div class="vp-icon">✓</div>
-              <span><strong>Website, automation, or lead-gen?</strong> — this call is where we scope exactly what you need built</span>
-            </li>
+            <li class="value-prop"><div class="vp-icon">✓</div><span><strong>Relocation-focused</strong> — visa path, timeline, runway math, real numbers</span></li>
+            <li class="value-prop"><div class="vp-icon">✓</div><span><strong>Your existing business, going remote</strong> — what actually needs to move first</span></li>
+            <li class="value-prop"><div class="vp-icon">✓</div><span><strong>One-on-one, 60 minutes</strong> — nothing recycled</span></li>
           </ul>
-
           <div class="format-tags">
             <span class="fmt-tag">1-on-1 Call</span>
             <span class="fmt-tag">60 Minutes</span>
             <span class="fmt-tag">Zoom / Calendly</span>
           </div>
         </div>
-
         <div class="card-footer">
           <div class="card-price">
-            <div class="price-amount">$297</div>
+            <div class="price-amount">${offers.consulting.price}</div>
             <div class="price-currency">USD</div>
           </div>
-          <button class="btn-buy" onclick="openGate('1-on-1 Consulting Call', 'https://book.stripe.com/6oU3cu7WLf2afVU4yQ2oE0l', '$297')">
+          <button class="btn-buy" onclick={`openGate('Consulting Call', '${offers.consulting.checkoutUrl}', '$${offers.consulting.price}')`}>
             Book Your Call <span class="btn-arrow">→</span>
           </button>
         </div>
-      </div>
-
-      <!-- CARD 1: Cold Outreach CRM Tracker -->
-      <div class="product-card" data-pillar="lead-gen">
-        <div class="card-mockup">
-          <img src="/coldoutreachcrmtracker.jpg" alt="Cold Outreach CRM Tracker" style="width: 100%; height: 100%; object-fit: cover;" />
-          <div class="card-badge badge-hot">Bestseller</div>
-        </div>
-
-        <div class="card-body">
-          <div class="card-pillar">Lead Generation</div>
-          <div class="card-title">Cold Outreach CRM Tracker</div>
-          <div class="card-tagline">Track every lead, follow-up, and close across all channels — in one clean system.</div>
-
-          <ul class="value-props">
-            <li class="value-prop">
-              <div class="vp-icon">✓</div>
-              <span><strong>Multi-channel pipeline</strong> — X, Reddit, LinkedIn, email tracked in one sheet</span>
-            </li>
-            <li class="value-prop">
-              <div class="vp-icon">✓</div>
-              <span><strong>Follow-up sequencing</strong> — never lose a warm lead to a missed touchpoint</span>
-            </li>
-            <li class="value-prop">
-              <div class="vp-icon">✓</div>
-              <span><strong>Close rate dashboard</strong> — see exactly what's converting and what's not</span>
-            </li>
-          </ul>
-
-          <div class="format-tags">
-            <span class="fmt-tag">Google Sheets</span>
-            <span class="fmt-tag">Excel</span>
-            <span class="fmt-tag">Instant Download</span>
-            <span class="fmt-tag">PDF Guide</span>
-          </div>
-        </div>
-
-        <div class="card-footer">
-          <div class="card-price">
-            <div class="price-amount">$19</div>
-            <div class="price-currency">USD</div>
-          </div>
-          <button class="btn-buy" onclick="openGate('Cold Outreach CRM Tracker', 'https://expatbuildr.etsy.com/listing/4490648110/cold-outreach-crm-tracker-excel-sales', '$19')">
-            Get Instant Access <span class="btn-arrow">→</span>
-          </button>
-        </div>
-      </div>
-
-      <!-- CARD 2: Geo-Arbitrage Calculator -->
-      <div class="product-card" data-pillar="geo-arb">
-        <div class="card-mockup">
-          <img src="/geoarbitrage.jpg" alt="Geo-Arbitrage Income Calculator" style="width: 100%; height: 100%; object-fit: cover;" />
-          <div class="card-badge badge-new">New</div>
-        </div>
-
-        <div class="card-body">
-          <div class="card-pillar">Geo-Arbitrage · Remote Income</div>
-          <div class="card-title">Geo-Arbitrage Income Calculator</div>
-          <div class="card-tagline">See your real purchasing power when earning USD from the Philippines, Thailand, Vietnam, or anywhere in SEA.</div>
-
-          <ul class="value-props">
-            <li class="value-prop">
-              <div class="vp-icon">✓</div>
-              <span><strong>USD vs local currency</strong> — real purchasing power by city, not by country average</span>
-            </li>
-            <li class="value-prop">
-              <div class="vp-icon">✓</div>
-              <span><strong>Monthly savings projection</strong> — know exactly how much you keep after cost of living</span>
-            </li>
-            <li class="value-prop">
-              <div class="vp-icon">✓</div>
-              <span><strong>Break-even timeline</strong> — how long until your remote income beats your old salary</span>
-            </li>
-          </ul>
-
-          <div class="format-tags">
-            <span class="fmt-tag">Google Sheets</span>
-            <span class="fmt-tag">Excel</span>
-            <span class="fmt-tag">Instant Download</span>
-            <span class="fmt-tag">SEA + Global</span>
-          </div>
-        </div>
-
-        <div class="card-footer">
-          <div class="card-price">
-            <div class="price-amount">$22</div>
-            <div class="price-currency">USD</div>
-          </div>
-          <button class="btn-buy" onclick="openGate('Geo-Arbitrage Income Calculator', 'https://expatbuildr.etsy.com/listing/4491081110/geo-arbitrage-spreadsheet-live-cheaper', '$22')">
-            Get Instant Access <span class="btn-arrow">→</span>
-          </button>
-        </div>
-      </div>
-
-      <!-- GAN PRODUCTS: Philippines Starter Kit Bundle -->
-      <div class="product-card" data-pillar="geo-arb">
-        <div class="card-mockup" style="background:linear-gradient(135deg,rgba(245,158,11,0.15),rgba(20,148,136,0.1));display:flex;align-items:center;justify-content:center;font-size:3rem;">🇵🇭</div>
-        <div class="card-badge" style="background:linear-gradient(135deg,#f59e0b,#f97316);color:#000;">Best Value</div>
-        <div class="card-body">
-          <div class="card-pillar">Geo-Arbitrage · Bundle</div>
-          <div class="card-title">Philippines Starter Kit Bundle</div>
-          <div class="card-tagline">All 6 tools. The complete system for your Philippines move. Save $65 vs buying individually.</div>
-          <ul class="value-props">
-            <li class="value-prop"><div class="vp-icon">✓</div><span><strong>6 tools in one</strong> — calculators, trackers, checklist, and playbook</span></li>
-            <li class="value-prop"><div class="vp-icon">✓</div><span><strong>Save $65</strong> — $47 vs $112 individual value</span></li>
-            <li class="value-prop"><div class="vp-icon">✓</div><span><strong>Complete move system</strong> — everything before, during, and after the move</span></li>
-          </ul>
-          <div class="format-tags">
-            <span class="fmt-tag">Instant Download</span>
-            <span class="fmt-tag">Google Sheets</span>
-            <span class="fmt-tag">PDF Playbook</span>
-            <span class="fmt-tag">6 Products</span>
-          </div>
-        </div>
-        <div class="card-footer">
-          <div class="card-price">
-            <div class="price-amount">$47</div>
-            <div class="price-currency">USD <span style="font-size:12px;color:var(--dim);text-decoration:line-through;font-style:normal;">$112</span></div>
-          </div>
-          <button class="btn-buy" onclick="openGate('Philippines Starter Kit Bundle', 'https://buy.stripe.com/14AeVc0uj1bkbFE6GY2oE07', '$47')">
-            Get the Kit <span class="btn-arrow">→</span>
-          </button>
-        </div>
-      </div>
-
-      <!-- GAN: Geo-Arbitrage Philippines Edition Calculator -->
-      <div class="product-card" data-pillar="geo-arb">
-        <div class="card-mockup" style="background:var(--bg-3);display:flex;align-items:center;justify-content:center;font-size:3rem;">🧮</div>
-        <div class="card-body">
-          <div class="card-pillar">Geo-Arbitrage · Philippines</div>
-          <div class="card-title">Geo-Arbitrage Philippines Edition</div>
-          <div class="card-tagline">Enter your USD income. See your real purchasing power in PHP, city by city.</div>
-          <ul class="value-props">
-            <li class="value-prop"><div class="vp-icon">✓</div><span><strong>City-by-city breakdown</strong> — Cebu, Manila, Davao and more</span></li>
-            <li class="value-prop"><div class="vp-icon">✓</div><span><strong>PHP purchasing power</strong> — real numbers, not country averages</span></li>
-            <li class="value-prop"><div class="vp-icon">✓</div><span><strong>Savings rate projection</strong> — see your monthly gap compound</span></li>
-          </ul>
-          <div class="format-tags">
-            <span class="fmt-tag">Google Sheets</span>
-            <span class="fmt-tag">Excel</span>
-            <span class="fmt-tag">Instant Download</span>
-          </div>
-        </div>
-        <div class="card-footer">
-          <div class="card-price"><div class="price-amount">$17</div><div class="price-currency">USD</div></div>
-          <button class="btn-buy" onclick="openGate('Geo-Arbitrage Philippines Edition', 'https://buy.stripe.com/aFa28q0uj7zI9xw9Ta2oE0c', '$17')">
-            Get Instant Access <span class="btn-arrow">→</span>
-          </button>
-        </div>
-      </div>
-
-      <!-- GAN: Expat Income & Expense Tracker -->
-      <div class="product-card" data-pillar="geo-arb">
-        <div class="card-mockup" style="background:var(--bg-3);display:flex;align-items:center;justify-content:center;font-size:3rem;">📊</div>
-        <div class="card-body">
-          <div class="card-pillar">Geo-Arbitrage · Tracker</div>
-          <div class="card-title">Expat Income & Expense Tracker</div>
-          <div class="card-tagline">Track USD income vs PHP spending month over month. Watch your arbitrage gap compound.</div>
-          <ul class="value-props">
-            <li class="value-prop"><div class="vp-icon">✓</div><span><strong>USD vs PHP side-by-side</strong> — see the gap every month</span></li>
-            <li class="value-prop"><div class="vp-icon">✓</div><span><strong>Monthly compound view</strong> — watch your savings rate grow over time</span></li>
-            <li class="value-prop"><div class="vp-icon">✓</div><span><strong>Category breakdown</strong> — housing, food, transport, healthcare</span></li>
-          </ul>
-          <div class="format-tags">
-            <span class="fmt-tag">Google Sheets</span>
-            <span class="fmt-tag">Excel</span>
-            <span class="fmt-tag">Instant Download</span>
-          </div>
-        </div>
-        <div class="card-footer">
-          <div class="card-price"><div class="price-amount">$24</div><div class="price-currency">USD</div></div>
-          <button class="btn-buy" onclick="openGate('Expat Income & Expense Tracker', 'https://buy.stripe.com/5kQbJ0a4TaLUgZY7L22oE0d', '$24')">
-            Get Instant Access <span class="btn-arrow">→</span>
-          </button>
-        </div>
-      </div>
-
-      <!-- GAN: Philippines Expat Setup Checklist -->
-      <div class="product-card" data-pillar="geo-arb">
-        <div class="card-mockup" style="background:var(--bg-3);display:flex;align-items:center;justify-content:center;font-size:3rem;">✅</div>
-        <div class="card-body">
-          <div class="card-pillar">Geo-Arbitrage · Guide</div>
-          <div class="card-title">Philippines Expat Setup Checklist</div>
-          <div class="card-tagline">Banking, SIM, visa, healthcare, barangay ID. Every step in the right order.</div>
-          <ul class="value-props">
-            <li class="value-prop"><div class="vp-icon">✓</div><span><strong>Step-by-step order</strong> — no guessing what to do first</span></li>
-            <li class="value-prop"><div class="vp-icon">✓</div><span><strong>Banking & SIM setup</strong> — the accounts that actually work as an expat</span></li>
-            <li class="value-prop"><div class="vp-icon">✓</div><span><strong>Visa & legal</strong> — options covered clearly, no lawyer needed to read it</span></li>
-          </ul>
-          <div class="format-tags">
-            <span class="fmt-tag">PDF</span>
-            <span class="fmt-tag">Instant Download</span>
-          </div>
-        </div>
-        <div class="card-footer">
-          <div class="card-price"><div class="price-amount">$17</div><div class="price-currency">USD</div></div>
-          <button class="btn-buy" onclick="openGate('Philippines Expat Setup Checklist', 'https://buy.stripe.com/3cI9AS90P3jseRQ8P62oE0b', '$17')">
-            Get Instant Access <span class="btn-arrow">→</span>
-          </button>
-        </div>
-      </div>
-
-      <!-- GAN: Philippines Arbitrage Playbook -->
-      <div class="product-card" data-pillar="geo-arb">
-        <div class="card-mockup" style="background:var(--bg-3);display:flex;align-items:center;justify-content:center;font-size:3rem;">📖</div>
-        <div class="card-badge badge-hot">Bestseller</div>
-        <div class="card-body">
-          <div class="card-pillar">Geo-Arbitrage · Playbook</div>
-          <div class="card-title">Philippines Arbitrage Playbook</div>
-          <div class="card-tagline">47 pitfalls, 90-day action plan, banking infra, VoIP, visa options. PH, TH, VN covered.</div>
-          <ul class="value-props">
-            <li class="value-prop"><div class="vp-icon">✓</div><span><strong>47 pitfalls documented</strong> — mistakes you won't have to make yourself</span></li>
-            <li class="value-prop"><div class="vp-icon">✓</div><span><strong>90-day action plan</strong> — week by week from decision to landing</span></li>
-            <li class="value-prop"><div class="vp-icon">✓</div><span><strong>PH, TH, VN</strong> — three countries fully covered in one playbook</span></li>
-          </ul>
-          <div class="format-tags">
-            <span class="fmt-tag">PDF</span>
-            <span class="fmt-tag">Instant Download</span>
-            <span class="fmt-tag">3 Countries</span>
-          </div>
-        </div>
-        <div class="card-footer">
-          <div class="card-price"><div class="price-amount">$27</div><div class="price-currency">USD</div></div>
-          <button class="btn-buy" onclick="openGate('Philippines Arbitrage Playbook', 'https://buy.stripe.com/bJe9AS2Cr3js5hg4yQ2oE0e', '$27')">
-            Get Instant Access <span class="btn-arrow">→</span>
-          </button>
-        </div>
-      </div>
-
-      <!-- GAN: Geographic Arbitrage Calculator — SEA -->
-      <div class="product-card" data-pillar="geo-arb">
-        <div class="card-mockup" style="background:var(--bg-3);display:flex;align-items:center;justify-content:center;font-size:3rem;">🗺️</div>
-        <div class="card-body">
-          <div class="card-pillar">Geo-Arbitrage · SEA</div>
-          <div class="card-title">Geographic Arbitrage Calculator — SEA</div>
-          <div class="card-tagline">Compare your purchasing power across PH, TH, VN, ID, MY, and KH side by side.</div>
-          <ul class="value-props">
-            <li class="value-prop"><div class="vp-icon">✓</div><span><strong>6 SEA countries</strong> — Philippines, Thailand, Vietnam, Indonesia, Malaysia, Cambodia</span></li>
-            <li class="value-prop"><div class="vp-icon">✓</div><span><strong>Side-by-side comparison</strong> — see which country wins for your income level</span></li>
-            <li class="value-prop"><div class="vp-icon">✓</div><span><strong>Savings rate per country</strong> — pick the best arbitrage location for you</span></li>
-          </ul>
-          <div class="format-tags">
-            <span class="fmt-tag">Google Sheets</span>
-            <span class="fmt-tag">Excel</span>
-            <span class="fmt-tag">Instant Download</span>
-          </div>
-        </div>
-        <div class="card-footer">
-          <div class="card-price"><div class="price-amount">$15</div><div class="price-currency">USD</div></div>
-          <button class="btn-buy" onclick="openGate('Geographic Arbitrage Calculator — SEA', 'https://buy.stripe.com/00wbJ0el9aLU9xwe9q2oE09', '$15')">
-            Get Instant Access <span class="btn-arrow">→</span>
-          </button>
-        </div>
-      </div>
-
-      <!-- GAN: Geo-Arbitrage Country Calculator (Global) -->
-      <div class="product-card" data-pillar="geo-arb">
-        <div class="card-mockup" style="background:var(--bg-3);display:flex;align-items:center;justify-content:center;font-size:3rem;">🌍</div>
-        <div class="card-body">
-          <div class="card-pillar">Geo-Arbitrage · Global</div>
-          <div class="card-title">Geo-Arbitrage Country Calculator</div>
-          <div class="card-tagline">Global version. Any country, any currency. Model your move before you make it.</div>
-          <ul class="value-props">
-            <li class="value-prop"><div class="vp-icon">✓</div><span><strong>Any country, any currency</strong> — not just SEA</span></li>
-            <li class="value-prop"><div class="vp-icon">✓</div><span><strong>Full cost model</strong> — housing, food, transport, healthcare, misc</span></li>
-            <li class="value-prop"><div class="vp-icon">✓</div><span><strong>Decision-ready output</strong> — know your number before you book the flight</span></li>
-          </ul>
-          <div class="format-tags">
-            <span class="fmt-tag">Google Sheets</span>
-            <span class="fmt-tag">Excel</span>
-            <span class="fmt-tag">Instant Download</span>
-            <span class="fmt-tag">Global</span>
-          </div>
-        </div>
-        <div class="card-footer">
-          <div class="card-price"><div class="price-amount">$22</div><div class="price-currency">USD</div></div>
-          <button class="btn-buy" onclick="openGate('Geo-Arbitrage Country Calculator', 'https://buy.stripe.com/7sY8wO7WL7zI4dc6GY2oE08', '$22')">
-            Get Instant Access <span class="btn-arrow">→</span>
-          </button>
-        </div>
-      </div>
-
-      <!-- GAN: Digital Nomad Monthly Budget Planner -->
-      <div class="product-card" data-pillar="geo-arb">
-        <div class="card-mockup" style="background:var(--bg-3);display:flex;align-items:center;justify-content:center;font-size:3rem;">📋</div>
-        <div class="card-body">
-          <div class="card-pillar">Geo-Arbitrage · Remote Income</div>
-          <div class="card-title">Digital Nomad Monthly Budget Planner</div>
-          <div class="card-tagline">Location-flexible monthly budget. Works wherever you are. USD anchored.</div>
-          <ul class="value-props">
-            <li class="value-prop"><div class="vp-icon">✓</div><span><strong>Location-flexible</strong> — works in any country, adjusts to local costs</span></li>
-            <li class="value-prop"><div class="vp-icon">✓</div><span><strong>USD anchored</strong> — income in dollars, spending in local currency</span></li>
-            <li class="value-prop"><div class="vp-icon">✓</div><span><strong>Monthly view</strong> — track actual vs planned every month</span></li>
-          </ul>
-          <div class="format-tags">
-            <span class="fmt-tag">Google Sheets</span>
-            <span class="fmt-tag">Excel</span>
-            <span class="fmt-tag">Instant Download</span>
-          </div>
-        </div>
-        <div class="card-footer">
-          <div class="card-price"><div class="price-amount">$17</div><div class="price-currency">USD</div></div>
-          <button class="btn-buy" onclick="openGate('Digital Nomad Monthly Budget Planner', 'https://buy.stripe.com/eVq14mfpd07gaBA4yQ2oE0a', '$17')">
-            Get Instant Access <span class="btn-arrow">→</span>
-          </button>
-        </div>
-      </div>
-
-      <!-- CARD 3: US Remote Jobs Master List -->
-      <div class="product-card" data-pillar="services">
-        <div class="card-mockup">
-          <img src="/jobs_list_mockup.png" alt="US Remote Jobs Master List" style="width: 100%; height: 100%; object-fit: cover;" />
-          <div class="card-badge badge-new">Verified</div>
-        </div>
-
-        <div class="card-body">
-          <div class="card-pillar">Services · Access</div>
-          <div class="card-title">US Remote Jobs Master List</div>
-          <div class="card-tagline">A handpicked, curated list of high-value US remote jobs paying $17/hr+ available globally.</div>
-
-          <ul class="value-props">
-            <li class="value-prop">
-              <div class="vp-icon">✓</div>
-              <span><strong>Updated Weekly</strong> — Fresh vetted opportunities without the scam listings</span>
-            </li>
-            <li class="value-prop">
-              <div class="vp-icon">✓</div>
-              <span><strong>Geo-Arbitrage Ready</strong> — Verified to hire in SEA, LATAM, and Eastern Europe</span>
-            </li>
-          </ul>
-
-          <div class="format-tags">
-            <span class="fmt-tag">Instant Access</span>
-            <span class="fmt-tag">Database</span>
-          </div>
-        </div>
-
-        <div class="card-footer">
-          <div class="card-price">
-            <div class="price-amount">$50</div>
-            <div class="price-currency">USD</div>
-          </div>
-          <button class="btn-buy" onclick="openGate('US Remote Jobs Master List', 'https://buy.stripe.com/28E9AS0uj07g6lkaXe2oE00', '$50')">
-            Get Instant Access <span class="btn-arrow">→</span>
-          </button>
-        </div>
-      </div>
-
-      <!-- CARD 4: Lead Gen List -->
-      <div class="product-card" data-pillar="lead-gen">
-        <div class="card-mockup">
-          <img src="/jobs_list_mockup.png" alt="Lead Gen List" style="width: 100%; height: 100%; object-fit: cover; filter: hue-rotate(90deg);" />
-          <div class="card-badge badge-new">Premium</div>
-        </div>
-
-        <div class="card-body">
-          <div class="card-pillar">Lead Generation</div>
-          <div class="card-title">Lead Gen List</div>
-          <div class="card-tagline">Premium verified lead lists for your cold outreach campaigns. Access highly-targeted decision makers.</div>
-
-          <ul class="value-props">
-            <li class="value-prop">
-              <div class="vp-icon">✓</div>
-              <span><strong>Verified Emails</strong> — High deliverability data to protect your sending domains</span>
-            </li>
-            <li class="value-prop">
-              <div class="vp-icon">✓</div>
-              <span><strong>Targeted Contacts</strong> — Direct lines to founders and executives</span>
-            </li>
-          </ul>
-
-          <div class="format-tags">
-            <span class="fmt-tag">CSV / Excel</span>
-            <span class="fmt-tag">Instant Download</span>
-          </div>
-        </div>
-
-        <div class="card-footer">
-          <div class="card-price">
-            <div class="price-amount">$100</div>
-            <div class="price-currency">USD</div>
-          </div>
-          <button class="btn-buy" onclick="openGate('Lead Gen List', '', '$100')">
-            Get Instant Access <span class="btn-arrow">→</span>
-          </button>
-        </div>
-      </div>
-
-      <!-- CARD 5: Starter Automation System -->
-      <div class="product-card" data-pillar="services">
-        <div class="card-mockup">
-          <img src="/starter_system_mockup.png" alt="Starter Automation System" style="width: 100%; height: 100%; object-fit: cover;" />
-        </div>
-
-        <div class="card-body">
-          <div class="card-pillar">Services · Systems</div>
-          <div class="card-title">Starter Automation System</div>
-          <div class="card-tagline">Production-ready scraped data engine and automated CRM pipeline to jumpstart your agency.</div>
-
-          <ul class="value-props">
-            <li class="value-prop">
-              <div class="vp-icon">✓</div>
-              <span><strong>Lead Machine</strong> — Plug and play scraping systems tailored to your niche</span>
-            </li>
-            <li class="value-prop">
-              <div class="vp-icon">✓</div>
-              <span><strong>Built for Scale</strong> — Ready for your team to operate seamlessly</span>
-            </li>
-          </ul>
-
-          <div class="format-tags">
-            <span class="fmt-tag">Custom Build</span>
-            <span class="fmt-tag">Deployment</span>
-          </div>
-        </div>
-
-        <div class="card-footer">
-          <div class="card-price">
-            <div class="price-amount">$500</div>
-            <div class="price-currency">USD</div>
-          </div>
-          <button class="btn-buy" onclick="openGate('Starter Automation System', 'https://buy.stripe.com/00wbJ05ODg6eaBA7L22oE01', '$500')">
-            Book Build <span class="btn-arrow">→</span>
-          </button>
-        </div>
-      </div>
-
-      <!-- CARD 5: Advanced Automation System -->
-      <div class="product-card" data-pillar="services">
-        <div class="card-mockup">
-          <img src="/advanced_system_mockup.png" alt="Advanced Automation System" style="width: 100%; height: 100%; object-fit: cover;" />
-          <div class="card-badge badge-hot">Enterprise</div>
-        </div>
-
-        <div class="card-body">
-          <div class="card-pillar">Services · Systems</div>
-          <div class="card-title">Advanced Automation System</div>
-          <div class="card-tagline">Institutional-grade autonomous AI routing, multi-channel outreach, and deep operational integration.</div>
-
-          <ul class="value-props">
-            <li class="value-prop">
-              <div class="vp-icon">✓</div>
-              <span><strong>AI Workflows</strong> — True autonomous reasoning executing routine tasks</span>
-            </li>
-            <li class="value-prop">
-              <div class="vp-icon">✓</div>
-              <span><strong>Omni-Channel</strong> — Connects Reddit, LinkedIn, Email, and SMS natively</span>
-            </li>
-          </ul>
-
-          <div class="format-tags">
-            <span class="fmt-tag">Custom Build</span>
-            <span class="fmt-tag">Institutional</span>
-          </div>
-        </div>
-
-        <div class="card-footer">
-          <div class="card-price">
-            <div class="price-amount">$1,800</div>
-            <div class="price-currency">USD</div>
-          </div>
-          <button class="btn-buy" onclick="openGate('Advanced Automation System', 'https://buy.stripe.com/eVq6oGcd11bk5hg6GY2oE02', '$1800')">
-            Book Build <span class="btn-arrow">→</span>
-          </button>
-        </div>
-      </div>
-
-      <!-- CARD: Landing Page Build -->
-      <div class="product-card" data-pillar="lead-gen">
-        <div class="card-mockup">
-          <img src="/images/lead-gen.jpg" alt="Landing Page Build" style="width: 100%; height: 100%; object-fit: cover;" />
-          <div class="card-badge badge-hot">Done For You</div>
-        </div>
-        <div class="card-body">
-          <div class="card-pillar">Lead Generation · Services</div>
-          <div class="card-title">Landing Page Build</div>
-          <div class="card-tagline">One high-converting landing page — copy written, pixel installed, email capture live. 3-day delivery.</div>
-          <ul class="value-props">
-            <li class="value-prop"><div class="vp-icon">✓</div><span><strong>Conversion copy written</strong> — headlines, subheads, and CTA written for you</span></li>
-            <li class="value-prop"><div class="vp-icon">✓</div><span><strong>Pixel stack installed</strong> — Meta + Google pixel wired and firing</span></li>
-            <li class="value-prop"><div class="vp-icon">✓</div><span><strong>Email capture live</strong> — form connected, leads flowing to your list</span></li>
-          </ul>
-          <div class="format-tags">
-            <span class="fmt-tag">3-Day Delivery</span>
-            <span class="fmt-tag">You Own the Code</span>
-            <span class="fmt-tag">2-Round Revisions</span>
-          </div>
-        </div>
-        <div class="card-footer">
-          <div class="card-price"><div class="price-amount">$500</div><div class="price-currency">USD</div></div>
-          <button class="btn-buy" onclick="openGate('Landing Page Build', 'https://buy.stripe.com/5kQ5kC7WL07g7po5CU2oE03', '$500')">
-            Book Build <span class="btn-arrow">→</span>
-          </button>
-        </div>
-      </div>
-
-      <!-- CARD: Landing Page + Email Sequence -->
-      <div class="product-card" data-pillar="lead-gen">
-        <div class="card-mockup">
-          <img src="/images/lead-gen.jpg" alt="Landing Page + Email Sequence" style="width: 100%; height: 100%; object-fit: cover; filter: hue-rotate(180deg);" />
-          <div class="card-badge" style="background:linear-gradient(135deg,#f5c842,#ff6b35);color:#000;">Most Popular</div>
-        </div>
-        <div class="card-body">
-          <div class="card-pillar">Lead Generation · Services</div>
-          <div class="card-title">Landing Page + Email Sequence</div>
-          <div class="card-tagline">Everything in Starter plus lead magnet PDF, Beehiiv setup, and 3-part welcome sequence. 5-day delivery.</div>
-          <ul class="value-props">
-            <li class="value-prop"><div class="vp-icon">✓</div><span><strong>Lead magnet PDF created</strong> — designed and delivered with your brand</span></li>
-            <li class="value-prop"><div class="vp-icon">✓</div><span><strong>Beehiiv connected</strong> — newsletter setup and subscriber flow live</span></li>
-            <li class="value-prop"><div class="vp-icon">✓</div><span><strong>3-part email sequence</strong> — nurture to paid offer, written for you</span></li>
-          </ul>
-          <div class="format-tags">
-            <span class="fmt-tag">5-Day Delivery</span>
-            <span class="fmt-tag">Full Handover</span>
-            <span class="fmt-tag">2-Round Revisions</span>
-          </div>
-        </div>
-        <div class="card-footer">
-          <div class="card-price"><div class="price-amount">$950</div><div class="price-currency">USD</div></div>
-          <button class="btn-buy" onclick="openGate('Landing Page + Email Sequence', 'https://buy.stripe.com/eVqaEWdh54nw7po1mE2oE04', '$950')">
-            Book Growth Package <span class="btn-arrow">→</span>
-          </button>
-        </div>
-      </div>
-
-      <!-- CARD: Full Funnel Architecture -->
-      <div class="product-card" data-pillar="lead-gen">
-        <div class="card-mockup">
-          <img src="/images/lead-gen.jpg" alt="Full Funnel Architecture" style="width: 100%; height: 100%; object-fit: cover; filter: hue-rotate(270deg);" />
-          <div class="card-badge badge-new">Authority</div>
-        </div>
-        <div class="card-body">
-          <div class="card-pillar">Lead Generation · Services</div>
-          <div class="card-title">Full Funnel Architecture</div>
-          <div class="card-tagline">Complete click funnel, multi-pixel stack (Meta + Google + TikTok), and full QA. 7-day delivery.</div>
-          <ul class="value-props">
-            <li class="value-prop"><div class="vp-icon">✓</div><span><strong>Full click funnel</strong> — friction page, thank-you, download, upsell path</span></li>
-            <li class="value-prop"><div class="vp-icon">✓</div><span><strong>Triple pixel stack</strong> — Meta, Google, and TikTok all firing and verified</span></li>
-            <li class="value-prop"><div class="vp-icon">✓</div><span><strong>Full QA & optimization</strong> — tested before handover, zero dead links</span></li>
-          </ul>
-          <div class="format-tags">
-            <span class="fmt-tag">7-Day Delivery</span>
-            <span class="fmt-tag">Multi-Pixel</span>
-            <span class="fmt-tag">Full QA</span>
-          </div>
-        </div>
-        <div class="card-footer">
-          <div class="card-price"><div class="price-amount">$1,500</div><div class="price-currency">USD</div></div>
-          <button class="btn-buy" onclick="openGate('Full Funnel Architecture', 'https://buy.stripe.com/aFa00i3Gv7zIbFE4yQ2oE05', '$1500')">
-            Book Authority Tier <span class="btn-arrow">→</span>
-          </button>
-        </div>
-      </div>
-
-      <!-- CARD: Full Launch Kit Bundle -->
-      <div class="product-card" data-pillar="lead-gen">
-        <div class="card-mockup" style="background:linear-gradient(135deg,rgba(245,200,66,0.15),rgba(255,107,53,0.1));display:flex;align-items:center;justify-content:center;font-size:3rem;">🚀</div>
-        <div class="card-body">
-          <div class="card-pillar">Lead Generation · Bundle</div>
-          <div class="card-title">Full Launch Kit</div>
-          <div class="card-tagline">Landing page + email sequence + lead magnet PDF. Best value entry point — save $250 vs separately.</div>
-          <ul class="value-props">
-            <li class="value-prop"><div class="vp-icon">✓</div><span><strong>Landing page + email sequence</strong> — Starter + Growth combined</span></li>
-            <li class="value-prop"><div class="vp-icon">✓</div><span><strong>Lead magnet PDF</strong> — designed and delivered in your brand</span></li>
-            <li class="value-prop"><div class="vp-icon">✓</div><span><strong>Save $250</strong> — vs buying Starter and Growth separately</span></li>
-          </ul>
-          <div class="format-tags">
-            <span class="fmt-tag">7-Day Delivery</span>
-            <span class="fmt-tag">Best Value</span>
-            <span class="fmt-tag">Save $250</span>
-          </div>
-        </div>
-        <div class="card-footer">
-          <div class="card-price"><div class="price-amount">$1,200</div><div class="price-currency">USD</div></div>
-          <button class="btn-buy" onclick="openGate('Full Launch Kit', 'https://buy.stripe.com/7sY9ASb8X3jscJI5CU2oE06', '$1200')">
-            Get the Full Launch Kit <span class="btn-arrow">→</span>
-          </button>
-        </div>
-      </div>
-
-      <!-- COMING SOON CARD -->
-      <div class="product-card coming-soon" data-pillar="lead-gen">
-        <div class="cs-icon">⚡</div>
-        <div class="cs-title">AI Prompt Library</div>
-        <div class="cs-sub" style="margin-top:6px;">Coming Soon · Join the list to be notified</div>
-        <button
-          onclick="openGate('AI Prompt Library Waitlist', null, 'Free')"
-          style="margin-top:20px; background:none; border:1px solid var(--dim); color:var(--dim); font-family:var(--mono); font-size:9px; letter-spacing:1.5px; text-transform:uppercase; padding:9px 16px; cursor:pointer; border-radius:5px; transition:all 0.2s;"
-          onmouseover="this.style.borderColor='var(--purple)';this.style.color='var(--purple)'"
-          onmouseout="this.style.borderColor='var(--dim)';this.style.color='var(--dim)'"
-        >
-          Notify Me →
-        </button>
       </div>
 
     </div><!-- /product-grid -->
@@ -1739,7 +917,7 @@ import { Sun, Moon, Menu, X } from 'lucide-astro';
 <div class="trust-strip">
   <div class="wrap">
     <div class="trust-inner">
-      <div class="trust-item"><span class="trust-icon">🔒</span> Stripe-secured via Etsy</div>
+      <div class="trust-item"><span class="trust-icon">🔒</span> Stripe-secured checkout</div>
       <div class="trust-item"><span class="trust-icon">📧</span> Instant delivery to inbox</div>
       <div class="trust-item"><span class="trust-icon">📄</span> PDF invoice included</div>
       <div class="trust-item"><span class="trust-icon">🔄</span> Lifetime file access</div>
@@ -1764,7 +942,7 @@ import { Sun, Moon, Menu, X } from 'lucide-astro';
 <!-- ══════════════════════════════════════════════
      EMAIL GATE MODAL
      User enters email → captured to Beehiiv →
-     then routed to Etsy listing in new tab
+     then routed to Stripe checkout
 ════════════════════════════════════════════════ -->
 <div class="modal-overlay" id="modal-overlay" onclick="handleOverlayClick(event)">
   <div class="modal">
@@ -1798,13 +976,13 @@ import { Sun, Moon, Menu, X } from 'lucide-astro';
 
 <!-- ══════════════════════════════════════════════
      PROCESSING OVERLAY
-     2-second branded delay before Etsy redirect
+     2-second branded delay before checkout redirect
      Maintains brand authority / feels intentional
 ════════════════════════════════════════════════ -->
 <div class="processing-overlay" id="processing-overlay">
   <div class="processing-logo">Expat<span>Buildr</span></div>
   <div class="processing-spinner"></div>
-  <div class="processing-text">Preparing your download</div>
+  <div class="processing-text">Preparing your checkout</div>
   <div class="processing-sub">Redirecting to secure checkout...</div>
 </div>
 
@@ -1815,33 +993,17 @@ import { Sun, Moon, Menu, X } from 'lucide-astro';
   let currentProduct  = null;
   let currentPrice    = null;
 
-  // ── PILLAR FILTER ──
-  function filterPillar(pillar, btn) {
-    document.querySelectorAll('.pillar-tab').forEach(t => t.classList.remove('active'));
-    btn.classList.add('active');
-    document.querySelectorAll('.product-card').forEach(card => {
-      if (pillar === 'all' || card.dataset.pillar === pillar) {
-        card.style.display = '';
-      } else {
-        card.style.display = 'none';
-      }
-    });
-  }
-
   // ── OPEN EMAIL GATE ──
-  function openGate(productName, etsyUrl, price) {
+  function openGate(productName, checkoutUrl, price) {
     currentProduct  = productName;
-    currentEtsyUrl  = etsyUrl;
+    currentEtsyUrl  = checkoutUrl;
     currentPrice    = price;
 
     document.getElementById('modal-product-ref').textContent = '// ' + productName;
-    document.getElementById('modal-title').textContent =
-      etsyUrl ? 'One step to instant access.' : 'Get notified first.';
-    document.getElementById('modal-sub').textContent = etsyUrl
-      ? 'Enter your email — we\'ll add you to Galaxy Arbitrage (free weekly remote jobs + income intel), then take you straight to checkout.'
-      : 'Drop your email and we\'ll notify you the moment ' + productName + ' drops.';
-    document.getElementById('modal-btn-text').textContent =
-      etsyUrl ? 'Proceed to Checkout →' : 'Notify Me When Live →';
+    document.getElementById('modal-title').textContent = 'One step to checkout.';
+    document.getElementById('modal-sub').textContent =
+      'Enter your email — we\'ll add you to Galaxy Arbitrage (free weekly remote jobs + income intel), then take you straight to checkout.';
+    document.getElementById('modal-btn-text').textContent = 'Proceed to Checkout →';
 
     document.getElementById('modal-overlay').classList.add('open');
     document.body.style.overflow = 'hidden';
@@ -1862,7 +1024,7 @@ import { Sun, Moon, Menu, X } from 'lucide-astro';
   }
 
   // ── GATE SUBMIT ──
-  // Flow: validate → subscribe Beehiiv → show processing overlay → open Etsy in new tab
+  // Flow: validate → subscribe Beehiiv → show processing overlay → open Stripe checkout
   async function handleGateSubmit() {
     const email = document.getElementById('gate-email').value.trim();
     const name  = document.getElementById('gate-name').value.trim();
@@ -1881,11 +1043,19 @@ import { Sun, Moon, Menu, X } from 'lucide-astro';
     document.getElementById('modal-btn-text').textContent = 'Saving your spot...';
 
     // ── BEEHIIV SUBSCRIBE ──
-    const beehiivUrl = `https://expatbuildr.beehiiv.com/subscribe?email=${encodeURIComponent(email)}&utm_source=shop_gate&utm_medium=product_click&utm_campaign=${encodeURIComponent(currentProduct)}`;
-
     localStorage.setItem('gb_email', email);
     localStorage.setItem('gb_name', name);
     localStorage.setItem('gb_product', currentProduct);
+
+    try {
+      await fetch('/api/subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, source: 'shop_gate', tags: ['shop_buyer'] })
+      });
+    } catch (e) {
+      // Non-blocking — still proceed to checkout even if the subscribe call fails
+    }
 
     // Close modal
     document.getElementById('modal-overlay').classList.remove('open');
@@ -1904,33 +1074,6 @@ import { Sun, Moon, Menu, X } from 'lucide-astro';
     }
 
     proc.classList.remove('active');
-
-    // Show a subtle confirmation instead
-    showConfirmation(name || 'there');
-  }
-
-  // ── SOFT CONFIRMATION ──
-  function showConfirmation(name) {
-    const div = document.createElement('div');
-    div.style.cssText = `
-      position:fixed; bottom:24px; right:24px; z-index:700;
-      background:var(--bg-card); border:1px solid rgba(20,241,149,0.3);
-      border-radius:10px; padding:16px 20px; max-width:280px;
-      font-family:var(--mono); font-size:10px; color:var(--teal);
-      letter-spacing:1px; line-height:1.6;
-      animation: slideIn 0.3s ease both;
-      box-shadow: 0 8px 32px rgba(0,0,0,0.4);
-    `;
-    div.innerHTML = `
-      <div style="font-size:11px;font-weight:600;margin-bottom:4px;">✓ You're in, ${name}.</div>
-      <div style="color:var(--muted);">Checkout opened in new tab.<br>Check your inbox for the newsletter.</div>
-    `;
-    document.body.appendChild(div);
-    setTimeout(() => {
-      div.style.opacity = '0'; div.style.transform = 'translateY(10px)';
-      div.style.transition = 'all 0.3s';
-      setTimeout(() => div.remove(), 300);
-    }, 4000);
   }
 
   // ── ESC TO CLOSE ──
@@ -1990,7 +1133,7 @@ import { Sun, Moon, Menu, X } from 'lucide-astro';
       <button id="close-shop-modal" style="position:absolute; top:1rem; right:1rem; background:none; border:none; color:#555; cursor:pointer;">✕</button>
       <h2 style="font-family:'Syne',sans-serif; font-size:2rem; margin-bottom:1rem; color:#fff;">Wait! Unlock <span style="color:#00e5a0;">10% Off.</span></h2>
       <p style="color:#8b9bb4; margin-bottom:2rem;">Join the list and get a 10% discount code for your first purchase in the ExpatBuildr shop.</p>
-      
+
       <div id="shop-form">
         <input type="email" id="shop-modal-email" placeholder="Enter your email" style="width:100%; padding:1rem; background:#000; border:1px solid #1e2730; color:#fff; margin-bottom:1rem; outline:none;" />
         <button id="shop-modal-btn" style="width:100%; padding:1rem; background:#00e5a0; color:#000; border:none; font-weight:700; cursor:pointer; font-family:'Syne',sans-serif;">REVEAL MY DISCOUNT →</button>

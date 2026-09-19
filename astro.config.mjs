@@ -185,7 +185,6 @@ export default defineConfig({
     '/archive/index-galaxy': '/',
     '/nfs/turbo': '/',
     '/nfs/success': '/',
-    '/website': '/',
     '/freedom-seeker': '/',
     '/build-with-galaxy/success': '/',
     '/product-funnels': '/',
