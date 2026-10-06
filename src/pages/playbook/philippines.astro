@@ -1,0 +1,392 @@
+---
+// src/pages/playbook/philippines.astro
+//
+// ANALYTICS: custom events need Plausible or PostHog (Cloudflare Web Analytics
+// does not support custom events). For Plausible, add these two lines inside <head>:
+//   <script defer data-domain="expatbuildr.com" src="https://plausible.io/js/script.tagged-events.js"></script>
+//   <script is:inline>window.plausible = window.plausible || function(){ (window.plausible.q = window.plausible.q || []).push(arguments) }</script>
+import { Sun, Moon, PhoneCall } from 'lucide-astro';
+import Layout from '../../layouts/Layout.astro';
+import '../../styles/playbook.css';
+import Checklist from '../../components/playbook/Checklist.astro';
+import OfferCard from '../../components/playbook/OfferCard.astro';
+import ToolPreview from '../../components/playbook/ToolPreview.astro';
+import {
+  CONFIG, COUNTRIES, CHAPTERS, CMP, SC, CE, CITIES, CL_A, PLAN, PIT_CATS, PITS, QUICK,
+  fvOf, money, money2,
+} from '../../data/playbook-data';
+
+// ----- totals are computed, never typed -----
+const cmpS = CMP.reduce((n, r) => n + r[1], 0);
+const cmpC = CMP.reduce((n, r) => n + r[3], 0);
+const cmpSave = cmpS - cmpC;
+const cmpPct = Math.round((cmpSave / cmpS) * 100);
+const cmpFv = fvOf(cmpSave);
+
+const scTotal = SC.reduce((n, r) => n + r[1], 0);
+const cePesos = CE.reduce((n, r) => n + r[1], 0);
+const ceUsd = Math.round(cePesos / 56.1);
+
+// ----- calculator starting state (so it reads correctly before JS loads) -----
+const startSpend = Math.min(Math.max(cmpS, 1000), 8000);
+const startCity = CITIES.cebu;
+const startCost = (startCity.lo + startCity.hi) / 2;
+const startKeep = Math.max(startSpend - startCost, 0);
+
+// ----- data the client script needs -----
+const pbConfig = JSON.stringify({ CONFIG, CITIES, CMP_SC: cmpS });
+---
+<Layout
+  title="Philippines Playbook"
+  description="The exact move from Scottsdale to Cebu: the math, the banking, the first 90 days, and the mistakes that cost real money. Free."
+  noindex={true}
+  hideNav={true}
+>
+  <Fragment slot="head">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet" />
+    <script is:inline type="application/json" id="pb-config" set:html={pbConfig} />
+  </Fragment>
+
+  <div class="pbroot">
+    <div id="progress" aria-hidden="true"></div>
+
+    <header class="top">
+      <div class="top-in">
+        <a href="/" class="brand">
+          <img src="/logo.jpg" alt="ExpatBuildr" />
+          <span class="pagelabel"><span class="org">ExpatBuildr</span><span class="page">Philippines Playbook</span></span>
+        </a>
+        <div class="tabs" role="tablist" aria-label="Choose a country" id="countryTabs">
+          {COUNTRIES.map((c) => (
+            <button class="tab" role="tab" aria-selected={c.live ? 'true' : 'false'} data-country={c.id}>
+              {c.label}{!c.live && <span class="soon">soon</span>}
+            </button>
+          ))}
+        </div>
+        <div class="top-actions">
+          <button id="pbThemeToggle" class="theme-toggle" type="button" aria-label="Toggle dark mode">
+            <Moon class="block dark:hidden" size={18} />
+            <Sun class="hidden dark:block" size={18} />
+          </button>
+          <a href="/consulting" class="btn-call"><PhoneCall size={14} />Book a Call</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- COMING SOON (shared by every country that is not live yet) -->
+    <div id="panel-soon" class="wrap" hidden>
+      <div class="soonbox">
+        <h1 id="soonTitle">Thailand is next in line</h1>
+        <p>The playbook for this country is not written yet. I only publish what I have verified, so it comes after the Philippines version is proven.</p>
+        <p>Tap below to vote for it. The countries with the most votes get written first.</p>
+        <button class="btn" id="soonBtn">I want this country</button>
+        <div id="soonmsg" role="status"></div>
+        <p style="margin-top:28px"><button class="btn ghost" id="backPH">Back to the Philippines playbook</button></p>
+      </div>
+    </div>
+
+    <!-- PHILIPPINES -->
+    <div id="panel-ph" class="wrap">
+      <section class="hero" id="top">
+        <div>
+          <h1>Cut your expenses in half without cutting your income.</h1>
+          <p class="lede">The exact move I made from Scottsdale to Cebu: the math, the banking, the first 90 days, and the mistakes that cost real money. Free.</p>
+          <p class="byline">By Galaxy (Tony Long II), living in Cebu since September 2024</p>
+          <p class="note">Educational only, not financial, legal or tax advice. Costs, rates and visa rules change. Verify before you act.</p>
+        </div>
+
+        <div class="calc" id="calc">
+          <div class="calc-in">
+            <label for="spend">What do you spend each month in the US?</label>
+            <div class="spendval" id="spendOut">{money(startSpend)}</div>
+            <input type="range" id="spend" min="1000" max="8000" step="50" value={startSpend} />
+            <div class="row2">
+              <div>
+                <label for="city">Where in the Philippines?</label>
+                <select id="city">
+                  {Object.entries(CITIES).map(([k, c]) => <option value={k}>{c.label}</option>)}
+                </select>
+              </div>
+              <div>
+                <label for="rate">Pesos per dollar</label>
+                <input type="number" id="rate" value={CONFIG.RATE} min="40" max="80" step="0.5" inputmode="decimal" />
+              </div>
+            </div>
+          </div>
+          <div class="bill" aria-live="polite">
+            <div class="lbl">Estimated monthly cost there</div>
+            <div class="big" id="costOut">{money(startCost)}</div>
+            <div class="lbl" id="costPeso" style="margin-top:6px">about {(Math.round((startCost * CONFIG.RATE) / 100) * 100).toLocaleString('en-US')} pesos</div>
+            <div class="grid">
+              <div><div class="lbl">You keep each month</div><div class="mid keep" id="keepOut">{money(startKeep)}</div></div>
+              <div><div class="lbl">Saved and invested for 20 years at 7%</div><div class="mid" id="fvOut">{money2(fvOf(startKeep))}</div></div>
+            </div>
+          </div>
+          <div class="calc-foot note" id="calcNote">Cost uses the midpoint of the Cebu City range ({money(startCity.lo)} to {money(startCity.hi)}). It leaves out visas, flights and taxes. Your numbers will differ.</div>
+        </div>
+      </section>
+
+      <details class="mtoc">
+        <summary>Contents</summary>
+        <div id="mtocList">
+          {CHAPTERS.map((c, i) => <a href={`#${c.id}`}>{i + 1}. {c.title}</a>)}
+        </div>
+      </details>
+
+      <div class="cols">
+        <aside class="toc" id="toc" aria-label="Contents">
+          {CHAPTERS.map((c, i) => <a href={`#${c.id}`} data-id={c.id}>{i + 1}. {c.title}</a>)}
+        </aside>
+
+        <div>
+          <!-- CHAPTER 1 -->
+          <section class="ch" id="math">
+            <div class="chnum">Chapter 1</div>
+            <h2>The arbitrage math: why this works</h2>
+            <p>Geographic arbitrage is not complicated. You earn money in a strong currency and spend it in a weak one. The gap between the two is yours to keep.</p>
+            <p>In the United States a $5,000 per month remote income is decent but not free. After rent, car, food, insurance and the constant nickel-and-diming of American life, you are left with maybe $500 in savings if you are disciplined. In the Philippines the same $5,000 stretches so far that the math feels like a cheat code.</p>
+            <div class="facts">
+              <div class="fact"><b>₱56 to ₱61</b><span>Pesos per dollar. It was 56 in Sept 2024 and about 61 in 2026. Check xe.com.</span></div>
+              <div class="fact"><b>3 to 5x</b><span>Purchasing power multiplier</span></div>
+              <div class="fact"><b>{money(ceUsd)}</b><span>My full monthly spend in Cebu</span></div>
+            </div>
+            <div class="callout"><h4>The core equation</h4><p>Strong currency income (USD) divided by weak currency expenses (PHP) equals your arbitrage gap. That gap, invested monthly, is how you build real wealth on a normal income.</p></div>
+
+            <h3>The real comparison</h3>
+            <div class="tblwrap">
+              <table>
+                <thead><tr><th>Category</th><th class="n">Scottsdale AZ</th><th>Cebu</th><th class="n">Saved / month</th></tr></thead>
+                <tbody>
+                  {CMP.map((r) => (
+                    <tr><td>{r[0]}</td><td class="n">{money(r[1])}</td><td>{r[2]}</td><td class="n pos">{money(r[1] - r[3])}</td></tr>
+                  ))}
+                  <tr class="tot"><td>Total</td><td class="n">{money(cmpS)}</td><td>{money(cmpC)}</td><td class="n pos">{money(cmpSave)}</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p>That is <b>{money(cmpSave)} saved every month</b>, a {cmpPct}% cut in expenses. Invested at 7% annual return for 20 years, that is about <b>{money2(cmpFv)}</b>. Same income, different country. The arbitrage works silently while you live your life.</p>
+
+            <ToolPreview tool="calculator" slotLabel="Geo-Arbitrage Calculator" text="The calculator at the top uses city averages. The kit version runs your actual income, your costs and your timeline." linkText="Get the calculator in the kit" />
+          </section>
+
+          <!-- CHAPTER 2 -->
+          <section class="ch" id="numbers">
+            <div class="chnum">Chapter 2</div>
+            <h2>My actual numbers: Scottsdale vs Cebu</h2>
+            <p>These are not hypothetical. I left Scottsdale in September 2024, and every number below is what I actually spent.</p>
+            <h3>Scottsdale, AZ: what I was spending</h3>
+            <div class="tblwrap">
+              <table>
+                <thead><tr><th>Expense</th><th class="n">Monthly</th></tr></thead>
+                <tbody>
+                  {SC.map((r) => <tr><td>{r[0]}</td><td class="n">{money(r[1])}</td></tr>)}
+                  <tr class="tot"><td>Total</td><td class="n">{money(scTotal)}</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="note">Income at the time: $3,000 to $4,500 per month. The phone bill alone was almost as much as my Cebu rent.</p>
+            <h3>Cebu, Philippines: what I spend now</h3>
+            <p>I live on the mountain behind IT Park. It is a province area with mostly Bisaya-speaking neighbors and cheaper rent than central Cebu.</p>
+            <div class="tblwrap">
+              <table>
+                <thead><tr><th>Expense</th><th class="n">Pesos</th><th class="n">USD</th><th>Notes</th></tr></thead>
+                <tbody>
+                  {CE.map((r) => <tr><td>{r[0]}</td><td class="n">{r[1].toLocaleString('en-US')}p</td><td class="n">{money(r[2])}</td><td>{r[3]}</td></tr>)}
+                  <tr class="tot"><td>Total</td><td class="n">{cePesos.toLocaleString('en-US')}p</td><td class="n">~{money(ceUsd)}</td><td>Full family covered</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <!-- CHAPTER 3 -->
+          <section class="ch" id="banking">
+            <div class="chnum">Chapter 3</div>
+            <h2>Banking and money flow</h2>
+            <p>I do not use a traditional expat banking setup. I run almost entirely on crypto with a few fiat bridges. This is my actual workflow.</p>
+            <ol class="steps">
+              <li><h4>Income arrives</h4><p>USD lands by wire, Venmo, CashApp or Moneygram depending on the client. I receive into Chime: no fees, and it works well for remote workers.</p></li>
+              <li><h4>Convert to crypto and self-custody</h4><p>Transfer from Chime to Robinhood. Convert USD to Solana or Bitcoin. Send it to my Phantom wallet where I own my own private keys. I keep small amounts on Coinbase for daily spending. Solana clears in 2 seconds on the Coinbase card and I earn 1% back in Bitcoin on every purchase.</p></li>
+              <li><h4>Philippines conversion</h4><p>When I need pesos I convert crypto to PHP through GCash (my wife's account). I cash out at an ATM with her BDO card: an 18 peso fee versus $5 for foreign cards. At sari-sari stores a GCash transfer costs 20 to 50 pesos per 1,000, depending on the store. I rotate between multiple people so no single account gets flagged and limited by GCash.</p></li>
+              <li><h4>Backup methods</h4><p>Moneygram direct to BDO for larger transfers. A debit card for online purchases. Wire transfers when needed.</p></li>
+              <li><h4>Get pesos before you land</h4><p>Some US banks and currency exchange services let you order Philippine pesos in advance. The rates are not perfect, but cash on arrival removes day-one stress.</p></li>
+            </ol>
+            <div class="callout"><h4>ATM fee reality</h4><p>Foreign debit cards get hit with about a $5 fee per ATM withdrawal at most Philippine banks. A local partner's card drops that to 18 pesos (about $0.32). On 4 withdrawals a month that saves $19.68. Small, but it adds up.</p></div>
+            <h3>Accounts I actually use</h3>
+            <div class="tblwrap">
+              <table>
+                <thead><tr><th>Platform</th><th>Purpose</th><th>Notes</th></tr></thead>
+                <tbody>
+                  <tr><td>Chime (US)</td><td>Primary USD receive</td><td>No fees, instant transfers</td></tr>
+                  <tr><td>Robinhood</td><td>USD to crypto</td><td>Easy interface</td></tr>
+                  <tr><td>Phantom Wallet</td><td>Self-custody storage</td><td>Own your keys, own your coins</td></tr>
+                  <tr><td>Coinbase</td><td>Daily spending + debit card</td><td>1% Bitcoin back on purchases</td></tr>
+                  <tr><td>GCash (PH)</td><td>Crypto to PHP cash-out</td><td>Wife's account, rotate sari-sari stores</td></tr>
+                  <tr><td>BDO Bank (PH)</td><td>PHP bank account</td><td>Joint with wife: wire receives, ATM</td></tr>
+                  <tr><td>CashApp / Venmo</td><td>Receive from US clients</td><td>Common for freelance</td></tr>
+                  <tr><td>Moneygram</td><td>Large USD to BDO transfers</td><td>Good rates for big amounts</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <!-- CHAPTER 4 -->
+          <section class="ch" id="move">
+            <div class="chnum">Chapter 4</div>
+            <h2>The move: how I did it</h2>
+            <p>I left Scottsdale in September 2024. My daughter's birthday is in September and mine is in October. Those two dates were the deadline that made it real. I sold as much as I could, moved the rest into storage, and left.</p>
+            <div class="timeline">
+              <div class="t"><span class="when">12 months out</span><b>Decision made</b>Committed mentally and started tracking Philippine cost of living. This is when the arbitrage math first clicked.</div>
+              <div class="t"><span class="when">6 months out</span><b>Liquidation begins</b>Sold everything with resale value: furniture, electronics, anything not going into storage. Every dollar funded the move.</div>
+              <div class="t"><span class="when">3 months out</span><b>Storage arranged</b>Rented a storage unit for what could not be sold, and anything I might want eventually.</div>
+              <div class="t"><span class="when">1 month out</span><b>Flight booked</b>Scottsdale to Tokyo Narita, a 6 hour layover, then Cebu. The Tokyo stop cost $160 in food, bus and airport navigation. Worth every peso.</div>
+              <div class="t"><span class="when">Arrival, September 2024</span><b>Landed in Cebu</b>My third time in the Philippines, but staying long-term is a completely different experience than visiting.</div>
+              <div class="t"><span class="when">Weeks 1 to 2</span><b>Hotel bouncing (the mistake)</b>Wifi quality varied wildly. Some spots killed my ability to work and some were near nothing useful. Do not do this.</div>
+              <div class="t"><span class="when">Month 1</span><b>Airbnb base</b>A 30-day Airbnb for around $500. Stable wifi, a kitchen, and time to search properly for an apartment. This should be step one, not step three.</div>
+              <div class="t"><span class="when">Month 2</span><b>Permanent home</b>Secured the current house: 4 bedrooms at 15,600 pesos per month ($276) including HOA, on the mountain behind IT Park.</div>
+            </div>
+          </section>
+
+          <!-- CHAPTER 5 -->
+          <section class="ch" id="cities">
+            <div class="chnum">Chapter 5</div>
+            <h2>City breakdown: Cebu, Manila, Davao</h2>
+            <p>The Philippines is not one cost of living. Where you land changes everything. Here is the breakdown of the three cities most expats consider.</p>
+            <div class="cities">
+              <div class="city"><h3>Metro Manila</h3><p class="note">The capital. Most international, highest costs, best infrastructure and airport connections.</p>
+                <dl><dt>Rent</dt><dd>$400 to $800</dd><dt>Food</dt><dd>$200 to $350</dd><dt>Transport</dt><dd>$50 to $100</dd></dl>
+                <div class="tot">$800 to $1,400</div><div class="best">Best for corporate remote workers and people who fly internationally often.</div></div>
+              <div class="city"><h3>Cebu City / Metro Cebu</h3><p class="note">The second city. Best balance of cost and quality, a strong expat community, and IT Park is the digital hub.</p>
+                <dl><dt>Rent</dt><dd>$250 to $500</dd><dt>Food</dt><dd>$120 to $200</dd><dt>Transport</dt><dd>$30 to $80</dd></dl>
+                <div class="tot">$500 to $900</div><div class="best">Best for remote workers, families and long-term expats. The sweet spot.</div></div>
+              <div class="city"><h3>Davao City</h3><p class="note">Mindanao's cleanest city. Very affordable and growing fast, but Grab does not work here, so you use taxis.</p>
+                <dl><dt>Rent</dt><dd>$150 to $350</dd><dt>Food</dt><dd>$80 to $150</dd><dt>Transport</dt><dd>$20 to $50</dd></dl>
+                <div class="tot">$300 to $600</div><div class="best">Best for budget-focused expats who want a quieter life.</div></div>
+            </div>
+            <div class="callout"><h4>Galaxy's pick: the mountain behind IT Park</h4><p>I live in the province area behind IT Park, Cebu. It is a Bisaya-speaking community and cheaper than central Cebu: 15,600 pesos per month ($276) for a 4-bedroom house. You trade convenience for savings, and the savings are real.</p></div>
+          </section>
+
+          <!-- CHAPTER 6 -->
+          <section class="ch" id="first90">
+            <div class="chnum">Chapter 6</div>
+            <h2>The first 90 days: what to do and when</h2>
+            <p>The first 90 days make or break the move. Most people waste the first month bouncing hotels, overpaying for everything and making expensive mistakes. Here is the optimized sequence. Tick items as you go. Your progress saves on this device.</p>
+            <Checklist listKey="first90" groups={CL_A} />
+            <ToolPreview tool="checklist" slotLabel="Move Checklist" text="This checklist covers the first 90 days. The kit's version is built for any Southeast Asia country." linkText="Get the checklist in the kit" />
+          </section>
+
+          <!-- OFFER at roughly 60% -->
+          <OfferCard position="inline_60" heading="Put all your numbers in one place.">
+            The Southeast Asia Arbitrage Kit: the calculator, the tracker and the checklist that make this playbook executable. One kit, works for any Southeast Asia country.
+          </OfferCard>
+
+          <!-- CHAPTER 7 -->
+          <section class="ch" id="pitfalls">
+            <div class="chnum">Chapter 7</div>
+            <h2>47 pitfalls: mistakes that cost real money</h2>
+            <p>These are real mistakes. Some I made personally. All of them cost money, time, or both. Filter by topic and open any one.</p>
+            <div class="sub" id="pitChips" role="group" aria-label="Filter pitfalls">
+              {PIT_CATS.map((c) => <button class="chip" data-c={c} aria-pressed={c === 'All' ? 'true' : 'false'}>{c}</button>)}
+            </div>
+            <div id="pitList">
+              {PITS.map((p) => (
+                <details class="pit" data-cat={p[1]}>
+                  <summary><span class="num">#{p[0]}</span><span>{p[2]}</span></summary>
+                  <div class="pb"><p>{p[3]}</p><div class="fix"><b>Fix:</b> {p[4]}</div></div>
+                </details>
+              ))}
+              {QUICK.map((q) => (
+                <details class="pit" data-cat="Quick list">
+                  <summary><span class="num">#{q[0]}</span><span>{q[1]}</span></summary>
+                  <div class="pb"><p>{q[2]}</p></div>
+                </details>
+              ))}
+            </div>
+          </section>
+
+          <!-- CHAPTER 8 -->
+          <section class="ch" id="visa">
+            <div class="chnum">Chapter 8</div>
+            <h2>Visa reality: tourist, ACR, spousal</h2>
+            <p>The Philippines has one of the most foreigner-friendly visa structures in Southeast Asia. Here is the real breakdown. Rules and fees change without notice, so confirm everything with the Bureau of Immigration (immigration.gov.ph).</p>
+            <div class="cards2">
+              <div class="vcard"><span class="tag">What I am on now</span><h3>Tourist visa extensions</h3>
+                <p>US citizens get an initial 30-day stay on arrival. You extend at the Bureau of Immigration in 1-month, 2-month or 6-month increments, up to 36 months total. Each extension costs roughly 3,000 to 5,000 pesos.</p>
+                <p class="take"><b>Galaxy's take:</b> The lowest barrier. Get in, get established, and figure out long-term status while you are here.</p></div>
+              <div class="vcard"><span class="tag">Get this early</span><h3>ACR I-Card</h3>
+                <p>Required once you have been in the Philippines more than 59 days. It costs about 5,000 pesos, adds $40 to $50 to your visa renewal fee, and unlocks 6-month renewals. Apply as soon as you have a permanent address.</p>
+                <p class="take"><b>Galaxy's take:</b> The biggest quality-of-life upgrade for staying long-term. Do not wait.</p></div>
+              <div class="vcard"><span class="tag">Available to me, not yet obtained</span><h3>13A spousal visa</h3>
+                <p>For foreigners married to Filipino citizens. It grants indefinite residency, no more renewals and legal work rights, for roughly 10,000 to 15,000 pesos in fees and processing.</p>
+                <p class="take"><b>Galaxy's take:</b> If you are married to a Filipino, this is your long-term play. I qualify now and it is on the roadmap.</p></div>
+              <div class="vcard"><span class="tag">For long-term capital holders</span><h3>SRRV: Special Retiree Visa</h3>
+                <p>Available at 35 and older with $20,000 to $50,000 deposited in a Philippine bank. Permanent residency while the deposit is maintained.</p>
+                <p class="take"><b>Galaxy's take:</b> Not relevant for most remote income builders. More relevant if you are moving savings here long-term.</p></div>
+            </div>
+          </section>
+
+          <!-- CHAPTER 9 -->
+          <section class="ch" id="income">
+            <div class="chnum">Chapter 9</div>
+            <h2>Remote income: keeping USD coming in</h2>
+            <p>The arbitrage only works if the USD keeps coming in. In Cebu, $2,000 per month puts you ahead of almost everyone. Here is how to build and protect remote income from abroad.</p>
+            <div class="cards2">
+              <div class="icard"><span class="tag">Highest reliability</span><h3>Service business</h3><p>Sell a skill directly to US clients: copywriting, design, development, consulting, cold calling, lead gen. You own the client relationship and income is predictable.</p><p class="take"><b>Galaxy:</b> GalaxyConverts does landing page audits and rebuilds for US local businesses at $500 to $1,500 per project. Cold calling is the acquisition method and no paid ads are needed to start.</p></div>
+              <div class="icard"><span class="tag">Highest leverage</span><h3>Newsletter and media</h3><p>Build an owned audience and monetize it through digital products, affiliates and sponsorships. It scales without your time.</p><p class="take"><b>Galaxy:</b> Galaxy Arbitrage Weekly is this play in real time. It takes time to build but the ceiling is unlimited. Start your audience now and monetize once you have trust.</p></div>
+              <div class="icard"><span class="tag">Best passive income</span><h3>Digital products</h3><p>Build once, sell forever: calculators, templates, playbooks, guides. No fulfillment, and Stripe handles delivery.</p><p class="take"><b>Galaxy:</b> This playbook is one. The Southeast Asia Arbitrage Kit is more of them. Every newsletter issue creates content that can become a product.</p></div>
+              <div class="icard"><span class="tag">Revenue multiplier</span><h3>Affiliate income</h3><p>Refer people to services you already use, such as SafetyWing, Wise and Revolut, for 20 to 30% commission on recurring subscriptions.</p><p class="take"><b>Galaxy:</b> Layer this on top of your content. Do not build a business on affiliate income alone. It is a multiplier, not a foundation.</p></div>
+            </div>
+          </section>
+
+          <!-- CHAPTER 10 -->
+          <section class="ch" id="plan">
+            <div class="chnum">Chapter 10</div>
+            <h2>The action plan: your next 30 days</h2>
+            <p>Reading this playbook is not the move. Executing is the move. Pick where you are right now.</p>
+            <div class="sub" id="planTabs" role="tablist" aria-label="Where are you right now?">
+              {Object.entries(PLAN).map(([k, v], i) => (
+                <button class="chip" role="tab" data-k={k} aria-selected={i === 0 ? 'true' : 'false'}>{v.label}</button>
+              ))}
+            </div>
+            {Object.entries(PLAN).map(([k, v], i) => (
+              <Checklist listKey={`plan-${k}`} groups={[{ g: v.label, items: v.items }]} hidden={i !== 0} />
+            ))}
+
+            <ToolPreview tool="tracker" slotLabel="Income and Expense Tracker" text="Track every peso from day one and watch your arbitrage gap compound each month." linkText="Get the tracker in the kit" />
+
+            <div class="callout">
+              <p><b>This is the playbook I wish existed when I landed.</b> I left Scottsdale with a storage unit full of stuff I could not sell fast enough, a one-way ticket through Tokyo, and a year of planning behind me. The math worked. The move worked. The life is real. The tools in the kit are the ones I built for myself first.</p>
+              <p>Galaxy Arbitrage Weekly drops every Tuesday.</p>
+              <p>- Galaxy (Tony Long II), Cebu, Philippines</p>
+            </div>
+          </section>
+
+          <OfferCard position="final" heading="Get the tools that make this playbook executable.">
+            The Southeast Asia Arbitrage Kit: the calculator that runs your arbitrage math, the tracker that monitors it monthly, and the checklist that keeps you from missing steps.
+          </OfferCard>
+
+          <div class="callout"><h4>Tell me your situation</h4><p>Reply to any Galaxy Arbitrage email with where you are right now (still in the US, just arrived, or established) and the one thing you are stuck on. I read every reply.</p></div>
+
+          <div class="pbfooter">
+            <p><a id="pdfLink" href={CONFIG.PDF_URL}>Download the PDF version</a></p>
+            <details class="legal">
+              <summary>Disclosure and legal</summary>
+              <h4>Not financial advice</h4><p>This playbook is published for educational and informational purposes only. Nothing in it constitutes financial, investment, legal or tax advice. The author, Galaxy (Tony Long II), is not a licensed financial advisor, investment advisor, attorney, accountant or tax professional.</p>
+              <h4>No guarantee of results</h4><p>The figures, cost-of-living estimates, exchange rates and savings projections here are based on the author's personal experience living in Cebu, Philippines in 2024 to 2026. Individual results will vary significantly.</p>
+              <h4>Exchange rates fluctuate</h4><p>USD/PHP was about 56 when the author relocated in September 2024 and about 61 by mid-2026. Verify current rates at xe.com or with your bank.</p>
+              <h4>Immigration information may change</h4><p>Philippine immigration laws, fees and procedures change without notice. Verify current requirements with the Bureau of Immigration at immigration.gov.ph before making travel or relocation decisions.</p>
+              <h4>You are responsible for your decisions</h4><p>Any financial, relocation or lifestyle decision you make after reading this is your own responsibility. The author and publisher accept no liability for any loss or cost arising from reliance on this information.</p>
+              <h4>Affiliate and commercial relationships</h4><p>The newsletter and its products may contain affiliate links. The author may receive compensation if you buy through them. The author only recommends products and services personally used or evaluated.</p>
+            </details>
+            <p>Galaxy (Tony Long II) · @ExpatBuildr · GalaxyArbitrage.com · 2026</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    import '../../scripts/playbook-client';
+  </script>
+</Layout>

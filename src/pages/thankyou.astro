@@ -8,7 +8,7 @@ import Pixels from '../components/GalaxyPixels.astro';
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<title>You're in — Your Download is Starting</title>
+<title>You're in — Taking You to the Playbook</title>
 <meta name="robots" content="noindex, nofollow">
 <Pixels page="thank-you-friction" magnet="philippines-arbitrage-playbook" source="playbook" />
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -63,28 +63,28 @@ h1 span { color:var(--green); }
 
 <a href="https://expatbuildr.com" class="ty-logo"><img src="/logo.jpg" alt="ExpatBuildr" class="ty-logo-img">ExpatBuildr</a>
 
-<div class="ty-check">⬇️</div>
+<div class="ty-check">📖</div>
 
-<h1>Your download is starting —<br><span>it's on its way</span></h1>
+<h1>You're in —<br><span>taking you to the playbook</span></h1>
 
-<p class="ty-sub">The Philippines Arbitrage Playbook is downloading now. Once it lands — there's one thing that takes everything in the playbook from theory to a real working system.</p>
+<p class="ty-sub">The Philippines Arbitrage Playbook is a full interactive page: the calculator, the checklist, and the 47 pitfalls. You're headed there now.</p>
 
 <div class="ty-redirect-box">
-  <div class="label">⬇️ Downloading now</div>
+  <div class="label">📖 Opening next</div>
   <strong>Philippines Arbitrage Playbook</strong>
-  <p>Your PDF is downloading automatically. If it does not start in a few seconds, <a href="https://galaxyarbitrage.com/downloads/philippines-arbitrage-playbook.pdf" target="_blank" rel="noopener">click here to download manually.</a></p>
+  <p>The math, the banking setup, the first 90 days, and the mistakes that cost real money. Taking you there automatically.</p>
 </div>
 
-<p class="ty-countdown">Taking you to the full toolkit in <span id="countdown">7</span> seconds — or</p>
+<p class="ty-countdown">Taking you to the playbook in <span id="countdown">7</span> seconds — or</p>
 
-<a href="/kit" class="btn-skip">See the Kit Now →</a>
+<a href="/playbook/philippines" class="btn-skip">See the Playbook Now →</a>
 
 <p class="ty-sidestep">Want 1-on-1 help instead of doing it yourself? <a href="/consulting">Talk to Tony directly →</a></p>
 
 <hr class="ty-divider">
 
 <div class="what-next">
-  <h3>While it downloads</h3>
+  <h3>While you wait</h3>
   <div class="next-item">
     <div class="next-num">1</div>
     <div class="next-text"><strong>Check your spam folder</strong> if you don't see a welcome email in 5 minutes. Add galaxyarbitrage@mail.beehiiv.com to your contacts to keep future issues out of spam.</div>
@@ -100,18 +100,15 @@ h1 span { color:var(--green); }
 </div>
 
 <script>
-// Auto-trigger download on page load
-window.addEventListener('load', () => {
-  const link = document.createElement('a');
-  link.href = 'https://galaxyarbitrage.com/downloads/philippines-arbitrage-playbook.pdf';
-  link.target = '_blank';
-  link.rel = 'noopener';
-  document.body.appendChild(link);
-  link.click();
-  document.body.removeChild(link);
-});
+// 7 second countdown then redirect to the interactive playbook.
+// location.replace (not href) so the back button doesn't trap people in a loop.
+// Preserves the current query string and tags the arrival as coming from signup.
+function playbookUrl() {
+  const params = new URLSearchParams(location.search);
+  params.set('ref', 'signup');
+  return '/playbook/philippines?' + params.toString();
+}
 
-// 7 second countdown then redirect to /kit
 let count = 7;
 const el = document.getElementById('countdown');
 const timer = setInterval(() => {
@@ -119,7 +116,7 @@ const timer = setInterval(() => {
   if (el) el.textContent = count;
   if (count <= 0) {
     clearInterval(timer);
-    window.location.href = '/kit';
+    window.location.replace(playbookUrl());
   }
 }, 1000);
 </script>

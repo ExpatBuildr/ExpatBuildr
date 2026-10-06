@@ -37,6 +37,7 @@ const GHOST_LIST = [
   '/leaks-thankyou',
   '/newsletter/thank-you',
   '/newsletter/downloads',
+  '/playbook/philippines',
 ];
 
 // HISTORICAL NOTE (resolved 2026-08-08): each pillar's "hub" article used to

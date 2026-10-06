@@ -13,6 +13,7 @@ interface Props {
 	canonicalUrl?: string;
 	noAnimations?: boolean;
 	appendBrandToTitle?: boolean;
+	hideNav?: boolean;
 }
 
 const {
@@ -23,7 +24,8 @@ const {
 	minimal = false,
 	canonicalUrl,
 	noAnimations = false,
-	appendBrandToTitle = true
+	appendBrandToTitle = true,
+	hideNav = false
 } = Astro.props;
 
 // Ensure absolute URL for OG image
@@ -178,7 +180,7 @@ const websiteSchema = {
 			</div>
 		)}
 		
-		{!minimal && !noAnimations && (
+		{!minimal && !noAnimations && !hideNav && (
 			<div class="hidden md:flex fixed top-0 w-full z-[60] bg-white/90 dark:bg-galaxy-950/80 backdrop-blur-md border-b border-accent-purple/20 py-1.5 overflow-hidden shadow-[0_0_15px_rgba(217,70,239,0.1)]">
 				<div class="flex whitespace-nowrap animate-marquee">
 					<div class="flex items-center gap-8 px-4 text-[10px] md:text-[11px] font-mono tracking-[0.2em] text-slate-900 dark:text-accent-cyan/60 uppercase">
@@ -210,7 +212,7 @@ const websiteSchema = {
 			</div>
 		)}
 		
-		{!minimal && (
+		{!minimal && !hideNav && (
 			<nav class="fixed top-9 w-full z-[70] px-4 md:px-6 py-4 flex justify-center">
 				<div class="max-w-7xl w-full flex items-center justify-between px-4 md:px-6 py-3 glass-card rounded-2xl relative shadow-2xl transition-all duration-300">
 					<!-- Brand -->
@@ -611,7 +613,7 @@ const websiteSchema = {
 			});
 		</script>
 
-		<main class={minimal ? "relative" : "relative z-10 pt-40 pb-20 px-4 sm:px-6"}>
+		<main class={minimal ? "relative" : hideNav ? "relative z-10 pb-20" : "relative z-10 pt-40 pb-20 px-4 sm:px-6"}>
 			<slot />
 		</main>
 
