@@ -171,8 +171,8 @@ const featuredCards = targetPillarIds.map(pillarId => {
 			<p class="text-slate-600 dark:text-slate-400 text-lg max-w-xl mx-auto">Same playbook. Different starting point. Tell us where you are.</p>
 		</div>
 
-		<div class="max-w-4xl mx-auto px-4 sm:px-6 relative z-10">
-			<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+		<div class="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
+			<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
 
 				<!-- Already an Expat -->
 				<a href="/playbook?stage=abroad"
@@ -209,6 +209,25 @@ const featuredCards = targetPillarIds.map(pillarId => {
 					</ul>
 					<div class="pt-2 text-accent-purple font-black text-sm uppercase tracking-widest flex items-center gap-2 mt-auto">
 						Get the playbook <ArrowRight size={20} class="group-hover:translate-x-1 transition-transform" />
+					</div>
+				</a>
+
+				<!-- Filipino, Wants Remote Work -->
+				<a href="/consulting"
+					class="text-left p-12 rounded-[2.5rem] glass-card hover:border-accent-teal/50 transition-all duration-300 group space-y-6 min-h-[400px] flex flex-col border border-accent-teal/20">
+					<div class="text-3xl">🇵🇭</div>
+					<div>
+						<div class="text-xs font-mono tracking-widest uppercase text-accent-teal mb-3">The Other Half</div>
+						<div class="text-3xl md:text-4xl font-black tracking-tight uppercase text-slate-900 dark:text-white mb-3 leading-tight">I'm Filipino and<br/><span class="text-accent-teal">Want Remote Work.</span></div>
+						<h4 class="text-base font-semibold text-slate-500 dark:text-slate-400 leading-relaxed">You're in the Philippines and want to earn working remote jobs for clients and companies abroad.</h4>
+					</div>
+					<ul class="space-y-2 text-sm text-slate-500 dark:text-slate-400">
+						<li class="flex items-center gap-2"><span class="text-accent-teal">+</span> Learn what remote employers actually look for</li>
+						<li class="flex items-center gap-2"><span class="text-accent-teal">+</span> Build the skills and portfolio that get you hired</li>
+						<li class="flex items-center gap-2"><span class="text-accent-teal">+</span> Talk through your specific situation on a call</li>
+					</ul>
+					<div class="pt-2 text-accent-teal font-black text-sm uppercase tracking-widest flex items-center gap-2 mt-auto">
+						Book a Call · ${CONSULTING_PRICE} <ArrowRight size={20} class="group-hover:translate-x-1 transition-transform" />
 					</div>
 				</a>
 
