@@ -1,5 +1,5 @@
 ---
-import { ShoppingCart, ArrowRight, Github, Twitter, Linkedin, Mail, Cpu, LineChart, Code2, Rocket, Sun, Moon, Menu, X, ChevronDown, ArrowUp, Music, Youtube, Instagram, Rss, FileJson, Layers, Hammer, Briefcase, Send, Target, TrendingUp, MonitorPlay } from 'lucide-astro';
+import { ShoppingCart, ArrowRight, Github, Twitter, Linkedin, Mail, Cpu, LineChart, Code2, Rocket, Sun, Moon, Menu, X, ChevronDown, ArrowUp, Music, Youtube, Instagram, Rss, FileJson, Layers, Hammer, Briefcase, Send, Target, TrendingUp, MonitorPlay, Plane } from 'lucide-astro';
 import '../styles/global.css';
 import Analytics from '../components/Analytics.astro';
 import DevPanel from '../components/dev/DevPanel.jsx';
@@ -170,13 +170,7 @@ const websiteSchema = {
 	<body class="selection:bg-accent-blue/30 selection:text-white transition-colors duration-500">
 		{!noAnimations && (
 			<div id="cursor" class="custom-cursor hidden md:block">
-				<div class="galaxy-core"></div>
-				<div class="galaxy-arm galaxy-arm-1"></div>
-				<div class="galaxy-arm galaxy-arm-2"></div>
-				<div class="galaxy-arm galaxy-arm-3"></div>
-				<div class="galaxy-arm galaxy-arm-4"></div>
-				<div class="galaxy-arm galaxy-arm-5"></div>
-				<div class="galaxy-arm galaxy-arm-6"></div>
+				<Plane class="plane-icon" size={22} />
 			</div>
 		)}
 		
