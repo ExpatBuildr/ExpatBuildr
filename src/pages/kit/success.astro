@@ -1,0 +1,173 @@
+---
+// src/pages/kit/success.astro
+// Post-purchase delivery page for the Southeast Asia Arbitrage Kit.
+// Set this page's URL (https://expatbuildr.com/kit/success) as the Stripe
+// Payment Link's "after payment" confirmation/redirect in the Stripe
+// dashboard — that's config on Stripe's side, not something this file sets.
+// Not linked from nav, footer, or /kit itself — only reachable via that
+// Stripe redirect. Same visual tokens as /kit for brand continuity.
+const files = [
+  {
+    icon: '🇵🇭',
+    name: 'Geo-Arbitrage Philippines Edition',
+    desc: 'Enter your USD income. See your real purchasing power across Cebu, Manila, and Davao.',
+    href: '/downloads/Geo-Arbitrage-Philippines-Edition.xlsx',
+  },
+  {
+    icon: '📊',
+    name: 'Expat Income & Expense Tracker',
+    desc: 'Track USD income vs PHP spending every month and watch your arbitrage gap compound.',
+    href: '/downloads/expat-income-expense-tracker-philippines.xlsx',
+  },
+  {
+    icon: '✅',
+    name: 'Philippines Expat Setup Checklist',
+    desc: 'Banking, SIM, visa, barangay ID, healthcare — every step in the right order.',
+    href: '/downloads/Philippines-Expat-Setup-Checklist.xlsx',
+  },
+  {
+    icon: '🗺️',
+    name: 'Geographic Arbitrage Calculator — SEA',
+    desc: 'Compare your purchasing power across 6 Southeast Asian countries side by side.',
+    href: '/downloads/Geographic-Arbitrage-Calculator-SEA.xlsx',
+  },
+  {
+    icon: '🧮',
+    name: 'Geo-Arbitrage Country Calculator',
+    desc: 'Global version. Any country, any currency. Model your arbitrage before you commit.',
+    href: '/downloads/GeoArbitrage-Country-Calculator.xlsx',
+  },
+  {
+    icon: '📋',
+    name: 'Digital Nomad Monthly Budget Planner',
+    desc: 'Location-flexible monthly budget template. USD anchored, works from anywhere.',
+    href: '/downloads/Digital-Nomad-Monthly-Budget-Planner.xlsx',
+  },
+];
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<title>Your Kit Is Ready — ExpatBuildr</title>
+<meta name="robots" content="noindex, nofollow">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
+:root {
+  --ink:#111118; --ink-soft:#444455; --ink-mute:#8888AA;
+  --white:#FFFFFF; --cream:#FAFAF7; --amber:#F59E0B;
+  --amber-lt:#FEF3C7; --amber-dk:#B45309; --border:#E8E8F0;
+  --green:#16A34A; --green-lt:#DCFCE7;
+}
+body { font-family:'Inter',sans-serif; background:var(--cream); color:var(--ink); line-height:1.6; }
+
+.nav { background:var(--white); border-bottom:1px solid var(--border); padding:16px 24px; display:flex; align-items:center; justify-content:center; }
+.logo { font-family:'Syne',sans-serif; font-weight:800; font-size:16px; color:var(--ink); display:flex; align-items:center; gap:6px; text-decoration:none; }
+.logo img { width:24px; height:24px; border-radius:50%; object-fit:cover; }
+
+.hero { max-width:680px; margin:0 auto; padding:56px 24px 32px; text-align:center; }
+.check { width:64px; height:64px; border-radius:50%; background:var(--green-lt); border:3px solid var(--green); display:flex; align-items:center; justify-content:center; font-size:28px; margin:0 auto 24px; color:var(--green); }
+.hero h1 { font-family:'Syne',sans-serif; font-size:clamp(26px,5vw,40px); font-weight:800; line-height:1.15; letter-spacing:-.02em; margin-bottom:14px; }
+.hero p { font-size:16px; color:var(--ink-soft); max-width:480px; margin:0 auto; line-height:1.6; }
+
+.body { max-width:680px; margin:0 auto; padding:0 24px 64px; }
+.section-label { font-size:11px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:var(--ink-mute); margin:40px 0 16px; }
+
+.file-list { background:var(--white); border:1px solid var(--border); border-radius:16px; overflow:hidden; }
+.file-item { display:flex; align-items:center; gap:16px; padding:20px 24px; border-bottom:1px solid var(--border); }
+.file-item:last-child { border-bottom:none; }
+.fi-icon { width:44px; height:44px; border-radius:10px; background:var(--amber-lt); display:flex; align-items:center; justify-content:center; font-size:20px; flex-shrink:0; }
+.fi-body { flex:1; min-width:0; }
+.fi-name { font-family:'Syne',sans-serif; font-size:15px; font-weight:700; margin-bottom:3px; }
+.fi-desc { font-size:13px; color:var(--ink-soft); line-height:1.5; }
+.fi-btn { flex-shrink:0; display:inline-flex; align-items:center; gap:6px; background:var(--ink); color:var(--white); font-family:'Syne',sans-serif; font-weight:700; font-size:13px; text-decoration:none; padding:10px 18px; border-radius:8px; transition:background .15s; white-space:nowrap; }
+.fi-btn:hover { background:var(--amber-dk); }
+.fi-btn.done { background:var(--green); }
+
+.btn-all { display:block; max-width:420px; margin:28px auto 0; background:var(--amber); color:var(--ink); border:none; border-radius:12px; padding:16px; font-size:16px; font-weight:800; cursor:pointer; font-family:'Syne',sans-serif; transition:opacity .15s; text-decoration:none; text-align:center; }
+.btn-all:hover { opacity:.88; }
+
+.help { background:var(--white); border:1px solid var(--border); border-radius:12px; padding:20px 24px; margin-top:40px; font-size:14px; color:var(--ink-soft); }
+.help strong { color:var(--ink); }
+.help a { color:var(--amber-dk); font-weight:600; }
+
+.next { margin-top:40px; text-align:center; }
+.next a { font-size:14px; color:var(--ink-soft); text-decoration:underline; text-underline-offset:2px; }
+.next a:hover { color:var(--amber-dk); }
+
+@media(max-width:600px) {
+  .file-item { flex-wrap:wrap; }
+  .fi-btn { width:100%; justify-content:center; }
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="https://expatbuildr.com" class="logo"><img src="/logo.jpg" alt="ExpatBuildr">ExpatBuildr</a>
+</nav>
+
+<section class="hero">
+  <div class="check">✓</div>
+  <h1>Payment confirmed — your kit is ready.</h1>
+  <p>All 6 files are below. Download each one now, or grab the whole set at once. A receipt is on its way to your email.</p>
+</section>
+
+<div class="body">
+  <div class="section-label">Your downloads</div>
+  <div class="file-list" id="fileList">
+    {files.map((f, i) => (
+      <div class="file-item">
+        <div class="fi-icon">{f.icon}</div>
+        <div class="fi-body">
+          <div class="fi-name">{f.name}</div>
+          <div class="fi-desc">{f.desc}</div>
+        </div>
+        <a class="fi-btn" data-file={i} href={f.href} download>Download ↓</a>
+      </div>
+    ))}
+  </div>
+
+  <a href="#" class="btn-all" id="downloadAll">Download All 6 Files →</a>
+
+  <div class="help">
+    <strong>Trouble downloading?</strong> Each button opens the file directly — if your browser blocks a pop-up, right-click the button and choose "Save link as." Still stuck? Email Tony Long II directly and I'll send them over.
+  </div>
+
+  <div class="next">
+    <a href="/playbook/philippines">← Back to the interactive playbook</a>
+  </div>
+</div>
+
+<script define:vars={{ files }}>
+  const fileList = document.getElementById('fileList');
+  fileList?.addEventListener('click', (e) => {
+    const btn = e.target.closest('.fi-btn');
+    if (!btn) return;
+    btn.classList.add('done');
+    btn.textContent = 'Downloaded ✓';
+  });
+
+  document.getElementById('downloadAll')?.addEventListener('click', (e) => {
+    e.preventDefault();
+    files.forEach((f, i) => {
+      setTimeout(() => {
+        const a = document.createElement('a');
+        a.href = f.href;
+        a.download = '';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        const btn = document.querySelector(`.fi-btn[data-file="${i}"]`);
+        if (btn) { btn.classList.add('done'); btn.textContent = 'Downloaded ✓'; }
+      }, i * 400);
+    });
+  });
+</script>
+
+</body>
+</html>

@@ -187,6 +187,7 @@ export default defineConfig({
     '/nfs/turbo': '/',
     '/nfs/success': '/',
     '/freedom-seeker': '/',
+    '/website': '/shop',
     '/build-with-galaxy/success': '/',
     '/product-funnels': '/',
     // indexed with no noindex tag pre-archival — see Search Console flag in report
