@@ -75,9 +75,9 @@ h1 span { color:var(--green); }
   <p>The math, the banking setup, the first 90 days, and the mistakes that cost real money. Taking you there automatically.</p>
 </div>
 
-<p class="ty-countdown">Taking you to the playbook in <span id="countdown">7</span> seconds — or</p>
+<p class="ty-countdown" id="countdownLine">You're in. Taking you to the playbook in <span id="countdown">5</span>...</p>
 
-<a href="/playbook/philippines" class="btn-skip">See the Playbook Now →</a>
+<a href="/playbook/philippines" class="btn-skip">Go now →</a>
 
 <p class="ty-sidestep">Want 1-on-1 help instead of doing it yourself? <a href="/consulting">Talk to Tony directly →</a></p>
 
@@ -100,7 +100,7 @@ h1 span { color:var(--green); }
 </div>
 
 <script>
-// 7 second countdown then redirect to the interactive playbook.
+// 5 second countdown then redirect to the interactive playbook.
 // location.replace (not href) so the back button doesn't trap people in a loop.
 // Preserves the current query string and tags the arrival as coming from signup.
 function playbookUrl() {
@@ -109,16 +109,25 @@ function playbookUrl() {
   return '/playbook/philippines?' + params.toString();
 }
 
-let count = 7;
+const reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 const el = document.getElementById('countdown');
-const timer = setInterval(() => {
-  count--;
-  if (el) el.textContent = count;
-  if (count <= 0) {
-    clearInterval(timer);
-    window.location.replace(playbookUrl());
-  }
-}, 1000);
+const line = document.getElementById('countdownLine');
+
+if (reduceMotion) {
+  // Still redirect, just don't animate a ticking number.
+  if (line) line.textContent = "You're in. Taking you to the playbook...";
+  setTimeout(() => window.location.replace(playbookUrl()), 5000);
+} else {
+  let count = 5;
+  const timer = setInterval(() => {
+    count--;
+    if (el) el.textContent = count;
+    if (count <= 0) {
+      clearInterval(timer);
+      window.location.replace(playbookUrl());
+    }
+  }, 1000);
+}
 </script>
 </body>
 </html>

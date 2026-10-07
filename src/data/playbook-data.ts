@@ -18,13 +18,13 @@ export const COUNTRIES = [
 ];
 
 export const CHAPTERS = [
+  { id: 'pitfalls', title: '47 pitfalls' },
   { id: 'math', title: 'The math' },
   { id: 'numbers', title: 'My numbers' },
   { id: 'banking', title: 'Banking and money' },
   { id: 'move', title: 'The move' },
   { id: 'cities', title: 'Cities' },
   { id: 'first90', title: 'First 90 days' },
-  { id: 'pitfalls', title: '47 pitfalls' },
   { id: 'visa', title: 'Visa reality' },
   { id: 'income', title: 'Remote income' },
   { id: 'plan', title: '30-day plan' },

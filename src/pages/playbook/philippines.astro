@@ -1,12 +1,12 @@
 ---
 // src/pages/playbook/philippines.astro
+// Standalone page — its own <head>, not the shared site Layout. noindex,
+// excluded from the sitemap (see astro.config.mjs GHOST_LIST).
 //
 // ANALYTICS: custom events need Plausible or PostHog (Cloudflare Web Analytics
 // does not support custom events). For Plausible, add these two lines inside <head>:
 //   <script defer data-domain="expatbuildr.com" src="https://plausible.io/js/script.tagged-events.js"></script>
 //   <script is:inline>window.plausible = window.plausible || function(){ (window.plausible.q = window.plausible.q || []).push(arguments) }</script>
-import { Sun, Moon, PhoneCall } from 'lucide-astro';
-import Layout from '../../layouts/Layout.astro';
 import '../../styles/playbook.css';
 import Checklist from '../../components/playbook/Checklist.astro';
 import OfferCard from '../../components/playbook/OfferCard.astro';
@@ -17,6 +17,12 @@ import {
 } from '../../data/playbook-data';
 
 // ----- totals are computed, never typed -----
+// The "arbitrage math" category table (CMP) and the fully itemized Scottsdale
+// list (SC) group expenses differently, so they total differently ($3,055 vs
+// $3,375). SC is the fuller, corrected number — it is what the calculator
+// defaults to and what "My actual numbers" uses. CMP still renders its own
+// honest total from its own rows; it is a simpler category rollup, not a typo
+// to be forced into matching SC.
 const cmpS = CMP.reduce((n, r) => n + r[1], 0);
 const cmpC = CMP.reduce((n, r) => n + r[3], 0);
 const cmpSave = cmpS - cmpC;
@@ -26,30 +32,33 @@ const cmpFv = fvOf(cmpSave);
 const scTotal = SC.reduce((n, r) => n + r[1], 0);
 const cePesos = CE.reduce((n, r) => n + r[1], 0);
 const ceUsd = Math.round(cePesos / 56.1);
+const scSave = scTotal - ceUsd;
+const scPct = Math.round((scSave / scTotal) * 100);
 
 // ----- calculator starting state (so it reads correctly before JS loads) -----
-const startSpend = Math.min(Math.max(cmpS, 1000), 8000);
+const startSpend = Math.min(Math.max(scTotal, 1000), 8000);
 const startCity = CITIES.cebu;
 const startCost = (startCity.lo + startCity.hi) / 2;
 const startKeep = Math.max(startSpend - startCost, 0);
 
 // ----- data the client script needs -----
-const pbConfig = JSON.stringify({ CONFIG, CITIES, CMP_SC: cmpS });
+const pbConfig = JSON.stringify({ CONFIG, CITIES, CMP_SC: scTotal });
 ---
-<Layout
-  title="Philippines Playbook"
-  description="The exact move from Scottsdale to Cebu: the math, the banking, the first 90 days, and the mistakes that cost real money. Free."
-  noindex={true}
-  hideNav={true}
->
-  <Fragment slot="head">
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Philippines Playbook</title>
+    <meta name="description" content="I lost $300K, then the $60K I took to Cebu. I'm rebuilding. Every mistake, the real numbers, and the system I'm rebuilding on. Free." />
+    <meta name="robots" content="noindex" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet" />
-    <script is:inline type="application/json" id="pb-config" set:html={pbConfig} />
-  </Fragment>
 
-  <div class="pbroot">
+    <script is:inline type="application/json" id="pb-config" set:html={pbConfig} />
+  </head>
+  <body>
     <div id="progress" aria-hidden="true"></div>
 
     <header class="top">
@@ -58,34 +67,34 @@ const pbConfig = JSON.stringify({ CONFIG, CITIES, CMP_SC: cmpS });
           <img src="/logo.jpg" alt="ExpatBuildr" />
           <span class="pagelabel"><span class="org">ExpatBuildr</span><span class="page">Philippines Playbook</span></span>
         </a>
-        <div class="top-actions">
-          <button id="pbThemeToggle" class="theme-toggle" type="button" aria-label="Toggle dark mode">
-            <Moon class="block dark:hidden" size={18} />
-            <Sun class="hidden dark:block" size={18} />
-          </button>
-          <a href="/consulting" class="btn-call"><PhoneCall size={14} />Book a Call</a>
+        <div class="tabs" role="tablist" aria-label="Choose a country" id="countryTabs">
+          {COUNTRIES.map((c) => (
+            <button class="tab" role="tab" aria-selected={c.live ? 'true' : 'false'} data-country={c.id}>
+              {c.label}{!c.live && <span class="soon">soon</span>}
+            </button>
+          ))}
         </div>
       </div>
     </header>
 
     <!-- COMING SOON (shared by every country that is not live yet) -->
-    <div id="panel-soon" class="wrap" hidden>
+    <main id="panel-soon" class="wrap" hidden>
       <div class="soonbox">
         <h1 id="soonTitle">Thailand is next in line</h1>
-        <p>The playbook for this country is not written yet. I only publish what I have verified, so it comes after the Philippines version is proven.</p>
+        <p>The playbook for this country is not written yet. I only publish what I have verified.</p>
         <p>Tap below to vote for it. The countries with the most votes get written first.</p>
         <button class="btn" id="soonBtn">I want this country</button>
         <div id="soonmsg" role="status"></div>
         <p style="margin-top:28px"><button class="btn ghost" id="backPH">Back to the Philippines playbook</button></p>
       </div>
-    </div>
+    </main>
 
     <!-- PHILIPPINES -->
-    <div id="panel-ph" class="wrap">
+    <main id="panel-ph" class="wrap">
       <section class="hero" id="top">
         <div>
-          <h1>Cut your expenses in half without cutting your income.</h1>
-          <p class="lede">The exact move I made from Scottsdale to Cebu: the math, the banking, the first 90 days, and the mistakes that cost real money. Free.</p>
+          <h1>I lost $300K, then the $60K I took to Cebu. I'm rebuilding. Here's every mistake, so you don't repeat them.</h1>
+          <p class="lede">If you saw the reel, this is the real spreadsheet and the real list of what went wrong. Free. The tools are optional.</p>
           <p class="byline">By Galaxy (Tony Long II), living in Cebu since September 2024</p>
           <p class="note">Educational only, not financial, legal or tax advice. Costs, rates and visa rules change. Verify before you act.</p>
         </div>
@@ -121,13 +130,13 @@ const pbConfig = JSON.stringify({ CONFIG, CITIES, CMP_SC: cmpS });
         </div>
       </section>
 
-      <div class="countrybar" role="tablist" aria-label="Choose a country" id="countryTabs">
-        {COUNTRIES.map((c) => (
-          <button class="tab" role="tab" aria-selected={c.live ? 'true' : 'false'} data-country={c.id}>
-            {c.label}{!c.live && <span class="soon">soon</span>}
-          </button>
-        ))}
-      </div>
+      <section class="ch" id="story" style="padding-top:0; border-top:0; margin-top:24px">
+        <h2>What happened to me</h2>
+        <p>I lost $300,000 in crypto. That is not a typo and it is not a flex.</p>
+        <p>In September 2024 I moved to the Philippines with about $60,000 left. Over the next two years, that money was gone too.</p>
+        <p>I am not writing this from the other side of a comeback. I am rebuilding right now, in public, and I do not have a tidy ending for you yet. I currently spend about $743 a month in Cebu. That number is real. The rest of the story, where the $60,000 went, is not something I have decided how to talk about, so I am not going to guess at it here.</p>
+        <p>This playbook exists because of what I got wrong, not what I got right. Every number, mistake and fix on this page is here so you do not repeat what cost me.</p>
+      </section>
 
       <details class="mtoc">
         <summary>Contents</summary>
@@ -142,9 +151,33 @@ const pbConfig = JSON.stringify({ CONFIG, CITIES, CMP_SC: cmpS });
         </aside>
 
         <div>
-          <!-- CHAPTER 1 -->
-          <section class="ch" id="math">
+          <!-- CHAPTER 1: 47 pitfalls -->
+          <section class="ch" id="pitfalls">
             <div class="chnum">Chapter 1</div>
+            <h2>47 pitfalls: mistakes that cost real money</h2>
+            <p>These are real mistakes. Some I made personally. All of them cost money, time, or both. Filter by topic and open any one.</p>
+            <div class="sub" id="pitChips" role="group" aria-label="Filter pitfalls">
+              {PIT_CATS.map((c) => <button class="chip" data-c={c} aria-pressed={c === 'All' ? 'true' : 'false'}>{c}</button>)}
+            </div>
+            <div id="pitList">
+              {PITS.map((p) => (
+                <details class="pit" data-cat={p[1]}>
+                  <summary><span class="num">#{p[0]}</span><span>{p[2]}</span></summary>
+                  <div class="pb"><p>{p[3]}</p><div class="fix"><b>Fix:</b> {p[4]}</div></div>
+                </details>
+              ))}
+              {QUICK.map((q) => (
+                <details class="pit" data-cat="Quick list">
+                  <summary><span class="num">#{q[0]}</span><span>{q[1]}</span></summary>
+                  <div class="pb"><p>{q[2]}</p></div>
+                </details>
+              ))}
+            </div>
+          </section>
+
+          <!-- CHAPTER 2: the arbitrage math -->
+          <section class="ch" id="math">
+            <div class="chnum">Chapter 2</div>
             <h2>The arbitrage math: why this works</h2>
             <p>Geographic arbitrage is not complicated. You earn money in a strong currency and spend it in a weak one. The gap between the two is yours to keep.</p>
             <p>In the United States a $5,000 per month remote income is decent but not free. After rent, car, food, insurance and the constant nickel-and-diming of American life, you are left with maybe $500 in savings if you are disciplined. In the Philippines the same $5,000 stretches so far that the math feels like a cheat code.</p>
@@ -153,7 +186,7 @@ const pbConfig = JSON.stringify({ CONFIG, CITIES, CMP_SC: cmpS });
               <div class="fact"><b>3 to 5x</b><span>Purchasing power multiplier</span></div>
               <div class="fact"><b>{money(ceUsd)}</b><span>My full monthly spend in Cebu</span></div>
             </div>
-            <div class="callout"><h4>The core equation</h4><p>Strong currency income (USD) divided by weak currency expenses (PHP) equals your arbitrage gap. That gap, invested monthly, is how you build real wealth on a normal income.</p></div>
+            <div class="callout"><h4>The core equation</h4><p>Strong currency income (USD) divided by weak currency expenses (PHP) equals your arbitrage gap. That gap, invested monthly, is one way to build wealth on a normal income. I am still rebuilding mine.</p></div>
 
             <h3>The real comparison</h3>
             <div class="tblwrap">
@@ -167,14 +200,14 @@ const pbConfig = JSON.stringify({ CONFIG, CITIES, CMP_SC: cmpS });
                 </tbody>
               </table>
             </div>
-            <p>That is <b>{money(cmpSave)} saved every month</b>, a {cmpPct}% cut in expenses. Invested at 7% annual return for 20 years, that is about <b>{money2(cmpFv)}</b>. Same income, different country. The arbitrage works silently while you live your life.</p>
+            <p>That is <b>{money(cmpSave)} saved every month</b> by this category breakdown, a {cmpPct}% cut in expenses. The fully itemized numbers in the next chapter land on a slightly different total ({money(scTotal)}), since they break out a few extra categories this table groups together.</p>
 
             <ToolPreview tool="calculator" slotLabel="Geo-Arbitrage Calculator" text="The calculator at the top uses city averages. The kit version runs your actual income, your costs and your timeline." linkText="Get the calculator in the kit" />
           </section>
 
-          <!-- CHAPTER 2 -->
+          <!-- CHAPTER 3: my actual numbers -->
           <section class="ch" id="numbers">
-            <div class="chnum">Chapter 2</div>
+            <div class="chnum">Chapter 3</div>
             <h2>My actual numbers: Scottsdale vs Cebu</h2>
             <p>These are not hypothetical. I left Scottsdale in September 2024, and every number below is what I actually spent.</p>
             <h3>Scottsdale, AZ: what I was spending</h3>
@@ -199,17 +232,18 @@ const pbConfig = JSON.stringify({ CONFIG, CITIES, CMP_SC: cmpS });
                 </tbody>
               </table>
             </div>
+            <p>That is <b>{money(scSave)} a month less</b> than Scottsdale, a {scPct}% cut.</p>
           </section>
 
-          <!-- CHAPTER 3 -->
+          <!-- CHAPTER 4: banking -->
           <section class="ch" id="banking">
-            <div class="chnum">Chapter 3</div>
+            <div class="chnum">Chapter 4</div>
             <h2>Banking and money flow</h2>
             <p>I do not use a traditional expat banking setup. I run almost entirely on crypto with a few fiat bridges. This is my actual workflow.</p>
             <ol class="steps">
               <li><h4>Income arrives</h4><p>USD lands by wire, Venmo, CashApp or Moneygram depending on the client. I receive into Chime: no fees, and it works well for remote workers.</p></li>
               <li><h4>Convert to crypto and self-custody</h4><p>Transfer from Chime to Robinhood. Convert USD to Solana or Bitcoin. Send it to my Phantom wallet where I own my own private keys. I keep small amounts on Coinbase for daily spending. Solana clears in 2 seconds on the Coinbase card and I earn 1% back in Bitcoin on every purchase.</p></li>
-              <li><h4>Philippines conversion</h4><p>When I need pesos I convert crypto to PHP through GCash (my wife's account). I cash out at an ATM with her BDO card: an 18 peso fee versus $5 for foreign cards. At sari-sari stores a GCash transfer costs 20 to 50 pesos per 1,000, depending on the store. I rotate between multiple people so no single account gets flagged and limited by GCash.</p></li>
+              <li><h4>Philippines conversion</h4><p>When I need pesos I convert crypto to PHP through GCash (my wife's account). I cash out at an ATM with her BDO card: an 18 peso fee versus $5 for foreign cards. At sari-sari stores a GCash transfer costs 20 to 50 pesos per 1,000, depending on the store.</p></li>
               <li><h4>Backup methods</h4><p>Moneygram direct to BDO for larger transfers. A debit card for online purchases. Wire transfers when needed.</p></li>
               <li><h4>Get pesos before you land</h4><p>Some US banks and currency exchange services let you order Philippine pesos in advance. The rates are not perfect, but cash on arrival removes day-one stress.</p></li>
             </ol>
@@ -223,7 +257,7 @@ const pbConfig = JSON.stringify({ CONFIG, CITIES, CMP_SC: cmpS });
                   <tr><td>Robinhood</td><td>USD to crypto</td><td>Easy interface</td></tr>
                   <tr><td>Phantom Wallet</td><td>Self-custody storage</td><td>Own your keys, own your coins</td></tr>
                   <tr><td>Coinbase</td><td>Daily spending + debit card</td><td>1% Bitcoin back on purchases</td></tr>
-                  <tr><td>GCash (PH)</td><td>Crypto to PHP cash-out</td><td>Wife's account, rotate sari-sari stores</td></tr>
+                  <tr><td>GCash (PH)</td><td>Crypto to PHP cash-out</td><td>Wife's account</td></tr>
                   <tr><td>BDO Bank (PH)</td><td>PHP bank account</td><td>Joint with wife: wire receives, ATM</td></tr>
                   <tr><td>CashApp / Venmo</td><td>Receive from US clients</td><td>Common for freelance</td></tr>
                   <tr><td>Moneygram</td><td>Large USD to BDO transfers</td><td>Good rates for big amounts</td></tr>
@@ -232,9 +266,9 @@ const pbConfig = JSON.stringify({ CONFIG, CITIES, CMP_SC: cmpS });
             </div>
           </section>
 
-          <!-- CHAPTER 4 -->
+          <!-- CHAPTER 5: the move -->
           <section class="ch" id="move">
-            <div class="chnum">Chapter 4</div>
+            <div class="chnum">Chapter 5</div>
             <h2>The move: how I did it</h2>
             <p>I left Scottsdale in September 2024. My daughter's birthday is in September and mine is in October. Those two dates were the deadline that made it real. I sold as much as I could, moved the rest into storage, and left.</p>
             <div class="timeline">
@@ -249,9 +283,9 @@ const pbConfig = JSON.stringify({ CONFIG, CITIES, CMP_SC: cmpS });
             </div>
           </section>
 
-          <!-- CHAPTER 5 -->
+          <!-- CHAPTER 6: city breakdown -->
           <section class="ch" id="cities">
-            <div class="chnum">Chapter 5</div>
+            <div class="chnum">Chapter 6</div>
             <h2>City breakdown: Cebu, Manila, Davao</h2>
             <p>The Philippines is not one cost of living. Where you land changes everything. Here is the breakdown of the three cities most expats consider.</p>
             <div class="cities">
@@ -265,12 +299,12 @@ const pbConfig = JSON.stringify({ CONFIG, CITIES, CMP_SC: cmpS });
                 <dl><dt>Rent</dt><dd>$150 to $350</dd><dt>Food</dt><dd>$80 to $150</dd><dt>Transport</dt><dd>$20 to $50</dd></dl>
                 <div class="tot">$300 to $600</div><div class="best">Best for budget-focused expats who want a quieter life.</div></div>
             </div>
-            <div class="callout"><h4>Galaxy's pick: the mountain behind IT Park</h4><p>I live in the province area behind IT Park, Cebu. It is a Bisaya-speaking community and cheaper than central Cebu: 15,600 pesos per month ($276) for a 4-bedroom house. You trade convenience for savings, and the savings are real.</p></div>
+            <div class="callout"><h4>Galaxy's pick: the mountain behind IT Park</h4><p>I live in the province area behind IT Park, Cebu. It is a Bisaya-speaking community and cheaper than central Cebu: 15,600 pesos per month ($276) for a 4-bedroom house. You trade convenience for savings.</p></div>
           </section>
 
-          <!-- CHAPTER 6 -->
+          <!-- CHAPTER 7: first 90 days -->
           <section class="ch" id="first90">
-            <div class="chnum">Chapter 6</div>
+            <div class="chnum">Chapter 7</div>
             <h2>The first 90 days: what to do and when</h2>
             <p>The first 90 days make or break the move. Most people waste the first month bouncing hotels, overpaying for everything and making expensive mistakes. Here is the optimized sequence. Tick items as you go. Your progress saves on this device.</p>
             <Checklist listKey="first90" groups={CL_A} />
@@ -282,31 +316,7 @@ const pbConfig = JSON.stringify({ CONFIG, CITIES, CMP_SC: cmpS });
             The Southeast Asia Arbitrage Kit: the calculator, the tracker and the checklist that make this playbook executable. One kit, works for any Southeast Asia country.
           </OfferCard>
 
-          <!-- CHAPTER 7 -->
-          <section class="ch" id="pitfalls">
-            <div class="chnum">Chapter 7</div>
-            <h2>47 pitfalls: mistakes that cost real money</h2>
-            <p>These are real mistakes. Some I made personally. All of them cost money, time, or both. Filter by topic and open any one.</p>
-            <div class="sub" id="pitChips" role="group" aria-label="Filter pitfalls">
-              {PIT_CATS.map((c) => <button class="chip" data-c={c} aria-pressed={c === 'All' ? 'true' : 'false'}>{c}</button>)}
-            </div>
-            <div id="pitList">
-              {PITS.map((p) => (
-                <details class="pit" data-cat={p[1]}>
-                  <summary><span class="num">#{p[0]}</span><span>{p[2]}</span></summary>
-                  <div class="pb"><p>{p[3]}</p><div class="fix"><b>Fix:</b> {p[4]}</div></div>
-                </details>
-              ))}
-              {QUICK.map((q) => (
-                <details class="pit" data-cat="Quick list">
-                  <summary><span class="num">#{q[0]}</span><span>{q[1]}</span></summary>
-                  <div class="pb"><p>{q[2]}</p></div>
-                </details>
-              ))}
-            </div>
-          </section>
-
-          <!-- CHAPTER 8 -->
+          <!-- CHAPTER 8: visa reality -->
           <section class="ch" id="visa">
             <div class="chnum">Chapter 8</div>
             <h2>Visa reality: tourist, ACR, spousal</h2>
@@ -325,22 +335,23 @@ const pbConfig = JSON.stringify({ CONFIG, CITIES, CMP_SC: cmpS });
                 <p>Available at 35 and older with $20,000 to $50,000 deposited in a Philippine bank. Permanent residency while the deposit is maintained.</p>
                 <p class="take"><b>Galaxy's take:</b> Not relevant for most remote income builders. More relevant if you are moving savings here long-term.</p></div>
             </div>
+            <p class="note">Verify every figure and requirement here directly with the Bureau of Immigration before acting on it.</p>
           </section>
 
-          <!-- CHAPTER 9 -->
+          <!-- CHAPTER 9: remote income -->
           <section class="ch" id="income">
             <div class="chnum">Chapter 9</div>
             <h2>Remote income: keeping USD coming in</h2>
-            <p>The arbitrage only works if the USD keeps coming in. In Cebu, $2,000 per month puts you ahead of almost everyone. Here is how to build and protect remote income from abroad.</p>
+            <p>The arbitrage only works if the USD keeps coming in. Here is how to build and protect remote income from abroad.</p>
             <div class="cards2">
               <div class="icard"><span class="tag">Highest reliability</span><h3>Service business</h3><p>Sell a skill directly to US clients: copywriting, design, development, consulting, cold calling, lead gen. You own the client relationship and income is predictable.</p><p class="take"><b>Galaxy:</b> GalaxyConverts does landing page audits and rebuilds for US local businesses at $500 to $1,500 per project. Cold calling is the acquisition method and no paid ads are needed to start.</p></div>
-              <div class="icard"><span class="tag">Highest leverage</span><h3>Newsletter and media</h3><p>Build an owned audience and monetize it through digital products, affiliates and sponsorships. It scales without your time.</p><p class="take"><b>Galaxy:</b> Galaxy Arbitrage Weekly is this play in real time. It takes time to build but the ceiling is unlimited. Start your audience now and monetize once you have trust.</p></div>
+              <div class="icard"><span class="tag">Highest leverage</span><h3>Newsletter and media</h3><p>Build an owned audience and monetize it through digital products, affiliates and sponsorships. It scales without your time.</p><p class="take"><b>Galaxy:</b> Galaxy Arbitrage Weekly is this play in real time. It takes time to build, and I am building it while rebuilding everything else.</p></div>
               <div class="icard"><span class="tag">Best passive income</span><h3>Digital products</h3><p>Build once, sell forever: calculators, templates, playbooks, guides. No fulfillment, and Stripe handles delivery.</p><p class="take"><b>Galaxy:</b> This playbook is one. The Southeast Asia Arbitrage Kit is more of them. Every newsletter issue creates content that can become a product.</p></div>
               <div class="icard"><span class="tag">Revenue multiplier</span><h3>Affiliate income</h3><p>Refer people to services you already use, such as SafetyWing, Wise and Revolut, for 20 to 30% commission on recurring subscriptions.</p><p class="take"><b>Galaxy:</b> Layer this on top of your content. Do not build a business on affiliate income alone. It is a multiplier, not a foundation.</p></div>
             </div>
           </section>
 
-          <!-- CHAPTER 10 -->
+          <!-- CHAPTER 10: the 30-day plan -->
           <section class="ch" id="plan">
             <div class="chnum">Chapter 10</div>
             <h2>The action plan: your next 30 days</h2>
@@ -354,10 +365,10 @@ const pbConfig = JSON.stringify({ CONFIG, CITIES, CMP_SC: cmpS });
               <Checklist listKey={`plan-${k}`} groups={[{ g: v.label, items: v.items }]} hidden={i !== 0} />
             ))}
 
-            <ToolPreview tool="tracker" slotLabel="Income and Expense Tracker" text="Track every peso from day one and watch your arbitrage gap compound each month." linkText="Get the tracker in the kit" />
+            <ToolPreview tool="tracker" slotLabel="Income and Expense Tracker" text="Track every peso from day one and watch your arbitrage gap move, up or down." linkText="Get the tracker in the kit" />
 
             <div class="callout">
-              <p><b>This is the playbook I wish existed when I landed.</b> I left Scottsdale with a storage unit full of stuff I could not sell fast enough, a one-way ticket through Tokyo, and a year of planning behind me. The math worked. The move worked. The life is real. The tools in the kit are the ones I built for myself first.</p>
+              <p><b>This is the playbook I wish existed before I moved.</b> I still lost the money. I am rebuilding, in public, one newsletter issue at a time. The tools in the kit are the ones I built for myself first.</p>
               <p>Galaxy Arbitrage Weekly drops every Tuesday.</p>
               <p>- Galaxy (Tony Long II), Cebu, Philippines</p>
             </div>
@@ -384,10 +395,10 @@ const pbConfig = JSON.stringify({ CONFIG, CITIES, CMP_SC: cmpS });
           </div>
         </div>
       </div>
-    </div>
-  </div>
+    </main>
 
-  <script>
-    import '../../scripts/playbook-client';
-  </script>
-</Layout>
+    <script>
+      import '../../scripts/playbook-client';
+    </script>
+  </body>
+</html>
