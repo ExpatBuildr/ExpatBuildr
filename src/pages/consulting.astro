@@ -9,14 +9,11 @@
 // :root holds the light palette, html.dark overrides it, no forced JS override.
 import Layout from '../layouts/Layout.astro';
 
-// The old Stripe Payment Link charges $297. A $150 page must use a $150 Payment
-// Link. Create one in Stripe, set its post-payment redirect to /consulting/booked,
-// and paste it into STRIPE_PAYMENT_LINK. Keep the old URL in a comment for
-// reference. Keep CONSULTING_PRICE in sync with the homepage.
-// Old $297 link, repriced to $150 directly in Stripe (kept the same URL):
+// New $150 consulting Payment Link. Keep CONSULTING_PRICE in sync with the homepage.
+// Prior link (was $297, then repriced to $150 directly in Stripe, no longer used):
 // https://book.stripe.com/6oU3cu7WLf2afVU4yQ2oE0l
 const CONSULTING_PRICE = 150;
-const STRIPE_PAYMENT_LINK = "https://book.stripe.com/6oU3cu7WLf2afVU4yQ2oE0l";
+const STRIPE_PAYMENT_LINK = "https://buy.stripe.com/fZu28q3Gvf2a6lkaXe2oE0n";
 
 const title = "1-on-1 Consulting Call | ExpatBuildr";
 const description = `Book a 1-on-1 call about moving to Southeast Asia. Your real numbers, your real risks. $${CONSULTING_PRICE} for 60 minutes.`;
