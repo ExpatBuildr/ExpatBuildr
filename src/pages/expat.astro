@@ -1,0 +1,658 @@
+---
+// src/pages/expat.astro
+// The "expat door": the Expat Runway Check, for people ALREADY living in Southeast Asia.
+// Flow: story hook -> free Runway Check (result visible with no signup) -> email unlocks the fixes
+//       -> tracker in the kit ($65) or a consulting call ($150).
+// Needs: src/components/GalaxyPixels.astro (same one /playbook uses) and src/data/playbook-data.ts (CONFIG).
+import Pixels from '../components/GalaxyPixels.astro';
+import { CONFIG } from '../data/playbook-data';
+
+const CONSULTING_PRICE = 150; // keep in sync with /consulting and the homepage
+const KIT_URL = CONFIG.KIT_URL;
+const KIT_PRICE = CONFIG.KIT_PRICE;
+
+const CATS = [
+  { id: 'rent', label: 'Rent' },
+  { id: 'food', label: 'Food and groceries' },
+  { id: 'transport', label: 'Transport' },
+  { id: 'phone', label: 'Phone' },
+  { id: 'internet', label: 'Internet' },
+  { id: 'electric', label: 'Electric and utilities' },
+  { id: 'fun', label: 'Entertainment' },
+  { id: 'other', label: 'Everything else' },
+];
+
+// Ranges come from Chapter 5 of the playbook: my own estimates for one setup, in USD per month.
+const BENCH = {
+  cebu:   { name: 'Cebu City',    total: [500, 900],   rent: [250, 500], food: [120, 200], transport: [30, 80] },
+  manila: { name: 'Metro Manila', total: [800, 1400],  rent: [400, 800], food: [200, 350], transport: [50, 100] },
+  davao:  { name: 'Davao City',   total: [300, 600],   rent: [150, 350], food: [80, 150],  transport: [20, 50] },
+};
+// My own Cebu numbers, shown as a reference point only (not a range, not a verdict).
+const MINE = {
+  phone: [28, '3 SIMs'],
+  internet: [27, 'home fiber'],
+  electric: [110, 'one AC unit is about 4,000p'],
+  fun: [50, ''],
+};
+
+// ph: true means the leak only applies to the Philippines.
+const LEAKS = [
+  { id: 'atm', ph: true, title: 'Using a foreign debit card at ATMs',
+    why: 'Most Philippine banks charge about $5 per withdrawal for foreign cards. Four withdrawals a month is about $20.',
+    fix: "Use a local partner's card (an 18p fee versus $5). GCash cash-out at sari-sari stores is often cheaper, about 50p per 1,000p." },
+  { id: 'phone', ph: false, title: 'Still paying a US phone plan',
+    why: 'My $155 T-Mobile bill was almost as much as my Cebu rent.',
+    fix: 'Keep it only for your layover, then cancel it. A local SIM costs far less. In Cebu my three SIMs cost $28 a month.' },
+  { id: 'airport', ph: false, title: 'Converting money at airport counters',
+    why: 'Airport exchange rates run 10 to 15% worse than the market rate.',
+    fix: 'Use an ATM or a transfer service such as Wise. Avoid the counter for large amounts.' },
+  { id: 'wu', ph: true, title: 'Sending money with Western Union',
+    why: 'It costs more than the alternatives for regular transfers.',
+    fix: 'GCash, Wise or a wire are cheaper for regular transfers.' },
+  { id: 'airbnb', ph: true, title: 'Long stays on Airbnb',
+    why: 'Airbnb 30-day rates run 30 to 40% higher than direct Facebook Marketplace rentals.',
+    fix: 'Use Airbnb for the first month, then rent direct. Offer 10 to 15% less and commit to six months as leverage.' },
+  { id: 'westernfood', ph: true, title: 'Eating Western food most meals',
+    why: 'Western restaurant food can run $30 to $50 a day.',
+    fix: 'Find your nearest palengke (wet market). Rice, protein and vegetables run about 150p per person per day.' },
+  { id: 'electric', ph: true, title: 'Not watching the electric bill',
+    why: 'One AC unit runs around 4,000p a month, and reconnection fees after a cutoff can spike the bill.',
+    fix: 'Ask for the last three bills before renting and budget for AC realistically.' },
+  { id: 'expedite', ph: true, title: 'Paying forced expedited immigration fees',
+    why: 'Immigration offices now charge for expedited processing by default, even if you did not select it.',
+    fix: 'Budget 2,000p extra per renewal as a buffer, and renew well before expiry.' },
+  { id: 'acr', ph: true, title: 'No ACR I-Card yet',
+    why: 'Without it you renew your visa every 1 to 2 months, and the card is forced on you after 59 days anyway.',
+    fix: 'Apply as soon as you have a permanent address. It unlocks 6-month renewals.' },
+  { id: 'overstay', ph: true, title: 'Cutting visa renewals close',
+    why: 'Overstays incur 500p per month plus escalating fees, and you cannot leave the country until you settle.',
+    fix: 'Set a calendar reminder three weeks before expiry.' },
+  { id: 'cash', ph: false, title: 'No liquid cash buffer',
+    why: 'A first apartment can need two months deposit plus one month advance, and cash in crypto or stocks is not liquid when you need it.',
+    fix: 'Hold at least two months of expenses in accessible cash.' },
+  { id: 'notrack', ph: false, title: 'Not tracking spending monthly',
+    why: 'If you cannot see the gap, you cannot tell what is leaking.',
+    fix: 'Write down every expense for one month. A tracker makes it automatic.' },
+  { id: 'oneincome', ph: false, title: 'Relying on one income source',
+    why: 'Remote income fluctuates. One lean month is recoverable. An ongoing one is stressful.',
+    fix: 'Start building a second stream, even a small one.' },
+];
+
+const pageData = JSON.stringify({ BENCH, MINE, LEAKS, CATS });
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<title>Expat Runway Check: How Many Months Can You Stay? | ExpatBuildr</title>
+<meta name="description" content="A free two-minute runway check for expats already living in Southeast Asia. See how many months your cash lasts and where it leaks. No signup to see your result.">
+<meta property="og:title" content="Already living in Southeast Asia? Check your runway.">
+<meta property="og:description" content="A free two-minute runway check built from my own numbers and the mistakes I paid for.">
+<meta property="og:type" content="website">
+<Pixels page="expat-runway-check" magnet="expat-runway-check" source="expat" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<script is:inline type="application/json" id="chk-data" set:html={pageData}></script>
+<style>
+:root{
+  --paper:#F3F6F8; --card:#FFFFFF; --ink:#12283A; --muted:#566676; --line:#D3DDE4; --soft:#E9EFF3;
+  --blue:#1F5FA8; --blue-ink:#FFFFFF; --gold:#EBAA1E; --gold-ink:#1C1500;
+  --green:#1F7A55; --red:#B63D2A; --amberbg:#FBF0D6;
+  --head:"Bricolage Grotesque","Helvetica Neue",Arial,sans-serif;
+  --body:"Source Serif 4",Georgia,"Times New Roman",serif;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --paper:#0D1822; --card:#14232F; --ink:#E7EEF4; --muted:#9DB0BF; --line:#25394A; --soft:#1A2C3A;
+    --blue:#2A6DB8; --gold:#F0B93A; --green:#5FC79A; --red:#E58774; --amberbg:#2B2412;
+  }
+}
+*,*::before,*::after{box-sizing:border-box}
+[hidden]{display:none!important}
+html{scroll-padding-top:16px}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:18px;line-height:1.65;-webkit-text-size-adjust:100%}
+h1,h2,h3,h4{font-family:var(--head);line-height:1.12;margin:0 0 .5em;letter-spacing:-.01em}
+h1{font-size:clamp(2.1rem,6vw,3.4rem);font-weight:800}
+h2{font-size:clamp(1.5rem,3.6vw,2.1rem);font-weight:800}
+h3{font-size:1.15rem;font-weight:600}
+p{margin:0 0 1em;max-width:66ch}
+a{color:var(--blue)}
+:focus-visible{outline:3px solid var(--gold);outline-offset:2px;border-radius:4px}
+button,input,select{font:inherit;color:inherit}
+#progress{position:fixed;top:0;left:0;height:3px;width:0;background:var(--gold);z-index:50}
+.wrap{max-width:860px;margin:0 auto;padding:0 18px}
+.top{border-bottom:1px solid var(--line)}
+.top-in{max-width:860px;margin:0 auto;padding:12px 18px;display:flex;justify-content:space-between;align-items:center;gap:12px;font-family:var(--head)}
+.brand{font-weight:800;font-size:.95rem;text-decoration:none;color:var(--ink)}
+.top a.alt{font-size:.88rem}
+.hero{padding:40px 0 12px}
+.byline{font-family:var(--head);color:var(--muted);font-size:.95rem}
+.note{font-family:var(--head);font-size:.82rem;color:var(--muted);line-height:1.45}
+
+.step{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px;margin:18px 0}
+.step h2{font-size:1.3rem;margin-bottom:.2em}
+.stepnum{font-family:var(--head);font-weight:600;color:var(--blue);font-size:.9rem;margin-bottom:4px}
+label.lbl{display:block;font-family:var(--head);font-weight:600;font-size:.92rem;margin:14px 0 6px}
+select,input[type=number],input[type=email]{width:100%;padding:11px 12px;border:1px solid var(--line);border-radius:8px;background:var(--paper);font-family:var(--head)}
+.row2{display:grid;grid-template-columns:1fr;gap:12px}
+@media(min-width:640px){.row2{grid-template-columns:1fr 1fr}}
+.cat{display:grid;grid-template-columns:1fr;gap:4px;padding:10px 0;border-bottom:1px solid var(--line)}
+.cat:last-of-type{border-bottom:0}
+.cat .nm{font-family:var(--head);font-weight:600;font-size:.95rem}
+.inwrap{position:relative}
+.inwrap .pre{position:absolute;left:12px;top:50%;transform:translateY(-50%);font-family:var(--head);color:var(--muted)}
+.inwrap input{padding-left:28px}
+.hint{font-family:var(--head);font-size:.8rem;color:var(--muted);min-height:1.1em}
+@media(min-width:640px){.cat{grid-template-columns:1.1fr 1fr 1.2fr;align-items:center;gap:14px}.hint{text-align:right}}
+.totalrow{display:flex;justify-content:space-between;align-items:baseline;font-family:var(--head);padding-top:12px;margin-top:6px;border-top:2px solid var(--line)}
+.totalrow b{font-size:1.5rem}
+.curtog{display:flex;gap:14px;flex-wrap:wrap;align-items:center;font-family:var(--head);font-size:.92rem}
+.curtog label{display:inline-flex;gap:6px;align-items:center;cursor:pointer}
+.leak{display:flex;gap:12px;align-items:flex-start;padding:10px 0;border-bottom:1px solid var(--line);cursor:pointer;line-height:1.45}
+.leak:last-child{border-bottom:0}
+.leak input{flex:0 0 22px;width:22px;height:22px;margin-top:3px;accent-color:var(--green)}
+.leak span{font-size:1rem}
+.btn{display:inline-block;background:var(--gold);color:var(--gold-ink);font-family:var(--head);font-weight:800;text-decoration:none;padding:14px 22px;border-radius:10px;border:0;cursor:pointer;font-size:1rem}
+.btn:disabled{opacity:.5;cursor:not-allowed}
+.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--ink)}
+.cta-row{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-top:8px}
+
+/* result: banknote panel */
+.bill{background:var(--blue);color:var(--blue-ink);border-radius:14px;padding:22px;margin:18px 0;
+  background-image:repeating-radial-gradient(circle at 100% 0,rgba(255,255,255,.07) 0 2px,transparent 2px 14px)}
+.bill .lbl2{font-family:var(--head);font-size:.85rem;opacity:.85}
+.bill .big{font-family:var(--head);font-weight:800;font-size:clamp(2.2rem,8vw,3.2rem);line-height:1.05}
+.bill .sum{font-family:var(--head);margin-top:10px;font-size:1rem}
+.bill .grid{display:grid;grid-template-columns:1fr;gap:14px;margin-top:16px;padding-top:14px;border-top:1px solid rgba(255,255,255,.28)}
+@media(min-width:560px){.bill .grid{grid-template-columns:repeat(3,1fr)}}
+.bill .sum+.sum{margin-top:4px;opacity:.92}
+.bill .mid{font-family:var(--head);font-weight:800;font-size:1.3rem}
+.tblwrap{overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:var(--card);margin:14px 0}
+table{border-collapse:collapse;width:100%;min-width:460px;font-family:var(--head);font-size:.92rem}
+th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line)}
+th{background:var(--soft);font-weight:600}
+td.n,th.n{text-align:right;white-space:nowrap}
+tr:last-child td{border-bottom:0}
+.chip{display:inline-block;font-family:var(--head);font-size:.76rem;font-weight:600;border-radius:999px;padding:2px 10px;background:var(--soft)}
+.chip.above{background:var(--amberbg);color:var(--ink)}
+.chip.within{background:rgba(31,122,85,.15);color:var(--green)}
+.chip.below{background:var(--soft);color:var(--muted)}
+.leakres{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin:10px 0}
+.leakres h4{margin:0 0 .2em;font-size:1rem}
+.leakres p{margin:0 0 .4em;font-size:.97rem}
+.leakres .fixbox{background:var(--soft);border-radius:8px;padding:9px 12px;margin-top:6px;font-size:.97rem}
+.leakres .fixbox b{font-family:var(--head);color:var(--green)}
+.gate{background:var(--card);border:2px solid var(--gold);border-radius:14px;padding:20px;margin:18px 0}
+.gate form{display:flex;gap:10px;flex-wrap:wrap;margin-top:8px}
+.gate input[type=email]{flex:1;min-width:220px}
+.gerr{color:var(--red);font-family:var(--head);font-size:.88rem;margin-top:8px}
+.ok{color:var(--green);font-family:var(--head);font-weight:600}
+
+/* offers */
+.offer{border-radius:16px;padding:24px;margin:24px 0}
+.offer.kit{background:var(--blue);color:var(--blue-ink);
+  background-image:repeating-radial-gradient(circle at 100% 0,rgba(255,255,255,.07) 0 2px,transparent 2px 16px)}
+.offer.kit h2{color:inherit}
+.offer.call{background:var(--card);border:1px solid var(--line)}
+.slot{aspect-ratio:16/8;display:grid;place-items:center;text-align:center;padding:12px;border:2px dashed rgba(255,255,255,.5);border-radius:10px;margin:12px 0;font-family:var(--head);font-size:.9rem;opacity:.9}
+.slot img{width:100%;height:100%;object-fit:cover;border-radius:8px}
+.who{font-family:var(--head);font-size:.92rem;opacity:.92}
+.door{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 18px;margin:24px 0;font-family:var(--head)}
+footer{margin:48px 0 40px;font-family:var(--head);font-size:.85rem;color:var(--muted)}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<div id="progress" aria-hidden="true"></div>
+
+<header class="top">
+  <div class="top-in">
+    <a class="brand" href="https://expatbuildr.com">ExpatBuildr</a>
+    <a class="alt" href="/playbook" data-track="door_to_playbook">Still in the US? Start with the playbook</a>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="hero">
+    <h1>Already living in Southeast Asia? Check your runway.</h1>
+    <p>I lost $300K, then the $60K I took to Cebu. I'm rebuilding in public from Cebu. This check shows how many months your cash lasts and where it leaks, using my own numbers and the mistakes I paid for. It takes about two minutes.</p>
+    <p class="byline">By Galaxy (Tony Long II). You see your result first. No signup to see it.</p>
+  </section>
+
+  <!-- STEP 1 -->
+  <section class="step" id="check" aria-labelledby="s1">
+    <div class="stepnum">Step 1 of 2</div>
+    <h2 id="s1">Where you live and what you spend</h2>
+    <p class="note">Enter a typical month. Round numbers are fine. Nothing here leaves your device until you choose to sign up.</p>
+
+    <label class="lbl" for="loc">Where do you live?</label>
+    <select id="loc">
+      <option value="" selected disabled>Choose one</option>
+      <option value="cebu">Cebu City</option>
+      <option value="manila">Metro Manila</option>
+      <option value="davao">Davao City</option>
+      <option value="otherph">Somewhere else in the Philippines</option>
+      <option value="otherasia">Another Southeast Asia country</option>
+    </select>
+
+    <div id="curRow" hidden>
+      <label class="lbl">Which currency are you entering?</label>
+      <div class="curtog">
+        <label><input type="radio" name="cur" value="usd" checked> US dollars</label>
+        <label><input type="radio" name="cur" value="php"> Philippine pesos</label>
+        <span id="rateWrap" hidden>
+          <label for="rate" class="sr" style="position:absolute;left:-9999px">Pesos per dollar</label>
+          at <input type="number" id="rate" value="61" min="40" max="80" step="0.5" inputmode="decimal" style="width:90px;display:inline-block"> pesos per $1
+        </span>
+      </div>
+    </div>
+
+    <label class="lbl" for="income">Monthly income in US dollars (optional)</label>
+    <div class="inwrap"><span class="pre">$</span><input type="number" id="income" min="0" step="50" inputmode="decimal" placeholder="Leave blank to skip"></div>
+
+    <label class="lbl" for="savings">Liquid cash you could use, in US dollars (optional, this gives you your runway)</label>
+    <div class="inwrap"><span class="pre">$</span><input type="number" id="savings" min="0" step="100" inputmode="decimal" placeholder="Cash you could reach in days"></div>
+    <p class="note" style="margin-top:6px">Leave out crypto, stocks and anything you could not get at quickly.</p>
+
+    <h3 style="margin-top:22px">Monthly spending</h3>
+    {CATS.map((c) => (
+      <div class="cat">
+        <label class="nm" for={`c-${c.id}`}>{c.label}</label>
+        <div class="inwrap"><span class="pre cur-pre">$</span><input type="number" id={`c-${c.id}`} data-cat={c.id} min="0" step="5" inputmode="decimal" placeholder="0"></div>
+        <div class="hint" id={`hint-${c.id}`}></div>
+      </div>
+    ))}
+    <div class="totalrow"><span>Total per month</span><b id="totalOut">$0</b></div>
+  </section>
+
+  <!-- STEP 2 -->
+  <section class="step" aria-labelledby="s2">
+    <div class="stepnum">Step 2 of 2</div>
+    <h2 id="s2">Which of these sound like you?</h2>
+    <p class="note">Tick any that apply. These are mistakes that cost me real money.</p>
+    <div id="leakList">
+      {LEAKS.map((l) => (
+        <label class="leak" data-ph={l.ph ? '1' : '0'} data-id={l.id}>
+          <input type="checkbox" data-leak={l.id}>
+          <span>{l.title}</span>
+        </label>
+      ))}
+    </div>
+    <div class="cta-row">
+      <button type="button" class="btn" id="seeBtn" disabled>See my result</button>
+      <span class="note" id="seeHelp">Choose where you live and enter at least one amount.</span>
+    </div>
+  </section>
+
+  <!-- RESULT -->
+  <section id="result" hidden aria-live="polite">
+    <div class="bill">
+      <div class="lbl2" id="rBigLbl">Your monthly spending</div>
+      <div class="big" id="rTotal">$0</div>
+      <div class="sum" id="rSummary"></div>
+      <div class="sum" id="rRunNote"></div>
+      <div class="sum" id="rRange" hidden></div>
+      <div class="grid">
+        <div><div class="lbl2">Monthly spending</div><div class="mid" id="rSpend">-</div></div>
+        <div><div class="lbl2">Biggest line</div><div class="mid" id="rBiggest">-</div></div>
+        <div><div class="lbl2" id="rKeepLbl">What you keep each month</div><div class="mid" id="rKeep">-</div></div>
+      </div>
+    </div>
+
+    <div class="tblwrap"><table>
+      <thead><tr><th>Category</th><th class="n">You</th><th>Compared with</th><th>Where you sit</th></tr></thead>
+      <tbody id="rRows"></tbody>
+    </table></div>
+    <p class="note" id="rNote"></p>
+
+    <h2 id="rLeakHead" style="margin-top:28px"></h2>
+    <div id="rLeaks"></div>
+
+    <div class="gate" id="gate" hidden>
+      <h3 id="gateHead">Unlock the fix for each leak</h3>
+      <p id="gateSub" style="margin:0 0 4px">Enter your email to see the fixes. Your email joins Galaxy Arbitrage Weekly, free, one arbitrage angle every Tuesday. Unsubscribe anytime.</p>
+      <form id="gateForm" novalidate>
+        <input type="email" id="gateEmail" placeholder="you@email.com" autocomplete="email" required aria-label="Your email">
+        <button type="submit" class="btn" id="gateBtn">Show me the fixes</button>
+      </form>
+      <div class="gerr" id="gateErr" hidden></div>
+    </div>
+    <div class="ok" id="gateOk" hidden></div>
+
+    <aside class="offer kit" data-offer="result_kit" style="margin-top:28px">
+      <h2>Check your runway every month.</h2>
+      <p>The tracker in the Southeast Asia Arbitrage Kit does what this check does once, every month, so you can watch your runway and your gap move. <b>${KIT_PRICE}</b></p>
+      <p class="who">For people who are in Southeast Asia or about to move and want their numbers in one place.</p>
+      <a class="btn kit-link" data-pos="result_kit" href={KIT_URL} target="_blank" rel="noopener">Get the kit</a>
+    </aside>
+  </section>
+
+  <!-- ALWAYS-VISIBLE OFFERS -->
+  <aside class="offer kit" data-offer="bottom_kit">
+    <h2>Put all your numbers in one place.</h2>
+    <p>The Southeast Asia Arbitrage Kit: the calculator, the tracker and the checklist from the playbook, in one kit that works for any Southeast Asia country. <b>${KIT_PRICE}</b></p>
+    <figure data-tool="tracker" style="margin:0">
+      <div class="slot">Screenshot slot: Income and Expense Tracker</div>
+    </figure>
+    <p class="who">For people who are in Southeast Asia or about to move and want their numbers in one place.</p>
+    <a class="btn kit-link" data-pos="bottom_kit" href={KIT_URL} target="_blank" rel="noopener">Get the kit</a>
+  </aside>
+
+  <aside class="offer call" data-offer="bottom_call">
+    <h2>Stuck? Talk it through.</h2>
+    <p>A 60-minute one-on-one call about your numbers, your visa path and your plan. It's advice from what I've been through, not legal, tax or visa advice, and not a service I build for you. <b>${CONSULTING_PRICE}</b></p>
+    <a class="btn ghost" id="callLink" href="/consulting">Book a call</a>
+  </aside>
+
+  <div class="door">Still in the US and planning the move? <a href="/playbook" data-track="door_to_playbook">Start with the free Philippines playbook</a>.</div>
+
+  <footer>
+    <p>Educational only, not financial, legal or tax advice. The ranges are my own estimates for one setup, they do not adjust for household size, and they change over time. Treat them as a rough compass, not a verdict. Verify visa rules and fees with the official source before you act.</p>
+    <p>Galaxy (Tony Long II) · ExpatBuildr · 2026</p>
+  </footer>
+</main>
+
+<script>
+/* Expat Money Check. Everything runs in the browser. Events go to PostHog or Plausible if present.
+   Events: page_view, scroll_25/50/75/100, time_30s/60s/120s/300s, check_started, check_completed,
+   leaks_flagged, lead_captured, fixes_unlocked, offer_view, cta_click, checkout_click, consulting_click,
+   door_to_playbook. Exact spending amounts are never sent, only a rough bucket. */
+
+const DATA = JSON.parse(document.getElementById('chk-data').textContent || '{}');
+const BENCH = DATA.BENCH, MINE = DATA.MINE, LEAKS = DATA.LEAKS, CATS = DATA.CATS;
+const PH_LOCS = ['cebu', 'manila', 'davao', 'otherph'];
+
+/* ---------- tracking ---------- */
+const fired = {};
+function track(name, props) {
+  props = props || {};
+  try {
+    if (window.plausible) window.plausible(name, { props: props });
+    if (window.posthog && window.posthog.capture) window.posthog.capture(name, props);
+  } catch (e) { /* analytics must never break the page */ }
+  (window.__events = window.__events || []).push({ name: name, props: props, t: Date.now() });
+}
+function once(name, props) {
+  const k = name + JSON.stringify(props || {});
+  if (fired[k]) return;
+  fired[k] = true;
+  track(name, props);
+}
+function load(key, fb) { try { const r = localStorage.getItem(key); return r ? JSON.parse(r) : fb; } catch (e) { return fb; } }
+function save(key, v) { try { localStorage.setItem(key, JSON.stringify(v)); } catch (e) { /* ignore */ } }
+
+const qs = new URLSearchParams(location.search);
+const entry = qs.get('ref') || qs.get('stage') || 'link';
+const source = qs.get('utm_source') || 'direct';
+
+const $ = (id) => document.getElementById(id);
+const money = (n) => '$' + Math.round(n).toLocaleString('en-US');
+const num = (el) => { const v = parseFloat(el.value); return isFinite(v) && v > 0 ? v : 0; };
+const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+
+/* ---------- state ---------- */
+const loc = $('loc'), income = $('income'), savings = $('savings'), rate = $('rate');
+const catInputs = Array.prototype.slice.call(document.querySelectorAll('input[data-cat]'));
+const leakBoxes = Array.prototype.slice.call(document.querySelectorAll('input[data-leak]'));
+let unlocked = !!load('gan_expat_unlocked', false);
+
+const isPH = () => PH_LOCS.indexOf(loc.value) > -1;
+const currency = () => (document.querySelector('input[name="cur"]:checked') || { value: 'usd' }).value;
+const toUsd = (v) => (isPH() && currency() === 'php') ? v / (parseFloat(rate.value) || 61) : v;
+
+function spendUsd() {
+  const out = {}; let total = 0;
+  catInputs.forEach((i) => { const v = toUsd(num(i)); out[i.dataset.cat] = v; total += v; });
+  return { by: out, total: total };
+}
+function bucket(t) { return t < 500 ? 'under_500' : t < 1000 ? '500_999' : t < 2000 ? '1000_1999' : '2000_plus'; }
+
+/* ---------- live form updates ---------- */
+function updateHints() {
+  const b = BENCH[loc.value];
+  CATS.forEach((c) => {
+    const el = $('hint-' + c.id); let t = '';
+    if (b && b[c.id]) t = 'My range for ' + b.name + ': $' + b[c.id][0] + ' to $' + b[c.id][1];
+    else if (isPH() && MINE[c.id]) t = 'My Cebu number: $' + MINE[c.id][0] + (MINE[c.id][1] ? ' (' + MINE[c.id][1] + ')' : '');
+    el.textContent = t;
+  });
+}
+function updateCurrency() {
+  $('curRow').hidden = !isPH();
+  const php = isPH() && currency() === 'php';
+  $('rateWrap').hidden = !php;
+  document.querySelectorAll('.cur-pre').forEach((p) => { p.textContent = php ? '₱' : '$'; });
+}
+function updateLeaks() {
+  document.querySelectorAll('#leakList .leak').forEach((row) => {
+    const hide = row.dataset.ph === '1' && !isPH();
+    row.hidden = hide;
+    if (hide) { const cb = row.querySelector('input'); if (cb) cb.checked = false; }
+  });
+}
+function updateTotal() {
+  const s = spendUsd();
+  const php = isPH() && currency() === 'php';
+  $('totalOut').textContent = money(s.total) + (php ? ' (converted)' : '');
+  const ok = !!loc.value && s.total > 0;
+  $('seeBtn').disabled = !ok;
+  $('seeHelp').hidden = ok;
+}
+function persist() {
+  const st = { loc: loc.value, income: income.value, savings: savings.value, cur: currency(), rate: rate.value, cats: {}, leaks: [] };
+  catInputs.forEach((i) => { st.cats[i.dataset.cat] = i.value; });
+  leakBoxes.forEach((b) => { if (b.checked) st.leaks.push(b.dataset.leak); });
+  save('gan_expat_check', st);
+}
+function refresh() { updateCurrency(); updateHints(); updateLeaks(); updateTotal(); persist(); }
+
+function started() { once('check_started', { entry: entry }); }
+loc.addEventListener('change', () => { started(); refresh(); });
+income.addEventListener('input', () => { started(); persist(); });
+savings.addEventListener('input', () => { started(); persist(); });
+rate.addEventListener('input', refresh);
+document.querySelectorAll('input[name="cur"]').forEach((r) => r.addEventListener('change', refresh));
+catInputs.forEach((i) => i.addEventListener('input', () => { started(); refresh(); }));
+leakBoxes.forEach((b) => b.addEventListener('change', () => { started(); persist(); }));
+
+/* restore */
+(function restore() {
+  const st = load('gan_expat_check', null);
+  if (!st) { refresh(); return; }
+  if (st.loc) loc.value = st.loc;
+  if (st.income) income.value = st.income;
+  if (st.savings) savings.value = st.savings;
+  if (st.rate) rate.value = st.rate;
+  const radio = document.querySelector('input[name="cur"][value="' + (st.cur || 'usd') + '"]');
+  if (radio) radio.checked = true;
+  catInputs.forEach((i) => { if (st.cats && st.cats[i.dataset.cat]) i.value = st.cats[i.dataset.cat]; });
+  refresh();
+  leakBoxes.forEach((b) => { if (st.leaks && st.leaks.indexOf(b.dataset.leak) > -1 && !b.closest('.leak').hidden) b.checked = true; });
+})();
+
+/* ---------- result ---------- */
+function status(v, range) {
+  if (!range || v <= 0) return '';
+  if (v < range[0]) return '<span class="chip below">Below my range</span>';
+  if (v > range[1]) return '<span class="chip above">Above my range</span>';
+  return '<span class="chip within">Within my range</span>';
+}
+
+function showResult() {
+  const s = spendUsd(), b = BENCH[loc.value];
+  const flagged = LEAKS.filter((l) => {
+    const cb = document.querySelector('input[data-leak="' + l.id + '"]');
+    return cb && cb.checked && !cb.closest('.leak').hidden;
+  });
+
+  const sav = num(savings), inc = num(income);
+  const fmtMonths = (mo) => mo >= 36 ? '36+ months' : (Math.round(mo * 10) / 10) + (Math.round(mo * 10) / 10 === 1 ? ' month' : ' months');
+  const lasts = (mo) => mo >= 36 ? 'more than 36 months' : 'about ' + fmtMonths(mo);
+
+  // range sentence
+  let rangeSentence = '';
+  if (b) {
+    const st = s.total < b.total[0] ? 'below' : s.total > b.total[1] ? 'above' : 'within';
+    rangeSentence = 'Your spending is ' + st + ' the range I use for ' + b.name + ' (' + money(b.total[0]) + ' to ' + money(b.total[1]) + ' a month).';
+  } else {
+    rangeSentence = 'I only have verified ranges for Cebu, Manila and Davao so far. Here is your breakdown and your leaks.';
+  }
+
+  $('rSpend').textContent = money(s.total);
+  let runBucket = 'none';
+  if (sav > 0) {
+    const months = sav / s.total;
+    runBucket = months < 2 ? 'under_2' : months < 6 ? '2_to_6' : months < 12 ? '6_to_12' : '12_plus';
+    $('rBigLbl').textContent = 'Your runway if income stopped';
+    $('rTotal').textContent = months >= 36 ? '36+ months' : fmtMonths(months);
+    $('rSummary').textContent = 'At ' + money(s.total) + ' a month, ' + money(sav) + ' in liquid cash lasts ' + lasts(months) + '.';
+    let extra = '';
+    if (inc > 0) {
+      if (inc >= s.total) extra = 'Your income covers your spending, so this is your buffer if income stops. ';
+      else extra = 'You are short ' + money(s.total - inc) + ' a month, so at that rate your cash lasts ' + lasts(sav / (s.total - inc)) + '. ';
+    }
+    $('rRunNote').textContent = extra + 'For reference, my playbook says to arrive with at least two months of expenses in accessible cash.';
+    $('rRange').textContent = rangeSentence; $('rRange').hidden = false;
+  } else {
+    $('rBigLbl').textContent = 'Your monthly spending';
+    $('rTotal').textContent = money(s.total);
+    $('rSummary').textContent = rangeSentence;
+    $('rRunNote').textContent = 'Add the liquid cash you could use in Step 1 to see how many months it lasts.';
+    $('rRange').hidden = true;
+  }
+
+  // biggest line
+  let big = null;
+  CATS.forEach((c) => { if (s.by[c.id] > 0 && (!big || s.by[c.id] > s.by[big.id])) big = c; });
+  $('rBiggest').textContent = big ? big.label + ' (' + Math.round(s.by[big.id] / s.total * 100) + '%)' : '-';
+
+  // keep
+  $('rKeepLbl').textContent = 'What you keep each month';
+  if (inc > 0) {
+    const keep = inc - s.total;
+    $('rKeep').textContent = keep >= 0 ? money(keep) + ' (' + Math.round(keep / inc * 100) + '%)' : 'Short ' + money(-keep);
+  } else {
+    $('rKeep').textContent = 'Add income to see it';
+  }
+
+  // rows
+  let rows = '';
+  CATS.forEach((c) => {
+    const v = s.by[c.id]; if (!(v > 0)) return;
+    let cmp = '-', chip = '';
+    if (b && b[c.id]) { cmp = '$' + b[c.id][0] + ' to $' + b[c.id][1]; chip = status(v, b[c.id]); }
+    else if (isPH() && MINE[c.id]) { cmp = 'My number: $' + MINE[c.id][0]; }
+    rows += '<tr><td>' + esc(c.label) + '</td><td class="n">' + money(v) + '</td><td>' + esc(cmp) + '</td><td>' + chip + '</td></tr>';
+  });
+  if (b) rows += '<tr><td><b>Total</b></td><td class="n"><b>' + money(s.total) + '</b></td><td>$' + b.total[0] + ' to $' + b.total[1] + '</td><td>' + status(s.total, b.total) + '</td></tr>';
+  $('rRows').innerHTML = rows;
+  $('rNote').textContent = 'The ranges are my own estimates for one setup. They do not adjust for household size, so a family and a single person will not sit in the same place. Use them as a compass.';
+
+  // leaks
+  $('rLeakHead').textContent = flagged.length ? ('You flagged ' + flagged.length + (flagged.length === 1 ? ' leak' : ' leaks')) : 'No leaks flagged';
+  let lh = '';
+  flagged.forEach((l) => {
+    lh += '<div class="leakres"><h4>' + esc(l.title) + '</h4><p>' + esc(l.why) + '</p><div class="fixbox fix" ' + (unlocked ? '' : 'hidden') + '><b>Fix:</b> ' + esc(l.fix) + '</div></div>';
+  });
+  if (!flagged.length) lh = '<p>Nothing ticked in Step 2. If that is true, a monthly tracker is how you find out whether it stays true.</p>';
+  $('rLeaks').innerHTML = lh;
+
+  // gate
+  const gate = $('gate'), ok = $('gateOk');
+  if (unlocked) { gate.hidden = true; ok.hidden = !flagged.length; ok.textContent = flagged.length ? 'Fixes unlocked.' : ''; }
+  else {
+    gate.hidden = false; ok.hidden = true;
+    $('gateHead').textContent = flagged.length ? 'Unlock the fix for each of your ' + flagged.length + (flagged.length === 1 ? ' leak' : ' leaks') : 'Get one arbitrage angle every Tuesday';
+    $('gateSub').textContent = flagged.length
+      ? 'Enter your email to see the fixes. Your email joins Galaxy Arbitrage Weekly, free, one arbitrage angle every Tuesday. Unsubscribe anytime.'
+      : 'Written for people already living abroad. Your email joins Galaxy Arbitrage Weekly. Free. Unsubscribe anytime.';
+    $('gateBtn').textContent = flagged.length ? 'Show me the fixes' : 'Join free';
+  }
+
+  $('result').hidden = false;
+  $('result').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  track('check_completed', { location: loc.value, spend_bucket: bucket(s.total), has_income: inc > 0, has_savings: sav > 0, runway_bucket: runBucket, entry: entry });
+  track('leaks_flagged', { count: flagged.length });
+}
+$('seeBtn').addEventListener('click', showResult);
+
+/* ---------- email gate ---------- */
+$('gateForm').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const email = $('gateEmail').value.trim();
+  const err = $('gateErr'), btn = $('gateBtn');
+  if (!/^\S+@\S+\.\S+$/.test(email)) { err.textContent = 'Please enter a valid email.'; err.hidden = false; return; }
+  err.hidden = true; btn.disabled = true;
+  const label = btn.textContent; btn.textContent = 'Sending...';
+  try {
+    const res = await fetch('/api/subscribe', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email: email, source: 'expat_money_check', tags: ['expat'] })
+    });
+    const data = await res.json();
+    if (!data.success) throw new Error(data.error || 'Failed');
+    if (window.fireLeadEvent) window.fireLeadEvent();
+    track('lead_captured', { source: 'expat_money_check' });
+    unlocked = true; save('gan_expat_unlocked', true);
+    document.querySelectorAll('#rLeaks .fix').forEach((f) => { f.hidden = false; });
+    $('gate').hidden = true;
+    const had = document.querySelectorAll('#rLeaks .fix').length > 0;
+    $('gateOk').hidden = false;
+    $('gateOk').textContent = had ? "You're in. Your fixes are unlocked above. Check your inbox for the weekly issue." : "You're in. Check your inbox for the weekly issue.";
+    if (had) track('fixes_unlocked', {});
+  } catch (x) {
+    btn.disabled = false; btn.textContent = label;
+    err.textContent = 'Something went wrong. Try again.'; err.hidden = false;
+  }
+});
+
+/* ---------- offers and links ---------- */
+document.querySelectorAll('.kit-link').forEach((a) => a.addEventListener('click', () => {
+  track('cta_click', { position: a.dataset.pos });
+  track('checkout_click', { position: a.dataset.pos });
+}));
+$('callLink').addEventListener('click', () => track('consulting_click', { position: 'bottom_call' }));
+document.querySelectorAll('[data-track="door_to_playbook"]').forEach((a) => a.addEventListener('click', () => track('door_to_playbook', {})));
+
+if ('IntersectionObserver' in window) {
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((en) => {
+      if (!en.isIntersecting) return;
+      const el = en.target;
+      if (el.dataset.offer) once('offer_view', { position: el.dataset.offer });
+      io.unobserve(el);
+    });
+  }, { threshold: 0.5 });
+  document.querySelectorAll('[data-offer]').forEach((el) => io.observe(el));
+}
+
+/* ---------- scroll depth and time ---------- */
+(function () {
+  const bar = $('progress'); let tick = false;
+  function depth() {
+    tick = false;
+    const d = document.documentElement;
+    const total = Math.max(d.scrollHeight - window.innerHeight, 1);
+    const pct = Math.min(window.scrollY / total * 100, 100);
+    bar.style.width = pct + '%';
+    [25, 50, 75, 100].forEach((m) => { if (pct >= m - (m === 100 ? 2 : 0)) once('scroll_' + m, { entry: entry }); });
+  }
+  window.addEventListener('scroll', () => { if (!tick) { tick = true; requestAnimationFrame(depth); } }, { passive: true });
+  let secs = 0;
+  setInterval(() => {
+    if (document.visibilityState !== 'visible') return;
+    secs++;
+    if ([30, 60, 120, 300].indexOf(secs) > -1) once('time_' + secs + 's', {});
+  }, 1000);
+})();
+
+track('page_view', { entry: entry, source: source });
+</script>
+</body>
+</html>

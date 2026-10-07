@@ -303,3 +303,18 @@ if ('IntersectionObserver' in window) {
   if (saved && saved !== 'philippines' && tabs.querySelector('[data-country="' + saved + '"]')) pick(saved, true);
   track('page_view', { country: currentCountry, source, entry: qs.get('ref') || 'link' });
 })();
+
+/* ---------- theme toggle ---------- */
+$('pbThemeToggle')?.addEventListener('click', () => {
+  const root = document.documentElement;
+  const mql = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const effectivelyDark = root.classList.contains('dark') || (mql && !root.classList.contains('light'));
+  root.classList.remove('dark', 'light');
+  if (effectivelyDark) {
+    root.classList.add('light');
+    try { localStorage.setItem('pb-theme', 'light'); } catch (e) { /* ignore */ }
+  } else {
+    root.classList.add('dark');
+    try { localStorage.setItem('pb-theme', 'dark'); } catch (e) { /* ignore */ }
+  }
+});

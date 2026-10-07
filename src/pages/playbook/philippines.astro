@@ -7,6 +7,7 @@
 // does not support custom events). For Plausible, add these two lines inside <head>:
 //   <script defer data-domain="expatbuildr.com" src="https://plausible.io/js/script.tagged-events.js"></script>
 //   <script is:inline>window.plausible = window.plausible || function(){ (window.plausible.q = window.plausible.q || []).push(arguments) }</script>
+import { Moon, Sun, PhoneCall } from 'lucide-astro';
 import '../../styles/playbook.css';
 import Checklist from '../../components/playbook/Checklist.astro';
 import OfferCard from '../../components/playbook/OfferCard.astro';
@@ -57,6 +58,13 @@ const pbConfig = JSON.stringify({ CONFIG, CITIES, CMP_SC: scTotal });
     <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet" />
 
     <script is:inline type="application/json" id="pb-config" set:html={pbConfig} />
+    <script is:inline>
+      try {
+        var t = localStorage.getItem('pb-theme');
+        if (t === 'dark') document.documentElement.classList.add('dark');
+        if (t === 'light') document.documentElement.classList.add('light');
+      } catch (e) {}
+    </script>
   </head>
   <body>
     <div id="progress" aria-hidden="true"></div>
@@ -67,12 +75,12 @@ const pbConfig = JSON.stringify({ CONFIG, CITIES, CMP_SC: scTotal });
           <img src="/logo.jpg" alt="ExpatBuildr" />
           <span class="pagelabel"><span class="org">ExpatBuildr</span><span class="page">Philippines Playbook</span></span>
         </a>
-        <div class="tabs" role="tablist" aria-label="Choose a country" id="countryTabs">
-          {COUNTRIES.map((c) => (
-            <button class="tab" role="tab" aria-selected={c.live ? 'true' : 'false'} data-country={c.id}>
-              {c.label}{!c.live && <span class="soon">soon</span>}
-            </button>
-          ))}
+        <div class="top-actions">
+          <button id="pbThemeToggle" class="theme-toggle" type="button" aria-label="Toggle dark mode">
+            <Moon class="icon-moon" size={18} />
+            <Sun class="icon-sun" size={18} />
+          </button>
+          <a href="/consulting" class="btn-call"><PhoneCall size={14} />Book a Call</a>
         </div>
       </div>
     </header>
@@ -129,6 +137,14 @@ const pbConfig = JSON.stringify({ CONFIG, CITIES, CMP_SC: scTotal });
           <div class="calc-foot note" id="calcNote">Cost uses the midpoint of the Cebu City range ({money(startCity.lo)} to {money(startCity.hi)}). It leaves out visas, flights and taxes. Your numbers will differ.</div>
         </div>
       </section>
+
+      <div class="countrybar" role="tablist" aria-label="Choose a country" id="countryTabs">
+        {COUNTRIES.map((c) => (
+          <button class="tab" role="tab" aria-selected={c.live ? 'true' : 'false'} data-country={c.id}>
+            {c.label}{!c.live && <span class="soon">soon</span>}
+          </button>
+        ))}
+      </div>
 
       <section class="ch" id="story" style="padding-top:0; border-top:0; margin-top:24px">
         <h2>What happened to me</h2>

@@ -13,12 +13,24 @@
   padding-bottom:env(safe-area-inset-bottom,0px);
 }
 @media (prefers-color-scheme: dark){
-  :root{
+  :root:not(.light){
     --paper:#0D1822; --card:#14232F; --ink:#E7EEF4; --muted:#9DB0BF; --line:#25394A;
     --blue:#2A6DB8; --blue-ink:#FFFFFF; --gold:#F0B93A; --gold-ink:#1C1500;
     --green:#5FC79A; --red:#E58774; --soft:#1A2C3A;
   }
 }
+:root.dark{
+  --paper:#0D1822; --card:#14232F; --ink:#E7EEF4; --muted:#9DB0BF; --line:#25394A;
+  --blue:#2A6DB8; --blue-ink:#FFFFFF; --gold:#F0B93A; --gold-ink:#1C1500;
+  --green:#5FC79A; --red:#E58774; --soft:#1A2C3A;
+}
+.theme-toggle .icon-sun{display:none}
+@media (prefers-color-scheme: dark){
+  :root:not(.light) .theme-toggle .icon-moon{display:none}
+  :root:not(.light) .theme-toggle .icon-sun{display:block}
+}
+:root.dark .theme-toggle .icon-moon{display:none}
+:root.dark .theme-toggle .icon-sun{display:block}
 html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 76px);height:100%}
 body{overflow-x:hidden}
 *,*::before,*::after{box-sizing:inherit}
@@ -36,7 +48,8 @@ button{font:inherit;color:inherit}
 /* progress */
 #progress{position:fixed;top:env(safe-area-inset-top,0px);left:0;height:3px;width:0;background:var(--gold);z-index:50}
 
-/* header: logo + page label (left), country tabs (right) */
+/* header: logo + page label (left), theme toggle + book-a-call (right) --
+   no tabs here, kept simple on purpose so it never overflows on mobile */
 .top{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;background:var(--paper);border-bottom:1px solid var(--line)}
 .top-in{max-width:1140px;margin:0 auto;padding:10px 18px;display:flex;align-items:center;justify-content:space-between;gap:14px}
 .brand{flex-shrink:0;min-width:0;display:flex;align-items:center;gap:8px;text-decoration:none;color:var(--ink)}
@@ -45,8 +58,15 @@ button{font:inherit;color:inherit}
 .brand .org{font-size:.64rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:var(--muted)}
 .brand .page{font-size:.92rem;font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 @media(max-width:420px){.brand .pagelabel{display:none}}
-.tabs{flex:1;min-width:0;display:flex;gap:6px;overflow-x:auto;justify-content:flex-end;scrollbar-width:none}
-.tabs::-webkit-scrollbar{display:none}
+.top-actions{flex-shrink:0;display:flex;align-items:center;gap:10px}
+.theme-toggle{display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:10px;border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer;flex-shrink:0}
+.theme-toggle:hover{border-color:var(--gold)}
+.btn-call{display:inline-flex;align-items:center;gap:6px;background:var(--gold);color:var(--gold-ink);font-family:var(--head);font-weight:800;font-size:.82rem;text-decoration:none;padding:9px 16px;border-radius:999px;white-space:nowrap;flex-shrink:0}
+
+/* country selector: a normal-flow row under the hero, not part of the
+   sticky header -- keeps the header itself simple and overflow-free */
+.countrybar{display:flex;gap:6px;overflow-x:auto;justify-content:center;flex-wrap:wrap;margin:0 0 18px;scrollbar-width:none;max-width:100%}
+.countrybar::-webkit-scrollbar{display:none}
 .tab{font-family:var(--head);font-weight:600;font-size:.88rem;border:1px solid var(--line);background:var(--card);border-radius:999px;padding:7px 14px;cursor:pointer;white-space:nowrap}
 .tab[aria-selected="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
 .tab .soon{font-weight:400;opacity:.65;margin-left:6px;font-size:.75rem}

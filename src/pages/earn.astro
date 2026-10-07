@@ -1,0 +1,430 @@
+---
+// src/pages/earn.astro
+// The Filipino door: "Based in the Philippines? Earn in dollars."
+// A readiness check, a fake-job-offer checker, and a waitlist that goes to a SEPARATE list
+// (a Notion database via /api/va-waitlist), never to the newsletter.
+// IMPORTANT: no <Pixels> / Meta pixel on this page on purpose. Filipino signups must not fire the Lead
+// event, or Meta will learn to find more Filipino leads instead of your target audience.
+const SKILLS = [
+  'Customer support', 'Admin and virtual assistant', 'Social media', 'Video editing', 'Graphic design',
+  'Writing and content', 'Bookkeeping', 'Web or tech support', 'Sales and appointment setting', 'Data entry and research',
+];
+const CRITICAL = [
+  { id: 'fee', t: 'They asked me to pay a fee (training, equipment, application or placement)' },
+  { id: 'check', t: 'They will send me a check or money and ask me to buy equipment or send some back' },
+  { id: 'docs', t: 'They asked for my ID, bank or card details before any signed contract' },
+  { id: 'mule', t: 'They want me to receive or send money or packages for them' },
+];
+const WARN = [
+  { id: 'chat', t: 'The whole conversation is on Telegram or WhatsApp, with no company email or website' },
+  { id: 'pay', t: 'The pay sounds far above normal for the work' },
+  { id: 'rush', t: 'They contacted me first and need an answer today' },
+  { id: 'nofind', t: 'I cannot find the company or the person anywhere online' },
+];
+const pageData = JSON.stringify({ CRITICAL, WARN });
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<title>Remote Work That Pays in Dollars: Check If You're Ready | ExpatBuildr</title>
+<meta name="description" content="Based in the Philippines? Check if you're ready for remote work with foreign clients, spot fake job offers, and join a waitlist. Free. We never charge workers.">
+<meta property="og:title" content="Based in the Philippines? Earn in dollars. Live in pesos.">
+<meta property="og:description" content="A free readiness check, a fake job offer checker, and a waitlist. We never charge workers.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<script is:inline type="application/json" id="earn-data" set:html={pageData}></script>
+<style>
+:root{
+  --paper:#F3F6F8; --card:#FFFFFF; --ink:#12283A; --muted:#566676; --line:#D3DDE4; --soft:#E9EFF3;
+  --blue:#1F5FA8; --blue-ink:#FFFFFF; --gold:#EBAA1E; --gold-ink:#1C1500;
+  --green:#1F7A55; --red:#B63D2A; --amberbg:#FBF0D6;
+  --head:"Bricolage Grotesque","Helvetica Neue",Arial,sans-serif;
+  --body:"Source Serif 4",Georgia,"Times New Roman",serif;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --paper:#0D1822; --card:#14232F; --ink:#E7EEF4; --muted:#9DB0BF; --line:#25394A; --soft:#1A2C3A;
+    --blue:#2A6DB8; --gold:#F0B93A; --green:#5FC79A; --red:#E58774; --amberbg:#2B2412;
+  }
+}
+*,*::before,*::after{box-sizing:border-box}
+[hidden]{display:none!important}
+html{scroll-padding-top:16px}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:18px;line-height:1.65;-webkit-text-size-adjust:100%}
+h1,h2,h3,h4{font-family:var(--head);line-height:1.12;margin:0 0 .5em;letter-spacing:-.01em}
+h1{font-size:clamp(2.1rem,6vw,3.4rem);font-weight:800}
+h2{font-size:clamp(1.5rem,3.6vw,2.1rem);font-weight:800}
+h3{font-size:1.15rem;font-weight:600}
+p{margin:0 0 1em;max-width:66ch}
+a{color:var(--blue)}
+:focus-visible{outline:3px solid var(--gold);outline-offset:2px;border-radius:4px}
+button,input,select{font:inherit;color:inherit}
+#progress{position:fixed;top:0;left:0;height:3px;width:0;background:var(--gold);z-index:50}
+.wrap{max-width:860px;margin:0 auto;padding:0 18px}
+.top{border-bottom:1px solid var(--line)}
+.top-in{max-width:860px;margin:0 auto;padding:12px 18px;display:flex;justify-content:space-between;align-items:center;gap:12px;font-family:var(--head)}
+.brand{font-weight:800;font-size:.95rem;text-decoration:none;color:var(--ink)}
+.top a.alt{font-size:.88rem}
+.hero{padding:40px 0 12px}
+.byline{font-family:var(--head);color:var(--muted);font-size:.95rem}
+.note{font-family:var(--head);font-size:.82rem;color:var(--muted);line-height:1.45}
+
+.step{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px;margin:18px 0}
+.step h2{font-size:1.3rem;margin-bottom:.2em}
+.stepnum{font-family:var(--head);font-weight:600;color:var(--blue);font-size:.9rem;margin-bottom:4px}
+label.lbl{display:block;font-family:var(--head);font-weight:600;font-size:.92rem;margin:14px 0 6px}
+select,input[type=number],input[type=email]{width:100%;padding:11px 12px;border:1px solid var(--line);border-radius:8px;background:var(--paper);font-family:var(--head)}
+.row2{display:grid;grid-template-columns:1fr;gap:12px}
+@media(min-width:640px){.row2{grid-template-columns:1fr 1fr}}
+.cat{display:grid;grid-template-columns:1fr;gap:4px;padding:10px 0;border-bottom:1px solid var(--line)}
+.cat:last-of-type{border-bottom:0}
+.cat .nm{font-family:var(--head);font-weight:600;font-size:.95rem}
+.inwrap{position:relative}
+.inwrap .pre{position:absolute;left:12px;top:50%;transform:translateY(-50%);font-family:var(--head);color:var(--muted)}
+.inwrap input{padding-left:28px}
+.hint{font-family:var(--head);font-size:.8rem;color:var(--muted);min-height:1.1em}
+@media(min-width:640px){.cat{grid-template-columns:1.1fr 1fr 1.2fr;align-items:center;gap:14px}.hint{text-align:right}}
+.totalrow{display:flex;justify-content:space-between;align-items:baseline;font-family:var(--head);padding-top:12px;margin-top:6px;border-top:2px solid var(--line)}
+.totalrow b{font-size:1.5rem}
+.curtog{display:flex;gap:14px;flex-wrap:wrap;align-items:center;font-family:var(--head);font-size:.92rem}
+.curtog label{display:inline-flex;gap:6px;align-items:center;cursor:pointer}
+.leak{display:flex;gap:12px;align-items:flex-start;padding:10px 0;border-bottom:1px solid var(--line);cursor:pointer;line-height:1.45}
+.leak:last-child{border-bottom:0}
+.leak input{flex:0 0 22px;width:22px;height:22px;margin-top:3px;accent-color:var(--green)}
+.leak span{font-size:1rem}
+.btn{display:inline-block;background:var(--gold);color:var(--gold-ink);font-family:var(--head);font-weight:800;text-decoration:none;padding:14px 22px;border-radius:10px;border:0;cursor:pointer;font-size:1rem}
+.btn:disabled{opacity:.5;cursor:not-allowed}
+.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--ink)}
+.cta-row{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-top:8px}
+
+/* result: banknote panel */
+.bill{background:var(--blue);color:var(--blue-ink);border-radius:14px;padding:22px;margin:18px 0;
+  background-image:repeating-radial-gradient(circle at 100% 0,rgba(255,255,255,.07) 0 2px,transparent 2px 14px)}
+.bill .lbl2{font-family:var(--head);font-size:.85rem;opacity:.85}
+.bill .big{font-family:var(--head);font-weight:800;font-size:clamp(2.2rem,8vw,3.2rem);line-height:1.05}
+.bill .sum{font-family:var(--head);margin-top:10px;font-size:1rem}
+.bill .grid{display:grid;grid-template-columns:1fr;gap:14px;margin-top:16px;padding-top:14px;border-top:1px solid rgba(255,255,255,.28)}
+@media(min-width:560px){.bill .grid{grid-template-columns:repeat(3,1fr)}}
+.bill .sum+.sum{margin-top:4px;opacity:.92}
+.bill .mid{font-family:var(--head);font-weight:800;font-size:1.3rem}
+.tblwrap{overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:var(--card);margin:14px 0}
+table{border-collapse:collapse;width:100%;min-width:460px;font-family:var(--head);font-size:.92rem}
+th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line)}
+th{background:var(--soft);font-weight:600}
+td.n,th.n{text-align:right;white-space:nowrap}
+tr:last-child td{border-bottom:0}
+.chip{display:inline-block;font-family:var(--head);font-size:.76rem;font-weight:600;border-radius:999px;padding:2px 10px;background:var(--soft)}
+.chip.above{background:var(--amberbg);color:var(--ink)}
+.chip.within{background:rgba(31,122,85,.15);color:var(--green)}
+.chip.below{background:var(--soft);color:var(--muted)}
+.leakres{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin:10px 0}
+.leakres h4{margin:0 0 .2em;font-size:1rem}
+.leakres p{margin:0 0 .4em;font-size:.97rem}
+.leakres .fixbox{background:var(--soft);border-radius:8px;padding:9px 12px;margin-top:6px;font-size:.97rem}
+.leakres .fixbox b{font-family:var(--head);color:var(--green)}
+.gate{background:var(--card);border:2px solid var(--gold);border-radius:14px;padding:20px;margin:18px 0}
+.gate form{display:flex;gap:10px;flex-wrap:wrap;margin-top:8px}
+.gate input[type=email]{flex:1;min-width:220px}
+.gerr{color:var(--red);font-family:var(--head);font-size:.88rem;margin-top:8px}
+.ok{color:var(--green);font-family:var(--head);font-weight:600}
+
+/* offers */
+.offer{border-radius:16px;padding:24px;margin:24px 0}
+.offer.kit{background:var(--blue);color:var(--blue-ink);
+  background-image:repeating-radial-gradient(circle at 100% 0,rgba(255,255,255,.07) 0 2px,transparent 2px 16px)}
+.offer.kit h2{color:inherit}
+.offer.call{background:var(--card);border:1px solid var(--line)}
+.slot{aspect-ratio:16/8;display:grid;place-items:center;text-align:center;padding:12px;border:2px dashed rgba(255,255,255,.5);border-radius:10px;margin:12px 0;font-family:var(--head);font-size:.9rem;opacity:.9}
+.slot img{width:100%;height:100%;object-fit:cover;border-radius:8px}
+.who{font-family:var(--head);font-size:.92rem;opacity:.92}
+.door{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 18px;margin:24px 0;font-family:var(--head)}
+footer{margin:48px 0 40px;font-family:var(--head);font-size:.85rem;color:var(--muted)}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+.pill{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);background:var(--paper);border-radius:999px;padding:8px 14px;font-family:var(--head);font-size:.92rem;cursor:pointer}
+.pill input{accent-color:var(--green);width:18px;height:18px}
+.pill:has(input:checked){background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.yn{display:flex;gap:14px;flex-wrap:wrap;font-family:var(--head);font-size:.95rem;align-items:center}
+.yn label{display:inline-flex;gap:6px;align-items:center;cursor:pointer}
+.qrow{padding:10px 0;border-bottom:1px solid var(--line)}
+.qrow:last-child{border-bottom:0}
+.qrow .qt{font-family:var(--head);font-weight:600;font-size:.95rem;margin-bottom:4px}
+.tip{background:var(--soft);border-radius:8px;padding:9px 12px;margin:8px 0;font-size:.97rem}
+.tip b{font-family:var(--head);color:var(--green)}
+.verdict{border-radius:12px;padding:16px 18px;margin:14px 0;font-family:var(--head);font-weight:600;border:2px solid var(--line);background:var(--card)}
+.verdict.bad{border-color:var(--red)}
+.verdict.warn{border-color:var(--gold)}
+.verdict.ok{border-color:var(--green)}
+.verdict p{font-family:var(--body);font-weight:400;margin:.4em 0 0}
+#wForm{display:block!important}
+.hp{position:absolute;left:-9999px;height:0;width:0;overflow:hidden}
+.twocol{display:grid;grid-template-columns:1fr;gap:12px}
+@media(min-width:640px){.twocol{grid-template-columns:1fr 1fr}}
+.pay{background:var(--soft);border-radius:10px;padding:12px 14px;margin-top:10px;font-family:var(--head)}
+details.faq{background:var(--card);border:1px solid var(--line);border-radius:10px;margin:8px 0}
+details.faq summary{cursor:pointer;padding:12px 14px;font-family:var(--head);font-weight:600}
+details.faq .a{padding:0 14px 14px;font-size:1rem}
+</style>
+</head>
+<body>
+<div id="progress" aria-hidden="true"></div>
+
+<header class="top">
+  <div class="top-in">
+    <a class="brand" href="https://expatbuildr.com">ExpatBuildr</a>
+    <span class="note">Free. We never charge workers.</span>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="hero">
+    <h1>Based in the Philippines? Earn in dollars. Live in pesos.</h1>
+    <p>I live in Cebu. Many Americans and Canadians here, and some who are planning to come, sometimes need reliable help. This page shows you what remote work with foreign clients asks of you, how to spot a fake job offer, and lets you join a waitlist.</p>
+    <p class="byline">By Galaxy (Tony Long II). I can help you earn more while you are here. I cannot help with visas or moving abroad.</p>
+    <div class="door" style="margin:14px 0 0">No jobs are promised on this page. When a real opening fits you, I will email you. I will never ask you for money.</div>
+  </section>
+
+  <!-- TOOL 1 -->
+  <section class="step" id="check" aria-labelledby="t1">
+    <div class="stepnum">Tool 1 of 2</div>
+    <h2 id="t1">Remote work readiness check</h2>
+    <p class="note">Two minutes. Nothing leaves your device until you join the waitlist.</p>
+
+    <label class="lbl">Which skills do you have? Tick all that fit.</label>
+    <div class="chips" id="skills">
+      {SKILLS.map((s) => (<label class="pill"><input type="checkbox" data-skill={s}> {s}</label>))}
+    </div>
+
+    <div class="twocol">
+      <div>
+        <label class="lbl" for="hours">Hours per week you can work</label>
+        <select id="hours"><option value="" selected disabled>Choose one</option><option value="under_10">Under 10</option><option value="10_20">10 to 20</option><option value="20_40">20 to 40</option><option value="40_plus">40 or more</option></select>
+      </div>
+      <div>
+        <label class="lbl" for="english">How comfortable are you writing emails in English?</label>
+        <select id="english"><option value="" selected disabled>Choose one</option><option value="basic">Basic</option><option value="good">Good</option><option value="strong">Strong</option></select>
+      </div>
+    </div>
+
+    <label class="lbl">The basics clients expect</label>
+    <div class="qrow"><div class="qt">I have backup internet (mobile data or a second provider)</div><div class="yn"><label><input type="radio" name="internet" value="y"> Yes</label><label><input type="radio" name="internet" value="n"> No</label></div></div>
+    <div class="qrow"><div class="qt">I have backup power (a UPS for my router, or a power bank)</div><div class="yn"><label><input type="radio" name="power" value="y"> Yes</label><label><input type="radio" name="power" value="n"> No</label></div></div>
+    <div class="qrow"><div class="qt">I have a computer I can rely on for video calls</div><div class="yn"><label><input type="radio" name="computer" value="y"> Yes</label><label><input type="radio" name="computer" value="n"> No</label></div></div>
+    <div class="qrow"><div class="qt">I have a quiet place to take calls</div><div class="yn"><label><input type="radio" name="quiet" value="y"> Yes</label><label><input type="radio" name="quiet" value="n"> No</label></div></div>
+    <div class="qrow"><div class="qt">I can work some US hours (evenings or nights in the Philippines)</div><div class="yn"><label><input type="radio" name="ushours" value="y"> Yes</label><label><input type="radio" name="ushours" value="n"> No</label></div></div>
+
+    <div class="cta-row"><button type="button" class="btn" id="seeBtn" disabled>See my result</button><span class="note" id="seeHelp">Pick at least one skill, your hours and your English level.</span></div>
+
+    <div id="readyOut" hidden aria-live="polite">
+      <div class="bill" style="margin-top:18px">
+        <div class="lbl2">Your readiness</div>
+        <div class="big" id="rScore">0 of 6</div>
+        <div class="sum" id="rLine"></div>
+      </div>
+      <div id="rTips"></div>
+
+      <h3 style="margin-top:22px">What the pay math looks like</h3>
+      <p class="note">Only arithmetic. It is before platform fees, taxes and contributions, and it is not a rate anyone has offered you.</p>
+      <div class="twocol">
+        <div><label class="lbl" for="rateUsd">Example hourly rate in US dollars</label><div class="inwrap"><span class="pre">$</span><input type="number" id="rateUsd" min="0" step="0.5" inputmode="decimal"></div></div>
+        <div><label class="lbl" for="fx">Pesos per dollar</label><input type="number" id="fx" value="61" min="40" max="80" step="0.5" inputmode="decimal"></div>
+      </div>
+      <div class="pay" id="payOut" hidden></div>
+    </div>
+  </section>
+
+  <!-- TOOL 2 -->
+  <section class="step" id="scam" aria-labelledby="t2">
+    <div class="stepnum">Tool 2 of 2</div>
+    <h2 id="t2">Is this job offer fake?</h2>
+    <p class="note">Tick every statement that is true about an offer you received. This is a general red-flag list, not proof either way.</p>
+    <div id="redflags">
+      {CRITICAL.map((r) => (<label class="leak"><input type="checkbox" data-flag={r.id} data-level="critical"><span>{r.t}</span></label>))}
+      {WARN.map((r) => (<label class="leak"><input type="checkbox" data-flag={r.id} data-level="warn"><span>{r.t}</span></label>))}
+    </div>
+    <div class="cta-row"><button type="button" class="btn" id="scamBtn">Check this offer</button></div>
+    <div id="verdict" hidden aria-live="polite"></div>
+  </section>
+
+  <!-- WAITLIST -->
+  <section class="gate" id="waitlist" aria-labelledby="t3">
+    <h2 id="t3" style="font-size:1.3rem">Join the waitlist</h2>
+    <p>I will email you only if a real opening fits what you ticked above. No jobs are promised. It is free, and I will never ask you for money.</p>
+    <form id="wForm" novalidate>
+      <div class="twocol">
+        <div><label class="lbl" for="wName">First name</label><input type="text" id="wName" autocomplete="given-name" required style="width:100%;padding:11px 12px;border:1px solid var(--line);border-radius:8px;background:var(--paper);font-family:var(--head)"></div>
+        <div><label class="lbl" for="wEmail">Email</label><input type="email" id="wEmail" autocomplete="email" required></div>
+      </div>
+      <label class="lbl" for="wCity">City or province (optional)</label>
+      <input type="text" id="wCity" autocomplete="address-level2" style="width:100%;padding:11px 12px;border:1px solid var(--line);border-radius:8px;background:var(--paper);font-family:var(--head)">
+      <div class="hp" aria-hidden="true"><label>Website <input type="text" id="wHp" tabindex="-1" autocomplete="off"></label></div>
+      <label class="leak" style="margin-top:10px"><input type="checkbox" id="wConsent"><span>I agree that ExpatBuildr may store my answers and contact me about remote work openings. I can ask to be deleted at any time.</span></label>
+      <div class="cta-row"><button type="submit" class="btn" id="wBtn">Join the waitlist</button></div>
+    </form>
+    <div class="gerr" id="wErr" hidden></div>
+    <div class="ok" id="wOk" hidden></div>
+  </section>
+
+  <section style="margin-top:28px">
+    <h2>Questions</h2>
+    <details class="faq"><summary>Do I pay anything?</summary><div class="a">No. Never. Anyone who asks you to pay for a job, training, equipment or placement is not me. I do not charge workers.</div></details>
+    <details class="faq"><summary>Is this a job offer?</summary><div class="a">No. It is a waitlist. I cannot promise when or whether an opening will fit you.</div></details>
+    <details class="faq"><summary>What do you do with my information?</summary><div class="a">It goes to a private list used only for remote work openings. It does not go to my newsletter. I do not sell it. Email me to be deleted.</div></details>
+    <details class="faq"><summary>Can you help me move to the US or another country?</summary><div class="a">No. I cannot help with visas or moving abroad. I can help you earn more while you are here.</div></details>
+  </section>
+
+  <footer>
+    <p>Educational only. Nothing here is an offer of employment, a guarantee of income, or legal, tax or immigration advice. Philippine rules about employment, contributions and taxes apply to you. Verify them with the official source or a qualified professional.</p>
+    <p>Galaxy (Tony Long II) · ExpatBuildr · 2026</p>
+  </footer>
+</main>
+
+<script>
+/* Filipino door. No PII goes to analytics. Events: page_view, scroll_25/50/75/100, time_30s/60s/120s/300s,
+   readiness_started, readiness_completed, scam_check_completed, waitlist_submitted, waitlist_error. */
+const DATA = JSON.parse(document.getElementById('earn-data').textContent || '{}');
+const fired = {};
+function track(name, props) {
+  props = props || {};
+  try {
+    if (window.plausible) window.plausible(name, { props: props });
+    if (window.posthog && window.posthog.capture) window.posthog.capture(name, props);
+  } catch (e) { /* never break the page */ }
+  (window.__events = window.__events || []).push({ name: name, props: props, t: Date.now() });
+}
+function once(name, props) { const k = name + JSON.stringify(props || {}); if (fired[k]) return; fired[k] = true; track(name, props); }
+const $ = (id) => document.getElementById(id);
+const money = (n) => '$' + Math.round(n).toLocaleString('en-US');
+const peso = (n) => '₱' + Math.round(n).toLocaleString('en-US');
+const qs = new URLSearchParams(location.search);
+const entry = qs.get('ref') || qs.get('stage') || 'link';
+
+const skillBoxes = Array.prototype.slice.call(document.querySelectorAll('input[data-skill]'));
+const hours = $('hours'), english = $('english');
+const val = (name) => { const r = document.querySelector('input[name="' + name + '"]:checked'); return r ? r.value : ''; };
+const pickedSkills = () => skillBoxes.filter((b) => b.checked).map((b) => b.dataset.skill);
+
+function ready() { $('seeBtn').disabled = !(pickedSkills().length > 0 && hours.value && english.value); $('seeHelp').hidden = !$('seeBtn').disabled ? true : false; }
+function started() { once('readiness_started', { entry: entry }); }
+skillBoxes.forEach((b) => b.addEventListener('change', () => { started(); ready(); }));
+[hours, english].forEach((el) => el.addEventListener('change', () => { started(); ready(); }));
+document.querySelectorAll('#check input[type=radio]').forEach((r) => r.addEventListener('change', started));
+ready();
+
+const TIPS = {
+  internet: ['Backup internet', 'Keep mobile data as a backup. A dropped connection in the middle of a client call costs trust.'],
+  power: ['Backup power', 'Brownouts happen, especially in wet season. A UPS for your router and a power bank keep you online.'],
+  computer: ['A reliable computer', 'Most remote roles need a computer that runs video calls and several tabs without freezing.'],
+  quiet: ['A quiet place', 'Client calls need a space without background noise.'],
+  english: ['Writing in English', 'Practice writing short, clear emails. Many clients judge you by how you write first.'],
+  ushours: ['US hours', 'Many clients are in US time zones, which means evenings and nights here. If that does not work for you, that is fine. Say so on the form.']
+};
+let lastScore = 0;
+function showReady() {
+  const checks = {
+    internet: val('internet') === 'y', power: val('power') === 'y', computer: val('computer') === 'y',
+    quiet: val('quiet') === 'y', english: english.value === 'good' || english.value === 'strong', ushours: val('ushours') === 'y'
+  };
+  const keys = Object.keys(checks);
+  const score = keys.filter((k) => checks[k]).length;
+  lastScore = score;
+  $('rScore').textContent = score + ' of 6';
+  $('rLine').textContent = score === 6 ? 'You meet all six basics I look for. That is a good start, not a promise of work.'
+    : score >= 4 ? 'You are close. Fix the items below and you will be in a stronger position.'
+    : 'You have some basics to build first. That is normal, and the tips below are cheap to fix.';
+  let tips = '';
+  keys.forEach((k) => { if (!checks[k]) tips += '<div class="tip"><b>' + TIPS[k][0] + ':</b> ' + TIPS[k][1] + '</div>'; });
+  $('rTips').innerHTML = tips || '<div class="tip"><b>Nothing to fix.</b> You can join the waitlist below.</div>';
+  $('readyOut').hidden = false;
+  $('readyOut').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  track('readiness_completed', { score: score, skills_count: pickedSkills().length, hours: hours.value, entry: entry });
+}
+$('seeBtn').addEventListener('click', showReady);
+
+function pay() {
+  const r = parseFloat($('rateUsd').value), fx = parseFloat($('fx').value) || 61;
+  const hrsMap = { under_10: 8, '10_20': 15, '20_40': 30, '40_plus': 40 };
+  const h = hrsMap[hours.value] || 0;
+  const out = $('payOut');
+  if (!(r > 0) || !h) { out.hidden = true; return; }
+  const monthly = r * h * 4.33;
+  out.hidden = false;
+  out.textContent = money(r) + ' an hour for about ' + h + ' hours a week is ' + money(monthly) + ' a month, about ' + peso(monthly * fx) + ' at ' + fx + ' pesos per dollar, before fees, taxes and contributions.';
+}
+$('rateUsd').addEventListener('input', pay); $('fx').addEventListener('input', pay); hours.addEventListener('change', pay);
+
+/* scam checker */
+$('scamBtn').addEventListener('click', () => {
+  const boxes = Array.prototype.slice.call(document.querySelectorAll('#redflags input'));
+  const crit = boxes.filter((b) => b.checked && b.dataset.level === 'critical').length;
+  const warn = boxes.filter((b) => b.checked && b.dataset.level === 'warn').length;
+  let cls, head, body, key;
+  if (crit > 0) { cls = 'bad'; key = 'very_likely_scam'; head = 'Very likely a scam.'; body = 'Do not pay anything, do not send documents or bank details, and stop replying. Real employers do not ask workers for money or ask you to move money for them.'; }
+  else if (warn >= 2) { cls = 'warn'; key = 'several_flags'; head = 'Several red flags.'; body = 'Verify the company yourself before you reply: find its official website and a company email, and ask for a written contract. Do not send ID or bank details yet.'; }
+  else if (warn === 1) { cls = 'warn'; key = 'one_flag'; head = 'One red flag.'; body = 'Ask for a written contract and a company email, and check that the company is real before you go further.'; }
+  else { cls = 'ok'; key = 'no_flags'; head = 'No red flags from this list.'; body = 'A short list cannot prove an offer is real. Verify the company and read the contract before you share documents.'; }
+  const v = $('verdict'); v.hidden = false;
+  v.innerHTML = '<div class="verdict ' + cls + '">' + head + '<p>' + body + '</p></div>';
+  track('scam_check_completed', { verdict: key });
+});
+
+/* waitlist */
+$('wForm').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const err = $('wErr'), btn = $('wBtn');
+  const name = $('wName').value.trim(), email = $('wEmail').value.trim();
+  if (!name) { err.textContent = 'Please enter your first name.'; err.hidden = false; return; }
+  if (!/^\S+@\S+\.\S+$/.test(email)) { err.textContent = 'Please enter a valid email.'; err.hidden = false; return; }
+  if (!$('wConsent').checked) { err.textContent = 'Please tick the box to agree.'; err.hidden = false; return; }
+  if ($('wHp').value) { return; } // honeypot: bots only
+  err.hidden = true; btn.disabled = true;
+  const label = btn.textContent; btn.textContent = 'Sending...';
+  try {
+    const res = await fetch('/api/va-waitlist', {
+      method: 'POST', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        first_name: name, email: email, city: $('wCity').value.trim(),
+        skills: pickedSkills(), hours: hours.value, english: english.value,
+        internet_backup: val('internet') === 'y', power_backup: val('power') === 'y', computer: val('computer') === 'y',
+        quiet_space: val('quiet') === 'y', us_hours: val('ushours') === 'y', readiness_score: lastScore,
+        consent: true, source: 'earn_page', entry: entry, website: ''
+      })
+    });
+    const data = await res.json();
+    if (!data.success) throw new Error(data.error || 'Failed');
+    $('wForm').hidden = true;
+    $('wOk').hidden = false;
+    $('wOk').textContent = "You're on the list. I will email you only if a real opening fits. I will never ask you for money.";
+    track('waitlist_submitted', { skills_count: pickedSkills().length, hours: hours.value, score: lastScore, entry: entry });
+  } catch (x) {
+    btn.disabled = false; btn.textContent = label;
+    err.textContent = 'Something went wrong. Please try again.'; err.hidden = false;
+    track('waitlist_error', {});
+  }
+});
+
+/* scroll and time */
+(function () {
+  const bar = $('progress'); let tick = false;
+  function depth() {
+    tick = false;
+    const d = document.documentElement, total = Math.max(d.scrollHeight - window.innerHeight, 1);
+    const pct = Math.min(window.scrollY / total * 100, 100);
+    bar.style.width = pct + '%';
+    [25, 50, 75, 100].forEach((m) => { if (pct >= m - (m === 100 ? 2 : 0)) once('scroll_' + m, { entry: entry }); });
+  }
+  window.addEventListener('scroll', () => { if (!tick) { tick = true; requestAnimationFrame(depth); } }, { passive: true });
+  let secs = 0;
+  setInterval(() => { if (document.visibilityState !== 'visible') return; secs++; if ([30, 60, 120, 300].indexOf(secs) > -1) once('time_' + secs + 's', {}); }, 1000);
+})();
+track('page_view', { entry: entry });
+</script>
+</body>
+</html>
