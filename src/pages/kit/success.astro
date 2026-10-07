@@ -6,42 +6,46 @@
 // dashboard — that's config on Stripe's side, not something this file sets.
 // Not linked from nav, footer, or /kit itself — only reachable via that
 // Stripe redirect. Same visual tokens as /kit for brand continuity.
+// Files are hosted on galaxyarbitrage.com, not duplicated into this repo's
+// public/downloads/ (same cross-domain pattern thankyou.astro's PDF link
+// already uses) -- that's where these files actually live and get deployed.
+const FILES_BASE = 'https://galaxyarbitrage.com/downloads';
 const files = [
   {
     icon: '🇵🇭',
     name: 'Geo-Arbitrage Philippines Edition',
     desc: 'Enter your USD income. See your real purchasing power across Cebu, Manila, and Davao.',
-    href: '/downloads/Geo-Arbitrage-Philippines-Edition.xlsx',
+    href: `${FILES_BASE}/Geo-Arbitrage-Philippines-Edition.xlsx`,
   },
   {
     icon: '📊',
     name: 'Expat Income & Expense Tracker',
     desc: 'Track USD income vs PHP spending every month and watch your arbitrage gap compound.',
-    href: '/downloads/expat-income-expense-tracker-philippines.xlsx',
+    href: `${FILES_BASE}/expat-income-expense-tracker-philippines.xlsx`,
   },
   {
     icon: '✅',
     name: 'Philippines Expat Setup Checklist',
     desc: 'Banking, SIM, visa, barangay ID, healthcare — every step in the right order.',
-    href: '/downloads/Philippines-Expat-Setup-Checklist.xlsx',
+    href: `${FILES_BASE}/Philippines-Expat-Setup-Checklist.xlsx`,
   },
   {
     icon: '🗺️',
     name: 'Geographic Arbitrage Calculator — SEA',
     desc: 'Compare your purchasing power across 6 Southeast Asian countries side by side.',
-    href: '/downloads/Geographic-Arbitrage-Calculator-SEA.xlsx',
+    href: `${FILES_BASE}/Geographic-Arbitrage-Calculator-SEA.xlsx`,
   },
   {
     icon: '🧮',
     name: 'Geo-Arbitrage Country Calculator',
     desc: 'Global version. Any country, any currency. Model your arbitrage before you commit.',
-    href: '/downloads/GeoArbitrage-Country-Calculator.xlsx',
+    href: `${FILES_BASE}/GeoArbitrage-Country-Calculator.xlsx`,
   },
   {
     icon: '📋',
     name: 'Digital Nomad Monthly Budget Planner',
     desc: 'Location-flexible monthly budget template. USD anchored, works from anywhere.',
-    href: '/downloads/Digital-Nomad-Monthly-Budget-Planner.xlsx',
+    href: `${FILES_BASE}/Digital-Nomad-Monthly-Budget-Planner.xlsx`,
   },
 ];
 ---
@@ -127,7 +131,7 @@ body { font-family:'Inter',sans-serif; background:var(--cream); color:var(--ink)
           <div class="fi-name">{f.name}</div>
           <div class="fi-desc">{f.desc}</div>
         </div>
-        <a class="fi-btn" data-file={i} href={f.href} download>Download ↓</a>
+        <a class="fi-btn" data-file={i} href={f.href} target="_blank" rel="noopener">Download ↓</a>
       </div>
     ))}
   </div>
@@ -158,12 +162,13 @@ body { font-family:'Inter',sans-serif; background:var(--cream); color:var(--ink)
       setTimeout(() => {
         const a = document.createElement('a');
         a.href = f.href;
-        a.download = '';
+        a.target = '_blank';
+        a.rel = 'noopener';
         document.body.appendChild(a);
         a.click();
         document.body.removeChild(a);
         const btn = document.querySelector(`.fi-btn[data-file="${i}"]`);
-        if (btn) { btn.classList.add('done'); btn.textContent = 'Downloaded ✓'; }
+        if (btn) { btn.classList.add('done'); btn.textContent = 'Opened ✓'; }
       }, i * 400);
     });
   });
