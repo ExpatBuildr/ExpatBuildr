@@ -39,6 +39,13 @@ const pageData = JSON.stringify({ CRITICAL, WARN });
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
 <script is:inline type="application/json" id="earn-data" set:html={pageData}></script>
+<script is:inline>
+  try {
+    var t = localStorage.getItem('pb-theme');
+    if (t === 'dark') document.documentElement.classList.add('dark');
+    if (t === 'light') document.documentElement.classList.add('light');
+  } catch (e) {}
+</script>
 <style>
 :root{
   --paper:#F3F6F8; --card:#FFFFFF; --ink:#12283A; --muted:#566676; --line:#D3DDE4; --soft:#E9EFF3;
@@ -48,15 +55,19 @@ const pageData = JSON.stringify({ CRITICAL, WARN });
   --body:"Source Serif 4",Georgia,"Times New Roman",serif;
 }
 @media (prefers-color-scheme: dark){
-  :root{
+  :root:not(.light){
     --paper:#0D1822; --card:#14232F; --ink:#E7EEF4; --muted:#9DB0BF; --line:#25394A; --soft:#1A2C3A;
     --blue:#2A6DB8; --gold:#F0B93A; --green:#5FC79A; --red:#E58774; --amberbg:#2B2412;
   }
 }
+:root.dark{
+  --paper:#0D1822; --card:#14232F; --ink:#E7EEF4; --muted:#9DB0BF; --line:#25394A; --soft:#1A2C3A;
+  --blue:#2A6DB8; --gold:#F0B93A; --green:#5FC79A; --red:#E58774; --amberbg:#2B2412;
+}
 *,*::before,*::after{box-sizing:border-box}
 [hidden]{display:none!important}
 html{scroll-padding-top:16px}
-body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:18px;line-height:1.65;-webkit-text-size-adjust:100%}
+body{margin:0;overflow-x:hidden;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:18px;line-height:1.65;-webkit-text-size-adjust:100%}
 h1,h2,h3,h4{font-family:var(--head);line-height:1.12;margin:0 0 .5em;letter-spacing:-.01em}
 h1{font-size:clamp(2.1rem,6vw,3.4rem);font-weight:800}
 h2{font-size:clamp(1.5rem,3.6vw,2.1rem);font-weight:800}
@@ -71,6 +82,17 @@ button,input,select{font:inherit;color:inherit}
 .top-in{max-width:860px;margin:0 auto;padding:12px 18px;display:flex;justify-content:space-between;align-items:center;gap:12px;font-family:var(--head)}
 .brand{font-weight:800;font-size:.95rem;text-decoration:none;color:var(--ink)}
 .top a.alt{font-size:.88rem}
+.top-actions{display:flex;align-items:center;gap:12px;flex-shrink:0}
+.theme-toggle{display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:10px;border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer;flex-shrink:0}
+.theme-toggle:hover{border-color:var(--gold)}
+.theme-toggle .icon-sun{display:none}
+@media (prefers-color-scheme: dark){
+  :root:not(.light) .theme-toggle .icon-moon{display:none}
+  :root:not(.light) .theme-toggle .icon-sun{display:block}
+}
+:root.dark .theme-toggle .icon-moon{display:none}
+:root.dark .theme-toggle .icon-sun{display:block}
+.top-logo{width:28px;height:28px;border-radius:8px;object-fit:cover;flex-shrink:0;display:block}
 .hero{padding:40px 0 12px}
 .byline{font-family:var(--head);color:var(--muted);font-size:.95rem}
 .note{font-family:var(--head);font-size:.82rem;color:var(--muted);line-height:1.45}
@@ -179,7 +201,13 @@ details.faq .a{padding:0 14px 14px;font-size:1rem}
 <header class="top">
   <div class="top-in">
     <a class="brand" href="https://expatbuildr.com">ExpatBuildr</a>
-    <span class="note">Free. We never charge workers.</span>
+    <div class="top-actions">
+      <button id="themeToggle" class="theme-toggle" type="button" aria-label="Toggle dark mode">
+        <svg class="icon-moon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" /></svg>
+        <svg class="icon-sun" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4" /><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41" /></svg>
+      </button>
+      <a href="https://expatbuildr.com"><img src="/logo.jpg" alt="ExpatBuildr" class="top-logo" /></a>
+    </div>
   </div>
 </header>
 
@@ -187,7 +215,8 @@ details.faq .a{padding:0 14px 14px;font-size:1rem}
   <section class="hero">
     <h1>Based in the Philippines? Earn in dollars. Live in pesos.</h1>
     <p>I live in Cebu. Many Americans and Canadians here, and some who are planning to come, sometimes need reliable help. This page shows you what remote work with foreign clients asks of you, how to spot a fake job offer, and lets you join a waitlist.</p>
-    <p class="byline">By Galaxy (Tony Long II). I can help you earn more while you are here. I cannot help with visas or moving abroad.</p>
+    <p class="byline">By Tony Long II. I can help you earn more while you are here. I cannot help with visas or moving abroad.</p>
+    <p class="note">Free. We never charge workers.</p>
     <div class="door" style="margin:14px 0 0">No jobs are promised on this page. When a real opening fits you, I will email you. I will never ask you for money.</div>
   </section>
 
@@ -282,7 +311,7 @@ details.faq .a{padding:0 14px 14px;font-size:1rem}
 
   <footer>
     <p>Educational only. Nothing here is an offer of employment, a guarantee of income, or legal, tax or immigration advice. Philippine rules about employment, contributions and taxes apply to you. Verify them with the official source or a qualified professional.</p>
-    <p>Galaxy (Tony Long II) · ExpatBuildr · 2026</p>
+    <p>Tony Long II · ExpatBuildr · 2026</p>
   </footer>
 </main>
 
@@ -425,6 +454,21 @@ $('wForm').addEventListener('submit', async (e) => {
   setInterval(() => { if (document.visibilityState !== 'visible') return; secs++; if ([30, 60, 120, 300].indexOf(secs) > -1) once('time_' + secs + 's', {}); }, 1000);
 })();
 track('page_view', { entry: entry });
+
+/* ---------- theme toggle ---------- */
+$('themeToggle')?.addEventListener('click', () => {
+  const root = document.documentElement;
+  const mql = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const effectivelyDark = root.classList.contains('dark') || (mql && !root.classList.contains('light'));
+  root.classList.remove('dark', 'light');
+  if (effectivelyDark) {
+    root.classList.add('light');
+    try { localStorage.setItem('pb-theme', 'light'); } catch (e) {}
+  } else {
+    root.classList.add('dark');
+    try { localStorage.setItem('pb-theme', 'dark'); } catch (e) {}
+  }
+});
 </script>
 </body>
 </html>
