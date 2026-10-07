@@ -5,7 +5,7 @@
 export const CONFIG = {
   KIT_URL: 'https://expatbuildr.com/kit', // kit / checkout page
   KIT_PRICE: 65,
-  PDF_URL: '#', // link to the PDF download
+  PDF_URL: 'https://galaxyarbitrage.com/downloads/philippines-arbitrage-playbook.pdf', // same file the old thank-you page served
   RATE: 61, // default pesos per dollar
 };
 

@@ -19,6 +19,7 @@
   --green:#5FC79A; --red:#E58774; --soft:#1A2C3A;
 }
 html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 76px)}
+body{overflow-x:hidden}
 .pbroot *,.pbroot *::before,.pbroot *::after{box-sizing:border-box}
 .pbroot h1,.pbroot h2,.pbroot h3,.pbroot h4{font-family:var(--head);line-height:1.12;margin:0 0 .5em;letter-spacing:-.01em;color:var(--ink)}
 .pbroot h1{font-size:clamp(2.1rem,6.2vw,3.6rem);font-weight:800}
@@ -33,24 +34,28 @@ html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 76px)}
 /* progress */
 #progress{position:fixed;top:env(safe-area-inset-top,0px);left:0;height:3px;width:0;background:var(--gold);z-index:50}
 
-/* header: logo + page label, country tabs, theme toggle, book-a-call */
+/* header: logo + page label (left), theme toggle + book-a-call (right) --
+   no tabs here, kept simple on purpose so it never overflows on mobile */
 .pbroot .top{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;background:var(--paper);border-bottom:1px solid var(--line)}
-.pbroot .top-in{max-width:1140px;margin:0 auto;padding:10px 18px;display:flex;align-items:center;gap:14px}
-.pbroot .brand{flex-shrink:0;display:flex;align-items:center;gap:8px;text-decoration:none;color:var(--ink)}
-.pbroot .brand img{width:28px;height:28px;border-radius:8px;object-fit:cover}
-.pbroot .brand .pagelabel{display:flex;flex-direction:column;line-height:1.15;font-family:var(--head)}
+.pbroot .top-in{max-width:1140px;margin:0 auto;padding:10px 18px;display:flex;align-items:center;justify-content:space-between;gap:14px}
+.pbroot .brand{flex-shrink:0;min-width:0;display:flex;align-items:center;gap:8px;text-decoration:none;color:var(--ink)}
+.pbroot .brand img{width:28px;height:28px;border-radius:8px;object-fit:cover;flex-shrink:0}
+.pbroot .brand .pagelabel{display:flex;flex-direction:column;line-height:1.15;font-family:var(--head);min-width:0}
 .pbroot .brand .org{font-size:.64rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:var(--muted)}
-.pbroot .brand .page{font-size:.95rem;font-weight:800;white-space:nowrap}
-.pbroot .tabs{flex:1;display:flex;gap:6px;overflow-x:auto;justify-content:center;scrollbar-width:none;min-width:0}
-.pbroot .tabs::-webkit-scrollbar{display:none}
-.pbroot .tab{font-family:var(--head);font-weight:600;font-size:.88rem;border:1px solid var(--line);background:var(--card);border-radius:999px;padding:7px 14px;cursor:pointer;white-space:nowrap}
-.pbroot .tab[aria-selected="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
-.pbroot .tab .soon{font-weight:400;opacity:.65;margin-left:6px;font-size:.75rem}
+.pbroot .brand .page{font-size:.95rem;font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .pbroot .top-actions{flex-shrink:0;display:flex;align-items:center;gap:10px}
 .pbroot .theme-toggle{display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:10px;border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer;flex-shrink:0}
 .pbroot .theme-toggle:hover{border-color:var(--gold)}
-.pbroot .btn-call{display:inline-flex;align-items:center;gap:6px;background:var(--gold);color:var(--gold-ink);font-family:var(--head);font-weight:800;font-size:.82rem;text-decoration:none;padding:9px 16px;border-radius:999px;white-space:nowrap}
-@media(max-width:760px){.pbroot .brand .pagelabel{display:none}}
+.pbroot .btn-call{display:inline-flex;align-items:center;gap:6px;background:var(--gold);color:var(--gold-ink);font-family:var(--head);font-weight:800;font-size:.82rem;text-decoration:none;padding:9px 16px;border-radius:999px;white-space:nowrap;flex-shrink:0}
+@media(max-width:420px){.pbroot .brand .pagelabel{display:none}}
+
+/* country selector: a normal-flow row under the hero, not part of the
+   sticky header -- keeps the header itself simple and overflow-free */
+.pbroot .countrybar{display:flex;gap:6px;overflow-x:auto;justify-content:center;flex-wrap:wrap;margin:0 0 18px;scrollbar-width:none;max-width:100%}
+.pbroot .countrybar::-webkit-scrollbar{display:none}
+.pbroot .tab{font-family:var(--head);font-weight:600;font-size:.88rem;border:1px solid var(--line);background:var(--card);border-radius:999px;padding:7px 14px;cursor:pointer;white-space:nowrap}
+.pbroot .tab[aria-selected="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.pbroot .tab .soon{font-weight:400;opacity:.65;margin-left:6px;font-size:.75rem}
 
 /* layout */
 .pbroot .wrap{max-width:1140px;margin:0 auto;padding:0 18px}

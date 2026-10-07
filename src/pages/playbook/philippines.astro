@@ -58,13 +58,6 @@ const pbConfig = JSON.stringify({ CONFIG, CITIES, CMP_SC: cmpS });
           <img src="/logo.jpg" alt="ExpatBuildr" />
           <span class="pagelabel"><span class="org">ExpatBuildr</span><span class="page">Philippines Playbook</span></span>
         </a>
-        <div class="tabs" role="tablist" aria-label="Choose a country" id="countryTabs">
-          {COUNTRIES.map((c) => (
-            <button class="tab" role="tab" aria-selected={c.live ? 'true' : 'false'} data-country={c.id}>
-              {c.label}{!c.live && <span class="soon">soon</span>}
-            </button>
-          ))}
-        </div>
         <div class="top-actions">
           <button id="pbThemeToggle" class="theme-toggle" type="button" aria-label="Toggle dark mode">
             <Moon class="block dark:hidden" size={18} />
@@ -127,6 +120,14 @@ const pbConfig = JSON.stringify({ CONFIG, CITIES, CMP_SC: cmpS });
           <div class="calc-foot note" id="calcNote">Cost uses the midpoint of the Cebu City range ({money(startCity.lo)} to {money(startCity.hi)}). It leaves out visas, flights and taxes. Your numbers will differ.</div>
         </div>
       </section>
+
+      <div class="countrybar" role="tablist" aria-label="Choose a country" id="countryTabs">
+        {COUNTRIES.map((c) => (
+          <button class="tab" role="tab" aria-selected={c.live ? 'true' : 'false'} data-country={c.id}>
+            {c.label}{!c.live && <span class="soon">soon</span>}
+          </button>
+        ))}
+      </div>
 
       <details class="mtoc">
         <summary>Contents</summary>
