@@ -1,9 +1,12 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
-import { ArrowRight, Globe, Rss, ArrowUpRight, Twitter, Youtube, Instagram, Linkedin, Send, Users } from 'lucide-astro';
+import { ArrowRight, Globe, Rss, ArrowUpRight, Twitter, Youtube, Instagram, Linkedin, Send, Users, Calculator } from 'lucide-astro';
 import { pillars } from '../config/pillars';
 import YouTubeEmbed from '../components/YouTubeEmbed.astro';
+
+const CONFIG = { KIT_URL: 'https://galaxyarbitrage.com/kit', KIT_PRICE: 65 };
+const CONSULTING_PRICE = 150;
 
 // Fetch all blog posts
 const allPosts = await getCollection('blog', ({ data }) => {
@@ -12,12 +15,12 @@ const allPosts = await getCollection('blog', ({ data }) => {
 
 // Pin 6 featured pillars on the homepage
 const targetPillarIds = [
-  'lead-generation',
-  'remote-income',
+  'build-in-public',
   'geo-arbitrage',
-  'market-arbitrage',
   'relocation-stay',
-  'build-in-public'
+  'remote-income',
+  'market-arbitrage',
+  'lead-generation'
 ];
 
 const featuredCards = targetPillarIds.map(pillarId => {
@@ -63,56 +66,53 @@ const featuredCards = targetPillarIds.map(pillarId => {
 ---
 
 <Layout
-	title="ExpatBuildr — Relocation Strategy for Expats in the Philippines"
-	description="1-on-1 relocation strategy for Western expats moving to the Philippines. I've lived every risk since 2018 — book a call, not a self-serve page."
+	title="ExpatBuildr | The Free Playbook for Moving to Southeast Asia"
+	description="I lost $300K, then the $60K I took to Cebu. The free playbook is every mistake, the real numbers and the setup, so you don't repeat them."
 >
 	<!-- SECTION 1: Hero -->
 	<section class="max-w-5xl mx-auto text-center space-y-8 py-20 relative px-4">
 		<div class="absolute -top-40 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-accent-blue/20 rounded-full blur-[120px] -z-10 animate-pulse"></div>
 
 		<p class="text-xs md:text-sm font-mono tracking-[0.2em] text-accent-cyan uppercase font-semibold">
-			1-on-1 Relocation Strategy · Cebu, Philippines
+			The Real Numbers · Cebu, Philippines
 		</p>
 
 		<h1 class="text-4xl sm:text-5xl md:text-6xl font-black font-display leading-[1.05] tracking-tight text-slate-900 dark:text-white w-full">
-			Fell in love with the Philippines? or Thailand? <br/>
-			<span class="text-gradient inline-block">Now let's make sure you can actually stay.</span>
+			I lost $300K. Then I lost the $60K I took to Cebu. <br/>
+			<span class="text-gradient inline-block">I'm rebuilding, and here's every mistake.</span>
 		</h1>
 
 		<p class="max-w-2xl mx-auto text-institutional-secondary text-base md:text-lg leading-relaxed">
-			I help Western expats not lose their shirts abroad. I've lived every risk myself since 2018 — the visa mistakes, the money leaks, the moves that almost cost me everything. Book a 60-minute call and we'll map your specific numbers, your visa path, and your income plan, so you don't learn the hard way like I did.
+			I moved to the Philippines in September 2024 with about $60K, and over the next two years that was gone too. I'm rebuilding in public from Cebu. The free playbook is every mistake that cost me real money, my real numbers, and the setup I'm rebuilding on, so you don't repeat them.
 		</p>
 
 		<!-- How This Works -->
 		<div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-4 text-left">
 			<div class="glass-card rounded-[1.5rem] p-6 space-y-2">
-				<h3 class="text-lg font-bold font-display text-slate-900 dark:text-white">Book a call.</h3>
-				<p class="text-slate-500 text-sm leading-relaxed">60 minutes, one-on-one, focused entirely on your situation — not a generic script.</p>
+				<h3 class="text-lg font-bold font-display text-slate-900 dark:text-white">Get the free playbook.</h3>
+				<p class="text-slate-500 text-sm leading-relaxed">47 mistakes, my real numbers, the banking setup and the first 90 days. It's a web page you can bookmark.</p>
 			</div>
 			<div class="glass-card rounded-[1.5rem] p-6 space-y-2">
-				<h3 class="text-lg font-bold font-display text-slate-900 dark:text-white">We map your plan.</h3>
-				<p class="text-slate-500 text-sm leading-relaxed">Your numbers, your visa path, your income plan, checked against reality.</p>
+				<h3 class="text-lg font-bold font-display text-slate-900 dark:text-white">Run your own numbers.</h3>
+				<p class="text-slate-500 text-sm leading-relaxed">A calculator and checklists sit inside the playbook. The full calculator and tracker are in the kit.</p>
 			</div>
 			<div class="glass-card rounded-[1.5rem] p-6 space-y-2">
-				<h3 class="text-lg font-bold font-display text-slate-900 dark:text-white">You leave with a real next step.</h3>
-				<p class="text-slate-500 text-sm leading-relaxed">Not a vibe. Not more research. An actual plan.</p>
+				<h3 class="text-lg font-bold font-display text-slate-900 dark:text-white">Stuck? Talk it through.</h3>
+				<p class="text-slate-500 text-sm leading-relaxed">A 60-minute one-on-one call maps your numbers, your visa path and your plan.</p>
 			</div>
 		</div>
 
 		<div class="flex flex-col items-center gap-3 pt-6">
-			<a href="/consulting" class="btn-primary w-full sm:w-auto text-center flex justify-center items-center gap-2">
-				Book Your Call <ArrowRight size={18} />
+			<a href="/playbook" class="btn-primary w-full sm:w-auto text-center flex justify-center items-center gap-2">
+				Get the Free Playbook <ArrowRight size={18} />
 			</a>
-			<a href="/playbook" class="text-sm text-slate-500 dark:text-slate-400 hover:text-accent-cyan transition-colors underline underline-offset-4">
-				Not ready yet? Grab the free Playbook first →
+			<a href="/consulting" class="text-sm text-slate-500 dark:text-slate-400 hover:text-accent-cyan transition-colors underline underline-offset-4">
+				Want to talk it through? Book a call (${CONSULTING_PRICE}) →
 			</a>
 		</div>
 
 		<!-- Floating Social Icons -->
 		<div class="flex justify-center items-center gap-4 pt-4">
-			<a href="https://x.com/expatbuilder" target="_blank" rel="noopener" class="p-3 rounded-full glass-card text-slate-500 dark:text-slate-400 hover:text-black dark:hover:text-white transition-colors floating" style="animation-delay: 0s;" aria-label="X / Twitter">
-				<Twitter size={20} />
-			</a>
 			<a href="https://www.youtube.com/@expatbuildr" target="_blank" rel="noopener" class="p-3 rounded-full glass-card text-slate-500 dark:text-slate-400 hover:text-rose-500 transition-colors floating" style="animation-delay: 0.5s;" aria-label="YouTube">
 				<Youtube size={20} />
 			</a>
@@ -121,9 +121,6 @@ const featuredCards = targetPillarIds.map(pillarId => {
 			</a>
 			<a href="https://www.linkedin.com/in/expatbuildr/" target="_blank" rel="noopener" class="p-3 rounded-full glass-card text-slate-500 dark:text-slate-400 hover:text-blue-500 transition-colors floating" style="animation-delay: 1.5s;" aria-label="LinkedIn">
 				<Linkedin size={20} />
-			</a>
-			<a href="https://t.me/galaxyleads" target="_blank" rel="noopener" class="p-3 rounded-full glass-card text-slate-500 dark:text-slate-400 hover:text-accent-cyan transition-colors floating" style="animation-delay: 2s;" aria-label="Telegram">
-				<Send size={20} />
 			</a>
 		</div>
 	</section>
@@ -139,7 +136,7 @@ const featuredCards = targetPillarIds.map(pillarId => {
 						Join the <span id="join-counter" class="text-accent-cyan">—</span> expats already inside.
 					</h3>
 					<p class="text-slate-500 text-sm">
-						Weekly playbooks, systems and geo-arb intel. Free.
+						Get the playbook, plus one arbitrage angle every Tuesday. Free.
 					</p>
 				</div>
 				<form id="hero-newsletter-form" class="flex flex-col sm:flex-row gap-3 w-full lg:w-auto">
@@ -152,26 +149,6 @@ const featuredCards = targetPillarIds.map(pillarId => {
 				<div id="hero-newsletter-status" class="hidden text-xs font-mono text-red-400 text-center"></div>
 			</div>
 		</div>
-	</section>
-
-	<!-- SECTION 2: Consulting-First -->
-	<section class="max-w-7xl mx-auto py-24 px-4 sm:px-6">
-		<div class="mb-12 text-center md:text-left">
-			<h3 class="text-3xl md:text-4xl font-black font-display text-slate-900 dark:text-white">Talk to me first.</h3>
-			<p class="text-institutional-secondary mt-2 max-w-2xl md:mx-0 mx-auto">Websites, automation, lead-gen, income systems — I build all of it. But nothing gets built until we've mapped your specific situation on a call. That's the only way in.</p>
-		</div>
-		<a href="/consulting" class="glass-card p-10 md:p-14 rounded-[2rem] flex flex-col md:flex-row md:items-center gap-8 hover:border-accent-blue/50 transition-all hover:-translate-y-1 block group">
-			<div class="w-14 h-14 shrink-0 rounded-2xl bg-accent-blue/10 flex items-center justify-center text-accent-blue">
-				<Users size={28} />
-			</div>
-			<div class="flex-1 space-y-3">
-				<h4 class="text-2xl font-bold dark:text-white text-slate-900 group-hover:text-accent-blue transition-colors">1-on-1 Consulting</h4>
-				<p class="text-slate-500 text-base leading-relaxed max-w-2xl">A 60-minute strategy call, one-on-one. Your specific budget, visa path, and timeline, mapped against reality — not a generic checklist, not a highlight reel. If you need a website built, automation set up, or a lead-gen system running, this call is where we figure out exactly what that looks like for you.</p>
-			</div>
-			<div class="shrink-0 flex items-center text-accent-blue font-bold text-sm uppercase tracking-widest gap-2">
-				Book Your Call <ArrowRight size={16} class="group-hover:translate-x-1 transition-transform" />
-			</div>
-		</a>
 	</section>
 
 	<!-- SECTION: YouTube Video Embed -->
@@ -191,76 +168,88 @@ const featuredCards = targetPillarIds.map(pillarId => {
 				Where Are You Now
 			</div>
 			<h3 class="text-4xl md:text-5xl font-black font-display text-slate-900 dark:text-white">PICK YOUR STAGE.</h3>
-			<p class="text-slate-600 dark:text-slate-400 text-lg max-w-xl mx-auto">Same destination. Different starting point. Tell us where you are and we will show you the right path.</p>
+			<p class="text-slate-600 dark:text-slate-400 text-lg max-w-xl mx-auto">Same playbook. Different starting point. Tell us where you are.</p>
 		</div>
 
-		<div class="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
-			<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+		<div class="max-w-4xl mx-auto px-4 sm:px-6 relative z-10">
+			<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
 
 				<!-- Already an Expat -->
-				<a href="/newsletter"
+				<a href="/playbook?stage=abroad"
 					class="text-left p-12 rounded-[2.5rem] glass-card hover:border-accent-cyan/50 transition-all duration-300 group space-y-6 min-h-[400px] flex flex-col border border-accent-cyan/20">
 					<div class="text-3xl">🌏</div>
 					<div>
 						<div class="text-xs font-mono tracking-widest uppercase text-accent-cyan mb-3">Already Abroad</div>
-						<div class="text-3xl md:text-4xl font-black tracking-tight uppercase text-slate-900 dark:text-white mb-3 leading-tight">I Live Abroad<br/><span class="text-accent-cyan">as a Expat.</span></div>
-						<h4 class="text-base font-semibold text-slate-500 dark:text-slate-400 leading-relaxed">You made the move. Now you want to optimize, scale, and compound every advantage you have built.</h4>
+						<div class="text-3xl md:text-4xl font-black tracking-tight uppercase text-slate-900 dark:text-white mb-3 leading-tight">I Live Abroad<br/><span class="text-accent-cyan">as an Expat.</span></div>
+						<h4 class="text-base font-semibold text-slate-500 dark:text-slate-400 leading-relaxed">You made the move. Now you want to see where your money goes and stop the leaks.</h4>
 					</div>
 					<ul class="space-y-2 text-sm text-slate-500 dark:text-slate-400">
-						<li class="flex items-center gap-2"><span class="text-accent-cyan">+</span> Stack time and AI arbitrage on top of geo savings</li>
-						<li class="flex items-center gap-2"><span class="text-accent-cyan">+</span> Build autonomous systems so the business runs lean</li>
-						<li class="flex items-center gap-2"><span class="text-accent-cyan">+</span> Scale pipeline and revenue from anywhere</li>
+						<li class="flex items-center gap-2"><span class="text-accent-cyan">+</span> See your real monthly numbers in one place</li>
+						<li class="flex items-center gap-2"><span class="text-accent-cyan">+</span> Check your banking and money flow against mine</li>
+						<li class="flex items-center gap-2"><span class="text-accent-cyan">+</span> Skip the mistakes that cost me the most</li>
 					</ul>
 					<div class="pt-2 text-accent-cyan font-black text-sm uppercase tracking-widest flex items-center gap-2 mt-auto">
-						This is me <ArrowRight size={20} class="group-hover:translate-x-1 transition-transform" />
+						Get the playbook <ArrowRight size={20} class="group-hover:translate-x-1 transition-transform" />
 					</div>
 				</a>
 
 				<!-- Planning the Move -->
-				<a href="/consulting"
+				<a href="/playbook?stage=planning"
 					class="text-left p-12 rounded-[2.5rem] glass-card hover:border-accent-purple/50 transition-all duration-300 group space-y-6 min-h-[400px] flex flex-col border border-accent-purple/20">
 					<div class="text-3xl">🛫</div>
 					<div>
 						<div class="text-xs font-mono tracking-widest uppercase text-accent-purple mb-3">Planning the Move</div>
 						<div class="text-3xl md:text-4xl font-black tracking-tight uppercase text-slate-900 dark:text-white mb-3 leading-tight">I Want to<br/><span class="text-accent-purple">Leave the US.</span></div>
-						<h4 class="text-base font-semibold text-slate-500 dark:text-slate-400 leading-relaxed">You are still stateside but building toward the exit. You need the income, the infrastructure, and the plan before you go.</h4>
+						<h4 class="text-base font-semibold text-slate-500 dark:text-slate-400 leading-relaxed">You are still stateside and building toward the exit. You want the real costs and the plan before you go.</h4>
 					</div>
 					<ul class="space-y-2 text-sm text-slate-500 dark:text-slate-400">
-						<li class="flex items-center gap-2"><span class="text-accent-purple">+</span> Build location-independent income before you leave</li>
-						<li class="flex items-center gap-2"><span class="text-accent-purple">+</span> Learn the geo-arbitrage math and pick your base</li>
-						<li class="flex items-center gap-2"><span class="text-accent-purple">+</span> Set up banking, entity, and tax structure correctly</li>
+						<li class="flex items-center gap-2"><span class="text-accent-purple">+</span> Run your numbers before you book a flight</li>
+						<li class="flex items-center gap-2"><span class="text-accent-purple">+</span> Follow the first 90 days, step by step</li>
+						<li class="flex items-center gap-2"><span class="text-accent-purple">+</span> Learn the visa and banking basics first</li>
 					</ul>
 					<div class="pt-2 text-accent-purple font-black text-sm uppercase tracking-widest flex items-center gap-2 mt-auto">
-						This is me <ArrowRight size={20} class="group-hover:translate-x-1 transition-transform" />
-					</div>
-				</a>
-
-				<!-- Moving to the US -->
-				<a href="/consulting"
-					class="text-left p-12 rounded-[2.5rem] glass-card hover:border-accent-blue/50 transition-all duration-300 group space-y-6 min-h-[400px] flex flex-col border border-accent-blue/20">
-					<div class="text-3xl">🗽</div>
-					<div>
-						<div class="text-xs font-mono tracking-widest uppercase text-accent-blue mb-3">Heading Stateside</div>
-						<div class="text-3xl md:text-4xl font-black tracking-tight uppercase text-slate-900 dark:text-white mb-3 leading-tight">I Want to<br/><span class="text-accent-blue">Move to the US.</span></div>
-						<h4 class="text-base font-semibold text-slate-500 dark:text-slate-400 leading-relaxed">You are abroad now but the US is the next move. You need the income, visa path, and logistics lined up before you land.</h4>
-					</div>
-					<ul class="space-y-2 text-sm text-slate-500 dark:text-slate-400">
-						<li class="flex items-center gap-2"><span class="text-accent-blue">+</span> Line up income and job leads before you relocate</li>
-						<li class="flex items-center gap-2"><span class="text-accent-blue">+</span> Map the visa, banking, and credit-building path</li>
-						<li class="flex items-center gap-2"><span class="text-accent-blue">+</span> Plan housing and logistics for landing stateside</li>
-					</ul>
-					<div class="pt-2 text-accent-blue font-black text-sm uppercase tracking-widest flex items-center gap-2 mt-auto">
-						This is me <ArrowRight size={20} class="group-hover:translate-x-1 transition-transform" />
+						Get the playbook <ArrowRight size={20} class="group-hover:translate-x-1 transition-transform" />
 					</div>
 				</a>
 
 			</div>
-
-			<!-- Reassurance line below cards -->
-			<p class="text-center text-sm text-slate-500 dark:text-slate-500 mt-8 font-mono">
-				All paths lead to the same place. The tools, services, and newsletter cover every stage.
-			</p>
 		</div>
+	</section>
+
+	<!-- SECTION: Kit -->
+	<section class="max-w-7xl mx-auto py-24 px-4 sm:px-6">
+		<a href={CONFIG.KIT_URL} class="glass-card p-10 md:p-14 rounded-[2rem] flex flex-col md:flex-row md:items-center gap-8 hover:border-accent-blue/50 transition-all hover:-translate-y-1 block group">
+			<div class="w-14 h-14 shrink-0 rounded-2xl bg-accent-cyan/10 flex items-center justify-center text-accent-cyan">
+				<Calculator size={28} />
+			</div>
+			<div class="flex-1 space-y-3">
+				<h4 class="text-2xl font-bold dark:text-white text-slate-900 group-hover:text-accent-blue transition-colors">The Southeast Asia Arbitrage Kit</h4>
+				<p class="text-slate-500 text-base leading-relaxed max-w-2xl">The calculator, the tracker and the checklist from the playbook, in one kit that works for any Southeast Asia country. Built for people who are in Southeast Asia or about to move and want their numbers in one place.</p>
+			</div>
+			<div class="shrink-0 flex items-center text-accent-blue font-bold text-sm uppercase tracking-widest gap-2">
+				See the Kit · ${CONFIG.KIT_PRICE} <ArrowRight size={16} class="group-hover:translate-x-1 transition-transform" />
+			</div>
+		</a>
+	</section>
+
+	<!-- SECTION 2: Consulting -->
+	<section class="max-w-7xl mx-auto py-24 px-4 sm:px-6">
+		<div class="mb-12 text-center md:text-left">
+			<h3 class="text-3xl md:text-4xl font-black font-display text-slate-900 dark:text-white">Stuck? Talk it through.</h3>
+			<p class="text-institutional-secondary mt-2 max-w-2xl md:mx-0 mx-auto">If the playbook and the tools leave you with questions, book a call. It's advice from what I've been through, not a service I build for you.</p>
+		</div>
+		<a href="/consulting" class="glass-card p-10 md:p-14 rounded-[2rem] flex flex-col md:flex-row md:items-center gap-8 hover:border-accent-blue/50 transition-all hover:-translate-y-1 block group">
+			<div class="w-14 h-14 shrink-0 rounded-2xl bg-accent-blue/10 flex items-center justify-center text-accent-blue">
+				<Users size={28} />
+			</div>
+			<div class="flex-1 space-y-3">
+				<h4 class="text-2xl font-bold dark:text-white text-slate-900 group-hover:text-accent-blue transition-colors">1-on-1 Consulting Call</h4>
+				<p class="text-slate-500 text-base leading-relaxed max-w-2xl">A 60-minute one-on-one call about moving to Southeast Asia or bringing your business remote. Your budget, visa path and timeline, mapped against what I've lived through. This is experience, not legal, tax or visa advice.</p>
+			</div>
+			<div class="shrink-0 flex items-center text-accent-blue font-bold text-sm uppercase tracking-widest gap-2">
+				Book a Call · ${CONSULTING_PRICE} <ArrowRight size={16} class="group-hover:translate-x-1 transition-transform" />
+			</div>
+		</a>
 	</section>
 
 	<script>
@@ -276,7 +265,7 @@ const featuredCards = targetPillarIds.map(pillarId => {
 			})
 			.catch(() => {
 				const el = document.getElementById('join-counter');
-				if (el) el.textContent = '100+';
+				if (el) el.textContent = '400+';
 			});
 	})();
 
@@ -302,7 +291,7 @@ const featuredCards = targetPillarIds.map(pillarId => {
 				});
 				const data = await res.json();
 				if (data.success) {
-					(form as HTMLFormElement).innerHTML = '<p class="text-emerald-400 font-bold text-sm text-center w-full">You\'re in. Check your inbox for the playbook.</p>';
+					(form as HTMLFormElement).innerHTML = '<p class="text-emerald-400 font-bold text-sm text-center w-full">You\'re in. Check your inbox for your playbook link.</p>';
 				} else {
 					throw new Error(data.error || 'Failed');
 				}
@@ -345,7 +334,7 @@ const featuredCards = targetPillarIds.map(pillarId => {
 				const data = await res.json();
 
 				if (data.success) {
-					form.innerHTML = `<p class="text-emerald-400 font-bold text-base">Check your inbox. Your playbooks are on the way.</p>`;
+					form.innerHTML = `<p class="text-emerald-400 font-bold text-base">You're in. Check your inbox for your playbook link.</p>`;
 					status!.classList.add('hidden');
 				} else {
 					throw new Error(data.error || 'Failed');
@@ -366,7 +355,7 @@ const featuredCards = targetPillarIds.map(pillarId => {
 		<div class="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-12 gap-4">
 			<div>
 				<h3 class="text-3xl md:text-4xl font-black font-display text-slate-900 dark:text-white">THE INTELLIGENCE INDEX</h3>
-				<p class="text-institutional-secondary mt-2">Foundational guides for expat founders at every stage.</p>
+				<p class="text-institutional-secondary mt-2">Guides on money, income and moving abroad.</p>
 			</div>
 			<a href="/blog" class="text-sm font-bold uppercase tracking-widest text-accent-cyan hover:text-white transition-colors flex items-center gap-1">
 				View All Guides <ArrowRight size={16} />
@@ -415,10 +404,10 @@ const featuredCards = targetPillarIds.map(pillarId => {
 						<Rss size={16} /> Galaxy Arbitrage Newsletter
 					</div>
 					<h3 class="text-4xl md:text-5xl font-black font-display text-white leading-tight">
-						THE WEEKLY PLAYBOOK FOR EXPAT FOUNDERS.
+						ONE ARBITRAGE ANGLE EVERY TUESDAY.
 					</h3>
 					<p class="text-slate-400 text-lg">
-						Join founders getting weekly breakdowns on stacking geo-arbitrage, remote income, AI leverage, and lead generation into a compounding founder operating system. Free.
+						The math, the move, and how to run it from wherever you are. I'm rebuilding in public, so you get the real numbers and the mistakes along with the wins. Free.
 					</p>
 					<form id="footer-newsletter-form" class="pt-4 space-y-3 max-w-md">
 						<div class="flex flex-col sm:flex-row gap-3">
@@ -429,7 +418,7 @@ const featuredCards = targetPillarIds.map(pillarId => {
 							</button>
 						</div>
 						<div id="footer-newsletter-status" class="text-xs font-mono hidden"></div>
-						<p class="text-xs text-slate-500 font-mono">4 Free Resources. No Spam.</p>
+						<p class="text-xs text-slate-500 font-mono">Free. No spam. Unsubscribe anytime.</p>
 					</form>
 				</div>
 				<div class="relative order-first lg:order-last">

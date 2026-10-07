@@ -67,19 +67,19 @@ h1 span { color:var(--green); }
 
 <h1>You're in —<br><span>taking you to the playbook</span></h1>
 
-<p class="ty-sub">The Philippines Arbitrage Playbook is a full interactive page: the calculator, the checklist, and the 47 pitfalls. You're headed there now.</p>
+<p class="ty-sub">I lost $300K, then the $60K I took to Cebu. The playbook is every mistake, my real numbers, and a calculator you can run yourself. You're headed there now.</p>
 
 <div class="ty-redirect-box">
   <div class="label">📖 Opening next</div>
   <strong>Philippines Arbitrage Playbook</strong>
-  <p>The math, the banking setup, the first 90 days, and the mistakes that cost real money. Taking you there automatically.</p>
+  <p>The 47 mistakes that cost me real money, my real numbers, the banking setup, and the first 90 days. Taking you there automatically.</p>
 </div>
 
 <p class="ty-countdown" id="countdownLine">You're in. Taking you to the playbook in <span id="countdown">5</span>...</p>
 
-<a href="/playbook/philippines" class="btn-skip">Go now →</a>
+<a href="/playbook/philippines?ref=signup" class="btn-skip">Go now →</a>
 
-<p class="ty-sidestep">Want 1-on-1 help instead of doing it yourself? <a href="/consulting">Talk to Tony directly →</a></p>
+<p class="ty-sidestep">Want to talk it through instead? <a href="/consulting">Book a 1-on-1 call ($150) →</a></p>
 
 <hr class="ty-divider">
 
@@ -91,11 +91,11 @@ h1 span { color:var(--green); }
   </div>
   <div class="next-item">
     <div class="next-num">2</div>
-    <div class="next-text"><strong>Reply "Hi" to the welcome email.</strong> It tells your email provider this is real mail from a real person — keeps future issues landing in Primary.</div>
+    <div class="next-text"><strong>Reply "Here" to the welcome email.</strong> It tells your email provider this is real mail from a real person — keeps future issues landing in Primary.</div>
   </div>
   <div class="next-item">
     <div class="next-num">3</div>
-    <div class="next-text"><strong>Follow @expatbuilder on X and @expatbuildr on Instagram</strong> for the daily build-in-public posts between newsletter issues.</div>
+    <div class="next-text"><strong>Follow @expatbuildr on Instagram and YouTube</strong> for the build-in-public posts between newsletter issues.</div>
   </div>
 </div>
 
@@ -109,16 +109,19 @@ function playbookUrl() {
   return '/playbook/philippines?' + params.toString();
 }
 
+const REDIRECT_SECONDS = 5;
 const reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 const el = document.getElementById('countdown');
 const line = document.getElementById('countdownLine');
 
+let count = REDIRECT_SECONDS;
+if (el) el.textContent = count;
+
 if (reduceMotion) {
   // Still redirect, just don't animate a ticking number.
   if (line) line.textContent = "You're in. Taking you to the playbook...";
-  setTimeout(() => window.location.replace(playbookUrl()), 5000);
+  setTimeout(() => window.location.replace(playbookUrl()), REDIRECT_SECONDS * 1000);
 } else {
-  let count = 5;
   const timer = setInterval(() => {
     count--;
     if (el) el.textContent = count;

@@ -9,8 +9,17 @@
 // :root holds the light palette, html.dark overrides it, no forced JS override.
 import Layout from '../layouts/Layout.astro';
 
+// The old Stripe Payment Link charges $297. A $150 page must use a $150 Payment
+// Link. Create one in Stripe, set its post-payment redirect to /consulting/booked,
+// and paste it into STRIPE_PAYMENT_LINK. Keep the old URL in a comment for
+// reference. Keep CONSULTING_PRICE in sync with the homepage.
+// Old $297 link, repriced to $150 directly in Stripe (kept the same URL):
+// https://book.stripe.com/6oU3cu7WLf2afVU4yQ2oE0l
+const CONSULTING_PRICE = 150;
+const STRIPE_PAYMENT_LINK = "https://book.stripe.com/6oU3cu7WLf2afVU4yQ2oE0l";
+
 const title = "1-on-1 Consulting Call | ExpatBuildr";
-const description = "Book a 1-on-1 relocation strategy call. Real numbers, real risks, mapped to your specific situation. $297 for 60 minutes.";
+const description = `Book a 1-on-1 call about moving to Southeast Asia. Your real numbers, your real risks. $${CONSULTING_PRICE} for 60 minutes.`;
 const canonicalUrl = "https://expatbuildr.com/consulting";
 // TODO: no consulting-specific OG image exists yet at /images/consulting/og-consulting.png —
 // falls back to Layout's site-wide default (/expatog.jpg) until one is created.
@@ -37,7 +46,7 @@ const canonicalUrl = "https://expatbuildr.com/consulting";
       "description": description,
       "offers": {
         "@type": "Offer",
-        "price": "297",
+        "price": String(CONSULTING_PRICE),
         "priceCurrency": "USD"
       }
     })} />
@@ -204,11 +213,10 @@ const canonicalUrl = "https://expatbuildr.com/consulting";
 
   <main class="consulting-page">
     <section id="hero" class="wrap">
-      <div class="kicker fade-1">1-on-1 Strategy Call · $297 / 60 Minutes</div>
-      <h1 class="fade-2">Fell in love with the Philippines?<br /><em>Now let's make sure you can actually stay.</em></h1>
+      <div class="kicker fade-1">1-on-1 Call · ${CONSULTING_PRICE} / 60 Minutes</div>
+      <h1 class="fade-2">I lost $60K moving to the Philippines.<br /><em>Let's make sure you don't.</em></h1>
       <p class="hero-sub fade-3">
-        60 minutes. Your numbers, your visa path, your income plan — mapped out with someone
-        who's actually done this, not someone guessing from a blog post.
+        60 minutes. Your numbers, your visa path and your income plan, checked by someone who has already made the expensive mistakes, not someone guessing from a blog post.
       </p>
     </section>
 
@@ -230,6 +238,7 @@ const canonicalUrl = "https://expatbuildr.com/consulting";
             <li>You've decided you're moving and need a real plan, not more research</li>
             <li>You want your specific numbers checked against reality before you commit</li>
             <li>You're ready to ask the hard questions and act on the answers</li>
+            <li>You're bringing a business or remote income with you and want the plan checked</li>
           </ul>
         </div>
         <div class="fit-column">
@@ -247,20 +256,18 @@ const canonicalUrl = "https://expatbuildr.com/consulting";
       <div class="section-tag">What's Included</div>
       <h2>Everything mapped to<br /><em>your situation.</em></h2>
       <ul class="included-list">
-        <li>Drop your email, pick a time — no lengthy intake form first</li>
+        <li>Drop your email, pay, then pick a time. No lengthy intake form first</li>
         <li>60 minutes, one-on-one, focused entirely on your situation</li>
         <li>A follow-up summary of what we covered and your next steps</li>
+        <li>Honest limits: this is advice from experience, not legal, tax or visa advice, and I don't build websites or run services</li>
       </ul>
     </section>
 
     <section class="wrap about">
       <div class="section-tag">Who You're Talking To</div>
-      <h2>Not theory.<br /><em>Lived it myself.</em></h2>
+      <h2>Not theory.<br /><em>I paid for these lessons.</em></h2>
       <p>
-        I run ExpatBuildr, where I teach the real numbers, real risks, and income systems
-        behind actually relocating to Southeast Asia, not the highlight-reel version.
-        I live in Cebu, Philippines, and everything I teach comes from doing this myself,
-        not theorizing about it.
+        I lost $300K in crypto, moved to the Philippines in September 2024 with about $60K, and lost that too over the next two years. I'm rebuilding now from Cebu. I run ExpatBuildr, where I document the real numbers and the mistakes behind relocating to Southeast Asia, not the highlight-reel version.
       </p>
       <h3>Why This Call Is Different</h3>
       <p>
@@ -270,15 +277,13 @@ const canonicalUrl = "https://expatbuildr.com/consulting";
         standard: your real numbers, your real risks, no filler.
       </p>
       <p class="access-note">
-        I'm currently taking on my first round of 1-on-1 calls directly, which means
-        you're getting my full attention and lower pricing before this becomes harder
-        to book.
+        I'm taking on my first round of 1-on-1 calls directly, which means you get my full attention. The price goes up as the calendar fills.
       </p>
     </section>
 
     <section class="wrap price">
       <div class="price-box">
-        <div class="plan-price"><sup>$</sup>297</div>
+        <div class="plan-price"><sup>$</sup>{CONSULTING_PRICE}</div>
         <div class="plan-delivery">60-minute call, one-on-one</div>
       </div>
     </section>
@@ -306,6 +311,7 @@ const canonicalUrl = "https://expatbuildr.com/consulting";
         Revert to the old Calendly-first flow once Calendly's paid plan (or
         native payment enforcement) is sorted — see git history for the
         prior inline-widget version this replaced.
+        2026-10: price now comes from CONSULTING_PRICE. The Payment Link must match it.
       -->
       <form id="consultingLeadForm" class="lead-gate">
         <input
@@ -321,13 +327,13 @@ const canonicalUrl = "https://expatbuildr.com/consulting";
 
       <div id="paymentStep" class="payment-step" hidden>
         <p class="payment-step-note">You're set, <span id="paymentStepEmail"></span> — next step is payment, then you'll pick your time.</p>
-        <a id="paymentStepBtn" class="nav-cta" href="#" target="_self">Continue to Payment — $297 →</a>
+        <a id="paymentStepBtn" class="nav-cta" href="#" target="_self">Continue to Payment — ${CONSULTING_PRICE} →</a>
       </div>
 
       <script is:inline src="/beehiiv-v2.js"></script>
-      <script is:inline>
+      <script is:inline define:vars={{ paymentLink: STRIPE_PAYMENT_LINK }}>
         (() => {
-          const STRIPE_PAYMENT_LINK_URL = "https://book.stripe.com/6oU3cu7WLf2afVU4yQ2oE0l";
+          const STRIPE_PAYMENT_LINK_URL = paymentLink;
           const emailForm = document.getElementById('consultingLeadForm');
           const emailInput = document.getElementById('consultingLeadEmail');
           const errorEl = document.getElementById('consultingLeadError');
@@ -342,6 +348,7 @@ const canonicalUrl = "https://expatbuildr.com/consulting";
             const email = emailInput.value.trim();
 
             if (!window.isValidEmail || !window.isValidEmail(email)) {
+              errorEl.textContent = 'Please enter a valid email.';
               errorEl.hidden = false;
               emailInput.focus();
               return;
@@ -363,6 +370,14 @@ const canonicalUrl = "https://expatbuildr.com/consulting";
               });
             }
 
+            if (!STRIPE_PAYMENT_LINK_URL || STRIPE_PAYMENT_LINK_URL.startsWith('REPLACE')) {
+              errorEl.textContent = 'Booking is opening shortly. Your email is saved, and I will send you the link.';
+              errorEl.hidden = false;
+              submitBtn.disabled = false;
+              submitBtn.textContent = 'Continue →';
+              return;
+            }
+
             paymentStepEmail.textContent = email;
             paymentStepBtn.href = `${STRIPE_PAYMENT_LINK_URL}?prefilled_email=${encodeURIComponent(email)}`;
             emailForm.hidden = true;
@@ -374,11 +389,13 @@ const canonicalUrl = "https://expatbuildr.com/consulting";
 
     <section class="wrap faq">
       <div class="section-tag">Questions</div>
+      <!-- Reschedule policy: hidden until decided.
       <div class="faq-item">
         <h3>What if I need to reschedule?</h3>
-        <!-- TODO: reschedule policy left blank per instructions — not invented, needs your input -->
+        TODO: reschedule policy left blank per instructions, not invented, needs your input
         <p></p>
       </div>
+      -->
       <div class="faq-item">
         <h3>What if I'm not 100% decided yet?</h3>
         <p>
@@ -388,7 +405,7 @@ const canonicalUrl = "https://expatbuildr.com/consulting";
       </div>
       <div class="faq-item">
         <h3>Is this a sales call for other services?</h3>
-        <p>No. This is planning time, not a pitch.</p>
+        <p>No. I don't sell services. If a tool from the kit would help, I'll say so, but there's no pitch. This is planning time.</p>
       </div>
     </section>
   </main>
@@ -399,7 +416,7 @@ const canonicalUrl = "https://expatbuildr.com/consulting";
       <ul class="footer-links">
         <li><a href="/privacy">Privacy</a></li>
         <li><a href="/terms">Terms</a></li>
-        <li><a href="https://x.com/expatbuilder" target="_blank" rel="noopener">X / Twitter</a></li>
+        <li><a href="https://www.youtube.com/@expatbuildr" target="_blank" rel="noopener">YouTube</a></li>
       </ul>
     </div>
   </footer>
