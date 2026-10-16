@@ -1,0 +1,423 @@
+---
+// src/pages/reloc-consulting.astro
+// 1-on-1 Relocation Consulting landing page (moved from /consulting; /consulting is now First Client Map) — paid strategy call, Calendly + Stripe embed
+// Styled in the same visual language as the founders/* funnel pages, but with its
+// own scoped tokens (prefixed --c-*) instead of the shared funnel.css import —
+// funnel.css defaults to a dark palette and those pages force dark mode on load,
+// which skips the site-wide rule that every page ships light-by-default with dark
+// as an optional toggle. This page follows Layout.astro's shared toggle instead:
+// :root holds the light palette, html.dark overrides it, no forced JS override.
+import Layout from '../layouts/Layout.astro';
+
+// New $150 consulting Payment Link. Keep CONSULTING_PRICE in sync with the homepage.
+// Prior link (was $297, then repriced to $150 directly in Stripe, no longer used):
+// https://book.stripe.com/6oU3cu7WLf2afVU4yQ2oE0l
+const CONSULTING_PRICE = 150;
+const STRIPE_PAYMENT_LINK = "https://buy.stripe.com/fZu28q3Gvf2a6lkaXe2oE0n";
+
+const title = "Relocation Consulting Call | ExpatBuildr";
+const description = `Book a 1-on-1 call about moving to Southeast Asia. Your real numbers, your real risks. $${CONSULTING_PRICE} for 60 minutes.`;
+const canonicalUrl = "https://expatbuildr.com/reloc-consulting";
+// TODO: no consulting-specific OG image exists yet at /images/consulting/og-consulting.png —
+// falls back to Layout's site-wide default (/expatog.jpg) until one is created.
+---
+
+<Layout title={title} description={description} minimal={true} noAnimations={true}>
+  <Fragment slot="head">
+    <link rel="canonical" href={canonicalUrl} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:type" content="website" />
+    <meta name="robots" content="index, follow" />
+
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "serviceType": "Relocation Consulting",
+      "provider": {
+        "@type": "Person",
+        "name": "Tony Long II"
+      },
+      "areaServed": "Southeast Asia",
+      "description": description,
+      "offers": {
+        "@type": "Offer",
+        "price": String(CONSULTING_PRICE),
+        "priceCurrency": "USD"
+      }
+    })} />
+
+    <style>
+      /* Page-local tokens, prefixed --c- to avoid colliding with global.css's own
+         --text-muted etc. Light values live on :root (site-wide default); html.dark
+         overrides them — same mechanism Layout.astro's theme toggle already drives
+         everywhere else, so this page follows it instead of forcing a mode. */
+      :root {
+        --c-bg: #ffffff;
+        --c-bg-2: #f8fafc;
+        --c-bg-3: #f1f5f9;
+        --c-border: rgba(15,23,42,.08);
+        --c-border-hi: rgba(15,23,42,.14);
+        --c-text: #0f172a;
+        --c-text-muted: #334155;
+        --c-text-dim: #64748b;
+        --c-accent-1: #15803d;
+        --c-accent-2: #7c3aed;
+        --c-serif: var(--font-display, 'Outfit', sans-serif);
+        --c-mono: var(--font-mono, 'JetBrains Mono', monospace);
+        --c-sans: var(--font-inter, 'Inter', sans-serif);
+      }
+
+      html.dark {
+        --c-bg: #050505;
+        --c-bg-2: #0a0a0a;
+        --c-bg-3: #111111;
+        --c-border: rgba(255,255,255,.07);
+        --c-border-hi: rgba(255,255,255,.14);
+        --c-text: #f0ede8;
+        --c-text-muted: #9a9490;
+        --c-text-dim: #5a5652;
+        --c-accent-1: #a8e6a3;
+        --c-accent-2: #c084fc;
+      }
+
+      nav { position: sticky; top: 0; z-index: 100; border-bottom: 1px solid var(--c-border); background: color-mix(in srgb, var(--c-bg) 92%, transparent); backdrop-filter: blur(12px); }
+      .nav-inner { max-width: 900px; margin: 0 auto; padding: 1rem clamp(1.25rem,5vw,2.5rem); display: flex; align-items: center; justify-content: space-between; }
+      .nav-logo { display: flex; align-items: center; gap: .75rem; text-decoration: none; }
+      .nav-logo-img { width: 32px; height: 32px; border-radius: 8px; object-fit: cover; }
+      .logo-text { font-family: var(--c-sans); font-weight: 900; font-size: 1.2rem; letter-spacing: -.04em; color: var(--c-text); }
+      .logo-text .built { background: linear-gradient(135deg,var(--c-accent-1),var(--c-accent-2)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-weight: 400; }
+      .logo-text .slug { font-family: var(--c-mono); font-size: .78rem; color: var(--c-text-dim); margin-left: .3rem; font-weight: 400; letter-spacing: .05em; }
+      .nav-actions { display: flex; align-items: center; gap: .75rem; }
+      .nav-cta { display: inline-flex; align-items: center; font-family: var(--c-mono); font-size: .72rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; text-decoration: none; padding: .6em 1.2em; background: linear-gradient(135deg,var(--c-accent-1),var(--c-accent-2)); color: #000; transition: all .15s; }
+      .nav-cta:hover { filter: brightness(1.1); }
+
+      .theme-toggle { display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; border-radius: 8px; border: 1px solid var(--c-border); background: var(--c-bg-2); color: var(--c-text-muted); cursor: pointer; transition: all .15s; flex-shrink: 0; }
+      .theme-toggle:hover { border-color: var(--c-accent-1); color: var(--c-accent-1); }
+      .theme-toggle .icon-sun { display: none; }
+      html.dark .theme-toggle .icon-moon { display: none; }
+      html.dark .theme-toggle .icon-sun { display: block; }
+
+      .wrap { max-width: 900px; margin: 0 auto; padding: 0 clamp(1.25rem,5vw,2.5rem); position: relative; z-index: 5; }
+      .consulting-page section { padding: clamp(2.5rem,6vw,4rem) 0; border-top: 1px solid var(--c-border); }
+      .consulting-page section:first-of-type { border-top: none; padding-top: clamp(3.5rem,9vw,6rem); }
+
+      .section-tag { font-family: var(--c-mono); font-size: .65rem; letter-spacing: .15em; text-transform: uppercase; color: var(--c-text-dim); margin-bottom: 1rem; display: flex; align-items: center; gap: .75rem; }
+      .section-tag::after { content: ''; display: block; height: 1px; width: 3rem; background: var(--c-border-hi); }
+
+      .kicker { font-family: var(--c-mono); font-size: .68rem; letter-spacing: .15em; text-transform: uppercase; color: var(--c-accent-1); display: flex; align-items: center; gap: .6rem; margin-bottom: 1.5rem; }
+      .kicker::before { content: ''; display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: var(--c-accent-1); animation: pulse 2s ease infinite; }
+      @keyframes pulse { 0%,100% { opacity: 1; transform: scale(1); } 50% { opacity: .4; transform: scale(.7); } }
+
+      h1 { font-family: var(--c-serif); font-size: clamp(2.25rem,6vw,3.75rem); line-height: 1.1; letter-spacing: -.02em; margin-bottom: 1.25rem; max-width: 20ch; color: var(--c-text); }
+      h1 em { font-style: italic; color: var(--c-accent-1); }
+      .cross-link { margin-top: 1.25rem; font-size: .8rem; color: var(--c-text-dim); }
+      .hero-sub { font-size: 1.05rem; color: var(--c-text-muted); line-height: 1.75; max-width: 52ch; font-weight: 300; }
+
+      h2 { font-family: var(--c-serif); font-size: clamp(1.6rem,3.5vw,2.5rem); line-height: 1.15; margin-bottom: 1rem; color: var(--c-text); }
+      h2 em { font-style: italic; color: var(--c-accent-1); }
+      h3 { font-family: var(--c-serif); font-size: 1.2rem; margin: 1.5rem 0 .5rem; color: var(--c-text); }
+
+      .body-copy p, .about p { color: var(--c-text-muted); font-size: 1rem; line-height: 1.75; max-width: 60ch; }
+
+      .consulting-page a { color: var(--c-accent-1); text-decoration: underline; text-decoration-color: color-mix(in srgb, var(--c-accent-1) 35%, transparent); text-underline-offset: 2px; transition: text-decoration-color .15s; }
+      .consulting-page a:hover { text-decoration-color: var(--c-accent-1); }
+
+      .fit-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--c-border); border: 1px solid var(--c-border); margin-top: 1.5rem; }
+      .fit-column { background: var(--c-bg-2); padding: 1.75rem; }
+      .fit-column h2 { font-size: 1.15rem; margin-bottom: .9rem; }
+      .fit-column ul { list-style: none; }
+      .fit-column li { font-size: .9rem; color: var(--c-text-muted); padding: .5rem 0; border-bottom: 1px solid var(--c-border); line-height: 1.6; display: flex; align-items: flex-start; gap: .6rem; }
+      .fit-column li::before { content: '—'; color: var(--c-accent-1); flex-shrink: 0; }
+
+      .included-list { list-style: none; margin-top: 1.5rem; }
+      .included-list li { font-size: .95rem; color: var(--c-text-muted); padding: .75rem 0; border-bottom: 1px solid var(--c-border); display: flex; align-items: flex-start; gap: .6rem; line-height: 1.6; }
+      .included-list li::before { content: '✓'; color: var(--c-accent-1); font-family: var(--c-mono); font-size: .8rem; flex-shrink: 0; margin-top: .15rem; }
+
+      .access-note { font-style: italic; color: var(--c-text-dim); margin-top: 1.25rem; }
+
+      .price { text-align: center; }
+      .price-box { display: inline-block; }
+      .plan-price { font-family: var(--c-serif); font-size: 3.5rem; color: var(--c-text); line-height: 1; }
+      .plan-price sup { font-size: 1.25rem; vertical-align: super; color: var(--c-text-muted); }
+      .plan-delivery { font-family: var(--c-mono); font-size: .68rem; letter-spacing: .1em; text-transform: uppercase; color: var(--c-text-dim); margin-top: .75rem; }
+
+      .booking-sub { color: var(--c-text-muted); font-size: .95rem; margin-bottom: 1.5rem; }
+
+      .lead-gate { display: flex; flex-wrap: wrap; gap: .75rem; max-width: 480px; }
+      .lead-gate[hidden] { display: none; }
+      .lead-gate input[type="email"] { flex: 1; min-width: 220px; padding: .9em 1.1em; font-family: var(--c-sans); font-size: .95rem; color: var(--c-text); background: var(--c-bg-2); border: 1px solid var(--c-border-hi); outline: none; transition: border-color .15s; }
+      .lead-gate input[type="email"]:focus { border-color: var(--c-accent-1); }
+      .lead-gate input[type="email"]::placeholder { color: var(--c-text-dim); }
+      .lead-gate button[type="submit"] { border: none; cursor: pointer; white-space: nowrap; }
+      .lead-gate button[type="submit"]:disabled { opacity: .6; cursor: default; }
+      .lead-gate-error { color: #dc2626; font-family: var(--c-mono); font-size: .75rem; margin-top: .6rem; }
+      html.dark .lead-gate-error { color: #f87171; }
+
+      .payment-step { margin-top: 1.5rem; max-width: 480px; }
+      .payment-step[hidden] { display: none; }
+      .payment-step-note { color: var(--c-text-muted); font-size: .9rem; margin-bottom: 1rem; }
+      .payment-step-note span { color: var(--c-text); font-weight: 600; }
+
+      .faq-item { margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid var(--c-border); }
+      .faq-item:first-of-type { margin-top: 1.5rem; }
+      .faq-item h3 { font-family: var(--c-mono); font-size: .85rem; font-weight: 600; letter-spacing: .02em; margin: 0 0 .5rem; color: var(--c-text); }
+      .faq-item p { font-size: .9rem; color: var(--c-text-muted); line-height: 1.65; min-height: 1em; }
+
+      footer { position: relative; z-index: 5; border-top: 1px solid var(--c-border); padding: 1.75rem clamp(1.25rem,5vw,2.5rem); }
+      .footer-inner { max-width: 900px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+      .footer-brand { font-family: var(--c-mono); font-size: .7rem; color: var(--c-text-dim); letter-spacing: .06em; }
+      .footer-brand span { color: var(--c-accent-1); }
+      .footer-links { display: flex; gap: 2rem; list-style: none; }
+      .footer-links a { font-family: var(--c-mono); font-size: .62rem; letter-spacing: .1em; text-transform: uppercase; color: var(--c-text-dim); text-decoration: none; transition: color .15s; }
+      .footer-links a:hover { color: var(--c-accent-1); }
+
+      @media (max-width: 640px) {
+        .fit-grid { grid-template-columns: 1fr; }
+        .fit-column { padding: 1.25rem 1rem; }
+
+        /* Nav had no mobile handling at all — logo + slug + theme toggle + CTA
+           button in one unwrapped flex row overflowed the viewport, and since
+           the site clips (not scrolls) horizontal overflow, that read as
+           content with no margin instead of a visible scrollbar. */
+        .nav-inner { padding: .85rem 1.1rem; flex-wrap: wrap; row-gap: .5rem; }
+        .logo-text .slug { display: none; }
+        .nav-cta { font-size: .64rem; padding: .55em .9em; }
+        .lead-gate { flex-direction: column; align-items: stretch; }
+        .lead-gate input[type="email"] { min-width: 0; }
+        .payment-step .nav-cta { display: flex; justify-content: center; }
+      }
+    </style>
+  </Fragment>
+
+  <nav>
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">
+        <img src="/logo.jpg" alt="ExpatBuildr Logo" class="nav-logo-img" />
+        <div class="logo-text">Expat<span class="built">Buildr</span><span class="slug">/reloc-consulting</span></div>
+      </a>
+      <div class="nav-actions">
+        <!-- id="themeToggle" is wired up automatically by Layout.astro's shared
+             theme-toggle script (unconditional, runs even with minimal={true}) -->
+        <button id="themeToggle" class="theme-toggle" type="button" aria-label="Toggle color theme">
+          <svg class="icon-moon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" /></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4" /><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41" /></svg>
+        </button>
+        <a href="#booking" class="nav-cta">Book Your Call →</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="consulting-page">
+    <section id="hero" class="wrap">
+      <div class="kicker fade-1">1-on-1 Call · ${CONSULTING_PRICE} / 60 Minutes</div>
+      <h1 class="fade-2">I lost $60K moving to the Philippines.<br /><em>Let's make sure you don't.</em></h1>
+      <p class="hero-sub fade-3">
+        60 minutes. Your numbers, your visa path and your income plan, checked by someone who has already made the expensive mistakes, not someone guessing from a blog post.
+      </p>
+      <p class="cross-link">Starting a business from $0 instead? <a href="/consulting">First Client Map</a></p>
+    </section>
+
+    <section class="wrap body-copy fade-3">
+      <p>
+        Most relocation content is either aspirational fluff or generic checklists that
+        don't account for your actual situation. This call isn't that. We'll go through
+        your specific budget, visa path, timeline, and the risks nobody talks about, and
+        you'll leave with a real plan, not a vibe.
+      </p>
+    </section>
+
+    <section class="wrap fit-check">
+      <div class="section-tag">Fit Check</div>
+      <div class="fit-grid">
+        <div class="fit-column">
+          <h2>This call is for you if:</h2>
+          <ul>
+            <li>You've decided you're moving and need a real plan, not more research</li>
+            <li>You want your specific numbers checked against reality before you commit</li>
+            <li>You're ready to ask the hard questions and act on the answers</li>
+            <li>You're bringing a business or remote income with you and want the plan checked</li>
+          </ul>
+        </div>
+        <div class="fit-column">
+          <h2>This isn't the right fit if:</h2>
+          <ul>
+            <li>You're still deciding whether you even want to move</li>
+            <li>You're looking for cheerleading, not a reality check</li>
+            <li>You haven't looked at the <a href="/playbook">free Playbook</a> yet, start there first</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap whats-included">
+      <div class="section-tag">What's Included</div>
+      <h2>Everything mapped to<br /><em>your situation.</em></h2>
+      <ul class="included-list">
+        <li>Drop your email, pay, then pick a time. No lengthy intake form first</li>
+        <li>60 minutes, one-on-one, focused entirely on your situation</li>
+        <li>A follow-up summary of what we covered and your next steps</li>
+        <li>Honest limits: this is advice from experience, not legal, tax or visa advice, and I don't build websites or run services</li>
+      </ul>
+    </section>
+
+    <section class="wrap about">
+      <div class="section-tag">Who You're Talking To</div>
+      <h2>Not theory.<br /><em>I paid for these lessons.</em></h2>
+      <p>
+        I lost $300K in crypto, moved to the Philippines in September 2024 with about $60K, and lost that too over the next two years. I'm rebuilding now from Cebu. I run ExpatBuildr, where I document the real numbers and the mistakes behind relocating to Southeast Asia, not the highlight-reel version.
+      </p>
+      <h3>Why This Call Is Different</h3>
+      <p>
+        Most relocation advice online is either aspirational or recycled. I built
+        ExpatBuildr specifically because that content was misleading people about what
+        this actually costs and what actually goes wrong. This call is the same
+        standard: your real numbers, your real risks, no filler.
+      </p>
+      <p class="access-note">
+        I'm taking on my first round of 1-on-1 calls directly, which means you get my full attention. The price goes up as the calendar fills.
+      </p>
+    </section>
+
+    <section class="wrap price">
+      <div class="price-box">
+        <div class="plan-price"><sup>$</sup>{CONSULTING_PRICE}</div>
+        <div class="plan-delivery">60-minute call, one-on-one</div>
+        <a href="#booking" class="nav-cta" style="display:inline-flex; margin-top:1.5rem;">Book Your Call →</a>
+      </div>
+    </section>
+
+    <section id="booking" class="wrap booking">
+      <div class="section-tag">Book Your Call</div>
+      <h2>Pick a time<br /><em>that works for you.</em></h2>
+      <p class="booking-sub">
+        Drop your email first, then complete payment to grab your slot — you'll pick your time right after.
+      </p>
+
+      <!--
+        TEMPORARY Stripe-first flow (2026-08-18): Calendly's native payment
+        enforcement needs a paid Calendly plan we don't have tonight, so
+        payment is collected via a Stripe Payment Link BEFORE Calendly ever
+        shows, instead of Calendly gating the booking itself. Same pattern
+        already used on /kit and /shop.
+        1. Email, mandatory -> Beehiiv, then reveal step 2.
+        2. Button to the Stripe Payment Link (prefilled email via Stripe's
+           own ?prefilled_email= param). Stripe's Payment Link must have its
+           post-payment redirect set to /consulting/booked in the Stripe
+           dashboard — that's config, not code, and isn't done by this edit.
+        3. /consulting/booked (separate page) shows the Calendly link after
+           payment succeeds.
+        Revert to the old Calendly-first flow once Calendly's paid plan (or
+        native payment enforcement) is sorted — see git history for the
+        prior inline-widget version this replaced.
+        2026-10: price now comes from CONSULTING_PRICE. The Payment Link must match it.
+      -->
+      <form id="consultingLeadForm" class="lead-gate">
+        <input
+          type="email"
+          id="consultingLeadEmail"
+          placeholder="you@email.com"
+          autocomplete="email"
+          required
+        />
+        <button type="submit" class="nav-cta">Continue →</button>
+      </form>
+      <p id="consultingLeadError" class="lead-gate-error" hidden>Please enter a valid email.</p>
+
+      <div id="paymentStep" class="payment-step" hidden>
+        <p class="payment-step-note">You're set, <span id="paymentStepEmail"></span> — next step is payment, then you'll pick your time.</p>
+        <a id="paymentStepBtn" class="nav-cta" href="#" target="_self">Continue to Payment — ${CONSULTING_PRICE} →</a>
+      </div>
+
+      <script is:inline src="/beehiiv-v2.js"></script>
+      <script is:inline define:vars={{ paymentLink: STRIPE_PAYMENT_LINK }}>
+        (() => {
+          const STRIPE_PAYMENT_LINK_URL = paymentLink;
+          const emailForm = document.getElementById('consultingLeadForm');
+          const emailInput = document.getElementById('consultingLeadEmail');
+          const errorEl = document.getElementById('consultingLeadError');
+          const paymentStep = document.getElementById('paymentStep');
+          const paymentStepEmail = document.getElementById('paymentStepEmail');
+          const paymentStepBtn = document.getElementById('paymentStepBtn');
+          if (!emailForm || !paymentStep) return;
+
+          // Email (mandatory) -> Beehiiv, then reveal the payment button
+          emailForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const email = emailInput.value.trim();
+
+            if (!window.isValidEmail || !window.isValidEmail(email)) {
+              errorEl.textContent = 'Please enter a valid email.';
+              errorEl.hidden = false;
+              emailInput.focus();
+              return;
+            }
+            errorEl.hidden = true;
+
+            const submitBtn = emailForm.querySelector('button[type="submit"]');
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Loading...';
+
+            // Fire the capture, but don't let a Beehiiv hiccup block someone from
+            // getting to payment.
+            if (window.subscribeToBeehiiv) {
+              await window.subscribeToBeehiiv({
+                email,
+                tags: ['consulting_lead', 'consulting_page_visitor'],
+                utm_medium: 'consulting_page',
+                utm_campaign: 'consulting_call_lead'
+              });
+            }
+
+            if (!STRIPE_PAYMENT_LINK_URL || STRIPE_PAYMENT_LINK_URL.startsWith('REPLACE')) {
+              errorEl.textContent = 'Booking is opening shortly. Your email is saved, and I will send you the link.';
+              errorEl.hidden = false;
+              submitBtn.disabled = false;
+              submitBtn.textContent = 'Continue →';
+              return;
+            }
+
+            paymentStepEmail.textContent = email;
+            paymentStepBtn.href = `${STRIPE_PAYMENT_LINK_URL}?prefilled_email=${encodeURIComponent(email)}`;
+            emailForm.hidden = true;
+            paymentStep.hidden = false;
+          });
+        })();
+      </script>
+    </section>
+
+    <section class="wrap faq">
+      <div class="section-tag">Questions</div>
+      <!-- Reschedule policy: hidden until decided.
+      <div class="faq-item">
+        <h3>What if I need to reschedule?</h3>
+        TODO: reschedule policy left blank per instructions, not invented, needs your input
+        <p></p>
+      </div>
+      -->
+      <div class="faq-item">
+        <h3>What if I'm not 100% decided yet?</h3>
+        <p>
+          Start with the <a href="/playbook">free Playbook</a> first, this call is for people ready to move,
+          not people still weighing the idea.
+        </p>
+      </div>
+      <div class="faq-item">
+        <h3>Is this a sales call for other services?</h3>
+        <p>No. I don't sell services. If a tool from the kit would help, I'll say so, but there's no pitch. This is planning time.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">Expat<span>Buildr</span> · 1-on-1 Relocation Consulting · Built in the Philippines 🇵🇭</div>
+      <ul class="footer-links">
+        <li><a href="/privacy">Privacy</a></li>
+        <li><a href="/terms">Terms</a></li>
+        <li><a href="https://www.youtube.com/@expatbuildr" target="_blank" rel="noopener">YouTube</a></li>
+      </ul>
+    </div>
+  </footer>
+</Layout>
