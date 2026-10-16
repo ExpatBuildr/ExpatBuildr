@@ -45,7 +45,7 @@ Travel insurance is not a substitute here, even though it sometimes gets treated
 
 Whether your specific city, health history, and risk tolerance justify full international coverage now versus a more layered, budget-conscious approach, and how to actually evaluate specific plans against your situation, depends on details a general overview can't calculate for you.
 
-**[Book a Relocation Strategy Call →](/consulting)**
+**[Book a Relocation Strategy Call →](/reloc-consulting)**
 
 We'll help you think through what coverage actually makes sense given where you're living and what risk you're realistically carrying.
 

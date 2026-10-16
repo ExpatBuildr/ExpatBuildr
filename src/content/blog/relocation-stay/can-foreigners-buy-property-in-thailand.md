@@ -50,7 +50,7 @@ If a nominee structure is pitched to you as a simple, common workaround, that fr
 
 Whether a condo purchase suits your situation better than pursuing a leasehold villa, how to structure a lease agreement as protectively as current practice allows, and whether a corporate structure genuinely makes sense for your circumstances (it rarely does for a straightforward personal residence) are decisions that depend on what you're actually trying to build.
 
-**[Book a Relocation Strategy Call →](/consulting)**
+**[Book a Relocation Strategy Call →](/reloc-consulting)**
 
 We'll walk through your property goals and help you understand which structure genuinely fits your situation, and which ones to steer clear of.
 

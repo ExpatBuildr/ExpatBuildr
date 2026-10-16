@@ -50,7 +50,7 @@ Practical implications worth building into your planning specifically: most Phil
 
 Everything above is the general shape of family planning in both countries. What it can't resolve: which specific city or school actually fits your children's ages, language backgrounds, and academic needs; how to time a visa application around a school year without creating a gap in either; or how the added cost of international school tuition changes the income runway you actually need, on top of everything covered in [how to build income before you move](/blog/relocation-stay/how-to-build-income-before-you-move-to-philippines-or-thailand).
 
-**[Book a Relocation Strategy Call →](/consulting)**
+**[Book a Relocation Strategy Call →](/reloc-consulting)**
 
 We'll walk through your family's specific situation — kids' ages, school needs, timeline — and help you sequence the move so it doesn't create unnecessary disruption for anyone in the household.
 

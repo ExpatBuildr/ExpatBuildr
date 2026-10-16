@@ -52,7 +52,7 @@ The Philippines does not have divorce for Filipino citizens under domestic law, 
 
 Whether the 13(a) path makes sense given your specific timeline, how to properly structure a usufruct or lease if you want documented protection for property you're contributing to, and how any of this interacts with your specific citizenship, tax, or estate planning situation are all questions that depend on your actual circumstances.
 
-**[Book a Relocation Strategy Call →](/consulting)**
+**[Book a Relocation Strategy Call →](/reloc-consulting)**
 
 We'll walk through what marriage does and doesn't change for your specific situation, and how to sequence the visa and property questions correctly rather than assuming one solves the other.
 

@@ -56,7 +56,7 @@ None of these depend on how long you've been gone. A permanent move doesn't crea
 
 Whether the Fairness Act repeal changes your specific benefit calculation, how to actually structure healthcare coverage once Medicare stops functioning for you, and how your particular mix of earned income, Social Security, and any pension income interacts across US and local tax rules — these depend on your specific work history, age, and income structure in ways this article can't calculate for you.
 
-**[Book a Relocation Strategy Call →](/consulting)**
+**[Book a Relocation Strategy Call →](/reloc-consulting)**
 
 We'll help you understand what actually changes for your specific situation and what questions to bring to a CPA or benefits specialist before you commit to permanent status.
 

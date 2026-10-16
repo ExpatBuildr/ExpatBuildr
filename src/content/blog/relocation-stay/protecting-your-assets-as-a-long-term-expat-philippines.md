@@ -56,7 +56,7 @@ Nonresident foreigners are taxed only on property located in the Philippines, no
 
 Whether your specific relationship status, family structure, or asset mix creates compulsory-heir complications, how to properly structure a Philippine will alongside a home-country one, and what alternative arrangements protect a partner who can't legally inherit land directly — these depend entirely on your actual situation.
 
-**[Book a Relocation Strategy Call →](/consulting)**
+**[Book a Relocation Strategy Call →](/reloc-consulting)**
 
 We'll help you understand what's actually at risk in your specific situation and what questions to bring to an estate lawyer before it becomes urgent.
 

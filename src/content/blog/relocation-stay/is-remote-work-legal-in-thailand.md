@@ -51,7 +51,7 @@ A few patterns hold consistently across every credible source on this, DTV or no
 
 Whether your specific income structure and visibility level puts you in genuinely low-risk territory or something closer to real exposure, and whether the DTV's savings requirement is realistic for your situation now or something to build toward, depends on your actual circumstances.
 
-**[Book a Relocation Strategy Call →](/consulting)**
+**[Book a Relocation Strategy Call →](/reloc-consulting)**
 
 We'll go through your actual income setup and risk tolerance and help you figure out whether the DTV makes sense now or what needs to change first.
 

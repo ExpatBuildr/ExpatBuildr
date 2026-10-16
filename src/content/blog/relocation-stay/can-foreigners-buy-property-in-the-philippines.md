@@ -48,7 +48,7 @@ Land ownership being off the table doesn't mean landed property is unavailable t
 
 Whether a condo purchase makes sense now versus waiting, whether your target property actually qualifies under the new 99-year lease framework, and how a purchase interacts with your visa strategy and long-term plans are all decisions that depend on your specific situation, not a general legal overview.
 
-**[Book a Relocation Strategy Call →](/consulting)**
+**[Book a Relocation Strategy Call →](/reloc-consulting)**
 
 We'll walk through your actual timeline and property goals and help you think clearly about whether buying makes sense now.
 

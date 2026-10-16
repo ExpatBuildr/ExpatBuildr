@@ -59,7 +59,7 @@ The general framework above holds regardless of your situation. What it can't te
 
 We cover the actual visa mechanics this income needs to support in [How to Stay in the Philippines Long Term, Legally](/blog/relocation-stay/how-to-stay-in-philippines-long-term-legally), [Is Remote Work Legal in the Philippines](/blog/relocation-stay/is-remote-work-legal-in-the-philippines), and [Is Remote Work Legal in Thailand](/blog/relocation-stay/is-remote-work-legal-in-thailand).
 
-**[Book a Relocation Strategy Call →](/consulting)**
+**[Book a Relocation Strategy Call →](/reloc-consulting)**
 
 We'll look at your actual income situation and build a real timeline, instead of guessing at whether you're ready to go.
 

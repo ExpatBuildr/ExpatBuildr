@@ -52,7 +52,7 @@ Whether your particular income structure documents cleanly for a DNV application
 
 We cover the broader visa landscape, including how the DNV fits alongside SRRV and 13(a), in [How to Stay in the Philippines Long Term, Legally](/blog/relocation-stay/how-to-stay-in-philippines-long-term-legally).
 
-**[Book a Relocation Strategy Call →](/consulting)**
+**[Book a Relocation Strategy Call →](/reloc-consulting)**
 
 We'll look at your actual income sources and help you figure out whether you're DNV-ready now or what needs to change first.
 

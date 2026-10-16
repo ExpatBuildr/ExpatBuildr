@@ -60,7 +60,7 @@ The general framework above holds for most straightforward cases. Where it gets 
 
 This is genuinely the point where a blog post reaches its limit — tax situations are specific enough that generic guidance either oversimplifies or gets outright wrong for your particular case.
 
-**[Book a Relocation Strategy Call →](/consulting)**
+**[Book a Relocation Strategy Call →](/reloc-consulting)**
 
 We're not a substitute for a CPA, but we can help you understand what questions to bring to one and how your visa strategy and tax strategy need to work together, not as two separate problems solved in isolation.
 

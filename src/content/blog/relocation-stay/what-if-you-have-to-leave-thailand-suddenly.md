@@ -57,7 +57,7 @@ If you're currently banned and working through the re-entry process, note that f
 
 Whether a past minor overstay on your record carries real ongoing risk, how to prepare for re-entry after time away, or how to structure your situation so an unplanned departure doesn't create legal exposure on top of the disruption itself are all specific to your actual history and circumstances.
 
-**[Book a Relocation Strategy Call →](/consulting)**
+**[Book a Relocation Strategy Call →](/reloc-consulting)**
 
 We'll help you understand your actual risk profile under the current enforcement environment and what to have in place before a situation forces the question.
 

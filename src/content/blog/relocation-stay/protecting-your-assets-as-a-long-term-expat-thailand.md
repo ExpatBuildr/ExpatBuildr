@@ -55,7 +55,7 @@ Thailand introduced inheritance tax under the Inheritance Tax Act B.E. 2558 (201
 
 Whether your specific asset mix — property, business interests, bank accounts — needs a Thai will at all, how to structure inherited land so a foreign heir isn't forced into a rushed one-year sale, and how your estate interacts across Thai and home-country jurisdictions depend entirely on what you actually hold and who you're planning for.
 
-**[Book a Relocation Strategy Call →](/consulting)**
+**[Book a Relocation Strategy Call →](/reloc-consulting)**
 
 We'll help you understand what's genuinely at stake in your specific situation and what to bring to a Thai estate lawyer before it's urgent.
 

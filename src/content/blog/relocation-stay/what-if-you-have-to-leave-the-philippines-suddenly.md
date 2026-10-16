@@ -58,7 +58,7 @@ Not every sudden-departure scenario involves deportation. Family emergencies, he
 
 Whether a specific past incident on your record poses real risk, how to prepare documentation if you're worried about a prior overstay resurfacing, or how to structure your affairs so an emergency departure doesn't create cascading problems are all situation-specific questions.
 
-**[Book a Relocation Strategy Call →](/consulting)**
+**[Book a Relocation Strategy Call →](/reloc-consulting)**
 
 We'll help you understand your actual risk level and what to have in place before an emergency forces the question.
 

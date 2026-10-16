@@ -57,7 +57,7 @@ Not needing a local business license doesn't mean you're free of tax obligations
 
 Whether your particular setup crosses into "local business activity" without you realizing it, whether it's worth registering something even when you're not strictly required to (some freelancers do it anyway for banking or tax-optimization reasons), and how licensing interacts with your specific visa status are all situation-dependent questions a general article can't fully resolve.
 
-**[Book a Relocation Strategy Call →](/consulting)**
+**[Book a Relocation Strategy Call →](/reloc-consulting)**
 
 We'll look at your actual client base and business structure and tell you plainly whether registration is something you need to think about or a non-issue for your situation.
 

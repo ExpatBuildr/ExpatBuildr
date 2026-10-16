@@ -59,7 +59,7 @@ Working quietly on a tourist visa or via repeated visa-free entries, hoping enfo
 
 Whether your particular income structure cleanly qualifies as foreign-sourced, how to document it convincingly for a DTV application, and how to structure payments so nothing accidentally crosses into Thai-sourced territory — these are the details that actually determine whether your situation is clean or exposed, and they depend entirely on how your income is currently structured.
 
-**[Book a Relocation Strategy Call →](/consulting)**
+**[Book a Relocation Strategy Call →](/reloc-consulting)**
 
 We'll go through your actual income sources and client base, and map out whether your current setup is DTV-ready or needs restructuring before you apply.
 
