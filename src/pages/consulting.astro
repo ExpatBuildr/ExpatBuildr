@@ -1,6 +1,6 @@
 ---
 // src/pages/consulting.astro
-// 1-on-1 Consulting landing page — paid strategy call, Calendly + Stripe embed
+// First Client Map landing page (relocation version lives at /reloc-consulting) — paid strategy call, Calendly + Stripe embed
 // Styled in the same visual language as the founders/* funnel pages, but with its
 // own scoped tokens (prefixed --c-*) instead of the shared funnel.css import —
 // funnel.css defaults to a dark palette and those pages force dark mode on load,
@@ -15,14 +15,14 @@ import Layout from '../layouts/Layout.astro';
 const CONSULTING_PRICE = 150;
 const STRIPE_PAYMENT_LINK = "https://buy.stripe.com/fZu28q3Gvf2a6lkaXe2oE0n";
 
-const title = "1-on-1 Consulting Call | ExpatBuildr";
-const description = `Book a 1-on-1 call about moving to Southeast Asia. Your real numbers, your real risks. $${CONSULTING_PRICE} for 60 minutes.`;
+const title = "First Client Map | 1-on-1 Call | ExpatBuildr";
+const description = `Starting from $0 online? A 1-on-1 call to map your first client. $${CONSULTING_PRICE} for 60 minutes.`;
 const canonicalUrl = "https://expatbuildr.com/consulting";
 // TODO: no consulting-specific OG image exists yet at /images/consulting/og-consulting.png —
 // falls back to Layout's site-wide default (/expatog.jpg) until one is created.
 ---
 
-<Layout title={title} description={description} minimal={true} noAnimations={true}>
+<Layout title={title} description={description} ogImageAlt="ExpatBuildr First Client Map." minimal={true} noAnimations={true}>
   <Fragment slot="head">
     <link rel="canonical" href={canonicalUrl} />
     <meta property="og:title" content={title} />
@@ -34,12 +34,11 @@ const canonicalUrl = "https://expatbuildr.com/consulting";
     <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
       "@type": "Service",
-      "serviceType": "Relocation Consulting",
+      "serviceType": "First Client Map",
       "provider": {
         "@type": "Person",
         "name": "Tony Long II"
       },
-      "areaServed": "Southeast Asia",
       "description": description,
       "offers": {
         "@type": "Offer",
@@ -112,6 +111,7 @@ const canonicalUrl = "https://expatbuildr.com/consulting";
 
       h1 { font-family: var(--c-serif); font-size: clamp(2.25rem,6vw,3.75rem); line-height: 1.1; letter-spacing: -.02em; margin-bottom: 1.25rem; max-width: 20ch; color: var(--c-text); }
       h1 em { font-style: italic; color: var(--c-accent-1); }
+      .cross-link { margin-top: 1.25rem; font-size: .8rem; color: var(--c-text-dim); }
       .hero-sub { font-size: 1.05rem; color: var(--c-text-muted); line-height: 1.75; max-width: 52ch; font-weight: 300; }
 
       h2 { font-family: var(--c-serif); font-size: clamp(1.6rem,3.5vw,2.5rem); line-height: 1.15; margin-bottom: 1rem; color: var(--c-text); }
@@ -210,19 +210,19 @@ const canonicalUrl = "https://expatbuildr.com/consulting";
 
   <main class="consulting-page">
     <section id="hero" class="wrap">
-      <div class="kicker fade-1">1-on-1 Call · ${CONSULTING_PRICE} / 60 Minutes</div>
-      <h1 class="fade-2">I lost $60K moving to the Philippines.<br /><em>Let's make sure you don't.</em></h1>
+      <div class="kicker fade-1">First Client Map · ${CONSULTING_PRICE} / 60 Minutes</div>
+      <h1 class="fade-2">I lost $300K + $60K.<br /><em>Let's make sure your first client doesn't take you as long.</em></h1>
       <p class="hero-sub fade-3">
-        60 minutes. Your numbers, your visa path and your income plan, checked by someone who has already made the expensive mistakes, not someone guessing from a blog post.
+        Starting from $0 online? In 60 minutes we map who your first client is, what you sell them, where you find them, and what you do this week. You leave with a written plan, not a vibe.
       </p>
+      <p class="cross-link">Looking for relocation help instead? <a href="/reloc-consulting">Relocation call</a></p>
     </section>
 
     <section class="wrap body-copy fade-3">
       <p>
-        Most relocation content is either aspirational fluff or generic checklists that
-        don't account for your actual situation. This call isn't that. We'll go through
-        your specific budget, visa path, timeline, and the risks nobody talks about, and
-        you'll leave with a real plan, not a vibe.
+        Most business advice online is either motivation or a 40-step course. This call is
+        neither. We pick one skill, one buyer, and one problem worth paying to solve, then
+        build your first outreach together.
       </p>
     </section>
 
@@ -232,18 +232,18 @@ const canonicalUrl = "https://expatbuildr.com/consulting";
         <div class="fit-column">
           <h2>This call is for you if:</h2>
           <ul>
-            <li>You've decided you're moving and need a real plan, not more research</li>
-            <li>You want your specific numbers checked against reality before you commit</li>
-            <li>You're ready to ask the hard questions and act on the answers</li>
-            <li>You're bringing a business or remote income with you and want the plan checked</li>
+            <li>You have no clients yet and want a clear plan to get the first one</li>
+            <li>You have a skill or idea but don't know who to sell it to</li>
+            <li>You're tired of consuming content and want a plan you can act on this week</li>
+            <li>You're ready to send real messages to real people</li>
           </ul>
         </div>
         <div class="fit-column">
           <h2>This isn't the right fit if:</h2>
           <ul>
-            <li>You're still deciding whether you even want to move</li>
+            <li>You want a guaranteed result or income promise</li>
+            <li>You want someone to build or run the business for you</li>
             <li>You're looking for cheerleading, not a reality check</li>
-            <li>You haven't looked at the <a href="/playbook">free Playbook</a> yet, start there first</li>
           </ul>
         </div>
       </div>
@@ -255,8 +255,8 @@ const canonicalUrl = "https://expatbuildr.com/consulting";
       <ul class="included-list">
         <li>Drop your email, pay, then pick a time. No lengthy intake form first</li>
         <li>60 minutes, one-on-one, focused entirely on your situation</li>
-        <li>A follow-up summary of what we covered and your next steps</li>
-        <li>Honest limits: this is advice from experience, not legal, tax or visa advice, and I don't build websites or run services</li>
+        <li>A written First Client Plan within 24 hours: your buyer, your offer, where to find them, your first message, and a 7-day action plan</li>
+        <li>Honest limits: this is advice from experience, not legal, tax or financial advice, and I don't build websites or run services</li>
       </ul>
     </section>
 
@@ -264,17 +264,15 @@ const canonicalUrl = "https://expatbuildr.com/consulting";
       <div class="section-tag">Who You're Talking To</div>
       <h2>Not theory.<br /><em>I paid for these lessons.</em></h2>
       <p>
-        I lost $300K in crypto, moved to the Philippines in September 2024 with about $60K, and lost that too over the next two years. I'm rebuilding now from Cebu. I run ExpatBuildr, where I document the real numbers and the mistakes behind relocating to Southeast Asia, not the highlight-reel version.
+        I lost $300K in crypto, moved to the Philippines in September 2024 with about $60K, and lost that too. I'm rebuilding now from Cebu, in public. I run ExpatBuildr, where I document the real numbers and the mistakes, not the highlight reel.
       </p>
       <h3>Why This Call Is Different</h3>
       <p>
-        Most relocation advice online is either aspirational or recycled. I built
-        ExpatBuildr specifically because that content was misleading people about what
-        this actually costs and what actually goes wrong. This call is the same
-        standard: your real numbers, your real risks, no filler.
+        I know what the early mistakes cost: wasted months, wrong offers, no buyers. This
+        call is built to skip them. Your real situation, a real plan, no filler.
       </p>
       <p class="access-note">
-        I'm taking on my first round of 1-on-1 calls directly, which means you get my full attention. The price goes up as the calendar fills.
+        I'm taking on my first round of 1-on-1 calls directly, which means you get my full attention.
       </p>
     </section>
 
@@ -395,22 +393,19 @@ const canonicalUrl = "https://expatbuildr.com/consulting";
       </div>
       -->
       <div class="faq-item">
-        <h3>What if I'm not 100% decided yet?</h3>
-        <p>
-          Start with the <a href="/playbook">free Playbook</a> first, this call is for people ready to move,
-          not people still weighing the idea.
-        </p>
+        <h3>What if I don't have a skill or offer yet?</h3>
+        <p>That's what the call is for. We'll look at what you can already do and pick the strongest starting point.</p>
       </div>
       <div class="faq-item">
         <h3>Is this a sales call for other services?</h3>
-        <p>No. I don't sell services. If a tool from the kit would help, I'll say so, but there's no pitch. This is planning time.</p>
+        <p>No. I don't sell services. If a tool or template would help, I'll say so, but there's no pitch. This is planning time.</p>
       </div>
     </section>
   </main>
 
   <footer>
     <div class="footer-inner">
-      <div class="footer-brand">Expat<span>Buildr</span> · 1-on-1 Relocation Consulting · Built in the Philippines 🇵🇭</div>
+      <div class="footer-brand">Expat<span>Buildr</span> · First Client Map · Built in the Philippines 🇵🇭</div>
       <ul class="footer-links">
         <li><a href="/privacy">Privacy</a></li>
         <li><a href="/terms">Terms</a></li>
