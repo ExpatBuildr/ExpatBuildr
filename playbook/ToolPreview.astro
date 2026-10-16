@@ -1,0 +1,22 @@
+---
+// src/components/playbook/ToolPreview.astro
+// Pass `image` (e.g. "/images/playbook/calculator.png") once you have a screenshot.
+import { CONFIG } from '../../data/playbook-data';
+interface Props {
+  tool: string;
+  slotLabel: string;
+  text: string;
+  linkText: string;
+  image?: string;
+}
+const { tool, slotLabel, text, linkText, image } = Astro.props;
+---
+<figure class="preview" data-tool={tool}>
+  <div class="slot">
+    {image ? <img src={image} alt={slotLabel} loading="lazy" /> : <span>Screenshot slot: {slotLabel}</span>}
+  </div>
+  <div class="pv">
+    <p>{text}</p>
+    <a class="kit-link" data-pos={`tool_preview_${tool}`} href={CONFIG.KIT_URL} target="_blank" rel="noopener">{linkText}</a>
+  </div>
+</figure>

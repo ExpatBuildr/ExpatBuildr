@@ -53,8 +53,8 @@ export const POST: APIRoute = async ({ request, locals }) => {
   if (res.ok || res.status === 201) {
     const magnet = (body.magnet ?? '').trim() || null;
     const redirectUrl = magnet
-      ? `/thank-you?magnet=${encodeURIComponent(magnet)}`
-      : '/thank-you';
+      ? `/thankyou?magnet=${encodeURIComponent(magnet)}`
+      : '/thankyou';
     return new Response(JSON.stringify({ ok: true, redirect_url: redirectUrl }), { status: 200 });
   }
 

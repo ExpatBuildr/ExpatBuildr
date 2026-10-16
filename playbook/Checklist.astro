@@ -1,0 +1,27 @@
+---
+// src/components/playbook/Checklist.astro
+// Server-rendered checklist. The client script restores ticks from localStorage
+// and updates the progress bar.
+interface Props {
+  listKey: string;
+  groups: { g: string; items: string[] }[];
+  hidden?: boolean;
+}
+const { listKey, groups, hidden = false } = Astro.props;
+const total = groups.reduce((n, g) => n + g.items.length, 0);
+---
+<div class="clwrap" data-list={listKey} data-total={total} hidden={hidden}>
+  <div class="bar"><i></i></div>
+  <div class="barlbl">0 of {total} done</div>
+  {groups.map((g, gi) => (
+    <div class="cl">
+      <h3>{g.g}</h3>
+      {g.items.map((t, ii) => (
+        <label>
+          <input type="checkbox" data-id={`${listKey}-${gi}-${ii}`} />
+          <span>{t}</span>
+        </label>
+      ))}
+    </div>
+  ))}
+</div>

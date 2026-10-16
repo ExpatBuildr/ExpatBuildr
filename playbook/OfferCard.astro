@@ -1,0 +1,16 @@
+---
+// src/components/playbook/OfferCard.astro
+// position: "inline_60" or "final". It is sent with every tracking event.
+import { CONFIG } from '../../data/playbook-data';
+interface Props {
+  position: string;
+  heading: string;
+}
+const { position, heading } = Astro.props;
+---
+<aside class="offer" data-offer={position}>
+  <h2>{heading}</h2>
+  <p><slot /> <b>${CONFIG.KIT_PRICE}</b></p>
+  <p class="who">For people who are in Southeast Asia or about to move and want their numbers in one place.</p>
+  <a class="btn kit-link" data-pos={position} href={CONFIG.KIT_URL} target="_blank" rel="noopener">Get the kit</a>
+</aside>

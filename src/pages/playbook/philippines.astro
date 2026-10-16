@@ -218,7 +218,7 @@ const pbConfig = JSON.stringify({ CONFIG, CITIES, CMP_SC: scTotal });
             </div>
             <p>That is <b>{money(cmpSave)} saved every month</b> by this category breakdown, a {cmpPct}% cut in expenses. The fully itemized numbers in the next chapter land on a slightly different total ({money(scTotal)}), since they break out a few extra categories this table groups together.</p>
 
-            <ToolPreview tool="calculator" slotLabel="Geo-Arbitrage Calculator" text="The calculator at the top uses city averages. The kit version runs your actual income, your costs and your timeline." linkText="Get the calculator in the kit" />
+            <ToolPreview tool="calculator" slotLabel="Geo-Arbitrage Calculator" text="The calculator at the top uses city averages. The kit version runs your actual income, your costs and your timeline." linkText="Get the calculator in the kit" image="/geoarbitrage.jpg" />
           </section>
 
           <!-- CHAPTER 3: my actual numbers -->
@@ -381,7 +381,7 @@ const pbConfig = JSON.stringify({ CONFIG, CITIES, CMP_SC: scTotal });
               <Checklist listKey={`plan-${k}`} groups={[{ g: v.label, items: v.items }]} hidden={i !== 0} />
             ))}
 
-            <ToolPreview tool="tracker" slotLabel="Income and Expense Tracker" text="Track every peso from day one and watch your arbitrage gap move, up or down." linkText="Get the tracker in the kit" />
+            <ToolPreview tool="tracker" slotLabel="Income and Expense Tracker" text="Track every peso from day one and watch your arbitrage gap move, up or down." linkText="Get the tracker in the kit" image="/expense-tracker.jpg" />
 
             <div class="callout">
               <p><b>This is the playbook I wish existed before I moved.</b> I still lost the money. I am rebuilding, in public, one newsletter issue at a time. The tools in the kit are the ones I built for myself first.</p>
